@@ -2,7 +2,7 @@
 layout: post
 subtitle: null
 date: "2016-02-15"
-published: false
+published: true
 title: "Review of Hadley Wickham's R Master Developer Course"
 ---
 
