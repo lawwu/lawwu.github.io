@@ -17,6 +17,7 @@ programming interface. Hadley's rule of thumb is if you find yourself copy-pasti
 
 ## Day 2
 Day 2 was all about package development. Like many of the things that Hadley has touched, he has streamlined and made life much easier for the would-be future R developer. His packages devtools and roxygen2 hide many of the pain points and difficulties that normally come with navigating package development.  He broke down the package development process in a few steps:
+
 1. R\
   - Use devtools::create("PACKAGE_NAME") as a first step - automates many things for you
   - Use a style guide - http://r-pkgs.had.co.nz/r.html#style  
