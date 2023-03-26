@@ -1,0 +1,20 @@
+{
+  "posts/post-with-code/index.qmd": {
+    "index.html": "dce1dc17"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "a0112d0b"
+  },
+  "index.qmd": {
+    "index.html": "618b9797"
+  },
+  "about.qmd": {
+    "about.html": "91b09660"
+  },
+  "posts/2023-03-24-mac-apps/index.qmd": {
+    "index.html": "e701b912"
+  },
+  "blog.qmd": {
+    "blog.html": "de32e1cb"
+  }
+}

@@ -1,0 +1,29 @@
+---
+title: "Lawrence Wu"
+comments: false
+about:
+  template: jolla
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:lawrencewu1+blog@gmail.com
+    - icon: file-pdf
+      text: Resume
+      href: https://www.dropbox.com/s/dkg62407k1rp8zn/Resume%20-%20Lawrence%20Wu.pdf?dl=0
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/lawrencewu920/
+    - icon: github
+      text: GitHub
+      href: https://github.com/lawwu
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/law_wu      
+---
+
+
+::: {#hero-heading}
+Hi! My name is Lawrence and I'm a data scientist who loves deriving insight and value from data. I enjoy  building machine learning and NLP solutions that make a difference. Currently I'm a Principal Data Scientist at [UKG](https://www.ukg.com/). Prior to that, I've held data science positions at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff](https://happymoney.com/) and [Allianz](https://allianz.com/). Prior to getting into data science, I was an actuary.
+
+On this site I keep a technical blog, a personal finance guide and resume.
+:::
