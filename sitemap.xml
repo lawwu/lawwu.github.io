@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://lawwu.github.io/posts/2023-03-24-mac-apps/index.html</loc>
-    <lastmod>2023-03-26T06:30:12.483Z</lastmod>
+    <loc>https://github.com/lawwu/lawwu.github.io/blog.html</loc>
+    <lastmod>2023-03-26T06:42:15.573Z</lastmod>
   </url>
   <url>
-    <loc>https://lawwu.github.io/index.html</loc>
-    <lastmod>2023-03-26T06:30:12.861Z</lastmod>
+    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-03-25-gpt4/index.html</loc>
+    <lastmod>2023-03-26T06:42:17.433Z</lastmod>
   </url>
   <url>
-    <loc>https://lawwu.github.io/blog.html</loc>
-    <lastmod>2023-03-26T06:30:13.531Z</lastmod>
+    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-03-24-mac-apps/index.html</loc>
+    <lastmod>2023-03-26T06:42:17.869Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/lawwu/lawwu.github.io/index.html</loc>
+    <lastmod>2023-03-26T06:42:18.209Z</lastmod>
   </url>
 </urlset>
