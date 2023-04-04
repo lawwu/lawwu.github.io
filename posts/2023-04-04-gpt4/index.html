@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.475">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2023-04-04">
+
+<title>Lawrence Wu - GPT Related Papers, Code, and News</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"><i class="bi bi-envelope" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#papers" id="toc-papers" class="nav-link active" data-scroll-target="#papers">Papers</a></li>
+  <li><a href="#libraries-tools" id="toc-libraries-tools" class="nav-link" data-scroll-target="#libraries-tools">Libraries / Tools</a></li>
+  <li><a href="#prompt-engineering" id="toc-prompt-engineering" class="nav-link" data-scroll-target="#prompt-engineering">Prompt Engineering</a></li>
+  <li><a href="#predictions" id="toc-predictions" class="nav-link" data-scroll-target="#predictions">Predictions</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">GPT Related Papers, Code, and News</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">GPT</div>
+    <div class="quarto-category">OpenAI</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">April 4, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>There’s seemingly a firehose of development in the last month or so. I’ve been trying to keep up with the latest developments in GPT and related models. Here’s a list of papers, code, and news that I’ve found interesting. This is mainly for myself to have a reference, but I hope it’s useful to others as well. I was largely inspired by <a href="https://twitter.com/osanseviero"><span class="citation" data-cites="osanseviero">@osanseviero</span></a> who created <a href="https://github.com/osanseviero/ml_timeline">ml_timeline</a>.</p>
+<section id="papers" class="level1">
+<h1>Papers</h1>
+<ul>
+<li>2022-08-21 - Emergent Abilities of Large Language Models (<a href="https://openreview.net/forum?id=yzkSU5zdwD">paper</a>, <a href="https://ai.googleblog.com/2022/11/characterizing-emergent-phenomena-in.html">blog</a>)</li>
+<li>2023-03-13 - <a href="https://crfm.stanford.edu/2023/03/13/alpaca.html">Alpaca</a> – Stanford’s CRFM group released a 1.5B parameter GPT-3 like model. They were the first to demonstrate you can get GPT-like performance using only 52k instruction-following data points. On the self-instruct evaluation set, Alpaca shows many behaviors similar to OpenAI’s text-davinci-003, but is also surprisingly small and easy/cheap to reproduce. I think one reason OpenAI dropped their pricing by 90% with GPT-4 is because they wanted to achieve wide distribution of their model.</li>
+<li>2023-03-15 - GPT-4 Technical Paper (<a href="https://arxiv.org/abs/2303.08774">paper</a>) - highlights some of the amazing improvements GPT-4 has made over GPT-3</li>
+<li>2023-03-27 - GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (<a href="https://arxiv.org/pdf/2303.10130.pdf">paper</a>) – Paper that identifies the occupations that have the highest exposure to automation by GPT. In related news, ResumeBuilder found <a href="https://www.resumebuilder.com/1-in-4-companies-have-already-replaced-workers-with-chatgpt/#:~:text=With%20the%20emergence%20of%20ChatGPT,%2C%20write%20code%2C%20and%20more">1 in 4 companies have already replaced workers with ChatGPT</a></li>
+<li>2023-03-22 - Sparks of Artificial General Intelligence (<a href="https://arxiv.org/abs/2303.12712">paper</a>)</li>
+<li>2023-03-20 – Reflexion: an autonomous agent with dynamic memory and self-reflection (<a href="https://arxiv.org/abs/2303.11366">paper</a>). A related <a href="https://nanothoughts.substack.com/p/reflecting-on-reflexion">post</a>.</li>
+<li>2023-03-23 - AI Explained – GPT4 can improve itself (<a href="https://www.youtube.com/watch?v=5SgJKZLBrmg&amp;ab_channel=AIExplained">video</a>) - Intro to Reflexion and HuggingGPT</li>
+<li>2023-03-30 - HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace (<a href="https://arxiv.org/abs/2303.17580">paper</a>, <a href="https://github.com/microsoft/JARVIS">code</a>) - Using a LLM as brain, HuggingGPT identifies what HuggingFace models to use to solve tasks. Notably Microsoft is calling this <code>JARVIS</code>.</li>
+</ul>
+</section>
+<section id="libraries-tools" class="level1">
+<h1>Libraries / Tools</h1>
+<ul>
+<li><a href="https://github.com/features/copilot">Github Copilot</a> - I use Copilot in my IDE, VS Code and it’s dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer’s ‘flow’ is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a <a href="https://radekosmulski.com/an-ide-for-the-era-of-ai/">blog post</a> for how to set this up. I do plan to try <a href="https://github.com/noteable-io/genai">GenAI</a> as well.</li>
+<li><a href="https://github.com/hwchase17/langchain">langchain</a> - Building applications with LLMs through composability</li>
+<li><a href="https://github.com/jerryjliu/llama_index">llama_index</a> - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM’s with external data.</li>
+<li><a href="https://github.com/noteable-io/genai">GenAI</a> - generative AI tooling for IPython</li>
+</ul>
+</section>
+<section id="prompt-engineering" class="level1">
+<h1>Prompt Engineering</h1>
+<ul>
+<li><a href="https://prmpts.ai/blog/what-is-prompt-engineering">What is Prompt Engineering</a> - like how Googling became a skill (aka “Google-fu”), I think Prompt Engineering is an important skill to develop</li>
+<li><a href="https://github.com/f/awesome-chatgpt-prompts">awesome-chatgpt-prompts</a> - A curated list of awesome ChatGPT prompts. I like “Act as a Linux Terminal” prompt.</li>
+<li><a href="https://github.com/dair-ai/Prompt-Engineering-Guide">Prompt Engineering Guide</a> - “Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering.”</li>
+</ul>
+</section>
+<section id="predictions" class="level1">
+<h1>Predictions</h1>
+<ul>
+<li>2023-04-01 - <a href="https://mobile.twitter.com/AllenDowney"><span class="citation" data-cites="AllenDowney">@AllenDowney</span></a> predicts “The great majority of coding will be LLM-assisted, starting now.” (<a href="https://mobile.twitter.com/AllenDowney/status/1642292405201190915">tweet</a>, <a href="https://www.allendowney.com/blog/2023/04/02/llm-assisted-programming/">blog</a>)</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
