@@ -23,6 +23,7 @@ There's seemingly a firehose of development in the last month or so. I've been t
 - [langchain](https://github.com/hwchase17/langchain) - Building applications with LLMs through composability
 - [llama_index](https://github.com/jerryjliu/llama_index) - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM's with external data.
 - [GenAI](https://github.com/noteable-io/genai) - generative AI tooling for IPython
+- [marvin](https://github.com/PrefectHQ/marvin) - Meet Marvin: a batteries-included library for building AI-powered software. Marvin's job is to integrate AI directly into your codebase by making it look and feel like any other function.
 
 
 # Prompt Engineering
