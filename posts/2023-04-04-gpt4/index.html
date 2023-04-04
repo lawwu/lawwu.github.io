@@ -118,6 +118,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#papers" id="toc-papers" class="nav-link active" data-scroll-target="#papers">Papers</a></li>
   <li><a href="#libraries-tools" id="toc-libraries-tools" class="nav-link" data-scroll-target="#libraries-tools">Libraries / Tools</a></li>
   <li><a href="#prompt-engineering" id="toc-prompt-engineering" class="nav-link" data-scroll-target="#prompt-engineering">Prompt Engineering</a></li>
+  <li><a href="#output-parsers" id="toc-output-parsers" class="nav-link" data-scroll-target="#output-parsers">Output Parsers</a></li>
   <li><a href="#predictions" id="toc-predictions" class="nav-link" data-scroll-target="#predictions">Predictions</a></li>
   </ul>
 </nav>
@@ -176,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Libraries / Tools</h1>
 <ul>
 <li><a href="https://github.com/features/copilot">Github Copilot</a> - I use Copilot in my IDE, VS Code and it’s dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer’s ‘flow’ is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a <a href="https://radekosmulski.com/an-ide-for-the-era-of-ai/">blog post</a> for how to set this up. I do plan to try <a href="https://github.com/noteable-io/genai">GenAI</a> as well.</li>
-<li><a href="https://github.com/hwchase17/langchain">langchain</a> - Building applications with LLMs through composability</li>
+<li><a href="https://github.com/hwchase17/langchain">LangChain</a> - Building applications with LLMs through composability</li>
 <li><a href="https://github.com/jerryjliu/llama_index">llama_index</a> - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM’s with external data.</li>
 <li><a href="https://github.com/noteable-io/genai">GenAI</a> - generative AI tooling for IPython</li>
 <li><a href="https://github.com/PrefectHQ/marvin">marvin</a> - Meet Marvin: a batteries-included library for building AI-powered software. Marvin’s job is to integrate AI directly into your codebase by making it look and feel like any other function.</li>
@@ -184,10 +185,19 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="prompt-engineering" class="level1">
 <h1>Prompt Engineering</h1>
+<p>Prompt engineering is the process of creating prompts for LLMs. Essentially optimizing the input into LLMs.</p>
 <ul>
 <li><a href="https://prmpts.ai/blog/what-is-prompt-engineering">What is Prompt Engineering</a> - like how Googling became a skill (aka “Google-fu”), I think Prompt Engineering is an important skill to develop</li>
 <li><a href="https://github.com/f/awesome-chatgpt-prompts">awesome-chatgpt-prompts</a> - A curated list of awesome ChatGPT prompts. I like “Act as a Linux Terminal” prompt.</li>
 <li><a href="https://github.com/dair-ai/Prompt-Engineering-Guide">Prompt Engineering Guide</a> - “Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering.”</li>
+</ul>
+</section>
+<section id="output-parsers" class="level1">
+<h1>Output Parsers</h1>
+<p>Where prompt engineering works on the input to LLMs, output parsers work on the output.</p>
+<ul>
+<li><a href="https://python.langchain.com/en/latest/modules/prompts/output_parsers.html">Output Parsers</a> - LangChain calls this “Output Parsers”. LangChain can return a list, JSON, any Python type (using Pydantic) and two other ways of handling outputs: <code>OutputFixingParser</code> and <code>RetryOutputParser</code></li>
+<li><a href="https://www.askmarvin.ai/guide/use_cases/enforcing_format/">Enforcing AI Format</a> - Marvin calls this “Enforcing AI format”. Marvin can return a string, list of dicts, JSON or really any Python type (using Pydantic)</li>
 </ul>
 </section>
 <section id="predictions" class="level1">
