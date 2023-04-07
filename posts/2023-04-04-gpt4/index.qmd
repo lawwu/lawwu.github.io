@@ -32,7 +32,7 @@ Prompt engineering is the process of creating prompts for LLMs. Essentially opti
 
 - [What is Prompt Engineering](https://prmpts.ai/blog/what-is-prompt-engineering) - like how Googling became a skill (aka "Google-fu"), I think Prompt Engineering is an important skill to develop
 - [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) - A curated list of awesome ChatGPT prompts. I like "Act as a Linux Terminal" prompt.
-- [Prompt Engineering Guide](https://github.com/dair-ai/Prompt-Engineering-Guide) - "Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering."
+- [Prompt Engineering Guide](https://www.promptingguide.ai/) - "Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering." Code: [repo](https://github.com/dair-ai/Prompt-Engineering-Guide).
 
 # Output Parsers 
 
