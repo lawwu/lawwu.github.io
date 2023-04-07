@@ -9,6 +9,8 @@ website:
     right:
       - text: Blog
         href: blog.qmd
+      - text: AI Resources
+        href: ai_resources.qmd
       - icon: github
         text: GitHub
         href: https://github.com/lawwu
