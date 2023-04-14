@@ -8,11 +8,15 @@ Inspired by @osanseviero's [ml_timeline](https://github.com/osanseviero/ml_timel
 
 ## April 2023
 
+* 12: DeepSpeed Chat - DeepSpeed Chat offers an end-to-end RLHF pipeline to train ChatGPT-like models. This is the missing piece from other efforts like Alpaca and Vicuna. The RLHF pipeline is replicated from the InstructGPT paper. ([tweet](https://twitter.com/omarsar0/status/1645936415941836804))
+* 12: Dolly 2.0 - Introducing the first *commercially viable*, open source, instruction-following LLM. Dolly 2.0 is available for commercial applications without having to pay for API access or sharing data with 3rd parties. ([post](https://www.databricks.com/blog/2023/04/12/dolly-first-open-commercially-viable-instruction-tuned-llm), [tweet](https://twitter.com/alighodsi/status/1646151697415168006))
+* 9: baby GPT from Andrej Karpathy "I think it's interesting to train/study tiny GPTs because it becomes tractable to visualize and get an intuitive sense of the entire dynamical system." ([tweet](https://twitter.com/karpathy/status/1645115622517542913))
 * 7: SegGPT: Segmenting Everything in context ([tweet](https://twitter.com/_akhaliq/status/1644147931178496001))
 * 6: StackLlama ([tweet](https://twitter.com/lvwerra/status/1643998302738759683))
+* 6: VideoCrafter: text to video model ([tweet](https://twitter.com/TomLikesRobots/status/1643878218498207744))
+* 5: LMQL - A query language for programming (large) language models. ([tweet](https://twitter.com/lmqllang/status/1643582539745964033))
 * 5: [StackLLaMA: A hands-on guide to train LLaMA with RLHF
 ](https://huggingface.co/blog/stackllama) ([post](https://huggingface.co/blog/stackllama))
-* 6: VideoCrafter: text to video model ([tweet](https://twitter.com/TomLikesRobots/status/1643878218498207744))
 * 6: Generative Novel View synthesis ([tweet](https://twitter.com/_akhaliq/status/1643790003779059715))
 * 5: SAM - Segment anything ([tweet](https://twitter.com/MetaAI/status/1643599800414380038))
 * 5: ChatArena, multi-agent game environments for LLMs ([tweet](https://twitter.com/mindjimmy/status/1643633046208249856))
@@ -28,6 +32,7 @@ Inspired by @osanseviero's [ml_timeline](https://github.com/osanseviero/ml_timel
 * 4: Baize: An Open-Source chat model with PEFT ([tweet](https://twitter.com/arankomatsuzaki/status/1643054506148614146))
 * 3: Vicuna-13B weights are released ([tweet](https://twitter.com/lmsysorg/status/1642968294998306816))
 * 3: A Survey of Large Language Models ([tweet](https://twitter.com/arankomatsuzaki/status/1642686213147738112))
+* 3: babyagi - Open-sourcing “Baby AGI”, a paired down version of the “Task-Driven Autonomous Agent” at 105 lines of code. ([tweet](https://twitter.com/yoheinakajima/status/1642881722495954945))
 
 
 ## March 2023
@@ -40,6 +45,7 @@ Inspired by @osanseviero's [ml_timeline](https://github.com/osanseviero/ml_timel
 * 29: Spanish BERTIN GPT-J-6B Alpaca and Alpaca LoRA ([tweet](https://twitter.com/versae/status/1641124547414900736))
 * 29: LLaMA Adapter ([tweet](https://twitter.com/lupantech/status/1640899600281395200), [code](https://github.com/ZrrSkywalker/LLaMA-Adapter), [paper](https://huggingface.co/papers/2303.16199))
 * 28: PRESTO dataset ([github](https://github.com/google-research-datasets/presto))
+* Auto-GPT: An experimental open-source attempt to make GPT-4 fully autonomous. ([tweet](https://twitter.com/SigGravitas/status/1640918447382237184))
 * 28: OpenFlamingo ([tweet](https://twitter.com/anas_awadalla/status/1640766789977251840), [blog](https://laion.ai/blog/open-flamingo/))
 * 28: Raven RWKV (RWKV finetuned on alpaca and codealpaca) ([tweet](https://twitter.com/BlinkDL_AI/status/1640742627216875524), [demo](https://huggingface.co/spaces/BlinkDL/Raven-RWKV-7B))
 * 28: Cerebras-GPT ([tweet](https://twitter.com/CerebrasSystems/status/1640725880711569408), [models](https://huggingface.co/cerebras))
