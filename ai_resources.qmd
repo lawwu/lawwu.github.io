@@ -58,6 +58,7 @@ Maintaining a [ml_timeline](https://github.com/lawwu/ml_timeline), inspired by [
 # Transformers
 
 - [transformers](https://github.com/huggingface/transformers)
+- 2023-04-24 - Brandon Rohrer's transformers from scratch [tutorial](https://e2eml.school/transformers.html)
 - 2023-04-16 - Sebastian Raschka explains the historical evolution of transformers [here](https://magazine.sebastianraschka.com/p/understanding-large-language-models)
 - 2023-01-27 - [The Transfomer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/)
 - 2023-01-17 - [Let's build GPT: from scratch, in code, spelled out](https://www.youtube.com/watch?v=kCc8FmEb1nY) - fantastic, in-depth tutorial by Andrej Karpathy building up transformers from scratch
