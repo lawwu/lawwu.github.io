@@ -1,0 +1,20 @@
+---
+title: "Staying Human in the Age of LLMs"
+date: "2023-05-28"
+author: "Lawrence Wu"
+categories: ["LLMs", "Work", "GPT"]
+---
+
+The WSJ's Ben Cohen wrote an [article](https://www.wsj.com/articles/chatgpt-ai-math-po-shen-loh-1e9f80dc?page=1) highlighting Professor Po-Shen Loh, a math professor from Carnegie Mellon University and coach for Team USA’s International Mathematical Olympiad. He's currently touring the country with a mission to inspire a love of mathematics and provide practical guidance for the new challenges brought by AI and tools like ChatGPT (giving 50 lectures in 32 cities in 35 days!). Loh's message is clear: to survive in this era of artificial intelligence, one must lean into what makes us human.
+
+Loh emphasizes the importance of creativity, emotion, and human uniqueness, skills that AI cannot replicate, and which will become increasingly valuable as AI becomes more advanced. He wants young minds to understand the importance of their humanity in an AI-dominated future. However, this lesson is not just for students but applies to all businesses trying to navigate the uncharted territory of AI integration.
+
+The new generation, Loh asserts, will have a better intuitive understanding of AI as they're the first to grow up with this technology as a constant in their lives. With tools like ChatGPT being used in everyday life, young people are already interacting with and understanding the implications of AI. Being a millenial, though I do remember a time when there was no internet and needing to use a physical copy of Encylopedia Brittanica to do research, my generation grew up with Google and being able to access information at our fingertips. This next generation will grow up with AI and ChatGPT-like technologies as a constant in their lives.
+
+Po-Shen Loh's message, while initially targeted towards students, has a universality that is applicable beyond the boundaries of classrooms; it serves as crucial advice for anyone preparing for the future of work in an AI-integrated world. Loh emphasizes the indispensable qualities of being able to create value and identify human pain points. In his words, "The future of jobs is figuring out how to find pain points, and a pain point is a human pain... You need to be able to create value. People who make value will always have opportunities."
+
+I wholeheartedly concur with Loh's perspective. In today's rapidly advancing digital age, we can already see a distinct division emerging between those leveraging large language models (LLMs) like ChatGPT effectively in their work, and those who do not. These tools can augment human capabilities, enable more efficient processes, and offer innovative solutions to complex problems.
+
+However, it is not the tools alone that will secure a competitive advantage. Instead, it is the ability to apply these tools ingeniously and to couple their computational prowess with human creativity, intuition, and understanding of complex human needs. This blend of technological aptitude and human sensitivity is what will differentiate the truly successful individuals and organizations in the future.
+
+Loh's message should serve as a call to action for individuals and businesses alike: value creation, coupled with understanding and addressing human-centric concerns, is what will allow us to thrive in the AI-enhanced future. Those who can combine their unique human skills with the power of AI, to enhance their problem-solving capabilities and offer more value, will always find themselves at an advantageous position.
