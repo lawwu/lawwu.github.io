@@ -8,7 +8,7 @@ Maintaining a [ml_timeline](https://github.com/lawwu/ml_timeline), inspired by [
 
 # Resources
 
-- [What are Embeddings](https://github.com/veekaybee/what_are_embeddings) - Vicki Boykis deep dive into embeddings starting from fundamentals
+- [What are Embeddings](https://github.com/veekaybee/what_are_embeddings) - Vicki Boykis deep dive into embeddings starting from fundamentals, [PDF here](https://raw.githubusercontent.com/veekaybee/what_are_embeddings/main/embeddings.pdf)
 - [LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/) - from Full Stack Deep Learning, 2 day bootcamp on LLMs run during Spring 2023
 - [Dive into Deep Learning](https://d2l.ai/chapter_introduction/index.html) - Comprehensive guide to deep learning
 - [Fast.ai](https://www.fast.ai/)
