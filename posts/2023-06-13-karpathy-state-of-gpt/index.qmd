@@ -85,3 +85,4 @@ Become more accessible to fine-tuning a model:
 
 ![Default Recommendations](./default_recommendations.png)
 
+![Use cases](./use_cases.png)
