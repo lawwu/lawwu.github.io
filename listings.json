@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-06-13-karpathy-state-of-gpt/index.html",
       "/posts/2023-06-10-all-in-opinion-on-jobs/index.html",
       "/posts/2023-05-28-staying-human/index.html",
       "/posts/2023-05-05-llm-work-jobs/index.html",
