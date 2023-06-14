@@ -6,6 +6,7 @@ website:
   # site-url:
   description: "This is Lawrence Wu's personal website"
   open-graph: true
+  google-analytics: "G-LN4GM4FVCJ"
   navbar:
     right:
       - text: Blog
