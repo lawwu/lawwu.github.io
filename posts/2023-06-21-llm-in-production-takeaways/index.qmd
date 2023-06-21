@@ -1,0 +1,29 @@
+---
+title: "LLM in Production Conference Takeaways"
+date: "2023-06-21"
+author: "Lawrence Wu"
+categories: ["LLMs", "Production"]
+---
+
+I didn't get to attend the LLM in Production Conference but found these takeaways Demetrios Brinkmann shared in an email to be quite insightful:
+
+1. Data is still king - LLMs are great but if you don't have quality clean data you won’t go far.
+2. Smaller models can be just as good as larger general models at specific tasks. And cheaper!
+3. Fine-tuning is becoming cheaper.
+4. Evaluation of LLMs is very hard - feels very subjective still.
+5. Managed APIs are expensive.
+6. "Traditional" ML isn't going anywhere.
+7. Memory matters - for both serving and training.
+8. Information retrieval w/ vector databases is becoming standard pattern.
+9. Start w/ prompt engineering and push that to its limits before fine-tuning w/ smaller models.
+10. Use agents/chains only when necessary. They are unruly.
+11. Latency is critical for a good user experience.
+12. Privacy is critical.
+
+As a practicing data scientist, #6 is reassuring!
+
+Here are some of the videos:
+
+- Matei - [LLMOps: The Emerging Toolkit for Reliable, High-quality LLM Applications](https://home.mlops.community/public/videos/llmops-the-emerging-toolkit-for-reliable-high-quality-llm-applications)
+- Chip - [Building LLM Applications for Production](https://home.mlops.community/public/videos/building-llm-applications-for-production)
+- Samyam - [Do More with Less: Large Model Training and Inference with DeepSpeed](https://home.mlops.community/public/videos/do-more-with-less-large-model-training-and-inference-with-deepspeed)
