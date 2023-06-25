@@ -1,0 +1,12 @@
+---
+title: "Layoffs Attributed to AI"
+date: "2023-06-24"
+author: "Lawrence Wu"
+categories: ["AI", "Jobs", "Layoffs"]
+---
+
+This [WSJ article](https://www.wsj.com/articles/ai-isnt-coming-for-marketers-jobsnot-yet-at-least-3bc18750?page=1) highlighted AI's impact on marketing related roles. In one the paragraphs, a statistic was cited that I had never seen before, the number of layoffs that were attributed to AI. 
+
+> Of the 80,000 people whom U.S. employers said they laid off last month, 3,900 lost their jobs because of AI, according to a report from outplacement firm Challenger, Gray & Christmas, which takes its data from public announcements and filings. All 3,900 of those people worked at tech companies, according to a Challenger, Gray spokeswoman.
+
+So about 5% of total layoffs in May 2023 were attributed to AI. This is pretty significant. I imagine this number will grow. It will be interesting to continue to track this number. 
