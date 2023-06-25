@@ -7,7 +7,7 @@ categories: ["LLMs", "Work", "GPT"]
 
 During [Episode 132 of the All-In Podcast](https://www.youtube.com/watch?v=aPMNbMR1p70&ab_channel=All-InPodcast), (transcript [here](https://steno.ai/all-in-with-chamath-jason-sacks/e132-sec-goes-after-crypto-giants-sequoia-splits-livpga-messis)) the hosts took a live question from the audience:
 
-{{< video https://www.youtube.com/watch?v=aPMNbMR1p70 >}}
+{{< video https://www.youtube.com/embed/aPMNbMR1p70 >}}
 
 > Hi, I'm Jeff, a full-time corporate VC and part-time angel. My question is about AI and higher education and it's actually some covert parenting advice so you can decide who's that's relevant for. My son just finished his freshman year of college and I'm questioning what the future is for him in higher education, given all the change that AI is going to have on every career and every profession. And I'm wondering what advice you'd give to your child or someone who's in college right now for what's an area of study that maybe won't be disrupted by AI or an area that AI, you'll get leverage from your education through AI.
 

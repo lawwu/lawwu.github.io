@@ -5,7 +5,7 @@ author: "Lawrence Wu"
 categories: ["LLMs", "GPT"]
 ---
 
-Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT: {{< video https://www.youtube.com/watch?v=bZQun8Y4L2A >}}. 
+Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT: {{< video https://www.youtube.com/embed/bZQun8Y4L2A >}}. 
 
 Here are some things I learned:
 
