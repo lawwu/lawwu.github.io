@@ -1,0 +1,25 @@
+---
+title: "Being Able to Focus is a Superpower"
+date: "2023-06-24"
+author: "Lawrence Wu"
+categories: ["Focus", "Work", "Musk", "Isaacson"]
+---
+
+Walter Isaacson is set to release a biography of Elon Musk later this year. He was recently on a [Twitter Space](https://youtu.be/-yhuiovST4A?t=181) with a few other people talking about Musk. One of the things that stood out to me was Isaacson's description of Musk's ability to focus. Here's a transcript of what he said:
+
+> But I guess one of the most amazing things he does is he can sequentially focus. I remmeber the night he actually wound up getting Twitter, the board agreed, he was going to get Twitter, the deal was accepted. He went to Brownsville in order to do a Raptor engine redesign meeting late at night. And then stayed up with Kimbell in a honkeytonk. And then focused on the battery production issues and whether they all should be moved to Austin... it was all in one night.
+
+Listening to this made me think about how important focus is. This idea also came up when I was speaking to another data scientist who asked me what is one thing that has helped you the most in your career. I told him focus. The ability to focus in our distracted age is becoming rarer and thus a more valuable skill if you can do it. Being able to focus means turning your attention to a single task (since [multi-tasking]((https://www.canr.msu.edu/news/the_myth_of_multitasking_research_says_it_makes_us_less_productive_and_incr)) [is a](https://blog.rescuetime.com/multitasking) [myth](https://asana.com/resources/multitasking)). And your attention is focused on that task for an extended period of time. A big part of focus is being able to say no to certain things. This ability to focus has benefits not just in your career but also in your personal life.
+
+As a data scientist, I might move from focusing on analyzing a new data set, writing deep learning training code, wrangling prompts for an LLM, reviewing someone else's code in a pull request or writing long form documentation. All of these are distinct tasks that take a certain amount of focus. Being able to focus on these work tasks means saying no to interruptions that may come by way of Slack messages, emails, or even meetings. Some things that have helped me in this area:
+
+- Using a Pomodoro timer like [Be Focused](https://apps.apple.com/us/app/be-focused-focus-timer/id973130201) to work in 25 minute increments.
+- Figuring out what hours of the day you do your best work. I find my energy takes a dip in the early afternoons and I try and do less cognitively intense tasks then.
+- Blocking time on my calendar to do focused work. Even better, deciding ahead of time what you do in those time blocks.
+- Stacking meetings on a given day. I try to have all of my 1-1s on a single day.
+
+Stepping out of my data scientist shoes, focus is incredibly valuable as a Christian: reading the Bible, praying, and memorizing verses all require focus. Being a father, focus is important too in order to be a present with your kids. 
+
+Do your best to try and grow this muscle of focus. It will pay dividends in your career and personal life.
+
+Cal Newport also has a great book on this topic called Deep Work. I highly recommend it.
