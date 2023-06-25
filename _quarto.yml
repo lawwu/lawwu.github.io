@@ -22,7 +22,7 @@ website:
       - icon: envelope
         href: mailto:lawrencewu1+blog@gmail.com
       - icon: rss
-        href: index.xml  
+        href: blog.xml  
 format:
   html:
     theme: cosmo
