@@ -15,13 +15,12 @@ toc-depth: 3
 
 page-layout: article
 
+comments: 
+  utterances: 
+    repo:  lawwu/blog_comments
 #########################
 # You can skip this part in the first step
 # format:
 #   html:
 #     include-after-body: ../footer.html
-
-# comments: 
-#   utterances: 
-#     repo:  
 #########################
