@@ -1,43 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/index.html</loc>
-    <lastmod>2023-06-21T16:49:43.931Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-05-05-llm-work-jobs/index.html</loc>
+    <lastmod>2023-06-25T05:55:27.325Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/ai_resources.html</loc>
-    <lastmod>2023-06-21T16:49:45.175Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/index.html</loc>
+    <lastmod>2023-06-25T05:55:26.297Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-06-13-karpathy-state-of-gpt/index.html</loc>
-    <lastmod>2023-06-21T16:49:45.823Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</loc>
+    <lastmod>2023-06-25T05:55:25.229Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-05-05-llm-work-jobs/index.html</loc>
-    <lastmod>2023-06-21T16:49:46.459Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-24-ai-layoffs/index.html</loc>
+    <lastmod>2023-06-25T05:55:24.317Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-06-21-llm-in-production-takeaways/index.html</loc>
-    <lastmod>2023-06-21T16:49:46.895Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/ai_resources.html</loc>
+    <lastmod>2023-06-25T05:55:23.629Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-06-10-all-in-opinion-on-jobs/index.html</loc>
-    <lastmod>2023-06-21T16:49:47.511Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/index.html</loc>
+    <lastmod>2023-06-25T05:55:21.293Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-05-28-staying-human/index.html</loc>
-    <lastmod>2023-06-21T16:49:47.979Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/blog.html</loc>
+    <lastmod>2023-06-25T05:55:22.909Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-03-24-mac-apps/index.html</loc>
-    <lastmod>2023-06-21T16:49:48.515Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</loc>
+    <lastmod>2023-06-25T05:55:23.993Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/posts/2023-04-04-gpt4/index.html</loc>
-    <lastmod>2023-06-21T16:49:49.095Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-04-04-gpt4/index.html</loc>
+    <lastmod>2023-06-25T05:55:24.829Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/lawwu/lawwu.github.io/blog.html</loc>
-    <lastmod>2023-06-21T16:49:50.107Z</lastmod>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</loc>
+    <lastmod>2023-06-25T05:55:25.749Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-03-24-mac-apps/index.html</loc>
+    <lastmod>2023-06-25T05:55:26.781Z</lastmod>
   </url>
 </urlset>

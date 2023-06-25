@@ -1,0 +1,638 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Lawrence Wu</title>
+<link>https://lawwu.github.io/blog.html/blog.html</link>
+<atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
+<description>This is Lawrence Wu&#39;s personal website</description>
+<generator>quarto-1.3.427</generator>
+<lastBuildDate>Sat, 24 Jun 2023 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Layoffs Attributed to AI</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-06-24-ai-layoffs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>This <a href="https://www.wsj.com/articles/ai-isnt-coming-for-marketers-jobsnot-yet-at-least-3bc18750?page=1">WSJ article</a> highlighted AI’s impact on marketing related roles. In one the paragraphs, a statistic was cited that I had never seen before, the number of layoffs that were attributed to AI.</p>
+<blockquote class="blockquote">
+<p>Of the 80,000 people whom U.S. employers said they laid off last month, 3,900 lost their jobs because of AI, according to a report from outplacement firm Challenger, Gray &amp; Christmas, which takes its data from public announcements and filings. All 3,900 of those people worked at tech companies, according to a Challenger, Gray spokeswoman.</p>
+</blockquote>
+<p>So about 5% of total layoffs in May 2023 were attributed to AI. This is pretty significant. I imagine this number will grow. It will be interesting to continue to track this number.</p>
+
+
+
+ ]]></description>
+  <category>AI</category>
+  <category>Jobs</category>
+  <category>Layoffs</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-06-24-ai-layoffs/index.html</guid>
+  <pubDate>Sat, 24 Jun 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>LLM in Production Conference Takeaways</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>I didn’t get to attend the LLM in Production Conference but found these takeaways Demetrios Brinkmann shared in an email to be quite insightful:</p>
+<ol type="1">
+<li>Data is still king - LLMs are great but if you don’t have quality clean data you won’t go far.</li>
+<li>Smaller models can be just as good as larger general models at specific tasks. And cheaper!</li>
+<li>Fine-tuning is becoming cheaper.</li>
+<li>Evaluation of LLMs is very hard - feels very subjective still.</li>
+<li>Managed APIs are expensive.</li>
+<li>“Traditional” ML isn’t going anywhere.</li>
+<li>Memory matters - for both serving and training.</li>
+<li>Information retrieval w/ vector databases is becoming standard pattern.</li>
+<li>Start w/ prompt engineering and push that to its limits before fine-tuning w/ smaller models.</li>
+<li>Use agents/chains only when necessary. They are unruly.</li>
+<li>Latency is critical for a good user experience.</li>
+<li>Privacy is critical.</li>
+</ol>
+<p>As a practicing data scientist, #6 is reassuring!</p>
+<p>Here are some of the videos:</p>
+<ul>
+<li>Matei - <a href="https://home.mlops.community/public/videos/llmops-the-emerging-toolkit-for-reliable-high-quality-llm-applications">LLMOps: The Emerging Toolkit for Reliable, High-quality LLM Applications</a></li>
+<li>Chip - <a href="https://home.mlops.community/public/videos/building-llm-applications-for-production">Building LLM Applications for Production</a></li>
+<li>Samyam - <a href="https://home.mlops.community/public/videos/do-more-with-less-large-model-training-and-inference-with-deepspeed">Do More with Less: Large Model Training and Inference with DeepSpeed</a></li>
+</ul>
+
+
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Production</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</guid>
+  <pubDate>Wed, 21 Jun 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>State of GPT - Andrej Karpathy</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT: </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/bZQun8Y4L2A" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>.<p></p>
+<p>Here are some things I learned:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/gpt_assistant_pipeline.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">GPT Assistant Pipeline</figcaption>
+</figure>
+</div>
+<p>It was helpful to see the different stages that training a RLHF-tuned LLM goes through from 1) pretraining, 2) supervised fine-tuning, 3) reward modeling and 4) reinforcement learning.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/base_models_prompted.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Base Models can be Prompted</figcaption>
+</figure>
+</div>
+<p>I wasn’t following the literature back then in the era of GPT-2 but it’s interesting to see the different types of prompts that people were trying to get base models to behave like assistants. With ChatGPT now, these types of prompts are not as useful.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/sft_dataset.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Supervised Fine-tuning Dataset</figcaption>
+</figure>
+</div>
+<p>I didn’t realize that these datasets took so much effort to create. A lot of times these contractors are writing long form answers to questions, adhering to very complex labeling instructions to be “helpful, truthful, harmless” taking sometimes hours to write these!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/rm_training.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Reward Modeling Training</figcaption>
+</figure>
+</div>
+<p>Binary classification between prompt and completion pairs. The completion yellow tokens are coming from the SFT model. Only supervise the training of the Transformer at the green reward token. The transformer will learn to predict the reward token for a given prompt/completion pair. We have the ground truth rewards from our human labelers. As the model is trained it can then better predict the reward tokens.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/rl_training.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Reinforcement Learning Training</figcaption>
+</figure>
+</div>
+<p>Taking the reward model from the previous stage, we take the tuples of (prompt, completion, reward), the completions are coming from the SFT model (model we want to train), the reward is from the reward model. The rewards are fixed.</p>
+<p>We train on the yellow tokens and weigh the language model object by the reward. For example, in the first row, the reward is high so we increase the probabilities of those words appearing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/ppo_vs_sft.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">RLHF vs SFT</figcaption>
+</figure>
+</div>
+<p>The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedabck) LLMs. It’s interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/why_rlhf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Why RLHF?</figcaption>
+</figure>
+</div>
+<p>Why does RLHF work better than SFT? Karpathy offers up an interesting hypothesis basically saying that it is easier for humans to compare two completions (what one does when creating training data for the reward model) vs.&nbsp;creating a completion from scratch (what one does when creating training data for the SFT model). The example being if the prompt is “Write a haiku about paperclips” - it’s much easier to compare two haikus about paper clips than to write a haiku about paper clips from scratch.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/mode_collapse.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Mode collapse</figcaption>
+</figure>
+</div>
+<p>One downside of fine-tuned models I didn’t realize was they lose entropy, in other words fine-tune models often predict one token with high probability instead of a nice distribution of tokens. So base models can be better at tasks where you have N examples of things want to generate more things. Karpathy’s toy example was prompting with “Here are 100 cool pokemon names I made up:” and giving it 7 actual Pokemon and the base model completes with additional generated Pokemon names.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/assistant_leaderboard.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Assistant Leaderboard</figcaption>
+</figure>
+</div>
+<p>A team at Berkeley has assembled Elo ratings from some assistant LLMs. The first 3 are RLHF models, the rest of SFT models. GPT-4 is winning. A link to a more up-to-date version of the leaderboard with Google’s PaLM2: https://lmsys.org/blog/2023-05-25-leaderboard/ which is still pretty far between GPT3.5 and GPT-4.</p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/human_vs_llm1.png" class="img-fluid" alt="Human text generation"> <img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/human_vs_llm2.png" class="img-fluid" alt="Human text generation vs.&nbsp;LLM text generation"></p>
+<ul>
+<li>All of the internal monologue is stripped away in the text LLMs train on</li>
+<li>They spend the ~same amount of compute on every token =&gt; LLMs don’t reproduce this behavior by default!</li>
+<li>They don’t know what they don’t know, they imitate the next token</li>
+<li>They don’t know what they are good at or not, they imitate the next token They don’t reflect. They don’t sanity check. They don’t correct their mistakes along the way</li>
+<li>They don’t have a separate “inner monologue stream in their head”</li>
+<li>They do have very large fact-based knowledge across a vast number of areas</li>
+<li>They do have a large and ~perfect “working memory” (their context window)</li>
+</ul>
+<p>Prompting is a way of making of for the cognitive difference between these two architectures (human brains vs.&nbsp;LLMs).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/chain_of_thought.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Chain of Thought</figcaption>
+</figure>
+</div>
+<p>Models need tokens to think. By breaking up a task into multiple steps, you are giving the language model an opportunity to think and reason over more tokens.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/condition_on_good_performance.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Condition on Good Performance</figcaption>
+</figure>
+</div>
+<p>Because language models are trained on all kinds of data, e.g.&nbsp;student solutions to a physics problem or an expert solution to the same problem, you can prompt the model “to be an expert in physics” and that usually improves performance. Apparently the best prompt was “Let’s work this out in a step by step way to be sure we have the right answer.”</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/retrieval_augmented_llms.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Retrieval-Augmented LLMs</figcaption>
+</figure>
+</div>
+<ul>
+<li>Break up relevant documents into chunks</li>
+<li>Use embedding APIs to index chunks into a vector store</li>
+<li>Given a test-time query, retrieve related information</li>
+<li>Organize the information into the prompt</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/finetuning.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Finetuning</figcaption>
+</figure>
+</div>
+<p>Become more accessible to fine-tuning a model:</p>
+<ul>
+<li>Parameter Efficient Finetuning, e.g.&nbsp;LoRA - only trainng small sparse pieces of your model</li>
+<li>Low-precision inference, e.g.&nbsp;bitsandbytes</li>
+<li>Open source high quality models like LLaMA</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/default_recommendations.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Default Recommendations</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/use_cases.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Use cases</figcaption>
+</figure>
+</div>
+
+
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>GPT</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/index.html</guid>
+  <pubDate>Tue, 13 Jun 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>All-In Hosts Opinion on Jobs</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>During <a href="https://www.youtube.com/watch?v=aPMNbMR1p70&amp;ab_channel=All-InPodcast">Episode 132 of the All-In Podcast</a>, (transcript <a href="https://steno.ai/all-in-with-chamath-jason-sacks/e132-sec-goes-after-crypto-giants-sequoia-splits-livpga-messis">here</a>) the hosts took a live question from the audience:</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/aPMNbMR1p70" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<blockquote class="blockquote">
+<p>Hi, I’m Jeff, a full-time corporate VC and part-time angel. My question is about AI and higher education and it’s actually some covert parenting advice so you can decide who’s that’s relevant for. My son just finished his freshman year of college and I’m questioning what the future is for him in higher education, given all the change that AI is going to have on every career and every profession. And I’m wondering what advice you’d give to your child or someone who’s in college right now for what’s an area of study that maybe won’t be disrupted by AI or an area that AI, you’ll get leverage from your education through AI.</p>
+</blockquote>
+<p>Chamath:</p>
+<blockquote class="blockquote">
+<p>I think the reality is that most of the existing jobs that we have in the United States are going to go to lower cost locations that have that tool chain to accelerate their capability. So we are going to have to reinvent the workforce and the things that we do over the next 30 or 40 years to stay relevant. That’s probably like, I think that should just be the operating principle. If you think about it, we used to run great call centers. Okay, those call centers were outsourced to the Philippines and India. But in the next, you know, five or 10 years, you’ll have this flawless unaccented English or even more eerily, perfectly accented English for the zip code of the person that’s calling in so that it sounds like they’re talking to somebody that’s literally their neighbor. That’s like just makes so much sense, right? So it’s like all this stuff is going to happen where like all these classes of jobs are going to go away. I saw this article where a lawyer, two lawyers use chat GPT to submit a legal brief. The problem was that it cited cases that didn’t exist and now they’re going to be disbarred. So this is like serious business, right? Like you can’t do that.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>You know, if I had to choose something for my kids, I would probably, I would probably tell them to do something mathematical or biological.</p>
+</blockquote>
+<p>Jason:</p>
+<blockquote class="blockquote">
+<p>I’ve been thinking about this a lot too. I think teaching them to be entrepreneurial, resilient, worldly, ability to communicate, ability to lead other people in teams, that stuff’s not going to go away, communication skill, etc. I’m encouraging everybody who I work with to just use chat GPT-4 and Bard every day for every single thing that they do. My base thesis right now is that the job freezes, the hiring freezes out of all these companies is indefinite. I’m assuming it’s indefinite because the amount of work it takes to write a job requisition is more work in some cases than actually automating with AI or ready the job function. And so I think 20 person companies might double in size in the next two or three years, but still have 20 people. This is going to be a big challenge for society. And if that does come to pass, there’s just going to be large swaths of people who are not going to be able to get job interviews for anything other than service jobs. We need a lot more plumbers, electricians, waiters, et cetera. Those probably jobs won’t go away, especially if we don’t let people immigrate. I am super enthusiastic about that efficiency, but I think it also means you have to be entrepreneurial because if you can’t get a job and you can’t get mentored, you better create your own opportunity. You better create your own company. And that’s what I’m seeing. That’s the game on the field right now. Two or three people who don’t have job offers from Uber and Airbnb and Google and Facebook just saying, let’s start a company because there’s nothing else for us to do. And those are highly skilled people right now doing that.</p>
+</blockquote>
+<p>Sacks:</p>
+<blockquote class="blockquote">
+<p>I’ll say two quick things about this topic. So one is, I think there’s a lot of AI fear porn out there right now. And I just think that like all of these tumor scenarios are, they’re not going to play out overnight. I mean, this is going to take a while. Second, if you think about like job elimination, it’s going to be some super specialized jobs. So for example, I wouldn’t want to be a radiologist right now, but doctors will be fine. So I think if you’re thinking about like going into a job category that’s super specialized and clearly in the way of AI, then that probably is not a good idea. But most general skills like you’re talking about and most job categories are going to be fine. There’s just going to be some specialties within them that make it. dislocated. Like, I wouldn’t want to be a truck driver either, you know, because of self-driving. But transportation companies are still going to exist. So I think you just want to be careful about super specialization, I think. But building general skills is always really good. That really should be the point of college.</p>
+</blockquote>
+<p>My observations:</p>
+<ul>
+<li>I found it surprising Sacks thought lawyers and accountants were “sufficiently” general that he doesn’t think they’ll be eliminated.</li>
+<li>Sacks’ point that some super specialized jobs will be eliminated is a good one, e.g.&nbsp;radiologists. But I also think some lawyers and accounting jobs will go this route too.</li>
+<li>Jason is telling his employees to use GPT-4 or Bard for every task at work. I agree this is a good idea to get familiar with how LLMs work and to essentially have a super-assistant at your disposal. GPT-4 is particularly good.</li>
+<li>Overall I think it’s still too early to make any definitive statements about what jobs will be eliminated. I think it’s safe to say that most jobs will be affected in some way, but it’s hard to say how. This is something I’m fascinated by though, how as a society we will adjust as these language models permeate through organizations, companies and products.</li>
+</ul>
+
+
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Work</category>
+  <category>GPT</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</guid>
+  <pubDate>Sat, 10 Jun 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Staying Human in the Age of LLMs</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>The WSJ’s Ben Cohen wrote an <a href="https://www.wsj.com/articles/chatgpt-ai-math-po-shen-loh-1e9f80dc?page=1">article</a> highlighting Professor Po-Shen Loh, a math professor from Carnegie Mellon University and coach for Team USA’s International Mathematical Olympiad. He’s currently touring the country with a mission to inspire a love of mathematics and provide practical guidance for the new challenges brought by AI and tools like ChatGPT (giving 50 lectures in 32 cities in 35 days!). Loh’s message is clear: to survive in this era of artificial intelligence, one must lean into what makes us human.</p>
+<p>Loh emphasizes the importance of creativity, emotion, and human uniqueness, skills that AI cannot replicate, and which will become increasingly valuable as AI becomes more advanced. He wants young minds to understand the importance of their humanity in an AI-dominated future. However, this lesson is not just for students but applies to all businesses trying to navigate the uncharted territory of AI integration.</p>
+<p>The new generation, Loh asserts, will have a better intuitive understanding of AI as they’re the first to grow up with this technology as a constant in their lives. With tools like ChatGPT being used in everyday life, young people are already interacting with and understanding the implications of AI. Being a millenial, though I do remember a time when there was no internet and needing to use a physical copy of Encylopedia Brittanica to do research, my generation grew up with Google and being able to access information at our fingertips. This next generation will grow up with AI and ChatGPT-like technologies as a constant in their lives.</p>
+<p>Po-Shen Loh’s message, while initially targeted towards students, has a universality that is applicable beyond the boundaries of classrooms; it serves as crucial advice for anyone preparing for the future of work in an AI-integrated world. Loh emphasizes the indispensable qualities of being able to create value and identify human pain points. In his words, “The future of jobs is figuring out how to find pain points, and a pain point is a human pain… You need to be able to create value. People who make value will always have opportunities.”</p>
+<p>I wholeheartedly concur with Loh’s perspective. In today’s rapidly advancing digital age, we can already see a distinct division emerging between those leveraging large language models (LLMs) like ChatGPT effectively in their work, and those who do not. These tools can augment human capabilities, enable more efficient processes, and offer innovative solutions to complex problems.</p>
+<p>However, it is not the tools alone that will secure a competitive advantage. Instead, it is the ability to apply these tools ingeniously and to couple their computational prowess with human creativity, intuition, and understanding of complex human needs. This blend of technological aptitude and human sensitivity is what will differentiate the truly successful individuals and organizations in the future.</p>
+<p>Loh’s message should serve as a call to action for individuals and businesses alike: value creation, coupled with understanding and addressing human-centric concerns, is what will allow us to thrive in the AI-enhanced future. Those who can combine their unique human skills with the power of AI, to enhance their problem-solving capabilities and offer more value, will always find themselves at an advantageous position.</p>
+
+
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Work</category>
+  <category>GPT</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</guid>
+  <pubDate>Sun, 28 May 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Large Language Models, Work and the Future of Jobs</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-05-05-llm-work-jobs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Last month, <a href="https://twitter.com/AllenDowney">Allen Downey</a> showcased the power of ChatGPT by using it to solve every problem in his Think Python books. As a result, he encouraged <a href="https://twitter.com/AllenDowney/status/1642292405201190915">everyone who writes code to use LLM-assistance in their development</a>. This inspired me to further explore the capabilities of GPT-4 and its potential effects on work and productivity.</p>
+<p>Large Language Models (LLMs) like ChatGPT are already transforming the way we work. Even in my work as a data scientist, ChatGPT (actually GPT-4) has dramatically affected how I work and my daily tasks. Just a quick listing out of some of the prompts I’ve sent to GPT-4 in the last month:</p>
+<ul>
+<li>Extracting features from pairs of resumes and job descriptions in JSON</li>
+<li>Copy pasted a Linux error <code>OSError: [Errno 28] inotify watch limit reached</code> and GPT-4 explained what the error was and how to fix it (unprompted)</li>
+<li>What factors to consider what going from a individual contributor to a manager role</li>
+<li>Copy pasted a SQL query to debug it</li>
+<li>How to make a tensor of 0’s of a data type Long and Int</li>
+<li>In PyTorch what does <code>batch_first=False</code> do?</li>
+<li>Help writing a MLOps Python wrapper package that wraps Vertex AI Pipelines</li>
+<li>Copy and pasted</li>
+</ul>
+<pre><code>187 packages can be updated.
+27 updates are security updates.</code></pre>
+<p>And it responded with commands for how to update package lists, upgrade packages and do a distribution upgrade too</p>
+<ul>
+<li>Reformat JSON dictionaries</li>
+<li>Helping to write unit tests</li>
+</ul>
+<p>It’s difficult to quantify how much time GPT-4 has saved me, which it certainly has. I’d estimate it on average saves me about 1 hour of work per day. More than the time saved, the value of LLMs has been lowering the activation energy needed to get started. With data science and coding related prompts, I can arrive at answers much more directly and therefore quickly than trying to search Google and read StackOverflow answers. The code GPT-4 returns doesn’t always work the first time (zero-shot). In most cases, if an error is returned by that code, putting the error code back into the prompt will allow GPT-4 to generate correct code (one-shot, few-shot).</p>
+<p>Along with Github Copilot, which is like autocomplete for code in an IDE like VS Code or PyCharm, I will likely never go back to coding without these assistants. They make me that much more productive. Though it’s also difficult to quantify how much more productive, 5%? 10%? 50%? There have been <a href="https://twitter.com/gregisenberg/status/1648677152005451777?s=46&amp;t=Ze-VKnGNxPI5bjU_St2Wbg">stories of people losing their jobs</a> because of these technologies, but these are still relatively rare. I think the short-term impacts of these tools is making those that use them much more productive than those that don’t. Allen Downey wrote a <a href="https://www.allendowney.com/blog/2023/04/02/llm-assisted-programming/">post</a> about LLM-assisted programming where he said:</p>
+<blockquote class="blockquote">
+<p>Which brings me to what I think will be the most important skill for LLM-assisted programming: reading code. LLMs can generate code much faster than we can understand it, so the ability to read, understand, and check code will be critical.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The other skill that will become more important is meta-language, that is, the vocabulary we use to talk about programs. In my correlation in Elm example, I asked ChatGPT to “factor out the anonymous function”, and it new exactly what I meant. In general, it seems to understand the meta-language of programming well, so it will be useful if we can speak it.</p>
+</blockquote>
+<p>I tend to agree with his points. Reading code is going to be critical. Also knowing the right terminology or “meta-language” as Downey calls it to prompt the LLM is also critical. For example, using Github Copilot I was working in a Jupyter Notebook preparing some data for a model that was in a dataframe. I wrote a comment “# pivot this from wide to long” and the LLM was able to generate the code to do exactly what I needed. This took 5 seconds instead of 30-60 seconds to Google and arrive at this <a href="https://stackoverflow.com/questions/36537945/reshape-wide-to-long-in-pandas">SO answer</a>. But one would need to know what terms like “pivot” and what “wide” and “long” data are (see Hadley Wickham’s <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data paper</a> to learn more).</p>
+<p>Technological advancements inevitably change jobs and work dynamics. Some jobs may disappear, while others may evolve, and new ones will emerge. Although it’s difficult to predict the pace and extent of these changes, there already have been a few studies on the topic. But I would take these with a grain of salt given how difficult it is to forecast the future.</p>
+<ul>
+<li>2023-03-02 - <a href="https://arxiv.org/abs/2303.01157">How will Language Modelers like ChatGPT Affect Occupations and Industries?</a></li>
+<li>2023-03-17 - <a href="https://arxiv.org/abs/2303.10130">GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models</a></li>
+<li>2023-04-23 - <a href="https://arxiv.org/pdf/2304.09823.pdf#:~:text=In%20a%20recent%20paper%20published,impacted%20by%20more%20than%2050%25">The Future of ChatGPT-enabled Labor Market: A Preliminary Study</a></li>
+</ul>
+<p>What is more valuable is waiting for real-world examples of how LLMs are affecting work. Here are some examples I’ve seen:</p>
+<ul>
+<li>2023-05-02 - IBM CEO Arvind Krishna says 30% of backoffice non-customer facing roles like human resources being replaced by AI. That’s 30% of 26,000 roles or 7,800 roles being replaced over the next 5 years. See this article for more <a href="https://arstechnica.com/information-technology/2023/05/ibm-pauses-hiring-around-7800-roles-that-could-be-replaced-by-ai/">details</a>.</li>
+<li>2023-04-27 - In a letter to Dropbox employees, CEO Drew Houston said the company is laying off 16% of its workforce. He said the company is shifting its focus to early-stage product development and AI. See the full letter <a href="https://blog.dropbox.com/topics/company/a-message-from-drew">here</a>. Two very interesting quotes where he talks about not being able to upskill his current workforce and needing to hire new talent:</li>
+</ul>
+<blockquote class="blockquote">
+<p>Second, and more consequentially, the AI era of computing has finally arrived. We’ve believed for many years that AI will give us new superpowers and completely transform knowledge work. And we’ve been building towards this future for a long time, as this year’s product pipeline will demonstrate.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>In an ideal world, we’d simply shift people from one team to another. And we’ve done that wherever possible. However, our next stage of growth requires a different mix of skill sets, particularly in AI and early-stage product development. We’ve been bringing in great talent in these areas over the last couple years and we’ll need even more.</p>
+</blockquote>
+<p>It’ll be certainly interesting to see how these technologies continue to evolve and how they affect work.</p>
+
+
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Work</category>
+  <category>GPT</category>
+  <category>OpenAI</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-05-05-llm-work-jobs/index.html</guid>
+  <pubDate>Fri, 05 May 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>GPT Related Papers, Code, and News</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-04-04-gpt4/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>There’s seemingly a firehose of development in the last month or so. I’ve been trying to keep up with the latest developments in GPT and related models. Here’s a list of papers, code, and news that I’ve found interesting. This is mainly for myself to have a reference, but I hope it’s useful to others as well. I was largely inspired by <a href="https://twitter.com/osanseviero"><span class="citation" data-cites="osanseviero">@osanseviero</span></a> who created <a href="https://github.com/osanseviero/ml_timeline">ml_timeline</a>.</p>
+<section id="papers" class="level1">
+<h1>Papers</h1>
+<ul>
+<li>2022-08-21 - Emergent Abilities of Large Language Models (<a href="https://openreview.net/forum?id=yzkSU5zdwD">paper</a>, <a href="https://ai.googleblog.com/2022/11/characterizing-emergent-phenomena-in.html">blog</a>)</li>
+<li>2023-03-13 - <a href="https://crfm.stanford.edu/2023/03/13/alpaca.html">Alpaca</a> – Stanford’s CRFM group released a 1.5B parameter GPT-3 like model. They were the first to demonstrate you can get GPT-like performance using only 52k instruction-following data points. On the self-instruct evaluation set, Alpaca shows many behaviors similar to OpenAI’s text-davinci-003, but is also surprisingly small and easy/cheap to reproduce. I think one reason OpenAI dropped their pricing by 90% with GPT-4 is because they wanted to achieve wide distribution of their model.</li>
+<li>2023-03-15 - GPT-4 Technical Paper (<a href="https://arxiv.org/abs/2303.08774">paper</a>) - highlights some of the amazing improvements GPT-4 has made over GPT-3</li>
+<li>2023-03-27 - GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (<a href="https://arxiv.org/pdf/2303.10130.pdf">paper</a>) – Paper that identifies the occupations that have the highest exposure to automation by GPT. In related news, ResumeBuilder found <a href="https://www.resumebuilder.com/1-in-4-companies-have-already-replaced-workers-with-chatgpt/#:~:text=With%20the%20emergence%20of%20ChatGPT,%2C%20write%20code%2C%20and%20more">1 in 4 companies have already replaced workers with ChatGPT</a></li>
+<li>2023-03-22 - Sparks of Artificial General Intelligence (<a href="https://arxiv.org/abs/2303.12712">paper</a>)</li>
+<li>2023-03-20 – Reflexion: an autonomous agent with dynamic memory and self-reflection (<a href="https://arxiv.org/abs/2303.11366">paper</a>). A related <a href="https://nanothoughts.substack.com/p/reflecting-on-reflexion">post</a>.</li>
+<li>2023-03-23 - AI Explained – GPT4 can improve itself (<a href="https://www.youtube.com/watch?v=5SgJKZLBrmg&amp;ab_channel=AIExplained">video</a>) - Intro to Reflexion and HuggingGPT</li>
+<li>2023-03-30 - HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace (<a href="https://arxiv.org/abs/2303.17580">paper</a>, <a href="https://github.com/microsoft/JARVIS">code</a>) - Using a LLM as brain, HuggingGPT identifies what HuggingFace models to use to solve tasks. Notably Microsoft is calling this <code>JARVIS</code>.</li>
+</ul>
+</section>
+<section id="libraries-tools" class="level1">
+<h1>Libraries / Tools</h1>
+<ul>
+<li><a href="https://github.com/features/copilot">Github Copilot</a> - I use Copilot in my IDE, VS Code and it’s dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer’s ‘flow’ is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a <a href="https://radekosmulski.com/an-ide-for-the-era-of-ai/">blog post</a> for how to set this up. <del>I do plan to try <a href="https://github.com/noteable-io/genai">GenAI</a> as well.</del> I tried GenAI and it basically automatically sends all errors to ChatGPT and provides suggested corrected syntax to try in line in your Jupyter notebook. It actually can be a nice complement to Copilot.</li>
+<li><a href="https://github.com/hwchase17/langchain">LangChain</a> - Building applications with LLMs through composability</li>
+<li><a href="https://github.com/jerryjliu/llama_index">llama_index</a> - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM’s with external data.</li>
+<li><a href="https://github.com/noteable-io/genai">GenAI</a> - generative AI tooling for IPython</li>
+<li><a href="https://github.com/PrefectHQ/marvin">marvin</a> - Meet Marvin: a batteries-included library for building AI-powered software. Marvin’s job is to integrate AI directly into your codebase by making it look and feel like any other function.</li>
+</ul>
+</section>
+<section id="prompt-engineering" class="level1">
+<h1>Prompt Engineering</h1>
+<p>Prompt engineering is the process of creating prompts for LLMs. Essentially optimizing the input into LLMs.</p>
+<ul>
+<li><a href="https://prmpts.ai/blog/what-is-prompt-engineering">What is Prompt Engineering</a> - like how Googling became a skill (aka “Google-fu”), I think Prompt Engineering is an important skill to develop</li>
+<li><a href="https://github.com/f/awesome-chatgpt-prompts">awesome-chatgpt-prompts</a> - A curated list of awesome ChatGPT prompts. I like “Act as a Linux Terminal” prompt.</li>
+<li><a href="https://www.promptingguide.ai/">Prompt Engineering Guide</a> - “Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering.” Code: <a href="https://github.com/dair-ai/Prompt-Engineering-Guide">repo</a>.</li>
+</ul>
+</section>
+<section id="output-parsers" class="level1">
+<h1>Output Parsers</h1>
+<p>Where prompt engineering works on the input to LLMs, output parsers work on the output.</p>
+<ul>
+<li><a href="https://python.langchain.com/en/latest/modules/prompts/output_parsers.html">Output Parsers</a> - LangChain calls this “Output Parsers”. LangChain can return a list, JSON, any Python type (using Pydantic) and two other ways of handling outputs: <code>OutputFixingParser</code> and <code>RetryOutputParser</code></li>
+<li><a href="https://www.askmarvin.ai/guide/use_cases/enforcing_format/">Enforcing AI Format</a> - Marvin calls this “Enforcing AI format”. Marvin can return a string, list of dicts, JSON or really any Python type (using Pydantic)</li>
+</ul>
+</section>
+<section id="predictions" class="level1">
+<h1>Predictions</h1>
+<ul>
+<li>2023-04-01 - <a href="https://mobile.twitter.com/AllenDowney"><span class="citation" data-cites="AllenDowney">@AllenDowney</span></a> predicts “The great majority of coding will be LLM-assisted, starting now.” (<a href="https://mobile.twitter.com/AllenDowney/status/1642292405201190915">tweet</a>, <a href="https://www.allendowney.com/blog/2023/04/02/llm-assisted-programming/">blog</a>)</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>GPT</category>
+  <category>OpenAI</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-04-04-gpt4/index.html</guid>
+  <pubDate>Tue, 04 Apr 2023 00:00:00 GMT</pubDate>
+</item>
+<item>
+  <title>Useful Applications (mostly for Mac)</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-03-24-mac-apps/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>In this blog post, I’ll introduce you to a list of useful applications, covering both developer tools and productivity applications that I’ve found useful over the years. I’ll also provide you with a brief overview of each app, including its key features and how it can help you improve your workflow. This is mostly Mac focused, though some of these are available on other operating systems.</p>
+<section id="productivity" class="level1">
+<h1>Productivity</h1>
+<p><a href="https://www.google.com/chrome/">Google Chrome</a>: I’ve tried other browsers but I still find myself going back to Chrome.</p>
+<p><a href="https://workflowy.com/">Workflowy</a>: A simple yet powerful app for note-taking, outlining, and task management, Workflowy helps you organize your thoughts and projects using nested lists and intuitive keyboard shortcuts. It’s simple at it’s core as Workflowy is essentially an infinitely nested bulleted list. They’ve added additional features over the years like mirroring lists which I’ve found helpful. Notion may have more features but I haven’t overcome the intertia needed to switch yet.</p>
+<p><a href="https://todoist.com/">Todoist</a>: A great multi platform to-do list app. One of my favorite features is being able to type dates and/or times that Todoist will parse into a due date. Because of my poor memory, I need to write everything down. If it’s task-related, it will go into Todoist. On a related note, the Reminders app on an Apple Watch is also useful for capturing todos on the go. I hold the crown to activate Siri and say “Remind me to do X at tomorrow at 10pm” and this reminder will pop-up at tomorrow 10pm on my iPhone.</p>
+<p><a href="https://rectangleapp.com/">Rectangle</a>: A window management app for macOS, Rectangle enables you to quickly and effortlessly resize and organize your windows using keyboard shortcuts or by dragging windows to screen edges. Iused to use ShiftIt which did something similar but Rectangle does the same thing but works on the latest versions of macOS.</p>
+<p><a href="https://github.com/exelban/stats">Stats</a>: An open-source system monitor for macOS, Stats provides you with detailed information on your CPU, memory, disk, network, and battery usage, all accessible from your menu bar. I used to pay for iStat Menus but stats is an open source version.</p>
+<p><a href="https://apps.apple.com/us/app/amphetamine/id937984704?mt=12">Amphetamine</a>: Keep your Mac awake and prevent it from sleeping with Amphetamine, a powerful and customizable app that allows you to set rules based on applications, time, or power source. Similar to the Caffiene app.</p>
+<p><a href="https://apps.apple.com/us/app/be-focused-focus-timer/id973134470?mt=12">Be Focused</a>: A productivity-enhancing time management app, Be Focused utilizes the Pomodoro Technique to help you break work into manageable intervals, maintain focus, and stay on track. I find using Pomodoros, setting 25 minute timers of focused work to be incredibly helpful.</p>
+<p><a href="https://github.com/dwarvesf/hidden">Hidden Bar</a>: A minimalist app that allows you to declutter your Mac’s menu bar by hiding icons you don’t need to see all the time, Hidden Bar lets you access these icons with a simple click whenever needed.</p>
+<p><a href="https://1password.com/downloads/mac/">1Password</a>: A reliable password manager. Been using it since version 5.</p>
+</section>
+<section id="developer-tools" class="level1">
+<h1>Developer Tools</h1>
+<p><a href="https://brew.sh/">Homebrew</a>: A must-have package manager for macOS, Homebrew makes it easy to install, update, and manage software packages, including command-line tools and graphical applications.</p>
+<p><a href="https://code.visualstudio.com/">Visual Studio Code</a>: A versatile and free source code editor developed by Microsoft, Visual Studio Code supports a wide range of programming languages and comes with built-in support for Git, intelligent code completion, and a plethora of extensions to customize your coding environment.</p>
+<p><a href="https://iterm2.com/">iTerm2</a>: A highly customizable and feature-rich terminal emulator for macOS, iTerm2 improves upon the default Terminal app with features like split panes, search functionality, and extensive customization options.</p>
+<p><a href="https://docs.anaconda.com/anaconda/install/index.html">Anaconda/Miniconda</a>: Anaconda is a powerful Python and R distribution that simplifies package management and deployment, while Miniconda is its lightweight counterpart. Both options provide you with the essential tools to set up and manage your data science and machine learning environments.</p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH">zsh</a>: zsh has become my bash replacement.</p>
+<p><a href="https://github.com/ohmyzsh/ohmyzsh">Oh My Zsh</a>: Makes zsh more useful with a bunch of plugins.</p>
+<p><a href="https://www.sublimetext.com/">Sublime Text</a>: A sophisticated and lightning-fast text editor designed for code, markup, and prose, Sublime Text offers a sleek interface, multiple selections, and a highly extensible plugin API.</p>
+<p>Here’s a bash script to install all of these packages:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#!/bin/bash</span></span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Install Homebrew if not already installed</span></span>
+<span id="cb1-4"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">if</span> <span class="ot" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">! </span><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">command</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-v</span> brew <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span>/dev/null <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;&amp;</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">;</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">then</span></span>
+<span id="cb1-5">  <span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">/bin/bash</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-c</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-fsSL</span> https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-6"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">fi</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update Homebrew and install required packages</span></span>
+<span id="cb1-9"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> update</span>
+<span id="cb1-10"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> tap homebrew/cask</span>
+<span id="cb1-11"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> tap homebrew/cask-versions</span>
+<span id="cb1-12"></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Productivity</span></span>
+<span id="cb1-14"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> google-chrome</span>
+<span id="cb1-15"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> workflowy</span>
+<span id="cb1-16"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> todoist</span>
+<span id="cb1-17"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> rectangle</span>
+<span id="cb1-18"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> stats</span>
+<span id="cb1-19"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> amphetamine</span>
+<span id="cb1-20"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> be-focused</span>
+<span id="cb1-21"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> hiddenbar</span>
+<span id="cb1-22"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> 1password</span>
+<span id="cb1-23"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># uncomment for 1password 6.8.9</span></span>
+<span id="cb1-24"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># brew install --cask https://raw.githubusercontent.com/Homebrew/homebrew-cask-versions/master/Casks/1password6.rb</span></span>
+<span id="cb1-25"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> dropbox</span>
+<span id="cb1-26"></span>
+<span id="cb1-27"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Developer Tools</span></span>
+<span id="cb1-28"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> visual-studio-code</span>
+<span id="cb1-29"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> iterm2</span>
+<span id="cb1-30"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install anaconda</span>
+<span id="cb1-31"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install zsh</span>
+<span id="cb1-32"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">sh</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-c</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">$(</span><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">curl</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-fsSL</span> https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">)</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb1-33"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">brew</span> install <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--cask</span> sublime-text</span>
+<span id="cb1-34"></span>
+<span id="cb1-35"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">echo</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Installation complete!"</span></span></code></pre></div>
+<p>Save the script in a file named <code>install_apps.sh</code> and make it executable using the following command:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">chmod</span> +x install_apps.sh</span></code></pre></div>
+<p>Finally, run the script using:</p>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">./install_apps.sh</span></span></code></pre></div>
+
+
+</section>
+
+ ]]></description>
+  <category>Productivity</category>
+  <category>Developer Tools</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-03-24-mac-apps/index.html</guid>
+  <pubDate>Fri, 24 Mar 2023 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
