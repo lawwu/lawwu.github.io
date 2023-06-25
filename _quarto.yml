@@ -3,7 +3,7 @@ project:
 
 website:
   title: "Lawrence Wu"
-  # site-url:
+  site-url: https://lawwu.github.io/blog.html
   description: "This is Lawrence Wu's personal website"
   open-graph: true
   google-analytics: "G-LN4GM4FVCJ"
@@ -21,6 +21,8 @@ website:
         href: https://twitter.com/law_wu   
       - icon: envelope
         href: mailto:lawrencewu1+blog@gmail.com
+      - icon: rss
+        href: index.xml  
 format:
   html:
     theme: cosmo
