@@ -9,7 +9,7 @@
 <link>https://lawwu.github.io/blog.html/blog.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.3.427</generator>
+<generator>quarto-1.3.433</generator>
 <lastBuildDate>Sat, 24 Jun 2023 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Layoffs Attributed to AI</title>
@@ -159,7 +159,7 @@
 <figcaption class="figure-caption">RLHF vs SFT</figcaption>
 </figure>
 </div>
-<p>The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedabck) LLMs. It’s interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.</p>
+<p>The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedback) LLMs. It’s interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/why_rlhf.png" class="img-fluid figure-img"></p>
