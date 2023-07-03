@@ -33,7 +33,7 @@ We train on the yellow tokens and weigh the language model object by the reward.
 
 ![RLHF vs SFT](./ppo_vs_sft.png)
 
-The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedabck) LLMs. It's interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.
+The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedback) LLMs. It's interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.
 
 ![Why RLHF?](./why_rlhf.png)
 
