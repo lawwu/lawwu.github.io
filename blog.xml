@@ -677,7 +677,7 @@ font-style: inherit;">./install_apps.sh</span></span></code></pre></div>
 
 
 <p>In this post I’ll go over some observations I’ve had while seeing the output of two types of AI agents. Both are able to do data science and data analytics tasks. One is based on <code>langchain</code> and <code>gpt-3-5.turbo</code> (but could be swapped with <code>gpt-4</code> to improve the results) and is available via an API. The other is OpenAI’s Code Interpreter, which is not available as an API, only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month).</p>
-<p>Overall I am quite impressed with Code Interpreter’s capabilities. I would characterize Code Interpreter as a very capable intern whose output you need to validate. That being said it is a very capable agent in doing data analysis tasks. I would estimate this analyses took me 20 minutes to do. If I actually wanted to do it, I’d estimate it woudl’ve taken me 2 hours, so 6x longer. But it’s not just a matter of time savings, it is a matter of cognitiive-load savings. It was not very cognitively-intense to use Code Interpreter whereas I, a human, doing these analyses would’ve taken me a lot of mental energy. Because of that, I’d held off on running this type of analyses for a long time (sitting on this idea for a year?) but with Code Interpreter, I was able to do it in 20 minutes. And this opens up many other analyses that I would love to do but have not had the time or energy to do.</p>
+<p>Overall I am quite impressed with Code Interpreter’s capabilities. I would characterize Code Interpreter as a very capable intern whose output you need to validate. That being said it is a very capable agent in doing data analysis tasks. I would estimate this analyses took me 20 minutes to do. If I actually wanted to do it, I’d estimate it would’ve taken me 2 hours, so 6x longer. But it’s not just a matter of time savings, it is a matter of cognitive-load savings. It was not very cognitively-intense to use Code Interpreter whereas I, a human, doing these analyses would’ve taken me a lot of mental energy. Because of that, I’d held off on running this type of analyses for a long time (sitting on this idea for a year?) but with Code Interpreter, I was able to do it in 20 minutes. And this opens up many other analyses that I would love to do but have not had the time or energy to do.</p>
 <section id="agents-with-langchain" class="level1">
 <h1>Agents with <code>langchain</code></h1>
 <p>I’m currently working my way through the <a href="https://courses.edx.org/courses/course-v1:Databricks+LLM101x+2T2023/c">Databricks LLM101x Course on EdX</a>. It’s actually pretty good. During the third section, there was this interesting example where they created a data science agent called <code>DaScie</code>. Given a prompt, the agent was able to carry out some interesting tasks.</p>
@@ -1746,7 +1746,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 </section>
 <section id="conclusion" class="level1">
 <h1>Conclusion</h1>
-<p>Overall I am quite impressed with Code Interpreter’s capabilities. It is a very capable agent in doing data analysis tasks. I would estimate this analyses took me 20 minutes to do. If I actually wanted to do it, I’d estimate it woudl’ve taken me 2 hours, so 6x longer. But it’s not just a matter of time savings, it is a matter of cognitiive-load savings. It was not very cognitively-intense to use Code Interpreter whereas I, a human, doing these analyses would’ve taken me a lot of mental energy. Because of that, I’d held off on running this type of analyses for a long time (sitting on this idea for a year?) but with Code Interpreter, I was able to do it in 20 minutes. And this opens up many other analyses that I would love to do but have not had the time or energy to do.</p>
+<p>Overall I am quite impressed with Code Interpreter’s capabilities. It is a very capable agent in doing data analysis tasks. I would estimate this analyses took me 20 minutes to do. If I actually wanted to do it, I’d estimate it would’ve taken me 2 hours, so 6x longer. But it’s not just a matter of time savings, it is a matter of cognitive-load savings. It was not very cognitively-intense to use Code Interpreter whereas I, a human, doing these analyses would’ve taken me a lot of mental energy. Because of that, I’d held off on running this type of analyses for a long time (sitting on this idea for a year?) but with Code Interpreter, I was able to do it in 20 minutes. And this opens up many other analyses that I would love to do but have not had the time or energy to do.</p>
 </section>
 <section id="code-from-code-interpreter" class="level1">
 <h1>Code from Code Interpreter</h1>
@@ -3433,7 +3433,7 @@ font-style: inherit;">'Variance of WAR'</span>)</span>
   <category>Data Science</category>
   <category>Code Interpreter</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/index.html</guid>
-  <pubDate>Thu, 13 Jul 2023 15:43:07 GMT</pubDate>
+  <pubDate>Thu, 13 Jul 2023 18:46:21 GMT</pubDate>
 </item>
 </channel>
 </rss>
