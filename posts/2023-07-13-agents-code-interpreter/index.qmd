@@ -14,7 +14,7 @@ I'm currently working my way through the [Databricks LLM101x Course on EdX](http
 ## Setting Up the Agent
 
 First to define the agent using `langchain`, `OpenAI` and then giving it some tools.
-```{python}
+```python
 # For DaScie we need to load in some tools for it to use, as well as an LLM for the brain/reasoning
 from langchain.agents import load_tools  # This will allow us to load tools we need
 from langchain.agents import initialize_agent
@@ -35,16 +35,14 @@ dascie = initialize_agent(
 ## Simple Example
 
 To run the agent, you just pass an instruction:
-```{python}
-
-
+```python
 dascie.run(
     "Create a dataset (DO NOT try to download one, you MUST create one based on what you find) on the performance of the Mercedes AMG F1 team in 2020 and do some analysis. You need to plot your results."
 )
 ```
 
 The output is:
-```{python}
+```python
 #| eval: true
 #| code-overflow: wrap
 
@@ -73,7 +71,7 @@ The output is:
 ```
 
 After generating the plot, the agent concludes that it has finished the task.
-```{python}
+```python
 
 
 # Observation: 
@@ -87,7 +85,7 @@ After generating the plot, the agent concludes that it has finished the task.
 ## Passing Data to the Agent
 
 You can actually pass data to `langchain` agents using `create_pandas_dataframe_agent`
-```{python}
+```python
 
 
 from langchain.agents import create_pandas_dataframe_agent
@@ -101,7 +99,7 @@ dascie = create_pandas_dataframe_agent(
 ```
 
 Now we can run the agent again:
-```{python}
+```python
 
 dascie.run("Analyze this data, tell me any interesting trends. Make some pretty plots.")
 
@@ -141,7 +139,7 @@ The plot the agent generates is:
 
 ## Can the agent train a model?
 
-```{python}
+```python
 
 # Not bad! Now for something even more complex.... can we get out LLM model do some ML!?
 dascie.run(
@@ -151,7 +149,7 @@ dascie.run(
 
 The agent struggles with indentation but is able to self-debug and fix the issue. When I ran this, I was surprised `gpt-3.5-turbo` + `langchain` was able to do this.
 
-```{python}
+```python
 
 
 # [1m> Entering new AgentExecutor chain...[0m
@@ -338,7 +336,7 @@ After fixing the issue and finding that the column is `P/36` and not `PTS`, it w
 
 The third use case is more complicated but Code Interpreter is able to produce this plot without any issues. You can see the code is more complex and not that trivial to write.
 
-```{python}
+```python
 
 
 # 3. Trends in performance over time for specific players
@@ -412,7 +410,7 @@ With this data, I was interested in seeing if Code Interpreter could join the tw
 
 I was surprised the LLM was able to join the two datasets because it was not a trivial join where the column names from both tables were the same. You can see it had to extract `season` from the `year_id` and then it uses a compound key to join the two tables.
 
-```{python}
+```python
 # | eval: false
 # | code-overflow: wrap
 
@@ -478,7 +476,7 @@ Overall I am quite impressed with Code Interpreter's capabilities. It is a very 
 # Code from Code Interpreter
 
 ## NBA Data Analysis (Part 1)
-```{python}
+```python
 # | eval: false
 # | code-overflow: wrap
 import pandas as pd
@@ -652,7 +650,7 @@ plt.show()
 ```
 
 ## NBA Data Analysis (Part 2)
-```{python}
+```python
 # | eval: false
 # | code-overflow: wrap
 
@@ -764,7 +762,7 @@ plt.show()
 
 ## NBA Data Analysis (Part 3)
 
-```{python}
+```python
 # | eval: false
 # | code-overflow: wrap
 
@@ -873,7 +871,7 @@ plt.show()
 
 ## NBA Data Analysis (Part 4)
 
-```{python}
+```python
 # | eval: false
 # | code-overflow: wrap
 
