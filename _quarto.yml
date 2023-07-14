@@ -8,6 +8,9 @@ website:
   open-graph: true
   google-analytics: "G-LN4GM4FVCJ"
   cookie-consent: true
+  twitter-card: 
+    card-style: summary_large_image
+    creator: "@law_wu"  
   navbar:
     right:
       - text: Blog
