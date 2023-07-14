@@ -14,7 +14,7 @@
 <item>
   <title>Data Analysis/Science Agents and Code Interpreter</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/index.html</link>
+  <link>https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/index.html</link>
   <description><![CDATA[ 
 
 
@@ -22,7 +22,7 @@
 <p>In this post I’ll go over some observations I’ve had while seeing the output of two types of AI agents. Both are able to do data science and data analytics tasks. One is based on <code>langchain</code> and <code>gpt-3-5.turbo</code> (but could be swapped with <code>gpt-4</code> to improve the results) and is available via an API. The other is OpenAI’s Code Interpreter, which is not available as an API, only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/code_interpreter.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/code_interpreter.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Code Interpreter</figcaption><p></p>
 </figure>
 </div>
@@ -357,7 +357,7 @@ font-style: inherit;"># &gt; Finished chain.</span></span></code></pre></div>
 <p>The plot the agent generates is:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/agent_salaries_plot.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/agent_salaries_plot.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Agent Salaries</figcaption><p></p>
 </figure>
 </div>
@@ -671,7 +671,7 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
 <p>I’m a fan of the NBA. So one dataset I started with a <a href="https://github.com/fivethirtyeight/nba-player-advanced-metrics/blob/master/nba-data-historical.csv">dataset</a> that had player statistics by year for every NBA player where every row is a player-year. I downloaded this 5.5mb file and uploaded it to Code Interpreter.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-1.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">My first prompt into Code Interpreter</figcaption><p></p>
 </figure>
 </div>
@@ -753,7 +753,7 @@ font-style: inherit;"># [5 rows x 42 columns]</span></span></code></pre></div>
 <p>The first use case was simple and the agent was able to do this correctly.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-2.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-2.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Players ages</figcaption><p></p>
 </figure>
 </div>
@@ -763,14 +763,14 @@ font-style: inherit;"># [5 rows x 42 columns]</span></span></code></pre></div>
 <p>The second use case was more interesting in the sense it ran into an error producing this analyses but was able to debug itself. It realized the column names were wrong and it was able to find the correct column!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-self-debug.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-self-debug.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Self debugging itself</figcaption><p></p>
 </figure>
 </div>
 <p>After fixing the issue and finding that the column is <code>P/36</code> and not <code>PTS</code>, it was able to produce the correct plot.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-2.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-use-case-2.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">After fixing the bug</figcaption><p></p>
 </figure>
 </div>
@@ -935,7 +935,7 @@ font-style: inherit;">0.95</span>])</span>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-3.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-use-case-3.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">3 players performance over time</figcaption><p></p>
 </figure>
 </div>
@@ -945,7 +945,7 @@ font-style: inherit;">0.95</span>])</span>
 <p>This plot is not very good as it’s a side-by-side bar chat which makes it difficult to compare teams.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-4.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-use-case-4.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Comparison of teams based on aveage player stats</figcaption><p></p>
 </figure>
 </div>
@@ -955,7 +955,7 @@ font-style: inherit;">0.95</span>])</span>
 <p>This is also not a very good plot but it’s a valiant attempt.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-5.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-use-case-5.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Relationship between differnet performance metrics</figcaption><p></p>
 </figure>
 </div>
@@ -965,7 +965,7 @@ font-style: inherit;">0.95</span>])</span>
 <p>I’m surprised that Code Interpreter is able to explain itself. I think it’s able to do this by “looking” and examining the plots because that’s the only thing the interpreter is generating. The intermediate datasets are generated but not printed out. This is not something I’m completely sure how it’s doing it but it’s pretty amazing.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-explained.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-use-case-explained.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Explaining the insights</figcaption><p></p>
 </figure>
 </div>
@@ -975,7 +975,7 @@ font-style: inherit;">0.95</span>])</span>
 <p>After a couple rounds of modification, I was able to get Code Interpreter to produce a sorted bar chart of team statistics that made it easier to interpret. I found it surprising that some teams like the New York Knicks have some low assists per 36 minutes. It seems like assists are more variable than points and rebounds (which I didn’t know before!).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-4-sorted.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-use-case-4-sorted.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Team performacne sorted</figcaption><p></p>
 </figure>
 </div>
@@ -986,7 +986,7 @@ font-style: inherit;">0.95</span>])</span>
 <p>I found another dataset that had every player’s draft year, round and number. I uploaded it to Code Interpreter. The LLM was smart enough to name the dataframe as <code>df_new</code> so it didn’t overwride <code>df</code> from the previous analysis.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-dataset-2.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/nba-dataset-2.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">New dataset uploaded</figcaption><p></p>
 </figure>
 </div>
@@ -995,7 +995,7 @@ font-style: inherit;">0.95</span>])</span>
 <h2 class="anchored" data-anchor-id="joining-datasets">Joining datasets</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/joining_datasets.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/joining_datasets.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Joining the two datasets</figcaption><p></p>
 </figure>
 </div>
@@ -1084,7 +1084,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <p>The LLM produces a fascinating plot with the average cumulative WAR by draft position. You can see the #1 draft pick has a very high average cumulative WAR. There is a strange outlier with #57 draft pick. I probably could’ve asked Code Interpreter what was going on but I didn’t.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/average_war_by_draft_position.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/average_war_by_draft_position.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Average Cumulative WAR by draft position</figcaption><p></p>
 </figure>
 </div>
@@ -1094,7 +1094,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <p>The LLM is able to produce the following plot which is really interesting! It shows the cumulative WAR for each team for their draft picks. In hindsight I dug a little deeper here because some teams may have higher or more draft picks than others so I should’ve applied some normalization but I didn’t.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/average_war_by_team.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/average_war_by_team.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Average Cumulative WAR by team</figcaption><p></p>
 </figure>
 </div>
@@ -1107,7 +1107,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <p>In terms of the most similar players to Lebron James, this passes my basketball smell test in that it returns Kobe Bryant, Scottie Pippen, Vince Carter, Draymond Green and Jimmy Butler. This is a key point in that it’s important that the users have some expertise to be able to interpret and validate the results. I, having data literacy, Python and basketball am able to do this.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/embeddings_plot.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/embeddings_plot.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Embeddings Visualized</figcaption><p></p>
 </figure>
 </div>
@@ -1118,21 +1118,21 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <p>These are players that had dramatic fluctations in WAR year over year. I imagine this is probably due to injuries.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/high_variance_war_players.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/high_variance_war_players.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Variance of WAR</figcaption><p></p>
 </figure>
 </div>
 <p>I was interested a plot in players that visualized total WAR vs variance in WAR. This would answer questions like which players had really good careers (total WAR) and were consistent (low variance in WAR). It was able to do this. This plot was not very good because there is too much noise.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/total_vs_variance_war_plot.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/total_vs_variance_war_plot.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR</figcaption><p></p>
 </figure>
 </div>
 <p>I asked the LLM to trim the axes and label the points with names. This is common in data analyses tasks where there is this interactive back and forth of seeing the output and iterating to produce a analysis or visualization that makes sense.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/total_vs_variance_war_plot_v2.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/total_vs_variance_war_plot_v2.png" class="img-fluid figure-img"></p>
 <p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR - v2</figcaption><p></p>
 </figure>
 </div>
@@ -2829,6 +2829,2235 @@ background-color: null;
 font-style: inherit;">'Variance of WAR'</span>)</span>
 <span id="cb15-57"></span>
 <span id="cb15-58">plt.show()</span></code></pre></div>
+</details>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Agents</category>
+  <category>Data Analysis</category>
+  <category>Data Science</category>
+  <category>Code Interpreter</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/index.html</guid>
+  <pubDate>Thu, 13 Jul 2023 04:00:00 GMT</pubDate>
+  <media:content url="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/code_interpreter.png" medium="image" type="image/png"/>
+</item>
+<item>
+  <title>Data Analysis/Science Agents and Code Interpreter</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>In this post I’ll go over some observations I’ve had while using OpenAI’s Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/code_interpreter.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Code Interpreter</figcaption><p></p>
+</figure>
+</div>
+<p>If you aren’t familiar with Code Interpreter, it is:</p>
+<ul>
+<li>ChatGPT hooked up to a Python interpreter</li>
+<li>You can upload (limited to 100MB, though you can zip files) and download files</li>
+</ul>
+<p>Really the only change is a “+” button in the ChatGPT interface but this small change unlocks quite a bit of use cases. One of which is data analysis since you can upload data and have the LLM analyze and reason over it.</p>
+<p>Overall I am quite impressed with Code Interpreter’s capabilities. I would characterize Code Interpreter as a very capable intern whose output you need to validate. That being said it is a very capable agent in doing data analysis tasks. I would estimate this analyses took me 20 minutes to do. If I actually wanted to do it, I’d estimate it would’ve taken me 2 hours, so 6x longer. But it’s not just a matter of time savings, it is a matter of cognitive-load savings. It was not very cognitively-intense to use Code Interpreter whereas I, a human, doing these analyses would’ve taken me a lot of mental energy. Because of that, I’d held off on running this type of analyses for a long time (sitting on this idea for a year?) but with Code Interpreter, I was able to do it in 20 minutes. And this opens up many other analyses that I would love to do but have not had the time or energy to do.</p>
+<section id="code-interpreter" class="level1">
+<h1>Code Interpreter</h1>
+<p>OpenAI released Code Interpreter to the public on July 7, 2023. Code Interpreter is GPT-4 hooked up with a Python interpreter with a bunch of different libraries. You can upload any file, CSV files, zipped git repositories, you name it. Given the file you upload and GPT-4, this unlocks quite a bit of use cases. If you haven’t seen any before, Ethan Mollick has a bunch of examples <a href="https://www.oneusefulthing.org/p/what-ai-can-do-with-a-toolbox-getting">here on his Substack</a>.</p>
+<p>Someone posted the <code>requirements.txt</code> file for Code Interpreter <a href="https://gist.github.com/altryne/ee461c27391d4c3990f6bfe1d6a33aa2">here</a>. It has common libraries like:</p>
+<ul>
+<li>numpy</li>
+<li>pandas</li>
+<li>scikit-learn</li>
+<li>matplotlib</li>
+<li>seaborn</li>
+<li>tensorflow</li>
+<li>pytorch</li>
+<li>nltk</li>
+<li>spacy</li>
+<li>gensim</li>
+</ul>
+<p>There’s been a lot of chatter on whether Code Interpreter and models like it will take over data science and data analyst jobs. I don’t think that will necessarily happen so soon. I think expert data analysts and data scientists with a tool like Code Interpreter can be much more productive. I haven’t used Code Interpreter for very long but right now I see it as a very obedient and capable intern that has a surprising amount of knowledge. You wouldn’t productionize code that an intern wrote without a thorough review, nor would you share the results of a data science interns analysis or model without also a thorough review. The same applies to Code Interpreter.</p>
+<p>But let me share the results of my first experiment with Code Interpeter and it’s ability to do data analysis.</p>
+</section>
+<section id="nba-data-analysis-part-1---anything-interesting" class="level1">
+<h1>NBA Data Analysis (Part 1) - Anything interesting?</h1>
+<p>I’m a fan of the NBA. So one dataset I started with a <a href="https://github.com/fivethirtyeight/nba-player-advanced-metrics/blob/master/nba-data-historical.csv">dataset</a> that had player statistics by year for every NBA player where every row is a player-year. I downloaded this 5.5mb file and uploaded it to Code Interpreter.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-1.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">My first prompt into Code Interpreter</figcaption><p></p>
+</figure>
+</div>
+<p>The code Code Interpreter runs in its own Python sandbox is by default hidden, you can click show work and there’s runnable code! This could be a great training tool for junior data analysts and data scientists. One somewhat surprising thing is this is just a CSV file with no metadata but Code Interpreter was able to infer not just the column data types (which Pandas does already) but the meaning if each column (e.g.&nbsp;“3P%” means 3-point percentage). It’s probably based on the colunmn name and the fact I prompted it that it was an NBA related dataset.</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-2"></span>
+<span id="cb1-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load the dataset</span></span>
+<span id="cb1-4">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'/mnt/data/nba-data-historical.csv'</span>)</span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the first few rows of the dataframe</span></span>
+<span id="cb1-7">df.head()</span>
+<span id="cb1-8"></span>
+<span id="cb1-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#    player_id      name_common  year_id type  age team_id pos  tmRtg franch_id  \</span></span>
+<span id="cb1-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0  youngtr01       Trae Young     2020   RS   21     ATL  PG    NaN       ATL   </span></span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1  huntede01  De'Andre Hunter     2020   RS   22     ATL  SF    NaN       ATL   </span></span>
+<span id="cb1-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2  huertke01    Kevin Huerter     2020   RS   21     ATL  SG    NaN       ATL   </span></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3  reddica01      Cam Reddish     2020   RS   20     ATL  SF    NaN       ATL   </span></span>
+<span id="cb1-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4  collijo01     John Collins     2020   RS   22     ATL  PF    NaN       ATL   </span></span>
+<span id="cb1-15"></span>
+<span id="cb1-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#     G  ...  BLK%  ORtg  %Pos  DRtg  2P%  3P%  FT%  3PAr  FTAr  Pace +/-  </span></span>
+<span id="cb1-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0  60  ...   0.3   NaN   NaN   NaN  NaN  NaN  NaN  45.5  44.8       2.9  </span></span>
+<span id="cb1-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1  63  ...   0.7   NaN   NaN   NaN  NaN  NaN  NaN  44.5  21.1       0.0  </span></span>
+<span id="cb1-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2  56  ...   1.3   NaN   NaN   NaN  NaN  NaN  NaN  54.8  10.5       0.1  </span></span>
+<span id="cb1-20"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3  58  ...   1.5   NaN   NaN   NaN  NaN  NaN  NaN  45.1  22.7       0.9  </span></span>
+<span id="cb1-21"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4  41  ...   4.1   NaN   NaN   NaN  NaN  NaN  NaN  24.3  24.8       0.1  </span></span>
+<span id="cb1-22"></span>
+<span id="cb1-23"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># [5 rows x 42 columns]</span></span></code></pre></div>
+</div>
+<p>But based on “seeing” the first 5 and last 5 rows of the dataset, the agent actually generates 5 interesting questions:</p>
+<ol type="1">
+<li>The distribution of players’ ages.</li>
+<li>The average performance statistics (like points, assists, rebounds) by player position.</li>
+<li>Trends in performance over time for specific players.</li>
+<li>Comparison of teams based on average player statistics.</li>
+<li>The relationship between different performance metrics (like points and assists).</li>
+</ol>
+<p>so naturally I ask it to run all 5 of them.</p>
+<section id="distribution-of-players-ages" class="level2">
+<h2 class="anchored" data-anchor-id="distribution-of-players-ages">1. Distribution of players’ ages</h2>
+<p>The first use case was simple and the agent was able to do this correctly.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Players ages</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="the-average-performance-statistics-like-points-assists-rebounds-by-player-position." class="level2">
+<h2 class="anchored" data-anchor-id="the-average-performance-statistics-like-points-assists-rebounds-by-player-position.">2. The average performance statistics (like points, assists, rebounds) by player position.</h2>
+<p>The second use case was more interesting in the sense it ran into an error producing this analyses but was able to debug itself. It realized the column names were wrong and it was able to find the correct column!</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-self-debug.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Self debugging itself</figcaption><p></p>
+</figure>
+</div>
+<p>After fixing the issue and finding that the column is <code>P/36</code> and not <code>PTS</code>, it was able to produce the correct plot.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">After fixing the bug</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="trends-in-performance-over-time-for-specific-players." class="level2">
+<h2 class="anchored" data-anchor-id="trends-in-performance-over-time-for-specific-players.">3. Trends in performance over time for specific players.</h2>
+<p>The third use case is more complicated but Code Interpreter is able to produce this plot without any issues. You can see the code is more complex and not that trivial to write.</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3. Trends in performance over time for specific players</span></span>
+<span id="cb2-2"></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># For this plot, let's pick a few popular players to analyze</span></span>
+<span id="cb2-4">players_to_analyze <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'LeBron James'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Kevin Durant'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Stephen Curry'</span>]</span>
+<span id="cb2-5"></span>
+<span id="cb2-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter the dataframe for the selected players</span></span>
+<span id="cb2-7">player_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>].isin(players_to_analyze)]</span>
+<span id="cb2-8"></span>
+<span id="cb2-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a list of statistics to analyze</span></span>
+<span id="cb2-10">stats_to_analyze <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>]</span>
+<span id="cb2-11"></span>
+<span id="cb2-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Initialize the plot</span></span>
+<span id="cb2-13">fig, axes <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(players_to_analyze), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(stats_to_analyze), figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>))</span>
+<span id="cb2-14"></span>
+<span id="cb2-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a subplot for each player and each statistic</span></span>
+<span id="cb2-16"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i, player <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(players_to_analyze):</span>
+<span id="cb2-17">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> j, stat <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(stats_to_analyze):</span>
+<span id="cb2-18">        player_stat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> player_df[player_df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> player][[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>, stat]].dropna()</span>
+<span id="cb2-19">        axes[i, j].plot(player_stat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>], player_stat[stat])</span>
+<span id="cb2-20">        axes[i, j].set_title(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>player<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> - </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>stat<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb2-21"></span>
+<span id="cb2-22"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add labels and title</span></span>
+<span id="cb2-23">fig.text(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.04</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>, ha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>, va<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>)</span>
+<span id="cb2-24">fig.text(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.08</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Statistic Value'</span>, ha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>, va<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>, rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'vertical'</span>)</span>
+<span id="cb2-25">plt.suptitle(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Trends in Performance Over Time for Specific Players (per 36 minutes)'</span>)</span>
+<span id="cb2-26">plt.tight_layout(rect<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.03</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.03</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span>])</span>
+<span id="cb2-27">plt.show()</span></code></pre></div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-3.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">3 players performance over time</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="comparison-of-teams-based-on-average-player-statistics." class="level2">
+<h2 class="anchored" data-anchor-id="comparison-of-teams-based-on-average-player-statistics.">4. Comparison of teams based on average player statistics.</h2>
+<p>This plot is not very good as it’s a side-by-side bar chat which makes it difficult to compare teams.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-4.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Comparison of teams based on aveage player stats</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="the-relationship-between-different-performance-metrics-like-points-and-assists." class="level2">
+<h2 class="anchored" data-anchor-id="the-relationship-between-different-performance-metrics-like-points-and-assists.">5. The relationship between different performance metrics (like points and assists).</h2>
+<p>This is also not a very good plot but it’s a valiant attempt.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-5.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Relationship between differnet performance metrics</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="explaining-itself" class="level2">
+<h2 class="anchored" data-anchor-id="explaining-itself">Explaining itself</h2>
+<p>I’m surprised that Code Interpreter is able to explain itself. I think it’s able to do this by “looking” and examining the plots because that’s the only thing the interpreter is generating. The intermediate datasets are generated but not printed out. This is not something I’m completely sure how it’s doing it but it’s pretty amazing.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-explained.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Explaining the insights</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="improving-number-4---team-statistics" class="level2">
+<h2 class="anchored" data-anchor-id="improving-number-4---team-statistics">Improving number 4 - team statistics</h2>
+<p>After a couple rounds of modification, I was able to get Code Interpreter to produce a sorted bar chart of team statistics that made it easier to interpret. I found it surprising that some teams like the New York Knicks have some low assists per 36 minutes. It seems like assists are more variable than points and rebounds (which I didn’t know before!).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-4-sorted.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Team performacne sorted</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="nba-data-analysis-part-2---joining-data" class="level1">
+<h1>NBA Data Analysis (Part 2) - Joining Data</h1>
+<p>I found another dataset that had every player’s draft year, round and number. I uploaded it to Code Interpreter. The LLM was smart enough to name the dataframe as <code>df_new</code> so it didn’t overwride <code>df</code> from the previous analysis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-dataset-2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">New dataset uploaded</figcaption><p></p>
+</figure>
+</div>
+<p>With this data, I was interested in seeing if Code Interpreter could join the two datasets and do an analysis that I’ve always been interested in, are some teams better at drafting (and developing) players? One way to estimate this is to look at the average cumulative WAR (wins above replacement) for players drafted by each team.</p>
+<section id="joining-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="joining-datasets">Joining datasets</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/joining_datasets.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Joining the two datasets</figcaption><p></p>
+</figure>
+</div>
+<p>I was surprised the LLM was able to join the two datasets because it was not a trivial join where the column names from both tables were the same. You can see it had to extract <code>season</code> from the <code>year_id</code> and then it uses a compound key to join the two tables.</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Merge the two datasets on player name and season/year</span></span>
+<span id="cb3-2"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># First, we need to create a 'season' column in the first dataset to match with the second dataset</span></span>
+<span id="cb3-3"></span>
+<span id="cb3-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Extract the season year from 'year_id'</span></span>
+<span id="cb3-5">df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>).astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'-'</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>].astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>).<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>:]</span>
+<span id="cb3-6"></span>
+<span id="cb3-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Merge the two datasets</span></span>
+<span id="cb3-8">df_merged <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.merge(df_new, df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR'</span>]], </span>
+<span id="cb3-9">                     left_on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>], </span>
+<span id="cb3-10">                     right_on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>],</span>
+<span id="cb3-11">                     how<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'left'</span>)</span>
+<span id="cb3-12"></span>
+<span id="cb3-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the first few rows of the merged dataframe</span></span>
+<span id="cb3-14">df_merged.head()</span></code></pre></div>
+</div>
+</section>
+<section id="average-cumulative-war-by-draft-position" class="level2">
+<h2 class="anchored" data-anchor-id="average-cumulative-war-by-draft-position">Average Cumulative WAR by draft position</h2>
+<p>The LLM produces a fascinating plot with the average cumulative WAR by draft position. You can see the #1 draft pick has a very high average cumulative WAR. There is a strange outlier with #57 draft pick. I probably could’ve asked Code Interpreter what was going on but I didn’t.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/average_war_by_draft_position.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Average Cumulative WAR by draft position</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="cumulative-war" class="level2">
+<h2 class="anchored" data-anchor-id="cumulative-war">Cumulative WAR</h2>
+<p>The LLM is able to produce the following plot which is really interesting! It shows the cumulative WAR for each team for their draft picks. In hindsight I dug a little deeper here because some teams may have higher or more draft picks than others so I should’ve applied some normalization but I didn’t.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/average_war_by_team.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Average Cumulative WAR by team</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="nba-analysis-part-3---embeddings" class="level1">
+<h1>NBA Analysis (Part 3) - Embeddings</h1>
+<p>I had another idea to look at embeddings of players to see if it could generate similar players. So I asked Code Interpreter to generate embeddings for each player based on basketball statisics and physical attributes (weight, height).</p>
+<p>Keep in mind these are very simple poor-man’s embeddings (PCA with 2 dimensions). If someone really wanted to generate real embeddings you could use OpenAI or sentence-transformers to generate larger more meaningful embeddings but Code Interpreter does not have network access to install new libraries.</p>
+<p>In terms of the most similar players to Lebron James, this passes my basketball smell test in that it returns Kobe Bryant, Scottie Pippen, Vince Carter, Draymond Green and Jimmy Butler. This is a key point in that it’s important that the users have some expertise to be able to interpret and validate the results. I, having data literacy, Python and basketball am able to do this.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/embeddings_plot.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Embeddings Visualized</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="nba-data-analysis-part-4---variance-of-war" class="level1">
+<h1>NBA Data Analysis (Part 4) - Variance of WAR</h1>
+<p>A question that came up as I was interacting with Code Interpreter. I became interested in identifying players who had high variance WAR. I imagine players that have more consistent WAR are more valuable and should command higher salaries.</p>
+<p>These are players that had dramatic fluctations in WAR year over year. I imagine this is probably due to injuries.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/high_variance_war_players.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Variance of WAR</figcaption><p></p>
+</figure>
+</div>
+<p>I was interested a plot in players that visualized total WAR vs variance in WAR. This would answer questions like which players had really good careers (total WAR) and were consistent (low variance in WAR). It was able to do this. This plot was not very good because there is too much noise.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/total_vs_variance_war_plot.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR</figcaption><p></p>
+</figure>
+</div>
+<p>I asked the LLM to trim the axes and label the points with names. This is common in data analyses tasks where there is this interactive back and forth of seeing the output and iterating to produce a analysis or visualization that makes sense.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/total_vs_variance_war_plot_v2.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR - v2</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>Any data scientist that sees this the first time will probably have a small existential crisis, wondering will my job be automated away too?! I think there will still be a need for data scientists to validate the output of LLMs because what product owner would blindly implement a model that was trained by an LLM agent? But I think this is a good example of how LLMs can be used to augment data scientists’ work. This takes Github Copilot’s AI assistance to another level. I see there being a few levels to AI assistance:</p>
+<ul>
+<li>Level 0: No AI assistance</li>
+<li>Level 1: AI assistance that helps you write code, [Github Copilot]</li>
+<li>Level 2: AI agent that helps you write code, can reason and debug itself, e.g.&nbsp;<code>gpt-3.5-turbo</code> + <code>langchain</code> <a href="https://lawwu.github.io/posts/2023-07-12-langchain-agents/">from a previous post</a></li>
+<li>Level 3: An even more intelligent AI agent that can delight you, [OpenAI’s Code Interpreter]</li>
+<li>Level 4: An AI agent that you would trust to run full data analyses, can query it’s own data, train it’s own models [doesn’t exist yet]</li>
+</ul>
+<p>For experienced data analysts and data scientists, I can see Code Interpreter being a valuable tool to save time and reduce cognitive load. I’ll probably use it to explore new datasets as it’s basically <a href="https://github.com/ydataai/ydata-profiling">pandas-profiling</a> on steroids.</p>
+</section>
+<section id="code-from-code-interpreter" class="level1">
+<h1>Code from Code Interpreter</h1>
+<p>Below is all of the code generated by Code Interpreter for this NBA data analysis.</p>
+<section id="nba-data-analysis-part-1" class="level2">
+<h2 class="anchored" data-anchor-id="nba-data-analysis-part-1">NBA Data Analysis (Part 1)</h2>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb4-2"></span>
+<span id="cb4-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load the dataset</span></span>
+<span id="cb4-4">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'/mnt/data/nba-data-historical.csv'</span>)</span>
+<span id="cb4-5"></span>
+<span id="cb4-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the first few rows of the dataframe</span></span>
+<span id="cb4-7">df.head()</span>
+<span id="cb4-8"></span>
+<span id="cb4-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Import necessary libraries</span></span>
+<span id="cb4-10"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> matplotlib.pyplot <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> plt</span>
+<span id="cb4-11"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> seaborn <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> sns</span>
+<span id="cb4-12"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb4-13"></span>
+<span id="cb4-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Set the style of all graphs to seaborn default</span></span>
+<span id="cb4-15">sns.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">set</span>()</span>
+<span id="cb4-16"></span>
+<span id="cb4-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1. The distribution of players' ages</span></span>
+<span id="cb4-18">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>))</span>
+<span id="cb4-19">sns.histplot(df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'age'</span>], bins<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, kde<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span>
+<span id="cb4-20">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Distribution of Players</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\'</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> Ages'</span>)</span>
+<span id="cb4-21">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Age'</span>)</span>
+<span id="cb4-22">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Count'</span>)</span>
+<span id="cb4-23">plt.show()</span>
+<span id="cb4-24"></span>
+<span id="cb4-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2. The average performance statistics (like points, assists, rebounds) by player position</span></span>
+<span id="cb4-26"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># </span><span class="al" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">NOTE</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"> this errors</span></span>
+<span id="cb4-27"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter out the necessary columns</span></span>
+<span id="cb4-28">position_stats <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PTS'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'AST'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'TRB'</span>]]</span>
+<span id="cb4-29"></span>
+<span id="cb4-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Group by player position and calculate the mean</span></span>
+<span id="cb4-31">position_stats_avg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> position_stats.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>).mean()</span>
+<span id="cb4-32"></span>
+<span id="cb4-33"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Reset the index</span></span>
+<span id="cb4-34">position_stats_avg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> position_stats_avg.reset_index()</span>
+<span id="cb4-35"></span>
+<span id="cb4-36"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Melt the dataframe for easier plotting</span></span>
+<span id="cb4-37">position_stats_melted <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.melt(position_stats_avg, id_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>, value_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'PTS'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'AST'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'TRB'</span>])</span>
+<span id="cb4-38"></span>
+<span id="cb4-39"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the plot</span></span>
+<span id="cb4-40">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>))</span>
+<span id="cb4-41">sns.barplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'value'</span>, hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'variable'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>position_stats_melted)</span>
+<span id="cb4-42">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Performance Statistics by Player Position'</span>)</span>
+<span id="cb4-43">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Position'</span>)</span>
+<span id="cb4-44">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Statistic Value'</span>)</span>
+<span id="cb4-45">plt.show()</span>
+<span id="cb4-46"></span>
+<span id="cb4-47"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the column names</span></span>
+<span id="cb4-48">df.columns</span>
+<span id="cb4-49"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># RESULT</span></span>
+<span id="cb4-50"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Index(['player_id', 'name_common', 'year_id', 'type', 'age', 'team_id', 'pos',</span></span>
+<span id="cb4-51"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#        'tmRtg', 'franch_id', 'G', 'Min', 'MP%', 'MPG', 'P/36', 'TS%', 'A/36',</span></span>
+<span id="cb4-52"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#        'R/36', 'SB/36', 'TO/36', 'Raptor O', 'Raptor D', 'Raptor+/-',</span></span>
+<span id="cb4-53"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#        'Raptor WAR', 'PIE%', 'AWS%', 'USG%', 'AST%', 'TOV%', 'ORB%', 'DRB%',</span></span>
+<span id="cb4-54"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#        'TRB%', 'STL%', 'BLK%', 'ORtg', '%Pos', 'DRtg', '2P%', '3P%', 'FT%',</span></span>
+<span id="cb4-55"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#        '3PAr', 'FTAr', 'Pace +/-'],</span></span>
+<span id="cb4-56"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#       dtype='object')</span></span>
+<span id="cb4-57"></span>
+<span id="cb4-58"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2. The average performance statistics (like points, assists, rebounds) by player position</span></span>
+<span id="cb4-59"></span>
+<span id="cb4-60"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter out the necessary columns</span></span>
+<span id="cb4-61">position_stats <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>]]</span>
+<span id="cb4-62"></span>
+<span id="cb4-63"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Group by player position and calculate the mean</span></span>
+<span id="cb4-64">position_stats_avg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> position_stats.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>).mean()</span>
+<span id="cb4-65"></span>
+<span id="cb4-66"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Reset the index</span></span>
+<span id="cb4-67">position_stats_avg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> position_stats_avg.reset_index()</span>
+<span id="cb4-68"></span>
+<span id="cb4-69"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Melt the dataframe for easier plotting</span></span>
+<span id="cb4-70">position_stats_melted <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.melt(position_stats_avg, id_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>, value_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>])</span>
+<span id="cb4-71"></span>
+<span id="cb4-72"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the plot</span></span>
+<span id="cb4-73">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>))</span>
+<span id="cb4-74">sns.barplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pos'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'value'</span>, hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'variable'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>position_stats_melted)</span>
+<span id="cb4-75">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Performance Statistics by Player Position (per 36 minutes)'</span>)</span>
+<span id="cb4-76">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Position'</span>)</span>
+<span id="cb4-77">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Statistic Value'</span>)</span>
+<span id="cb4-78">plt.show()</span>
+<span id="cb4-79"></span>
+<span id="cb4-80"></span>
+<span id="cb4-81"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3. Trends in performance over time for specific players</span></span>
+<span id="cb4-82"></span>
+<span id="cb4-83"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># For this plot, let's pick a few popular players to analyze</span></span>
+<span id="cb4-84">players_to_analyze <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'LeBron James'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Kevin Durant'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Stephen Curry'</span>]</span>
+<span id="cb4-85"></span>
+<span id="cb4-86"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter the dataframe for the selected players</span></span>
+<span id="cb4-87">player_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>].isin(players_to_analyze)]</span>
+<span id="cb4-88"></span>
+<span id="cb4-89"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a list of statistics to analyze</span></span>
+<span id="cb4-90">stats_to_analyze <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>]</span>
+<span id="cb4-91"></span>
+<span id="cb4-92"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Initialize the plot</span></span>
+<span id="cb4-93">fig, axes <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(players_to_analyze), <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">len</span>(stats_to_analyze), figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">12</span>))</span>
+<span id="cb4-94"></span>
+<span id="cb4-95"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a subplot for each player and each statistic</span></span>
+<span id="cb4-96"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i, player <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(players_to_analyze):</span>
+<span id="cb4-97">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> j, stat <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(stats_to_analyze):</span>
+<span id="cb4-98">        player_stat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> player_df[player_df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> player][[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>, stat]].dropna()</span>
+<span id="cb4-99">        axes[i, j].plot(player_stat[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>], player_stat[stat])</span>
+<span id="cb4-100">        axes[i, j].set_title(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>player<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> - </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>stat<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'</span>)</span>
+<span id="cb4-101"></span>
+<span id="cb4-102"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add labels and title</span></span>
+<span id="cb4-103">fig.text(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.04</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Year'</span>, ha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>, va<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>)</span>
+<span id="cb4-104">fig.text(<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.08</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Statistic Value'</span>, ha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>, va<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'center'</span>, rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'vertical'</span>)</span>
+<span id="cb4-105">plt.suptitle(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Trends in Performance Over Time for Specific Players (per 36 minutes)'</span>)</span>
+<span id="cb4-106">plt.tight_layout(rect<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.03</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.03</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.95</span>])</span>
+<span id="cb4-107">plt.show()</span>
+<span id="cb4-108"></span>
+<span id="cb4-109"></span>
+<span id="cb4-110"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4. Comparison of teams based on average player statistics</span></span>
+<span id="cb4-111"></span>
+<span id="cb4-112"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter out the necessary columns</span></span>
+<span id="cb4-113">team_stats <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_id'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>]]</span>
+<span id="cb4-114"></span>
+<span id="cb4-115"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Group by team and calculate the mean</span></span>
+<span id="cb4-116">team_stats_avg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> team_stats.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_id'</span>).mean()</span>
+<span id="cb4-117"></span>
+<span id="cb4-118"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Reset the index</span></span>
+<span id="cb4-119">team_stats_avg <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> team_stats_avg.reset_index()</span>
+<span id="cb4-120"></span>
+<span id="cb4-121"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Melt the dataframe for easier plotting</span></span>
+<span id="cb4-122">team_stats_melted <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.melt(team_stats_avg, id_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_id'</span>, value_vars<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>])</span>
+<span id="cb4-123"></span>
+<span id="cb4-124"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the plot</span></span>
+<span id="cb4-125">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>))</span>
+<span id="cb4-126">sns.barplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_id'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'value'</span>, hue<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'variable'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>team_stats_melted)</span>
+<span id="cb4-127">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Comparison of Teams Based on Average Player Statistics (per 36 minutes)'</span>)</span>
+<span id="cb4-128">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Team'</span>)</span>
+<span id="cb4-129">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Statistic Value'</span>)</span>
+<span id="cb4-130">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>)</span>
+<span id="cb4-131">plt.show()</span>
+<span id="cb4-132"></span>
+<span id="cb4-133"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 5. The relationship between different performance metrics (like points and assists)</span></span>
+<span id="cb4-134"></span>
+<span id="cb4-135"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter out the necessary columns</span></span>
+<span id="cb4-136">performance_stats <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'P/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'A/36'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'R/36'</span>]]</span>
+<span id="cb4-137"></span>
+<span id="cb4-138"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a pairplot to visualize the relationships</span></span>
+<span id="cb4-139">sns.pairplot(performance_stats)</span>
+<span id="cb4-140">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Relationship Between Different Performance Metrics (per 36 minutes)'</span>)</span>
+<span id="cb4-141">plt.show()</span>
+<span id="cb4-142"></span>
+<span id="cb4-143"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create separate sorted plots for Points, Assists and Rebounds</span></span>
+<span id="cb4-144"></span>
+<span id="cb4-145"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Initialize the figure</span></span>
+<span id="cb4-146">fig, axes <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> plt.subplots(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">18</span>))</span>
+<span id="cb4-147"></span>
+<span id="cb4-148"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a bar plot for each statistic</span></span>
+<span id="cb4-149"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> i, stat <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">enumerate</span>(stats):</span>
+<span id="cb4-150">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter the data for the current statistic</span></span>
+<span id="cb4-151">    team_stat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> team_stats_avg[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_id'</span>, stat]]</span>
+<span id="cb4-152">    </span>
+<span id="cb4-153">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Sort the values</span></span>
+<span id="cb4-154">    team_stat <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> team_stat.sort_values(by<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>stat, ascending<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb4-155">    </span>
+<span id="cb4-156">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the bar plot</span></span>
+<span id="cb4-157">    sns.barplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_id'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>stat, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>team_stat, ax<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>axes[i], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>)</span>
+<span id="cb4-158">    axes[i].set_title(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f'Comparison of Teams Based on Average </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>titles[i]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> per 36 minutes'</span>)</span>
+<span id="cb4-159">    axes[i].set_xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Team'</span>)</span>
+<span id="cb4-160">    axes[i].set_ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average '</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> titles[i])</span>
+<span id="cb4-161">    axes[i].tick_params(axis<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'x'</span>, rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>)</span>
+<span id="cb4-162"></span>
+<span id="cb4-163"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Adjust the layout</span></span>
+<span id="cb4-164">plt.tight_layout()</span>
+<span id="cb4-165">plt.show()</span></code></pre></div>
+</details>
+</div>
+</section>
+<section id="nba-data-analysis-part-2" class="level2">
+<h2 class="anchored" data-anchor-id="nba-data-analysis-part-2">NBA Data Analysis (Part 2)</h2>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load the new dataset</span></span>
+<span id="cb5-2">df_new <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.read_csv(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'/mnt/data/all_seasons.csv'</span>)</span>
+<span id="cb5-3"></span>
+<span id="cb5-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># # Display the first few rows of the dataframe</span></span>
+<span id="cb5-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># df_new.head()</span></span>
+<span id="cb5-6"></span>
+<span id="cb5-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#    Unnamed: 0        player_name team_abbreviation   age  player_height  \</span></span>
+<span id="cb5-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0           0      Dennis Rodman               CHI  36.0         198.12   </span></span>
+<span id="cb5-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1           1  Dwayne Schintzius               LAC  28.0         215.90   </span></span>
+<span id="cb5-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2           2       Earl Cureton               TOR  39.0         205.74   </span></span>
+<span id="cb5-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3           3        Ed O'Bannon               DAL  24.0         203.20   </span></span>
+<span id="cb5-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4           4        Ed Pinckney               MIA  34.0         205.74   </span></span>
+<span id="cb5-13"></span>
+<span id="cb5-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#    player_weight                      college country draft_year draft_round  \</span></span>
+<span id="cb5-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0      99.790240  Southeastern Oklahoma State     USA       1986           2   </span></span>
+<span id="cb5-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1     117.933920                      Florida     USA       1990           1   </span></span>
+<span id="cb5-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2      95.254320                Detroit Mercy     USA       1979           3   </span></span>
+<span id="cb5-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3     100.697424                         UCLA     USA       1995           1   </span></span>
+<span id="cb5-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4     108.862080                    Villanova     USA       1985           1   </span></span>
+<span id="cb5-20"></span>
+<span id="cb5-21"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#    ...  pts   reb  ast  net_rating  oreb_pct  dreb_pct  usg_pct  ts_pct  \</span></span>
+<span id="cb5-22"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0  ...  5.7  16.1  3.1        16.1     0.186     0.323    0.100   0.479   </span></span>
+<span id="cb5-23"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1  ...  2.3   1.5  0.3        12.3     0.078     0.151    0.175   0.430   </span></span>
+<span id="cb5-24"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2  ...  0.8   1.0  0.4        -2.1     0.105     0.102    0.103   0.376   </span></span>
+<span id="cb5-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3  ...  3.7   2.3  0.6        -8.7     0.060     0.149    0.167   0.399   </span></span>
+<span id="cb5-26"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4  ...  2.4   2.4  0.2       -11.2     0.109     0.179    0.127   0.611   </span></span>
+<span id="cb5-27"></span>
+<span id="cb5-28"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">#    ast_pct   season  </span></span>
+<span id="cb5-29"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 0    0.113  1996-97  </span></span>
+<span id="cb5-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1    0.048  1996-97  </span></span>
+<span id="cb5-31"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2    0.148  1996-97  </span></span>
+<span id="cb5-32"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3    0.077  1996-97  </span></span>
+<span id="cb5-33"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4    0.040  1996-97  </span></span>
+<span id="cb5-34"></span>
+<span id="cb5-35"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># [5 rows x 22 columns]</span></span>
+<span id="cb5-36"></span>
+<span id="cb5-37"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Merge the two datasets on player name and season/year</span></span>
+<span id="cb5-38"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># First, we need to create a 'season' column in the first dataset to match with the second dataset</span></span>
+<span id="cb5-39"></span>
+<span id="cb5-40"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Extract the season year from 'year_id'</span></span>
+<span id="cb5-41">df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>).astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'-'</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'year_id'</span>].astype(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>).<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span>[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>:]</span>
+<span id="cb5-42"></span>
+<span id="cb5-43"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Merge the two datasets</span></span>
+<span id="cb5-44">df_merged <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.merge(df_new, df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR'</span>]], </span>
+<span id="cb5-45">                     left_on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>], </span>
+<span id="cb5-46">                     right_on<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name_common'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>],</span>
+<span id="cb5-47">                     how<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'left'</span>)</span>
+<span id="cb5-48"></span>
+<span id="cb5-49"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the first few rows of the merged dataframe</span></span>
+<span id="cb5-50">df_merged.head()</span>
+<span id="cb5-51"></span>
+<span id="cb5-52"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calculate the cumulative WAR for each player by year</span></span>
+<span id="cb5-53">df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cumulative_war'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR'</span>].cumsum()</span>
+<span id="cb5-54"></span>
+<span id="cb5-55"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the first few rows of the updated dataframe</span></span>
+<span id="cb5-56">df_merged.head()</span>
+<span id="cb5-57"></span>
+<span id="cb5-58"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calculate the average expected WAR for each draft position for the first and second round picks</span></span>
+<span id="cb5-59"></span>
+<span id="cb5-60"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter the dataframe for the first and second round picks</span></span>
+<span id="cb5-61">first_second_round_picks <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'draft_round'</span>].isin([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'1'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'2'</span>])]</span>
+<span id="cb5-62"></span>
+<span id="cb5-63"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Convert the draft_number to numeric</span></span>
+<span id="cb5-64">first_second_round_picks[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'draft_number'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.to_numeric(first_second_round_picks[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'draft_number'</span>], errors<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'coerce'</span>)</span>
+<span id="cb5-65"></span>
+<span id="cb5-66"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Group by draft_number and calculate the mean cumulative_war</span></span>
+<span id="cb5-67">average_war_by_draft_position <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> first_second_round_picks.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'draft_number'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cumulative_war'</span>].mean().reset_index()</span>
+<span id="cb5-68"></span>
+<span id="cb5-69"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the result</span></span>
+<span id="cb5-70">average_war_by_draft_position.head()</span>
+<span id="cb5-71"></span>
+<span id="cb5-72"></span>
+<span id="cb5-73"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a bar plot to visualize the average expected WAR by draft position</span></span>
+<span id="cb5-74"></span>
+<span id="cb5-75">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))</span>
+<span id="cb5-76">sns.barplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'draft_number'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cumulative_war'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>average_war_by_draft_position)</span>
+<span id="cb5-77">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Expected WAR by Draft Position for First and Second Round Picks'</span>)</span>
+<span id="cb5-78">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Draft Position'</span>)</span>
+<span id="cb5-79">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Cumulative WAR'</span>)</span>
+<span id="cb5-80">plt.show()</span>
+<span id="cb5-81"></span>
+<span id="cb5-82"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Analyze whether certain teams are consistently better at drafting players</span></span>
+<span id="cb5-83"></span>
+<span id="cb5-84"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Group by team and calculate the mean cumulative_war</span></span>
+<span id="cb5-85">average_war_by_team <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> first_second_round_picks.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_abbreviation'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cumulative_war'</span>].mean().reset_index()</span>
+<span id="cb5-86"></span>
+<span id="cb5-87"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Sort the result by average cumulative_war</span></span>
+<span id="cb5-88">average_war_by_team <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> average_war_by_team.sort_values(by<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cumulative_war'</span>, ascending<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>)</span>
+<span id="cb5-89"></span>
+<span id="cb5-90"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the result</span></span>
+<span id="cb5-91">average_war_by_team.head()</span>
+<span id="cb5-92"></span>
+<span id="cb5-93"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a bar plot to visualize the average WAR by team</span></span>
+<span id="cb5-94"></span>
+<span id="cb5-95">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))</span>
+<span id="cb5-96">sns.barplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'team_abbreviation'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'cumulative_war'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>average_war_by_team, color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'b'</span>)</span>
+<span id="cb5-97">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average WAR by Team for First and Second Round Picks'</span>)</span>
+<span id="cb5-98">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Team'</span>)</span>
+<span id="cb5-99">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Average Cumulative WAR'</span>)</span>
+<span id="cb5-100">plt.xticks(rotation<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">90</span>)</span>
+<span id="cb5-101">plt.show()</span></code></pre></div>
+</details>
+</div>
+</section>
+<section id="nba-data-analysis-part-3" class="level2">
+<h2 class="anchored" data-anchor-id="nba-data-analysis-part-3">NBA Data Analysis (Part 3)</h2>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.decomposition <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> PCA</span>
+<span id="cb6-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.preprocessing <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> StandardScaler</span>
+<span id="cb6-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.pipeline <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Pipeline</span>
+<span id="cb6-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.impute <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> SimpleImputer</span>
+<span id="cb6-5"></span>
+<span id="cb6-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Specify the features to use</span></span>
+<span id="cb6-7">features <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'pts'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ast'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'reb'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'usg_pct'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ts_pct'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'ast_pct'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_height'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_weight'</span>]</span>
+<span id="cb6-8"></span>
+<span id="cb6-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Prepare the data</span></span>
+<span id="cb6-10">data <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[features]</span>
+<span id="cb6-11"></span>
+<span id="cb6-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a pipeline for preprocessing</span></span>
+<span id="cb6-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># The pipeline includes filling missing values with the mean and standardizing the data</span></span>
+<span id="cb6-14">pipeline <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> Pipeline([</span>
+<span id="cb6-15">    (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'imputer'</span>, SimpleImputer(strategy<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'mean'</span>)),</span>
+<span id="cb6-16">    (<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'scaler'</span>, StandardScaler()),</span>
+<span id="cb6-17">])</span>
+<span id="cb6-18"></span>
+<span id="cb6-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Preprocess the data</span></span>
+<span id="cb6-20">data_preprocessed <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pipeline.fit_transform(data)</span>
+<span id="cb6-21"></span>
+<span id="cb6-22"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a PCA object</span></span>
+<span id="cb6-23">pca <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> PCA(n_components<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span>)</span>
+<span id="cb6-24"></span>
+<span id="cb6-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Fit the PCA model to the data and transform the data</span></span>
+<span id="cb6-26">embeddings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pca.fit_transform(data_preprocessed)</span>
+<span id="cb6-27"></span>
+<span id="cb6-28"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add the embeddings to the dataframe</span></span>
+<span id="cb6-29">df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> embeddings[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb6-30">df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> embeddings[:, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb6-31"></span>
+<span id="cb6-32"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the first few rows of the updated dataframe</span></span>
+<span id="cb6-33">df_merged.head()</span>
+<span id="cb6-34"></span>
+<span id="cb6-35"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.neighbors <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> NearestNeighbors</span>
+<span id="cb6-36"></span>
+<span id="cb6-37"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Fit a NearestNeighbors model to the embeddings</span></span>
+<span id="cb6-38">nn <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> NearestNeighbors(n_neighbors<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">6</span>)  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 5 nearest neighbors + the player himself</span></span>
+<span id="cb6-39">nn.fit(df_merged[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>]])</span>
+<span id="cb6-40"></span>
+<span id="cb6-41"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Find the embeddings for Michael Jordan</span></span>
+<span id="cb6-42">mj_embeddings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Michael Jordan'</span>][[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>]]</span>
+<span id="cb6-43"></span>
+<span id="cb6-44"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Use the NearestNeighbors model to find the players with the most similar embeddings</span></span>
+<span id="cb6-45">distances, indices <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> nn.kneighbors(mj_embeddings)</span>
+<span id="cb6-46"></span>
+<span id="cb6-47"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get the names of the most similar players</span></span>
+<span id="cb6-48">similar_players <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged.iloc[indices[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]][<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>].tolist()</span>
+<span id="cb6-49"></span>
+<span id="cb6-50"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Remove 'Michael Jordan' from the list</span></span>
+<span id="cb6-51">similar_players.remove(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Michael Jordan'</span>)</span>
+<span id="cb6-52"></span>
+<span id="cb6-53"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the similar players</span></span>
+<span id="cb6-54">similar_players</span>
+<span id="cb6-55"></span>
+<span id="cb6-56"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update NearestNeighbors model to find the top 10 nearest neighbors</span></span>
+<span id="cb6-57">nn <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> NearestNeighbors(n_neighbors<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">11</span>)  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 10 nearest neighbors + the player himself</span></span>
+<span id="cb6-58">nn.fit(df_merged[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>]])</span>
+<span id="cb6-59"></span>
+<span id="cb6-60"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Find the embeddings for LeBron James</span></span>
+<span id="cb6-61">lbj_embeddings <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'LeBron James'</span>][[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>]]</span>
+<span id="cb6-62"></span>
+<span id="cb6-63"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Use the NearestNeighbors model to find the players with the most similar embeddings</span></span>
+<span id="cb6-64">distances, indices <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> nn.kneighbors(lbj_embeddings)</span>
+<span id="cb6-65"></span>
+<span id="cb6-66"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get the names of the most similar players</span></span>
+<span id="cb6-67">similar_players <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged.iloc[indices[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]][<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>].tolist()</span>
+<span id="cb6-68"></span>
+<span id="cb6-69"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Remove 'LeBron James' from the list</span></span>
+<span id="cb6-70">similar_players.remove(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'LeBron James'</span>)</span>
+<span id="cb6-71"></span>
+<span id="cb6-72"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the similar players</span></span>
+<span id="cb6-73">similar_players</span>
+<span id="cb6-74"></span>
+<span id="cb6-75"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Plot the embeddings for LeBron James and the top 10 similar players</span></span>
+<span id="cb6-76"></span>
+<span id="cb6-77"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a dataframe for the similar players</span></span>
+<span id="cb6-78">similar_players_df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>].isin(similar_players)]</span>
+<span id="cb6-79"></span>
+<span id="cb6-80"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Plot the embeddings for all players in light grey</span></span>
+<span id="cb6-81">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))</span>
+<span id="cb6-82">plt.scatter(df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>], df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'lightgrey'</span>, label<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>)</span>
+<span id="cb6-83"></span>
+<span id="cb6-84"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Plot the embeddings for the similar players in blue</span></span>
+<span id="cb6-85">plt.scatter(similar_players_df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>], similar_players_df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'blue'</span>, label<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">None</span>)</span>
+<span id="cb6-86"></span>
+<span id="cb6-87"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add labels for the similar players</span></span>
+<span id="cb6-88"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> _, row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> similar_players_df.iterrows():</span>
+<span id="cb6-89">    plt.text(row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>], row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>], row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>], fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>)</span>
+<span id="cb6-90"></span>
+<span id="cb6-91"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Highlight LeBron James in the plot</span></span>
+<span id="cb6-92">lbj_row <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'LeBron James'</span>].iloc[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb6-93">plt.scatter(lbj_row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>], lbj_row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'red'</span>)</span>
+<span id="cb6-94">plt.text(lbj_row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding1'</span>], lbj_row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'embedding2'</span>], <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'LeBron James'</span>, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, weight<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'bold'</span>)</span>
+<span id="cb6-95"></span>
+<span id="cb6-96"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Set the title and labels</span></span>
+<span id="cb6-97">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Embeddings for LeBron James and Top 10 Similar Players'</span>)</span>
+<span id="cb6-98">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Embedding 1'</span>)</span>
+<span id="cb6-99">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Embedding 2'</span>)</span>
+<span id="cb6-100">plt.show()</span></code></pre></div>
+</details>
+</div>
+</section>
+<section id="nba-data-analysis-part-4" class="level2">
+<h2 class="anchored" data-anchor-id="nba-data-analysis-part-4">NBA Data Analysis (Part 4)</h2>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calculate the year-over-year change in Raptor WAR for each player</span></span>
+<span id="cb7-2">df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR Change'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR'</span>].diff()</span>
+<span id="cb7-3"></span>
+<span id="cb7-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get the absolute value of the change</span></span>
+<span id="cb7-5">df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR Change Absolute'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR Change'</span>].<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">abs</span>()</span>
+<span id="cb7-6"></span>
+<span id="cb7-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Find the players with the greatest absolute year-over-year change in Raptor WAR</span></span>
+<span id="cb7-8">dramatic_change_players <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged.nlargest(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR Change Absolute'</span>)</span>
+<span id="cb7-9"></span>
+<span id="cb7-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the result</span></span>
+<span id="cb7-11">dramatic_change_players[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'season'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR Change'</span>]]</span>
+<span id="cb7-12"></span>
+<span id="cb7-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Calculate the total and variance of Raptor WAR for each player</span></span>
+<span id="cb7-14">war_stats <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df_merged.groupby(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>)[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Raptor WAR'</span>].agg([<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'sum'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'var'</span>]).reset_index()</span>
+<span id="cb7-15"></span>
+<span id="cb7-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Rename the columns</span></span>
+<span id="cb7-17">war_stats.columns <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>]</span>
+<span id="cb7-18"></span>
+<span id="cb7-19"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Display the players with the highest and lowest variance of WAR</span></span>
+<span id="cb7-20">highest_variance_player <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> war_stats.loc[war_stats[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>].idxmax()]</span>
+<span id="cb7-21">lowest_variance_player <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> war_stats.loc[war_stats[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>].idxmin()]</span>
+<span id="cb7-22"></span>
+<span id="cb7-23">highest_variance_player, lowest_variance_player</span>
+<span id="cb7-24"></span>
+<span id="cb7-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a scatter plot of Total WAR vs. Variance of WAR</span></span>
+<span id="cb7-26"></span>
+<span id="cb7-27">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>))</span>
+<span id="cb7-28">sns.scatterplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>war_stats)</span>
+<span id="cb7-29">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR vs. Variance of WAR'</span>)</span>
+<span id="cb7-30">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>)</span>
+<span id="cb7-31">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>)</span>
+<span id="cb7-32"></span>
+<span id="cb7-33"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Highlight the players with the highest and lowest variance of WAR</span></span>
+<span id="cb7-34">plt.scatter(highest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>], highest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'red'</span>)</span>
+<span id="cb7-35">plt.text(highest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>], highest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>], <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Chris Paul'</span>, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, ha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'right'</span>)</span>
+<span id="cb7-36">plt.scatter(lowest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>], lowest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>], color<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'red'</span>)</span>
+<span id="cb7-37">plt.text(lowest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>], lowest_variance_player[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>], <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Ike Anigbogu'</span>, fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>, ha<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'right'</span>)</span>
+<span id="cb7-38"></span>
+<span id="cb7-39">plt.show()</span>
+<span id="cb7-40"></span>
+<span id="cb7-41"></span>
+<span id="cb7-42"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Filter players with over 75 total WAR</span></span>
+<span id="cb7-43">war_stats_filtered <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> war_stats[war_stats[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">75</span>]</span>
+<span id="cb7-44"></span>
+<span id="cb7-45"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a scatter plot of Total WAR vs. Variance of WAR for these players</span></span>
+<span id="cb7-46"></span>
+<span id="cb7-47">plt.figure(figsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>))</span>
+<span id="cb7-48">sns.scatterplot(x<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>, y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>, data<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>war_stats_filtered)</span>
+<span id="cb7-49"></span>
+<span id="cb7-50"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Label all points on the plot</span></span>
+<span id="cb7-51"><span class="cf" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">for</span> _, row <span class="kw" style="color: #003B4F;
+background-color: null;
+font-style: inherit;">in</span> war_stats_filtered.iterrows():</span>
+<span id="cb7-52">    plt.text(row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>], row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>], row[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'player_name'</span>], fontsize<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>)</span>
+<span id="cb7-53"></span>
+<span id="cb7-54">plt.title(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR vs. Variance of WAR for Players with Over 75 Total WAR'</span>)</span>
+<span id="cb7-55">plt.xlabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Total WAR'</span>)</span>
+<span id="cb7-56">plt.ylabel(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Variance of WAR'</span>)</span>
+<span id="cb7-57"></span>
+<span id="cb7-58">plt.show()</span></code></pre></div>
 </details>
 </div>
 
