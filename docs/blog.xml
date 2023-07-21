@@ -154,7 +154,7 @@ font-style: inherit;"> [/INST]"</span></span></code></pre></div>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
-<p>One prompt I tried was “What’s the difference between data science and data engineering?” Getting about 15 tokens a second and the answer was quite good:</p>
+<p>This is the first time I’ve ever run an LLM locally using the GPU on my Mac! One prompt I tried was “What’s the difference between data science and data engineering?” Getting about 15 tokens a second and the answer was quite good:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/ds_vs_de.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>

@@ -47,7 +47,7 @@ echo "Prompt: " \
 
 # Results
 
-One prompt I tried was "What's the difference between data science and data engineering?" Getting about 15 tokens a second and the answer was quite good:
+This is the first time I've ever run an LLM locally using the GPU on my Mac! One prompt I tried was "What's the difference between data science and data engineering?" Getting about 15 tokens a second and the answer was quite good:
 
 ![Llama2: Data Science vs Data Engineering](./ds_vs_de.png)
 
