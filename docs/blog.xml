@@ -10,7 +10,7 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.290</generator>
-<lastBuildDate>Fri, 21 Jul 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Sun, 23 Jul 2023 07:00:00 GMT</lastBuildDate>
 <item>
   <title>Paper Summary: Llama2</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -260,7 +260,7 @@
   <category>Llama2</category>
   <category>Paper Summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/index.html</guid>
-  <pubDate>Fri, 21 Jul 2023 07:00:00 GMT</pubDate>
+  <pubDate>Sun, 23 Jul 2023 07:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Running Llama2 Locally on a M1 Mac</title>
