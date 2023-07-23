@@ -26,11 +26,12 @@
 <ul>
 <li>Nathan Lambert has a <a href="https://www.interconnects.ai/p/llama-2-from-meta?sd=pf">nice writeup</a> of his thoughts on the model.</li>
 <li>AI Explained has a nice <a href="https://www.youtube.com/watch?v=zJBpRn2zTco&amp;ab_channel=AIExplained">video breakdown</a>.</li>
+<li>James Briggs also has built a <a href="https://www.youtube.com/watch?v=6iHVJyX2e50&amp;ab_channel=JamesBriggs">conversational agent that runs locally using Llama 2</a>.</li>
 </ul>
 </section>
 <section id="pretraining-2" class="level1">
 <h1>Pretraining (2)</h1>
-<p>They don’t specify what data they use other than saying it is publicly available and they do not use any proprietary data from Meta’s services. THe model was pre-trained on 2 trillion tokens. TODO: Compare with ChatGPT and other models</p>
+<p>They don’t specify what data they use other than saying it is publicly available and they do not use any proprietary data from Meta’s services. THe model was pre-trained on 2 trillion tokens.</p>
 <p>Given the training loss curves below it is clear they could easily keep training this model for better performance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

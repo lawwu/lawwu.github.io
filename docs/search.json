@@ -193,7 +193,7 @@
     "href": "posts/2023-07-23-llama-2-paper-summary/index.html",
     "title": "Paper Summary: Llama2",
     "section": "",
-    "text": "Llama2 was released by Meta on 2023-07-18. My first exposure to the model was running it locally on my Mac and being blown away by the quality of the results. With most of the prompts I tried for simple questions, Llama2-Chat-13B was better than even ChatGPT. So I was naturally curious about the technical details of the Llama2 paper. In the post I’d like to summarize the technical paper.\nNote this write up isn’t the only game in town:\n\nNathan Lambert has a nice writeup of his thoughts on the model.\nAI Explained has a nice video breakdown."
+    "text": "Llama2 was released by Meta on 2023-07-18. My first exposure to the model was running it locally on my Mac and being blown away by the quality of the results. With most of the prompts I tried for simple questions, Llama2-Chat-13B was better than even ChatGPT. So I was naturally curious about the technical details of the Llama2 paper. In the post I’d like to summarize the technical paper.\nNote this write up isn’t the only game in town:\n\nNathan Lambert has a nice writeup of his thoughts on the model.\nAI Explained has a nice video breakdown.\nJames Briggs also has built a conversational agent that runs locally using Llama 2."
   },
   {
     "objectID": "posts/2023-07-23-llama-2-paper-summary/index.html#academic-benchmarks",
