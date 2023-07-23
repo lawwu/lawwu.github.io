@@ -10,7 +10,258 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.290</generator>
-<lastBuildDate>Thu, 20 Jul 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 21 Jul 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Paper Summary: Llama2</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="llama2" class="level1">
+<h1>Llama2</h1>
+<p>Llama2 was released by Meta on 2023-07-18. My first exposure to the model was <a href="https://lawwu.github.io/posts/2023-07-20-llama-2-local/">running it locally on my Mac</a> and being blown away by the quality of the results. With most of the prompts I tried for simple questions, Llama2-Chat-13B was better than even ChatGPT. So I was naturally curious about the technical details of the Llama2 paper. In the post I’d like to summarize the <a href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/">technical paper</a>.</p>
+<p>Note this write up isn’t the only game in town:</p>
+<ul>
+<li>Nathan Lambert has a <a href="https://www.interconnects.ai/p/llama-2-from-meta?sd=pf">nice writeup</a> of his thoughts on the model.</li>
+<li>AI Explained has a nice <a href="https://www.youtube.com/watch?v=zJBpRn2zTco&amp;ab_channel=AIExplained">video breakdown</a>.</li>
+</ul>
+</section>
+<section id="pretraining-2" class="level1">
+<h1>Pretraining (2)</h1>
+<p>They don’t specify what data they use other than saying it is publicly available and they do not use any proprietary data from Meta’s services. THe model was pre-trained on 2 trillion tokens. TODO: Compare with ChatGPT and other models</p>
+<p>Given the training loss curves below it is clear they could easily keep training this model for better performance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure5_pretraining_loss.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Pretraining Loss</figcaption><p></p>
+</figure>
+</div>
+<p>Tokenizer: Same tokenization strategy as Llama 1. I didn’t know Llama 1 used bytepair encoding, all numbers are split into individual characters and bytes are used to decompose unknown UTF-8 characters.</p>
+<p>All 4 flavors of Llama 2 was trained using 3.3M GPU hours. Llama 2 70B was trained using 1.72M GPU hours.</p>
+<section id="academic-benchmarks" class="level2">
+<h2 class="anchored" data-anchor-id="academic-benchmarks">Academic Benchmarks</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table3_academic_bm.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Llama 2 Performance on Academic Benchmarks</figcaption><p></p>
+</figure>
+</div>
+<p>Llama 2 pretty soundly beats similarly sized MPT and Falcon models. I hadn’t heard of AGIEval before. This is the AGIEval <a href="https://github.com/microsoft/AGIEval">repo</a> and <a href="https://arxiv.org/pdf/2304.06364.pdf">paper</a>. I was interested to see how Llama 2 performed against closed source models on AGIEval. The authors say they use 3-5 shot to test AGIEval. Llama 2 70B is getting 54.2 on AGIEval. ChatGPT and GPT-4 were getting 45% and 61.3% respectively as shown in the table below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table3_agieval.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">AGIEval Performance for text-davinci-003, ChatGPT and GPT-4</figcaption><p></p>
+</figure>
+</div>
+<p>In my tests where I’ve been running llama2-13b-chat locally, I have been very impressed with the results of questions like “What’s the difference between data science and data engineering” or “What’s the purpose of life”? For these two examples, llama2-13b-chat is even providing better answers than Google’s PaLM2 text-bison, ChatGPT, and even GPT-4! I’m not clear why this is the case.</p>
+</section>
+</section>
+<section id="fine-tuning-3" class="level1">
+<h1>Fine-tuning (3)</h1>
+</section>
+<section id="supervised-fine-tuning-3.1" class="level1">
+<h1>Supervised Fine-tuning (3.1)</h1>
+<p>The authors note the importance of quality over quantity when it comes to datasets for supervised fine-tuning. They only used 27,540 annotations for this step.</p>
+<blockquote class="blockquote">
+<p>Quality Is All You Need. Third-party SFT data is available from many different sources, but we found that many of these have insufficient diversity and quality — in particular for aligning LLMs towards dialogue-style instructions. As a result, we focused first on collecting several thousand examples of high-quality SFT data, as illustrated in Table 5. By setting aside millions of examples from third-party datasets and using fewer but higher-quality examples from our own vendor-based annotation efforts, our results notably improved. These findings are similar in spirit to Zhou et al.&nbsp;(2023), which also finds that a limited set of clean instruction-tuning data can be sufficient to reach a high level of quality. We found that SFT annotations in the order of tens of thousands was enough to achieve a high-quality result. We stopped annotating SFT after collecting a total of 27,540 annotations. Note that we do not include any Meta user data.</p>
+</blockquote>
+</section>
+<section id="reinforcement-learning-with-human-feedback-3.2" class="level1">
+<h1>Reinforcement Learning with Human Feedback (3.2)</h1>
+<p>I liked the author’s succint definition of RLHF. Humans are selecting which model outputs they prefer and a reward model is trained that learns these human preferences.</p>
+<blockquote class="blockquote">
+<p>RLHF is a model training procedure that is applied to a fine-tuned language model to further align model behavior with human preferences and instruction following. We collect data that represents empirically sampled human preferences, whereby human annotators select which of two model outputs they prefer. This human feedback is subsequently used to train a reward model, which learns patterns in the preferences of the human annotators and can then automate preference decisions.</p>
+</blockquote>
+<section id="two-reward-models" class="level2">
+<h2 class="anchored" data-anchor-id="two-reward-models">Two Reward Models</h2>
+<p>Interestingly they also try to generate a diversity of model completions by using two different model variants and different temperature hyperparameters.</p>
+<blockquote class="blockquote">
+<p>Our annotation procedure proceeds as follows. We ask annotators to first write a prompt, then choose between two sampled model responses, based on provided criteria. In order to maximize the diversity, the two responses to a given prompt are sampled from two different model variants, and varying the temperature hyper-parameter. In addition to giving participants a forced choice, we also ask annotators to label the degree to which they prefer their chosen response over the alternative: either their choice is significantly better, better, slightly better, or negligibly better/ unsure.</p>
+</blockquote>
+<p>This model is a first for training two separate reward models, one for safety and one for helpfulness. Meta collected over 1.4M binary comparisons to train their safety and helpfulness reward models. The human annotators also had to pick between 5 different options: significantly better, better, slightly better, or negligibly better/ unsure.</p>
+<p>The training data for the RLHF models is actually their newly collected preference data along with open source datasets. They do not observe “negative transfer” happening from using open source data so they decided to keep it in to allow for better generalization. The RHLF models are only trained for one epoch to prevent overfitting.</p>
+<blockquote class="blockquote">
+<p>We combine our newly collected data with existing open-source preference datasets to form a larger training dataset. Initially, open-source datasets were used to bootstrap our reward models while we were in the process of collecting preference annotation data. We note that in the context of RLHF in this study, the role of reward signals is to learn human preference for Llama 2-Chat outputs rather than any model outputs. However, in our experiments, we do not observe negative transfer from the open-source preference datasets. Thus, we have decided to keep them in our data mixture, as they could enable better generalization for the reward model and prevent reward hacking, i.e.&nbsp;Llama 2-Chat taking advantage of some weaknesses of our reward, and so artificially inflating the score despite performing less well.</p>
+</blockquote>
+<ul>
+<li>Helpfulness reward model is eventually trained on all Meta Helpfulness data, combined with an equal parts of the remaining data uniformly sampled from Meta Safety and from the open-source datasets.</li>
+<li>Safety reward model is trained on all Meta Safety and Anthropic Harmless data, mixed with Meta Helpfulness and open-source helpfulness data in a 90/10 proportion. We found that the setting with 10% helpfulness data is especially beneficial for the accuracy on samples where both the chosen and rejected responses were deemed safe.</li>
+</ul>
+</section>
+<section id="rejection-sampling-for-rl" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-sampling-for-rl">Rejection Sampling for RL</h2>
+<p>The authors also describe a method of RHLF that they tried called “Rejection Sampling fine-tuning” that was new to me. It is defined as</p>
+<blockquote class="blockquote">
+<p>We sample K outputs from the model and select the best candidate with our reward, consistent with Bai et al.&nbsp;(2022b). The same re-ranking strategy for LLMs was also proposed in Deng et al.&nbsp;(2019), where the reward is seen as an energy function. Here, we go one step further, and use the selected outputs for a gradient update. For each prompt, the sample obtaining the highest reward score is considered the new gold standard. Similar to Scialom et al.&nbsp;(2020a), we then fine-tune our model on the new set of ranked samples, reinforcing the reward.</p>
+</blockquote>
+<p>The two RL algorithms differ in:</p>
+<blockquote class="blockquote">
+<p>Breadth — in Rejection Sampling, the model explores K samples for a given prompt, while only one generation is done for PPO. Depth — in PPO, during training at step t the sample is a function of the updated model policy from t − 1 after the gradient update of the previous step. In Rejection Sampling fine-tuning, we sample all the outputs given the initial policy of our model to collect a new dataset, before applying the fine-tuning similar to SFT. However, since we applied iterative model updates, the fundamental differences between the two RL algorithms are less pronounced.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure7_max_reward.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Max Reward among N Samples</figcaption><p></p>
+</figure>
+</div>
+<p>The above plot is interesting in that it highlights the potential gain from using Rejection Sampling. Because more samples are generated, a diversity of completions can be explored and on average these generates a higher maximum reward. Though this plot has a <a href="https://en.wikipedia.org/wiki/Misleading_graph#Truncated_graph">truncated y-axis</a> which makes the difference look larger than it is.</p>
+</section>
+<section id="ghost-attention" class="level2">
+<h2 class="anchored" data-anchor-id="ghost-attention">Ghost Attention</h2>
+<p>When chatting with an LLM, there are sometimes instructions that should apply to all conversation turns, e.g.&nbsp;“Act as [insert public figure here]”.</p>
+<blockquote class="blockquote">
+<p>To address these limitations, we propose Ghost Attention (GAtt), a very simple method inspired by Context Distillation (Bai et al., 2022b) that hacks the fine-tuning data to help the attention focus in a multi-stage process. GAtt enables dialogue control over multiple turns</p>
+</blockquote>
+<p>The method is simple, they created a synthetic dialogue dataset by concatenating the system instruction that should be respected across all conversation turn to all user messages. During training, they only keep the instruction in the first turn and set the loss to zero for all tokens from previous turns. The dataset also contains a few synthetic constraints to sample from like hobbies, language or public figure (and random combinations of the above). This creates an SFT dataset which they use to finetune Llama2 Chat.</p>
+<p>The GAtt method leads to the model being able to follow instructions across 20+ turns.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure9_gatt.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Ghost Attention</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="model-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="model-evaluation">Model Evaluation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure11_evolution_of_results.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Evolution of Llama2-Chat</figcaption><p></p>
+</figure>
+</div>
+<p>I found the above two plots fascinating as a way to show models evaluating models. Each plot shows the win-rate% of Llama2-Chat versus ChatGPT on both safety (y-axis) and helpfulenss (x-axis) over different iterations of fine-tuning (SFT-v1) and RHLF (RHLF-v1 all the way up to RHLF-v5 with PPO). There were two judges, the Meta’s reward model used to train Llama2-Chat and GPT-4.</p>
+</section>
+<section id="human-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="human-evaluation">Human Evaluation</h2>
+<blockquote class="blockquote">
+<p>To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety. We compare the Llama 2-Chat models to open-source models (Falcon, MPT MosaicML NLP Team et al.&nbsp;(2023), Vicuna Chiang et al.&nbsp;(2023), as well as closed-source models (Chat- GPT (OpenAI, 2023) and PaLM Anil et al.&nbsp;(2023)) on over 4,000 single and multi-turn prompts. For ChatGPT, we use gpt-3.5-turbo-0301 model in all generations. For PaLM, we use the chat-bison-001 model in all generations.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure12_human_eval_all.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Human Evaluation Results for Llama2-Chat</figcaption><p></p>
+</figure>
+</div>
+<p>Llama2-Chat is beating similarly sized open source models like MPT, Vicuna, and Falcon. Surprisingly it is also competitive with ChatGPT (Win rate of 36%, tie rate of 31.5%)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure30_human_eval_chatgpt.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Human Evaluation Results for Llama2-Chat vs ChatGPT</figcaption><p></p>
+</figure>
+</div>
+<p>Llama2-Chat wins overall against ChatGPT on these 4,000 prompts. The authors broke down these 4,000 prompts into 4 categories:</p>
+<ul>
+<li>Dialogue</li>
+<li>Writing and content creation</li>
+<li>Factual Questions</li>
+<li>Language assistance</li>
+<li>Recommendations</li>
+</ul>
+<p>Llama2-Chat is losing against ChatGPT when it comes to Writing and content creation and Language Assistance but wins in the other 3 categories.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table33_examples_of_prompts.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Examples of Prompts</figcaption><p></p>
+</figure>
+</div>
+<p>The above shows some examples of prompts that made it into the 4,000 human evaluation dataset. It’s not clear for the category of Language Assistance, whether this refers to programming language or foreign language.</p>
+</section>
+<section id="inter-rater-reliability" class="level2">
+<h2 class="anchored" data-anchor-id="inter-rater-reliability">Inter-Rater Reliability</h2>
+<p>I also learned about a metric called “Inter-Rater Reliability” (IRR) which measures how consistent raters are.</p>
+<blockquote class="blockquote">
+<p>In our human evaluations, three different annotators provided independent assessments for each model generation comparison. High IRR scores (closer to 1.0) are typically seen as better from a data quality perspective, however, context is important. Highly subjective tasks like evaluating the overall helpfulness of LLM generations will usually have lower IRR scores than more objective labelling tasks. There are relatively few public benchmarks for these contexts, so we feel sharing our analysis here will benefit the research community. We used Gwet’s AC1/2 statistic (Gwet, 2008, 2014) to measure inter-rater reliability (IRR), as we found it to be the most stable metric across different measurement scenarios. On the 7-point Likert scale helpfulness task that is used in our analysis, Gwet’s AC2 score varies between 0.37 and 0.55 depending on the specific model comparison. We see scores on the lower end of that range for ratings from model comparisons with similar win rates to each other (like the Llama 2-Chat-70B-chat vs.&nbsp;ChatGPT comparison). We see scores on the higher end of that range for ratings from model comparisons with a more clear winner (like the Llama 2-Chat-34b-chat vs.&nbsp;Falcon-40b-instruct).</p>
+</blockquote>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>They call out 4 limitations of their evaluation work:</p>
+<blockquote class="blockquote">
+<p>By academic and research standards, we have a large prompt set of 4k prompts. However, it does not cover real-world usage of these models, which will likely cover a significantly larger number of use cases. Diversity of the prompts could be another factor in our results. For example, our prompt set does not include any coding- or reasoning-related prompts. We only evaluate the final generation of a multi-turn conversation. A more interesting evaluation could be to ask the models to complete a task and rate the overall experience with the model over multiple turns. Human evaluation for generative models is inherently subjective and noisy. As a result, evaluation on a different set of prompts or with different instructions could result in different results.</p>
+</blockquote>
+</section>
+</section>
+<section id="key-observations-and-insights-5" class="level1">
+<h1>Key Observations and Insights (5)</h1>
+<section id="rhlf-sft" class="level2">
+<h2 class="anchored" data-anchor-id="rhlf-sft">RHLF &gt; SFT</h2>
+<p>The authors make a fascinating conclusion of the superiority of RHLF to supervised-finetuning because of the limitations of human authors to generate diverse and high-quality text.</p>
+<blockquote class="blockquote">
+<p>Even with proficient annotators, each individual writes with significant variation. A model fine-tuned on SFT annotation learns this diversity, including, unfortunately, the tail-end of poorly executed annotation. Fur- thermore, the model’s performance is capped by the writing abilities of the most skilled annotators. Human annotators are arguably less subject to discrepancy when comparing two outputs’ preference annotation for RLHF. Consequently, the reward mechanism swiftly learns to assign low scores to undesirable tail-end distribution and aligns towards the human preference. This phenomena is illustrated in Figure 20, where we can see that the worst answers are progressively removed, shifting the distribution to the right.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure20_distribution_shift.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Distribution shift of SFT to RHLF models</figcaption><p></p>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>In addition, during annotation, the model has the potential to venture into writing trajectories that even the best annotators may not chart. Nonetheless, humans can still provide valuable feedback when comparing two answers, beyond their own writing competencies. Drawing a parallel, while we may not all be accomplished artists, our ability to appreciate and critique art remains intact. We posit that the superior writing abilities of LLMs, as manifested in surpassing human annotators in certain tasks, are fundamentally driven by RLHF, as documented in Gilardi et al.&nbsp;(2023) and Huang et al.&nbsp;(2023). Supervised data may no longer be the gold standard, and this evolving circumstance compels a re-evaluation of the concept of “supervision.”</p>
+</blockquote>
+<p>We may be entering an era where supervised data (human generated text) for supervised fine-tuning is no longer as useful as model-generated text from the most powerful models like GPT-4. Andrej Karpathy made a similar argument in his talk (<a href="https://youtu.be/bZQun8Y4L2A?t=1069">State of GPT at around 17:00</a>) saying that its easier for humans to compare two completions (what one does when creating training data for the reward model) vs.&nbsp;creating a completion from scratch (what one does when creating training data for the SFT model).</p>
+</section>
+<section id="in-context-temperature-rescaling" class="level2">
+<h2 class="anchored" data-anchor-id="in-context-temperature-rescaling">In-Context Temperature Rescaling</h2>
+<p>The authors report that temperature affects different types of prompts different (e.g.&nbsp;creative vs factual). For creative prompts, the RHLF models continue to generate diverse completions. However for factual prompts, the RHLF models learn to generate similar completions.</p>
+<blockquote class="blockquote">
+<p>For instance, when it comes to prompts associated with creativity, such as “Write a poem,” an increase in temperature continues to generate diversity across our various RLHF iterations. This can be observed in the Self-BLEU slope, which mirrors a pattern comparable to that of the SFT model. On the other hand, for prompts based on factual information, such as “What is the capital of ?” the Self-BLEU slope diminishes over time. This pattern suggests that despite the rising temperature, the model learns to consistently provide the same response to factual prompts.</p>
+</blockquote>
+<p>It’s not clear to me why temperature here can be above 1.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure21_adapting_temperature.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">RHLF learns to adapt temperature to type of prompt</figcaption><p></p>
+</figure>
+</div>
+</section>
+<section id="time-awareness" class="level2">
+<h2 class="anchored" data-anchor-id="time-awareness">Time Awareness</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure22_time_awareness.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Time Awareness</figcaption><p></p>
+</figure>
+</div>
+<p>Llama2-Chat also has the ability to organize it’s knowledge in a temporal manner. It sounds like they used 1,000 SFT examples to demonstrate it’s Llama2-Chat’s ability to understand time versus fine-tuning it to understand time.</p>
+<blockquote class="blockquote">
+<p>To instill a concept of time in Llama 2-Chat, we collected a set of 1,000 SFT examples that were related to specific dates. These examples included questions like “How long ago did Barack Obama become president?” Each was associated with two critical pieces of metadata: the date when the query was posed — which influenced the response — and the event date, a point in time prior to which the question would be nonsensical. The observation suggests that LLMs have internalized the concept of time to a greater extent than previously assumed, despite their training being solely based on next-token prediction and data that is randomly shuffled without regard to their chronological context.</p>
+</blockquote>
+</section>
+<section id="tool-use" class="level2">
+<h2 class="anchored" data-anchor-id="tool-use">Tool Use</h2>
+<p>Llama2-Chat also demonstrates an ability to use tools like a Calculator or Search even though it was not trained on this data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure23_tool_use_emergence.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Tool Use Emergence</figcaption><p></p>
+</figure>
+</div>
+<p>LLama2-Chat because it can use a calculator demonstrates better performance than GPT-3 and Toolformer on a math benchmark.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table15_tool_use_performance.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Tool Use Performance</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>From my limited experiments, I already knew Llama2-Chat was an exciting open source model. This paper is also an incredible artifact for learning and understanding details around RHLF (a novel idea around training two reward models), Ghost Attention (GAtt) and documenting interesting properties of the model like temporal awareness, tool use and the ability to adapt temperature to the type of prompt. I’m excited to see what the open source community builds on top of Llama2-Chat and the Llama2 family of models.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Llama</category>
+  <category>Llama2</category>
+  <category>Paper Summary</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/index.html</guid>
+  <pubDate>Fri, 21 Jul 2023 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Running Llama2 Locally on a M1 Mac</title>
   <dc:creator>Lawrence Wu</dc:creator>
