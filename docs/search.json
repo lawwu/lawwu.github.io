@@ -350,6 +350,13 @@
     "text": "Hi! My name is Lawrence and I’m a data scientist who loves deriving insight and value from data. I enjoy building machine learning and NLP solutions that make a difference. Currently I’m a Principal Data Scientist at UKG. Prior to that, I’ve held data science positions at Medidata, PIMCO, Payoff and Allianz. Prior to getting into data science, I was an actuary.\nOn this site I keep a technical blog and resume. I also enjoy writing about personal finance."
   },
   {
+    "objectID": "llm_resources.html",
+    "href": "llm_resources.html",
+    "title": "AI/ML/NLP Resources",
+    "section": "",
+    "text": "Timeline\nMaintaining a ml_timeline, inspired by @osanseviero\nJohn 3:16\nJohn 1:4\n\n\nGenerative AI\n\ntext-to-text\ntext-to-image\ntext-to-video\naudio-to-text\nimage-to-video\n\nZip-NeRF: Neural Radiance Fields for High-Quality View Synthesis\n\n\n\n\nNotes\n\nFastAttention2\nFastAttention\nEvol-Instruct - Evol-Instruct is a novel method using LLMs instead of humans to automatically mass-produce open-domain instructions of various difficulty levels and skills range, to improve the performance of LLMs. Used in the WizardLM family of models: https://github.com/nlpxucan/WizardLM\nTokenizers\nAttention, Attention Is All You Need"
+  },
+  {
     "objectID": "blog.html",
     "href": "blog.html",
     "title": "Lawrence Wu",
