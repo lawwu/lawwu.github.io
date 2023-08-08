@@ -3,7 +3,6 @@ title: "Double Machine Learning"
 author: "Lawrence Wu"    
 date: "2023-08-08"
 categories: ["Causal Inference"]
-draft: true
 ---
 
 At KDD2023 I was introduced to the term "Double Machine Learning" (DML). I was surprised I had never heard the term before so here are some notes on this important method in causal machine learning from a conversation with GPT-4. I am very impressed with GPT-4's ability to help explain complex concepts especially in areas where there there are libraries and code involved.

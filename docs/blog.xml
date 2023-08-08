@@ -10,7 +10,638 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.290</generator>
-<lastBuildDate>Mon, 07 Aug 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 08 Aug 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Double Machine Learning</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>At KDD2023 I was introduced to the term “Double Machine Learning” (DML). I was surprised I had never heard the term before so here are some notes on this important method in causal machine learning from a conversation with GPT-4. I am very impressed with GPT-4’s ability to help explain complex concepts especially in areas where there there are libraries and code involved.</p>
+<section id="double-machine-learning-dml" class="level1">
+<h1>Double Machine Learning (DML)</h1>
+<p>Double machine learning (DML) is a methodology developed to estimate causal effects or treatment effects in the presence of a high-dimensional set of controls. This technique is particularly useful in scenarios where there are a lot of control variables, and we want to adjust for confounding effects to accurately determine the impact of a particular treatment or variable of interest.</p>
+<section id="concept-and-its-benefits" class="level2">
+<h2 class="anchored" data-anchor-id="concept-and-its-benefits">Concept and its Benefits</h2>
+<section id="concept" class="level3">
+<h3 class="anchored" data-anchor-id="concept">Concept</h3>
+<p><strong>Problem</strong>: Suppose you’re interested in estimating the causal effect of a treatment variable ( T ) on an outcome ( Y ), while controlling for a high-dimensional set of covariates ( X ). The relationship could be something like ( Y = + T + g(X) + ), where ( g(X) ) is a potentially complex and high-dimensional function, and ( ) is an error term.</p>
+<p><strong>High-Dimensionality Issue</strong>: Directly estimating ( ) is challenging because of the high dimensionality of ( g(X) ). Traditional methods might suffer from overfitting or might not capture the nuanced relationship of ( X ) with ( Y ).</p>
+<p><strong>Solution via DML</strong>: DML breaks down the problem into two stages:</p>
+<ol type="1">
+<li><strong>First Stage</strong>: Use machine learning methods to predict ( Y ) and ( T ) based on ( X ). Obtain the residuals from these predictions.</li>
+<li><strong>Second Stage</strong>: Regress the residuals of ( Y ) on the residuals of ( T ) to estimate ( ). This step isolates the effect of ( T ) on ( Y ), controlling for ( X ), without directly modeling ( g(X) ).</li>
+</ol>
+</section>
+<section id="benefits" class="level3">
+<h3 class="anchored" data-anchor-id="benefits">Benefits</h3>
+<ul>
+<li><strong>Flexibility</strong>: DML doesn’t make strong assumptions about the functional forms of relationships, allowing for the use of flexible ML techniques.</li>
+<li><strong>Robustness</strong>: By working with residuals, DML reduces concerns about model misspecification. Even if the first-stage models aren’t perfect, as long as they’re reasonably good, the second-stage estimate of ( ) can still be consistent and accurate.</li>
+<li><strong>High-Dimensional Controls</strong>: DML is particularly suited for cases with many control variables. This is common in modern datasets where one might have a vast number of potential confounders.</li>
+<li><strong>Interpretability</strong>: The final result, ( ), provides a clear and interpretable estimate of the causal effect of ( T ) on ( Y ).</li>
+</ul>
+</section>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Example</h3>
+<p>Imagine you want to estimate the effect of a training program (treatment ( T )) on employee performance (outcome ( Y )), controlling for a range of employee attributes ( X ) (like age, experience, past performance metrics, personality scores, and so on). Using DML, you would first predict performance and program participation based on all these controls using ML models. Then, you’d isolate the unexplained variations (residuals) of performance and program participation and estimate the effect of the training program using these residuals.</p>
+</section>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>Double Machine Learning offers a robust and flexible way to estimate causal effects in high-dimensional settings, combining the strengths of traditional econometric methods with modern machine learning techniques.</p>
+<section id="source" class="level3">
+<h3 class="anchored" data-anchor-id="source">Source</h3>
+<p>Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., &amp; Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. The Econometrics Journal, 21(1), C1-C68.</p>
+</section>
+</section>
+</section>
+<section id="how-is-the-dml-different-and-better-than-the-methods-that-were-used-before-this-method-was-introduced" class="level1">
+<h1>How is the DML different and better than the methods that were used before this method was introduced?</h1>
+<p>Double Machine Learning (DML) was introduced to address some of the limitations and challenges of traditional methods in econometrics, especially in settings with high-dimensional controls. Here’s a comparison of DML with conventional approaches and an overview of its advantages:</p>
+<section id="traditional-methods" class="level2">
+<h2 class="anchored" data-anchor-id="traditional-methods">Traditional Methods</h2>
+<section id="linear-regression-with-controls" class="level3">
+<h3 class="anchored" data-anchor-id="linear-regression-with-controls">Linear Regression with Controls</h3>
+<p>Traditionally, if researchers wanted to control for confounding variables, they would include these controls in a linear regression. But, with high-dimensional controls, this approach faces issues like overfitting or multicollinearity.</p>
+</section>
+<section id="instrumental-variables-iv" class="level3">
+<h3 class="anchored" data-anchor-id="instrumental-variables-iv">Instrumental Variables (IV)</h3>
+<p>IV methods are used when the treatment variable is endogenous (correlated with the error term). IV requires the identification and use of an instrument that affects the treatment but has no direct effect on the outcome. Finding such instruments can be challenging.</p>
+</section>
+<section id="difference-in-differences-did" class="level3">
+<h3 class="anchored" data-anchor-id="difference-in-differences-did">Difference-in-Differences (DiD)</h3>
+<p>DiD estimates causal effects by looking at changes in outcomes over time between a group that receives the treatment and a group that doesn’t. This method assumes that the two groups would have followed parallel trends in the absence of treatment, an assumption that’s sometimes hard to validate.</p>
+</section>
+<section id="matching-and-propensity-score-methods" class="level3">
+<h3 class="anchored" data-anchor-id="matching-and-propensity-score-methods">Matching and Propensity Score Methods</h3>
+<p>These involve pairing treated and untreated subjects that have similar observable characteristics. It’s often difficult to balance all covariates, especially in high dimensions, and unobserved confounding remains a challenge.</p>
+</section>
+</section>
+<section id="advantages-of-dml" class="level2">
+<h2 class="anchored" data-anchor-id="advantages-of-dml">Advantages of DML</h2>
+<section id="flexibility-with-high-dimensional-controls" class="level3">
+<h3 class="anchored" data-anchor-id="flexibility-with-high-dimensional-controls">Flexibility with High-Dimensional Controls</h3>
+<p>Traditional methods struggle with many control variables due to overfitting, multicollinearity, or the curse of dimensionality. DML can handle high-dimensional controls efficiently by leveraging machine learning techniques.</p>
+</section>
+<section id="robustness-to-model-misspecification" class="level3">
+<h3 class="anchored" data-anchor-id="robustness-to-model-misspecification">Robustness to Model Misspecification</h3>
+<p>DML’s two-stage process (predicting using ML and then regressing the residuals) ensures that even if the first-stage predictions aren’t perfect, the causal estimate can still be consistent and accurate.</p>
+</section>
+<section id="leverages-machine-learning" class="level3">
+<h3 class="anchored" data-anchor-id="leverages-machine-learning">Leverages Machine Learning</h3>
+<p>By integrating machine learning into causal inference, DML can use complex, non-linear models to control for confounding, something that’s challenging with traditional linear methods.</p>
+</section>
+<section id="no-need-for-strong-instruments-or-parallel-trends" class="level3">
+<h3 class="anchored" data-anchor-id="no-need-for-strong-instruments-or-parallel-trends">No Need for Strong Instruments or Parallel Trends</h3>
+<p>Unlike IV or DiD, DML doesn’t rely on finding strong instruments or making assumptions about parallel trends, making it applicable in a broader range of scenarios.</p>
+</section>
+<section id="interoperability-with-other-techniques" class="level3">
+<h3 class="anchored" data-anchor-id="interoperability-with-other-techniques">Interoperability with Other Techniques</h3>
+<p>DML can be combined with other methods like instrumental variables (e.g., in the form of Double/Debiased Machine Learning with Instruments) to tackle more complex causal questions.</p>
+<p>In essence, while traditional econometric methods have their value and are optimal in certain settings, DML provides a flexible and robust framework for causal inference in modern datasets with many covariates. It bridges the gap between the strengths of classical econometric methods and the power of machine learning.</p>
+</section>
+</section>
+</section>
+<section id="can-you-give-me-2-3-examples-of-applying-dml-in-a-human-resources-setting-explain-it-using-the-variable-x-confounders-t-treatment-and-y-outcome" class="level1">
+<h1>Can you give me 2-3 examples of applying DML in a human resources setting? Explain it using the variable X (Confounders), T (Treatment) and Y (Outcome)</h1>
+<p>Double Machine Learning (DML) can be an incredibly useful tool in the Human Resources (HR) context, particularly when one wants to infer causal relationships while adjusting for many potential confounding variables. Here are three examples applying DML in an HR setting:</p>
+<section id="impact-of-training-programs-on-employee-productivity" class="level2">
+<h2 class="anchored" data-anchor-id="impact-of-training-programs-on-employee-productivity">1. Impact of Training Programs on Employee Productivity</h2>
+<ul>
+<li><strong>T (Treatment):</strong> Participation in a specialized training program.</li>
+<li><strong>Y (Outcome):</strong> Employee productivity (could be measured as tasks completed per day, quality scores, or any other relevant metric).</li>
+<li><strong>X (Confounders):</strong>
+<ul>
+<li>Age of the employee.</li>
+<li>Years of experience in the field.</li>
+<li>Educational background.</li>
+<li>Previous training programs attended.</li>
+<li>Personality test scores.</li>
+<li>Prior productivity metrics.</li>
+</ul></li>
+<li><strong>DML Application:</strong> HR wants to understand if the new training program truly increases productivity. By employing DML, they can control for a vast array of confounders (like age, experience, prior training, etc.) to ascertain the genuine causal effect of the training on productivity.</li>
+</ul>
+</section>
+<section id="evaluating-the-effects-of-flexible-work-hours-on-employee-satisfaction" class="level2">
+<h2 class="anchored" data-anchor-id="evaluating-the-effects-of-flexible-work-hours-on-employee-satisfaction">2. Evaluating the Effects of Flexible Work Hours on Employee Satisfaction</h2>
+<ul>
+<li><strong>T (Treatment):</strong> Implementation of flexible work hours (e.g., 4-day work week, flexi-timings).</li>
+<li><strong>Y (Outcome):</strong> Employee satisfaction scores (from regular employee surveys or feedback forms).</li>
+<li><strong>X (Confounders):</strong>
+<ul>
+<li>Age of the employee.</li>
+<li>Department or team (e.g., sales, IT, management).</li>
+<li>Commute time to the office.</li>
+<li>Number of dependents (like children).</li>
+<li>Tenure at the company.</li>
+<li>Previous satisfaction scores.</li>
+</ul></li>
+<li><strong>DML Application:</strong> HR is considering a policy change to offer more flexible working hours. They implement a pilot program in a few departments and then wish to measure its effect on employee satisfaction. With many potential confounders, DML can help isolate the true impact of the flexible hours policy on satisfaction.</li>
+</ul>
+</section>
+<section id="understanding-the-causal-effect-of-health-benefits-on-employee-retention" class="level2">
+<h2 class="anchored" data-anchor-id="understanding-the-causal-effect-of-health-benefits-on-employee-retention">3. Understanding the Causal Effect of Health Benefits on Employee Retention</h2>
+<ul>
+<li><strong>T (Treatment):</strong> Provision of a comprehensive health benefits package.</li>
+<li><strong>Y (Outcome):</strong> Employee retention rate (measured as the number of years an employee stays with the company or a binary outcome of whether they stayed for a given period).</li>
+<li><strong>X (Confounders):</strong>
+<ul>
+<li>Age of the employee.</li>
+<li>Salary and other financial incentives.</li>
+<li>Department or team.</li>
+<li>Job role and responsibilities.</li>
+<li>Previous job-switching history.</li>
+<li>Size of the family or number of dependents.</li>
+</ul></li>
+<li><strong>DML Application:</strong> An organization introduces a new health benefits package, theorizing that it would lead to higher retention rates. However, before scaling it company-wide, they want to understand its true causal effect. Using DML, they can adjust for various confounding factors like salary, job role, and personal circumstances to determine the genuine influence of the health benefits on retention.</li>
+</ul>
+<p>In each of these scenarios, the objective is to tease out the causal relationship between a specific HR intervention (T) and an outcome of interest (Y), all while accounting for a myriad of confounding variables (X) that might distort this relationship. By integrating DML techniques, HR departments can make more informed decisions based on robust causal inferences.</p>
+</section>
+</section>
+<section id="can-you-give-me-some-code-in-python-to-implement-the-first-use-case-with-clear-comments-too" class="level1">
+<h1>Can you give me some code in Python to implement the first use case with clear comments too?</h1>
+<p>Certainly! Below is a simplified Python code that applies Double Machine Learning (DML) to the first use case: evaluating the impact of a specialized training program on employee productivity. The code assumes you have data with relevant columns for treatment, outcome, and confounders.</p>
+<p>For this example, I’m using the EconML library, which offers a robust implementation of DML among other causal inference tools.</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Required Libraries</span></span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb1-4"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LinearRegression</span>
+<span id="cb1-5"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> econml.dml <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LinearDML</span>
+<span id="cb1-6"></span>
+<span id="cb1-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Load your dataset</span></span>
+<span id="cb1-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># df = pd.read_csv('your_data_file.csv')</span></span>
+<span id="cb1-9"></span>
+<span id="cb1-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Simulated dataset for the sake of this example</span></span>
+<span id="cb1-11">np.random.seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb1-12">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span></span>
+<span id="cb1-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Confounders</span></span>
+<span id="cb1-14">age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">60</span>, size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n)</span>
+<span id="cb1-15">years_of_experience <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">40</span>, size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n)</span>
+<span id="cb1-16">prior_productivity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, n)</span>
+<span id="cb1-17"></span>
+<span id="cb1-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Treatment: whether they attended the training or not (1 for yes, 0 for no)</span></span>
+<span id="cb1-19">treatment <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.binomial(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, n)</span>
+<span id="cb1-20"></span>
+<span id="cb1-21"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Outcome: productivity influenced by treatment, age, experience and some noise</span></span>
+<span id="cb1-22">productivity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> treatment <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.3</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> years_of_experience <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> </span>
+<span id="cb1-23">                <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> prior_productivity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, n))</span>
+<span id="cb1-24"></span>
+<span id="cb1-25">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({</span>
+<span id="cb1-26">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'age'</span>: age, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'experience'</span>: years_of_experience, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'prior_productivity'</span>: prior_productivity,</span>
+<span id="cb1-27">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'treatment'</span>: treatment, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'productivity'</span>: productivity</span>
+<span id="cb1-28">})</span>
+<span id="cb1-29"></span>
+<span id="cb1-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Define the treatment, outcome, and confounders</span></span>
+<span id="cb1-31">T <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'treatment'</span>]</span>
+<span id="cb1-32">Y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'productivity'</span>]</span>
+<span id="cb1-33">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'age'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'experience'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'prior_productivity'</span>]]</span>
+<span id="cb1-34"></span>
+<span id="cb1-35"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Define the machine learning model to use; here we're using linear regression for simplicity</span></span>
+<span id="cb1-36">ml_model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression()</span>
+<span id="cb1-37"></span>
+<span id="cb1-38"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Initialize the DML model</span></span>
+<span id="cb1-39">dml_model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearDML(model_y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ml_model, model_t<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>ml_model)</span>
+<span id="cb1-40">dml_model.fit(Y, T, X<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>X)</span>
+<span id="cb1-41"></span>
+<span id="cb1-42"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Retrieve the causal effect (average treatment effect or ATE)</span></span>
+<span id="cb1-43">ate <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> dml_model.ate()</span>
+<span id="cb1-44"></span>
+<span id="cb1-45"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Average Treatment Effect of the Training Program on Productivity: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>ate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div>
+<p>Here’s what the code does:</p>
+<ol type="1">
+<li>Imports required libraries.</li>
+<li>Either loads or simulates a dataset with treatment, outcome, and confounders.</li>
+<li>Defines the treatment, outcome, and confounders from the dataset.</li>
+<li>Sets up the machine learning model to use. In this simple example, it’s linear regression, but more complex models like random forests or gradient boosting machines can be used.</li>
+<li>Initializes and fits the DML model.</li>
+<li>Retrieves the average treatment effect (ATE) of the training on productivity.</li>
+</ol>
+</section>
+<section id="can-you-implement-the-above-use-case-in-python-without-econml-for-pedagogical-purposes" class="level1">
+<h1>Can you implement the above use case in Python without econml for pedagogical purposes?</h1>
+<p>Absolutely. Implementing Double Machine Learning (DML) without relying on specialized libraries will require a bit more manual work, but it’s quite educational.</p>
+<p>Here’s a basic implementation of DML for the first use case:</p>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> np</span>
+<span id="cb2-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">as</span> pd</span>
+<span id="cb2-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LinearRegression</span>
+<span id="cb2-4"></span>
+<span id="cb2-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Simulate the dataset</span></span>
+<span id="cb2-6">np.random.seed(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>)</span>
+<span id="cb2-7">n <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1000</span></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Confounders</span></span>
+<span id="cb2-9">age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">60</span>, size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n)</span>
+<span id="cb2-10">years_of_experience <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">40</span>, size<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n)</span>
+<span id="cb2-11">prior_productivity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">50</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">10</span>, n)</span>
+<span id="cb2-12"></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Treatment: whether they attended the training or not (1 for yes, 0 for no)</span></span>
+<span id="cb2-14">treatment <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> np.random.binomial(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span>, n)</span>
+<span id="cb2-15"></span>
+<span id="cb2-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Outcome: productivity influenced by treatment, age, experience, and some noise</span></span>
+<span id="cb2-17">productivity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">3</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> treatment <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.05</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> age <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.3</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> years_of_experience <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span></span>
+<span id="cb2-18">                <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> prior_productivity <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">5</span>, n))</span>
+<span id="cb2-19"></span>
+<span id="cb2-20">df <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> pd.DataFrame({</span>
+<span id="cb2-21">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'age'</span>: age, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'experience'</span>: years_of_experience, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'prior_productivity'</span>: prior_productivity,</span>
+<span id="cb2-22">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'treatment'</span>: treatment, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'productivity'</span>: productivity</span>
+<span id="cb2-23">})</span>
+<span id="cb2-24"></span>
+<span id="cb2-25"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Define the treatment, outcome, and confounders</span></span>
+<span id="cb2-26">T <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'treatment'</span>].values.reshape(<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)</span>
+<span id="cb2-27">Y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'productivity'</span>]</span>
+<span id="cb2-28">X <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'age'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'experience'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'prior_productivity'</span>]]</span>
+<span id="cb2-29"></span>
+<span id="cb2-30"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Step 1: Partial out the effect of X on T and Y using Linear Regression</span></span>
+<span id="cb2-31">model_t <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression().fit(X, T)</span>
+<span id="cb2-32">residual_T <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> T <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> model_t.predict(X)</span>
+<span id="cb2-33"></span>
+<span id="cb2-34">model_y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression().fit(X, Y)</span>
+<span id="cb2-35">residual_Y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> Y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> model_y.predict(X)</span>
+<span id="cb2-36"></span>
+<span id="cb2-37"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Step 2: Regress the residuals of Y on the residuals of T to obtain the treatment effect</span></span>
+<span id="cb2-38">ate_model <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LinearRegression().fit(residual_T, residual_Y)</span>
+<span id="cb2-39">ate <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> ate_model.coef_[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb2-40"></span>
+<span id="cb2-41"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Average Treatment Effect of the Training Program on Productivity: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>ate<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span></code></pre></div>
+<p>Here’s the basic workflow:</p>
+<ol type="1">
+<li><p><strong>Partial Out the Effects of Confounders (X)</strong>: We first “partial out” the effects of the confounders ( X ) on both the treatment ( T ) and outcome ( Y ) using linear regression. This leaves us with residuals for ( T ) and ( Y ) that represent the portions of ( T ) and ( Y ) that are not explained by ( X ).</p></li>
+<li><p><strong>Regress the Residuals</strong>: We then regress the residual of ( Y ) on the residual of ( T ). The coefficient of this regression is our estimate of the average treatment effect.</p></li>
+</ol>
+<p>This method uses the concept that by “controlling” for ( X ) (through partialling out its effects), any remaining relationship between ( T ) and ( Y ) should be causal, under the assumption that there are no unobserved confounders.</p>
+<p>This is a basic pedagogical introduction to DML. In practice, the methodology can get more intricate, especially when leveraging more complex models, handling various assumptions, and ensuring the robustness of the results.</p>
+</section>
+<section id="do-the-ml-models-at-each-of-those-steps-need-to-be-the-same" class="level1">
+<h1>Do the ML models at each of those steps need to be the same?</h1>
+<p>No, the machine learning models used to partial out the effects of the confounders on the treatment ( T ) and the outcome ( Y ) do not need to be the same in Double Machine Learning (DML). In fact, one of the strengths of DML is its flexibility in allowing different models for different parts of the process.</p>
+<section id="heres-why-you-might-choose-different-models" class="level2">
+<h2 class="anchored" data-anchor-id="heres-why-you-might-choose-different-models">Here’s why you might choose different models:</h2>
+<section id="different-natures-of-relationships" class="level3">
+<h3 class="anchored" data-anchor-id="different-natures-of-relationships">Different Natures of Relationships</h3>
+<p>The relationship between the confounders and the treatment might be different from the relationship between the confounders and the outcome. For instance, a non-linear model like a decision tree or random forest might capture the relationship between the confounders and the treatment best, while a linear model might be most appropriate for the relationship between the confounders and the outcome.</p>
+</section>
+<section id="model-performance-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="model-performance-considerations">Model Performance Considerations</h3>
+<p>In some settings, certain machine learning models might perform better (in terms of predictive accuracy) for the treatment assignment, while others might be better suited for modeling the outcome.</p>
+</section>
+<section id="computational-considerations" class="level3">
+<h3 class="anchored" data-anchor-id="computational-considerations">Computational Considerations</h3>
+<p>In some scenarios, especially with large datasets, computational efficiency might dictate the choice of models. Training a complex model might be computationally prohibitive for one task but feasible for another, depending on the data’s dimensionality and the relationships present.</p>
+<p>While DML allows for such flexibility, it’s important to remember the foundational assumption: both models (for ( T ) and ( Y )) should be sufficiently rich to capture the true relationships in the data. If the models are misspecified or too simplistic, it can introduce bias in the estimated treatment effects.</p>
+<p>In practice, using cross-validation or other model selection techniques can help determine which models are best suited for each step in the DML process.</p>
+</section>
+</section>
+</section>
+<section id="how-do-you-handle-training-and-test-data-splits-in-this-method" class="level1">
+<h1>How do you handle training and test data splits in this method?</h1>
+<p>Handling training and test data splits in Double Machine Learning (DML) is crucial to ensure the validity and robustness of the causal effect estimates. In DML, cross-fitting or cross-validation plays a central role in avoiding overfitting and ensuring that nuisance estimates do not inadvertently leak information about the treatment effect.</p>
+<section id="heres-how-you-can-handle-training-and-test-data-splits-in-dml" class="level2">
+<h2 class="anchored" data-anchor-id="heres-how-you-can-handle-training-and-test-data-splits-in-dml">Here’s how you can handle training and test data splits in DML:</h2>
+<section id="cross-fitting" class="level3">
+<h3 class="anchored" data-anchor-id="cross-fitting">1. Cross-Fitting:</h3>
+<p>Cross-fitting involves splitting the dataset into ( K ) folds (similar to ( K )-fold cross-validation in standard machine learning). For each fold, the following steps are taken:</p>
+<ul>
+<li><strong>Training on ( K-1 ) folds:</strong> Train the ML models for the treatment and outcome on ( K-1 ) folds.</li>
+<li><strong>Predicting on the left-out fold:</strong> Use the trained models to predict the treatment and outcome for the left-out fold, producing residuals.</li>
+<li><strong>Repeat:</strong> Perform the same operation ( K ) times, each time leaving out a different fold.</li>
+<li><strong>Finally, with the residuals produced from all the folds, you can estimate the treatment effect.</strong></li>
+</ul>
+</section>
+<section id="train-test-split" class="level3">
+<h3 class="anchored" data-anchor-id="train-test-split">2. Train-Test Split:</h3>
+<p>A simpler approach involves just splitting the data into a training set and a test set.</p>
+<ul>
+<li><strong>Training on the training set:</strong> Train the ML models for the treatment and outcome on the training set.</li>
+<li><strong>Predicting on the test set:</strong> Use the trained models to predict the treatment and outcome for the test set, producing residuals.</li>
+<li><strong>Estimating the treatment effect:</strong> With the residuals from the test set, estimate the treatment effect.</li>
+</ul>
+<p>This method is less robust than cross-fitting but can be computationally less intensive.</p>
+</section>
+</section>
+<section id="notes" class="level2">
+<h2 class="anchored" data-anchor-id="notes">Notes:</h2>
+<ul>
+<li><strong>Overfitting Concerns:</strong> Without proper cross-fitting or a train-test split, DML can overfit. This is because the ML models for treatment and outcome might fit the noise in the data, leading to biased nuisance estimates and, subsequently, biased treatment effect estimates.</li>
+<li><strong>Cross-Fitting is Preferred:</strong> Cross-fitting is typically preferred in DML because it helps ensure that the estimated causal effects are not driven by overfitting to the idiosyncrasies in the data. It also provides a more robust estimate of the treatment effect across different subsets of the data.</li>
+<li><strong>Final Model Assessment:</strong> After obtaining the causal effect estimates using DML, it’s a good practice to assess the performance of the final model on a completely separate validation set, if available. This ensures that the DML procedure generalizes well to unseen data.</li>
+</ul>
+<p>To summarize, handling data splits in DML is integral to its methodology. Properly performed, it ensures that the estimated causal effects are both valid and generalizable.</p>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>Causal Inference</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/index.html</guid>
+  <pubDate>Tue, 08 Aug 2023 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>KDD 2023 - Workshops: LLM and Causal Inference</title>
   <dc:creator>Lawrence Wu</dc:creator>
