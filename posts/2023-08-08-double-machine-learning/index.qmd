@@ -7,6 +7,16 @@ categories: ["Causal Inference"]
 
 At KDD2023 I was introduced to the term "Double Machine Learning" (DML). I was surprised I had never heard the term before so here are some notes on this important method in causal machine learning from a conversation with GPT-4. I am very impressed with GPT-4's ability to help explain complex concepts especially in areas where there there are libraries and code involved.
 
+The first 5 results from Google were not exactly what I was looking for:
+
+- <https://towardsdatascience.com/double-machine-learning-for-causal-inference-78e0c6111f9d> - I tend to avoid Medium articles because of the paywall
+- <https://econml.azurewebsites.net/spec/estimation/dml.html> - not enough detail explaining the concept of DML
+- <https://docs.doubleml.org/stable/guide/basics.html> - It was difficult for me to follow this tutorial
+- <https://dm13450.github.io/2021/05/28/Double-ML.html> - This was actually the best tutorial I read however the code is in R and I preferred a Python example
+- <https://arxiv.org/abs/1608.00060> - Original paper proposing the method however I wanted something a tad more accessible
+
+Hence the need to have a conversation with GPT-4.
+
 # Double Machine Learning (DML)
 
 Double machine learning (DML) is a methodology developed to estimate causal effects or treatment effects in the presence of a high-dimensional set of controls. This technique is particularly useful in scenarios where there are a lot of control variables, and we want to adjust for confounding effects to accurately determine the impact of a particular treatment or variable of interest.
