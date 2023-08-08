@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.290">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2023-08-07">
+
+<title>Lawrence Wu - KDD 2023 - Workshops: LLM and Causal Inference</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  });
+});
+</script> 
+  
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Lawrence Wu - KDD 2023 - Workshops: LLM and Causal Inference">
+<meta property="og:description" content="">
+<meta property="og:site-name" content="Lawrence Wu">
+<meta name="twitter:title" content="Lawrence Wu - KDD 2023 - Workshops: LLM and Causal Inference">
+<meta name="twitter:description" content="">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
+ <span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../ai_resources.html" rel="" target="">
+ <span class="menu-text">AI Resources</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu" rel="" target=""><i class="bi bi-github" role="img">
+</i> 
+ <span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu" rel="" target=""><i class="bi bi-twitter" role="img">
+</i> 
+ <span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#takeaways-from-day-1" id="toc-takeaways-from-day-1" class="nav-link active" data-scroll-target="#takeaways-from-day-1">Takeaways from Day 1</a></li>
+  <li><a href="#llm-workshop-foundations-and-applications-in-large-scale-ai-models---pre-training-fine-tuning-and-prompt-based-learning" id="toc-llm-workshop-foundations-and-applications-in-large-scale-ai-models---pre-training-fine-tuning-and-prompt-based-learning" class="nav-link" data-scroll-target="#llm-workshop-foundations-and-applications-in-large-scale-ai-models---pre-training-fine-tuning-and-prompt-based-learning">LLM Workshop: Foundations and Applications in Large-scale AI Models - Pre-training, Fine-tuning, and Prompt-based Learning</a>
+  <ul class="collapse">
+  <li><a href="#schedule" id="toc-schedule" class="nav-link" data-scroll-target="#schedule">Schedule</a></li>
+  <li><a href="#llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi" id="toc-llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi" class="nav-link" data-scroll-target="#llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi">LLM Revolution: Implications from Chatbots and Tool-Use to Reasoning - Ed Chi</a>
+  <ul class="collapse">
+  <li><a href="#functions-that-deep-neural-network-can-learn" id="toc-functions-that-deep-neural-network-can-learn" class="nav-link" data-scroll-target="#functions-that-deep-neural-network-can-learn">2016 - Functions that Deep Neural Network Can Learn</a></li>
+  <li><a href="#chatbots" id="toc-chatbots" class="nav-link" data-scroll-target="#chatbots">Chatbots</a></li>
+  <li><a href="#lambda-bard-brought-to-you-by-eds-team" id="toc-lambda-bard-brought-to-you-by-eds-team" class="nav-link" data-scroll-target="#lambda-bard-brought-to-you-by-eds-team">Lambda –&gt; Bard (Brought to You by Ed’s Team)</a></li>
+  <li><a href="#large-language-models-llm" id="toc-large-language-models-llm" class="nav-link" data-scroll-target="#large-language-models-llm">Large Language Models (LLM)</a></li>
+  <li><a href="#programming" id="toc-programming" class="nav-link" data-scroll-target="#programming">Programming</a></li>
+  <li><a href="#retrieval-augmentation-leveraging-external-knowledge" id="toc-retrieval-augmentation-leveraging-external-knowledge" class="nav-link" data-scroll-target="#retrieval-augmentation-leveraging-external-knowledge">Retrieval Augmentation: Leveraging External Knowledge</a></li>
+  <li><a href="#multi-modality-output-not-just-text-could-be-images" id="toc-multi-modality-output-not-just-text-could-be-images" class="nav-link" data-scroll-target="#multi-modality-output-not-just-text-could-be-images">Multi-modality output (not just text, could be images)</a></li>
+  <li><a href="#humans-and-llms-with-tools" id="toc-humans-and-llms-with-tools" class="nav-link" data-scroll-target="#humans-and-llms-with-tools">Humans and LLMs with Tools</a></li>
+  <li><a href="#future-challenges" id="toc-future-challenges" class="nav-link" data-scroll-target="#future-challenges">Future Challenges</a></li>
+  <li><a href="#keynote" id="toc-keynote" class="nav-link" data-scroll-target="#keynote">Keynote</a></li>
+  </ul></li>
+  <li><a href="#large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning" id="toc-large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning" class="nav-link" data-scroll-target="#large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning">Large-scale AI Model Research at Google Pre-training, Fine-tuning, and Prompt-based Learning</a>
+  <ul class="collapse">
+  <li><a href="#mixture-of-experts-models" id="toc-mixture-of-experts-models" class="nav-link" data-scroll-target="#mixture-of-experts-models">Mixture of Experts Models</a></li>
+  <li><a href="#conditional-computation" id="toc-conditional-computation" class="nav-link" data-scroll-target="#conditional-computation">Conditional Computation</a></li>
+  <li><a href="#multi-modal-work" id="toc-multi-modal-work" class="nav-link" data-scroll-target="#multi-modal-work">Multi-modal Work</a></li>
+  <li><a href="#imagen-technical-details" id="toc-imagen-technical-details" class="nav-link" data-scroll-target="#imagen-technical-details">Imagen: Technical Details</a></li>
+  <li><a href="#pali" id="toc-pali" class="nav-link" data-scroll-target="#pali">Pali</a></li>
+  <li><a href="#spotlight" id="toc-spotlight" class="nav-link" data-scroll-target="#spotlight">Spotlight</a></li>
+  <li><a href="#play-parametrically-condition-layout-generation-using-guidelines" id="toc-play-parametrically-condition-layout-generation-using-guidelines" class="nav-link" data-scroll-target="#play-parametrically-condition-layout-generation-using-guidelines">PLay: Parametrically Condition Layout Generation Using Guidelines</a></li>
+  <li><a href="#how-do-you-handle-ambiguity-in-an-answer" id="toc-how-do-you-handle-ambiguity-in-an-answer" class="nav-link" data-scroll-target="#how-do-you-handle-ambiguity-in-an-answer">How do you handle ambiguity in an answer?</a></li>
+  </ul></li>
+  <li><a href="#retrieval-augmented-multimodal-language-modeling" id="toc-retrieval-augmented-multimodal-language-modeling" class="nav-link" data-scroll-target="#retrieval-augmented-multimodal-language-modeling">Retrieval-Augmented Multimodal Language Modeling</a></li>
+  <li><a href="#in-context-learning-user-simulators-for-task-oriented-dialog-systems" id="toc-in-context-learning-user-simulators-for-task-oriented-dialog-systems" class="nav-link" data-scroll-target="#in-context-learning-user-simulators-for-task-oriented-dialog-systems">In-Context Learning User Simulators for Task-Oriented Dialog Systems</a></li>
+  <li><a href="#challenges-in-post-training-quantization-of-vision-transformers" id="toc-challenges-in-post-training-quantization-of-vision-transformers" class="nav-link" data-scroll-target="#challenges-in-post-training-quantization-of-vision-transformers">Challenges in post-training quantization of Vision Transformers</a></li>
+  <li><a href="#generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion" id="toc-generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion" class="nav-link" data-scroll-target="#generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion">Generalization in Graph Neural Networks: Improved PAC-Bayesian Bounds on Graph Diffusion</a></li>
+  <li><a href="#nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering" id="toc-nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering" class="nav-link" data-scroll-target="#nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering">NLP Research in the Era of LLMs - Unleashing the Potential of LLMs through Task and Data Engineering</a>
+  <ul class="collapse">
+  <li><a href="#background-data-engineering" id="toc-background-data-engineering" class="nav-link" data-scroll-target="#background-data-engineering">Background: Data Engineering</a></li>
+  <li><a href="#background-rise-of-task-engineering" id="toc-background-rise-of-task-engineering" class="nav-link" data-scroll-target="#background-rise-of-task-engineering">Background: Rise of Task Engineering</a></li>
+  <li><a href="#background-task-engineering" id="toc-background-task-engineering" class="nav-link" data-scroll-target="#background-task-engineering">Background: Task Engineering</a></li>
+  <li><a href="#llm-lifecycle" id="toc-llm-lifecycle" class="nav-link" data-scroll-target="#llm-lifecycle">LLM Lifecycle</a></li>
+  <li><a href="#xgen-llm-june-2023" id="toc-xgen-llm-june-2023" class="nav-link" data-scroll-target="#xgen-llm-june-2023"><strong>XGen LLM</strong>: June 2023</a></li>
+  <li><a href="#instructed-tuned" id="toc-instructed-tuned" class="nav-link" data-scroll-target="#instructed-tuned">Instructed tuned</a></li>
+  <li><a href="#what-does-wizardlm-do-exactly-in-advancing-the-sota" id="toc-what-does-wizardlm-do-exactly-in-advancing-the-sota" class="nav-link" data-scroll-target="#what-does-wizardlm-do-exactly-in-advancing-the-sota">What does WizardLM do exactly in advancing the SoTA?</a></li>
+  </ul></li>
+  <li><a href="#modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision" id="toc-modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision" class="nav-link" data-scroll-target="#modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision">Modular Large Language Model and Principle-Driven alignment with Minimal Human Supervision</a>
+  <ul class="collapse">
+  <li><a href="#foundation-model-types" id="toc-foundation-model-types" class="nav-link" data-scroll-target="#foundation-model-types">Foundation model types</a></li>
+  <li><a href="#moduleformer---learning-modular-llm-from-uncurated-data" id="toc-moduleformer---learning-modular-llm-from-uncurated-data" class="nav-link" data-scroll-target="#moduleformer---learning-modular-llm-from-uncurated-data">ModuleFormer - Learning Modular LLM from Uncurated Data</a></li>
+  <li><a href="#mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners" id="toc-mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners" class="nav-link" data-scroll-target="#mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners">Mod-Squad - designing a mixture of experts as modular multi-task learners</a></li>
+  <li><a href="#dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles" id="toc-dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles" class="nav-link" data-scroll-target="#dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles">Dromedary - efficiently teach AI to follow a given set of principles</a></li>
+  </ul></li>
+  <li><a href="#autohint-automatic-prompt-optimization-with-hint-generation" id="toc-autohint-automatic-prompt-optimization-with-hint-generation" class="nav-link" data-scroll-target="#autohint-automatic-prompt-optimization-with-hint-generation">AutoHint: Automatic Prompt Optimization with Hint Generation</a></li>
+  </ul></li>
+  <li><a href="#causal-inference-workshop-causal-inference-and-machine-learning-in-practice" id="toc-causal-inference-workshop-causal-inference-and-machine-learning-in-practice" class="nav-link" data-scroll-target="#causal-inference-workshop-causal-inference-and-machine-learning-in-practice">Causal Inference Workshop: Causal Inference and Machine Learning in Practice</a>
+  <ul class="collapse">
+  <li><a href="#cog-creative-optimality-gap-for-video-advertising" id="toc-cog-creative-optimality-gap-for-video-advertising" class="nav-link" data-scroll-target="#cog-creative-optimality-gap-for-video-advertising">COG: Creative Optimality Gap for Video Advertising</a>
+  <ul class="collapse">
+  <li><a href="#video-ads-motivation" id="toc-video-ads-motivation" class="nav-link" data-scroll-target="#video-ads-motivation">Video ads motivation</a></li>
+  <li><a href="#goal" id="toc-goal" class="nav-link" data-scroll-target="#goal">Goal</a></li>
+  <li><a href="#approach---creative-optimality-gap-cog" id="toc-approach---creative-optimality-gap-cog" class="nav-link" data-scroll-target="#approach---creative-optimality-gap-cog">Approach - Creative Optimality Gap (COG)</a></li>
+  <li><a href="#benefits" id="toc-benefits" class="nav-link" data-scroll-target="#benefits">Benefits</a></li>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link" data-scroll-target="#preliminaries">Preliminaries</a></li>
+  <li><a href="#cog-modeling" id="toc-cog-modeling" class="nav-link" data-scroll-target="#cog-modeling">COG Modeling</a></li>
+  <li><a href="#cog-modeling-guardrails" id="toc-cog-modeling-guardrails" class="nav-link" data-scroll-target="#cog-modeling-guardrails">COG Modeling: Guardrails</a></li>
+  <li><a href="#solution" id="toc-solution" class="nav-link" data-scroll-target="#solution">Solution</a></li>
+  </ul></li>
+  <li><a href="#the-value-of-last-mile-delivery-in-online-retail" id="toc-the-value-of-last-mile-delivery-in-online-retail" class="nav-link" data-scroll-target="#the-value-of-last-mile-delivery-in-online-retail">The Value of Last-Mile Delivery in Online Retail</a>
+  <ul class="collapse">
+  <li><a href="#cainiao---chinese-company" id="toc-cainiao---chinese-company" class="nav-link" data-scroll-target="#cainiao---chinese-company">Cainiao - Chinese Company</a></li>
+  <li><a href="#use-causal-ml-estimating-ite" id="toc-use-causal-ml-estimating-ite" class="nav-link" data-scroll-target="#use-causal-ml-estimating-ite">Use Causal ML: Estimating ITE</a></li>
+  <li><a href="#models" id="toc-models" class="nav-link" data-scroll-target="#models">Models</a></li>
+  <li><a href="#account-for-knapsnack" id="toc-account-for-knapsnack" class="nav-link" data-scroll-target="#account-for-knapsnack">Account for Knapsnack</a></li>
+  </ul></li>
+  <li><a href="#leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation" id="toc-leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation" class="nav-link" data-scroll-target="#leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation">Leveraging Causal Uplift Modeling for Budget Constrained Benefits Allocation</a></li>
+  <li><a href="#ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford" id="toc-ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford" class="nav-link" data-scroll-target="#ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford">Ensemble Method for Estimating Individualized Treatment Effects Kevin Wu Han, Han Wu (Stanford)</a></li>
+  <li><a href="#a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization" id="toc-a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization" class="nav-link" data-scroll-target="#a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization">A Scalable and Debiased Approach to Dynamic Pricing with Causal Machine Learning and Optimization</a></li>
+  <li><a href="#an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology" id="toc-an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology" class="nav-link" data-scroll-target="#an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology">An IPW-based Unbiased Ranking Metric in Two-sided Markets Keisho Oh, Naoki Nishimura (Recruit Co), Minje Sung, Ken Kobayashi, Kazuhide Nakata (Tokyo Institute of Technology)</a></li>
+  <li><a href="#unit-selection-based-on-counterfactual-logic" id="toc-unit-selection-based-on-counterfactual-logic" class="nav-link" data-scroll-target="#unit-selection-based-on-counterfactual-logic">Unit Selection Based on Counterfactual Logic</a></li>
+  <li><a href="#towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml" id="toc-towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml" class="nav-link" data-scroll-target="#towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml">Towards Automating the Causal Machine Learning Pipeline Vasilis Syrgkanis (Stanford/EconML)</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">KDD 2023 - Workshops: LLM and Causal Inference</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Conference</div>
+    <div class="quarto-category">KDD</div>
+    <div class="quarto-category">LLM</div>
+    <div class="quarto-category">Causal Inference</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 7, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>I attended <a href="https://kdd.org/kdd2023/">KDD 2023</a> which was held in Long Beach, CA from Aug 6-10. The first day I attended was Monday which had half-day workshops around a topic. The two I attended were about LLMs (because I’m interested and it’s relevant to my work) and Causal Inference (because I haven’t used causal machine learning techniques in practice before and wanted exposure).</p>
+<section id="takeaways-from-day-1" class="level1">
+<h1>Takeaways from Day 1</h1>
+<ul>
+<li>Ed Chi had my favorite line from the day:
+<ul>
+<li>Humans + Search –&gt; Superhuman</li>
+<li>LLMS + Tools –&gt; Super LLMS</li>
+<li>Humans + Super LLM –&gt; Super super humans??</li>
+</ul></li>
+<li>Reaffirmed the LLM space is moving very quickly. There are areas of research that if not explored in the next year or so, it will be too late to make a meaningful contribution.</li>
+<li>Learned some new methodologies:
+<ul>
+<li>LLMs: Prompt Tuning, Mixture of Experts</li>
+<li>Causal ML: Double Machine Learning (DML), many packages to do Causal ML like CausalML, EconML and UpliftML</li>
+</ul></li>
+<li>Two groups in an A/B test may not be sufficient, need to account for 4 groups</li>
+</ul>
+</section>
+<section id="llm-workshop-foundations-and-applications-in-large-scale-ai-models---pre-training-fine-tuning-and-prompt-based-learning" class="level1">
+<h1>LLM Workshop: Foundations and Applications in Large-scale AI Models - Pre-training, Fine-tuning, and Prompt-based Learning</h1>
+<p>The website for this workshop is here: <a href="https://llm-ai.github.io/llmai/">https://llm-ai.github.io/llmai/</a>.</p>
+<section id="schedule" class="level2">
+<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 39%">
+<col style="width: 48%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Speaker</th>
+<th>Title</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>8:00-8:10AM, 2023/08/07 (PDT)</td>
+<td>Host Chair</td>
+<td>Welcome and Open Remarks</td>
+</tr>
+<tr class="even">
+<td>8:10-8:40AM, 2023/08/07 (PDT)</td>
+<td>Ed Chi [Google]</td>
+<td>Talk 1: LLM Revolution: Implications rom Chatbots and Tool-Use to Reasoning</td>
+</tr>
+<tr class="odd">
+<td>8:40-9:10AM, 2023/08/07 (PDT)</td>
+<td>Tania Bedrax-Weiss [Google]</td>
+<td>Talk 2: Large-scale AI Model Research at Google Pre-training, Fine-tuning, and Prompt-based Learning</td>
+</tr>
+<tr class="even">
+<td>9:10-9:25AM, 2023/08/07 (PDT)</td>
+<td>Michihiro Yasunaga, Armen Aghajanyan, Weijia Shi, Rich James, Jure Leskovec, Percy Liang, Mike Lewis, Luke Zettlemoyer and Wen-Tau Yih</td>
+<td>Paper-1: Retrieval-Augmented Multimodal Language Modeling</td>
+</tr>
+<tr class="odd">
+<td>9:25-9:40AM, 2023/08/07 (PDT)</td>
+<td>Silvia Terragni, Modestas Filipavicius, Nghia Khau, Bruna Guedes, André Manso and Roland Mathis</td>
+<td>Paper-2: In-Context Learning User Simulators for Task-Oriented Dialog Systems</td>
+</tr>
+<tr class="even">
+<td>9:40-9:55AM, 2023/08/07 (PDT)</td>
+<td>Piotr Kluska, Florian Scheidegger, A. Cristano I. Malossi and Enrique S. Quintana-Ortí</td>
+<td>Paper-3 : Challenges in post-training quantization of Vision Transformers</td>
+</tr>
+<tr class="odd">
+<td>9:55-10:10AM, 2023/08/07 (PDT)</td>
+<td>Haotian Ju, Dongyue Li, Aneesh Sharma and Hongyang Zhang</td>
+<td>Paper-4 : Generalization in Graph Neural Networks: Improved PAC-Bayesian Bounds on Graph Diffusion</td>
+</tr>
+<tr class="even">
+<td>10:10-10:30AM, 2023/08/07 (PDT)</td>
+<td>Coffee Break</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10:30-11:00AM, 2023/08/07 (PDT)</td>
+<td>Shafiq Joty [Salesforce]</td>
+<td>Talk 3: NLP Research in the Era of LLMs</td>
+</tr>
+<tr class="even">
+<td>11:00-11:30AM, 2023/08/07 (PDT)</td>
+<td>YiKang Shen[IBM]</td>
+<td>Talk 4: Modular Large Language Model and Principle-Driven alignment with Minimal Human Supervision</td>
+</tr>
+<tr class="odd">
+<td>11:30-11:40AM, 2023/08/07 (PDT)</td>
+<td>Hong Sun, Xue Li, Yinchuan Xu, Youkow Homma, Qi Cao, Min Wu, Jian Jiao and Denis Charles</td>
+<td>Paper-5: AutoHint: Automatic Prompt Optimization with Hint Generation</td>
+</tr>
+<tr class="even">
+<td>11:40-11:50AM, 2023/08/07 (PDT)</td>
+<td>Zhichao Wang, Mengyu Dai and Keld Lundgaard</td>
+<td>Paper-6: Text-to-Video: a Two-stage Framework for Zero-shot Identity-agnostic Talking-head Generation</td>
+</tr>
+<tr class="odd">
+<td>11:50-12:00PM, 2023/08/07 (PDT)</td>
+<td>Long Hoang Dang, Thao Minh Le, Tu Minh Phuong and Truyen Tran</td>
+<td>Paper-7: Compositional Prompting with Successive Decomposition for Multimodal Language Models</td>
+</tr>
+<tr class="even">
+<td>12:00PM-12:10PM, 2023/08/07 (PDT)</td>
+<td>Zhen Guo, Yanwei Wang, Peiqi Wang and Shangdi Yu</td>
+<td>Paper-8: Dr.&nbsp;LLaMA: Improving Small Language Models on PubMedQA via Generative Data Augmentation</td>
+</tr>
+<tr class="odd">
+<td>12:10-12:20PM, 2023/08/07 (PDT)</td>
+<td>Haopeng Zhang, Xiao Liu and Jiawei Zhang</td>
+<td>Paper-9 : Extractive Summarization via ChatGPT for Faithful Summary Generation</td>
+</tr>
+<tr class="even">
+<td>12:20-12:30PM, 2023/08/07 (PDT)</td>
+<td>Closing Remarks</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi" class="level2">
+<h2 class="anchored" data-anchor-id="llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi">LLM Revolution: Implications from Chatbots and Tool-Use to Reasoning - Ed Chi</h2>
+<p>Ed Chi from Google gave this great talk.</p>
+<section id="functions-that-deep-neural-network-can-learn" class="level3">
+<h3 class="anchored" data-anchor-id="functions-that-deep-neural-network-can-learn">2016 - Functions that Deep Neural Network Can Learn</h3>
+<ul>
+<li>Pixels –&gt; Lion</li>
+<li>Audio –&gt; Audio to text</li>
+<li>Text –&gt; Text (translation)</li>
+<li>Pixels –&gt; Caption</li>
+</ul>
+</section>
+<section id="chatbots" class="level3">
+<h3 class="anchored" data-anchor-id="chatbots">Chatbots</h3>
+<ul>
+<li>Not just transactional</li>
+<li>We want chatbots to be contextual</li>
+<li>Personalized assistants for everyone</li>
+</ul>
+</section>
+<section id="lambda-bard-brought-to-you-by-eds-team" class="level3">
+<h3 class="anchored" data-anchor-id="lambda-bard-brought-to-you-by-eds-team">Lambda –&gt; Bard (Brought to You by Ed’s Team)</h3>
+<ul>
+<li>They wanted to publish Lambda in the form of Bard, but there were difficulties</li>
+</ul>
+</section>
+<section id="large-language-models-llm" class="level3">
+<h3 class="anchored" data-anchor-id="large-language-models-llm">Large Language Models (LLM)</h3>
+<ul>
+<li>Large knowledge base</li>
+<li>What is a plan to read 20 books a year? Reaches into the LLM to come up with a real plan</li>
+<li>Genesis of captions –&gt; not too far to be able to generate text</li>
+</ul>
+</section>
+<section id="programming" class="level3">
+<h3 class="anchored" data-anchor-id="programming">Programming</h3>
+<ul>
+<li>Coding is less about coding, more about data</li>
+<li>Data Science (DS) is going to be a bigger part of software development</li>
+</ul>
+</section>
+<section id="retrieval-augmentation-leveraging-external-knowledge" class="level3">
+<h3 class="anchored" data-anchor-id="retrieval-augmentation-leveraging-external-knowledge">Retrieval Augmentation: Leveraging External Knowledge</h3>
+<ul>
+<li>Factuality trigger</li>
+<li>Open-book Generative QA</li>
+<li>RETRO: Retrieval-augmented generative model</li>
+<li>Questions:
+<ul>
+<li>How big does the LLM need to be?</li>
+<li>How big does the external knowledge base need to be?</li>
+<li>Fruitful Line of Research</li>
+</ul></li>
+</ul>
+</section>
+<section id="multi-modality-output-not-just-text-could-be-images" class="level3">
+<h3 class="anchored" data-anchor-id="multi-modality-output-not-just-text-could-be-images">Multi-modality output (not just text, could be images)</h3>
+<ul>
+<li>Image retrieval</li>
+<li>Image input –&gt; Generate captions</li>
+</ul>
+</section>
+<section id="humans-and-llms-with-tools" class="level3">
+<h3 class="anchored" data-anchor-id="humans-and-llms-with-tools">Humans and LLMs with Tools</h3>
+<ul>
+<li>Humans + Search –&gt; Superhuman</li>
+<li>LLMS + Tools –&gt; Super LLMS</li>
+<li>Humans + Super LLM –&gt; Super super humans??</li>
+</ul>
+</section>
+<section id="future-challenges" class="level3">
+<h3 class="anchored" data-anchor-id="future-challenges">Future Challenges</h3>
+<ul>
+<li>Responsibility and Safety</li>
+<li>Factuality, Grounding, and Attribution</li>
+<li>Human &lt;-&gt; AI Content Loop and Ecosystem</li>
+<li>Personalization and User Memory</li>
+</ul>
+</section>
+<section id="keynote" class="level3">
+<h3 class="anchored" data-anchor-id="keynote">Keynote</h3>
+<ul>
+<li>Ed is going to give the keynote tomorrow</li>
+<li>You can interrogate a model for why it made a decision or prediction</li>
+<li>Area: Self-critique, self-reflection (next year or so)</li>
+<li>3-5 year research topics:
+<ul>
+<li>Hallucinations / Bias in areas where the LLM has not been trained</li>
+<li>Relationship between hallucinations and safety</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning" class="level2">
+<h2 class="anchored" data-anchor-id="large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning">Large-scale AI Model Research at Google Pre-training, Fine-tuning, and Prompt-based Learning</h2>
+<p>Tania Bedrax-Weiss from Google gave this talk.</p>
+<section id="mixture-of-experts-models" class="level3">
+<h3 class="anchored" data-anchor-id="mixture-of-experts-models">Mixture of Experts Models</h3>
+<ul>
+<li>How to route the question to the right expert, right experts</li>
+</ul>
+</section>
+<section id="conditional-computation" class="level3">
+<h3 class="anchored" data-anchor-id="conditional-computation">Conditional Computation</h3>
+<ul>
+<li>COLT5 Transformer layer</li>
+<li>Scales to longer context</li>
+<li>Early exit</li>
+<li>Per step confidence thresholds</li>
+</ul>
+</section>
+<section id="multi-modal-work" class="level3">
+<h3 class="anchored" data-anchor-id="multi-modal-work">Multi-modal Work</h3>
+<ul>
+<li>Imagen - diffusion model
+<ul>
+<li><a href="https://imagen.research.google/">Imagen Research Google</a></li>
+</ul></li>
+<li>Parti - autoregressive model
+<ul>
+<li><a href="https://sites.research.google/parti/">Parti Research Google</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="imagen-technical-details" class="level3">
+<h3 class="anchored" data-anchor-id="imagen-technical-details">Imagen: Technical Details</h3>
+<ul>
+<li>ViT-VQGAN as image tokenizer
+<ul>
+<li>What’s an image tokenizer? See: https://keras.io/examples/vision/token_learner/</li>
+</ul></li>
+<li>Autoregressively generate images in a similar way that LLMs generate text</li>
+<li>Can generate text reliably - spell words out unlike other models</li>
+</ul>
+</section>
+<section id="pali" class="level3">
+<h3 class="anchored" data-anchor-id="pali">Pali</h3>
+<ul>
+<li>Image to text</li>
+<li>State of the art text captioning model</li>
+</ul>
+</section>
+<section id="spotlight" class="level3">
+<h3 class="anchored" data-anchor-id="spotlight">Spotlight</h3>
+<ul>
+<li>Screenshots / user interfaces - understand what are the actions that a user can perform</li>
+<li>Execute commands in the user interface</li>
+</ul>
+</section>
+<section id="play-parametrically-condition-layout-generation-using-guidelines" class="level3">
+<h3 class="anchored" data-anchor-id="play-parametrically-condition-layout-generation-using-guidelines">PLay: Parametrically Condition Layout Generation Using Guidelines</h3>
+<ul>
+<li>Fine-tuning</li>
+<li>Prompt Tuning
+<ul>
+<li>Look at this more</li>
+</ul></li>
+</ul>
+</section>
+<section id="how-do-you-handle-ambiguity-in-an-answer" class="level3">
+<h3 class="anchored" data-anchor-id="how-do-you-handle-ambiguity-in-an-answer">How do you handle ambiguity in an answer?</h3>
+<ul>
+<li>LLMs are very eager to give an answer</li>
+<li>Types
+<ul>
+<li>Use multiple prompts to get different types of answers. This is my answer. Can you generate other answers?</li>
+<li>Diversity objectives</li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="retrieval-augmented-multimodal-language-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="retrieval-augmented-multimodal-language-modeling">Retrieval-Augmented Multimodal Language Modeling</h2>
+<p>Paper: <a href="https://arxiv.org/abs/2211.12561">https://arxiv.org/abs/2211.12561</a></p>
+<p>Recent multimodal models such as DALL-E and CM3 have achieved remarkable progress in text-to-image and image-to-text generation. However, these models store all learned knowledge (e.g., the appearance of the Eiffel Tower) in the model parameters, requiring increasingly larger models and training data to capture more knowledge. To integrate knowledge in a more scalable and modular way, we propose a retrieval-augmented multimodal model, which enables a base multimodal model (generator) to refer to relevant text and images fetched by a retriever from external memory (e.g., documents on the web). Specifically, for the retriever, we use a pretrained CLIP, and for the generator, we train a CM3 Transformer on the LAION dataset. Our resulting model, named Retrieval-Augmented CM3 (RA-CM3), is the first multimodal model that can retrieve and generate both text and images. We show that RA-CM3 significantly outperforms baseline multimodal models such as DALL-E and CM3 on both image and caption generation tasks (12 FID and 17 CIDEr improvements on MS-COCO), while requiring much less compute for training (&lt;30% of DALL-E). Moreover, we show that RA-CM3 exhibits novel capabilities, such as faithful image generation and multimodal in-context learning (e.g., image generation from demonstrations).</p>
+<ul>
+<li>Develop a retrieval-augmented multimodal model, a first of it’s kind</li>
+<li>The generator uses retrieved items for generation too</li>
+<li>Retrieval augmented training - helped a lot</li>
+</ul>
+</section>
+<section id="in-context-learning-user-simulators-for-task-oriented-dialog-systems" class="level2">
+<h2 class="anchored" data-anchor-id="in-context-learning-user-simulators-for-task-oriented-dialog-systems">In-Context Learning User Simulators for Task-Oriented Dialog Systems</h2>
+<ul>
+<li>Code: <a href="https://github.com/telepathylabsai/prompt-based-user-simulator">https://github.com/telepathylabsai/prompt-based-user-simulator</a></li>
+<li>Paper: <a href="https://arxiv.org/abs/2306.00774">https://arxiv.org/abs/2306.00774</a></li>
+</ul>
+<p>This paper presents a novel application of large language models in user simulation for task-oriented dialog systems, specifically focusing on an in-context learning approach. By harnessing the power of these models, the proposed approach generates diverse utterances based on user goals and limited dialog examples. Unlike traditional simulators, this method eliminates the need for labor-intensive rule definition or extensive annotated data, making it more efficient and accessible. Additionally, an error analysis of the interaction between the user simulator and dialog system uncovers common mistakes, providing valuable insights into areas that require improvement. Our implementation is available at this https URL.</p>
+<ul>
+<li>Rule based systems are still more accurate. However they mainly understand happy paths of a dialog system.</li>
+<li>These LLM based approaches can explore unexpected behavior of users</li>
+</ul>
+</section>
+<section id="challenges-in-post-training-quantization-of-vision-transformers" class="level2">
+<h2 class="anchored" data-anchor-id="challenges-in-post-training-quantization-of-vision-transformers">Challenges in post-training quantization of Vision Transformers</h2>
+<p>Paper: <a href="https://research.ibm.com/publications/challenges-in-post-training-quantization-of-vision-transformers">https://research.ibm.com/publications/challenges-in-post-training-quantization-of-vision-transformers</a></p>
+<p>Vision Transformers recently showed outstanding performance in computer vision tasks. However, those models are compute and memory intensive that require accelerators with a large amount of memory like NVIDIA A100 graphic processing unit for training and even for inference. Post-training quantization is an appealing compression method, as it does not require retraining the models and labels to tune the model. In this paper, we look in depth at multiple models in terms of size, architecture, and training procedure and provide guidelines on how to quantize the model to an 8-bit integer, both weights and activations. We perform a well-rounded study on the effects of quantization and sensitivity to the quantization error. Moreover, we show that applying mixed-data precision quantization works well for most vision transformer models achieving up to 90% compression ratio within a 2% top-1 accuracy drop. This kind of quantization offers a trade-off between memory, compute, and performance of the models that are deployable with the current software and hardware stack.</p>
+<ul>
+<li>There’s a difference between Static vs Dynamic Quantization</li>
+<li>Larger models are supposed to be easier to quantize, but not the case here</li>
+<li>Signal to noise quantization ratio - SNQR</li>
+<li>Partial Quantization: Some models that lost accuracy during dynamic quant, regained during 90% quant</li>
+</ul>
+</section>
+<section id="generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion" class="level2">
+<h2 class="anchored" data-anchor-id="generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion">Generalization in Graph Neural Networks: Improved PAC-Bayesian Bounds on Graph Diffusion</h2>
+<p>Paper: <a href="https://proceedings.mlr.press/v206/ju23a/ju23a.pdf">https://proceedings.mlr.press/v206/ju23a/ju23a.pdf</a></p>
+<p>Graph neural networks are widely used tools for graph prediction tasks. Motivated by their empirical performance, prior works have developed generalization bounds for graph neural networks, which scale with graph structures in terms of the maximum degree. In this paper, we present generalization bounds that instead scale with the largest singular value of the graph neural network’s feature diffusion matrix. These bounds are numerically much smaller than prior bounds for real-world graphs. We also construct a lower bound of the generalization gap that matches our upper bound asymptotically. To achieve these results, we analyze a unified model that includes prior works’ settings (i.e., convolutional and message-passing networks) and new settings (i.e., graph isomorphism networks). Our key idea is to measure the stability of graph neural networks against noise perturbations using Hessians. Empirically, we find that Hessian-based measurements correlate with observed generalization gaps of graph neural networks accurately; Optimizing noise stability properties for fine-tuning pretrained graph neural networks also improves the test performance on several graph-level classification tasks.</p>
+<ul>
+<li>Overfitting if there’s an imbalance between pretraining data and finetuning data size</li>
+<li>Generalization gap
+<ul>
+<li>Not just cross validation loss</li>
+<li>More detailed understanding - what networks are causing the overfitting</li>
+<li>Generalization gap - measures the gap between training/test losses</li>
+</ul></li>
+</ul>
+</section>
+<section id="nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering">NLP Research in the Era of LLMs - Unleashing the Potential of LLMs through Task and Data Engineering</h2>
+<p>Shafiq Joty gave this talk: https://raihanjoty.github.io/</p>
+<section id="background-data-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="background-data-engineering">Background: Data Engineering</h3>
+<ul>
+<li>Hold the code fixed and invite research to improve the data (Andrew Ng)</li>
+</ul>
+</section>
+<section id="background-rise-of-task-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="background-rise-of-task-engineering">Background: Rise of Task Engineering</h3>
+<ul>
+<li>Multi-task models with task prompts</li>
+<li>Trained with many different instructions</li>
+<li>Mentions prompt tuning again (soft tokens) ???</li>
+</ul>
+</section>
+<section id="background-task-engineering" class="level3">
+<h3 class="anchored" data-anchor-id="background-task-engineering">Background: Task Engineering</h3>
+</section>
+<section id="llm-lifecycle" class="level3">
+<h3 class="anchored" data-anchor-id="llm-lifecycle">LLM Lifecycle</h3>
+</section>
+<section id="xgen-llm-june-2023" class="level3">
+<h3 class="anchored" data-anchor-id="xgen-llm-june-2023"><strong>XGen LLM</strong>: June 2023</h3>
+<ul>
+<li><a href="https://github.com/salesforce/xgen">GitHub Link</a></li>
+<li>Goal is to outperform LLaMA1</li>
+</ul>
+</section>
+<section id="instructed-tuned" class="level3">
+<h3 class="anchored" data-anchor-id="instructed-tuned">Instructed tuned</h3>
+<ul>
+<li>Instructional data: WizardLM. <a href="https://arxiv.org/abs/2304.12244">Paper Link</a></li>
+</ul>
+</section>
+<section id="what-does-wizardlm-do-exactly-in-advancing-the-sota" class="level3">
+<h3 class="anchored" data-anchor-id="what-does-wizardlm-do-exactly-in-advancing-the-sota">What does WizardLM do exactly in advancing the SoTA?</h3>
+<ul>
+<li><p><a href="https://arxiv.org/abs/2304.12244">Details on WizardLM</a></p></li>
+<li><p>Training large language models (LLMs) with open-domain instruction following data brings colossal success. However, manually creating such instruction data is very time-consuming and labor-intensive. Moreover, humans may struggle to produce high-complexity instructions. In this paper, we show an avenue for creating large amounts of instruction data with varying levels of complexity using LLM instead of humans. Starting with an initial set of instructions, we use our proposed Evol-Instruct to rewrite them step by step into more complex instructions. Then, we mix all generated instruction data to fine-tune LLaMA. We call the resulting model WizardLM. Human evaluations on a complexity-balanced test bed and Vicuna’s testset show that instructions from Evol-Instruct are superior to human-created ones. By analyzing the human evaluation results of the high complexity part, we demonstrate that outputs from our WizardLM are preferred to outputs from OpenAI ChatGPT. In GPT-4 automatic evaluation, WizardLM achieves more than 90% capacity of ChatGPT on 17 out of 29 skills. Even though WizardLM still lags behind ChatGPT in some aspects, our findings suggest that fine-tuning with AI-evolved instructions is a promising direction for enhancing LLMs. Our code and data are public at this https URL</p></li>
+<li><p><strong>Verify and Edit CoT</strong> - Self-consistency</p></li>
+<li><p>Knowledge adapting framework</p></li>
+<li><p>Language diversity prompting</p></li>
+<li><p>Standard vs Personalized Distillation from LLMs</p></li>
+</ul>
+</section>
+</section>
+<section id="modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision" class="level2">
+<h2 class="anchored" data-anchor-id="modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision">Modular Large Language Model and Principle-Driven alignment with Minimal Human Supervision</h2>
+<p>Yikang Shen from IBM gave this talk.</p>
+<section id="foundation-model-types" class="level3">
+<h3 class="anchored" data-anchor-id="foundation-model-types">Foundation model types</h3>
+<section id="challenges-of-llm" class="level4">
+<h4 class="anchored" data-anchor-id="challenges-of-llm">Challenges of LLM</h4>
+<ul>
+<li><strong>Efficiency</strong></li>
+<li><strong>Extendability</strong></li>
+<li><strong>Flexibility</strong></li>
+</ul>
+</section>
+</section>
+<section id="moduleformer---learning-modular-llm-from-uncurated-data" class="level3">
+<h3 class="anchored" data-anchor-id="moduleformer---learning-modular-llm-from-uncurated-data">ModuleFormer - Learning Modular LLM from Uncurated Data</h3>
+<ul>
+<li>Previous modular models were based on already labeled data</li>
+</ul>
+</section>
+<section id="mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners" class="level3">
+<h3 class="anchored" data-anchor-id="mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners">Mod-Squad - designing a mixture of experts as modular multi-task learners</h3>
+<ul>
+<li>Can select the right experts for a task</li>
+<li>Experts can share knowledge!?</li>
+</ul>
+</section>
+<section id="dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles" class="level3">
+<h3 class="anchored" data-anchor-id="dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles">Dromedary - efficiently teach AI to follow a given set of principles</h3>
+<ul>
+<li><a href="https://github.com/IBM/Dromedary">GitHub Link for Dromedary</a></li>
+<li><strong>Principle Engraving</strong> -</li>
+<li><strong>Verbose Cloning</strong> - refining the model to produce in-depth and detailed response</li>
+<li>300 lines of annotations</li>
+<li>Kind of similar to Evol-Instruct/WizardLM to produce annotations to fine-tune a model</li>
+</ul>
+</section>
+</section>
+<section id="autohint-automatic-prompt-optimization-with-hint-generation" class="level2">
+<h2 class="anchored" data-anchor-id="autohint-automatic-prompt-optimization-with-hint-generation">AutoHint: Automatic Prompt Optimization with Hint Generation</h2>
+<p>Paper: <a href="https://arxiv.org/pdf/2307.07415.pdf">https://arxiv.org/pdf/2307.07415.pdf</a></p>
+<p>This paper presents AutoHint, a novel framework for automatic prompt engineering and optimization for Large Language Models (LLM). While LLMs have demonstrated remarkable ability in achieving high-quality annotation in various tasks, the key to applying this ability to specific tasks lies in developing high-quality prompts. Thus we propose a framework to inherit the merits of both in-context learning and zero-shot learning by incorporating enriched instructions derived from input-output demonstrations to optimize original prompt. We refer to the enrichment as the Hint and propose a framework to automatically generate the hint from labeled data. More concretely, starting from an initial prompt, our method first instructs a LLM to deduce new hints for selected samples from incorrect predictions, and then summarizes from per-sample hints and adds the results back to the initial prompt to form a new, enriched instruction. The proposed method is evaluated on the BIG-Bench Instruction Induction dataset for both zero-shot and few-short prompts, where experiments demonstrate our method is able to significantly boost accuracy for multiple tasks</p>
+</section>
+</section>
+<section id="causal-inference-workshop-causal-inference-and-machine-learning-in-practice" class="level1">
+<h1>Causal Inference Workshop: Causal Inference and Machine Learning in Practice</h1>
+<p>The website for this workshop is here: https://causal-machine-learning.github.io/kdd2023-workshop/</p>
+<section id="cog-creative-optimality-gap-for-video-advertising" class="level2">
+<h2 class="anchored" data-anchor-id="cog-creative-optimality-gap-for-video-advertising">COG: Creative Optimality Gap for Video Advertising</h2>
+<p>Raif Rustamov from Amazon gave this invited talk.</p>
+<section id="video-ads-motivation" class="level3">
+<h3 class="anchored" data-anchor-id="video-ads-motivation">Video ads motivation</h3>
+<ul>
+<li>How does a particular video affect shopper experience?</li>
+</ul>
+</section>
+<section id="goal" class="level3">
+<h3 class="anchored" data-anchor-id="goal">Goal</h3>
+<ul>
+<li>Driven by explicit hypotheses tied to quantifying value of the video</li>
+</ul>
+</section>
+<section id="approach---creative-optimality-gap-cog" class="level3">
+<h3 class="anchored" data-anchor-id="approach---creative-optimality-gap-cog">Approach - Creative Optimality Gap (COG)</h3>
+<ul>
+<li>If we were to replace the video of class 0 to video of class 1, what would be the improvement in the outcome for the ad?</li>
+<li><strong>Uplift or Heterogenous Treatment Effect modeling</strong></li>
+</ul>
+</section>
+<section id="benefits" class="level3">
+<h3 class="anchored" data-anchor-id="benefits">Benefits</h3>
+<ul>
+<li>Differentiated at the level of video features vs.&nbsp;global ATE
+<ul>
+<li><strong>ATE</strong> - average treatment effect - videos are good</li>
+<li><strong>ITE</strong> - individual treatment effect - noisy</li>
+<li><strong>HTE</strong> - heterogeneous treatment effect - in the middle, denoising</li>
+</ul></li>
+<li>Handle cold start ads</li>
+</ul>
+</section>
+<section id="preliminaries" class="level3">
+<h3 class="anchored" data-anchor-id="preliminaries">Preliminaries</h3>
+<ul>
+<li><strong>Treatment indicator (T)</strong></li>
+<li><strong>Video features</strong>
+<ul>
+<li>Computed using e.g.&nbsp;video embeddings</li>
+<li>Can contain non</li>
+</ul></li>
+<li><strong>Ad features</strong>
+<ul>
+<li>Contains non-video related features like price, product category</li>
+<li>Used as confounder/matching variables</li>
+</ul></li>
+<li><strong>Outcome = Y</strong></li>
+</ul>
+</section>
+<section id="cog-modeling" class="level3">
+<h3 class="anchored" data-anchor-id="cog-modeling">COG Modeling</h3>
+<ul>
+<li><strong>Step 1</strong></li>
+<li><strong>Step 2</strong></li>
+<li><strong>Step 3</strong> -
+<ul>
+<li>Used interpretable models in this step, why?</li>
+</ul></li>
+</ul>
+</section>
+<section id="cog-modeling-guardrails" class="level3">
+<h3 class="anchored" data-anchor-id="cog-modeling-guardrails">COG Modeling: Guardrails</h3>
+<section id="bias" class="level4">
+<h4 class="anchored" data-anchor-id="bias">Bias</h4>
+<ul>
+<li>Bias comes from G model, comes from regularization or not enough capacity in the model</li>
+<li>Bias is not constant but varies in the Z space</li>
+<li>Double ML?</li>
+</ul>
+</section>
+<section id="uncertaintyvariance" class="level4">
+<h4 class="anchored" data-anchor-id="uncertaintyvariance">Uncertainty/Variance</h4>
+</section>
+</section>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution</h3>
+<ul>
+<li>Conservative COG = lower bound of confidence interval</li>
+</ul>
+</section>
+</section>
+<section id="the-value-of-last-mile-delivery-in-online-retail" class="level2">
+<h2 class="anchored" data-anchor-id="the-value-of-last-mile-delivery-in-online-retail">The Value of Last-Mile Delivery in Online Retail</h2>
+<p>Ruomeng Cui from Emory gave this talk.</p>
+<section id="cainiao---chinese-company" class="level3">
+<h3 class="anchored" data-anchor-id="cainiao---chinese-company">Cainiao - Chinese Company</h3>
+<ul>
+<li>Alibaba’s logistics platform</li>
+<li>Largest logistics platform in China</li>
+<li>If there are differences in preferences, there is an opportunity for optimization</li>
+</ul>
+</section>
+<section id="use-causal-ml-estimating-ite" class="level3">
+<h3 class="anchored" data-anchor-id="use-causal-ml-estimating-ite">Use Causal ML: Estimating ITE</h3>
+<ul>
+<li><strong>Data:</strong> Post-treatment data Q4 2021</li>
+</ul>
+</section>
+<section id="models" class="level3">
+<h3 class="anchored" data-anchor-id="models">Models</h3>
+<ul>
+<li>Partial Linear DML</li>
+<li>First-difference DML</li>
+<li>Others</li>
+</ul>
+</section>
+<section id="account-for-knapsnack" class="level3">
+<h3 class="anchored" data-anchor-id="account-for-knapsnack">Account for Knapsnack</h3>
+<ul>
+<li>Tau does not capture economic efficiency</li>
+<li>Need to account for how much capacity a customer is using. A customer going from 0 to 1 unit sales is much more valuable than a customer going from 19 to 20 units sold because the latter is not using much capacity.</li>
+</ul>
+</section>
+</section>
+<section id="leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation">Leveraging Causal Uplift Modeling for Budget Constrained Benefits Allocation</h2>
+<p>Dmitri Goldenberg from Booking.com gave this talk. It was a very good talk with virtually no words on his slides.</p>
+</section>
+<section id="ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford" class="level2">
+<h2 class="anchored" data-anchor-id="ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford">Ensemble Method for Estimating Individualized Treatment Effects Kevin Wu Han, Han Wu (Stanford)</h2>
+<ul>
+<li>Paper: <a href="https://arxiv.org/abs/2202.12445">https://arxiv.org/abs/2202.12445</a></li>
+<li>Ensemble methods almost always perform a validation-set model selection based method!</li>
+</ul>
+</section>
+<section id="a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization" class="level2">
+<h2 class="anchored" data-anchor-id="a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization">A Scalable and Debiased Approach to Dynamic Pricing with Causal Machine Learning and Optimization</h2>
+<ul>
+<li>Heard the term double machine learning for the second time which caused me to do to learn what it is.</li>
+</ul>
+</section>
+<section id="an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology" class="level2">
+<h2 class="anchored" data-anchor-id="an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology">An IPW-based Unbiased Ranking Metric in Two-sided Markets Keisho Oh, Naoki Nishimura (Recruit Co), Minje Sung, Ken Kobayashi, Kazuhide Nakata (Tokyo Institute of Technology)</h2>
+<p>In two-sided markets like job-matching or dating-apps, need to use an unbiased ranking metric which they propose in their paper.</p>
+</section>
+<section id="unit-selection-based-on-counterfactual-logic" class="level2">
+<h2 class="anchored" data-anchor-id="unit-selection-based-on-counterfactual-logic">Unit Selection Based on Counterfactual Logic</h2>
+<p>This was an invited talk by Ang Li about this paper: <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r488.pdf">https://ftp.cs.ucla.edu/pub/stat_ser/r488.pdf</a>.</p>
+<p>My main takeaway was dividing a population into a typical A/B test where one group receives a treatment and the other group is the control is too simplistic. There are actually 4 groups we should be concerned about:</p>
+<ul>
+<li>Complier: Individuals who would respond positively if treated and negatively if not treated.</li>
+<li>Always-taker: Individuals who always respond positively no matter whether they are treated or not.</li>
+<li>Never-taker: Individuals who always respond negatively no matter whether they are treated or not.</li>
+<li>Defier: Individuals who would respond negatively if treated and positively if not treated.</li>
+</ul>
+<p>Along with a benefit vector that assigns a positive or negative value to each of these 4 groups, we can use this to select the best treatment for each individual.</p>
+<p>Ang also used the Pfizer Covid vaccine as a motivating example for why these 4 groups should be accounted for.</p>
+</section>
+<section id="towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml" class="level2">
+<h2 class="anchored" data-anchor-id="towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml">Towards Automating the Causal Machine Learning Pipeline Vasilis Syrgkanis (Stanford/EconML)</h2>
+<ul>
+<li>A large variety of causal estimands that arise in complex static and longitudinal data analysis can be automatically de-biased when regularized machine learning algorithms are used to estimate nuisance models</li>
+<li>Estimation of the de-biasing term itself can be performed with generic machine learning</li>
+<li>Experimental results using neural nets and random forests for automated de-biasing provide examples superior performance to plug-in approaches and to prior automatically debasing approaches based solely on linear models</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

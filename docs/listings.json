@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-08-07-kdd2023-day1/index.html",
       "/posts/2023-07-23-llama-2-paper-summary/index.html",
       "/posts/2023-07-20-llama-2-local/index.html",
       "/posts/2023-07-13-agents-code-interpreter/index.html",
