@@ -1,0 +1,12 @@
+---
+title: "KDD 2023 - Recap"
+author: "Lawrence Wu"    
+date: "2023-08-25"
+categories: ["Conference", "KDD", "LLM"]
+---
+
+I attended [KDD 2023](https://kdd.org/kdd2023/) which was held in Long Beach, CA from Aug 6-10, 2023.
+
+I gave a recap to some colleagues and wanted to make the slides available to others, so [here they are](https://docs.google.com/presentation/d/1LX83Rf-1cZdVqsuzLOZaVA7xunyHIenL/edit?usp=sharing&ouid=113352385644776571808&rtpof=true&sd=true).
+
+My notes from KDD are here: <https://github.com/lawwu/kdd2023_notes>.

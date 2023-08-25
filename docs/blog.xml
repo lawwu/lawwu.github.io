@@ -10,7 +10,28 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.290</generator>
-<lastBuildDate>Tue, 08 Aug 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 25 Aug 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>KDD 2023 - Recap</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-08-25-kdd2023-recap/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>I attended <a href="https://kdd.org/kdd2023/">KDD 2023</a> which was held in Long Beach, CA from Aug 6-10, 2023.</p>
+<p>I gave a recap to some colleagues and wanted to make the slides available to others, so <a href="https://docs.google.com/presentation/d/1LX83Rf-1cZdVqsuzLOZaVA7xunyHIenL/edit?usp=sharing&amp;ouid=113352385644776571808&amp;rtpof=true&amp;sd=true">here they are</a>.</p>
+<p>My notes from KDD are here: <a href="https://github.com/lawwu/kdd2023_notes" class="uri">https://github.com/lawwu/kdd2023_notes</a>.</p>
+
+
+
+ ]]></description>
+  <category>Conference</category>
+  <category>KDD</category>
+  <category>LLM</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-08-25-kdd2023-recap/index.html</guid>
+  <pubDate>Fri, 25 Aug 2023 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Double Machine Learning</title>
   <dc:creator>Lawrence Wu</dc:creator>
