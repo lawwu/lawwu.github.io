@@ -31,7 +31,7 @@ In terms of how I've seen LLMs affect data science work are:
 
 ## How will LLMs affect the future of work?
 
-I had the idea of using an LLM to assess the impact of LLMs on jobs. Having got llama2 up and running on my Mac M1 Pro using `llama.cpp`, it was pretty easy to use `langchain`, a set of occupations from ONET, and the `llama2-13b-chat` model to generate 10 ways that LLMs will affect a given occupation for the 1,016 ONET occupations.
+I had the idea of using an LLM to assess the impact of LLMs on jobs. Having got llama2 up and running on my Mac M1 Pro using `llama.cpp`, it was pretty easy to use `langchain`, a set of occupations from ONET, and the `llama2-13b-chat` model to generate 10 ways that LLMs will affect a given occupation for the 1,016 ONET occupations. This took about 50 seconds per title to run and in total around 14 hours (and an unknown amount of electricity).
 
 The idea and the prompt I used was partially inspired by the paper [GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models](https://arxiv.org/abs/2303.10130) where the framework they used to evaluate the impact of LLMs on jobs used LLMs to do the evaluation and their measure of a given job's exposure used:
 
@@ -43,6 +43,8 @@ So the prompt I used was:
 ```
 "As an {TITLE}, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"
 ```
+
+## Code
 
 The code to do this:
 ```{python}
@@ -69,6 +71,8 @@ llm = LlamaCpp(
             verbose=False,
 )
 ```
+
+## A Couple Examples
 
 Running this for an entry-level data scientist:
 ```{python}
@@ -110,6 +114,10 @@ llm(prompt)
 # As an early career pharmacist, I recognize that the widespread adoption of LLMs or tools built on these technologies will require significant investment in training and infrastructure, as well as careful consideration of ethical and legal issues related to health data privacy and security.  
 # However, if properly implemented, these technologies have the potential to transform the field of pediatric pharmacology, improving patient outcomes and reducing healthcare costs over time. Despite the challenges ahead, I remain excited about the potential applications of LLMs in pediatric pharmacology practice and look forward to seeing how these developments shape the future of our profession.
 ```
+
+## Conclusion 
+
+Hopefully this inspires some food for thought on how LLMs will affect the future of work. I think it would benefit most people to think about how a general purpose technology like LLMs ([Andrew Ng calls AI like electricity in their broad applicability](https://youtu.be/5p248yoa3oE?si=oh6SAP5kPkGLsVor&t=81)) will affect the specific things they are working and how they can use this technology to make themselves more productive. A similar analogy is those who have gotten good at searching with Google are that much more productive than those who haven't. LLMs are a much more powerful tool than a search engine (after all [you can give an LLM a search tool](https://python.langchain.com/docs/integrations/tools/search_tools)) and it's important more people understand how to use this new tool.
 
 ## Streamlit App
 
