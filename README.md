@@ -12,3 +12,12 @@ To shrink all png files in a directory, use the following command:
 brew install pngquant
 for file in *.png; do pngquant --force --output "$file" --quality 60-80 "$file"; done
 ```
+
+It's possible to embed Streamlit apps directly into a Quarto page using an iframe:
+```
+<iframe
+  src="https://llm-impact-on-jobs.streamlit.app/?embed=true"
+  height="1200"
+  style="width:100%;border:none;"
+></iframe>
+```
