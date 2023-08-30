@@ -10,7 +10,253 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.290</generator>
-<lastBuildDate>Fri, 25 Aug 2023 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 29 Aug 2023 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>How LLMs will affect Jobs?</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-08-29-how-llms-will-affect-jobs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>I have been interested in how language models will affect the future of work. Having worked with LLMs the last ~6 months, I’ve seen their impact on my work as a data scientist. Jason Wei gave a talk at KDD 2023 called <a href="https://docs.google.com/presentation/d/1hQF8EXNdePFPpws_jxwqHWi5ohV_TeGL17WIjvUvG6E/edit?resourcekey=0-xA6WdGyYp1EexLgoXgjOjg#slide=id.g16197112905_0_0">Scaling, Emergence and Reasoning in Large Language Models</a> that was great. He works at the intersection of LLMs and AI Research and has a good view into how LLMs will change the field of AI Research. We need this same sort of thinking applied in other fields to get a sense for how to answer the question “How will LLMs change the future of work?” It’s important for more people to be aware the potential for LLMs to disrupt jobs and to get ahead of any changes.</p>
+<section id="how-will-llms-affect-data-science-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-will-llms-affect-data-science-work">How will LLMs affect data science work?</h2>
+<p>In terms of how I’ve seen LLMs affect data science work are:</p>
+<p><strong>5 years ago:</strong></p>
+<ol type="1">
+<li>Start with data: First step after a use case is defined for any data science problem –&gt; acquire a data set and spend time preparing/cleaning the data</li>
+<li>Need to hire data labelers to label data or evaluate model output at scale</li>
+<li>Coding with Stack Overflow</li>
+</ol>
+<p><strong>Now</strong></p>
+<ol type="1">
+<li>Start with a model: Does a pre-trained model (embeddings, LLMs) solve your use case?</li>
+<li>A pre-trained model can generate required labels or evaluate model results directly</li>
+<li>Coding with GitHub Copilot, ChatGPT and Code Interpreter</li>
+</ol>
+</section>
+<section id="how-will-llms-affect-the-future-of-work" class="level2">
+<h2 class="anchored" data-anchor-id="how-will-llms-affect-the-future-of-work">How will LLMs affect the future of work?</h2>
+<p>I had the idea of using an LLM to assess the impact of LLMs on jobs. Having got llama2 up and running on my Mac M1 Pro using <code>llama.cpp</code>, it was pretty easy to use <code>langchain</code>, a set of occupations from ONET, and the <code>llama2-13b-chat</code> model to generate 10 ways that LLMs will affect a given occupation for the 1,016 ONET occupations.</p>
+<p>The code to do this:</p>
+<div class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> langchain.llms <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> LlamaCpp</span>
+<span id="cb1-2"></span>
+<span id="cb1-3">MODEL_LLAMA2_13B <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"llama-2-13b-chat.ggmlv3.q4_0.bin"</span></span>
+<span id="cb1-4">n_gpu_layers <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Metal set to 1 is enough.</span></span>
+<span id="cb1-5">n_batch <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">512</span>  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.</span></span>
+<span id="cb1-6"></span>
+<span id="cb1-7">llm <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> LlamaCpp(</span>
+<span id="cb1-8">            model_path<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>MODEL_LLAMA2_13B,</span>
+<span id="cb1-9">            temperature<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb1-10">            top_p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb1-11">            max_tokens<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2048</span>,</span>
+<span id="cb1-12">            n_ctx<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2048</span>,</span>
+<span id="cb1-13">            n<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>,</span>
+<span id="cb1-14">            repeat_penalty<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.1</span>,</span>
+<span id="cb1-15">            n_threads<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span>,</span>
+<span id="cb1-16">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># callback_manager=callback_manager,</span></span>
+<span id="cb1-17">            n_gpu_layers<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>n_gpu_layers,</span>
+<span id="cb1-18">            n_batch<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2048</span>,  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.</span></span>
+<span id="cb1-19">            f16_kv<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,  <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># MUST set to True, otherwise you will run into problem after a couple of calls</span></span>
+<span id="cb1-20">            verbose<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>,</span>
+<span id="cb1-21">)</span></code></pre></div>
+</div>
+<p>Running this for an entry-level data scientist:</p>
+<div class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">llm(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
+<span id="cb2-2"></span>
+<span id="cb2-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Here's a list of 10 areas of my work as an entry-level Data Scientist that I think will be disrupted by the widespread usage of Large Language Models (LLMs) or tools built on LLMs:</span></span>
+<span id="cb2-4"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1. Data Preprocessing: Many tasks in data preprocessing, such as tokenization, stemming, and lemmatization, can be automated using LLMs. This could make my work more efficient and reduce the time spent on these tasks.</span></span>
+<span id="cb2-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2. Feature Engineering: LLMs can help generate new features that can improve model performance. For example, LLMs can be used to generate sentiment scores or topic models for text data. This could lead to better insights and improved accuracy in machine learning models.</span></span>
+<span id="cb2-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3. Data Visualization: LLMs can be used to generate interactive visualizations that provide more detailed insights into data. For example, LLMs can be used to create interactive heatmaps or word clouds that show the distribution of words in a dataset.</span></span>
+<span id="cb2-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4. Text Summarization: LLMs can be used to summarize long documents or articles into shorter summaries. This could be useful for quickly grasping the main points of a document or article.</span></span>
+<span id="cb2-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 5. Sentiment Analysis: LLMs can be used to analyze text data and provide sentiment scores. This could be useful for understanding public opinion on a particular topic or product.</span></span>
+<span id="cb2-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 6. Named Entity Recognition (NER): LLMs can be used to automatically identify and extract named entities such as people, organizations, and locations from text data. This could save time and improve the accuracy of downstream tasks such as information extraction or summarization.</span></span>
+<span id="cb2-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 7. Part-of-speech Tagging: LLMs can be used to automatically assign part-of-speech tags to words in a sentence. This could improve the accuracy of downstream tasks such as named entity recognition and sentiment analysis.</span></span>
+<span id="cb2-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 8. Dependency Parsing: LLMs can be used to analyze the grammatical structure of sentences and identify the relationships between words. This could lead to better insights into language usage and improved accuracy in natural language processing tasks.</span></span>
+<span id="cb2-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 9. Information Extraction: LLMs can be used to automatically extract structured data from unstructured text. For example, LLMs can be used to extract names, dates, and locations from news articles or social media posts.</span></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 10. Question Answering: LLMs can be used to answer questions based on the content of a document or article. This could be useful for providing quick answers to common customer support queries or for automating content search engines.</span></span>
+<span id="cb2-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code></pre></div>
+</div>
+<p>Repeating this for a Pediatric Pharmacist:</p>
+<div class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">prompt<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb3-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">As an entry-level Pediatric Pharmacist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?</span></span>
+<span id="cb3-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb3-4">llm(prompt)</span>
+<span id="cb3-5"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Although I am an early career pharmacist, and I lack industry expertise as a seasoned professional in the field of pediatrics or AI technology I can imagine several ways that LLMs could disrupt various aspects of my work:</span></span>
+<span id="cb3-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 1. Medication dosing: One potential area of disruption is medication dosing. LLMs may be able to quickly and accurately determine appropriate drug dosages for children based on their weight, age, and other factors, potentially reducing the need for human intervention and improving medication safety. </span></span>
+<span id="cb3-7"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 2.Drug interactions: Another possible area of disruption is the identification of potential drug interactions. LLMs may be able to analyze large amounts of data and identify potential drug interaction that a human pharmacist might miss, helping to prevent adverse events and improve patient outcomes. </span></span>
+<span id="cb3-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 3. Allergic reactions: With their ability to analyze large amounts of data, LLMs may also be useful in identifying patterns related to allergic reactions, allowing healthcare providers to take proactive steps to prevent these reactions or quickly respond to them if they occur.</span></span>
+<span id="cb3-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 4. Developmental delays: The use of LLMs could help identify children at risk for developmental delays and provide early interventions that can improve outcomes for those children.</span></span>
+<span id="cb3-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 5. Pediatric clinical decision support: With the ability to process vast amounts of data, LLMs may be able provide real-time clinical decision support to healthcare providers, improving diagnostic accuracy and reducing errors in patient care.  </span></span>
+<span id="cb3-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 6. Medical coding and billing: The use of LLMs could improve the accuracy of medical coding and billing, potentially reducing errors and improving reimbursement for healthcare providers. </span></span>
+<span id="cb3-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 7. Pharmacovigilance: With their ability to analyze large amounts of data, LLMs may also be useful in pharmacovigilance by identifying potential safety issues related to pediatric medication use and allowing healthcare providers to take proactive steps to mitigate these risks.</span></span>
+<span id="cb3-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 8 Patient education: The use of LLMs could improve patient education, allowing healthcare providers to provide tailored information that addresses the unique needs of each child based on their medical history, allergies, and other factors. </span></span>
+<span id="cb3-14"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 9. Referrals and consultations: With the ability to diagnose and treat a wide range of pediatric conditions, LLMs could help identify children who require specialist care or consultation with other healthcare providers, potentially reducing unnecessary referrals and improving patient outcomes.  </span></span>
+<span id="cb3-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># 10. Public health surveillance: Finally, the use of LLMs could improve public health surveillance by analyzing large amounts of data related to pediatric health issues, allowing healthcare providers to identify trends and patterns that can inform population-based interventions and policies. </span></span>
+<span id="cb3-16"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># As an early career pharmacist, I recognize that the widespread adoption of LLMs or tools built on these technologies will require significant investment in training and infrastructure, as well as careful consideration of ethical and legal issues related to health data privacy and security.  </span></span>
+<span id="cb3-17"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># However, if properly implemented, these technologies have the potential to transform the field of pediatric pharmacology, improving patient outcomes and reducing healthcare costs over time. Despite the challenges ahead, I remain excited about the potential applications of LLMs in pediatric pharmacology practice and look forward to seeing how these developments shape the future of our profession.</span></span></code></pre></div>
+</div>
+</section>
+<section id="streamlit-app" class="level2">
+<h2 class="anchored" data-anchor-id="streamlit-app">Streamlit App</h2>
+<p>Here’s a Streamlit app you can use to explore all 1,016 titles and how it will potentially be impacted by LLMs: <a href="https://llm-impact-on-jobs.streamlit.app/" class="uri">https://llm-impact-on-jobs.streamlit.app/</a></p>
+<iframe src="https://llm-impact-on-jobs.streamlit.app/?embed=true" height="1200" style="width:100%;border:none;">
+</iframe>
+</section>
+<section id="links" class="level2">
+<h2 class="anchored" data-anchor-id="links">Links</h2>
+<ul>
+<li><a href="https://github.com/lawwu/llm_impact_on_jobs">Repo</a></li>
+<li><a href="https://github.com/lawwu/llm_impact_on_jobs/blob/main/notebooks/onet_titles_llm_risk.ipynb">Notebook to generate the dataset</a></li>
+<li><a href="https://github.com/lawwu/llm_impact_on_jobs/blob/main/data/list_onet_titles_llm_risk_all.json">Dataset</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Jobs</category>
+  <category>Work</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-08-29-how-llms-will-affect-jobs/index.html</guid>
+  <pubDate>Tue, 29 Aug 2023 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>KDD 2023 - Recap</title>
   <dc:creator>Lawrence Wu</dc:creator>
