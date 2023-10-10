@@ -1,0 +1,552 @@
+---
+title: "AI Engineer Summit 2023"
+author: "Lawrence Wu"    
+date: "2023-10-10"
+categories: ["Conference", "AI", LLMs", "AI Engineering"]
+---
+
+# AI Engineer Summit
+
+sywx was the [first](https://www.latent.space/p/ai-engineer) to define the job title "AI Engineer" as a role in between a Data Scientist and Full Stack Software Engineer, someone that builds on top of large foundation models and can quickly build services using these models. I agree with him that this job function will likely expand whether you hold the job title of "AI Engineer" or not. 
+
+I had the privilege of attending the inaugural AI Engineer Summit in San Francisco, CA held on October 9-10, 2023. It was somewhat surprising being one of the few data scientists at the conference as most people I met were software engineers trying to transition into AI Engineering.
+
+Below are my notes from the conference.
+
+## Workshop: Building, Evaluating, and Optimizing your RAG App for Production
+
+Simon Suo, Cofounder / CTO, LlamaIndex \
+
+- Very indepth workshop on how to build an end to end RAG app over Ray documentation, also using Ray to build it. Slides are in the repo below.
+- <https://github.com/Disiok/ai-engineer-workshop>
+- Hallucinations: Most of the time it is caused by irrelevant retrieved passages
+- Evaluation: can think of both end-to-end evaluation and component-wise evaluation of a RAG app
+  - End-to-end: understand how well the full RAG application works
+  - Component-wise: understand specific components like the retriever (are we retrieving the relevant context?) and the generation (given the context, are we generating an accurate and coherent answer?)
+- Data Required
+  - User Query: representative set of real user queries
+  - User Feedback: feedback from past interaction, up/down vote
+  - Golden Context: set of relevant documents from our corpus to best answer a given query
+  - Golden Answer: best ansewr given golden context
+
+## Workshop: Function calling and tool usage with LangChain and OpenAI
+
+Harrison Chase, CEO, LangChain \
+- OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on 
+- LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components
+
+```python
+from langchain.prompts import ChatPromptTemplate
+from langchain.chat_models import ChatOpenAI
+from langchain.schema.output_parser import StrOutputParser
+
+prompt = ChatPromptTemplate.from_template(
+    "Tell me a short joke about {topic}"
+)
+model = ChatOpenAI()
+output_parser = StrOutputParser()
+
+# define the chain
+chain = prompt | model | output_parser
+
+# don't .run() the chain but call .invoke()
+chain.invoke({"topic": "bears"})
+```
+
+- OpenAI's Function Calling is a way to get OpenAI's language models to return structured data (arguments to run a function or extract structured data from text). This is a powerful feature! 
+- I'm surprised other LLM providers have not yet introduced this functionality.
+- langchain exposes helper function to make working with function calling easier
+
+```python
+from langchain.utils.openai_functions import convert_pydantic_to_openai_function
+
+class WeatherSearch(BaseModel):
+    """Call this with an airport code to get the weather at that airport"""
+    airport_code: str = Field(description="airport code to get weather for")
+
+weather_function = convert_pydantic_to_openai_function(WeatherSearch)
+weather_function
+
+# {'name': 'WeatherSearch',
+#  'description': 'Call this with an airport code to get the weather at that airport',
+#  'parameters': {'title': 'WeatherSearch',
+#   'description': 'Call this with an airport code to get the weather at that airport',
+#   'type': 'object',
+#   'properties': {'airport_code': {'title': 'Airport Code',
+#     'description': 'airport code to get weather for',
+#     'type': 'string'}},
+#   'required': ['airport_code']}}
+```
+
+then you can pass the weather function to the LLM
+```python
+from langchain.chat_models import ChatOpenAI
+model = ChatOpenAI()
+model.invoke("What is the weather in San Francisco right now?",
+             functions=[weather_function])  
+```
+
+You can also bind the function to the model:
+```python
+model_with_function = model.bind(functions=[weather_function])
+```
+
+Function calling is a great way to do structured data extraction from text for example extracting name, age tuples.
+
+```python
+from typing import Optional
+class Person(BaseModel):
+    """Information about a person."""
+    name: str = Field(description="person's name")
+    age: Optional[int] = Field(description="person's age")
+  
+class Information(BaseModel):
+    """Information to extract."""
+    people: List[Person] = Field(description="List of info about people")
+
+extraction_functions = [convert_pydantic_to_openai_function(Information)]
+extraction_model = model.bind(functions=extraction_functions, function_call={"name":"Information"})
+extraction_model.invoke("Joe is 30. Joe's mom is Martha")
+
+# AIMessage(content='', additional_kwargs={'function_call': {'name': 'Information', 'arguments': '{\n  "people": [\n    {\n      "name": "Joe",\n      "age": 30\n    },\n    {\n      "name": "Martha",\n      "age": 0\n    }\n  ]\n}'}})
+```
+
+- You can create your own tools using the @tool decorator and pass these tools to OpenAI
+```python
+from langchain.agents import tool
+from langchain.chat_models import ChatOpenAI
+from pydantic import BaseModel, Field
+import requests
+import datetime
+
+# Define the input schema
+class OpenMeteoInput(BaseModel):
+    latitude: float = Field(..., description="Latitude of the location to fetch weather data for")
+    longitude: float = Field(..., description="Longitude of the location to fetch weather data for")
+
+@tool(args_schema=OpenMeteoInput)
+def get_current_temperature(latitude: float, longitude: float) -> dict:
+    """Fetch current temperature for given coordinates."""
+    
+    BASE_URL = "https://api.open-meteo.com/v1/forecast"
+    
+    # Parameters for the request
+    params = {
+        'latitude': latitude,
+        'longitude': longitude,
+        'hourly': 'temperature_2m',
+        'forecast_days': 1,
+    }
+
+    # Make the request
+    response = requests.get(BASE_URL, params=params)
+    
+    if response.status_code == 200:
+        results = response.json()
+    else:
+        raise Exception(f"API Request failed with status code: {response.status_code}")
+
+    current_utc_time = datetime.datetime.utcnow()
+    time_list = [datetime.datetime.fromisoformat(time_str.replace('Z', '+00:00')) for time_str in results['hourly']['time']]
+    temperature_list = results['hourly']['temperature_2m']
+    
+    closest_time_index = min(range(len(time_list)), key=lambda i: abs(time_list[i] - current_utc_time))
+    current_temperature = temperature_list[closest_time_index]
+    
+    return f'The current temperature is {current_temperature}°C'
+
+format_tool_to_openai_function(get_current_temperature)    
+
+# {'name': 'get_current_temperature',
+#  'description': 'get_current_temperature(latitude: float, longitude: float) -> dict - Fetch current temperature for given coordinates.',
+#  'parameters': {'title': 'OpenMeteoInput',
+#   'type': 'object',
+#   'properties': {'latitude': {'title': 'Latitude',
+#     'description': 'Latitude of the location to fetch weather data for',
+#     'type': 'number'},
+#    'longitude': {'title': 'Longitude',
+#     'description': 'Longitude of the location to fetch weather data for',
+#     'type': 'number'}},
+#   'required': ['latitude', 'longitude']}}
+```
+
+You can also convert an Open API spec into an OpenAI function
+
+```python
+from langchain.chains.openai_functions.openapi import openapi_spec_to_openai_fn
+from langchain.utilities.openapi import OpenAPISpec
+
+text = """
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://petstore.swagger.io/v1"
+    }
+  ],
+  "paths": {
+    "/pets": {
+      "get": {
+        "summary": "List all pets",
+        "operationId": "listPets",
+        "tags": [
+          "pets"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "How many items to return at one time (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paged array of pets",
+            "headers": {
+              "x-next": {
+                "description": "A link to the next page of responses",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pets"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a pet",
+        "operationId": "createPets",
+        "tags": [
+          "pets"
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pets/{petId}": {
+      "get": {
+        "summary": "Info for a specific pet",
+        "operationId": "showPetById",
+        "tags": [
+          "pets"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the pet to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        }
+      },
+      "Pets": {
+        "type": "array",
+        "maxItems": 100,
+        "items": {
+          "$ref": "#/components/schemas/Pet"
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+spec = OpenAPISpec.from_text(text)
+pet_openai_functions, pet_callables = openapi_spec_to_openai_fn(spec)
+pet_openai_functions
+
+# [{'name': 'listPets',
+#   'description': 'List all pets',
+#   'parameters': {'type': 'object',
+#    'properties': {'params': {'type': 'object',
+#      'properties': {'limit': {'type': 'integer',
+#        'maximum': 100.0,
+#        'schema_format': 'int32',
+#        'description': 'How many items to return at one time (max 100)'}},
+#      'required': []}}}},
+#  {'name': 'createPets',
+#   'description': 'Create a pet',
+#   'parameters': {'type': 'object', 'properties': {}}},
+#  {'name': 'showPetById',
+#   'description': 'Info for a specific pet',
+#   'parameters': {'type': 'object',
+#    'properties': {'path_params': {'type': 'object',
+#      'properties': {'petId': {'type': 'string',
+#        'description': 'The id of the pet to retrieve'}},
+#      'required': ['petId']}}}}]
+
+model = ChatOpenAI(temperature=0).bind(functions=pet_openai_functions)
+
+model.invoke("what are three pet names")
+# AIMessage(content='', additional_kwargs={'function_call': {'name': 'listPets', 'arguments': '{\n  "params": {\n    "limit": 3\n  }\n}'}})
+```
+
+- You can also define routers to create rules for when an agent should use a tool.
+- You can also create a conversational agent that can use tools.
+
+## The 1000x AI Engineer
+
+swyx, <Latent.Space> & <Smol.ai>
+Born too late to explore the earth. Born too early to explore the stars. Just in time to bring AI to everyone.
+
+- Each technological wave lasts around 50-70 years. We're in the beginning of a new wave (deep learning, generative AI) that was kicked off by AlexNet in around 2012. Since we're only 10 years in, it's still early.
+- Breaking down the definitions of an AI Engineer
+  - Software engineer enhanced BY AI tools - AI Enhanced Engineer
+  - Software engineer building AI products - AI Product Engineer
+  - AI product that replaces human - AI Engineer Agent
+
+## Keynote: What powers Replit AI?
+
+Amjad Masad, CEO, Replit
+Michele Catasta, VP of AI, Replit
+The building blocks of the future of software development.
+
+- Announced two models `replit-code-v1.5-3b` and `replit-repltuned-v1.5-3b` that are state of the art code completion models. Replit trained them from scratch.
+
+## See, Hear, Speak, Draw
+
+Simón Fishman, Applied AI Engineer, OpenAI
+Logan Kilpatrick, Developer Relations, OpenAI
+We're heading towards a multimodal world.
+
+- 2023 is the year of chatbots
+- 2024 is the year of multi-modal
+- Each multi-modal model is a island and text is the connective tissue between models. The future is where there is unity between all modalities
+- Demos
+  - GPT4-V and DALLE3: Upload a picture, use GPT4-V to describe the image, use DALLE3 to generate an image based that description, use GPT4-V to describe differences and use DALLE3 to generate a new image based on the differences. Was impressed by how much detail GPT4-V could capture in an image. DALLE3 struggled a bit to generate a similar image.
+  - Video to blog post: Logan demonstrated taking the GPT-4 intro video into a [blog post](https://logankilpatrick.medium.com/dont-forget-about-gpt-4-d5ab8c9493fc). Capture frames from a video, use GPT4-V to describe the image and stitch the images and descriptions together as a post.
+
+## The Age of the Agent
+
+Flo Crivello, CEO, Lindy
+How will ubiquitous AI agents impact our daily lives, and what do they mean for the future of computing?
+
+- The Age of Agents
+- A world where a 25-year old can have more business impact than the Coca Cola Company
+- It's happened beforew ith media
+  - Oprah - 10M viewers
+  - Mr. Beast - 189M subscribers
+  - Ryan's World - 
+- Nature of the content changes when you take out the gatekeepers
+  - Much weirder, creative ideas
+- It's people who have been stealing robot's jobs
+- Average worker spends 15 hours a week on admin tasks
+- Built an AI Employee - Lindy is an AI Assistant 
+- Three big time wasters
+  - Calendar
+  - Email
+  - Meeting note taking
+  - What it does
+    - Arrange meetings by email
+    - Pre-draft replies, in your voice, for each recipient.
+    - Prepares you for your meetings
+- Built a Framework - for an AI to pursue any arbitrary goal, using an arbitrary tool
+- Society of Lindies
+  - Every single thing is made by a group of people
+- Tool Creation Lindy
+  - Create a society of lindies to build herself (this was a little mind-blowing to think about)
+
+r voice, for each recipient.
+Prepares you for your meetings
+Built a Framework - for an AI to pursue any arbitrary goal, using an arbitrary tool
+Society of Lindies
+Every single thing is made by a group of people
+Tool Creation Lindy
+Create a society of lindies to build herself
+
+## One Smol Thing
+
+swyx, Latent.Space & Smol.ai
+Barr Yaron, Partner, Amplify
+Sasha Sheng, Stealth
+
+- First [State of AI Engineering Report](https://elemental-croissant-32a.notion.site/State-of-AI-Engineering-2023-20c09dc1767f45988ee1f479b4a84135) in 2023
+- Announced the AIE Foundation - the first project they worked on was the agent protocol that AutoGPT actually using for their Arena Hacks
+
+## Building Context-Aware Reasoning Applications with LangChain and LangSmith
+
+Harrison Chase, CEO, LangChain
+How can companies best build useful and differentiated applications on top of language models?
+
+## Pydantic is all you need
+
+Jason Liu, Founder, Fivesixseven
+Please return only json, do not add any other comments ONLY RETURN JSON OR I'LL TAKE A LIFE.
+
+- <https://github.com/jxnl/instructor>
+- Structured Prompting
+- LLMs are eating software
+- 90% of applications output JSON
+- OpenAI function calling fixes this for the most part
+  - str, schema --> str
+  - json.loads(x)
+- Pydantic
+  - Powered by type hints.
+  - Fields and model level validation
+  - Outputs JSONSchema
+- Pydantic
+  - str, model --> model
+- pip install instructor
+- Comprehensive AI engineering framework w/ Pydantic - askmarvin.ai that works with more models (right now it only works with OpenAI and Anthropic)
+- Pydantic validators - but you can also define LLM based validators
+- UserDetail class 
+  - MaybeUser
+- Reuse Components
+  - Add Chain of thought to specific components
+- Extract entities and relationships
+- Applications
+  - RAG
+  - RAG with planning
+  - KnowledgeGraph visualization
+  - Validation with Citations
+- See more examples here: <https://jxnl.github.io/instructor/examples/>
+
+
+## Building Blocks for LLM Systems & Products
+
+Eugene Yan, Senior Applied Scientist, Amazon
+We'll explore patterns that help us apply generative AI in production systems and customer systems.
+
+- Talk version of his [epic blog post](https://eugeneyan.com/writing/llm-patterns/)
+- Slides here: <https://eugeneyan.com/speaking/ai-eng-summit/>
+- Evals
+  - Eval-driven development
+  - What are some gotchas for evals?
+  - Build evals for a specific task; it's okay to start small
+  - Don't discount eyeballing completions
+- RAG
+  - LLM's can't see all documents retrieved
+  - Takeaway: Large context window doesn't prevent problems
+  - Even with perfect retrieval, you can expect some mistakes
+  - How should we do RAG?
+    - Apply ideas from information retrieval (IR)
+- Guardrails
+  - NLI - natural language inference task
+    - given a premise, is the hypothesis entailment (true), contradiction (false)
+  - Sampling
+  - Ask a strong LLM
+
+## The Hidden Life of Embeddings, Linus Lee
+
+- Notion AI
+- Slides: <https://linus.zone/contra-slides>
+- Latent spaces arise in
+  - Fixed-size embedding spaces of embedding models
+  - Intermediate activations of models
+  - Autoencoders 
+- Latent spaces represent the most salient features of the training domain
+- If we can disentangle meaningful features, maybe we can build more expressive interfaces
+- Text --> Embeddings --> Project the embeddings in some direction
+  - Longer, Shorter, Sci-fi, simplify, artistic, philosophical, positive, negative, narrative, elaborate
+- Open sourcing the models, calling it Contra
+  - Based on T5
+  - Models: <linus.zone/contra>
+  - Colab: <linus.zone/contra-colab>
+  - Image: KakaoBrain's 
