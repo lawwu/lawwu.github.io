@@ -32,6 +32,7 @@ Simon Suo, Cofounder / CTO, LlamaIndex \
 ## Workshop: Function calling and tool usage with LangChain and OpenAI
 
 Harrison Chase, CEO, LangChain \
+
 - <https://github.com/hwchase17/ai-engineer>
 - OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on 
 - LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components

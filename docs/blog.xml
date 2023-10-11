@@ -49,7 +49,12 @@
 <section id="workshop-function-calling-and-tool-usage-with-langchain-and-openai" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-function-calling-and-tool-usage-with-langchain-and-openai">Workshop: Function calling and tool usage with LangChain and OpenAI</h2>
 <p>Harrison Chase, CEO, LangChain<br>
-- <a href="https://github.com/hwchase17/ai-engineer" class="uri">https://github.com/hwchase17/ai-engineer</a> - OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on - LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components</p>
+</p>
+<ul>
+<li><a href="https://github.com/hwchase17/ai-engineer" class="uri">https://github.com/hwchase17/ai-engineer</a></li>
+<li>OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on</li>
+<li>LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components</li>
+</ul>
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.prompts <span class="im" style="color: #00769E;
