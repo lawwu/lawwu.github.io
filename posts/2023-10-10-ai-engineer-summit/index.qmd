@@ -11,7 +11,7 @@ sywx was the [first](https://www.latent.space/p/ai-engineer) to define the job t
 
 I had the privilege of attending the inaugural AI Engineer Summit in San Francisco, CA held on October 9-10, 2023. It was somewhat surprising being one of the few data scientists at the conference as most people I met were software engineers trying to transition into AI Engineering.
 
-Below are my notes from the conference.
+The talks were livestreamed ([Day 1](https://www.youtube.com/watch?v=veShHxQYPzo&ab_channel=AIEngineer) and [Day 2](https://www.youtube.com/watch?v=qw4PrtyvJI0)). Below are my notes from the conference.
 
 ## Workshop: Building, Evaluating, and Optimizing your RAG App for Production
 
@@ -32,6 +32,7 @@ Simon Suo, Cofounder / CTO, LlamaIndex \
 ## Workshop: Function calling and tool usage with LangChain and OpenAI
 
 Harrison Chase, CEO, LangChain \
+- <https://github.com/hwchase17/ai-engineer>
 - OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on 
 - LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components
 
