@@ -9,8 +9,91 @@
 <link>https://lawwu.github.io/blog.html/blog.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.3.290</generator>
-<lastBuildDate>Tue, 10 Oct 2023 07:00:00 GMT</lastBuildDate>
+<generator>quarto-1.3.450</generator>
+<lastBuildDate>Wed, 15 Nov 2023 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>Whisper Transcripts</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2023-11-15-whisper-transcripts/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="introduction-to-whisper-and-whisper.cpp" class="level1">
+<h1>Introduction to Whisper and whisper.cpp</h1>
+<p><a href="https://github.com/openai/whisper">Whisper</a> is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results.</p>
+<p>I had heard about Whisper when it was released but got interested in using Whisper after <a href="https://twitter.com/ggerganov?lang=en">Georgi Gerganov</a> of <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> fame created an equivalent library called <a href="https://github.com/ggerganov/whisper.cpp">whisper.cpp</a>. He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed.</p>
+</section>
+<section id="using-whisper.cpp" class="level1">
+<h1>Using whisper.cpp</h1>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">git</span> clone https://github.com/ggerganov/whisper.cpp</span>
+<span id="cb1-2"><span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">cd</span> whisper.cpp</span>
+<span id="cb1-3"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make</span> clean</span>
+<span id="cb1-4"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">make</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-j</span></span>
+<span id="cb1-5"></span>
+<span id="cb1-6"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># download a model</span></span>
+<span id="cb1-7"><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">bash</span> ./models/download-ggml-model.sh large</span>
+<span id="cb1-8"></span>
+<span id="cb1-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># run inference</span></span>
+<span id="cb1-10"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">./main</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-m</span> models/ggml-large.bin <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-f</span> samples/jfk.wav</span></code></pre></div>
+<section id="speed-benchmarks" class="level2">
+<h2 class="anchored" data-anchor-id="speed-benchmarks">Speed benchmarks</h2>
+<p>The accuracy of Whisper’s large model is quite good. Coupled with the accelerated inference that whisper.cpp offers on a Mac, it’s becoming easy to transcribe audio quickly and accurately. For example, running <code>ggml-large-v2</code>, I can transcribe around 1 hour of audio in about 13 minutes on an M2 Pro (200 GB/s) or in 4 minutes on an M2 Ultra (800 GB/s).</p>
+</section>
+</section>
+<section id="building-a-personal-transcript-repository" class="level1">
+<h1>Building a personal transcript repository</h1>
+<p>One use case is building a personal transcript library. I enjoy listening to podcasts and sermons and often like to reference what was said. Having a transcript handy makes this trivial. I was inspired by what Andrej Karpathy created in transcribing Lex Fridman’s podcasts: <a href="https://karpathy.ai/lexicap/" class="uri">https://karpathy.ai/lexicap/</a> and built something similar for a handful of podcasts I enjoy listening to: <a href="https://lawwu.github.io/transcripts/" class="uri">https://lawwu.github.io/transcripts/</a>.</p>
+<ul>
+<li><a href="https://lawwu.github.io/transcripts/index_ai_explained.html">AI Explained</a></li>
+<li><a href="https://lawwu.github.io/transcripts/index_all_in.html">All In</a></li>
+<li><a href="https://lawwu.github.io/transcripts/index_lex_fridman.html">Lex Fridman</a></li>
+</ul>
+<p>The code to generate the transcripts using Whisper and the code to generate the webpages is here: <a href="https://github.com/lawwu/transcripts" class="uri">https://github.com/lawwu/transcripts</a>.</p>
+</section>
+<section id="related-whisper-libraries" class="level1">
+<h1>Related Whisper libraries</h1>
+<p>There are other libraries that allow you to run Whisper faster.</p>
+<ul>
+<li><a href="https://github.com/guillaumekln/faster-whisper" class="uri">https://github.com/guillaumekln/faster-whisper</a></li>
+<li><a href="https://github.com/sanchit-gandhi/whisper-jax" class="uri">https://github.com/sanchit-gandhi/whisper-jax</a></li>
+<li><a href="https://github.com/huggingface/distil-whisper" class="uri">https://github.com/huggingface/distil-whisper</a></li>
+<li><a href="https://github.com/MahmoudAshraf97/whisper-diarization" class="uri">https://github.com/MahmoudAshraf97/whisper-diarization</a></li>
+<li><a href="https://github.com/Vaibhavs10/insanely-fast-whisper" class="uri">https://github.com/Vaibhavs10/insanely-fast-whisper</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>Whisper</category>
+  <category>ASR</category>
+  <category>Transcripts</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2023-11-15-whisper-transcripts/index.html</guid>
+  <pubDate>Wed, 15 Nov 2023 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title>AI Engineer Summit 2023</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -2044,7 +2127,7 @@ Recapping the past year in AI, and what open questions are <em>worth pursuing</e
  ]]></description>
   <category>Conference</category>
   <category>AI</category>
-  <category>LLMs&quot;</category>
+  <category>LLMs</category>
   <category>AI Engineering</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-10-10-ai-engineer-summit/index.html</guid>
   <pubDate>Tue, 10 Oct 2023 07:00:00 GMT</pubDate>
@@ -3609,8 +3692,8 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <p>Given the training loss curves below it is clear they could easily keep training this model for better performance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure5_pretraining_loss.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Pretraining Loss</figcaption><p></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure5_pretraining_loss.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Pretraining Loss</figcaption>
 </figure>
 </div>
 <p>Tokenizer: Same tokenization strategy as Llama 1. I didn’t know Llama 1 used bytepair encoding, all numbers are split into individual characters and bytes are used to decompose unknown UTF-8 characters.</p>
@@ -3620,14 +3703,14 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table3_academic_bm.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Llama 2 Performance on Academic Benchmarks</figcaption><p></p>
+<figcaption class="figure-caption">Llama 2 Performance on Academic Benchmarks</figcaption>
 </figure>
 </div>
 <p>Llama 2 pretty soundly beats similarly sized MPT and Falcon models. I hadn’t heard of AGIEval before. This is the AGIEval <a href="https://github.com/microsoft/AGIEval">repo</a> and <a href="https://arxiv.org/pdf/2304.06364.pdf">paper</a>. I was interested to see how Llama 2 performed against closed source models on AGIEval. The authors say they use 3-5 shot to test AGIEval. Llama 2 70B is getting 54.2 on AGIEval. ChatGPT and GPT-4 were getting 45% and 61.3% respectively as shown in the table below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table3_agieval.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">AGIEval Performance for text-davinci-003, ChatGPT and GPT-4</figcaption><p></p>
+<figcaption class="figure-caption">AGIEval Performance for text-davinci-003, ChatGPT and GPT-4</figcaption>
 </figure>
 </div>
 <p>In my tests where I’ve been running llama2-13b-chat locally, I have been very impressed with the results of questions like “What’s the difference between data science and data engineering” or “What’s the purpose of life”? For these two examples, llama2-13b-chat is even providing better answers than Google’s PaLM2 text-bison, ChatGPT, and even GPT-4! I’m not clear why this is the case.</p>
@@ -3678,7 +3761,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure7_max_reward.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Max Reward among N Samples</figcaption><p></p>
+<figcaption class="figure-caption">Max Reward among N Samples</figcaption>
 </figure>
 </div>
 <p>The above plot is interesting in that it highlights the potential gain from using Rejection Sampling. Because more samples are generated, a diversity of completions can be explored and on average these generates a higher maximum reward. Though this plot has a <a href="https://en.wikipedia.org/wiki/Misleading_graph#Truncated_graph">truncated y-axis</a> which makes the difference look larger than it is.</p>
@@ -3694,7 +3777,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure9_gatt.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Ghost Attention</figcaption><p></p>
+<figcaption class="figure-caption">Ghost Attention</figcaption>
 </figure>
 </div>
 </section>
@@ -3703,7 +3786,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure11_evolution_of_results.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Evolution of Llama2-Chat</figcaption><p></p>
+<figcaption class="figure-caption">Evolution of Llama2-Chat</figcaption>
 </figure>
 </div>
 <p>I found the above two plots fascinating as a way to show models evaluating models. Each plot shows the win-rate% of Llama2-Chat versus ChatGPT on both safety (y-axis) and helpfulenss (x-axis) over different iterations of fine-tuning (SFT-v1) and RHLF (RHLF-v1 all the way up to RHLF-v5 with PPO). There were two judges, the Meta’s reward model used to train Llama2-Chat and GPT-4.</p>
@@ -3716,14 +3799,14 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure12_human_eval_all.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Human Evaluation Results for Llama2-Chat</figcaption><p></p>
+<figcaption class="figure-caption">Human Evaluation Results for Llama2-Chat</figcaption>
 </figure>
 </div>
 <p>Llama2-Chat is beating similarly sized open source models like MPT, Vicuna, and Falcon. Surprisingly it is also competitive with ChatGPT (Win rate of 36%, tie rate of 31.5%)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure30_human_eval_chatgpt.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Human Evaluation Results for Llama2-Chat vs ChatGPT</figcaption><p></p>
+<figcaption class="figure-caption">Human Evaluation Results for Llama2-Chat vs ChatGPT</figcaption>
 </figure>
 </div>
 <p>Llama2-Chat wins overall against ChatGPT on these 4,000 prompts. The authors broke down these 4,000 prompts into 4 categories:</p>
@@ -3738,7 +3821,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table33_examples_of_prompts.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Examples of Prompts</figcaption><p></p>
+<figcaption class="figure-caption">Examples of Prompts</figcaption>
 </figure>
 </div>
 <p>The above shows some examples of prompts that made it into the 4,000 human evaluation dataset. It’s not clear for the category of Language Assistance, whether this refers to programming language or foreign language.</p>
@@ -3769,7 +3852,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure20_distribution_shift.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Distribution shift of SFT to RHLF models</figcaption><p></p>
+<figcaption class="figure-caption">Distribution shift of SFT to RHLF models</figcaption>
 </figure>
 </div>
 <blockquote class="blockquote">
@@ -3787,7 +3870,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure21_adapting_temperature.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">RHLF learns to adapt temperature to type of prompt</figcaption><p></p>
+<figcaption class="figure-caption">RHLF learns to adapt temperature to type of prompt</figcaption>
 </figure>
 </div>
 </section>
@@ -3796,7 +3879,7 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure22_time_awareness.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Time Awareness</figcaption><p></p>
+<figcaption class="figure-caption">Time Awareness</figcaption>
 </figure>
 </div>
 <p>Llama2-Chat also has the ability to organize it’s knowledge in a temporal manner. It sounds like they used 1,000 SFT examples to demonstrate it’s Llama2-Chat’s ability to understand time versus fine-tuning it to understand time.</p>
@@ -3810,14 +3893,14 @@ font-style: inherit;">"</span>)</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure23_tool_use_emergence.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Tool Use Emergence</figcaption><p></p>
+<figcaption class="figure-caption">Tool Use Emergence</figcaption>
 </figure>
 </div>
 <p>LLama2-Chat because it can use a calculator demonstrates better performance than GPT-3 and Toolformer on a math benchmark.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/table15_tool_use_performance.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Tool Use Performance</figcaption><p></p>
+<figcaption class="figure-caption">Tool Use Performance</figcaption>
 </figure>
 </div>
 </section>
@@ -3983,22 +4066,22 @@ font-style: inherit;"> [/INST]"</span></span></code></pre></div>
 <p>This is the first time I’ve ever run an LLM locally using the GPU on my Mac! One prompt I tried was “What’s the difference between data science and data engineering?” Getting about 15 tokens a second and the answer was quite good:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/ds_vs_de.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Llama2: Data Science vs Data Engineering</figcaption><p></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/ds_vs_de.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Llama2: Data Science vs Data Engineering</figcaption>
 </figure>
 </div>
 <p>Another prompt I tried was, “What’s the meaning of life”, not because I was necessarily wondering what llama2 thought the meaning of life was, but because I had read a paper earlier in the day called <a href="https://arxiv.org/abs/2301.04246">Generative Language Models and Automated Influence Operations: Emerging Threats and Potential Mitigations</a>. One of the tables in the paper showed the progress language models have made over the years and the prompt used to showcae this was “What is the meaning of life?”</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/paper_meaning_of_life.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Meaning of Life Progress in Language Models</figcaption><p></p>
+<figcaption class="figure-caption">Meaning of Life Progress in Language Models</figcaption>
 </figure>
 </div>
 <p>The progress from 2011 to 2020 was meaningful. But the progress from 2020 to 2023 is also quite impressive. Here is what llama2 had to say for the same prompt:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/meaning_of_life.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Llama2: Meaning of Life</figcaption><p></p>
+<figcaption class="figure-caption">Llama2: Meaning of Life</figcaption>
 </figure>
 </div>
 <p>The model also is able to give strong answers by modifying the previous prompt asking it to wear different hats as a Christian or a Muslim:</p>
@@ -4009,13 +4092,13 @@ font-style: inherit;"> [/INST]"</span></span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/meaning_of_life_christian.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Llama2: Meaning of Life for a Christian</figcaption><p></p>
+<figcaption class="figure-caption">Llama2: Meaning of Life for a Christian</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/meaning_of_life_muslim.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Llama2: Meaning of Life for a Muslim</figcaption><p></p>
+<figcaption class="figure-caption">Llama2: Meaning of Life for a Muslim</figcaption>
 </figure>
 </div>
 </section>
@@ -4043,7 +4126,7 @@ font-style: inherit;"> [/INST]"</span></span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/asitop.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Asitop</figcaption><p></p>
+<figcaption class="figure-caption">Asitop</figcaption>
 </figure>
 </div>
 </section>
@@ -4396,8 +4479,8 @@ font-style: inherit;">-1,</span> n_keep = 0</span></code></pre></div>
 <p>In this post I’ll go over some observations I’ve had while using OpenAI’s Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/code_interpreter.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Code Interpreter</figcaption><p></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/code_interpreter.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Code Interpreter</figcaption>
 </figure>
 </div>
 <p>If you aren’t familiar with Code Interpreter, it is:</p>
@@ -4432,7 +4515,7 @@ font-style: inherit;">-1,</span> n_keep = 0</span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">My first prompt into Code Interpreter</figcaption><p></p>
+<figcaption class="figure-caption">My first prompt into Code Interpreter</figcaption>
 </figure>
 </div>
 <p>The code Code Interpreter runs in its own Python sandbox is by default hidden, you can click show work and there’s runnable code! This could be a great training tool for junior data analysts and data scientists. One somewhat surprising thing is this is just a CSV file with no metadata but Code Interpreter was able to infer not just the column data types (which Pandas does already) but the meaning if each column (e.g.&nbsp;“3P%” means 3-point percentage). It’s probably based on the colunmn name and the fact I prompted it that it was an NBA related dataset.</p>
@@ -4514,7 +4597,7 @@ font-style: inherit;"># [5 rows x 42 columns]</span></span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Players ages</figcaption><p></p>
+<figcaption class="figure-caption">Players ages</figcaption>
 </figure>
 </div>
 </section>
@@ -4524,14 +4607,14 @@ font-style: inherit;"># [5 rows x 42 columns]</span></span></code></pre></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-self-debug.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Self debugging itself</figcaption><p></p>
+<figcaption class="figure-caption">Self debugging itself</figcaption>
 </figure>
 </div>
 <p>After fixing the issue and finding that the column is <code>P/36</code> and not <code>PTS</code>, it was able to produce the correct plot.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">After fixing the bug</figcaption><p></p>
+<figcaption class="figure-caption">After fixing the bug</figcaption>
 </figure>
 </div>
 </section>
@@ -4696,7 +4779,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">3 players performance over time</figcaption><p></p>
+<figcaption class="figure-caption">3 players performance over time</figcaption>
 </figure>
 </div>
 </section>
@@ -4706,7 +4789,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Comparison of teams based on aveage player stats</figcaption><p></p>
+<figcaption class="figure-caption">Comparison of teams based on aveage player stats</figcaption>
 </figure>
 </div>
 </section>
@@ -4716,7 +4799,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-5.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Relationship between differnet performance metrics</figcaption><p></p>
+<figcaption class="figure-caption">Relationship between differnet performance metrics</figcaption>
 </figure>
 </div>
 </section>
@@ -4726,7 +4809,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-explained.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Explaining the insights</figcaption><p></p>
+<figcaption class="figure-caption">Explaining the insights</figcaption>
 </figure>
 </div>
 </section>
@@ -4736,7 +4819,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-use-case-4-sorted.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Team performacne sorted</figcaption><p></p>
+<figcaption class="figure-caption">Team performacne sorted</figcaption>
 </figure>
 </div>
 </section>
@@ -4747,7 +4830,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/nba-dataset-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">New dataset uploaded</figcaption><p></p>
+<figcaption class="figure-caption">New dataset uploaded</figcaption>
 </figure>
 </div>
 <p>With this data, I was interested in seeing if Code Interpreter could join the two datasets and do an analysis that I’ve always been interested in, are some teams better at drafting (and developing) players? One way to estimate this is to look at the average cumulative WAR (wins above replacement) for players drafted by each team.</p>
@@ -4756,7 +4839,7 @@ font-style: inherit;">0.95</span>])</span>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/joining_datasets.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Joining the two datasets</figcaption><p></p>
+<figcaption class="figure-caption">Joining the two datasets</figcaption>
 </figure>
 </div>
 <p>I was surprised the LLM was able to join the two datasets because it was not a trivial join where the column names from both tables were the same. You can see it had to extract <code>season</code> from the <code>year_id</code> and then it uses a compound key to join the two tables.</p>
@@ -4845,7 +4928,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/average_war_by_draft_position.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Average Cumulative WAR by draft position</figcaption><p></p>
+<figcaption class="figure-caption">Average Cumulative WAR by draft position</figcaption>
 </figure>
 </div>
 </section>
@@ -4855,7 +4938,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/average_war_by_team.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Average Cumulative WAR by team</figcaption><p></p>
+<figcaption class="figure-caption">Average Cumulative WAR by team</figcaption>
 </figure>
 </div>
 </section>
@@ -4868,7 +4951,7 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/embeddings_plot.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Embeddings Visualized</figcaption><p></p>
+<figcaption class="figure-caption">Embeddings Visualized</figcaption>
 </figure>
 </div>
 </section>
@@ -4879,21 +4962,21 @@ font-style: inherit;"># Display the first few rows of the merged dataframe</span
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/high_variance_war_players.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Variance of WAR</figcaption><p></p>
+<figcaption class="figure-caption">Variance of WAR</figcaption>
 </figure>
 </div>
 <p>I was interested a plot in players that visualized total WAR vs variance in WAR. This would answer questions like which players had really good careers (total WAR) and were consistent (low variance in WAR). It was able to do this. This plot was not very good because there is too much noise.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/total_vs_variance_war_plot.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR</figcaption><p></p>
+<figcaption class="figure-caption">Total WAR vs Variance in WAR</figcaption>
 </figure>
 </div>
 <p>I asked the LLM to trim the axes and label the points with names. This is common in data analyses tasks where there is this interactive back and forth of seeing the output and iterating to produce a analysis or visualization that makes sense.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/total_vs_variance_war_plot_v2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR - v2</figcaption><p></p>
+<figcaption class="figure-caption">Total WAR vs Variance in WAR - v2</figcaption>
 </figure>
 </div>
 </section>
@@ -6946,8 +7029,8 @@ font-style: inherit;"># &gt; Finished chain.</span></span></code></pre></div>
 <p>The plot the agent generates is:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/agent_salaries_plot.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Agent Salaries</figcaption><p></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/agent_salaries_plot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Agent Salaries</figcaption>
 </figure>
 </div>
 </section>
@@ -7345,36 +7428,36 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
 <p>Here are some things I learned:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/gpt_assistant_pipeline.jpeg" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">GPT Assistant Pipeline</figcaption><p></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/gpt_assistant_pipeline.jpeg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">GPT Assistant Pipeline</figcaption>
 </figure>
 </div>
 <p>It was helpful to see the different stages that training a RLHF-tuned LLM goes through from 1) pretraining, 2) supervised fine-tuning, 3) reward modeling and 4) reinforcement learning.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/base_models_prompted.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Base Models can be Prompted</figcaption><p></p>
+<figcaption class="figure-caption">Base Models can be Prompted</figcaption>
 </figure>
 </div>
 <p>I wasn’t following the literature back then in the era of GPT-2 but it’s interesting to see the different types of prompts that people were trying to get base models to behave like assistants. With ChatGPT now, these types of prompts are not as useful.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/sft_dataset.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Supervised Fine-tuning Dataset</figcaption><p></p>
+<figcaption class="figure-caption">Supervised Fine-tuning Dataset</figcaption>
 </figure>
 </div>
 <p>I didn’t realize that these datasets took so much effort to create. A lot of times these contractors are writing long form answers to questions, adhering to very complex labeling instructions to be “helpful, truthful, harmless” taking sometimes hours to write these!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/rm_training.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Reward Modeling Training</figcaption><p></p>
+<figcaption class="figure-caption">Reward Modeling Training</figcaption>
 </figure>
 </div>
 <p>Binary classification between prompt and completion pairs. The completion yellow tokens are coming from the SFT model. Only supervise the training of the Transformer at the green reward token. The transformer will learn to predict the reward token for a given prompt/completion pair. We have the ground truth rewards from our human labelers. As the model is trained it can then better predict the reward tokens.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/rl_training.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Reinforcement Learning Training</figcaption><p></p>
+<figcaption class="figure-caption">Reinforcement Learning Training</figcaption>
 </figure>
 </div>
 <p>Taking the reward model from the previous stage, we take the tuples of (prompt, completion, reward), the completions are coming from the SFT model (model we want to train), the reward is from the reward model. The rewards are fixed.</p>
@@ -7382,28 +7465,28 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/ppo_vs_sft.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">RLHF vs SFT</figcaption><p></p>
+<figcaption class="figure-caption">RLHF vs SFT</figcaption>
 </figure>
 </div>
 <p>The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedback) LLMs. It’s interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/why_rlhf.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Why RLHF?</figcaption><p></p>
+<figcaption class="figure-caption">Why RLHF?</figcaption>
 </figure>
 </div>
 <p>Why does RLHF work better than SFT? Karpathy offers up an interesting hypothesis basically saying that it is easier for humans to compare two completions (what one does when creating training data for the reward model) vs.&nbsp;creating a completion from scratch (what one does when creating training data for the SFT model). The example being if the prompt is “Write a haiku about paperclips” - it’s much easier to compare two haikus about paper clips than to write a haiku about paper clips from scratch.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/mode_collapse.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Mode collapse</figcaption><p></p>
+<figcaption class="figure-caption">Mode collapse</figcaption>
 </figure>
 </div>
 <p>One downside of fine-tuned models I didn’t realize was they lose entropy, in other words fine-tune models often predict one token with high probability instead of a nice distribution of tokens. So base models can be better at tasks where you have N examples of things want to generate more things. Karpathy’s toy example was prompting with “Here are 100 cool pokemon names I made up:” and giving it 7 actual Pokemon and the base model completes with additional generated Pokemon names.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/assistant_leaderboard.jpg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Assistant Leaderboard</figcaption><p></p>
+<figcaption class="figure-caption">Assistant Leaderboard</figcaption>
 </figure>
 </div>
 <p>A team at Berkeley has assembled Elo ratings from some assistant LLMs. The first 3 are RLHF models, the rest of SFT models. GPT-4 is winning. A link to a more up-to-date version of the leaderboard with Google’s PaLM2: https://lmsys.org/blog/2023-05-25-leaderboard/ which is still pretty far between GPT3.5 and GPT-4.</p>
@@ -7421,21 +7504,21 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/chain_of_thought.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Chain of Thought</figcaption><p></p>
+<figcaption class="figure-caption">Chain of Thought</figcaption>
 </figure>
 </div>
 <p>Models need tokens to think. By breaking up a task into multiple steps, you are giving the language model an opportunity to think and reason over more tokens.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/condition_on_good_performance.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Condition on Good Performance</figcaption><p></p>
+<figcaption class="figure-caption">Condition on Good Performance</figcaption>
 </figure>
 </div>
 <p>Because language models are trained on all kinds of data, e.g.&nbsp;student solutions to a physics problem or an expert solution to the same problem, you can prompt the model “to be an expert in physics” and that usually improves performance. Apparently the best prompt was “Let’s work this out in a step by step way to be sure we have the right answer.”</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/retrieval_augmented_llms.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Retrieval-Augmented LLMs</figcaption><p></p>
+<figcaption class="figure-caption">Retrieval-Augmented LLMs</figcaption>
 </figure>
 </div>
 <ul>
@@ -7447,7 +7530,7 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/finetuning.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Finetuning</figcaption><p></p>
+<figcaption class="figure-caption">Finetuning</figcaption>
 </figure>
 </div>
 <p>Become more accessible to fine-tuning a model:</p>
@@ -7459,13 +7542,13 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/default_recommendations.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Default Recommendations</figcaption><p></p>
+<figcaption class="figure-caption">Default Recommendations</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/use_cases.jpeg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Use cases</figcaption><p></p>
+<figcaption class="figure-caption">Use cases</figcaption>
 </figure>
 </div>
 

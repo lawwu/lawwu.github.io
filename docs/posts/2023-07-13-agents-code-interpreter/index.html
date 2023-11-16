@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.290">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
@@ -278,8 +279,8 @@ cookieconsent.run({
 <p>In this post I’ll go over some observations I’ve had while using OpenAI’s Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month).</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="./code_interpreter.png" class="quarto-discovered-preview-image img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Code Interpreter</figcaption><p></p>
+<p><img src="./code_interpreter.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Code Interpreter</figcaption>
 </figure>
 </div>
 <p>If you aren’t familiar with Code Interpreter, it is:</p>
@@ -314,7 +315,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-1.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">My first prompt into Code Interpreter</figcaption><p></p>
+<figcaption class="figure-caption">My first prompt into Code Interpreter</figcaption>
 </figure>
 </div>
 <p>The code Code Interpreter runs in its own Python sandbox is by default hidden, you can click show work and there’s runnable code! This could be a great training tool for junior data analysts and data scientists. One somewhat surprising thing is this is just a CSV file with no metadata but Code Interpreter was able to infer not just the column data types (which Pandas does already) but the meaning if each column (e.g.&nbsp;“3P%” means 3-point percentage). It’s probably based on the colunmn name and the fact I prompted it that it was an NBA related dataset.</p>
@@ -358,7 +359,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Players ages</figcaption><p></p>
+<figcaption class="figure-caption">Players ages</figcaption>
 </figure>
 </div>
 </section>
@@ -368,14 +369,14 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-self-debug.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Self debugging itself</figcaption><p></p>
+<figcaption class="figure-caption">Self debugging itself</figcaption>
 </figure>
 </div>
 <p>After fixing the issue and finding that the column is <code>P/36</code> and not <code>PTS</code>, it was able to produce the correct plot.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-use-case-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">After fixing the bug</figcaption><p></p>
+<figcaption class="figure-caption">After fixing the bug</figcaption>
 </figure>
 </div>
 </section>
@@ -414,7 +415,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-use-case-3.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">3 players performance over time</figcaption><p></p>
+<figcaption class="figure-caption">3 players performance over time</figcaption>
 </figure>
 </div>
 </section>
@@ -424,7 +425,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-use-case-4.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Comparison of teams based on aveage player stats</figcaption><p></p>
+<figcaption class="figure-caption">Comparison of teams based on aveage player stats</figcaption>
 </figure>
 </div>
 </section>
@@ -434,7 +435,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-use-case-5.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Relationship between differnet performance metrics</figcaption><p></p>
+<figcaption class="figure-caption">Relationship between differnet performance metrics</figcaption>
 </figure>
 </div>
 </section>
@@ -444,7 +445,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-use-case-explained.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Explaining the insights</figcaption><p></p>
+<figcaption class="figure-caption">Explaining the insights</figcaption>
 </figure>
 </div>
 </section>
@@ -454,7 +455,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-use-case-4-sorted.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Team performacne sorted</figcaption><p></p>
+<figcaption class="figure-caption">Team performacne sorted</figcaption>
 </figure>
 </div>
 </section>
@@ -465,7 +466,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./nba-dataset-2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">New dataset uploaded</figcaption><p></p>
+<figcaption class="figure-caption">New dataset uploaded</figcaption>
 </figure>
 </div>
 <p>With this data, I was interested in seeing if Code Interpreter could join the two datasets and do an analysis that I’ve always been interested in, are some teams better at drafting (and developing) players? One way to estimate this is to look at the average cumulative WAR (wins above replacement) for players drafted by each team.</p>
@@ -474,7 +475,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./joining_datasets.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Joining the two datasets</figcaption><p></p>
+<figcaption class="figure-caption">Joining the two datasets</figcaption>
 </figure>
 </div>
 <p>I was surprised the LLM was able to join the two datasets because it was not a trivial join where the column names from both tables were the same. You can see it had to extract <code>season</code> from the <code>year_id</code> and then it uses a compound key to join the two tables.</p>
@@ -501,7 +502,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./average_war_by_draft_position.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Average Cumulative WAR by draft position</figcaption><p></p>
+<figcaption class="figure-caption">Average Cumulative WAR by draft position</figcaption>
 </figure>
 </div>
 </section>
@@ -511,7 +512,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./average_war_by_team.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Average Cumulative WAR by team</figcaption><p></p>
+<figcaption class="figure-caption">Average Cumulative WAR by team</figcaption>
 </figure>
 </div>
 </section>
@@ -524,7 +525,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./embeddings_plot.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Embeddings Visualized</figcaption><p></p>
+<figcaption class="figure-caption">Embeddings Visualized</figcaption>
 </figure>
 </div>
 </section>
@@ -535,21 +536,21 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./high_variance_war_players.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Variance of WAR</figcaption><p></p>
+<figcaption class="figure-caption">Variance of WAR</figcaption>
 </figure>
 </div>
 <p>I was interested a plot in players that visualized total WAR vs variance in WAR. This would answer questions like which players had really good careers (total WAR) and were consistent (low variance in WAR). It was able to do this. This plot was not very good because there is too much noise.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./total_vs_variance_war_plot.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR</figcaption><p></p>
+<figcaption class="figure-caption">Total WAR vs Variance in WAR</figcaption>
 </figure>
 </div>
 <p>I asked the LLM to trim the axes and label the points with names. This is common in data analyses tasks where there is this interactive back and forth of seeing the output and iterating to produce a analysis or visualization that makes sense.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./total_vs_variance_war_plot_v2.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Total WAR vs Variance in WAR - v2</figcaption><p></p>
+<figcaption class="figure-caption">Total WAR vs Variance in WAR - v2</figcaption>
 </figure>
 </div>
 </section>

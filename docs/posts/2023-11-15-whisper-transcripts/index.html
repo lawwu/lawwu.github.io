@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lawrence Wu">
-<meta name="dcterms.date" content="2023-04-04">
+<meta name="dcterms.date" content="2023-11-15">
 
-<title>Lawrence Wu - GPT Related Papers, Code, and News</title>
+<title>Lawrence Wu - Whisper Transcripts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -91,10 +125,10 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Lawrence Wu - GPT Related Papers, Code, and News">
+<meta property="og:title" content="Lawrence Wu - Whisper Transcripts">
 <meta property="og:description" content="">
 <meta property="og:site-name" content="Lawrence Wu">
-<meta name="twitter:title" content="Lawrence Wu - GPT Related Papers, Code, and News">
+<meta name="twitter:title" content="Lawrence Wu - Whisper Transcripts">
 <meta name="twitter:description" content="">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
@@ -161,11 +195,13 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#papers" id="toc-papers" class="nav-link active" data-scroll-target="#papers">Papers</a></li>
-  <li><a href="#libraries-tools" id="toc-libraries-tools" class="nav-link" data-scroll-target="#libraries-tools">Libraries / Tools</a></li>
-  <li><a href="#prompt-engineering" id="toc-prompt-engineering" class="nav-link" data-scroll-target="#prompt-engineering">Prompt Engineering</a></li>
-  <li><a href="#output-parsers" id="toc-output-parsers" class="nav-link" data-scroll-target="#output-parsers">Output Parsers</a></li>
-  <li><a href="#predictions" id="toc-predictions" class="nav-link" data-scroll-target="#predictions">Predictions</a></li>
+  <li><a href="#introduction-to-whisper-and-whisper.cpp" id="toc-introduction-to-whisper-and-whisper.cpp" class="nav-link active" data-scroll-target="#introduction-to-whisper-and-whisper.cpp">Introduction to Whisper and whisper.cpp</a></li>
+  <li><a href="#using-whisper.cpp" id="toc-using-whisper.cpp" class="nav-link" data-scroll-target="#using-whisper.cpp">Using whisper.cpp</a>
+  <ul class="collapse">
+  <li><a href="#speed-benchmarks" id="toc-speed-benchmarks" class="nav-link" data-scroll-target="#speed-benchmarks">Speed benchmarks</a></li>
+  </ul></li>
+  <li><a href="#building-a-personal-transcript-repository" id="toc-building-a-personal-transcript-repository" class="nav-link" data-scroll-target="#building-a-personal-transcript-repository">Building a personal transcript repository</a></li>
+  <li><a href="#related-whisper-libraries" id="toc-related-whisper-libraries" class="nav-link" data-scroll-target="#related-whisper-libraries">Related Whisper libraries</a></li>
   </ul>
 </nav>
     </div>
@@ -174,10 +210,11 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">GPT Related Papers, Code, and News</h1>
+<h1 class="title">Whisper Transcripts</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">GPT</div>
-    <div class="quarto-category">OpenAI</div>
+    <div class="quarto-category">Whisper</div>
+    <div class="quarto-category">ASR</div>
+    <div class="quarto-category">Transcripts</div>
   </div>
   </div>
 
@@ -195,7 +232,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 4, 2023</p>
+      <p class="date">November 15, 2023</p>
     </div>
   </div>
   
@@ -205,51 +242,47 @@ cookieconsent.run({
 
 </header>
 
-<p>There’s seemingly a firehose of development in the last month or so. I’ve been trying to keep up with the latest developments in GPT and related models. Here’s a list of papers, code, and news that I’ve found interesting. This is mainly for myself to have a reference, but I hope it’s useful to others as well. I was largely inspired by <a href="https://twitter.com/osanseviero"><span class="citation" data-cites="osanseviero">@osanseviero</span></a> who created <a href="https://github.com/osanseviero/ml_timeline">ml_timeline</a>.</p>
-<section id="papers" class="level1">
-<h1>Papers</h1>
-<ul>
-<li>2022-08-21 - Emergent Abilities of Large Language Models (<a href="https://openreview.net/forum?id=yzkSU5zdwD">paper</a>, <a href="https://ai.googleblog.com/2022/11/characterizing-emergent-phenomena-in.html">blog</a>)</li>
-<li>2023-03-13 - <a href="https://crfm.stanford.edu/2023/03/13/alpaca.html">Alpaca</a> – Stanford’s CRFM group released a 1.5B parameter GPT-3 like model. They were the first to demonstrate you can get GPT-like performance using only 52k instruction-following data points. On the self-instruct evaluation set, Alpaca shows many behaviors similar to OpenAI’s text-davinci-003, but is also surprisingly small and easy/cheap to reproduce. I think one reason OpenAI dropped their pricing by 90% with GPT-4 is because they wanted to achieve wide distribution of their model.</li>
-<li>2023-03-15 - GPT-4 Technical Paper (<a href="https://arxiv.org/abs/2303.08774">paper</a>) - highlights some of the amazing improvements GPT-4 has made over GPT-3</li>
-<li>2023-03-27 - GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models (<a href="https://arxiv.org/pdf/2303.10130.pdf">paper</a>) – Paper that identifies the occupations that have the highest exposure to automation by GPT. In related news, ResumeBuilder found <a href="https://www.resumebuilder.com/1-in-4-companies-have-already-replaced-workers-with-chatgpt/#:~:text=With%20the%20emergence%20of%20ChatGPT,%2C%20write%20code%2C%20and%20more">1 in 4 companies have already replaced workers with ChatGPT</a></li>
-<li>2023-03-22 - Sparks of Artificial General Intelligence (<a href="https://arxiv.org/abs/2303.12712">paper</a>)</li>
-<li>2023-03-20 – Reflexion: an autonomous agent with dynamic memory and self-reflection (<a href="https://arxiv.org/abs/2303.11366">paper</a>). A related <a href="https://nanothoughts.substack.com/p/reflecting-on-reflexion">post</a>.</li>
-<li>2023-03-23 - AI Explained – GPT4 can improve itself (<a href="https://www.youtube.com/watch?v=5SgJKZLBrmg&amp;ab_channel=AIExplained">video</a>) - Intro to Reflexion and HuggingGPT</li>
-<li>2023-03-30 - HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace (<a href="https://arxiv.org/abs/2303.17580">paper</a>, <a href="https://github.com/microsoft/JARVIS">code</a>) - Using a LLM as brain, HuggingGPT identifies what HuggingFace models to use to solve tasks. Notably Microsoft is calling this <code>JARVIS</code>.</li>
-</ul>
+<section id="introduction-to-whisper-and-whisper.cpp" class="level1">
+<h1>Introduction to Whisper and whisper.cpp</h1>
+<p><a href="https://github.com/openai/whisper">Whisper</a> is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results.</p>
+<p>I had heard about Whisper when it was released but got interested in using Whisper after <a href="https://twitter.com/ggerganov?lang=en">Georgi Gerganov</a> of <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> fame created an equivalent library called <a href="https://github.com/ggerganov/whisper.cpp">whisper.cpp</a>. He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed.</p>
 </section>
-<section id="libraries-tools" class="level1">
-<h1>Libraries / Tools</h1>
-<ul>
-<li><a href="https://github.com/features/copilot">Github Copilot</a> - I use Copilot in my IDE, VS Code and it’s dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer’s ‘flow’ is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a <a href="https://radekosmulski.com/an-ide-for-the-era-of-ai/">blog post</a> for how to set this up. <del>I do plan to try <a href="https://github.com/noteable-io/genai">GenAI</a> as well.</del> I tried GenAI and it basically automatically sends all errors to ChatGPT and provides suggested corrected syntax to try in line in your Jupyter notebook. It actually can be a nice complement to Copilot.</li>
-<li><a href="https://github.com/hwchase17/langchain">LangChain</a> - Building applications with LLMs through composability</li>
-<li><a href="https://github.com/jerryjliu/llama_index">llama_index</a> - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM’s with external data.</li>
-<li><a href="https://github.com/noteable-io/genai">GenAI</a> - generative AI tooling for IPython</li>
-<li><a href="https://github.com/PrefectHQ/marvin">marvin</a> - Meet Marvin: a batteries-included library for building AI-powered software. Marvin’s job is to integrate AI directly into your codebase by making it look and feel like any other function.</li>
-</ul>
+<section id="using-whisper.cpp" class="level1">
+<h1>Using whisper.cpp</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/ggerganov/whisper.cpp</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> whisper.cpp</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> clean</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">make</span> <span class="at">-j</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># download a model</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> ./models/download-ggml-model.sh large</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># run inference</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ex">./main</span> <span class="at">-m</span> models/ggml-large.bin <span class="at">-f</span> samples/jfk.wav</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="speed-benchmarks" class="level2">
+<h2 class="anchored" data-anchor-id="speed-benchmarks">Speed benchmarks</h2>
+<p>The accuracy of Whisper’s large model is quite good. Coupled with the accelerated inference that whisper.cpp offers on a Mac, it’s becoming easy to transcribe audio quickly and accurately. For example, running <code>ggml-large-v2</code>, I can transcribe around 1 hour of audio in about 13 minutes on an M2 Pro (200 GB/s) or in 4 minutes on an M2 Ultra (800 GB/s).</p>
 </section>
-<section id="prompt-engineering" class="level1">
-<h1>Prompt Engineering</h1>
-<p>Prompt engineering is the process of creating prompts for LLMs. Essentially optimizing the input into LLMs.</p>
-<ul>
-<li><a href="https://prmpts.ai/blog/what-is-prompt-engineering">What is Prompt Engineering</a> - like how Googling became a skill (aka “Google-fu”), I think Prompt Engineering is an important skill to develop</li>
-<li><a href="https://github.com/f/awesome-chatgpt-prompts">awesome-chatgpt-prompts</a> - A curated list of awesome ChatGPT prompts. I like “Act as a Linux Terminal” prompt.</li>
-<li><a href="https://www.promptingguide.ai/">Prompt Engineering Guide</a> - “Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering.” Code: <a href="https://github.com/dair-ai/Prompt-Engineering-Guide">repo</a>.</li>
-</ul>
 </section>
-<section id="output-parsers" class="level1">
-<h1>Output Parsers</h1>
-<p>Where prompt engineering works on the input to LLMs, output parsers work on the output.</p>
+<section id="building-a-personal-transcript-repository" class="level1">
+<h1>Building a personal transcript repository</h1>
+<p>One use case is building a personal transcript library. I enjoy listening to podcasts and sermons and often like to reference what was said. Having a transcript handy makes this trivial. I was inspired by what Andrej Karpathy created in transcribing Lex Fridman’s podcasts: <a href="https://karpathy.ai/lexicap/" class="uri">https://karpathy.ai/lexicap/</a> and built something similar for a handful of podcasts I enjoy listening to: <a href="https://lawwu.github.io/transcripts/" class="uri">https://lawwu.github.io/transcripts/</a>.</p>
 <ul>
-<li><a href="https://python.langchain.com/en/latest/modules/prompts/output_parsers.html">Output Parsers</a> - LangChain calls this “Output Parsers”. LangChain can return a list, JSON, any Python type (using Pydantic) and two other ways of handling outputs: <code>OutputFixingParser</code> and <code>RetryOutputParser</code></li>
-<li><a href="https://www.askmarvin.ai/guide/use_cases/enforcing_format/">Enforcing AI Format</a> - Marvin calls this “Enforcing AI format”. Marvin can return a string, list of dicts, JSON or really any Python type (using Pydantic)</li>
+<li><a href="https://lawwu.github.io/transcripts/index_ai_explained.html">AI Explained</a></li>
+<li><a href="https://lawwu.github.io/transcripts/index_all_in.html">All In</a></li>
+<li><a href="https://lawwu.github.io/transcripts/index_lex_fridman.html">Lex Fridman</a></li>
 </ul>
+<p>The code to generate the transcripts using Whisper and the code to generate the webpages is here: <a href="https://github.com/lawwu/transcripts" class="uri">https://github.com/lawwu/transcripts</a>.</p>
 </section>
-<section id="predictions" class="level1">
-<h1>Predictions</h1>
+<section id="related-whisper-libraries" class="level1">
+<h1>Related Whisper libraries</h1>
+<p>There are other libraries that allow you to run Whisper faster.</p>
 <ul>
-<li>2023-04-01 - <a href="https://mobile.twitter.com/AllenDowney"><span class="citation" data-cites="AllenDowney">@AllenDowney</span></a> predicts “The great majority of coding will be LLM-assisted, starting now.” (<a href="https://mobile.twitter.com/AllenDowney/status/1642292405201190915">tweet</a>, <a href="https://www.allendowney.com/blog/2023/04/02/llm-assisted-programming/">blog</a>)</li>
+<li><a href="https://github.com/guillaumekln/faster-whisper" class="uri">https://github.com/guillaumekln/faster-whisper</a></li>
+<li><a href="https://github.com/sanchit-gandhi/whisper-jax" class="uri">https://github.com/sanchit-gandhi/whisper-jax</a></li>
+<li><a href="https://github.com/huggingface/distil-whisper" class="uri">https://github.com/huggingface/distil-whisper</a></li>
+<li><a href="https://github.com/MahmoudAshraf97/whisper-diarization" class="uri">https://github.com/MahmoudAshraf97/whisper-diarization</a></li>
+<li><a href="https://github.com/Vaibhavs10/insanely-fast-whisper" class="uri">https://github.com/Vaibhavs10/insanely-fast-whisper</a></li>
 </ul>
 
 

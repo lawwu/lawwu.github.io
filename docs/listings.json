@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2023-11-15-whisper-transcripts/index.html",
       "/posts/2023-10-10-ai-engineer-summit/index.html",
       "/posts/2023-08-29-how-llms-will-affect-jobs/index.html",
       "/posts/2023-08-25-kdd2023-recap/index.html",
