@@ -195,7 +195,7 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction-to-whisper-and-whisper.cpp" id="toc-introduction-to-whisper-and-whisper.cpp" class="nav-link active" data-scroll-target="#introduction-to-whisper-and-whisper.cpp">Introduction to Whisper and whisper.cpp</a></li>
+  <li><a href="#whisper-and-whisper.cpp" id="toc-whisper-and-whisper.cpp" class="nav-link active" data-scroll-target="#whisper-and-whisper.cpp">Whisper and whisper.cpp</a></li>
   <li><a href="#using-whisper.cpp" id="toc-using-whisper.cpp" class="nav-link" data-scroll-target="#using-whisper.cpp">Using whisper.cpp</a>
   <ul class="collapse">
   <li><a href="#speed-benchmarks" id="toc-speed-benchmarks" class="nav-link" data-scroll-target="#speed-benchmarks">Speed benchmarks</a></li>
@@ -242,9 +242,9 @@ cookieconsent.run({
 
 </header>
 
-<section id="introduction-to-whisper-and-whisper.cpp" class="level1">
-<h1>Introduction to Whisper and whisper.cpp</h1>
-<p><a href="https://github.com/openai/whisper">Whisper</a> is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results.</p>
+<section id="whisper-and-whisper.cpp" class="level1">
+<h1>Whisper and whisper.cpp</h1>
+<p><a href="https://github.com/openai/whisper">Whisper</a> is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results. The latest model is <a href="https://huggingface.co/openai/whisper-large-v3">whisper-large-v3</a> which OpenAI released on their Dev Day.</p>
 <p>I had heard about Whisper when it was released but got interested in using Whisper after <a href="https://twitter.com/ggerganov?lang=en">Georgi Gerganov</a> of <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> fame created an equivalent library called <a href="https://github.com/ggerganov/whisper.cpp">whisper.cpp</a>. He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed.</p>
 </section>
 <section id="using-whisper.cpp" class="level1">
@@ -271,8 +271,9 @@ cookieconsent.run({
 <li><a href="https://lawwu.github.io/transcripts/index_ai_explained.html">AI Explained</a></li>
 <li><a href="https://lawwu.github.io/transcripts/index_all_in.html">All In</a></li>
 <li><a href="https://lawwu.github.io/transcripts/index_lex_fridman.html">Lex Fridman</a></li>
+<li><a href="https://lawwu.github.io/transcripts/index_radical_personal_finance.html">Radical Personal Finance</a></li>
 </ul>
-<p>The code to generate the transcripts using Whisper and the code to generate the webpages is here: <a href="https://github.com/lawwu/transcripts" class="uri">https://github.com/lawwu/transcripts</a>.</p>
+<p>The code to generate the transcripts using Whisper and to generate the webpages is here: <a href="https://github.com/lawwu/transcripts" class="uri">https://github.com/lawwu/transcripts</a>.</p>
 </section>
 <section id="related-whisper-libraries" class="level1">
 <h1>Related Whisper libraries</h1>

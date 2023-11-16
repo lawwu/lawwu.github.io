@@ -298,7 +298,7 @@
     "href": "posts/2023-11-15-whisper-transcripts/index.html",
     "title": "Whisper Transcripts",
     "section": "",
-    "text": "Whisper is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results.\nI had heard about Whisper when it was released but got interested in using Whisper after Georgi Gerganov of llama.cpp fame created an equivalent library called whisper.cpp. He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed."
+    "text": "Whisper is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results. The latest model is whisper-large-v3 which OpenAI released on their Dev Day.\nI had heard about Whisper when it was released but got interested in using Whisper after Georgi Gerganov of llama.cpp fame created an equivalent library called whisper.cpp. He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed."
   },
   {
     "objectID": "posts/2023-11-15-whisper-transcripts/index.html#speed-benchmarks",
