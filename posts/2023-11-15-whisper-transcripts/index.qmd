@@ -1,0 +1,52 @@
+---
+title: "Whisper Transcripts"
+author: "Lawrence Wu"    
+date: "2023-11-15"
+categories: ["Whisper", "ASR", "Transcripts"]
+---
+
+# Whisper and whisper.cpp
+
+[Whisper](https://github.com/openai/whisper) is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results. The latest model is [whisper-large-v3](https://huggingface.co/openai/whisper-large-v3) which OpenAI released on their Dev Day.
+
+I had heard about Whisper when it was released but got interested in using Whisper after [Georgi Gerganov](https://twitter.com/ggerganov?lang=en) of [llama.cpp](https://github.com/ggerganov/llama.cpp) fame created an equivalent library called [whisper.cpp](https://github.com/ggerganov/whisper.cpp). He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed. 
+
+# Using whisper.cpp
+
+```bash
+git clone https://github.com/ggerganov/whisper.cpp
+cd whisper.cpp
+make clean
+make -j
+
+# download a model
+bash ./models/download-ggml-model.sh large
+
+# run inference
+./main -m models/ggml-large.bin -f samples/jfk.wav
+```
+
+## Speed benchmarks
+
+The accuracy of Whisper's large model is quite good. Coupled with the accelerated inference that whisper.cpp offers on a Mac, it's becoming easy to transcribe audio quickly and accurately. For example, running `ggml-large-v2`, I can transcribe around 1 hour of audio in about 13 minutes on an M2 Pro (200 GB/s) or in 4 minutes on an M2 Ultra (800 GB/s).
+
+# Building a personal transcript repository
+
+One use case is building a personal transcript library. I enjoy listening to podcasts and sermons and often like to reference what was said. Having a transcript handy makes this trivial. I was inspired by what Andrej Karpathy created in transcribing Lex Fridman's podcasts: <https://karpathy.ai/lexicap/> and built something similar for a handful of podcasts I enjoy listening to: <https://lawwu.github.io/transcripts/>.
+
+- [AI Explained](https://lawwu.github.io/transcripts/index_ai_explained.html)
+- [All In](https://lawwu.github.io/transcripts/index_all_in.html)
+- [Lex Fridman](https://lawwu.github.io/transcripts/index_lex_fridman.html)
+- [Radical Personal Finance](https://lawwu.github.io/transcripts/index_radical_personal_finance.html)
+
+The code to generate the transcripts using Whisper and to generate the webpages is here: <https://github.com/lawwu/transcripts>.
+
+# Related Whisper libraries
+
+There are other libraries that allow you to run Whisper faster.
+
+- <https://github.com/guillaumekln/faster-whisper>
+- <https://github.com/sanchit-gandhi/whisper-jax>
+- <https://github.com/huggingface/distil-whisper>
+- <https://github.com/MahmoudAshraf97/whisper-diarization>
+- <https://github.com/Vaibhavs10/insanely-fast-whisper>
