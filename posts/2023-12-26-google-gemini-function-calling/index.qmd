@@ -184,6 +184,8 @@ One very useful use case for function calling is robust semantic data extraction
 The reason I say function calling supports **robust** semantic data extraction is the LLM will always return valid JSON and a schema that matches the schema you have defined.
 
 # Data Extraction Example
+
+## Extracting Person Metadata
 I modified [langchain's Function Calling Extraction use case](https://python.langchain.com/docs/use_cases/extraction) which uses OpenAI to work with Gemini Pro.
 
 First do the necessary imports:
@@ -235,34 +237,190 @@ person_example_1 = model.generate_content(
     tools=[tool_person_extractor],
 )
 print(person_example_1)
-
-# candidates {
-#   content {
-#     role: "model"
-#     parts {
-#       function_call {
-#         name: "person_extractor"
-#         args {
-#           fields {
-#             key: "name"
-#             value {
-#               string_value: "Alex"
-#             }
-#           }
-#           fields {
-#             key: "height"
-#             value {
-#               number_value: 5
-#             }
-#           }
-#           fields {
-#             key: "hair_color"
-#             value {
-#               string_value: "blonde"
-#             }
-#           }
-# ...
-#   prompt_token_count: 29
-#   total_token_count: 29
-# }
 ```
+
+```json
+candidates {
+  content {
+    role: "model"
+    parts {
+      function_call {
+        name: "person_extractor"
+        args {
+          fields {
+            key: "name"
+            value {
+              string_value: "Alex"
+            }
+          }
+          fields {
+            key: "height"
+            value {
+              number_value: 5
+            }
+          }
+          fields {
+            key: "hair_color"
+            value {
+              string_value: "blonde"
+            }
+          }
+...
+  prompt_token_count: 29
+  total_token_count: 29
+}
+```
+
+## Extracting "Extra Info"
+
+What's also powerful about function calling based data extraction like the langchain example documents, "we can ask for things that are not for explicitly enumerated in the schema." In the following example, we are asking for metadata about a person and a dog. And then by leveraging the LLM's reasoning capability, we can ask for unspecified additional information about the dogs.
+
+First define another function and wrap it in a tool:
+```python
+func_person_and_dog_extractor = FunctionDeclaration(
+    name="person_extractor",
+    description="Extract data about a person from the text",
+    parameters={
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "Name of a person",
+            },
+            "height": {
+                "type": "integer",
+                "description": "Height of a person",
+            },
+            "hair_color": {
+                "type": "string",
+                "description": "Hair Color"
+            },
+            "dog_name": {
+                "type": "string",
+                "description": "Name of a dog",
+            },
+            "dog_breed": {
+                "type": "string",
+                "description": "Breed of dog",
+            },
+            "dog_extra_info": {
+                "type": "string",
+                "description": "Extra information about the dog"
+            }
+        },
+        "required": ["name", "height", "hair_color", "dog_name", "dog_breed", "dog_extra_info"]
+    },
+    
+)
+tool_person_and_dog_extractor = Tool(
+    function_declarations=[func_person_and_dog_extractor],
+)
+```
+
+Then call the LLM:
+```python
+inp = """Alex is 5 feet tall. Claudia is 1 feet taller Alex and jumps higher than him. Claudia is a brunette and Alex is blonde.
+Willow is a German Shepherd that likes to play with other dogs and can always be found playing with Milo, a border collie that lives close by."""
+
+example_2_person_and_dog = model.generate_content(
+    inp,
+    generation_config={"temperature": 0},
+    tools=[tool_person_and_dog_extractor],
+)
+print(example_2_person_and_dog)
+```
+
+```json
+candidates {
+  content {
+    role: "model"
+    parts {
+      function_call {
+        name: "person_extractor"
+        args {
+          fields {
+            key: "name"
+            value {
+              string_value: "Willow"
+            }
+          }
+          fields {
+            key: "height"
+            value {
+              null_value: NULL_VALUE
+            }
+          }
+          fields {
+            key: "hair_color"
+            value {
+              null_value: NULL_VALUE
+            }
+          }
+          fields {
+            key: "dog_name"
+            value {
+              string_value: "Milo"
+            }
+          }
+          fields {
+            key: "dog_extra_info"
+            value {
+              string_value: "likes to play with other dogs and can always be found playing with Milo, a border collie that lives close by."
+            }
+          }
+          fields {
+            key: "dog_breed"
+            value {
+              string_value: "German Shepherd"
+            }
+          }
+        }
+      }
+    }
+  }
+  finish_reason: STOP
+  safety_ratings {
+    category: HARM_CATEGORY_HARASSMENT
+    probability: NEGLIGIBLE
+  }
+  safety_ratings {
+    category: HARM_CATEGORY_HATE_SPEECH
+    probability: NEGLIGIBLE
+  }
+  safety_ratings {
+    category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+    probability: NEGLIGIBLE
+  }
+  safety_ratings {
+    category: HARM_CATEGORY_DANGEROUS_CONTENT
+    probability: NEGLIGIBLE
+  }
+}
+usage_metadata {
+  prompt_token_count: 59
+  total_token_count: 59
+}
+```
+
+Gemini does not do as good of a job extracting data from free text. For example, in the trivial example above:
+
+- the person's height and hair color are null when both those two data points are in the input prompt
+- there are two people but Gemini only extracts one person's info
+- Gemini also confuses the names of the dogs and people. `Willow` is assigned to name when it is actually the name of a dog. The name of the dog it extracts is correct in `Milo` but the breed it associates with `Milo` is incorrect, as it should be `Border Collie`.
+
+
+gpt-3-5-turbo does a better job of extracting all the relevant information and not hallucinating:
+```json
+[{'person_name': 'Alex', 'person_height': 5, 'person_hair_color': 'blonde'},
+ {'person_name': 'Claudia',
+  'person_height': 6,
+  'person_hair_color': 'brunette'},
+ {'dog_name': 'Willow',
+  'dog_breed': 'German Shepherd',
+  'dog_extra_info': 'likes to play with other dogs'},
+ {'dog_name': 'Milo',
+  'dog_breed': 'border collie',
+  'dog_extra_info': 'lives close by'}]
+```
+
+Hopefully Google continues to iterate and improve upon these capabilities.
