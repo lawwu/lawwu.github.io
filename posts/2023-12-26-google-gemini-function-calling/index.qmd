@@ -175,11 +175,11 @@ usage_metadata {
 
 # Function Calling & Data Extraction
 
-One very useful use-case for function calling is robust semantic data extraction. Without LLM's that support function calling, you can already do semantic data extraction. With a prompt like "extract name, age and hair color from this block of text and return the data in JSON" and a large enough LLM, this will already get you pretty far. This is an [example](https://python.langchain.com/docs/modules/model_io/output_parsers/) with gpt-3.5, langchain and one of langchain's output parsers `PydanticOutputParser`. However, some issues are:
+One very useful use case for function calling is robust semantic data extraction. Without LLM's that support function calling, you can already do semantic data extraction. With a prompt like "extract name, age and hair color from this block of text and return the data in JSON" and a large enough LLM, this will already get you pretty far. This is an [example](https://python.langchain.com/docs/modules/model_io/output_parsers/) with gpt-3.5, langchain and one of langchain's output parsers `PydanticOutputParser`. However, some issues are:
 
 - the LLM may not always return valid JSON
 - the LLM may return keys that are named differently
-= the LLM may not return all the keys
+- the LLM may not return all the keys
 
 The reason I say function calling supports **robust** semantic data extraction is the LLM will always return valid JSON and a schema that matches the schema you have defined.
 
@@ -227,7 +227,6 @@ tool_person_extractor = Tool(
 
 Instantiate the gemini-pro model, pass the tool to the model and call the model with a prompt:
 ```python
-
 # have to use the model directly from vertexai since function calling not available through langchain
 model = GenerativeModel("gemini-pro")
 person_example_1 = model.generate_content(
