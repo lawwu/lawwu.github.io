@@ -239,7 +239,7 @@ person_example_1 = model.generate_content(
 print(person_example_1)
 ```
 
-```json
+```bash
 candidates {
   content {
     role: "model"
@@ -330,7 +330,7 @@ example_2_person_and_dog = model.generate_content(
 print(example_2_person_and_dog)
 ```
 
-```json
+```bash
 candidates {
   content {
     role: "model"
@@ -410,7 +410,7 @@ Gemini does not do as good of a job extracting data from free text. For example,
 
 
 gpt-3-5-turbo does a better job of extracting all the relevant information and not hallucinating:
-```json
+```bash
 [{'person_name': 'Alex', 'person_height': 5, 'person_hair_color': 'blonde'},
  {'person_name': 'Claudia',
   'person_height': 6,
@@ -423,4 +423,4 @@ gpt-3-5-turbo does a better job of extracting all the relevant information and n
   'dog_extra_info': 'lives close by'}]
 ```
 
-Hopefully Google continues to iterate and improve upon these capabilities.
+Hopefully Google continues to iterate and improve upon Gemini Pro's function calling capabilities. I imagine Gemini Ultra will do a better job out of the box as well.
