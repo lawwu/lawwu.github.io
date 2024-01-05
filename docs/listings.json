@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2024-01-04-llm-summarization-neurips/index.html",
       "/posts/2023-12-26-google-gemini-function-calling/index.html",
       "/posts/2023-11-15-whisper-transcripts/index.html",
       "/posts/2023-10-10-ai-engineer-summit/index.html",
