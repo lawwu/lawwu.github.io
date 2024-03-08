@@ -2,6 +2,7 @@
   {
     "listing": "/blog.html",
     "items": [
+      "/posts/2024-03-08-ai-impact-on-jobs/index.html",
       "/posts/2024-02-28-ode-to-costco/index.html",
       "/posts/2024-01-18-colbert-information-retrieval/index.html",
       "/posts/2024-01-04-llm-summarization-neurips/index.html",
