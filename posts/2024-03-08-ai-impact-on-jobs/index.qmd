@@ -1,0 +1,30 @@
+---
+title: "AI Impact on Jobs"
+author: "Lawrence Wu"    
+date: "2024-03-08"
+date-modified: "2024-03-08"
+categories: ["LLMs", "Jobs", "Work", "AI"]
+---
+
+Andrew Ng gave a talk recently on [AI's Potential Effect on the Labor Force](https://www.youtube.com/watch?v=-mIjwN1o7nE). Here's the transcript of the [video](https://lawwu.github.io/transcripts/transcript_-mIjwN1o7nE.html).
+
+I used Claude 3 (Sonnet) to pull out the "main ways that AI will affect the labor force"?
+
+According to Andrew Ng, there are a few main ways AI will impact the workforce over the next 5 years:
+
+-   Massive productivity boost for existing job roles and creation of many new job roles related to AI.
+-   Some job loss, but potentially not as bad as people fear. He suggests thinking about AI automating specific tasks within jobs rather than entire jobs being automated.
+-   For many jobs, if AI automates 20-30% of the tasks, the job may still be reasonably safe, though people using AI will likely replace those who don't use AI tools.
+-   He sees customer service roles like call centers and sales operations being among the most disrupted and automated by AI in the near-term.
+-   Knowledge workers can get an immediate productivity boost from using AI tools like generative AI, but some reskilling and training is needed to use AI responsibly.
+-   While acknowledging there will be some job displacement, Ng seems optimistic that the productivity gains from AI will create new opportunities as well, similar to past technological transitions. He encourages being proactive in managing this transition well.
+
+Andrew Ng identified customer service jobs and sales operations jobs as most at risk of being automated. Klarna had news last week where they have developed a customer service AI powered by OpenAI that already handles two-thirds of Klarna's customer service chats, generating an estimated \$40M in profit. See the statistics below for the comparisons:
+
+![Klarna](./klarna.png)
+
+Teleperformance is a French company that runs call centers, lost 20% of their marketcap or \$1.7B of value the moment Klarna made the above announcement.
+
+![Teleperformance](./teleperformance.png)
+
+They lost an additional 20% of their market cap yesterday when they released earnings. It's staggering this one organization has lost 40% of their value over the past month. I imagine this will continue to play out as AI continues to make it's way through automating different tasks and different functions. The hope is these call center workers at Klarna and other companies will be able to re-skill and find other opportunities.

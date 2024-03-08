@@ -326,9 +326,13 @@ cookieconsent.run({
 
 </header>
 
-<p>I didn’t get the chance to attend NeurIPS last week. The sheer number of papers submitted is <a href="https://blog.neurips.cc/tag/neurips2023/">staggering</a>: 13,300 submitted papers that were reviewed by 1,000+ people. 3,540 papers were accepted and 502 papers were flagged for ethics reviews.</p>
+<p>I didn’t get the chance to attend NeurIPS last week. The sheer number of papers submitted is <a href="https://blog.neurips.cc/tag/neurips2023/">staggering</a>: 13,300 submitted papers that were reviewed by 1,000+ people. 3,540 papers were accepted and 502 papers were flagged for ethics reviews!</p>
 <p>The folks at the Latent Space podcast did a good job summarizing the wealth of content, one reviewing the <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL2ZlZWQ/episode/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL3AvbmV1cmlwcy0yMDIzLXBhcGVycw?sa=X&amp;ved=0CAUQkfYCahcKEwiYzPGz7LiDAxUAAAAAHQAAAAAQOw">best papers</a> and another that was focused on <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL2ZlZWQ/episode/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL3AvbmV1cmlwcy0yMDIzLXN0YXJ0dXBz?sa=X&amp;ved=0CAUQkfYCahcKEwj4-6rNmcODAxUAAAAAHQAAAAAQCg">top startups</a>.</p>
-<p>I transcribed these podcasts using Whisper and tried taking a stab at summarizing them.</p>
+<p>I transcribed these podcasts using Whisper and tried taking a stab at summarizing them. Those transcripts are here:</p>
+<ul>
+<li><a href="./neurips_papers_2023.wav.txt">Latent Space Top Papers Transcript</a></li>
+<li><a href="./neurips_startups_2023.wav.txt">Latent Space Top Startups Transcript</a></li>
+</ul>
 <p>The podcast comes with timestamps for each section which is very helpful:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"time"</span>: <span class="st">"0:01:19"</span>, <span class="st">"title"</span>: <span class="st">"Word2Vec"</span>, <span class="st">"presenter"</span>: [<span class="st">"Jeff Dean"</span>, <span class="st">"Greg Corrado"</span>]},</span>
@@ -355,7 +359,13 @@ cookieconsent.run({
 <p>My main learnings through this effort are:</p>
 <ul>
 <li>Whisper is a fantastic transcription tool and running this locally on a Mac using whisper.cpp is quite feasible because the quantized models are small</li>
-<li>I tried various open source LLMs for summarization and they all had trouble generating decent summaries consistently. Some of the models I tried:
+<li>I tried various open source LLMs for summarization and they all had trouble generating decent summaries consistently. Some of the issues were
+<ul>
+<li>summaries are empty strings</li>
+<li>summaries are generated after repeating the text</li>
+<li>hallucinations</li>
+</ul></li>
+<li>Some of the models I tried:
 <ul>
 <li><code>solar-10.7b-instruct-v1.0.Q8_0.gguf</code></li>
 <li><code>mixtral-8x7b-instruct-v0.1.Q5_K_M.gguf</code></li>

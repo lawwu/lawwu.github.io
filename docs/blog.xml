@@ -10,7 +10,52 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Wed, 28 Feb 2024 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 08 Mar 2024 08:00:00 GMT</lastBuildDate>
+<item>
+  <title>AI Impact on Jobs</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2024-03-08-ai-impact-on-jobs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>Andrew Ng gave a talk recently on <a href="https://www.youtube.com/watch?v=-mIjwN1o7nE">AI’s Potential Effect on the Labor Force</a>. Here’s the transcript of the <a href="https://lawwu.github.io/transcripts/transcript_-mIjwN1o7nE.html">video</a>.</p>
+<p>I used Claude 3 (Sonnet) to pull out the “main ways that AI will affect the labor force”?</p>
+<p>According to Andrew Ng, there are a few main ways AI will impact the workforce over the next 5 years:</p>
+<ul>
+<li>Massive productivity boost for existing job roles and creation of many new job roles related to AI.</li>
+<li>Some job loss, but potentially not as bad as people fear. He suggests thinking about AI automating specific tasks within jobs rather than entire jobs being automated.</li>
+<li>For many jobs, if AI automates 20-30% of the tasks, the job may still be reasonably safe, though people using AI will likely replace those who don’t use AI tools.</li>
+<li>He sees customer service roles like call centers and sales operations being among the most disrupted and automated by AI in the near-term.</li>
+<li>Knowledge workers can get an immediate productivity boost from using AI tools like generative AI, but some reskilling and training is needed to use AI responsibly.</li>
+<li>While acknowledging there will be some job displacement, Ng seems optimistic that the productivity gains from AI will create new opportunities as well, similar to past technological transitions. He encourages being proactive in managing this transition well.</li>
+</ul>
+<p>Andrew Ng identified customer service jobs and sales operations jobs as most at risk of being automated. Klarna had news last week where they have developed a customer service AI powered by OpenAI that already handles two-thirds of Klarna’s customer service chats, generating an estimated $40M in profit. See the statistics below for the comparisons:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2024-03-08-ai-impact-on-jobs/klarna.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Klarna</figcaption>
+</figure>
+</div>
+<p>Teleperformance is a French company that runs call centers, lost 20% of their marketcap or $1.7B of value the moment Klarna made the above announcement.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2024-03-08-ai-impact-on-jobs/teleperformance.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Teleperformance</figcaption>
+</figure>
+</div>
+<p>They lost an additional 20% of their market cap yesterday when they released earnings. It’s staggering this one organization has lost 40% of their value over the past month. I imagine this will continue to play out as AI continues to make it’s way through automating different tasks and different functions. The hope is these call center workers at Klarna and other companies will be able to re-skill and find other opportunities.</p>
+
+
+
+ ]]></description>
+  <category>LLMs</category>
+  <category>Jobs</category>
+  <category>Work</category>
+  <category>AI</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2024-03-08-ai-impact-on-jobs/index.html</guid>
+  <pubDate>Fri, 08 Mar 2024 08:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Ode to Costco</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -498,9 +543,13 @@ font-style: inherit;">'Miyazaki founded Studio Ghibli.'</span>}</span></code></p
 
 
 
-<p>I didn’t get the chance to attend NeurIPS last week. The sheer number of papers submitted is <a href="https://blog.neurips.cc/tag/neurips2023/">staggering</a>: 13,300 submitted papers that were reviewed by 1,000+ people. 3,540 papers were accepted and 502 papers were flagged for ethics reviews.</p>
+<p>I didn’t get the chance to attend NeurIPS last week. The sheer number of papers submitted is <a href="https://blog.neurips.cc/tag/neurips2023/">staggering</a>: 13,300 submitted papers that were reviewed by 1,000+ people. 3,540 papers were accepted and 502 papers were flagged for ethics reviews!</p>
 <p>The folks at the Latent Space podcast did a good job summarizing the wealth of content, one reviewing the <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL2ZlZWQ/episode/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL3AvbmV1cmlwcy0yMDIzLXBhcGVycw?sa=X&amp;ved=0CAUQkfYCahcKEwiYzPGz7LiDAxUAAAAAHQAAAAAQOw">best papers</a> and another that was focused on <a href="https://podcasts.google.com/feed/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL2ZlZWQ/episode/aHR0cHM6Ly93d3cubGF0ZW50LnNwYWNlL3AvbmV1cmlwcy0yMDIzLXN0YXJ0dXBz?sa=X&amp;ved=0CAUQkfYCahcKEwj4-6rNmcODAxUAAAAAHQAAAAAQCg">top startups</a>.</p>
-<p>I transcribed these podcasts using Whisper and tried taking a stab at summarizing them.</p>
+<p>I transcribed these podcasts using Whisper and tried taking a stab at summarizing them. Those transcripts are here:</p>
+<ul>
+<li><a href="./neurips_papers_2023.wav.txt">Latent Space Top Papers Transcript</a></li>
+<li><a href="./neurips_startups_2023.wav.txt">Latent Space Top Startups Transcript</a></li>
+</ul>
 <p>The podcast comes with timestamps for each section which is very helpful:</p>
 <div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1">data <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -727,7 +776,13 @@ font-style: inherit;">in</span> a couple paragraphs at most: {text}</span></code
 <p>My main learnings through this effort are:</p>
 <ul>
 <li>Whisper is a fantastic transcription tool and running this locally on a Mac using whisper.cpp is quite feasible because the quantized models are small</li>
-<li>I tried various open source LLMs for summarization and they all had trouble generating decent summaries consistently. Some of the models I tried:
+<li>I tried various open source LLMs for summarization and they all had trouble generating decent summaries consistently. Some of the issues were
+<ul>
+<li>summaries are empty strings</li>
+<li>summaries are generated after repeating the text</li>
+<li>hallucinations</li>
+</ul></li>
+<li>Some of the models I tried:
 <ul>
 <li><code>solar-10.7b-instruct-v1.0.Q8_0.gguf</code></li>
 <li><code>mixtral-8x7b-instruct-v0.1.Q5_K_M.gguf</code></li>
@@ -9912,31 +9967,6 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
   <category>GPT</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</guid>
   <pubDate>Sat, 10 Jun 2023 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Staying Human in the Age of LLMs</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>The WSJ’s Ben Cohen wrote an <a href="https://www.wsj.com/articles/chatgpt-ai-math-po-shen-loh-1e9f80dc?page=1">article</a> highlighting Professor Po-Shen Loh, a math professor from Carnegie Mellon University and coach for Team USA’s International Mathematical Olympiad. He’s currently touring the country with a mission to inspire a love of mathematics and provide practical guidance for the new challenges brought by AI and tools like ChatGPT (giving 50 lectures in 32 cities in 35 days!). Loh’s message is clear: to survive in this era of artificial intelligence, one must lean into what makes us human.</p>
-<p>Loh emphasizes the importance of creativity, emotion, and human uniqueness, skills that AI cannot replicate, and which will become increasingly valuable as AI becomes more advanced. He wants young minds to understand the importance of their humanity in an AI-dominated future. However, this lesson is not just for students but applies to all businesses trying to navigate the uncharted territory of AI integration.</p>
-<p>The new generation, Loh asserts, will have a better intuitive understanding of AI as they’re the first to grow up with this technology as a constant in their lives. With tools like ChatGPT being used in everyday life, young people are already interacting with and understanding the implications of AI. Being a millenial, though I do remember a time when there was no internet and needing to use a physical copy of Encylopedia Brittanica to do research, my generation grew up with Google and being able to access information at our fingertips. This next generation will grow up with AI and ChatGPT-like technologies as a constant in their lives.</p>
-<p>Po-Shen Loh’s message, while initially targeted towards students, has a universality that is applicable beyond the boundaries of classrooms; it serves as crucial advice for anyone preparing for the future of work in an AI-integrated world. Loh emphasizes the indispensable qualities of being able to create value and identify human pain points. In his words, “The future of jobs is figuring out how to find pain points, and a pain point is a human pain… You need to be able to create value. People who make value will always have opportunities.”</p>
-<p>I wholeheartedly concur with Loh’s perspective. In today’s rapidly advancing digital age, we can already see a distinct division emerging between those leveraging large language models (LLMs) like ChatGPT effectively in their work, and those who do not. These tools can augment human capabilities, enable more efficient processes, and offer innovative solutions to complex problems.</p>
-<p>However, it is not the tools alone that will secure a competitive advantage. Instead, it is the ability to apply these tools ingeniously and to couple their computational prowess with human creativity, intuition, and understanding of complex human needs. This blend of technological aptitude and human sensitivity is what will differentiate the truly successful individuals and organizations in the future.</p>
-<p>Loh’s message should serve as a call to action for individuals and businesses alike: value creation, coupled with understanding and addressing human-centric concerns, is what will allow us to thrive in the AI-enhanced future. Those who can combine their unique human skills with the power of AI, to enhance their problem-solving capabilities and offer more value, will always find themselves at an advantageous position.</p>
-
-
-
- ]]></description>
-  <category>LLMs</category>
-  <category>Work</category>
-  <category>GPT</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</guid>
-  <pubDate>Sun, 28 May 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
