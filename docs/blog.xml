@@ -10,7 +10,66 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Fri, 08 Mar 2024 08:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 10 Apr 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>Dario Amodei &amp; Elad Gil</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2024-04-10-dario-amodei-elad-gil/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>At Google Cloud Next 2024, Elad Gil interviewed Dario Amodei, the CEO of Anthropic. I recorded the talk (really bad audio) and transcribed it using a whisper (small-en) model. I passed the transcription to Claude 3 (Haiku) to summarize it with this prompt:</p>
+<blockquote class="blockquote">
+<p>This is a podcast transcript for your CEO Dario Amodei being interviewed by Elad Gil. Can you 1) summarize the main takeaways and important points made and below that 2) extract all of the questions and a summary of his answer?</p>
+</blockquote>
+<p>The result is pretty good. Some of the issues are coming from whisper mis-transcribing “Haiku” as “Iqou”, “Sonnet” as “Sonic” etc. If every conference talk had this type of summary, that would be so valuable.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2024-04-10-dario-amodei-elad-gil/claude3.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Claude 3 Output</figcaption>
+</figure>
+</div>
+<p>Claude 3’s full answer below (had to do some formatting though because the bullets/numbering didn’t copy over to Quarto and it wasn’t following my instructions to produce markdown):</p>
+<section id="main-takeaways-and-important-points" class="level2">
+<h2 class="anchored" data-anchor-id="main-takeaways-and-important-points">Main Takeaways and Important Points:</h2>
+<ul>
+<li>Anthropic has been focused on developing more engaging and personality-driven language models, with the latest Pod 3 models being a key focus area.</li>
+<li>Anthropic is offering a family of models (Opus, Sonic, and Iqou) to cater to different enterprise needs in terms of accuracy, speed, and cost.</li>
+<li>Anthropic is seeing increasing enterprise adoption of their models across various use cases like coding, healthcare, finance, and consumer applications.</li>
+<li>Enterprises are exploring three main use cases for AI: internal operational efficiency, customer-facing applications, and embedded product features.</li>
+<li>Key challenges for enterprise adoption include uncertainty about model capabilities, reliability, and the need for supporting infrastructure like security and safety measures.</li>
+<li>Anthropic is partnering with GCP to provide a secure and reliable platform for deploying their models in enterprise settings.</li>
+<li>Anthropic is excited about the potential of language models to accelerate progress in areas like healthcare, biology, and education, but also cautious about the risks as models become more autonomous and capable. Anthropic’s long-term vision is for their models to act as “coworkers” that can be deeply integrated with enterprise systems and data to enhance productivity and decision-making.</li>
+</ul>
+</section>
+<section id="questions-and-answers" class="level2">
+<h2 class="anchored" data-anchor-id="questions-and-answers">Questions and Answers:</h2>
+<p><strong>What are the key features and capabilities of the Pod 3 models?</strong></p>
+<p>Focus on improving the personality and engagement of the models, as well as offering a family of models (Opus, Sonic, Iqou) with different trade-offs in terms of accuracy, speed, and cost.</p>
+<p><strong>How is Anthropic thinking about the cost and performance improvements in training and inference for their models?</strong></p>
+<p>Anthropic is seeing exponential improvements in cost-performance, with 1.5-2x annual decreases in the cost of compute and algorithmic improvements, but overall spending on training is still increasing due to the high value of these models.</p>
+<p><strong>What are the key enterprise use cases Anthropic is seeing for their models?</strong> Coding, healthcare, finance, and consumer internet applications are some of the key areas where enterprises are adopting Anthropic’s models.</p>
+<p><strong>How are enterprises thinking about using AI in terms of internal tools, customer-facing applications, and embedding in products?</strong></p>
+<p>Enterprises are exploring all three of these use cases, with the type of model used varying based on the specific needs (e.g., smaller models for customer-facing, larger models for internal analysis).</p>
+<p><strong>What are some of the key obstacles Anthropic sees for enterprise adoption of AI models?</strong></p>
+<p>Uncertainty about model capabilities, reliability, and the need for supporting infrastructure like security and safety measures.</p>
+<p><strong>How is Anthropic approaching safety and reliability in the context of their models?</strong></p>
+<p>Anthropic has a strong focus on reducing model mistakes and biases, and is working to build the necessary infrastructure (e.g., with GCP) to enable secure and reliable deployment of their models.</p>
+<p><strong>What are Anthropic’s thoughts on the potential of AI to accelerate progress in areas like healthcare and biology?</strong></p>
+<p>Anthropic is excited about the potential for AI to help overcome the limitations of human cognition and accelerate breakthroughs in complex domains like biology and medicine.</p>
+<p><strong>How is Anthropic thinking about the longer-term evolution of AI models, including the role of agents and autonomous systems?</strong></p>
+<p>Anthropic envisions a future where their models can act as “coworkers” that are deeply integrated with enterprise systems and data to enhance productivity and decision-making, but also acknowledges the challenges and risks that come with increasingly autonomous AI systems.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Anthropic</category>
+  <category>LLMs</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2024-04-10-dario-amodei-elad-gil/index.html</guid>
+  <pubDate>Wed, 10 Apr 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>AI Impact on Jobs</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -9922,51 +9981,6 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
   <category>GPT</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/index.html</guid>
   <pubDate>Tue, 13 Jun 2023 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>All-In Hosts Opinion on Jobs</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>During <a href="https://www.youtube.com/watch?v=aPMNbMR1p70&amp;ab_channel=All-InPodcast">Episode 132 of the All-In Podcast</a>, (transcript <a href="https://steno.ai/all-in-with-chamath-jason-sacks/e132-sec-goes-after-crypto-giants-sequoia-splits-livpga-messis">here</a>) the hosts took a live question from the audience:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/aPMNbMR1p70" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<blockquote class="blockquote">
-<p>Hi, I’m Jeff, a full-time corporate VC and part-time angel. My question is about AI and higher education and it’s actually some covert parenting advice so you can decide who’s that’s relevant for. My son just finished his freshman year of college and I’m questioning what the future is for him in higher education, given all the change that AI is going to have on every career and every profession. And I’m wondering what advice you’d give to your child or someone who’s in college right now for what’s an area of study that maybe won’t be disrupted by AI or an area that AI, you’ll get leverage from your education through AI.</p>
-</blockquote>
-<p>Chamath:</p>
-<blockquote class="blockquote">
-<p>I think the reality is that most of the existing jobs that we have in the United States are going to go to lower cost locations that have that tool chain to accelerate their capability. So we are going to have to reinvent the workforce and the things that we do over the next 30 or 40 years to stay relevant. That’s probably like, I think that should just be the operating principle. If you think about it, we used to run great call centers. Okay, those call centers were outsourced to the Philippines and India. But in the next, you know, five or 10 years, you’ll have this flawless unaccented English or even more eerily, perfectly accented English for the zip code of the person that’s calling in so that it sounds like they’re talking to somebody that’s literally their neighbor. That’s like just makes so much sense, right? So it’s like all this stuff is going to happen where like all these classes of jobs are going to go away. I saw this article where a lawyer, two lawyers use chat GPT to submit a legal brief. The problem was that it cited cases that didn’t exist and now they’re going to be disbarred. So this is like serious business, right? Like you can’t do that.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>You know, if I had to choose something for my kids, I would probably, I would probably tell them to do something mathematical or biological.</p>
-</blockquote>
-<p>Jason:</p>
-<blockquote class="blockquote">
-<p>I’ve been thinking about this a lot too. I think teaching them to be entrepreneurial, resilient, worldly, ability to communicate, ability to lead other people in teams, that stuff’s not going to go away, communication skill, etc. I’m encouraging everybody who I work with to just use chat GPT-4 and Bard every day for every single thing that they do. My base thesis right now is that the job freezes, the hiring freezes out of all these companies is indefinite. I’m assuming it’s indefinite because the amount of work it takes to write a job requisition is more work in some cases than actually automating with AI or ready the job function. And so I think 20 person companies might double in size in the next two or three years, but still have 20 people. This is going to be a big challenge for society. And if that does come to pass, there’s just going to be large swaths of people who are not going to be able to get job interviews for anything other than service jobs. We need a lot more plumbers, electricians, waiters, et cetera. Those probably jobs won’t go away, especially if we don’t let people immigrate. I am super enthusiastic about that efficiency, but I think it also means you have to be entrepreneurial because if you can’t get a job and you can’t get mentored, you better create your own opportunity. You better create your own company. And that’s what I’m seeing. That’s the game on the field right now. Two or three people who don’t have job offers from Uber and Airbnb and Google and Facebook just saying, let’s start a company because there’s nothing else for us to do. And those are highly skilled people right now doing that.</p>
-</blockquote>
-<p>Sacks:</p>
-<blockquote class="blockquote">
-<p>I’ll say two quick things about this topic. So one is, I think there’s a lot of AI fear porn out there right now. And I just think that like all of these tumor scenarios are, they’re not going to play out overnight. I mean, this is going to take a while. Second, if you think about like job elimination, it’s going to be some super specialized jobs. So for example, I wouldn’t want to be a radiologist right now, but doctors will be fine. So I think if you’re thinking about like going into a job category that’s super specialized and clearly in the way of AI, then that probably is not a good idea. But most general skills like you’re talking about and most job categories are going to be fine. There’s just going to be some specialties within them that make it. dislocated. Like, I wouldn’t want to be a truck driver either, you know, because of self-driving. But transportation companies are still going to exist. So I think you just want to be careful about super specialization, I think. But building general skills is always really good. That really should be the point of college.</p>
-</blockquote>
-<p>My observations:</p>
-<ul>
-<li>I found it surprising Sacks thought lawyers and accountants were “sufficiently” general that he doesn’t think they’ll be eliminated.</li>
-<li>Sacks’ point that some super specialized jobs will be eliminated is a good one, e.g.&nbsp;radiologists. But I also think some lawyers and accounting jobs will go this route too.</li>
-<li>Jason is telling his employees to use GPT-4 or Bard for every task at work. I agree this is a good idea to get familiar with how LLMs work and to essentially have a super-assistant at your disposal. GPT-4 is particularly good.</li>
-<li>Overall I think it’s still too early to make any definitive statements about what jobs will be eliminated. I think it’s safe to say that most jobs will be affected in some way, but it’s hard to say how. This is something I’m fascinated by though, how as a society we will adjust as these language models permeate through organizations, companies and products.</li>
-</ul>
-
-
-
- ]]></description>
-  <category>LLMs</category>
-  <category>Work</category>
-  <category>GPT</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</guid>
-  <pubDate>Sat, 10 Jun 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
