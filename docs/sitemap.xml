@@ -2,114 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lawwu.github.io/blog.html/blog.html</loc>
-    <lastmod>2024-04-10T23:26:13.141Z</lastmod>
+    <lastmod>2024-05-24T02:17:37.469Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/ai_resources.html</loc>
-    <lastmod>2024-04-10T23:26:11.365Z</lastmod>
+    <lastmod>2024-05-24T02:17:35.448Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2023-03-24-mac-apps/index.html</loc>
-    <lastmod>2024-04-10T23:26:10.415Z</lastmod>
+    <lastmod>2024-05-24T02:17:34.430Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2024-01-18-colbert-information-retrieval/index.html</loc>
-    <lastmod>2024-04-10T23:26:05.857Z</lastmod>
+    <lastmod>2024-05-24T02:17:30.410Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2023-07-20-llama-2-local/index.html</loc>
-    <lastmod>2024-04-10T23:26:03.459Z</lastmod>
+    <lastmod>2024-05-24T02:17:28.934Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2023-06-24-ai-layoffs/index.html</loc>
-    <lastmod>2024-04-10T23:26:02.207Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-08-25-kdd2023-recap/index.html</loc>
-    <lastmod>2024-04-10T23:26:00.168Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-08-29-how-llms-will-affect-jobs/index.html</loc>
-    <lastmod>2024-04-10T23:25:58.028Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</loc>
-    <lastmod>2024-04-10T23:25:56.562Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-11-15-whisper-transcripts/index.html</loc>
-    <lastmod>2024-04-10T23:25:55.584Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2024-04-10-dario-amodei-elad-gil/index.html</loc>
-    <lastmod>2024-04-10T23:25:51.243Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/index.html</loc>
-    <lastmod>2024-04-10T23:25:49.658Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-10-10-ai-engineer-summit/index.html</loc>
-    <lastmod>2024-04-10T23:25:48.541Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</loc>
-    <lastmod>2024-04-10T23:25:46.536Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-04-04-gpt4/index.html</loc>
-    <lastmod>2024-04-10T23:25:46.190Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</loc>
-    <lastmod>2024-04-10T23:25:46.855Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-06-24-focus-is-a-superpower/index.html</loc>
-    <lastmod>2024-04-10T23:25:48.893Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-08-07-kdd2023-day1/index.html</loc>
-    <lastmod>2024-04-10T23:25:50.616Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-12-26-google-gemini-function-calling/index.html</loc>
-    <lastmod>2024-04-10T23:25:54.803Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2024-02-28-ode-to-costco/index.html</loc>
-    <lastmod>2024-04-10T23:25:56.151Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/index.html</loc>
-    <lastmod>2024-04-10T23:25:57.462Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lawwu.github.io/blog.html/posts/2023-05-05-llm-work-jobs/index.html</loc>
-    <lastmod>2024-04-10T23:25:59.883Z</lastmod>
+    <lastmod>2024-05-24T02:17:27.585Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2023-07-13-agents-code-interpreter/index.html</loc>
-    <lastmod>2024-04-10T23:26:01.536Z</lastmod>
+    <lastmod>2024-05-24T02:17:26.331Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-05-05-llm-work-jobs/index.html</loc>
+    <lastmod>2024-05-24T02:17:24.655Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-07-12-langchain-agents/index.html</loc>
+    <lastmod>2024-05-24T02:17:23.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2024-02-28-ode-to-costco/index.html</loc>
+    <lastmod>2024-05-24T02:17:21.701Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-12-26-google-gemini-function-calling/index.html</loc>
+    <lastmod>2024-05-24T02:17:20.411Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-08-07-kdd2023-day1/index.html</loc>
+    <lastmod>2024-05-24T02:17:17.332Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-24-focus-is-a-superpower/index.html</loc>
+    <lastmod>2024-05-24T02:17:15.501Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</loc>
+    <lastmod>2024-05-24T02:17:13.418Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-04-04-gpt4/index.html</loc>
+    <lastmod>2024-05-24T02:17:12.722Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-05-28-staying-human/index.html</loc>
+    <lastmod>2024-05-24T02:17:13.086Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-10-10-ai-engineer-summit/index.html</loc>
+    <lastmod>2024-05-24T02:17:15.162Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/index.html</loc>
+    <lastmod>2024-05-24T02:17:16.300Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2024-04-10-dario-amodei-elad-gil/index.html</loc>
+    <lastmod>2024-05-24T02:17:18.125Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-11-15-whisper-transcripts/index.html</loc>
+    <lastmod>2024-05-24T02:17:21.079Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-06-10-all-in-opinion-on-jobs/index.html</loc>
+    <lastmod>2024-05-24T02:17:22.152Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-08-29-how-llms-will-affect-jobs/index.html</loc>
+    <lastmod>2024-05-24T02:17:23.882Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2023-08-25-kdd2023-recap/index.html</loc>
+    <lastmod>2024-05-24T02:17:24.956Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lawwu.github.io/blog.html/posts/2024-05-23-first-axolotl-finetune/index.html</loc>
+    <lastmod>2024-05-24T02:17:27.287Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/index.html</loc>
-    <lastmod>2024-04-10T23:26:02.959Z</lastmod>
+    <lastmod>2024-05-24T02:17:28.404Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2024-03-08-ai-impact-on-jobs/index.html</loc>
-    <lastmod>2024-04-10T23:26:03.798Z</lastmod>
+    <lastmod>2024-05-24T02:17:29.300Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2024-01-04-llm-summarization-neurips/index.html</loc>
-    <lastmod>2024-04-10T23:26:08.611Z</lastmod>
+    <lastmod>2024-05-24T02:17:33.680Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/index.html</loc>
-    <lastmod>2024-04-10T23:26:10.844Z</lastmod>
+    <lastmod>2024-05-24T02:17:34.895Z</lastmod>
   </url>
   <url>
     <loc>https://lawwu.github.io/blog.html/index.html</loc>
-    <lastmod>2024-04-10T23:26:11.657Z</lastmod>
+    <lastmod>2024-05-24T02:17:35.729Z</lastmod>
   </url>
 </urlset>
