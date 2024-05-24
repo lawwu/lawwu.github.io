@@ -1,0 +1,811 @@
+---
+title: "Finetuning LLMs with Axolotl"
+author: "Lawrence Wu"    
+date: "2024-05-23"
+date-modified: "2024-05-23"
+categories: ["LLMs", "Fine-tune", "Axolotl"]
+---
+
+I started Hamel Husain's ~~fine-tuning LLM course~~ Mastering LLM course last week. I don't have a ton of experience fine-tuning LLMs so I thought this would be a good way to learn.
+
+One of the examples he is using throughout the course is fine-tuning an LLM to generate Honeycomb queries. So you can turn natural language into a domain specific language. My goal was to reproduce the model he trained [here]( https://huggingface.co/parlance-labs/hc-mistral-alpaca). Here are the steps I took to reproduce what Hamel did:
+
+The class gave us $200 of Jarvislabs credits so I spun up a VM using the [Axolotl template](https://jarvislabs.ai/templates/axolotl). I picked an ~~RTX5000 with 16GB VRAM~~ 1x A100 with 100GB of disk space. The default 20GB of disk space is not enough as the base models take 5-10GB of space each.
+
+I cloned the repo:
+
+```bash
+git lfs install
+git clone https://huggingface.co/parlance-labs/hc-mistral-alpaca
+```
+
+I logged into Weights and Biases:
+```bash
+pip install wandb
+wandb login
+# paste your api key from https://wandb.ai/home
+```
+
+I logged into Huggingface. Make sure your token has `WRITE` access:
+```bash
+pip install -U "huggingface_hub[cli]"
+huggingface-cli login
+# paste your huggingface token from https://huggingface.co/settings/tokens
+```
+
+# Fine-Tuning with a Smaller Sample
+
+I sampled 100 rows of his training data to make the first fine-tune go faster. The uploaded model to huggingface is [here](https://huggingface.co/lawrencewu/hc-mistral-7B-v0.3-alpaca-first-100).
+
+```python
+import json
+
+def read_jsonl(file_path):
+    data = []
+    with open(file_path, 'r', encoding='utf-8') as file:
+        for line in file:
+            data.append(json.loads(line.strip()))
+    return data
+
+def write_jsonl(data, file_path):
+    with open(file_path, 'w', encoding='utf-8') as file:
+        for entry in data:
+            file.write(json.dumps(entry) + '\n')
+
+# Path to the input JSONL file
+input_file_path = './data/alpaca_synth_queries_healed.jsonl'
+# Path to the output JSONL file
+output_file_path = './data/output_first_100.jsonl'
+
+# Read the data from the input file
+data = read_jsonl(input_file_path)
+
+# Get the first 100 rows
+first_100_rows = data[:100]
+
+# Write the first 100 rows to the output file
+write_jsonl(first_100_rows, output_file_path)
+
+print(f"First 100 rows have been written to {output_file_path}")
+```
+
+This is the Axolotl config file I wound up with below. Some changes I made:
+- updated the base model to `mistralai/Mistral-7B-v0.3`
+- used a smaller dataset `data/output_first_100.jsonl`
+- updated `hub_model_id` and `wandb_project` and `wandb_entity`
+
+```yaml
+base_model: mistralai/Mistral-7B-v0.3
+model_type: MistralForCausalLM
+tokenizer_type: LlamaTokenizer
+is_mistral_derived_model: true
+
+load_in_8bit: false
+load_in_4bit: true
+strict: false
+
+lora_fan_in_fan_out: false
+data_seed: 49
+seed: 49
+
+datasets:
+  - path: data/output_first_100.jsonl
+    type: sharegpt
+    conversation: alpaca
+dataset_prepared_path: last_run_prepared
+val_set_size: 0.1
+output_dir: ./qlora-alpaca-out
+hub_model_id: lawrencewu/hc-mistral-7B-v0.3-alpaca-first-100
+
+adapter: qlora
+lora_model_dir:
+
+sequence_len: 896
+sample_packing: false
+pad_to_sequence_len: true
+
+lora_r: 32
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_linear: true
+lora_fan_in_fan_out:
+lora_target_modules:
+  - gate_proj
+  - down_proj
+  - up_proj
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+
+wandb_project: hc-axolotl-mistral
+wandb_entity: law
+
+gradient_accumulation_steps: 4
+micro_batch_size: 16
+eval_batch_size: 16
+num_epochs: 3
+optimizer: adamw_bnb_8bit
+lr_scheduler: cosine
+learning_rate: 0.0002
+max_grad_norm: 1.0
+adam_beta2: 0.95
+adam_epsilon: 0.00001
+save_total_limit: 12
+
+train_on_inputs: false
+group_by_length: false
+bf16: true
+fp16: false
+tf32: false
+
+gradient_checkpointing: true
+early_stopping_patience:
+resume_from_checkpoint:
+local_rank:
+logging_steps: 1
+xformers_attention:
+flash_attention: false
+
+loss_watchdog_threshold: 5.0
+loss_watchdog_patience: 3
+
+warmup_steps: 20
+evals_per_epoch: 4
+eval_table_size:
+eval_table_max_new_tokens: 128
+saves_per_epoch: 6
+debug:
+weight_decay: 0.0
+fsdp:
+fsdp_config:
+special_tokens:
+  bos_token: "<s>"
+  eos_token: "</s>"
+  unk_token: "<unk>"
+save_safetensors: true
+```
+
+I launched the training script:
+```bash
+accelerate launch -m axolotl.cli.train hc-first-100.yml 
+```
+
+Weighs and biases provides a nice summary of the run too:
+
+```bash
+wandb: / 0.123 MB of 0.123 MB uploaded
+wandb: Run history:
+wandb:               eval/loss █▇▁
+wandb:            eval/runtime ▁▅█
+wandb: eval/samples_per_second █▄▁
+wandb:   eval/steps_per_second █▄▁
+wandb:             train/epoch ▁▁▅▅███
+wandb:       train/global_step ▁▁▅▅███
+wandb:         train/grad_norm ██▁
+wandb:     train/learning_rate ▁▅█
+wandb:              train/loss █▁▅
+wandb: 
+wandb: Run summary:
+wandb:                eval/loss 1.08833
+wandb:             eval/runtime 1.0702
+wandb:  eval/samples_per_second 9.344
+wandb:    eval/steps_per_second 0.934
+wandb:               total_flos 6965062501662720.0
+wandb:              train/epoch 2.0
+wandb:        train/global_step 3
+wandb:          train/grad_norm 2.29688
+wandb:      train/learning_rate 3e-05
+wandb:               train/loss 1.2203
+wandb:               train_loss 1.22012
+wandb:            train_runtime 70.8206
+wandb: train_samples_per_second 3.812
+wandb:   train_steps_per_second 0.042
+wandb: 
+wandb: 🚀 View run scarlet-lake-4 at: https://wandb.ai/law/hc-axolotl-mistral/runs/wrnox7vk
+wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral
+wandb: Synced 6 W&B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20240523_235927-wrnox7vk/logs
+```
+
+# Some things I learned
+
+## RuntimeError: "_amp_foreach_non_finite_check_and_unscale_cuda" not implemented for 'BFloat16'
+
+For one run I got this error:
+
+```bash
+iciency_estimate: 0.96 total_num_tokens per device: 414041
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/workspace/axolotl/src/axolotl/cli/train.py", line 70, in <module>
+    fire.Fire(do_cli)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/fire/core.py", line 143, in Fire
+    component_trace = _Fire(component, args, parsed_flag_args, context, name)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/fire/core.py", line 477, in _Fire
+    component, remaining_args = _CallAndUpdateTrace(
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/fire/core.py", line 693, in _CallAndUpdateTrace
+    component = fn(*varargs, **kwargs)
+  File "/workspace/axolotl/src/axolotl/cli/train.py", line 38, in do_cli
+    return do_train(parsed_cfg, parsed_cli_args)
+  File "/workspace/axolotl/src/axolotl/cli/train.py", line 66, in do_train
+    return train(cfg=cfg, cli_args=cli_args, dataset_meta=dataset_meta)
+  File "/workspace/axolotl/src/axolotl/train.py", line 170, in train
+    trainer.train(resume_from_checkpoint=resume_from_checkpoint)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/trainer.py", line 1859, in train
+    return inner_training_loop(
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/trainer.py", line 2249, in _inner_training_loop
+    _grad_norm = self.accelerator.clip_grad_norm_(
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/accelerator.py", line 2269, in clip_grad_norm_
+    self.unscale_gradients()
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/accelerator.py", line 2219, in unscale_gradients
+    self.scaler.unscale_(opt)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/cuda/amp/grad_scaler.py", line 307, in unscale_
+    optimizer_state["found_inf_per_device"] = self._unscale_grads_(
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/cuda/amp/grad_scaler.py", line 248, in _unscale_grads_
+    torch._amp_foreach_non_finite_check_and_unscale_(
+RuntimeError: "_amp_foreach_non_finite_check_and_unscale_cuda" not implemented for 'BFloat16'
+```
+
+Setting the parameter `bf16: false` resolved this issue. Although switching from an RTX5000 GPU to a 1x A100 GPU also resolved the issue.
+
+## Running out of GPU memory
+
+I had a run where the GPU ran out of memory. 
+```bash
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 784.00 MiB. GPU 0 has a total capacty of 15.74 GiB of which 58.62 MiB is free. Process 1065967 has 15.67 GiB memory in use. Of the allocated memory 13.22 GiB is allocated by PyTorch, and 2.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+wandb: 🚀 View run crimson-aardvark-1 at: https://wandb.ai/law/hc-axolotl-mistral/runs/itak6glk
+wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral
+wandb: Synced 6 W&B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20240523_233643-itak6glk/logs
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/py3.10/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 46, in main
+    args.func(args)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1082, in launch_command
+    simple_launcher(args)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/launch.py", line 688, in simple_launcher
+    raise subprocess.CalledProcessError(returncode=process.returncode, cmd=cmd)
+subprocess.CalledProcessError: Command '['/root/miniconda3/envs/py3.10/bin/python', '-m', 'axolotl.cli.train', 'hc-first-100.yml']' returned non-zero exit status 1.
+```
+
+I wound up needing to use a larger GPU to finetune `mistralai/Mistral-7B-v0.3`.
+
+# Fine-Tuning with the full dataset
+
+The config file I used is below:
+
+```yaml
+base_model: mistralai/Mistral-7B-v0.3
+model_type: MistralForCausalLM
+tokenizer_type: LlamaTokenizer
+is_mistral_derived_model: true
+
+load_in_8bit: false
+load_in_4bit: true
+strict: false
+
+lora_fan_in_fan_out: false
+data_seed: 49
+seed: 49
+
+datasets:
+  - path: data/alpaca_synth_queries_healed.jsonl
+    type: sharegpt
+    conversation: alpaca
+dataset_prepared_path: last_run_prepared
+val_set_size: 0.1
+output_dir: ./qlora-alpaca-out
+hub_model_id: lawrencewu/hc-mistral-7B-v0.3-alpaca
+
+adapter: qlora
+lora_model_dir:
+
+sequence_len: 896
+sample_packing: false
+pad_to_sequence_len: true
+
+lora_r: 32
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_linear: true
+lora_fan_in_fan_out:
+lora_target_modules:
+  - gate_proj
+  - down_proj
+  - up_proj
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+
+wandb_project: hc-axolotl-mistral
+wandb_entity: law
+
+gradient_accumulation_steps: 4
+micro_batch_size: 16
+eval_batch_size: 16
+num_epochs: 3
+optimizer: adamw_bnb_8bit
+lr_scheduler: cosine
+learning_rate: 0.0002
+max_grad_norm: 1.0
+adam_beta2: 0.95
+adam_epsilon: 0.00001
+save_total_limit: 12
+
+train_on_inputs: false
+group_by_length: false
+bf16: true
+fp16: false
+tf32: false
+
+gradient_checkpointing: true
+early_stopping_patience:
+resume_from_checkpoint:
+local_rank:
+logging_steps: 1
+xformers_attention:
+flash_attention: false
+
+loss_watchdog_threshold: 5.0
+loss_watchdog_patience: 3
+
+warmup_steps: 20
+evals_per_epoch: 4
+eval_table_size:
+eval_table_max_new_tokens: 128
+saves_per_epoch: 6
+debug:
+weight_decay: 0.0
+fsdp:
+fsdp_config:
+special_tokens:
+  bos_token: "<s>"
+  eos_token: "</s>"
+  unk_token: "<unk>"
+save_safetensors: true
+```
+
+I launched a run with:
+
+```bash
+accelerate launch -m axolotl.cli.train hc.yml
+```
+
+I didn't finish this run because it was going to take ~30 hours.
+
+The logs are here:
+
+```bash
+root@6df7cfbf0d81:~/axolotl/hc-mistral-alpaca# accelerate launch -m axolotl.cli.train hc.yml
+The following values were not passed to `accelerate launch` and had defaults used instead:
+        `--num_processes` was set to a value of `1`
+        `--num_machines` was set to a value of `1`
+        `--mixed_precision` was set to a value of `'no'`
+        `--dynamo_backend` was set to a value of `'no'`
+To avoid this warning pass in values for each of the problematic parameters or run `accelerate config`.
+WARNING: BNB_CUDA_VERSION=118 environment variable detected; loading libbitsandbytes_cuda118.so.
+This can be used to load a bitsandbytes version that is different from the PyTorch CUDA version.
+If this was unintended set the BNB_CUDA_VERSION variable to an empty string: export BNB_CUDA_VERSION=
+If you use the manual override make sure the right libcudart.so is in your LD_LIBRARY_PATH
+For example by adding the following to your .bashrc: export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:<path_to_cuda_dir/lib64
+
+[2024-05-24 00:04:01,268] [INFO] [datasets.<module>:58] [PID:4902] PyTorch version 2.1.2+cu118 available.
+[2024-05-24 00:04:02,171] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2024-05-24 00:04:02,240] [INFO] [root.spawn:38] [PID:4902] gcc -pthread -B /root/miniconda3/envs/py3.10/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /root/miniconda3/envs/py3.10/include -fPIC -O2 -isystem /root/miniconda3/envs/py3.10/include -fPIC -c /tmp/tmp63g3s38_/test.c -o /tmp/tmp63g3s38_/test.o
+[2024-05-24 00:04:02,258] [INFO] [root.spawn:38] [PID:4902] gcc -pthread -B /root/miniconda3/envs/py3.10/compiler_compat /tmp/tmp63g3s38_/test.o -laio -o /tmp/tmp63g3s38_/a.out
+ [WARNING]  Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+ [WARNING]  sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.1
+ [WARNING]  using untested triton version (2.1.0), only 1.0.0 is known to be compatible
+/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2024-05-24 00:04:04,037] [INFO] [axolotl.normalize_config:182] [PID:4902] [RANK:0] GPU memory usage baseline: 0.000GB (+0.627GB misc)
+                                 dP            dP   dP 
+                                 88            88   88 
+      .d8888b. dP.  .dP .d8888b. 88 .d8888b. d8888P 88 
+      88'  `88  `8bd8'  88'  `88 88 88'  `88   88   88 
+      88.  .88  .d88b.  88.  .88 88 88.  .88   88   88 
+      `88888P8 dP'  `dP `88888P' dP `88888P'   dP   dP 
+                                                       
+                                                       
+
+****************************************
+**** Axolotl Dependency Versions *****
+  accelerate: 0.30.1         
+        peft: 0.10.0         
+transformers: 4.40.2         
+         trl: 0.8.5          
+       torch: 2.1.2+cu118    
+bitsandbytes: 0.43.1         
+****************************************
+/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+[2024-05-24 00:04:05,053] [DEBUG] [axolotl.load_tokenizer:280] [PID:4902] [RANK:0] EOS: 2 / </s>
+[2024-05-24 00:04:05,053] [DEBUG] [axolotl.load_tokenizer:281] [PID:4902] [RANK:0] BOS: 1 / <s>
+[2024-05-24 00:04:05,053] [DEBUG] [axolotl.load_tokenizer:282] [PID:4902] [RANK:0] PAD: 2 / </s>
+[2024-05-24 00:04:05,053] [DEBUG] [axolotl.load_tokenizer:283] [PID:4902] [RANK:0] UNK: 0 / <unk>
+[2024-05-24 00:04:05,053] [INFO] [axolotl.load_tokenizer:294] [PID:4902] [RANK:0] No Chat template selected. Consider adding a chat template for easier inference.
+[2024-05-24 00:04:05,053] [INFO] [axolotl.load_tokenized_prepared_datasets:183] [PID:4902] [RANK:0] Unable to find prepared dataset in last_run_prepared/a1079e1609d0b7bf952979250cf0f7f4
+[2024-05-24 00:04:05,054] [INFO] [axolotl.load_tokenized_prepared_datasets:184] [PID:4902] [RANK:0] Loading raw datasets...
+[2024-05-24 00:04:05,054] [WARNING] [axolotl.load_tokenized_prepared_datasets:186] [PID:4902] [RANK:0] Processing datasets during training can lead to VRAM instability. Please pre-process your dataset.
+Generating train split: 133501 examples [00:01, 75757.77 examples/s]
+Tokenizing Prompts (num_proc=64): 100%|███████████████████████████████████████████| 133501/133501 [01:21<00:00, 1635.33 examples/s]
+[2024-05-24 00:05:31,099] [INFO] [axolotl.load_tokenized_prepared_datasets:410] [PID:4902] [RANK:0] merging datasets
+Dropping Long Sequences (num_proc=64): 100%|█████████████████████████████████████| 133501/133501 [00:10<00:00, 12220.82 examples/s]
+[2024-05-24 00:05:43,227] [INFO] [axolotl.load_tokenized_prepared_datasets:423] [PID:4902] [RANK:0] Saving merged prepared dataset to disk... last_run_prepared/a1079e1609d0b7bf952979250cf0f7f4
+Saving the dataset (2/2 shards): 100%|███████████████████████████████████████████| 127998/127998 [00:01<00:00, 93288.97 examples/s]
+[2024-05-24 00:05:44,812] [DEBUG] [axolotl.calculate_total_num_steps:299] [PID:4902] [RANK:0] total_num_tokens: 70_440_026
+[2024-05-24 00:05:46,240] [DEBUG] [axolotl.calculate_total_num_steps:312] [PID:4902] [RANK:0] `total_supervised_tokens: 14_142_350`
+[2024-05-24 00:05:46,240] [DEBUG] [axolotl.calculate_total_num_steps:391] [PID:4902] [RANK:0] total_num_steps: 5400
+[2024-05-24 00:05:46,247] [DEBUG] [axolotl.train.train:56] [PID:4902] [RANK:0] loading tokenizer... mistralai/Mistral-7B-v0.3
+[2024-05-24 00:05:46,967] [DEBUG] [axolotl.load_tokenizer:280] [PID:4902] [RANK:0] EOS: 2 / </s>
+[2024-05-24 00:05:46,967] [DEBUG] [axolotl.load_tokenizer:281] [PID:4902] [RANK:0] BOS: 1 / <s>
+[2024-05-24 00:05:46,967] [DEBUG] [axolotl.load_tokenizer:282] [PID:4902] [RANK:0] PAD: 2 / </s>
+[2024-05-24 00:05:46,967] [DEBUG] [axolotl.load_tokenizer:283] [PID:4902] [RANK:0] UNK: 0 / <unk>
+[2024-05-24 00:05:46,967] [INFO] [axolotl.load_tokenizer:294] [PID:4902] [RANK:0] No Chat template selected. Consider adding a chat template for easier inference.
+[2024-05-24 00:05:46,967] [DEBUG] [axolotl.train.train:85] [PID:4902] [RANK:0] loading model and peft_config...
+`low_cpu_mem_usage` was None, now set to True since model is quantized.
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████| 3/3 [00:03<00:00,  1.19s/it]
+[2024-05-24 00:05:53,315] [INFO] [axolotl.load_model:734] [PID:4902] [RANK:0] GPU memory usage after model load: 4.354GB (+0.146GB cache, +1.111GB misc)
+[2024-05-24 00:05:53,326] [INFO] [axolotl.load_model:785] [PID:4902] [RANK:0] converting PEFT model w/ prepare_model_for_kbit_training
+[2024-05-24 00:05:53,330] [INFO] [axolotl.load_model:794] [PID:4902] [RANK:0] converting modules to torch.bfloat16 for flash attention
+[2024-05-24 00:05:53,334] [INFO] [axolotl.load_lora:951] [PID:4902] [RANK:0] found linear modules: ['v_proj', 'up_proj', 'q_proj', 'k_proj', 'down_proj', 'gate_proj', 'o_proj']
+trainable params: 83,886,080 || all params: 7,331,909,632 || trainable%: 1.1441232122376492
+[2024-05-24 00:05:54,299] [INFO] [axolotl.load_model:843] [PID:4902] [RANK:0] GPU memory usage after adapters: 4.511GB (+1.146GB cache, +1.111GB misc)
+[2024-05-24 00:05:54,787] [INFO] [axolotl.train.train:119] [PID:4902] [RANK:0] Pre-saving adapter config to ./qlora-alpaca-out
+[2024-05-24 00:05:54,807] [INFO] [axolotl.train.train:156] [PID:4902] [RANK:0] Starting trainer...
+wandb: Currently logged in as: law. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.17.0
+wandb: Run data is saved locally in /home/axolotl/hc-mistral-alpaca/wandb/run-20240524_000556-iewv47f2
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run lyric-wildflower-5
+wandb: ⭐️ View project at https://wandb.ai/law/hc-axolotl-mistral
+wandb: 🚀 View run at https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2
+wandb: WARNING Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
+[2024-05-24 00:05:58,369] [INFO] [axolotl.callbacks.on_train_begin:771] [PID:4902] [RANK:0] The Axolotl config has been saved to the WandB run under files.
+{'loss': 1.154, 'grad_norm': 2.078125, 'learning_rate': 1e-05, 'epoch': 0.0}                                                       
+  0%|                                                                                          | 1/5400 [00:21<32:33:13, 21.71s
+ 49%|█████████████████████████████████████████████▍                      
+ 50%|███████████████████████████████████████████▌                        
+                                                                         {'eval_loss': 1.1900806427001953, 'eval_runtime': 1342.7584, 'eval_samples_per_second': 9.533, 'eval_steps_per_second': 0.596, 'epoch': 0.0}      
+  0%|                                | 1/5400 [22:44<32:33:13, 21.71s/it[2024-05-24 00:29:04,813] [INFO] [axolotl.callbacks.on_step_end:126] [PID:4902] [RANK:0] GPU memory usage while training: 4.684GB (+12.633GB cache, +1.136GB misc)
+{'loss': 1.1821, 'grad_norm': 2.125, 'learning_rate': 2e-05, 'epoch': 0.0}
+{'loss': 1.1561, 'grad_norm': 1.9609375, 'learning_rate': 3e-05, 'epoch': 0.0}
+{'loss': 1.1569, 'grad_norm': 1.3671875, 'learning_rate': 4e-05, 'epoch': 0.0}
+{'loss': 1.1285, 'grad_norm': 1.1640625, 'learning_rate': 5e-05, 'epoch': 0.0}
+{'loss': 1.0089, 'grad_norm': 1.0234375, 'learning_rate': 6e-05, 'epoch': 0.0}
+{'loss': 0.874, 'grad_norm': 1.0390625, 'learning_rate': 7e-05, 'epoch': 0.0}
+{'loss': 0.7215, 'grad_norm': 1.0234375, 'learning_rate': 8e-05, 'epoch': 0.0}
+{'loss': 0.632, 'grad_norm': 1.0625, 'learning_rate': 9e-05, 'epoch': 0.01}
+{'loss': 0.4603, 'grad_norm': 0.8984375, 'learning_rate': 0.0001, 'epoch': 0.01}
+{'loss': 0.3983, 'grad_norm': 0.6796875, 'learning_rate': 0.00011000000000000002, 'epoch': 0.01}
+{'loss': 0.363, 'grad_norm': 0.796875, 'learning_rate': 0.00012, 'epoch': 0.01}
+{'loss': 0.3174, 'grad_norm': 0.7421875, 'learning_rate': 0.00013000000000000002, 'epoch': 0.01}
+{'loss': 0.244, 'grad_norm': 0.73046875, 'learning_rate': 0.00014, 'epoch': 0.01}
+{'loss': 0.2493, 'grad_norm': 0.478515625, 'learning_rate': 0.00015000000000000001, 'epoch': 0.01}
+{'loss': 0.2496, 'grad_norm': 0.373046875, 'learning_rate': 0.00016, 'epoch': 0.01}
+{'loss': 0.2267, 'grad_norm': 0.400390625, 'learning_rate': 0.00017, 'epoch': 0.01}
+{'loss': 0.2481, 'grad_norm': 0.3671875, 'learning_rate': 0.00018, 'epoch': 0.01}
+{'loss': 0.2055, 'grad_norm': 0.3359375, 'learning_rate': 0.00019, 'epoch': 0.01}
+{'loss': 0.2, 'grad_norm': 0.283203125, 'learning_rate': 0.0002, 'epoch': 0.01}
+{'loss': 0.1825, 'grad_norm': 0.28515625, 'learning_rate': 0.00019999998295075366, 'epoch': 0.01}
+{'loss': 0.2323, 'grad_norm': 0.27734375, 'learning_rate': 0.00019999993180302042, 'epoch': 0.01}
+{'loss': 0.1805, 'grad_norm': 0.37109375, 'learning_rate': 0.00019999984655681775, 'epoch': 0.01}
+{'loss': 0.1738, 'grad_norm': 0.283203125, 'learning_rate': 0.0001999997272121747, 'epoch': 0.01}
+{'loss': 0.1843, 'grad_norm': 0.2333984375, 'learning_rate': 0.00019999957376913195, 'epoch': 0.01}
+{'loss': 0.1804, 'grad_norm': 0.25, 'learning_rate': 0.00019999938622774187, 'epoch': 0.01}
+{'loss': 0.1682, 'grad_norm': 0.2216796875, 'learning_rate': 0.00019999916458806832, 'epoch': 0.01}
+{'loss': 0.1838, 'grad_norm': 0.1982421875, 'learning_rate': 0.000199998908850187, 'epoch': 0.02}
+{'loss': 0.149, 'grad_norm': 0.1962890625, 'learning_rate': 0.00019999861901418502, 'epoch': 0.02}
+{'loss': 0.1628, 'grad_norm': 0.25390625, 'learning_rate': 0.00019999829508016124, 'epoch': 0.02}
+{'loss': 0.1699, 'grad_norm': 0.2265625, 'learning_rate': 0.0001999979370482261, 'epoch': 0.02}
+{'loss': 0.1719, 'grad_norm': 0.1943359375, 'learning_rate': 0.00019999754491850172, 'epoch': 0.02}
+{'loss': 0.1624, 'grad_norm': 0.2001953125, 'learning_rate': 0.00019999711869112178, 'epoch': 0.02}
+{'loss': 0.1532, 'grad_norm': 0.1982421875, 'learning_rate': 0.00019999665836623162, 'epoch': 0.02}
+{'loss': 0.1503, 'grad_norm': 0.19921875, 'learning_rate': 0.00019999616394398821, 'epoch': 0.02}
+{'loss': 0.1893, 'grad_norm': 0.1591796875, 'learning_rate': 0.00019999563542456015, 'epoch': 0.02}
+{'loss': 0.1594, 'grad_norm': 0.1826171875, 'learning_rate': 0.00019999507280812765, 'epoch': 0.02}
+{'loss': 0.1636, 'grad_norm': 0.1943359375, 'learning_rate': 0.0001999944760948825, 'epoch': 0.02}
+{'loss': 0.1473, 'grad_norm': 0.2470703125, 'learning_rate': 0.00019999384528502826, 'epoch': 0.02}
+{'loss': 0.1527, 'grad_norm': 0.25390625, 'learning_rate': 0.00019999318037877995, 'epoch': 0.02}
+{'loss': 0.1473, 'grad_norm': 0.1552734375, 'learning_rate': 0.00019999248137636438, 'epoch': 0.02}
+{'loss': 0.1606, 'grad_norm': 0.1826171875, 'learning_rate': 0.00019999174827801984, 'epoch': 0.02}
+{'loss': 0.1549, 'grad_norm': 0.158203125, 'learning_rate': 0.0001999909810839963, 'epoch': 0.02}
+{'loss': 0.1742, 'grad_norm': 0.1953125, 'learning_rate': 0.00019999017979455537, 'epoch': 0.02}
+{'loss': 0.148, 'grad_norm': 0.1748046875, 'learning_rate': 0.0001999893444099703, 'epoch': 0.03}
+{'loss': 0.1534, 'grad_norm': 0.1865234375, 'learning_rate': 0.0001999884749305259, 'epoch': 0.03}
+{'loss': 0.1225, 'grad_norm': 0.1552734375, 'learning_rate': 0.0001999875713565187, 'epoch': 0.03}
+{'loss': 0.1484, 'grad_norm': 0.181640625, 'learning_rate': 0.0001999866336882568, 'epoch': 0.03}
+{'loss': 0.1731, 'grad_norm': 0.2119140625, 'learning_rate': 0.00019998566192605988, 'epoch': 0.03}
+{'loss': 0.1738, 'grad_norm': 0.1640625, 'learning_rate': 0.00019998465607025935, 'epoch': 0.03}
+{'loss': 0.1364, 'grad_norm': 0.1396484375, 'learning_rate': 0.00019998361612119813, 'epoch': 0.03}
+{'loss': 0.1443, 'grad_norm': 0.1416015625, 'learning_rate': 0.0001999825420792309, 'epoch': 0.03}
+{'loss': 0.1725, 'grad_norm': 0.2080078125, 'learning_rate': 0.00019998143394472386, 'epoch': 0.03}
+{'loss': 0.1547, 'grad_norm': 0.1572265625, 'learning_rate': 0.00019998029171805487, 'epoch': 0.03}
+{'loss': 0.1499, 'grad_norm': 0.1708984375, 'learning_rate': 0.00019997911539961337, 'epoch': 0.03}
+{'loss': 0.1617, 'grad_norm': 0.162109375, 'learning_rate': 0.00019997790498980055, 'epoch': 0.03}
+{'loss': 0.1443, 'grad_norm': 0.142578125, 'learning_rate': 0.0001999766604890291, 'epoch': 0.03}
+{'loss': 0.1668, 'grad_norm': 0.1552734375, 'learning_rate': 0.00019997538189772335, 'epoch': 0.03}
+{'loss': 0.1624, 'grad_norm': 0.138671875, 'learning_rate': 0.0001999740692163193, 'epoch': 0.03}
+{'loss': 0.1459, 'grad_norm': 0.146484375, 'learning_rate': 0.00019997272244526456, 'epoch': 0.03}
+{'loss': 0.1433, 'grad_norm': 0.158203125, 'learning_rate': 0.00019997134158501837, 'epoch': 0.03}
+{'loss': 0.1284, 'grad_norm': 0.1640625, 'learning_rate': 0.00019996992663605156, 'epoch': 0.03}
+{'loss': 0.1618, 'grad_norm': 0.166015625, 'learning_rate': 0.00019996847759884661, 'epoch': 0.04}
+{'loss': 0.1454, 'grad_norm': 0.162109375, 'learning_rate': 0.00019996699447389764, 'epoch': 0.04}
+{'loss': 0.1416, 'grad_norm': 0.1591796875, 'learning_rate': 0.00019996547726171032, 'epoch': 0.04}
+{'loss': 0.1387, 'grad_norm': 0.134765625, 'learning_rate': 0.00019996392596280206, 'epoch': 0.04}
+{'loss': 0.1362, 'grad_norm': 0.14453125, 'learning_rate': 0.00019996234057770184, 'epoch': 0.04}
+{'loss': 0.1324, 'grad_norm': 0.1640625, 'learning_rate': 0.00019996072110695017, 'epoch': 0.04}
+{'loss': 0.1306, 'grad_norm': 0.169921875, 'learning_rate': 0.00019995906755109933, 'epoch': 0.04}
+{'loss': 0.1395, 'grad_norm': 0.1591796875, 'learning_rate': 0.00019995737991071314, 'epoch': 0.04}
+{'loss': 0.1264, 'grad_norm': 0.1591796875, 'learning_rate': 0.00019995565818636707, 'epoch': 0.04}
+{'loss': 0.121, 'grad_norm': 0.1630859375, 'learning_rate': 0.00019995390237864818, 'epoch': 0.04}
+{'loss': 0.1376, 'grad_norm': 0.142578125, 'learning_rate': 0.00019995211248815517, 'epoch': 0.04}
+{'loss': 0.1344, 'grad_norm': 0.1611328125, 'learning_rate': 0.0001999502885154984, 'epoch': 0.04}
+{'loss': 0.154, 'grad_norm': 0.14453125, 'learning_rate': 0.00019994843046129977, 'epoch': 0.04}
+{'loss': 0.1627, 'grad_norm': 0.15234375, 'learning_rate': 0.00019994653832619292, 'epoch': 0.04}
+{'loss': 0.1353, 'grad_norm': 0.16796875, 'learning_rate': 0.00019994461211082296, 'epoch': 0.04}
+{'loss': 0.132, 'grad_norm': 0.1845703125, 'learning_rate': 0.00019994265181584676, 'epoch': 0.04}
+{'loss': 0.1356, 'grad_norm': 0.1630859375, 'learning_rate': 0.00019994065744193272, 'epoch': 0.04}
+{'loss': 0.1466, 'grad_norm': 0.1552734375, 'learning_rate': 0.0001999386289897609, 'epoch': 0.04}
+{'loss': 0.1259, 'grad_norm': 0.140625, 'learning_rate': 0.00019993656646002296, 'epoch': 0.04}
+{'loss': 0.1346, 'grad_norm': 0.146484375, 'learning_rate': 0.00019993446985342223, 'epoch': 0.05}
+{'loss': 0.1388, 'grad_norm': 0.1767578125, 'learning_rate': 0.00019993233917067358, 'epoch': 0.05}
+{'loss': 0.1427, 'grad_norm': 0.1435546875, 'learning_rate': 0.00019993017441250356, 'epoch': 0.05}
+{'loss': 0.1246, 'grad_norm': 0.146484375, 'learning_rate': 0.0001999279755796503, 'epoch': 0.05}
+{'loss': 0.1381, 'grad_norm': 0.162109375, 'learning_rate': 0.00019992574267286358, 'epoch': 0.05}
+{'loss': 0.1184, 'grad_norm': 0.1435546875, 'learning_rate': 0.0001999234756929048, 'epoch': 0.05}
+{'loss': 0.133, 'grad_norm': 0.1787109375, 'learning_rate': 0.00019992117464054696, 'epoch': 0.05}
+{'loss': 0.1297, 'grad_norm': 0.17578125, 'learning_rate': 0.00019991883951657466, 'epoch': 0.05}
+{'loss': 0.1329, 'grad_norm': 0.142578125, 'learning_rate': 0.0001999164703217842, 'epoch': 0.05}
+{'loss': 0.1249, 'grad_norm': 0.1640625, 'learning_rate': 0.00019991406705698338, 'epoch': 0.05}
+{'loss': 0.1215, 'grad_norm': 0.154296875, 'learning_rate': 0.0001999116297229917, 'epoch': 0.05}
+{'loss': 0.1354, 'grad_norm': 0.1708984375, 'learning_rate': 0.00019990915832064025, 'epoch': 0.05}
+{'loss': 0.1266, 'grad_norm': 0.1728515625, 'learning_rate': 0.00019990665285077178, 'epoch': 0.05}
+{'loss': 0.1155, 'grad_norm': 0.1513671875, 'learning_rate': 0.00019990411331424052, 'epoch': 0.05}
+{'loss': 0.1454, 'grad_norm': 0.1787109375, 'learning_rate': 0.00019990153971191253, 'epoch': 0.05}
+{'loss': 0.1322, 'grad_norm': 0.1416015625, 'learning_rate': 0.00019989893204466527, 'epoch': 0.05}
+{'loss': 0.125, 'grad_norm': 0.162109375, 'learning_rate': 0.000199896290313388, 'epoch': 0.05}
+{'loss': 0.1085, 'grad_norm': 0.1806640625, 'learning_rate': 0.00019989361451898144, 'epoch': 0.06}
+{'loss': 0.1441, 'grad_norm': 0.146484375, 'learning_rate': 0.00019989090466235806, 'epoch': 0.06}
+{'loss': 0.114, 'grad_norm': 0.134765625, 'learning_rate': 0.00019988816074444183, 'epoch': 0.06}
+{'loss': 0.1252, 'grad_norm': 0.1455078125, 'learning_rate': 0.0001998853827661684, 'epoch': 0.06}
+{'loss': 0.1251, 'grad_norm': 0.162109375, 'learning_rate': 0.00019988257072848503, 'epoch': 0.06}
+{'loss': 0.1133, 'grad_norm': 0.16796875, 'learning_rate': 0.00019987972463235057, 'epoch': 0.06}
+{'loss': 0.1249, 'grad_norm': 0.1689453125, 'learning_rate': 0.00019987684447873548, 'epoch': 0.06}
+{'loss': 0.1352, 'grad_norm': 0.2158203125, 'learning_rate': 0.0001998739302686219, 'epoch': 0.06}
+{'loss': 0.1248, 'grad_norm': 0.1484375, 'learning_rate': 0.00019987098200300349, 'epoch': 0.06}
+{'loss': 0.117, 'grad_norm': 0.1962890625, 'learning_rate': 0.00019986799968288557, 'epoch': 0.06}
+{'loss': 0.1239, 'grad_norm': 0.1533203125, 'learning_rate': 0.00019986498330928508, 'epoch': 0.06}
+{'loss': 0.1643, 'grad_norm': 0.1474609375, 'learning_rate': 0.0001998619328832305, 'epoch': 0.06}
+{'loss': 0.1051, 'grad_norm': 0.134765625, 'learning_rate': 0.0001998588484057621, 'epoch': 0.06}
+{'loss': 0.1148, 'grad_norm': 0.1484375, 'learning_rate': 0.0001998557298779315, 'epoch': 0.06}
+{'loss': 0.1135, 'grad_norm': 0.162109375, 'learning_rate': 0.00019985257730080217, 'epoch': 0.06}
+{'loss': 0.1121, 'grad_norm': 0.1513671875, 'learning_rate': 0.00019984939067544907, 'epoch': 0.06}
+{'loss': 0.1646, 'grad_norm': 0.205078125, 'learning_rate': 0.00019984617000295876, 'epoch': 0.06}
+{'loss': 0.1103, 'grad_norm': 0.1416015625, 'learning_rate': 0.00019984291528442945, 'epoch': 0.06}
+{'loss': 0.1076, 'grad_norm': 0.1474609375, 'learning_rate': 0.000199839626520971, 'epoch': 0.07}
+{'loss': 0.123, 'grad_norm': 0.1650390625, 'learning_rate': 0.00019983630371370477, 'epoch': 0.07}
+{'loss': 0.1194, 'grad_norm': 0.1728515625, 'learning_rate': 0.00019983294686376382, 'epoch': 0.07}
+{'loss': 0.1164, 'grad_norm': 0.1396484375, 'learning_rate': 0.00019982955597229275, 'epoch': 0.07}
+{'loss': 0.1089, 'grad_norm': 0.1328125, 'learning_rate': 0.00019982613104044784, 'epoch': 0.07}
+{'loss': 0.1328, 'grad_norm': 0.1865234375, 'learning_rate': 0.00019982267206939693, 'epoch': 0.07}
+{'loss': 0.1297, 'grad_norm': 0.1484375, 'learning_rate': 0.00019981917906031947, 'epoch': 0.07}
+{'loss': 0.1077, 'grad_norm': 0.15234375, 'learning_rate': 0.00019981565201440652, 'epoch': 0.07}
+{'loss': 0.1324, 'grad_norm': 0.1728515625, 'learning_rate': 0.00019981209093286077, 'epoch': 0.07}
+{'loss': 0.1138, 'grad_norm': 0.1494140625, 'learning_rate': 0.00019980849581689646, 'epoch': 0.07}
+{'loss': 0.1062, 'grad_norm': 0.1767578125, 'learning_rate': 0.0001998048666677395, 'epoch': 0.07}
+{'loss': 0.1464, 'grad_norm': 0.1923828125, 'learning_rate': 0.00019980120348662736, 'epoch': 0.07}
+{'loss': 0.1184, 'grad_norm': 0.1650390625, 'learning_rate': 0.00019979750627480914, 'epoch': 0.07}
+{'loss': 0.113, 'grad_norm': 0.1767578125, 'learning_rate': 0.00019979377503354554, 'epoch': 0.07}
+{'loss': 0.1406, 'grad_norm': 0.1875, 'learning_rate': 0.00019979000976410886, 'epoch': 0.07}
+{'loss': 0.1111, 'grad_norm': 0.166015625, 'learning_rate': 0.00019978621046778296, 'epoch': 0.07}
+{'loss': 0.1007, 'grad_norm': 0.1845703125, 'learning_rate': 0.0001997823771458634, 'epoch': 0.07}
+{'loss': 0.1047, 'grad_norm': 0.16015625, 'learning_rate': 0.00019977850979965723, 'epoch': 0.07}
+{'loss': 0.1217, 'grad_norm': 0.1455078125, 'learning_rate': 0.00019977460843048316, 'epoch': 0.07}
+{'loss': 0.1105, 'grad_norm': 0.1552734375, 'learning_rate': 0.00019977067303967154, 'epoch': 0.08}
+{'loss': 0.1111, 'grad_norm': 0.169921875, 'learning_rate': 0.00019976670362856428, 'epoch': 0.08}
+{'loss': 0.1297, 'grad_norm': 0.142578125, 'learning_rate': 0.00019976270019851484, 'epoch': 0.08}
+{'loss': 0.0978, 'grad_norm': 0.1513671875, 'learning_rate': 0.00019975866275088837, 'epoch': 0.08}
+{'loss': 0.1056, 'grad_norm': 0.1396484375, 'learning_rate': 0.00019975459128706156, 'epoch': 0.08}
+{'loss': 0.116, 'grad_norm': 0.1474609375, 'learning_rate': 0.0001997504858084227, 'epoch': 0.08}
+{'loss': 0.1197, 'grad_norm': 0.17578125, 'learning_rate': 0.00019974634631637173, 'epoch': 0.08}
+{'loss': 0.1108, 'grad_norm': 0.169921875, 'learning_rate': 0.00019974217281232019, 'epoch': 0.08}
+{'loss': 0.1131, 'grad_norm': 0.2216796875, 'learning_rate': 0.00019973796529769108, 'epoch': 0.08}
+{'loss': 0.1186, 'grad_norm': 0.16015625, 'learning_rate': 0.0001997337237739192, 'epoch': 0.08}
+{'loss': 0.1044, 'grad_norm': 0.2021484375, 'learning_rate': 0.00019972944824245078, 'epoch': 0.08}
+{'loss': 0.1091, 'grad_norm': 0.2197265625, 'learning_rate': 0.00019972513870474375, 'epoch': 0.08}
+{'loss': 0.1098, 'grad_norm': 0.185546875, 'learning_rate': 0.00019972079516226754, 'epoch': 0.08}
+{'loss': 0.0996, 'grad_norm': 0.166015625, 'learning_rate': 0.0001997164176165033, 'epoch': 0.08}
+{'loss': 0.124, 'grad_norm': 0.150390625, 'learning_rate': 0.0001997120060689437, 'epoch': 0.08}
+{'loss': 0.1075, 'grad_norm': 0.1953125, 'learning_rate': 0.00019970756052109295, 'epoch': 0.08}
+{'loss': 0.112, 'grad_norm': 0.1748046875, 'learning_rate': 0.00019970308097446698, 'epoch': 0.08}
+{'loss': 0.106, 'grad_norm': 0.1435546875, 'learning_rate': 0.0001996985674305932, 'epoch': 0.09}
+{'loss': 0.1106, 'grad_norm': 0.177734375, 'learning_rate': 0.0001996940198910107, 'epoch': 0.09}
+{'loss': 0.1015, 'grad_norm': 0.1787109375, 'learning_rate': 0.00019968943835727013, 'epoch': 0.09}
+{'loss': 0.1123, 'grad_norm': 0.1728515625, 'learning_rate': 0.00019968482283093367, 'epoch': 0.09}
+{'loss': 0.106, 'grad_norm': 0.173828125, 'learning_rate': 0.00019968017331357517, 'epoch': 0.09}
+{'loss': 0.1481, 'grad_norm': 0.173828125, 'learning_rate': 0.00019967548980678008, 'epoch': 0.09}
+{'loss': 0.1166, 'grad_norm': 0.17578125, 'learning_rate': 0.00019967077231214535, 'epoch': 0.09}
+{'loss': 0.0998, 'grad_norm': 0.1708984375, 'learning_rate': 0.0001996660208312796, 'epoch': 0.09}
+{'loss': 0.0926, 'grad_norm': 0.14453125, 'learning_rate': 0.00019966123536580303, 'epoch': 0.09}
+{'loss': 0.0877, 'grad_norm': 0.1484375, 'learning_rate': 0.00019965641591734737, 'epoch': 0.09}
+{'loss': 0.0894, 'grad_norm': 0.173828125, 'learning_rate': 0.00019965156248755606, 'epoch': 0.09}
+{'loss': 0.139, 'grad_norm': 0.189453125, 'learning_rate': 0.00019964667507808395, 'epoch': 0.09}
+{'loss': 0.1024, 'grad_norm': 0.20703125, 'learning_rate': 0.00019964175369059764, 'epoch': 0.09}
+{'loss': 0.1251, 'grad_norm': 0.15234375, 'learning_rate': 0.00019963679832677518, 'epoch': 0.09}
+{'loss': 0.124, 'grad_norm': 0.1875, 'learning_rate': 0.00019963180898830633, 'epoch': 0.09}
+{'loss': 0.1109, 'grad_norm': 0.1650390625, 'learning_rate': 0.0001996267856768924, 'epoch': 0.09}
+{'loss': 0.0973, 'grad_norm': 0.16015625, 'learning_rate': 0.0001996217283942462, 'epoch': 0.09}
+{'loss': 0.1159, 'grad_norm': 0.1845703125, 'learning_rate': 0.0001996166371420922, 'epoch': 0.09}
+{'loss': 0.1231, 'grad_norm': 0.1689453125, 'learning_rate': 0.0001996115119221665, 'epoch': 0.1}
+{'loss': 0.0957, 'grad_norm': 0.2373046875, 'learning_rate': 0.00019960635273621666, 'epoch': 0.1}
+{'loss': 0.1082, 'grad_norm': 0.1611328125, 'learning_rate': 0.00019960115958600193, 'epoch': 0.1}
+{'loss': 0.1012, 'grad_norm': 0.1650390625, 'learning_rate': 0.00019959593247329305, 'epoch': 0.1}
+{'loss': 0.1108, 'grad_norm': 0.2177734375, 'learning_rate': 0.0001995906713998724, 'epoch': 0.1}
+{'loss': 0.0988, 'grad_norm': 0.1875, 'learning_rate': 0.00019958537636753393, 'epoch': 0.1}
+{'loss': 0.0922, 'grad_norm': 0.2451171875, 'learning_rate': 0.00019958004737808318, 'epoch': 0.1}
+{'loss': 0.1051, 'grad_norm': 0.1611328125, 'learning_rate': 0.00019957468443333723, 'epoch': 0.1}
+{'loss': 0.1174, 'grad_norm': 0.1826171875, 'learning_rate': 0.0001995692875351248, 'epoch': 0.1}
+{'loss': 0.1081, 'grad_norm': 0.1669921875, 'learning_rate': 0.00019956385668528612, 'epoch': 0.1}
+{'loss': 0.0972, 'grad_norm': 0.18359375, 'learning_rate': 0.00019955839188567307, 'epoch': 0.1}
+{'loss': 0.121, 'grad_norm': 0.1630859375, 'learning_rate': 0.000199552893138149, 'epoch': 0.1}
+{'loss': 0.0851, 'grad_norm': 0.140625, 'learning_rate': 0.00019954736044458892, 'epoch': 0.1}
+{'loss': 0.0979, 'grad_norm': 0.171875, 'learning_rate': 0.00019954179380687946, 'epoch': 0.1}
+{'loss': 0.0904, 'grad_norm': 0.166015625, 'learning_rate': 0.00019953619322691865, 'epoch': 0.1}
+{'loss': 0.0865, 'grad_norm': 0.16796875, 'learning_rate': 0.00019953055870661627, 'epoch': 0.1}
+{'loss': 0.0862, 'grad_norm': 0.16015625, 'learning_rate': 0.00019952489024789363, 'epoch': 0.1}
+{'loss': 0.1032, 'grad_norm': 0.201171875, 'learning_rate': 0.00019951918785268352, 'epoch': 0.1}
+{'loss': 0.1136, 'grad_norm': 0.171875, 'learning_rate': 0.0001995134515229304, 'epoch': 0.1}
+{'loss': 0.0864, 'grad_norm': 0.1669921875, 'learning_rate': 0.0001995076812605903, 'epoch': 0.11}
+{'loss': 0.0912, 'grad_norm': 0.1689453125, 'learning_rate': 0.00019950187706763078, 'epoch': 0.11}
+{'loss': 0.1108, 'grad_norm': 0.1748046875, 'learning_rate': 0.00019949603894603096, 'epoch': 0.11}
+{'loss': 0.0828, 'grad_norm': 0.193359375, 'learning_rate': 0.00019949016689778157, 'epoch': 0.11}
+{'loss': 0.0886, 'grad_norm': 0.1767578125, 'learning_rate': 0.00019948426092488488, 'epoch': 0.11}
+{'loss': 0.0986, 'grad_norm': 0.2119140625, 'learning_rate': 0.00019947832102935474, 'epoch': 0.11}
+{'loss': 0.0855, 'grad_norm': 0.20703125, 'learning_rate': 0.00019947234721321658, 'epoch': 0.11}
+{'loss': 0.092, 'grad_norm': 0.193359375, 'learning_rate': 0.00019946633947850738, 'epoch': 0.11}
+{'loss': 0.0766, 'grad_norm': 0.1611328125, 'learning_rate': 0.0001994602978272756, 'epoch': 0.11}
+{'loss': 0.1023, 'grad_norm': 0.166015625, 'learning_rate': 0.0001994542222615815, 'epoch': 0.11}
+{'loss': 0.0769, 'grad_norm': 0.177734375, 'learning_rate': 0.00019944811278349667, 'epoch': 0.11}
+{'loss': 0.1332, 'grad_norm': 0.208984375, 'learning_rate': 0.00019944196939510435, 'epoch': 0.11}
+{'loss': 0.0935, 'grad_norm': 0.1826171875, 'learning_rate': 0.0001994357920984994, 'epoch': 0.11}
+{'loss': 0.0977, 'grad_norm': 0.193359375, 'learning_rate': 0.0001994295808957881, 'epoch': 0.11}
+{'loss': 0.0902, 'grad_norm': 0.1806640625, 'learning_rate': 0.0001994233357890884, 'epoch': 0.11}
+{'loss': 0.1121, 'grad_norm': 0.1669921875, 'learning_rate': 0.00019941705678052984, 'epoch': 0.11}
+{'loss': 0.0833, 'grad_norm': 0.1640625, 'learning_rate': 0.00019941074387225344, 'epoch': 0.11}
+{'loss': 0.0999, 'grad_norm': 0.1865234375, 'learning_rate': 0.00019940439706641176, 'epoch': 0.12}
+{'loss': 0.1172, 'grad_norm': 0.1728515625, 'learning_rate': 0.00019939801636516903, 'epoch': 0.12}
+{'loss': 0.0768, 'grad_norm': 0.169921875, 'learning_rate': 0.00019939160177070094, 'epoch': 0.12}
+{'loss': 0.1099, 'grad_norm': 0.1650390625, 'learning_rate': 0.0001993851532851948, 'epoch': 0.12}
+{'loss': 0.1244, 'grad_norm': 0.203125, 'learning_rate': 0.0001993786709108494, 'epoch': 0.12}
+{'loss': 0.1133, 'grad_norm': 0.2021484375, 'learning_rate': 0.00019937215464987514, 'epoch': 0.12}
+{'loss': 0.0935, 'grad_norm': 0.181640625, 'learning_rate': 0.00019936560450449403, 'epoch': 0.12}
+{'loss': 0.12, 'grad_norm': 0.2353515625, 'learning_rate': 0.00019935902047693948, 'epoch': 0.12}
+{'loss': 0.0775, 'grad_norm': 0.197265625, 'learning_rate': 0.0001993524025694566, 'epoch': 0.12}
+{'loss': 0.092, 'grad_norm': 0.185546875, 'learning_rate': 0.000199345750784302, 'epoch': 0.12}
+{'loss': 0.1121, 'grad_norm': 0.1904296875, 'learning_rate': 0.0001993390651237438, 'epoch': 0.12}
+{'loss': 0.0827, 'grad_norm': 0.1826171875, 'learning_rate': 0.00019933234559006176, 'epoch': 0.12}
+{'loss': 0.0652, 'grad_norm': 0.2041015625, 'learning_rate': 0.00019932559218554708, 'epoch': 0.12}
+{'loss': 0.0792, 'grad_norm': 0.2001953125, 'learning_rate': 0.00019931880491250262, 'epoch': 0.12}
+{'loss': 0.0869, 'grad_norm': 0.197265625, 'learning_rate': 0.00019931198377324272, 'epoch': 0.12}
+{'loss': 0.0849, 'grad_norm': 0.169921875, 'learning_rate': 0.00019930512877009327, 'epoch': 0.12}
+{'loss': 0.1043, 'grad_norm': 0.17578125, 'learning_rate': 0.00019929823990539174, 'epoch': 0.12}
+{'loss': 0.0628, 'grad_norm': 0.1533203125, 'learning_rate': 0.00019929131718148714, 'epoch': 0.12}
+{'loss': 0.1013, 'grad_norm': 0.1943359375, 'learning_rate': 0.00019928436060073998, 'epoch': 0.12}
+{'loss': 0.0878, 'grad_norm': 0.1875, 'learning_rate': 0.0001992773701655224, 'epoch': 0.13}
+{'loss': 0.0823, 'grad_norm': 0.1748046875, 'learning_rate': 0.00019927034587821795, 'epoch': 0.13}
+{'loss': 0.084, 'grad_norm': 0.16015625, 'learning_rate': 0.0001992632877412219, 'epoch': 0.13}
+{'loss': 0.0913, 'grad_norm': 0.1650390625, 'learning_rate': 0.00019925619575694094, 'epoch': 0.13}
+{'loss': 0.0853, 'grad_norm': 0.2021484375, 'learning_rate': 0.0001992490699277933, 'epoch': 0.13}
+{'loss': 0.0723, 'grad_norm': 0.1982421875, 'learning_rate': 0.00019924191025620877, 'epoch': 0.13}
+{'loss': 0.0963, 'grad_norm': 0.236328125, 'learning_rate': 0.00019923471674462875, 'epoch': 0.13}
+{'loss': 0.0707, 'grad_norm': 0.1953125, 'learning_rate': 0.0001992274893955061, 'epoch': 0.13}
+{'loss': 0.0704, 'grad_norm': 0.2158203125, 'learning_rate': 0.00019922022821130517, 'epoch': 0.13}
+{'loss': 0.0637, 'grad_norm': 0.1728515625, 'learning_rate': 0.000199212933194502, 'epoch': 0.13}
+{'loss': 0.0749, 'grad_norm': 0.205078125, 'learning_rate': 0.00019920560434758406, 'epoch': 0.13}
+{'loss': 0.0842, 'grad_norm': 0.2421875, 'learning_rate': 0.00019919824167305035, 'epoch': 0.13}
+{'loss': 0.0794, 'grad_norm': 0.2138671875, 'learning_rate': 0.00019919084517341145, 'epoch': 0.13}
+{'loss': 0.0816, 'grad_norm': 0.19921875, 'learning_rate': 0.00019918341485118942, 'epoch': 0.13}
+{'loss': 0.0912, 'grad_norm': 0.2177734375, 'learning_rate': 0.00019917595070891798, 'epoch': 0.13}
+{'loss': 0.1035, 'grad_norm': 0.1875, 'learning_rate': 0.0001991684527491422, 'epoch': 0.13}
+{'loss': 0.0785, 'grad_norm': 0.1953125, 'learning_rate': 0.00019916092097441878, 'epoch': 0.13}
+{'loss': 0.0704, 'grad_norm': 0.1630859375, 'learning_rate': 0.000199153355387316, 'epoch': 0.14}
+{'loss': 0.1205, 'grad_norm': 0.181640625, 'learning_rate': 0.00019914575599041352, 'epoch': 0.14}
+{'loss': 0.0902, 'grad_norm': 0.1748046875, 'learning_rate': 0.00019913812278630274, 'epoch': 0.14}
+{'loss': 0.0841, 'grad_norm': 0.1806640625, 'learning_rate': 0.00019913045577758633, 'epoch': 0.14}
+{'loss': 0.1027, 'grad_norm': 0.1904296875, 'learning_rate': 0.00019912275496687874, 'epoch': 0.14}
+{'loss': 0.0851, 'grad_norm': 0.1806640625, 'learning_rate': 0.0001991150203568058, 'epoch': 0.14}
+{'loss': 0.0725, 'grad_norm': 0.263671875, 'learning_rate': 0.00019910725195000485, 'epoch': 0.14}
+{'loss': 0.081, 'grad_norm': 0.193359375, 'learning_rate': 0.0001990994497491248, 'epoch': 0.14}
+{'loss': 0.0643, 'grad_norm': 0.181640625, 'learning_rate': 0.00019909161375682616, 'epoch': 0.14}
+{'loss': 0.0832, 'grad_norm': 0.2138671875, 'learning_rate': 0.00019908374397578082, 'epoch': 0.14}
+{'loss': 0.0708, 'grad_norm': 0.169921875, 'learning_rate': 0.0001990758404086723, 'epoch': 0.14}
+{'loss': 0.067, 'grad_norm': 0.1728515625, 'learning_rate': 0.00019906790305819553, 'epoch': 0.14}
+{'loss': 0.0874, 'grad_norm': 0.21875, 'learning_rate': 0.0001990599319270571, 'epoch': 0.14}
+{'loss': 0.0639, 'grad_norm': 0.1689453125, 'learning_rate': 0.00019905192701797503, 'epoch': 0.14}
+{'loss': 0.0857, 'grad_norm': 0.1923828125, 'learning_rate': 0.00019904388833367882, 'epoch': 0.14}
+{'loss': 0.0855, 'grad_norm': 0.177734375, 'learning_rate': 0.0001990358158769096, 'epoch': 0.14}
+{'loss': 0.0867, 'grad_norm': 0.1884765625, 'learning_rate': 0.00019902770965041992, 'epoch': 0.14}
+{'loss': 0.0866, 'grad_norm': 0.2060546875, 'learning_rate': 0.00019901956965697387, 'epoch': 0.14}
+{'loss': 0.0941, 'grad_norm': 0.1953125, 'learning_rate': 0.00019901139589934713, 'epoch': 0.14}
+{'loss': 0.0755, 'grad_norm': 0.1806640625, 'learning_rate': 0.0001990031883803268, 'epoch': 0.15}
+{'loss': 0.0792, 'grad_norm': 0.18359375, 'learning_rate': 0.0001989949471027115, 'epoch': 0.15}
+{'loss': 0.0632, 'grad_norm': 0.177734375, 'learning_rate': 0.0001989866720693114, 'epoch': 0.15}
+{'loss': 0.0646, 'grad_norm': 0.1845703125, 'learning_rate': 0.0001989783632829481, 'epoch': 0.15}
+{'loss': 0.1032, 'grad_norm': 0.2177734375, 'learning_rate': 0.00019897002074645485, 'epoch': 0.15}
+{'loss': 0.0795, 'grad_norm': 0.17578125, 'learning_rate': 0.00019896164446267633, 'epoch': 0.15}
+{'loss': 0.052, 'grad_norm': 0.173828125, 'learning_rate': 0.00019895323443446867, 'epoch': 0.15}
+{'loss': 0.072, 'grad_norm': 0.193359375, 'learning_rate': 0.0001989447906646996, 'epoch': 0.15}
+{'loss': 0.0774, 'grad_norm': 0.2041015625, 'learning_rate': 0.0001989363131562483, 'epoch': 0.15}
+{'loss': 0.0684, 'grad_norm': 0.2255859375, 'learning_rate': 0.0001989278019120055, 'epoch': 0.15}
+{'loss': 0.0632, 'grad_norm': 0.16015625, 'learning_rate': 0.00019891925693487337, 'epoch': 0.15}
+{'loss': 0.0689, 'grad_norm': 0.1943359375, 'learning_rate': 0.00019891067822776565, 'epoch': 0.15}
+{'loss': 0.0703, 'grad_norm': 0.2041015625, 'learning_rate': 0.0001989020657936075, 'epoch': 0.15}
+{'loss': 0.0784, 'grad_norm': 0.203125, 'learning_rate': 0.0001988934196353357, 'epoch': 0.15}
+{'loss': 0.0832, 'grad_norm': 0.203125, 'learning_rate': 0.00019888473975589844, 'epoch': 0.15}
+{'loss': 0.0645, 'grad_norm': 0.1630859375, 'learning_rate': 0.0001988760261582554, 'epoch': 0.15}
+{'loss': 0.0749, 'grad_norm': 0.1943359375, 'learning_rate': 0.00019886727884537778, 'epoch': 0.15}
+{'loss': 0.0877, 'grad_norm': 0.171875, 'learning_rate': 0.00019885849782024832, 'epoch': 0.15}
+{'loss': 0.0722, 'grad_norm': 0.177734375, 'learning_rate': 0.0001988496830858612, 'epoch': 0.16}
+{'loss': 0.0981, 'grad_norm': 0.1943359375, 'learning_rate': 0.00019884083464522212, 'epoch': 0.16}
+{'loss': 0.0957, 'grad_norm': 0.1962890625, 'learning_rate': 0.00019883195250134823, 'epoch': 0.16}
+{'loss': 0.0924, 'grad_norm': 0.201171875, 'learning_rate': 0.00019882303665726828, 'epoch': 0.16}
+{'loss': 0.0593, 'grad_norm': 0.1669921875, 'learning_rate': 0.0001988140871160223, 'epoch': 0.16}
+{'loss': 0.0666, 'grad_norm': 0.1650390625, 'learning_rate': 0.0001988051038806621, 'epoch': 0.16}
+{'loss': 0.0799, 'grad_norm': 0.177734375, 'learning_rate': 0.0001987960869542508, 'epoch': 0.16}                
+{'loss': 0.0625, 'grad_norm': 0.19921875, 'learning_rate': 0.00019878703633986294, 'epoch': 0.16}                
+  5%|███▌                                                                | 287/5400 [2:07:55<31:19:58, 22.06s/it]^CTraceback (most recent call last):
+  File "/root/miniconda3/envs/py3.10/bin/accelerate", line 8, in <module>
+    sys.exit(main())
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 46, in main
+    args.func(args)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1082, in launch_command
+    simple_launcher(args)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/launch.py", line 685, in simple_launcher
+    process.wait()
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/subprocess.py", line 1209, in wait
+    return self._wait(timeout=timeout)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/subprocess.py", line 1959, in _wait
+    (pid, sts) = self._try_wait(0)
+  File "/root/miniconda3/envs/py3.10/lib/python3.10/subprocess.py", line 1917, in _try_wait
+    (pid, sts) = os.waitpid(self.pid, wait_flags)
+KeyboardInterrupt
+
+root@6df7cfbf0d81:~/axolotl/hc-mistral-alpaca# /root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+  5%|███▌                                                                | 287/5400 [2:08:21<38:06:49, 26.84s/it]
+^Cndb: - 0.011 MB of 0.011 MB uploaded
+wandb: / 0.054 MB of 0.054 MB uploaded-alpaca# wandb: \ 0.011 MB of 0.054 MB uploaded
+wandb: Run history:
+wandb:               eval/loss ▁
+wandb:            eval/runtime ▁
+wandb: eval/samples_per_second ▁
+wandb:   eval/steps_per_second ▁
+wandb:             train/epoch ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:       train/global_step ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇███
+wandb:         train/grad_norm █▆▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁
+wandb:     train/learning_rate ▁▃▆█████████████████████████████████████
+wandb:              train/loss █▅▂▂▂▂▂▂▂▂▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb: 
+wandb: Run summary:
+wandb:               eval/loss 1.19008
+wandb:            eval/runtime 1342.7584
+wandb: eval/samples_per_second 9.533
+wandb:   eval/steps_per_second 0.596
+wandb:             train/epoch 0.15944
+wandb:       train/global_step 287
+wandb:         train/grad_norm 0.19922
+wandb:     train/learning_rate 0.0002
+wandb:              train/loss 0.0625
+wandb: 
+wandb: 🚀 View run lyric-wildflower-5 at: https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2
+wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral
+wandb: Synced 6 W&B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)
+wandb: Find logs at: ./wandb/run-20240524_000556-iewv47f2/logs
+```
