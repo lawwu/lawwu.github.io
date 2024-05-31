@@ -16,8 +16,10 @@ website:
     right:
       - text: Blog
         href: blog.qmd
-      - text: AI Resources
-        href: ai_resources.qmd
+      - text: Projects
+        href: projects.qmd
+      - text: Conferences
+        href: conferences.qmd
       - icon: github
         text: GitHub
         href: https://github.com/lawwu

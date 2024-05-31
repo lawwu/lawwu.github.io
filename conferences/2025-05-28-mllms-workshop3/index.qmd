@@ -1,0 +1,31 @@
+---
+title: "Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting & Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)"
+author: "Lawrence Wu"    
+date: "2024-05-28"
+categories: ["Conference", "AI", "LLMs", "Mastering LLMs", "Evaluation"]
+---
+
+# Key Takeaways:
+- Evaluation is critical: It drives the iterative process of improving your LLM application, enabling you to make informed decisions about prompt engineering, fine-tuning, and model selection.
+- Don't overcomplicate things: Start simple with unit tests and focus on practical metrics that align with your specific use case. Avoid building overly complex evaluation frameworks prematurely.
+- Human judgment is still essential: While LMs can assist with evaluation, human experts are ultimately responsible for defining what constitutes good performance and aligning the LLM to those preferences.
+- Look at your data: Regularly examine the inputs and outputs of your LLM system, as well as production data, to identify failure modes, refine evaluation criteria, and ensure the system is behaving as intended.
+- Evaluation is iterative: Both evaluation criteria and the methods for evaluating those criteria will evolve as you learn more about the task and gather more data. Be prepared to adapt and refine your evaluation process over time.
+
+# Insights:
+- Traditional ML evaluation principles still apply: Leverage existing evaluation techniques and adapt them to the nuances of LLMs. Don't treat LLM evaluation as an entirely new field.
+- Use case experts are invaluable: Involve them in the evaluation process from the beginning to ensure alignment between evaluation metrics and user needs.
+- LM-assisted evaluation is not a silver bullet: While helpful for scaling evaluations and providing directional insights, it requires careful and methodical application. Multiple judges, models, and shots should be used, and human alignment should be checked regularly.
+- Production endpoints are key: Evaluating directly against production endpoints minimizes drift and ensures consistency between development and production environments.
+
+# Action Items:
+- Implement unit tests: Identify and codify basic sanity checks for your LLM application to catch common errors.
+- Start logging traces: Use existing tools like LangSmith, Braintrust, or Instruct to capture the inputs and outputs of your LLM pipeline for detailed analysis and debugging.
+- Develop a simple evaluation framework: Focus on key metrics relevant to your use case, and build the framework iteratively as you gain more experience and data.
+- Involve use case experts: Work with them to define evaluation criteria, review outputs, and provide feedback on the evaluation process.
+- Explore LLM-assisted evaluation: Experiment with tools and techniques that leverage LLMs to scale your evaluation efforts, but do so with a critical eye and ensure human alignment.
+
+# Other Interesting Information:
+- Several tools and resources for LLM evaluation were mentioned, including LangSmith, Braintrust, Weights & Biases, Instruct, Identic.Logfire, Weave, OpenTelemetry, and a book on recommendation systems by Brian Bishop.
+- A research prototype interface called EvalGen was presented, which assists developers in creating and iterating on LLM evaluations in a more intuitive and user-friendly way.
+- The talk emphasized the importance of minimizing wait time in the evaluation process by involving humans in the loop for tasks like editing criteria, refining criteria, and interactively grading LLM outputs.

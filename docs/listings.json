@@ -29,5 +29,13 @@
       "/posts/2023-04-04-gpt4/index.html",
       "/posts/2023-03-24-mac-apps/index.html"
     ]
+  },
+  {
+    "listing": "/conferences.html",
+    "items": [
+      "/conferences/2025-05-28-mllms-workshop3/index.html",
+      "/conferences/2023-10-10-ai-engineer-summit/index.html",
+      "/conferences/2023-08-07-kdd2023-day1/index.html"
+    ]
   }
 ]

@@ -1,0 +1,10 @@
+---
+title: "Projects"
+comments: false
+---
+
+- [Conference Recap and Summaries](conferences.qmd) - Conference Recaps and Summaries
+- [Transcripts](https://github.com/lawwu/transcripts) - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html
+- [data-science-toolkit](https://github.com/lawwu/data-science-toolkit) - A toolkit for new hires in data science. Designed with Python users in mind
+- [awesome-llamas](https://github.com/lawwu/awesome-llamas) - Llama resources
+- [AI Resources](ai_resources.qmd) - A curated collection of resources to learn AI
