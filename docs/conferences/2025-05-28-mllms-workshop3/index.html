@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2024-05-28">
 
-<title>Lawrence Wu</title>
+<title>Lawrence Wu - Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting &amp; Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/cookie-consent/cookie-consent.js"></script>
-<link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -87,10 +90,10 @@ cookieconsent.run({
   
 
 
-<link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Lawrence Wu">
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Lawrence Wu - Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting &amp; Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)">
 <meta property="og:site-name" content="Lawrence Wu">
-<meta name="twitter:title" content="Lawrence Wu">
+<meta name="twitter:title" content="Lawrence Wu - Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting &amp; Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -102,7 +105,7 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Lawrence Wu</span>
     </a>
   </div>
@@ -113,15 +116,15 @@ cookieconsent.run({
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html" rel="" target="">
+    <a class="nav-link" href="../../blog.html" rel="" target="">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html" rel="" target="">
+    <a class="nav-link" href="../../projects.html" rel="" target="">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./conferences.html" rel="" target="">
+    <a class="nav-link" href="../../conferences.html" rel="" target="">
  <span class="menu-text">Conferences</span></a>
   </li>  
   <li class="nav-item">
@@ -140,7 +143,7 @@ cookieconsent.run({
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
@@ -157,46 +160,85 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lawrence Wu</h1>
-</div>
-<div class="quarto-title-meta">
+<h1 class="title">Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting &amp; Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">Conference</div>
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">LLMs</div>
+    <div class="quarto-category">Mastering LLMs</div>
+    <div class="quarto-category">Evaluation</div>
   </div>
-</header><main class="content" id="quarto-document-content">
-<div id="hero-heading">
-<p>Hi! My name is Lawrence and I’m a data scientist who loves deriving insight and value from data. I enjoy building machine learning and NLP solutions that make a difference. Currently I’m a Principal Data Scientist at <a href="https://www.ukg.com/">UKG</a>. Prior to that, I’ve held data science positions at <a href="https://www.medidata.com/">Medidata</a>, <a href="https://www.pimco.com/">PIMCO</a>, <a href="https://happymoney.com/">Payoff</a> and <a href="https://allianz.com/">Allianz</a>. Prior to getting into data science, I was an actuary.</p>
-<p>On this site I keep a <a href="https://lawwu.github.io/blog.html">technical blog</a> and resume. I also enjoy <a href="https://lawwu.github.io/modest-money-guide/">writing about personal finance</a>.</p>
-</div>
+  </div>
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="mailto:lawrencewu1+blog@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://www.dropbox.com/s/dkg62407k1rp8zn/Resume%20-%20Lawrence%20Wu.pdf?dl=0" class="about-link" rel="" target="">
-    <i class="bi bi-file-pdf"></i>
-     <span class="about-link-text">Resume</span>
-  </a>
-  <a href="https://www.linkedin.com/in/lawrencewu920/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/lawwu" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://twitter.com/law_wu" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 28, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="key-takeaways" class="level1">
+<h1>Key Takeaways:</h1>
+<ul>
+<li>Evaluation is critical: It drives the iterative process of improving your LLM application, enabling you to make informed decisions about prompt engineering, fine-tuning, and model selection.</li>
+<li>Don’t overcomplicate things: Start simple with unit tests and focus on practical metrics that align with your specific use case. Avoid building overly complex evaluation frameworks prematurely.</li>
+<li>Human judgment is still essential: While LMs can assist with evaluation, human experts are ultimately responsible for defining what constitutes good performance and aligning the LLM to those preferences.</li>
+<li>Look at your data: Regularly examine the inputs and outputs of your LLM system, as well as production data, to identify failure modes, refine evaluation criteria, and ensure the system is behaving as intended.</li>
+<li>Evaluation is iterative: Both evaluation criteria and the methods for evaluating those criteria will evolve as you learn more about the task and gather more data. Be prepared to adapt and refine your evaluation process over time.</li>
+</ul>
+</section>
+<section id="insights" class="level1">
+<h1>Insights:</h1>
+<ul>
+<li>Traditional ML evaluation principles still apply: Leverage existing evaluation techniques and adapt them to the nuances of LLMs. Don’t treat LLM evaluation as an entirely new field.</li>
+<li>Use case experts are invaluable: Involve them in the evaluation process from the beginning to ensure alignment between evaluation metrics and user needs.</li>
+<li>LM-assisted evaluation is not a silver bullet: While helpful for scaling evaluations and providing directional insights, it requires careful and methodical application. Multiple judges, models, and shots should be used, and human alignment should be checked regularly.</li>
+<li>Production endpoints are key: Evaluating directly against production endpoints minimizes drift and ensures consistency between development and production environments.</li>
+</ul>
+</section>
+<section id="action-items" class="level1">
+<h1>Action Items:</h1>
+<ul>
+<li>Implement unit tests: Identify and codify basic sanity checks for your LLM application to catch common errors.</li>
+<li>Start logging traces: Use existing tools like LangSmith, Braintrust, or Instruct to capture the inputs and outputs of your LLM pipeline for detailed analysis and debugging.</li>
+<li>Develop a simple evaluation framework: Focus on key metrics relevant to your use case, and build the framework iteratively as you gain more experience and data.</li>
+<li>Involve use case experts: Work with them to define evaluation criteria, review outputs, and provide feedback on the evaluation process.</li>
+<li>Explore LLM-assisted evaluation: Experiment with tools and techniques that leverage LLMs to scale your evaluation efforts, but do so with a critical eye and ensure human alignment.</li>
+</ul>
+</section>
+<section id="other-interesting-information" class="level1">
+<h1>Other Interesting Information:</h1>
+<ul>
+<li>Several tools and resources for LLM evaluation were mentioned, including LangSmith, Braintrust, Weights &amp; Biases, Instruct, Identic.Logfire, Weave, OpenTelemetry, and a book on recommendation systems by Brian Bishop.</li>
+<li>A research prototype interface called EvalGen was presented, which assists developers in creating and iterating on LLM evaluations in a more intuitive and user-friendly way.</li>
+<li>The talk emphasized the importance of minimizing wait time in the evaluation process by involving humans in the loop for tasks like editing criteria, refining criteria, and interactively grading LLM outputs.</li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -217,6 +259,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

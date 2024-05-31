@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lawrence Wu</title>
+<title>Lawrence Wu - Projects</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,6 +35,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -88,9 +89,9 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Lawrence Wu">
+<meta property="og:title" content="Lawrence Wu - Projects">
 <meta property="og:site-name" content="Lawrence Wu">
-<meta name="twitter:title" content="Lawrence Wu">
+<meta name="twitter:title" content="Lawrence Wu - Projects">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -117,7 +118,7 @@ cookieconsent.run({
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./projects.html" rel="" target="">
+    <a class="nav-link active" href="./projects.html" rel="" target="" aria-current="page">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
@@ -157,46 +158,36 @@ cookieconsent.run({
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-jolla">
- <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lawrence Wu</h1>
+<h1 class="title">Projects</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
-</header><main class="content" id="quarto-document-content">
-<div id="hero-heading">
-<p>Hi! My name is Lawrence and I’m a data scientist who loves deriving insight and value from data. I enjoy building machine learning and NLP solutions that make a difference. Currently I’m a Principal Data Scientist at <a href="https://www.ukg.com/">UKG</a>. Prior to that, I’ve held data science positions at <a href="https://www.medidata.com/">Medidata</a>, <a href="https://www.pimco.com/">PIMCO</a>, <a href="https://happymoney.com/">Payoff</a> and <a href="https://allianz.com/">Allianz</a>. Prior to getting into data science, I was an actuary.</p>
-<p>On this site I keep a <a href="https://lawwu.github.io/blog.html">technical blog</a> and resume. I also enjoy <a href="https://lawwu.github.io/modest-money-guide/">writing about personal finance</a>.</p>
-</div>
+  
+
+</header>
+
+<ul>
+<li><a href="./conferences.html">Conference Recap and Summaries</a> - Conference Recaps and Summaries</li>
+<li><a href="https://github.com/lawwu/transcripts">Transcripts</a> - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html</li>
+<li><a href="https://github.com/lawwu/data-science-toolkit">data-science-toolkit</a> - A toolkit for new hires in data science. Designed with Python users in mind</li>
+<li><a href="https://github.com/lawwu/awesome-llamas">awesome-llamas</a> - Llama resources</li>
+<li><a href="./ai_resources.html">AI Resources</a> - A curated collection of resources to learn AI</li>
+</ul>
 
 
-</main> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="mailto:lawrencewu1+blog@gmail.com" class="about-link" rel="" target="">
-    <i class="bi bi-envelope"></i>
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://www.dropbox.com/s/dkg62407k1rp8zn/Resume%20-%20Lawrence%20Wu.pdf?dl=0" class="about-link" rel="" target="">
-    <i class="bi bi-file-pdf"></i>
-     <span class="about-link-text">Resume</span>
-  </a>
-  <a href="https://www.linkedin.com/in/lawrencewu920/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/lawwu" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="https://twitter.com/law_wu" class="about-link" rel="" target="">
-    <i class="bi bi-twitter"></i>
-     <span class="about-link-text">Twitter</span>
-  </a>
-</div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -217,6 +208,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

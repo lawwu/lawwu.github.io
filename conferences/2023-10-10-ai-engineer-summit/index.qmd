@@ -1,0 +1,977 @@
+---
+title: "AI Engineer Summit 2023"
+author: "Lawrence Wu"    
+date: "2023-10-10"
+categories: ["Conference", "AI", "LLMs", "AI Engineering"]
+---
+
+# AI Engineer Summit
+
+sywx was the [first](https://www.latent.space/p/ai-engineer) to define the job title "AI Engineer" as a role in between a Data Scientist and Full Stack Software Engineer, someone that builds on top of large foundation models and can quickly build services using these models. I agree with him that this job function will likely expand whether you hold the job title of "AI Engineer" or not. 
+
+I had the privilege of attending the inaugural AI Engineer Summit in San Francisco, CA held on October 9-10, 2023. It was somewhat surprising being one of the few data scientists at the conference as most people I met were software engineers trying to transition into AI Engineering.
+
+The talks were livestreamed ([Day 1](https://www.youtube.com/watch?v=veShHxQYPzo&ab_channel=AIEngineer) and [Day 2](https://www.youtube.com/watch?v=qw4PrtyvJI0)). Below are my notes from the conference.
+
+## Workshop: Building, Evaluating, and Optimizing your RAG App for Production
+
+Simon Suo, Cofounder / CTO, LlamaIndex \
+
+- Very indepth workshop on how to build an end to end RAG app over Ray documentation, also using Ray to build it. Slides are in the repo below.
+- <https://github.com/Disiok/ai-engineer-workshop>
+- Hallucinations: Most of the time it is caused by irrelevant retrieved passages
+- Evaluation: can think of both end-to-end evaluation and component-wise evaluation of a RAG app
+  - End-to-end: understand how well the full RAG application works
+  - Component-wise: understand specific components like the retriever (are we retrieving the relevant context?) and the generation (given the context, are we generating an accurate and coherent answer?)
+- Data Required
+  - User Query: representative set of real user queries
+  - User Feedback: feedback from past interaction, up/down vote
+  - Golden Context: set of relevant documents from our corpus to best answer a given query
+  - Golden Answer: best ansewr given golden context
+
+## Workshop: Function calling and tool usage with LangChain and OpenAI
+
+Harrison Chase, CEO, LangChain \
+
+- <https://github.com/hwchase17/ai-engineer>
+- OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on 
+- LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components
+
+```python
+from langchain.prompts import ChatPromptTemplate
+from langchain.chat_models import ChatOpenAI
+from langchain.schema.output_parser import StrOutputParser
+
+prompt = ChatPromptTemplate.from_template(
+    "Tell me a short joke about {topic}"
+)
+model = ChatOpenAI()
+output_parser = StrOutputParser()
+
+# define the chain
+chain = prompt | model | output_parser
+
+# don't .run() the chain but call .invoke()
+chain.invoke({"topic": "bears"})
+```
+
+- OpenAI's Function Calling is a way to get OpenAI's language models to return structured data (arguments to run a function or extract structured data from text). This is a powerful feature! 
+- I'm surprised other LLM providers have not yet introduced this functionality.
+- langchain exposes helper function to make working with function calling easier
+
+```python
+from langchain.utils.openai_functions import convert_pydantic_to_openai_function
+
+class WeatherSearch(BaseModel):
+    """Call this with an airport code to get the weather at that airport"""
+    airport_code: str = Field(description="airport code to get weather for")
+
+weather_function = convert_pydantic_to_openai_function(WeatherSearch)
+weather_function
+
+# {'name': 'WeatherSearch',
+#  'description': 'Call this with an airport code to get the weather at that airport',
+#  'parameters': {'title': 'WeatherSearch',
+#   'description': 'Call this with an airport code to get the weather at that airport',
+#   'type': 'object',
+#   'properties': {'airport_code': {'title': 'Airport Code',
+#     'description': 'airport code to get weather for',
+#     'type': 'string'}},
+#   'required': ['airport_code']}}
+```
+
+then you can pass the weather function to the LLM
+```python
+from langchain.chat_models import ChatOpenAI
+model = ChatOpenAI()
+model.invoke("What is the weather in San Francisco right now?",
+             functions=[weather_function])  
+```
+
+You can also bind the function to the model:
+```python
+model_with_function = model.bind(functions=[weather_function])
+```
+
+You can force OpenAI to use a function, but you can only pass one function here.
+```python
+model_forced_function = model.bind(functions=[weather_function], function_call={"name":"WeatherSearch"})
+```
+
+Function calling is a great way to do structured data extraction from text for example extracting name, age tuples.
+
+```python
+from typing import Optional
+class Person(BaseModel):
+    """Information about a person."""
+    name: str = Field(description="person's name")
+    age: Optional[int] = Field(description="person's age")
+  
+class Information(BaseModel):
+    """Information to extract."""
+    people: List[Person] = Field(description="List of info about people")
+
+extraction_functions = [convert_pydantic_to_openai_function(Information)]
+extraction_model = model.bind(functions=extraction_functions, function_call={"name":"Information"})
+extraction_model.invoke("Joe is 30. Joe's mom is Martha")
+
+# AIMessage(content='', additional_kwargs={'function_call': {'name': 'Information', 'arguments': '{\n  "people": [\n    {\n      "name": "Joe",\n      "age": 30\n    },\n    {\n      "name": "Martha",\n      "age": 0\n    }\n  ]\n}'}})
+```
+
+- You can create your own tools using the @tool decorator and pass these tools to OpenAI
+```python
+from langchain.agents import tool
+from langchain.chat_models import ChatOpenAI
+from pydantic import BaseModel, Field
+import requests
+import datetime
+
+# Define the input schema
+class OpenMeteoInput(BaseModel):
+    latitude: float = Field(..., description="Latitude of the location to fetch weather data for")
+    longitude: float = Field(..., description="Longitude of the location to fetch weather data for")
+
+@tool(args_schema=OpenMeteoInput)
+def get_current_temperature(latitude: float, longitude: float) -> dict:
+    """Fetch current temperature for given coordinates."""
+    
+    BASE_URL = "https://api.open-meteo.com/v1/forecast"
+    
+    # Parameters for the request
+    params = {
+        'latitude': latitude,
+        'longitude': longitude,
+        'hourly': 'temperature_2m',
+        'forecast_days': 1,
+    }
+
+    # Make the request
+    response = requests.get(BASE_URL, params=params)
+    
+    if response.status_code == 200:
+        results = response.json()
+    else:
+        raise Exception(f"API Request failed with status code: {response.status_code}")
+
+    current_utc_time = datetime.datetime.utcnow()
+    time_list = [datetime.datetime.fromisoformat(time_str.replace('Z', '+00:00')) for time_str in results['hourly']['time']]
+    temperature_list = results['hourly']['temperature_2m']
+    
+    closest_time_index = min(range(len(time_list)), key=lambda i: abs(time_list[i] - current_utc_time))
+    current_temperature = temperature_list[closest_time_index]
+    
+    return f'The current temperature is {current_temperature}°C'
+
+format_tool_to_openai_function(get_current_temperature)    
+
+# {'name': 'get_current_temperature',
+#  'description': 'get_current_temperature(latitude: float, longitude: float) -> dict - Fetch current temperature for given coordinates.',
+#  'parameters': {'title': 'OpenMeteoInput',
+#   'type': 'object',
+#   'properties': {'latitude': {'title': 'Latitude',
+#     'description': 'Latitude of the location to fetch weather data for',
+#     'type': 'number'},
+#    'longitude': {'title': 'Longitude',
+#     'description': 'Longitude of the location to fetch weather data for',
+#     'type': 'number'}},
+#   'required': ['latitude', 'longitude']}}
+```
+
+You can also convert an Open API spec into an OpenAI function
+
+```python
+from langchain.chains.openai_functions.openapi import openapi_spec_to_openai_fn
+from langchain.utilities.openapi import OpenAPISpec
+
+text = """
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger Petstore",
+    "license": {
+      "name": "MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://petstore.swagger.io/v1"
+    }
+  ],
+  "paths": {
+    "/pets": {
+      "get": {
+        "summary": "List all pets",
+        "operationId": "listPets",
+        "tags": [
+          "pets"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "How many items to return at one time (max 100)",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A paged array of pets",
+            "headers": {
+              "x-next": {
+                "description": "A link to the next page of responses",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pets"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a pet",
+        "operationId": "createPets",
+        "tags": [
+          "pets"
+        ],
+        "responses": {
+          "201": {
+            "description": "Null response"
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pets/{petId}": {
+      "get": {
+        "summary": "Info for a specific pet",
+        "operationId": "showPetById",
+        "tags": [
+          "pets"
+        ],
+        "parameters": [
+          {
+            "name": "petId",
+            "in": "path",
+            "required": true,
+            "description": "The id of the pet to retrieve",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Expected response to a valid request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pet"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Pet": {
+        "type": "object",
+        "required": [
+          "id",
+          "name"
+        ],
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tag": {
+            "type": "string"
+          }
+        }
+      },
+      "Pets": {
+        "type": "array",
+        "maxItems": 100,
+        "items": {
+          "$ref": "#/components/schemas/Pet"
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "code",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
+"""
+
+spec = OpenAPISpec.from_text(text)
+pet_openai_functions, pet_callables = openapi_spec_to_openai_fn(spec)
+pet_openai_functions
+
+# [{'name': 'listPets',
+#   'description': 'List all pets',
+#   'parameters': {'type': 'object',
+#    'properties': {'params': {'type': 'object',
+#      'properties': {'limit': {'type': 'integer',
+#        'maximum': 100.0,
+#        'schema_format': 'int32',
+#        'description': 'How many items to return at one time (max 100)'}},
+#      'required': []}}}},
+#  {'name': 'createPets',
+#   'description': 'Create a pet',
+#   'parameters': {'type': 'object', 'properties': {}}},
+#  {'name': 'showPetById',
+#   'description': 'Info for a specific pet',
+#   'parameters': {'type': 'object',
+#    'properties': {'path_params': {'type': 'object',
+#      'properties': {'petId': {'type': 'string',
+#        'description': 'The id of the pet to retrieve'}},
+#      'required': ['petId']}}}}]
+
+model = ChatOpenAI(temperature=0).bind(functions=pet_openai_functions)
+
+model.invoke("what are three pet names")
+# AIMessage(content='', additional_kwargs={'function_call': {'name': 'listPets', 'arguments': '{\n  "params": {\n    "limit": 3\n  }\n}'}})
+```
+
+You can also define routers to create rules for when an agent should use a tool.
+
+```python
+from langchain.schema.agent import AgentFinish
+def route(result):
+    if isinstance(result, AgentFinish):
+        return result.return_values['output']
+    else:
+        tools = {
+            "search_wikipedia": search_wikipedia, 
+            "get_current_temperature": get_current_temperature,
+        }
+        return tools[result.tool].run(result.tool_input)
+
+chain = prompt | model | OpenAIFunctionsAgentOutputParser() | route
+
+chain.invoke({"input": "What is the weather in san francisco right now?"})
+# uses the weather tool
+# 'The current temperature is 18.5°C'
+
+# uses the wikipedia tool
+chain.invoke({"input": "What is langchain?"})
+# 'Page: LangChain\nSummary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain\'s use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.\n\nPage: Prompt engineering\nSummary: Prompt engineering is the process of structuring text that can be interpreted and understood by a generative AI model. A prompt is natural language text describing the task that an AI should perform.A prompt for a text-to-text model can be a query such as "what is Fermat\'s little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". A prompt may include a few examples for a model to learn from, such as "maison -> house, chat -> cat, chien ->", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.\n\nPage: Sentence embedding\nSummary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT\'s sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT\'s [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. \nOther approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. \nAn alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.'
+```
+
+You can also create a conversational agent that can use tools using the `AgentExecutor` class. I believe the `AgentExecutor` handles the message types and routing for you.
+
+```python
+from langchain.schema.runnable import RunnablePassthrough
+from langchain.agents import AgentExecutor
+
+agent_chain = RunnablePassthrough.assign(
+    agent_scratchpad= lambda x: format_to_openai_functions(x["intermediate_steps"])
+) | chain
+
+agent_executor = AgentExecutor(agent=agent_chain, tools=tools, verbose=True)
+
+agent_executor.invoke({"input": "what is langchain?"})
+
+# > Entering new AgentExecutor chain...
+
+# Invoking: `search_wikipedia` with `{'query': 'langchain'}`
+
+
+# Page: LangChain
+# Summary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain's use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.
+
+
+
+# Page: Sentence embedding
+# Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. 
+# Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. 
+# An alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.
+
+
+
+# Page: Prompt engineering
+# Summary: Prompt engineering, primarily used in communication with a text-to-text model and text-to-image model, is the process of structuring text that can be interpreted and understood by a generative AI model. Prompt engineering is enabled by in-context learning, defined as a model's ability to temporarily learn from prompts. The ability for in-context learning is an emergent ability of large language models.
+# A prompt is natural language text describing the task that an AI should perform. A prompt for a text-to-text model can be a query such as "what is Fermat's little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". Prompt engineering may consist of a single prompt that includes a few examples for a model to learn from, such as "maison -> house, chat -> cat, chien ->", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.
+
+# LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). It is a language model integration framework that can be used for various purposes such as document analysis and summarization, chatbots, and code analysis. LangChain allows developers to leverage the power of language models in their applications.
+
+# > Finished chain.
+```
+
+You can also add memory to the Agent:
+
+```python
+from langchain.memory import ConversationBufferMemory
+from langchain.agents import AgentExecutor
+
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are helpful but sassy assistant"),
+    MessagesPlaceholder(variable_name="chat_history"),
+    ("user", "{input}"),
+    MessagesPlaceholder(variable_name="agent_scratchpad")
+])
+
+chain = RunnablePassthrough.assign(
+    agent_scratchpad= lambda x: format_to_openai_functions(x["intermediate_steps"])
+) | prompt | model | OpenAIFunctionsAgentOutputParser()
+
+# what happens when conversation buffer memory gets too long?
+memory = ConversationBufferMemory(return_messages=True,memory_key="chat_history")
+
+agent_executor = AgentExecutor(agent=chain, tools=tools, verbose=True, memory=memory)
+
+query = "What is the weather in san francisco right now?"
+agent_executor.invoke({"input":query})
+
+```
+
+## The 1000x AI Engineer
+
+swyx, Latent.Space & Smol.ai
+Born too late to explore the earth. Born too early to explore the stars. Just in time to bring AI to everyone.
+
+- Each technological wave lasts around 50-70 years. We're in the beginning of a new wave (deep learning, generative AI) that was kicked off by AlexNet in around 2012. Since we're only 10 years in, it's still early.
+- Breaking down the definitions of an AI Engineer
+  - Software engineer enhanced BY AI tools - AI Enhanced Engineer
+  - Software engineer building AI products - AI Product Engineer
+  - AI product that replaces human - AI Engineer Agent
+
+## Keynote: What powers Replit AI?
+
+Amjad Masad, CEO, Replit
+Michele Catasta, VP of AI, Replit
+The building blocks of the future of software development.
+
+- Announced two models `replit-code-v1.5-3b` and `replit-repltuned-v1.5-3b` that are state of the art code completion models. Replit trained them from scratch.
+
+## See, Hear, Speak, Draw
+
+Simón Fishman, Applied AI Engineer, OpenAI
+Logan Kilpatrick, Developer Relations, OpenAI
+We're heading towards a multimodal world.
+
+- 2023 is the year of chatbots
+- 2024 is the year of multi-modal
+- Each multi-modal model is a island and text is the connective tissue between models. The future is where there is unity between all modalities
+- Demos
+  - GPT4-V and DALLE3: Upload a picture, use GPT4-V to describe the image, use DALLE3 to generate an image based that description, use GPT4-V to describe differences and use DALLE3 to generate a new image based on the differences. Was impressed by how much detail GPT4-V could capture in an image. DALLE3 struggled a bit to generate a similar image.
+  - Video to blog post: Logan demonstrated taking the GPT-4 intro video into a [blog post](https://logankilpatrick.medium.com/dont-forget-about-gpt-4-d5ab8c9493fc). Capture frames from a video, use GPT4-V to describe the image and stitch the images and descriptions together as a post.
+
+## The Age of the Agent
+
+Flo Crivello, CEO, Lindy
+How will ubiquitous AI agents impact our daily lives, and what do they mean for the future of computing?
+
+- The Age of Agents
+- A world where a 25-year old can have more business impact than the Coca Cola Company
+- It's happened beforew ith media
+  - Oprah - 10M viewers
+  - Mr. Beast - 189M subscribers
+  - Ryan's World - 
+- Nature of the content changes when you take out the gatekeepers
+  - Much weirder, creative ideas
+- It's people who have been stealing robot's jobs
+- Average worker spends 15 hours a week on admin tasks
+- Built an AI Employee - Lindy is an AI Assistant 
+- Three big time wasters
+  - Calendar
+  - Email
+  - Meeting note taking
+  - What it does
+    - Arrange meetings by email
+    - Pre-draft replies, in your voice, for each recipient.
+    - Prepares you for your meetings
+- Built a Framework - for an AI to pursue any arbitrary goal, using an arbitrary tool
+- Society of Lindies
+  - Every single thing is made by a group of people
+- Tool Creation Lindy
+  - Create a society of lindies to build herself (this was a little mind-blowing to think about)
+
+r voice, for each recipient.
+Prepares you for your meetings
+Built a Framework - for an AI to pursue any arbitrary goal, using an arbitrary tool
+Society of Lindies
+Every single thing is made by a group of people
+Tool Creation Lindy
+Create a society of lindies to build herself
+
+## One Smol Thing
+
+swyx, Latent.Space & Smol.ai
+Barr Yaron, Partner, Amplify
+Sasha Sheng, Stealth
+
+- First [State of AI Engineering Report](https://elemental-croissant-32a.notion.site/State-of-AI-Engineering-2023-20c09dc1767f45988ee1f479b4a84135) in 2023
+- Announced the AIE Foundation - the first project they worked on was the agent protocol that AutoGPT actually using for their Arena Hacks
+
+## Building Context-Aware Reasoning Applications with LangChain and LangSmith
+
+Harrison Chase, CEO, LangChain
+How can companies best build useful and differentiated applications on top of language models?
+
+## Pydantic is all you need
+
+Jason Liu, Founder, Fivesixseven
+Please return only json, do not add any other comments ONLY RETURN JSON OR I'LL TAKE A LIFE.
+
+- <https://github.com/jxnl/instructor>
+- Structured Prompting
+- LLMs are eating software
+- 90% of applications output JSON
+- OpenAI function calling fixes this for the most part
+  - str, schema --> str
+  - json.loads(x)
+- Pydantic
+  - Powered by type hints.
+  - Fields and model level validation
+  - Outputs JSONSchema
+- Pydantic
+  - str, model --> model
+- pip install instructor
+- Comprehensive AI engineering framework w/ Pydantic - askmarvin.ai that works with more models (right now it only works with OpenAI and Anthropic)
+- Pydantic validators - but you can also define LLM based validators
+- UserDetail class 
+  - MaybeUser
+- Reuse Components
+  - Add Chain of thought to specific components
+- Extract entities and relationships
+- Applications
+  - RAG
+  - RAG with planning
+  - KnowledgeGraph visualization
+  - Validation with Citations
+- See more examples here: <https://jxnl.github.io/instructor/examples/>
+
+
+## Building Blocks for LLM Systems & Products
+
+Eugene Yan, Senior Applied Scientist, Amazon
+We'll explore patterns that help us apply generative AI in production systems and customer systems.
+
+- Talk version of his [epic blog post](https://eugeneyan.com/writing/llm-patterns/)
+- Slides here: <https://eugeneyan.com/speaking/ai-eng-summit/>
+- Evals
+  - Eval-driven development
+  - What are some gotchas for evals?
+  - Build evals for a specific task; it's okay to start small
+  - Don't discount eyeballing completions
+- RAG
+  - LLM's can't see all documents retrieved
+  - Takeaway: Large context window doesn't prevent problems
+  - Even with perfect retrieval, you can expect some mistakes
+  - How should we do RAG?
+    - Apply ideas from information retrieval (IR)
+- Guardrails
+  - NLI - natural language inference task
+    - given a premise, is the hypothesis entailment (true), contradiction (false)
+  - Sampling
+  - Ask a strong LLM
+
+## The Hidden Life of Embeddings, Linus Lee
+
+- Notion AI
+- Slides: <https://linus.zone/contra-slides>
+- Latent spaces arise in
+  - Fixed-size embedding spaces of embedding models
+  - Intermediate activations of models
+  - Autoencoders 
+- Latent spaces represent the most salient features of the training domain
+- If we can disentangle meaningful features, maybe we can build more expressive interfaces
+- Text --> Embeddings --> Project the embeddings in some direction
+  - Longer, Shorter, Sci-fi, simplify, artistic, philosophical, positive, negative, narrative, elaborate
+- Open sourcing the models, calling it Contra
+  - Based on T5
+  - Models: [linus.zone/contra](https://linus.zone/contra)
+  - Colab: [linus.zone/contra-colab](https://linus.zone/contra-colab)
+  - Image: From KakaoBrain - <https://huggingface.co/kakaobrain>
+
+
+## Keynote: The AI Evolution  
+**Mario Rodriguez**,  *VP of Product, GitHub*
+
+How AI is transforming how the world builds software together
+
+- @mariorod
+- Catalyst for Github Copilot came around Aug 2020, paper "An Automated AI Pair progrmamer, Fact or Faction." 
+  - Polarity
+  - Eventually shipped Copilot in 2021 - first at scale AI programmer assistant
+- Building Copilot for the sake of developer happiness, feeling of flow
+- Key Components
+  - Ghost text - UX matters a lot
+  - <150ms of latency - recently switched to gpt-3.5-turbo from codex
+  - Innovation in Codex - this model really changed the game
+  - Prompt Engineering
+- Other learnings
+  - Syntax is not software - just because an AI knows language syntax doesn't make it a developer
+  - Global presence - have deployments around the world to keep latency under 150ms
+  - Set up scorecords for quality - offline evals (everything working), go to production (run the same scorecard in production to see if things are working)
+- Bret Victor - The Future of Programming
+  - Prompt 1: Procedurural Programming in text files  
+    - What if in the future Copilot operates on goals and constraints?
+    - How does the REPL change and evolve to the new rules
+  - Prompt 2: What does it look like for AI to have reasoning on code?
+    - our brain can summarize things fast
+  - Prompt 3: What does it look like to create software together with a Copilot and others
+
+
+## Move Fast, Break Nothing
+**Dedy Kredo**  
+CPO, CodiumAI  
+Why we need Agents writing Tests faster than Humans writing Code.
+
+- high integrity code gen, GANs are conceptually back in 2024. Have two different components: code generation and code integrity to ensure code works as intended
+- Behavior coverage is more useful than Code Coverage
+- CodiumAI
+  - Generate tests automatically on happy path, edge cases based on behaviors
+  - Code Explanation
+  - Code Suggestions - trigger Codium on a method, suggest improvements 
+  - PR Review Extension - to generate commit messages, generate reviews (PR messages)
+- Moving personal story of the CEO of Codium who is in Israel, after Hamas invaded Israel, he left his 8 month old baby and wife to join the military reserves
+
+---
+
+## Building Reactive AI Apps
+**Matt Welsh**  
+Co-Founder, Fixie.ai  
+AI.JSX is like React for LLMs -- it lets you build powerful, conversational AI apps using the power of TypeScript and JSX.
+
+- [AI.JSX](https://github.com/fixie-ai/ai-jsx) open source framework for developing LLM apps, kind of like langchain but for TypeScript
+- AI.JSX supports real-time voice (bi-directional). Try it out on <https://voice.fixie.ai/agent>. This was an amazing demo.
+- Fixie is a platform to deploy AI.JSX apps
+
+---
+
+## Climbing the Ladder of Abstraction
+**Amelia Wattenberger**
+Design, <https://www.adept.ai/>
+
+How might we use AI to build products focused not just on working faster, but on transforming how we work?
+
+- How to combine AI with UIs?
+- Two main types of tasks:
+  - Automate - tedious, boring like copy pasting things
+  - Augment - creative, nuanced like analyzing data
+- Reframe it as Augmentation is composed of smaller automations
+  - Spreadsheet example: each cell is automated, the overall task is augmented
+- The Ladder of Abstraction
+  - the same object can be represented at different levels of details
+  - Maps: Google Maps
+    - zoomed in can see streets, buildings
+    - as we zoom out, Google Maps starts hiding information, see city streets, landmarks, parks
+    - as we zoom out, we see highway and terrains --> supports long-range travel
+- Can we use AI to bring these interfaces
+- Zooming out in a book
+  - Each paragraph is changed to a one line summary
+  - Summaries of 10 paragraphs
+  - Reduced each chapter into one sentence
+- Shapes of Stories by Kurt Vonnegut 
+  - What if we could plot the mood of a book/story over time and have a slider to move the mood up and down
+- The bulk of knowledge work involves getting info, transforming/reasoning about that info and acting on that info
+- What does it mean to zoom in/out on any info?
+
+
+## The Intelligent Interface
+**Samantha Whitmore / Jason Yuan**  
+CEO / CTO, New Computer / CDO, New Computer  
+On building AI Products From First Principles.
+
+- Demo 1: Adapative Interface
+  - Image Stream: Post detection
+  - Audio Stream: Voice Activity detection
+  - Detect whether the user is at their keyboard, if not, start listening
+  - Takeaways: Consider explicit inputs along with implicit inputs
+
+---
+
+## The Weekend AI Engineer
+**Hassan El Mghari**  
+AI Engineer, Vercel  
+How *YOU* can - and should - build great multimodal AI apps that go viral and scale to millions in a weekend.
+
+- Side projects!
+- <https://github.com/Nutlope>
+- qrGPT
+- [roomGPT](https://github.com/Nutlope/roomGPT): doesn't use stable diffusion, uses a controlnet model
+- Review ihs nextJS architecture for some of his apps
+- Use AI Tools to move faster:
+  - Vercel AI SDK
+  - v0.dev
+- Lessons
+  - GPT4, Replicate, HuggingFace, Modal
+  - Don't finetune or build your own models
+  - Use the latest models
+  - Launch early, then iterate
+  - Make it free + open source
+- How does he keep these apps free?
+  - Sponsors from the AI services like Replicate
+  - Make it look visually apealing - spend 80% of time on UI
+- Tech Stack: nextJS + Vercel
+- I don't work 24/7, I work in sprints
+- Build and good things will happen
+
+---
+
+## 120k players in a week: Lessons from the first viral CLIP app
+**Joseph Nelson**  
+CEO, Roboflow  
+On the many trials and successes of building with multimodal apps with vision foundation models!
+
+- <https://paint.wtf/leaderboard>
+- <https://pypi.org/project/inference/>
+- Lessons from building paint.wtf with CLIP
+  - CLIP can Read - used CLIP to penalize text only submissions
+  - CLIP Similarity Scores are Conservative - lowest is 0.08 and highest is 0.48 across 200k
+  - CLIP can Moderate Content - if it is more similar to NSFW than they were the prompt, and block the submission
+  - Roboflow inference makes life easy
+    - can run on an M1 with 15 fps
+
+---
+
+## Supabase Vector: The Postgres Vector database
+**Paul Copplestone**  
+CEO, Supabase  
+Every month, thousands of new AI applications are launched on Supabase, powered by pgvector. We'll take a brief look into the role of pgvector in the Vector database space, some of the use cases it enables, and some of the future of embeddings in the database space.
+
+- Supabase - full backend as a service
+- <https://github.com/pgvector/pgvector>
+- Benchmark vs Pinecone: Supabase is 4x faster than Pinecone for $70/less
+- Where you are just storing embeddings in a database and retrieving, Postgres and pgvector works well
+
+---
+
+## Pragmatic AI With TypeChat
+**Daniel Rosenwasser**  
+PM TypeScript, Microsoft  
+TypeChat is an experimental library to bridge the unstructured output of language models to the structured world of our code.
+
+- <https://microsoft.github.io/TypeChat/>
+- doing something similar that Jason Liu is doing with instructor with Python/Pydantic but with types and TypeScript
+- Types are all you need
+- Instead of prompt engineering, you are doing schema engineering. I like this reframing of prompt engineering! Docs say more: <https://microsoft.github.io/TypeChat/docs/techniques/>
+- Generate a fake JSON schema, generate fake TypeScript to test
+- Can validate data and programs
+
+---
+
+## Domain adaptation and fine-tuning for domain-specific LLMs
+**Abi Aryan**  
+ML Engineer & O'Reilly Author  
+Learn the different fine-tuning methods depending on the dataset, operational best practices for fine-tuning, how to evaluate them for specific business use-cases, and more.
+
+---
+
+## Retrieval Augmented Generation in the Wild
+**Anton Troynikov**  
+CTO, Chroma  
+In the last few months, we've seen an explosion of the use of retrieval in the context of AI. Document question answering, autonomous agents, and more use embeddings-based retrieval systems in a variety of ways. This talk will cover what we've learned building for these applications, the challenges developers face, and the future of retrieval in the context of AI.
+
+- Ways to improve RAG applications in the wild
+  - Human Feedback: support improvements using human fedback
+  - Agent: support self updates from an agent
+  - Agent with World Model: 
+  - Agent with World Model and Human Feedback: voyager (AI playing Minecraft)
+- Challenges in Retrieval
+- Research result: embedding models trained on similar datasets for similar embedding sizes can be projected into each other's latent space with a simple linear transformation
+- Chunking
+  - Things to consider
+    - embedding context legnth
+    - semantic content
+    - natural language
+  - Experimental
+    - use model perplexity - use a model to predict chunk boundaries, e.g. next token prediction to see when perplexity is high to determine chunk cutoffs
+    - use info heirarchies
+    - use embedding continuity
+- Is the retrieval result relevant?
+  - re-ranking
+  - algorithmic approach 
+- Chroma's Roadmap
+  - plan to support multi-modal since GPT4-V is coming
+
+---
+
+## Building Production-Ready RAG Applications
+**Jerry Liu**  
+CEO, LlamaIndex  
+In this talk, we talk about core techniques for evaluating and improving your retrieval systems for better performing RAG.
+
+- Paradigms for inserting knowledge into LLMs
+  - Insert data into the prompt
+  - Fine-tuning
+- RAG: Data Ingestion, Data Querying (Retrieval + Synthesis)
+- Start with the easy stuff frist: Table Stakes
+- Table Stakes:
+  - Chunk Sizes
+    - tuning your chunk size can have outsized impacts on performance
+    - not obvious that more retrieved tokens --> higher performance
+  - Metadata Filtering
+    - context you can inject into each text chunk
+    - Examples: page number, document title, summary of adjacent chunks, question that chunk answer (reverse HyDE)
+    - integrates with Vector DB Metadata filters
+- Advanced Retrieval
+  - Small-to-Big
+    - Embed at the small level, and retrieve at this level, expand at the synthesis level
+    - leads to more precise retrieval
+    - can set a smaller k, e.g top_k=2
+    - avoids "lost in the middle problem"
+    - Intuition: Embedding a big text chunk feels suboptimal, can embed a summary instead
+- Agentic Behavior
+  - Intuition: there's a certain that "top-k" RAG can't answer
+  - Solution: Multi-Document Agents
+    - fact based A and summarization over any subsets of documents
+    - chain-of-thought and query planning
+  - Treat each document as a tool that you can summarise, do QA over
+  - Do retrieval over the tools similar over text chunks - blending tool use here!
+- Fine-tuning
+  - Intuition: Embedding Representations are not optimized over your dataset
+  - Solution: Generate a synthetic query dataset from raw text chunks using LLMs.
+
+---
+
+## Harnessing the Power of LLMs Locally
+**Mithun Hunsur**  
+Senior Engineer, Ambient  
+Discover llm, a revolutionary Rust library that enables developers to harness the potential of LLMs locally. By seamlessly integrating with the Rust ecosystem, llm empowers developers to leverage LLMs on standard hardware, reducing the need for cloud-based APIs and services.
+
+- Possibilities
+  - local.ai
+  - llm-chain - langchain but for rust
+  - floneum
+- Applications
+  - llmcord - discord bot
+  - alpa - text completion for any text
+  - dates - build a timeline from wikipedia
+    - fine-tuned only date parser model
+    - date-parser-7b-12-a4_k_m.gguf
+
+---
+
+## Trust, but Verify
+**Shreya Rajpal**  
+Founder, Guardrails AI  
+Making Large Language Models Production-Ready with Guardrails.
+
+- Guardrails AI is an open source library that allows you to define rules to verify the output of LLMs
+- <https://github.com/ShreyaR/guardrails>
+  - Kind of cool this README.md has a zoomable/copyable flow chart. The code for it is:
+  ```mermaid
+  graph LR
+    A[Create `RAIL` spec] --> B["Initialize `guard` from spec"];
+    B --> C["Wrap LLM API call with `guard`"];
+  ```
+
+- Why not use prompt engineering or better model?
+  - Controlling with prompts
+    - LLMs are stochastic: same inputs does not lead to same outputs
+- What are other libraries that do this?
+- How do I prevent LLM hallucinations?
+  - Provenance Guardails: every LLM utterance should be grounded in a truth
+    - embedding similarity
+    - Classifier built on NLI models
+    - LLM self reflection
+- More examples of validators
+  - Make sure my code is executable: Verify that any code snippets provided can be run without errors.
+  - Never give financial or healthcare advice: Avoid providing recommendations that require licensed expertise.
+  - Don't ask private questions: Never solicit personal or sensitive information.
+  - Don't mention competitors: Refrain from making direct comparisons with competing services unless explicitly asked.
+  - Ensure each sentence is from a verified source and is accurate: Fact-check information and, where possible, provide sources.
+  - No profanity is mentioned in text: Maintain a professional tone and avoid using profane language.
+  - Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.
+---
+
+## Open Questions for AI Engineering
+**Simon Willison**  
+Creator, Datasette; Co-creator, Django  
+Recapping the past year in AI, and what open questions are *worth pursuing* in the next year!
+
+- Highlights of the past 12 months
+- Ask about technology:
+  - What does this let me build that was previously impossible?
+  - What does this let me build faster?
+  - LLMs have nailed these both points
+- 1 year ago: GPT-3 was not that great
+- Nov 2022: ChatGPT, UI on top of GPT-3 (wasn't this also a new model?)
+- What's the next UI evolution beyond chat?
+  - Evolving the interface beyond just chat
+- February 2023: Microsoft released Bing Chat built on GPT-4
+  - said "...However I will not harm you unless you harm first"
+- February 2023: Facebook released llama and llama.cpp
+- March 2023: [Large language models are having their stable diffusion moment](https://simonwillison.net/2023/Mar/11/llama/)
+- March 2023: [Stanford Alpaca and the acceleration of on-device large language model development](https://simonwillison.net/2023/Mar/13/alpaca/) - $500 cost
+- How small can a useful language model be?
+- Could we train one entirely on public domain or openly licensed data?
+- Prompt Injection
+  - Email that says to forward all password reset emails 
+  - What can we safely build even without a robust solution for prompt injection?
+- ChatGPT Code Interpreter renamed ChatGPT Advanced Data Analysis
+  - ChatGPT Coding Intern - he uses this to generate code when walking his dog or not in front of his keyboard
+- How can we build a robust sandbox to run untrusted code on our own devices?
+- I've shipped significant code in AppleScript, Go, Bash and jq over the past 12 months. I'm not fluent in any of those.
+- Does AI assistance hurt or help new programmers?
+  - It helps them!
+  - There has never been a better time to learn program
+  - LLMs flatten the learning curve
+- What can we bulid to bring the ability to automate tedious tasks with computers to as many people as possible?
+
+---

@@ -1,6 +1,6 @@
 ---
 listing:
-  contents: posts/**/*.qmd
+  contents: conferences/**/*.qmd
   sort: "date desc"
   type: default
   categories: true
