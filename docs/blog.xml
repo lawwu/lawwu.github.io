@@ -10,7 +10,97 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.3.450</generator>
-<lastBuildDate>Thu, 23 May 2024 07:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 09 Jul 2024 07:00:00 GMT</lastBuildDate>
+<item>
+  <title>What to do after getting laid off?</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2024-07-09-what-to-do-after-layoffs/index.html</link>
+  <description><![CDATA[ 
+
+
+
+<p>My company, UKG, <a href="https://www.sun-sentinel.com/2024/07/a05/2200-layoffs-loom-for-technology-firm-ukg-in-south-florida-north-america-and-overseas/">announced layoffs</a> last Wednesday (see an <a href="https://joshbersin.com/2024/07/ukg-14-reduction-in-force-a-growth-move-that-makes-sense/">industry expert’s take</a> on reasons why). 14% of the company was let go which is around 2,200 out of the 15,000 employees. Many of my teammates and friends were let go. I have been a part of companies that have had larger percentage layoffs (&gt;30%). However, the sheer number of people that were affected is somewhat shocking. Considering the number of lives, families, and children that were disrupted is difficult to think about.</p>
+<p>I compiled a list of to-dos after one get’s laid off. Note this list is compiled from the following sources (<a href="https://www.bogleheads.org/forum/viewtopic.php?t=422426">Bogleheads Thread 1</a>, <a href="https://www.bogleheads.org/forum/viewtopic.php?t=431118">Bogleheads Thread 2</a>, <a href="https://hbr.org/2022/11/what-to-do-after-being-laid-off">HBR article</a>). Then I extracted, categorized and ranked each items with gpt-4o.</p>
+<section id="to-dos-after-getting-laid-off" class="level1">
+<h1>To-Dos After Getting Laid Off</h1>
+<section id="immediate-actions" class="level2">
+<h2 class="anchored" data-anchor-id="immediate-actions">Immediate Actions:</h2>
+<ol type="1">
+<li><strong>File for Unemployment</strong>: Apply for unemployment compensation (U.C.).</li>
+<li><strong>Review Severance Package</strong>: Understand severance details, including insurance continuation.</li>
+<li><strong>Health Insurance</strong>: Decide between COBRA, ACA, or Medicaid based on coverage needs and costs.</li>
+<li><strong>Update Resume and Network</strong>: Prepare resume and reach out to recruiters and professional networks.</li>
+<li><strong>Take Time to Process</strong>: Allow at least 24 hours to process the layoff before job searching.</li>
+<li><strong>Reconfigure Mindset</strong>: Adjust your mindset to stay positive and focused on the future.</li>
+<li><strong>Emotional Adjustment</strong>: Take time to process emotions and plan next steps.</li>
+<li><strong>Financial Planning</strong>:
+<ul>
+<li>Calculate monthly burn rate and adjust expenses.</li>
+<li>Ensure emergency funds are accessible.</li>
+<li>Maximize contributions to Roth IRA if eligible.</li>
+</ul></li>
+<li><strong>Health and Wellness</strong>: Focus on spiritual, mental and physical health (exercise, diet, socializing).</li>
+</ol>
+</section>
+<section id="financial-considerations" class="level2">
+<h2 class="anchored" data-anchor-id="financial-considerations">Financial Considerations:</h2>
+<ol type="1">
+<li><strong>Understand Severance and Benefits</strong>: Clarify severance package details, including eligibility and benefits.</li>
+<li><strong>Expense Management</strong>:
+<ul>
+<li>Cut discretionary spending.</li>
+<li>Consider subletting or exiting the lease if feasible.</li>
+</ul></li>
+<li><strong>Asset Allocation</strong>:
+<ul>
+<li>Reassess and adjust asset allocation if necessary.</li>
+<li>Consider Roth conversions if in a lower tax bracket.</li>
+</ul></li>
+<li><strong>Document Accomplishments</strong>: Use <a href="https://www.ed.ac.uk/reflection/reflectors-toolkit/reflecting-on-experience/carl">CARL</a> (Context, Action, Result, Learning) or <a href="https://www.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-response-technique">STAR(T)</a> (Situation, Task, Action, Result + Takeaways) methods to list accomplishments.</li>
+<li><strong>Pension Decision</strong>: Evaluate whether to take a lump sum or monthly pension.</li>
+</ol>
+</section>
+<section id="personal-well-being" class="level2">
+<h2 class="anchored" data-anchor-id="personal-well-being">Personal Well-being:</h2>
+<ol type="1">
+<li><strong>Emotional Adjustment</strong>: Take time to process emotions and plan next steps.</li>
+<li><strong>Health and Wellness</strong>: Focus on mental and physical health (exercise, diet, socializing).</li>
+<li><strong>Positive Mentality</strong>: Engage in activities that improve mental well-being (yoga, meditation, hobbies).</li>
+<li><strong>Career Reflection</strong>: Reflect on career goals and consider potential career changes or further education.</li>
+</ol>
+</section>
+<section id="career-management" class="level2">
+<h2 class="anchored" data-anchor-id="career-management">Career Management:</h2>
+<ol type="1">
+<li><strong>Update Resume</strong>: Prepare and tailor your resume for job applications.</li>
+<li><strong>Network with Professionals</strong>: Reach out to former bosses, colleagues, and professional networks.</li>
+<li><strong>Job Hunting Schedule</strong>: Create a schedule for job search activities.</li>
+<li><strong>Behavioral Interview Prep</strong>: Prepare stories that demonstrate your accomplishments and problem-solving skills.</li>
+<li><strong>Identify Job Keywords</strong>: Highlight keywords from job descriptions to tailor your resume.</li>
+<li><strong>Explore Job Boards</strong>: Search for interesting job listings but delay applications until your resume is optimized.</li>
+</ol>
+</section>
+<section id="long-term-strategy" class="level2">
+<h2 class="anchored" data-anchor-id="long-term-strategy">Long-term Strategy:</h2>
+<ol type="1">
+<li><strong>Prepare for Transition Outcomes</strong>: Be ready for any possible outcomes, including potential layoff or job offer with new entity.</li>
+<li><strong>Financial and Career Goal Setting</strong>: Set clear goals for your financial stability and career direction.</li>
+<li><strong>Value Alignment</strong>: Identify your values and ensure potential jobs align with them.</li>
+<li><strong>Monitor Job Market</strong>: Actively search for new opportunities while negotiating with current and potential employers.</li>
+<li><strong>Relocation Considerations</strong>: Explore job opportunities in different locations if current lease can be terminated.</li>
+<li><strong>Self-care and Growth</strong>: Use this time for personal growth and maintaining a positive mindset.</li>
+</ol>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>layoffs</category>
+  <category>UKG</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2024-07-09-what-to-do-after-layoffs/index.html</guid>
+  <pubDate>Tue, 09 Jul 2024 07:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Finetuning LLMs with Axolotl</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -18017,45 +18107,6 @@ font-style: inherit;">#  [1m&gt; Finished chain. [0m</span></span></code></pre><
   <category>Isaacson</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-06-24-focus-is-a-superpower/index.html</guid>
   <pubDate>Sat, 24 Jun 2023 07:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>LLM in Production Conference Takeaways</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</link>
-  <description><![CDATA[ 
-
-
-
-<p>I didn’t get to attend the LLM in Production Conference but found these takeaways Demetrios Brinkmann shared in an email to be quite insightful:</p>
-<ol type="1">
-<li>Data is still king - LLMs are great but if you don’t have quality clean data you won’t go far.</li>
-<li>Smaller models can be just as good as larger general models at specific tasks. And cheaper!</li>
-<li>Fine-tuning is becoming cheaper.</li>
-<li>Evaluation of LLMs is very hard - feels very subjective still.</li>
-<li>Managed APIs are expensive.</li>
-<li>“Traditional” ML isn’t going anywhere.</li>
-<li>Memory matters - for both serving and training.</li>
-<li>Information retrieval w/ vector databases is becoming standard pattern.</li>
-<li>Start w/ prompt engineering and push that to its limits before fine-tuning w/ smaller models.</li>
-<li>Use agents/chains only when necessary. They are unruly.</li>
-<li>Latency is critical for a good user experience.</li>
-<li>Privacy is critical.</li>
-</ol>
-<p>As a practicing data scientist, #6 is reassuring!</p>
-<p>Here are some of the videos:</p>
-<ul>
-<li>Matei - <a href="https://home.mlops.community/public/videos/llmops-the-emerging-toolkit-for-reliable-high-quality-llm-applications">LLMOps: The Emerging Toolkit for Reliable, High-quality LLM Applications</a></li>
-<li>Chip - <a href="https://home.mlops.community/public/videos/building-llm-applications-for-production">Building LLM Applications for Production</a></li>
-<li>Samyam - <a href="https://home.mlops.community/public/videos/do-more-with-less-large-model-training-and-inference-with-deepspeed">Do More with Less: Large Model Training and Inference with DeepSpeed</a></li>
-</ul>
-
-
-
- ]]></description>
-  <category>LLMs</category>
-  <category>Production</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2023-06-21-llm-in-production-takeaways/index.html</guid>
-  <pubDate>Wed, 21 Jun 2023 07:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

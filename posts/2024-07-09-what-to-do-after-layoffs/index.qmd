@@ -1,0 +1,65 @@
+---
+title: "What to do after getting laid off?"
+author: "Lawrence Wu"    
+date: "2024-07-09"
+date-modified: "2024-07-09"
+categories: ["layoffs", "UKG"]
+---
+
+My company, UKG, [announced layoffs](https://www.sun-sentinel.com/2024/07/a05/2200-layoffs-loom-for-technology-firm-ukg-in-south-florida-north-america-and-overseas/) last Wednesday (see an [industry expert's take](https://joshbersin.com/2024/07/ukg-14-reduction-in-force-a-growth-move-that-makes-sense/) on reasons why). 14% of the company was let go which is around 2,200 out of the 15,000 employees. Many of my teammates and friends were let go. I have been a part of companies that have had larger percentage layoffs (>30%). However, the sheer number of people that were affected is somewhat shocking. Considering the number of lives, families, and children that were disrupted is difficult to think about.
+
+I compiled a list of to-dos after one get's laid off. Note this list is compiled from the following sources ([Bogleheads Thread 1](https://www.bogleheads.org/forum/viewtopic.php?t=422426), [Bogleheads Thread 2](https://www.bogleheads.org/forum/viewtopic.php?t=431118), [HBR article](https://hbr.org/2022/11/what-to-do-after-being-laid-off)). Then I extracted, categorized and ranked each items with gpt-4o.
+
+# To-Dos After Getting Laid Off
+
+## Immediate Actions:
+
+1. **File for Unemployment**: Apply for unemployment compensation (U.C.).
+2. **Review Severance Package**: Understand severance details, including insurance continuation.
+3. **Health Insurance**: Decide between COBRA, ACA, or Medicaid based on coverage needs and costs.
+4. **Update Resume and Network**: Prepare resume and reach out to recruiters and professional networks.
+5. **Take Time to Process**: Allow at least 24 hours to process the layoff before job searching.
+6. **Reconfigure Mindset**: Adjust your mindset to stay positive and focused on the future.
+7. **Emotional Adjustment**: Take time to process emotions and plan next steps.
+8. **Financial Planning**: 
+   - Calculate monthly burn rate and adjust expenses.
+   - Ensure emergency funds are accessible.
+   - Maximize contributions to Roth IRA if eligible.
+9. **Health and Wellness**: Focus on spiritual, mental and physical health (exercise, diet, socializing).
+
+## Financial Considerations:
+
+1. **Understand Severance and Benefits**: Clarify severance package details, including eligibility and benefits.
+2. **Expense Management**: 
+   - Cut discretionary spending.
+   - Consider subletting or exiting the lease if feasible.
+3. **Asset Allocation**: 
+   - Reassess and adjust asset allocation if necessary.
+   - Consider Roth conversions if in a lower tax bracket.
+4. **Document Accomplishments**: Use [CARL](https://www.ed.ac.uk/reflection/reflectors-toolkit/reflecting-on-experience/carl) (Context, Action, Result, Learning) or [STAR(T)](https://www.indeed.com/career-advice/interviewing/how-to-use-the-star-interview-response-technique) (Situation, Task, Action, Result + Takeaways) methods to list accomplishments.
+5. **Pension Decision**: Evaluate whether to take a lump sum or monthly pension.
+
+## Personal Well-being:
+
+1. **Emotional Adjustment**: Take time to process emotions and plan next steps.
+2. **Health and Wellness**: Focus on mental and physical health (exercise, diet, socializing).
+3. **Positive Mentality**: Engage in activities that improve mental well-being (yoga, meditation, hobbies).
+4. **Career Reflection**: Reflect on career goals and consider potential career changes or further education.
+
+## Career Management:
+
+1. **Update Resume**: Prepare and tailor your resume for job applications.
+2. **Network with Professionals**: Reach out to former bosses, colleagues, and professional networks.
+3. **Job Hunting Schedule**: Create a schedule for job search activities.
+4. **Behavioral Interview Prep**: Prepare stories that demonstrate your accomplishments and problem-solving skills.
+5. **Identify Job Keywords**: Highlight keywords from job descriptions to tailor your resume.
+6. **Explore Job Boards**: Search for interesting job listings but delay applications until your resume is optimized.
+
+## Long-term Strategy:
+
+1. **Prepare for Transition Outcomes**: Be ready for any possible outcomes, including potential layoff or job offer with new entity.
+2. **Financial and Career Goal Setting**: Set clear goals for your financial stability and career direction.
+3. **Value Alignment**: Identify your values and ensure potential jobs align with them.
+4. **Monitor Job Market**: Actively search for new opportunities while negotiating with current and potential employers.
+5. **Relocation Considerations**: Explore job opportunities in different locations if current lease can be terminated.
+6. **Self-care and Growth**: Use this time for personal growth and maintaining a positive mindset.
