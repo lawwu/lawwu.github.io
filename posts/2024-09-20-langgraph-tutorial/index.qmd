@@ -12,7 +12,7 @@ The LangChain team recently released the first course in their LangChain Academy
 
 ### Lesson 2 - State Reducers
 
-[Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/state-reducers.ipynb)
+- [Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/state-reducers.ipynb)
 
 Reducers are used to specify how state updates are performed when multiple nodes try to update the same key:
 
@@ -86,9 +86,8 @@ updated_state = add_messages(existing_messages, delete_messages)
 
 ### Lesson 3 - Multiple Schemas
 
-[Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/multiple-schemas.ipynb)
-
-A graph can have multiple states. This is useful for controlling what information is shown to the user.
+- [Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/multiple-schemas.ipynb)
+- A graph can have multiple states. This is useful for controlling what information is shown to the user.
 
 Private State: You can pass private state between nodes that isn't relevant for the overall graph input or output.
 
@@ -160,3 +159,154 @@ display(Image(graph.get_graph().draw_mermaid_png()))
 graph.invoke({"question":"hi"})
 # Output: {'answer': 'bye Lance'}
 ```
+
+### Lesson 4 - Trim and Filter Messages
+
+- [Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/trim-filter-messages.ipynb)
+- You can filter messages using the `RemoveMessage` class.
+- As a use case, you can preserve the state (e.g. with 5 messages in the message history) but only call the LLM with the last n messages
+- You can also trim messages based on a set number of tokens using `trim_messages`
+
+Filtering messages using RemoveMessage:
+
+```python
+from langchain_core.messages import RemoveMessage
+
+def filter_messages(state: MessagesState):
+    # Delete all but the 2 most recent messages
+    delete_messages = [RemoveMessage(id=m.id) for m in state["messages"][:-2]]
+    return {"messages": delete_messages}
+
+builder = StateGraph(MessagesState)
+builder.add_node("filter", filter_messages)
+builder.add_node("chat_model", chat_model_node)
+builder.add_edge(START, "filter")
+builder.add_edge("filter", "chat_model")
+```
+
+Trimming messages based on token count:
+```python
+from langchain_core.messages import trim_messages
+
+def chat_model_node(state: MessagesState):
+    messages = trim_messages(
+            state["messages"],
+            max_tokens=100,
+            strategy="last",
+            token_counter=ChatOpenAI(model="gpt-4o"),
+            allow_partial=False,
+        )
+    return {"messages": [llm.invoke(messages)]}
+```
+
+### Lesson 5 - Chatbot w/ Summarizing Messages and Memory
+
+- Interesting example of using the above ideas to create a chatbot that creates a running summary of messages as a way of condensing the memory.
+- You can pass a thread to the LangChain runnable and the runnable will continue the conversation from that previous state.
+
+
+```python
+from langgraph.graph import MessagesState
+class State(MessagesState):
+    summary: str
+
+from langchain_core.messages import SystemMessage, HumanMessage, RemoveMessage
+
+# Define the logic to call the model
+def call_model(state: State):
+    
+    # Get summary if it exists
+    summary = state.get("summary", "")
+
+    # If there is summary, then we add it
+    if summary:
+        
+        # Add summary to system message
+        system_message = f"Summary of conversation earlier: {summary}"
+
+        # Append summary to any newer messages
+        messages = [SystemMessage(content=system_message)] + state["messages"]
+    
+    else:
+        messages = state["messages"]
+    
+    response = model.invoke(messages)
+    return {"messages": response}
+
+```
+
+Note, here we'll use `RemoveMessage` to filter our state after we've produced the summary.
+```python
+def summarize_conversation(state: State):
+    
+    # First, we get any existing summary
+    summary = state.get("summary", "")
+
+    # Create our summarization prompt 
+    if summary:
+        
+        # A summary already exists
+        summary_message = (
+            f"This is summary of the conversation to date: {summary}\n\n"
+            "Extend the summary by taking into account the new messages above:"
+        )
+        
+    else:
+        summary_message = "Create a summary of the conversation above:"
+
+    # Add prompt to our history
+    messages = state["messages"] + [HumanMessage(content=summary_message)]
+    response = model.invoke(messages)
+    
+    # Delete all but the 2 most recent messages
+    delete_messages = [RemoveMessage(id=m.id) for m in state["messages"][:-2]]
+    return {"summary": response.content, "messages": delete_messages}
+```
+
+Adding memory:
+
+```python
+from IPython.display import Image, display
+from langgraph.checkpoint.memory import MemorySaver
+from langgraph.graph import StateGraph, START
+
+# Define a new graph
+workflow = StateGraph(State)
+workflow.add_node("conversation", call_model)
+workflow.add_node(summarize_conversation)
+
+# Set the entrypoint as conversation
+workflow.add_edge(START, "conversation")
+workflow.add_conditional_edges("conversation", should_continue)
+workflow.add_edge("summarize_conversation", END)
+```
+
+A checkpointer saves the state at each step as a checkpoint. These saved checkpoints can be grouped into a `thread` of conversation. Below we setting a thread_id. You can then continue the conversation by passing the config to the LangChain Runnable.
+
+```python
+# Create a thread
+config = {"configurable": {"thread_id": "1"}}
+
+# Start conversation
+input_message = HumanMessage(content="hi! I'm Lance")
+output = graph.invoke({"messages": [input_message]}, config) 
+for m in output['messages'][-1:]:
+    m.pretty_print()
+
+input_message = HumanMessage(content="what's my name?")
+output = graph.invoke({"messages": [input_message]}, config) 
+for m in output['messages'][-1:]:
+    m.pretty_print()
+
+input_message = HumanMessage(content="i like the 49ers!")
+output = graph.invoke({"messages": [input_message]}, config) 
+for m in output['messages'][-1:]:
+    m.pretty_print()
+
+```
+
+### Lesson 6 - Chatbot w/ Summarizing Messages and External Memory
+
+- [Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/chatbot-external-memory.ipynb)
+- You can easily configure external memory to a database like sqlite. 
+- Therefore you can persist memory across notebook sessions
