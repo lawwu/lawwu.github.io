@@ -86,3 +86,77 @@ updated_state = add_messages(existing_messages, delete_messages)
 
 ### Lesson 3 - Multiple Schemas
 
+[Notebook](https://github.com/langchain-ai/langchain-academy/blob/8cca5e1092d01931f6aa9143ffc87d21ccd6052f/module-2/multiple-schemas.ipynb)
+
+A graph can have multiple states. This is useful for controlling what information is shown to the user.
+
+Private State: You can pass private state between nodes that isn't relevant for the overall graph input or output.
+
+```python
+from typing_extensions import TypedDict
+from IPython.display import Image, display
+from langgraph.graph import StateGraph, START, END
+
+class OverallState(TypedDict):
+    foo: int
+
+class PrivateState(TypedDict):
+    baz: int
+
+def node_1(state: OverallState) -> PrivateState:
+    print("---Node 1---")
+    return {"baz": state['foo'] + 1}
+
+def node_2(state: PrivateState) -> OverallState:
+    print("---Node 2---")
+    return {"foo": state['baz'] + 1}
+
+# Build graph
+builder = StateGraph(OverallState)
+builder.add_node("node_1", node_1)
+builder.add_node("node_2", node_2)
+
+# Logic
+builder.add_edge(START, "node_1")
+builder.add_edge("node_1", "node_2")
+builder.add_edge("node_2", END)
+
+# Add
+graph = builder.compile()
+```
+
+Input/Output Schema: You can define explicit input and output schemas for a graph, which is useful for constraining the input and output. Filtering: Input and output schemas perform filtering on what keys are permitted on the input and output of the graph.
+
+```python
+class InputState(TypedDict):
+    question: str
+
+class OutputState(TypedDict):
+    answer: str
+
+class OverallState(TypedDict):
+    question: str
+    answer: str
+    notes: str
+
+def thinking_node(state: InputState):
+    return {"answer": "bye", "notes": "... his is name is Lance"}
+
+def answer_node(state: OverallState) -> OutputState:
+    return {"answer": "bye Lance"}
+
+graph = StateGraph(OverallState, input=InputState, output=OutputState)
+graph.add_node("answer_node", answer_node)
+graph.add_node("thinking_node", thinking_node)
+graph.add_edge(START, "thinking_node")
+graph.add_edge("thinking_node", "answer_node")
+graph.add_edge("answer_node", END)
+
+graph = graph.compile()
+
+# View
+display(Image(graph.get_graph().draw_mermaid_png()))
+
+graph.invoke({"question":"hi"})
+# Output: {'answer': 'bye Lance'}
+```
