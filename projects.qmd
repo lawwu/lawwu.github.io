@@ -3,7 +3,6 @@ title: "Projects"
 comments: false
 ---
 
-- [tldl](https://tldl.dev/) - Too Long Didn't Listen - Automated long-form podcast summarization with RAG (Retrieval Augmented Generation) Q&A across thousands of podcasts
 - [Conference Recap and Summaries](conferences.qmd) - Conference Recaps and Summaries
 - [Transcripts](https://github.com/lawwu/transcripts) - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html
 - [data-science-toolkit](https://github.com/lawwu/data-science-toolkit) - A toolkit for new hires in data science. Designed with Python users in mind
