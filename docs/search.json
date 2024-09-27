@@ -249,7 +249,7 @@
     "href": "index.html",
     "title": "Lawrence Wu",
     "section": "",
-    "text": "Hi! My name is Lawrence and I’m a data scientist who loves deriving insight and value from data. I enjoy building machine learning and NLP solutions that make a difference. Currently I’m a Principal Data Scientist at UKG. Prior to that, I’ve held data science positions at Medidata, PIMCO, Payoff and Allianz. Prior to getting into data science, I was an actuary.\nOn this site I keep a technical blog and resume. I also enjoy writing about personal finance."
+    "text": "Hi! My name is Lawrence and I’m a data scientist who loves deriving insight and value from data. I enjoy building machine learning and NLP solutions that make a difference. Currently I’m a Principal Data Scientist at UKG. Prior to that, I’ve held data science positions at Medidata, PIMCO, Payoff and Allianz. Prior to getting into data science, I was an actuary.\nOn this site I keep a technical blog, a TIL and resume. I also enjoy writing about personal finance."
   },
   {
     "objectID": "conferences.html",
@@ -1481,7 +1481,7 @@
     "href": "projects.html",
     "title": "Projects",
     "section": "",
-    "text": "tldl - Too Long Didn’t Listen - Automated long-form podcast summarization with RAG (Retrieval Augmented Generation) Q&A across thousands of podcasts\nConference Recap and Summaries - Conference Recaps and Summaries\nTranscripts - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html\ndata-science-toolkit - A toolkit for new hires in data science. Designed with Python users in mind\nawesome-llamas - Llama resources\nAI Resources - A curated collection of resources to learn AI"
+    "text": "TIL - “Today I learned” - documenting things I’ve learned today\nConference Recap and Summaries - Conference Recaps and Summaries\nTranscripts - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html\ndata-science-toolkit - A toolkit for new hires in data science. Designed with Python users in mind\nawesome-llamas - Llama resources\nAI Resources - A curated collection of resources to learn AI"
   },
   {
     "objectID": "conferences/2024-08-14-john-street-3-wives/index.html",
