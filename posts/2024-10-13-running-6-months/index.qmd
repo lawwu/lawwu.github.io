@@ -67,12 +67,41 @@ The other 20% of the running should be speed work. I used the Nike Run Club (NRC
 
 You run out of energy at around 90 minutes. I remember one of my first long runs (Strava link) where I went past 60 minutes, I didn't have any water or nutrition on me. It felt really terrible at around 80 minutes. I think my heart rate even peaked.
 
-### Apps
+### Gear
 
--   Apple Watch: I already had an Apple Watch so I just used it to track my runs using the native Fitness App.
+-   Shoes:
+
+    -   First pair with [Brooks Ghost](https://amzn.to/3A0BIkz). I got Ghost 15s but only Ghost 16s are available now. My friend sent me this comic that was pretty accurate why I picked them:
+
+![Brooks Ghost Comic](./brooks_ghost_comic.png){width="500"}
+
+-   Second pair was a [Asics Novablast 4](https://amzn.to/4eU2LwU).
+
+-   I also started a 6 month membership to [Road Runner Sports](https://www.roadrunnersports.com/vip/rewards) for \$1.99. This allows you to buy shoes, run with them and return them if you do not like them. I wound up doing this a couple times for shoes that felt okay in store but for various reasons I didn't like when going on an actual run. Not sure I'll keep this membership after the trial though.
+
+-   Shorts:
+
+    -   [Northyard 5-inch shorts](https://amzn.to/3zNfwdJ) - Bought a few of the cheapest / well-reviewed shorts on Amazon.
+
+    -   [BALEAF Running Shirt](https://amzn.to/3BFeHEm) - Similar search, bought a few.
+
+-   Hydration Vest:
+
+    -   [Salomon ADV Skin 12](https://amzn.to/4h0NiNd) - For longer runs, this vest was very useful to carry water, gels, phone. I got a medium.
+
+-   Nutrition:
+
+    -   [Huma Chia Energy Gels](https://amzn.to/4h0NiNd) - For longer runs, I ate these. I haven't tried other gels yet but I liked how these tasted and just stuck with them.
+
+    -   [BODYARMOR Flash IV Electrolyte](https://amzn.to/4dFv0hC) - Also for longer runs. This is a 6 pack from Amazon (\$1/pack) which is honestly a little egregious for salt. In theory you can make your own. I bought this [30 pack](https://www.costco.com/BODYARMOR-Flash-I.V.-Hydration-Booster,-30-Individual-Serving-Stick-Packs,-Variety-Pack.product.1838221.html) from Costco that was a little cheaper.
+
+-   GPS Watch: Apple Watch - I already had an Apple Watch so I just used it to track my runs using the native Fitness App.
+
     -   When starting an activity, there's usually a count down, you can double tap to start it immediately
     -   When running, you can double tap the screen to start a new segment. This is useful when you are doing interval runs.
+
 -   iOS Apps:
+
     -   Fitness: Apple's native fitness app. Can see detailed information on your workout. This gets really granular because GPS watches these days measure cadence, stride length and vertical oscillation.
     -   Health: Seeing heart health data like Cardio Fitness (VO2 Max) and resting heart rate trend in better directions was so motivating!
     -   HealthFit: I used this to import all of my previous Apple Fitness data into Strava
