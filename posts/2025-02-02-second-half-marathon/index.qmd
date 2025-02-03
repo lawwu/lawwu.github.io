@@ -1,11 +1,11 @@
 ---
 title: "Second Half-Marathon in the Books"
-author: "Lawrence Wu"    
+author: "Lawrence Wu"
 date: "2025-02-02"
 categories: ["Running", "Fitness"]
 ---
 
-![Finish Pic](./finish_pic.jpg)
+![Finish Line Picture!](./finish_pic.jpg){width=50%}
 
 Second half-marathon complete ([Strava](https://www.strava.com/activities/13521918538))! Goals for this race at Surf City 2025 was just to 1) not get injured and 2) beat my first HM time of 1:49. Felt like the conditions were perfect in terms of the weather, how the body felt and having other runners to run with at certain points. Thankful to have achieved both those goals! By God's grace was able to PR and run 1:42.
 
