@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,7 +19,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
 </style>
@@ -59,8 +59,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
@@ -92,12 +91,10 @@ cookieconsent.run({
 
 <link rel="stylesheet" href="../../styles.css">
 <meta property="og:title" content="Lawrence Wu - State of GPT - Andrej Karpathy">
-<meta property="og:description" content="">
-<meta property="og:image" content="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/gpt_assistant_pipeline.jpeg">
+<meta property="og:description" content="Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT:">
 <meta property="og:site-name" content="Lawrence Wu">
 <meta name="twitter:title" content="Lawrence Wu - State of GPT - Andrej Karpathy">
-<meta name="twitter:description" content="">
-<meta name="twitter:image" content="https://lawwu.github.io/blog.html/posts/2023-06-13-karpathy-state-of-gpt/gpt_assistant_pipeline.jpeg">
+<meta name="twitter:description" content="Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT:">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -113,51 +110,49 @@ cookieconsent.run({
     <span class="navbar-title">Lawrence Wu</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html" rel="" target="">
+    <a class="nav-link" href="../../blog.html">
  <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../projects.html" rel="" target="">
+    <a class="nav-link" href="../../projects.html">
  <span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../conferences.html" rel="" target="">
+    <a class="nav-link" href="../../conferences.html">
  <span class="menu-text">Conferences</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://lawwu.github.io/til/" rel="" target="">
+    <a class="nav-link" href="https://lawwu.github.io/til/">
  <span class="menu-text">TIL</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/lawwu" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/lawwu"><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text">GitHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/law_wu" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/law_wu"><i class="bi bi-twitter" role="img">
 </i> 
  <span class="menu-text">Twitter</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"><i class="bi bi-envelope" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="../../blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../../blog.xml"><i class="bi bi-rss" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
+              <div id="quarto-search" class="" title="Search"></div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -205,40 +200,40 @@ cookieconsent.run({
 
 </header>
 
-<p><a href="https://twitter.com/karpathy">Andrej Karpathy</a> gave a talk at a Microsoft conference in late May about the State of GPT: </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/bZQun8Y4L2A" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><a href="https://twitter.com/karpathy">Andrej Karpathy</a> gave a talk at a Microsoft conference in late May about the State of GPT: </p><div class="quarto-video ratio ratio-16x9"><iframe src="https://www.youtube.com/embed/bZQun8Y4L2A" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
 <p>Here are some things I learned:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./gpt_assistant_pipeline.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">GPT Assistant Pipeline</figcaption>
+<p></p><figcaption class="figure-caption">GPT Assistant Pipeline</figcaption><p></p>
 </figure>
 </div>
 <p>It was helpful to see the different stages that training a RLHF-tuned LLM goes through from 1) pretraining, 2) supervised fine-tuning, 3) reward modeling and 4) reinforcement learning.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./base_models_prompted.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Base Models can be Prompted</figcaption>
+<p></p><figcaption class="figure-caption">Base Models can be Prompted</figcaption><p></p>
 </figure>
 </div>
 <p>I wasn’t following the literature back then in the era of GPT-2 but it’s interesting to see the different types of prompts that people were trying to get base models to behave like assistants. With ChatGPT now, these types of prompts are not as useful.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./sft_dataset.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Supervised Fine-tuning Dataset</figcaption>
+<p></p><figcaption class="figure-caption">Supervised Fine-tuning Dataset</figcaption><p></p>
 </figure>
 </div>
 <p>I didn’t realize that these datasets took so much effort to create. A lot of times these contractors are writing long form answers to questions, adhering to very complex labeling instructions to be “helpful, truthful, harmless” taking sometimes hours to write these!</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./rm_training.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Reward Modeling Training</figcaption>
+<p></p><figcaption class="figure-caption">Reward Modeling Training</figcaption><p></p>
 </figure>
 </div>
 <p>Binary classification between prompt and completion pairs. The completion yellow tokens are coming from the SFT model. Only supervise the training of the Transformer at the green reward token. The transformer will learn to predict the reward token for a given prompt/completion pair. We have the ground truth rewards from our human labelers. As the model is trained it can then better predict the reward tokens.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./rl_training.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Reinforcement Learning Training</figcaption>
+<p></p><figcaption class="figure-caption">Reinforcement Learning Training</figcaption><p></p>
 </figure>
 </div>
 <p>Taking the reward model from the previous stage, we take the tuples of (prompt, completion, reward), the completions are coming from the SFT model (model we want to train), the reward is from the reward model. The rewards are fixed.</p>
@@ -246,28 +241,28 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./ppo_vs_sft.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">RLHF vs SFT</figcaption>
+<p></p><figcaption class="figure-caption">RLHF vs SFT</figcaption><p></p>
 </figure>
 </div>
 <p>The difference between SFT (supervised fine tuning) and RLHF (reinforcement learning human feedback) LLMs. It’s interesting that the InstructGPT paper showed that humans prefer RLHF models to SFT models.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./why_rlhf.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Why RLHF?</figcaption>
+<p></p><figcaption class="figure-caption">Why RLHF?</figcaption><p></p>
 </figure>
 </div>
 <p>Why does RLHF work better than SFT? Karpathy offers up an interesting hypothesis basically saying that it is easier for humans to compare two completions (what one does when creating training data for the reward model) vs.&nbsp;creating a completion from scratch (what one does when creating training data for the SFT model). The example being if the prompt is “Write a haiku about paperclips” - it’s much easier to compare two haikus about paper clips than to write a haiku about paper clips from scratch.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./mode_collapse.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Mode collapse</figcaption>
+<p></p><figcaption class="figure-caption">Mode collapse</figcaption><p></p>
 </figure>
 </div>
 <p>One downside of fine-tuned models I didn’t realize was they lose entropy, in other words fine-tune models often predict one token with high probability instead of a nice distribution of tokens. So base models can be better at tasks where you have N examples of things want to generate more things. Karpathy’s toy example was prompting with “Here are 100 cool pokemon names I made up:” and giving it 7 actual Pokemon and the base model completes with additional generated Pokemon names.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./assistant_leaderboard.jpg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Assistant Leaderboard</figcaption>
+<p></p><figcaption class="figure-caption">Assistant Leaderboard</figcaption><p></p>
 </figure>
 </div>
 <p>A team at Berkeley has assembled Elo ratings from some assistant LLMs. The first 3 are RLHF models, the rest of SFT models. GPT-4 is winning. A link to a more up-to-date version of the leaderboard with Google’s PaLM2: https://lmsys.org/blog/2023-05-25-leaderboard/ which is still pretty far between GPT3.5 and GPT-4.</p>
@@ -285,21 +280,21 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./chain_of_thought.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Chain of Thought</figcaption>
+<p></p><figcaption class="figure-caption">Chain of Thought</figcaption><p></p>
 </figure>
 </div>
 <p>Models need tokens to think. By breaking up a task into multiple steps, you are giving the language model an opportunity to think and reason over more tokens.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./condition_on_good_performance.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Condition on Good Performance</figcaption>
+<p></p><figcaption class="figure-caption">Condition on Good Performance</figcaption><p></p>
 </figure>
 </div>
 <p>Because language models are trained on all kinds of data, e.g.&nbsp;student solutions to a physics problem or an expert solution to the same problem, you can prompt the model “to be an expert in physics” and that usually improves performance. Apparently the best prompt was “Let’s work this out in a step by step way to be sure we have the right answer.”</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./retrieval_augmented_llms.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Retrieval-Augmented LLMs</figcaption>
+<p></p><figcaption class="figure-caption">Retrieval-Augmented LLMs</figcaption><p></p>
 </figure>
 </div>
 <ul>
@@ -311,7 +306,7 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./finetuning.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Finetuning</figcaption>
+<p></p><figcaption class="figure-caption">Finetuning</figcaption><p></p>
 </figure>
 </div>
 <p>Become more accessible to fine-tuning a model:</p>
@@ -323,13 +318,13 @@ cookieconsent.run({
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./default_recommendations.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Default Recommendations</figcaption>
+<p></p><figcaption class="figure-caption">Default Recommendations</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="./use_cases.jpeg" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Use cases</figcaption>
+<p></p><figcaption class="figure-caption">Use cases</figcaption><p></p>
 </figure>
 </div>
 
@@ -363,23 +358,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
+    target: function(trigger) {
+      return trigger.previousElementSibling;
     }
   });
   clipboard.on('success', function(e) {
@@ -444,92 +425,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -574,13 +469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-      &nbsp;
-    </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
-    <div class="nav-footer-right">
-      &nbsp;
-    </div>
+      <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
   </div>
 </footer>
 
