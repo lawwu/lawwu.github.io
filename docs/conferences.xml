@@ -9,7 +9,7 @@
 <link>https://lawwu.github.io/blog.html/conferences.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/conferences.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.3.450</generator>
+<generator>quarto-1.2.335</generator>
 <lastBuildDate>Wed, 14 Aug 2024 07:00:00 GMT</lastBuildDate>
 <item>
   <title>John Street - God’s Design for Marriage</title>
@@ -709,1358 +709,420 @@
 <li>OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on</li>
 <li>LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components</li>
 </ul>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.prompts <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ChatPromptTemplate</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.chat_models <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ChatOpenAI</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.schema.output_parser <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> StrOutputParser</span>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;">from</span> langchain.prompts <span class="im" style="color: #00769E;">import</span> ChatPromptTemplate</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;">from</span> langchain.chat_models <span class="im" style="color: #00769E;">import</span> ChatOpenAI</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;">from</span> langchain.schema.output_parser <span class="im" style="color: #00769E;">import</span> StrOutputParser</span>
 <span id="cb1-4"></span>
-<span id="cb1-5">prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatPromptTemplate.from_template(</span>
-<span id="cb1-6">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Tell me a short joke about </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{topic}</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span></span>
+<span id="cb1-5">prompt <span class="op" style="color: #5E5E5E;">=</span> ChatPromptTemplate.from_template(</span>
+<span id="cb1-6">    <span class="st" style="color: #20794D;">"Tell me a short joke about </span><span class="sc" style="color: #5E5E5E;">{topic}</span><span class="st" style="color: #20794D;">"</span></span>
 <span id="cb1-7">)</span>
-<span id="cb1-8">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatOpenAI()</span>
-<span id="cb1-9">output_parser <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> StrOutputParser()</span>
+<span id="cb1-8">model <span class="op" style="color: #5E5E5E;">=</span> ChatOpenAI()</span>
+<span id="cb1-9">output_parser <span class="op" style="color: #5E5E5E;">=</span> StrOutputParser()</span>
 <span id="cb1-10"></span>
-<span id="cb1-11"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># define the chain</span></span>
-<span id="cb1-12">chain <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> output_parser</span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;"># define the chain</span></span>
+<span id="cb1-12">chain <span class="op" style="color: #5E5E5E;">=</span> prompt <span class="op" style="color: #5E5E5E;">|</span> model <span class="op" style="color: #5E5E5E;">|</span> output_parser</span>
 <span id="cb1-13"></span>
-<span id="cb1-14"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># don't .run() the chain but call .invoke()</span></span>
-<span id="cb1-15">chain.invoke({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"topic"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"bears"</span>})</span></code></pre></div>
+<span id="cb1-14"><span class="co" style="color: #5E5E5E;"># don't .run() the chain but call .invoke()</span></span>
+<span id="cb1-15">chain.invoke({<span class="st" style="color: #20794D;">"topic"</span>: <span class="st" style="color: #20794D;">"bears"</span>})</span></code></pre></div>
 <ul>
 <li>OpenAI’s Function Calling is a way to get OpenAI’s language models to return structured data (arguments to run a function or extract structured data from text). This is a powerful feature!</li>
 <li>I’m surprised other LLM providers have not yet introduced this functionality.</li>
 <li>langchain exposes helper function to make working with function calling easier</li>
 </ul>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.utils.openai_functions <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> convert_pydantic_to_openai_function</span>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;">from</span> langchain.utils.openai_functions <span class="im" style="color: #00769E;">import</span> convert_pydantic_to_openai_function</span>
 <span id="cb2-2"></span>
-<span id="cb2-3"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">class</span> WeatherSearch(BaseModel):</span>
-<span id="cb2-4">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Call this with an airport code to get the weather at that airport"""</span></span>
-<span id="cb2-5">    airport_code: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"airport code to get weather for"</span>)</span>
+<span id="cb2-3"><span class="kw" style="color: #003B4F;">class</span> WeatherSearch(BaseModel):</span>
+<span id="cb2-4">    <span class="co" style="color: #5E5E5E;">"""Call this with an airport code to get the weather at that airport"""</span></span>
+<span id="cb2-5">    airport_code: <span class="bu" style="color: null;">str</span> <span class="op" style="color: #5E5E5E;">=</span> Field(description<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"airport code to get weather for"</span>)</span>
 <span id="cb2-6"></span>
-<span id="cb2-7">weather_function <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> convert_pydantic_to_openai_function(WeatherSearch)</span>
+<span id="cb2-7">weather_function <span class="op" style="color: #5E5E5E;">=</span> convert_pydantic_to_openai_function(WeatherSearch)</span>
 <span id="cb2-8">weather_function</span>
 <span id="cb2-9"></span>
-<span id="cb2-10"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># {'name': 'WeatherSearch',</span></span>
-<span id="cb2-11"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  'description': 'Call this with an airport code to get the weather at that airport',</span></span>
-<span id="cb2-12"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  'parameters': {'title': 'WeatherSearch',</span></span>
-<span id="cb2-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'description': 'Call this with an airport code to get the weather at that airport',</span></span>
-<span id="cb2-14"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'type': 'object',</span></span>
-<span id="cb2-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'properties': {'airport_code': {'title': 'Airport Code',</span></span>
-<span id="cb2-16"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     'description': 'airport code to get weather for',</span></span>
-<span id="cb2-17"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     'type': 'string'}},</span></span>
-<span id="cb2-18"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'required': ['airport_code']}}</span></span></code></pre></div>
+<span id="cb2-10"><span class="co" style="color: #5E5E5E;"># {'name': 'WeatherSearch',</span></span>
+<span id="cb2-11"><span class="co" style="color: #5E5E5E;">#  'description': 'Call this with an airport code to get the weather at that airport',</span></span>
+<span id="cb2-12"><span class="co" style="color: #5E5E5E;">#  'parameters': {'title': 'WeatherSearch',</span></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;">#   'description': 'Call this with an airport code to get the weather at that airport',</span></span>
+<span id="cb2-14"><span class="co" style="color: #5E5E5E;">#   'type': 'object',</span></span>
+<span id="cb2-15"><span class="co" style="color: #5E5E5E;">#   'properties': {'airport_code': {'title': 'Airport Code',</span></span>
+<span id="cb2-16"><span class="co" style="color: #5E5E5E;">#     'description': 'airport code to get weather for',</span></span>
+<span id="cb2-17"><span class="co" style="color: #5E5E5E;">#     'type': 'string'}},</span></span>
+<span id="cb2-18"><span class="co" style="color: #5E5E5E;">#   'required': ['airport_code']}}</span></span></code></pre></div>
 <p>then you can pass the weather function to the LLM</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.chat_models <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ChatOpenAI</span>
-<span id="cb3-2">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatOpenAI()</span>
-<span id="cb3-3">model.invoke(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"What is the weather in San Francisco right now?"</span>,</span>
-<span id="cb3-4">             functions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[weather_function])  </span></code></pre></div>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;">from</span> langchain.chat_models <span class="im" style="color: #00769E;">import</span> ChatOpenAI</span>
+<span id="cb3-2">model <span class="op" style="color: #5E5E5E;">=</span> ChatOpenAI()</span>
+<span id="cb3-3">model.invoke(<span class="st" style="color: #20794D;">"What is the weather in San Francisco right now?"</span>,</span>
+<span id="cb3-4">             functions<span class="op" style="color: #5E5E5E;">=</span>[weather_function])  </span></code></pre></div>
 <p>You can also bind the function to the model:</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">model_with_function <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[weather_function])</span></code></pre></div>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">model_with_function <span class="op" style="color: #5E5E5E;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;">=</span>[weather_function])</span></code></pre></div>
 <p>You can force OpenAI to use a function, but you can only pass one function here.</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">model_forced_function <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>[weather_function], function_call<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>:<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"WeatherSearch"</span>})</span></code></pre></div>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">model_forced_function <span class="op" style="color: #5E5E5E;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;">=</span>[weather_function], function_call<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"name"</span>:<span class="st" style="color: #20794D;">"WeatherSearch"</span>})</span></code></pre></div>
 <p>Function calling is a great way to do structured data extraction from text for example extracting name, age tuples.</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> typing <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> Optional</span>
-<span id="cb6-2"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">class</span> Person(BaseModel):</span>
-<span id="cb6-3">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Information about a person."""</span></span>
-<span id="cb6-4">    name: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"person's name"</span>)</span>
-<span id="cb6-5">    age: Optional[<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">int</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"person's age"</span>)</span>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;">from</span> typing <span class="im" style="color: #00769E;">import</span> Optional</span>
+<span id="cb6-2"><span class="kw" style="color: #003B4F;">class</span> Person(BaseModel):</span>
+<span id="cb6-3">    <span class="co" style="color: #5E5E5E;">"""Information about a person."""</span></span>
+<span id="cb6-4">    name: <span class="bu" style="color: null;">str</span> <span class="op" style="color: #5E5E5E;">=</span> Field(description<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"person's name"</span>)</span>
+<span id="cb6-5">    age: Optional[<span class="bu" style="color: null;">int</span>] <span class="op" style="color: #5E5E5E;">=</span> Field(description<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"person's age"</span>)</span>
 <span id="cb6-6">  </span>
-<span id="cb6-7"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">class</span> Information(BaseModel):</span>
-<span id="cb6-8">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Information to extract."""</span></span>
-<span id="cb6-9">    people: List[Person] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"List of info about people"</span>)</span>
+<span id="cb6-7"><span class="kw" style="color: #003B4F;">class</span> Information(BaseModel):</span>
+<span id="cb6-8">    <span class="co" style="color: #5E5E5E;">"""Information to extract."""</span></span>
+<span id="cb6-9">    people: List[Person] <span class="op" style="color: #5E5E5E;">=</span> Field(description<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"List of info about people"</span>)</span>
 <span id="cb6-10"></span>
-<span id="cb6-11">extraction_functions <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [convert_pydantic_to_openai_function(Information)]</span>
-<span id="cb6-12">extraction_model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>extraction_functions, function_call<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>:<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Information"</span>})</span>
-<span id="cb6-13">extraction_model.invoke(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Joe is 30. Joe's mom is Martha"</span>)</span>
+<span id="cb6-11">extraction_functions <span class="op" style="color: #5E5E5E;">=</span> [convert_pydantic_to_openai_function(Information)]</span>
+<span id="cb6-12">extraction_model <span class="op" style="color: #5E5E5E;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;">=</span>extraction_functions, function_call<span class="op" style="color: #5E5E5E;">=</span>{<span class="st" style="color: #20794D;">"name"</span>:<span class="st" style="color: #20794D;">"Information"</span>})</span>
+<span id="cb6-13">extraction_model.invoke(<span class="st" style="color: #20794D;">"Joe is 30. Joe's mom is Martha"</span>)</span>
 <span id="cb6-14"></span>
-<span id="cb6-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'Information', 'arguments': '{\n  "people": [\n    {\n      "name": "Joe",\n      "age": 30\n    },\n    {\n      "name": "Martha",\n      "age": 0\n    }\n  ]\n}'}})</span></span></code></pre></div>
+<span id="cb6-15"><span class="co" style="color: #5E5E5E;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'Information', 'arguments': '{\n  "people": [\n    {\n      "name": "Joe",\n      "age": 30\n    },\n    {\n      "name": "Martha",\n      "age": 0\n    }\n  ]\n}'}})</span></span></code></pre></div>
 <ul>
 <li>You can create your own tools using the <span class="citation" data-cites="tool">@tool</span> decorator and pass these tools to OpenAI</li>
 </ul>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.agents <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> tool</span>
-<span id="cb7-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.chat_models <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ChatOpenAI</span>
-<span id="cb7-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> pydantic <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> BaseModel, Field</span>
-<span id="cb7-4"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> requests</span>
-<span id="cb7-5"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> datetime</span>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;">from</span> langchain.agents <span class="im" style="color: #00769E;">import</span> tool</span>
+<span id="cb7-2"><span class="im" style="color: #00769E;">from</span> langchain.chat_models <span class="im" style="color: #00769E;">import</span> ChatOpenAI</span>
+<span id="cb7-3"><span class="im" style="color: #00769E;">from</span> pydantic <span class="im" style="color: #00769E;">import</span> BaseModel, Field</span>
+<span id="cb7-4"><span class="im" style="color: #00769E;">import</span> requests</span>
+<span id="cb7-5"><span class="im" style="color: #00769E;">import</span> datetime</span>
 <span id="cb7-6"></span>
-<span id="cb7-7"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the input schema</span></span>
-<span id="cb7-8"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">class</span> OpenMeteoInput(BaseModel):</span>
-<span id="cb7-9">    latitude: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(..., description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Latitude of the location to fetch weather data for"</span>)</span>
-<span id="cb7-10">    longitude: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(..., description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Longitude of the location to fetch weather data for"</span>)</span>
+<span id="cb7-7"><span class="co" style="color: #5E5E5E;"># Define the input schema</span></span>
+<span id="cb7-8"><span class="kw" style="color: #003B4F;">class</span> OpenMeteoInput(BaseModel):</span>
+<span id="cb7-9">    latitude: <span class="bu" style="color: null;">float</span> <span class="op" style="color: #5E5E5E;">=</span> Field(..., description<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"Latitude of the location to fetch weather data for"</span>)</span>
+<span id="cb7-10">    longitude: <span class="bu" style="color: null;">float</span> <span class="op" style="color: #5E5E5E;">=</span> Field(..., description<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"Longitude of the location to fetch weather data for"</span>)</span>
 <span id="cb7-11"></span>
-<span id="cb7-12"><span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">@tool</span>(args_schema<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>OpenMeteoInput)</span>
-<span id="cb7-13"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">def</span> get_current_temperature(latitude: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>, longitude: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">float</span>) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">dict</span>:</span>
-<span id="cb7-14">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Fetch current temperature for given coordinates."""</span></span>
+<span id="cb7-12"><span class="at" style="color: #657422;">@tool</span>(args_schema<span class="op" style="color: #5E5E5E;">=</span>OpenMeteoInput)</span>
+<span id="cb7-13"><span class="kw" style="color: #003B4F;">def</span> get_current_temperature(latitude: <span class="bu" style="color: null;">float</span>, longitude: <span class="bu" style="color: null;">float</span>) <span class="op" style="color: #5E5E5E;">-&gt;</span> <span class="bu" style="color: null;">dict</span>:</span>
+<span id="cb7-14">    <span class="co" style="color: #5E5E5E;">"""Fetch current temperature for given coordinates."""</span></span>
 <span id="cb7-15">    </span>
-<span id="cb7-16">    BASE_URL <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"https://api.open-meteo.com/v1/forecast"</span></span>
+<span id="cb7-16">    BASE_URL <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"https://api.open-meteo.com/v1/forecast"</span></span>
 <span id="cb7-17">    </span>
-<span id="cb7-18">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Parameters for the request</span></span>
-<span id="cb7-19">    params <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb7-20">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'latitude'</span>: latitude,</span>
-<span id="cb7-21">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'longitude'</span>: longitude,</span>
-<span id="cb7-22">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'hourly'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'temperature_2m'</span>,</span>
-<span id="cb7-23">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'forecast_days'</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>,</span>
+<span id="cb7-18">    <span class="co" style="color: #5E5E5E;"># Parameters for the request</span></span>
+<span id="cb7-19">    params <span class="op" style="color: #5E5E5E;">=</span> {</span>
+<span id="cb7-20">        <span class="st" style="color: #20794D;">'latitude'</span>: latitude,</span>
+<span id="cb7-21">        <span class="st" style="color: #20794D;">'longitude'</span>: longitude,</span>
+<span id="cb7-22">        <span class="st" style="color: #20794D;">'hourly'</span>: <span class="st" style="color: #20794D;">'temperature_2m'</span>,</span>
+<span id="cb7-23">        <span class="st" style="color: #20794D;">'forecast_days'</span>: <span class="dv" style="color: #AD0000;">1</span>,</span>
 <span id="cb7-24">    }</span>
 <span id="cb7-25"></span>
-<span id="cb7-26">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Make the request</span></span>
-<span id="cb7-27">    response <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> requests.get(BASE_URL, params<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>params)</span>
+<span id="cb7-26">    <span class="co" style="color: #5E5E5E;"># Make the request</span></span>
+<span id="cb7-27">    response <span class="op" style="color: #5E5E5E;">=</span> requests.get(BASE_URL, params<span class="op" style="color: #5E5E5E;">=</span>params)</span>
 <span id="cb7-28">    </span>
-<span id="cb7-29">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> response.status_code <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">200</span>:</span>
-<span id="cb7-30">        results <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> response.json()</span>
-<span id="cb7-31">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span>:</span>
-<span id="cb7-32">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">Exception</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"API Request failed with status code: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>response<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span>status_code<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
+<span id="cb7-29">    <span class="cf" style="color: #003B4F;">if</span> response.status_code <span class="op" style="color: #5E5E5E;">==</span> <span class="dv" style="color: #AD0000;">200</span>:</span>
+<span id="cb7-30">        results <span class="op" style="color: #5E5E5E;">=</span> response.json()</span>
+<span id="cb7-31">    <span class="cf" style="color: #003B4F;">else</span>:</span>
+<span id="cb7-32">        <span class="cf" style="color: #003B4F;">raise</span> <span class="pp" style="color: #AD0000;">Exception</span>(<span class="ss" style="color: #20794D;">f"API Request failed with status code: </span><span class="sc" style="color: #5E5E5E;">{</span>response<span class="sc" style="color: #5E5E5E;">.</span>status_code<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">"</span>)</span>
 <span id="cb7-33"></span>
-<span id="cb7-34">    current_utc_time <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> datetime.datetime.utcnow()</span>
-<span id="cb7-35">    time_list <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [datetime.datetime.fromisoformat(time_str.replace(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Z'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'+00:00'</span>)) <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">for</span> time_str <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">in</span> results[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'hourly'</span>][<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'time'</span>]]</span>
-<span id="cb7-36">    temperature_list <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> results[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'hourly'</span>][<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'temperature_2m'</span>]</span>
+<span id="cb7-34">    current_utc_time <span class="op" style="color: #5E5E5E;">=</span> datetime.datetime.utcnow()</span>
+<span id="cb7-35">    time_list <span class="op" style="color: #5E5E5E;">=</span> [datetime.datetime.fromisoformat(time_str.replace(<span class="st" style="color: #20794D;">'Z'</span>, <span class="st" style="color: #20794D;">'+00:00'</span>)) <span class="cf" style="color: #003B4F;">for</span> time_str <span class="kw" style="color: #003B4F;">in</span> results[<span class="st" style="color: #20794D;">'hourly'</span>][<span class="st" style="color: #20794D;">'time'</span>]]</span>
+<span id="cb7-36">    temperature_list <span class="op" style="color: #5E5E5E;">=</span> results[<span class="st" style="color: #20794D;">'hourly'</span>][<span class="st" style="color: #20794D;">'temperature_2m'</span>]</span>
 <span id="cb7-37">    </span>
-<span id="cb7-38">    closest_time_index <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">min</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">range</span>(<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">len</span>(time_list)), key<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">lambda</span> i: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">abs</span>(time_list[i] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> current_utc_time))</span>
-<span id="cb7-39">    current_temperature <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> temperature_list[closest_time_index]</span>
+<span id="cb7-38">    closest_time_index <span class="op" style="color: #5E5E5E;">=</span> <span class="bu" style="color: null;">min</span>(<span class="bu" style="color: null;">range</span>(<span class="bu" style="color: null;">len</span>(time_list)), key<span class="op" style="color: #5E5E5E;">=</span><span class="kw" style="color: #003B4F;">lambda</span> i: <span class="bu" style="color: null;">abs</span>(time_list[i] <span class="op" style="color: #5E5E5E;">-</span> current_utc_time))</span>
+<span id="cb7-39">    current_temperature <span class="op" style="color: #5E5E5E;">=</span> temperature_list[closest_time_index]</span>
 <span id="cb7-40">    </span>
-<span id="cb7-41">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f'The current temperature is </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>current_temperature<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">°C'</span></span>
+<span id="cb7-41">    <span class="cf" style="color: #003B4F;">return</span> <span class="ss" style="color: #20794D;">f'The current temperature is </span><span class="sc" style="color: #5E5E5E;">{</span>current_temperature<span class="sc" style="color: #5E5E5E;">}</span><span class="ss" style="color: #20794D;">°C'</span></span>
 <span id="cb7-42"></span>
 <span id="cb7-43">format_tool_to_openai_function(get_current_temperature)    </span>
 <span id="cb7-44"></span>
-<span id="cb7-45"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># {'name': 'get_current_temperature',</span></span>
-<span id="cb7-46"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  'description': 'get_current_temperature(latitude: float, longitude: float) -&gt; dict - Fetch current temperature for given coordinates.',</span></span>
-<span id="cb7-47"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  'parameters': {'title': 'OpenMeteoInput',</span></span>
-<span id="cb7-48"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'type': 'object',</span></span>
-<span id="cb7-49"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'properties': {'latitude': {'title': 'Latitude',</span></span>
-<span id="cb7-50"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     'description': 'Latitude of the location to fetch weather data for',</span></span>
-<span id="cb7-51"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     'type': 'number'},</span></span>
-<span id="cb7-52"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#    'longitude': {'title': 'Longitude',</span></span>
-<span id="cb7-53"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     'description': 'Longitude of the location to fetch weather data for',</span></span>
-<span id="cb7-54"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#     'type': 'number'}},</span></span>
-<span id="cb7-55"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'required': ['latitude', 'longitude']}}</span></span></code></pre></div>
+<span id="cb7-45"><span class="co" style="color: #5E5E5E;"># {'name': 'get_current_temperature',</span></span>
+<span id="cb7-46"><span class="co" style="color: #5E5E5E;">#  'description': 'get_current_temperature(latitude: float, longitude: float) -&gt; dict - Fetch current temperature for given coordinates.',</span></span>
+<span id="cb7-47"><span class="co" style="color: #5E5E5E;">#  'parameters': {'title': 'OpenMeteoInput',</span></span>
+<span id="cb7-48"><span class="co" style="color: #5E5E5E;">#   'type': 'object',</span></span>
+<span id="cb7-49"><span class="co" style="color: #5E5E5E;">#   'properties': {'latitude': {'title': 'Latitude',</span></span>
+<span id="cb7-50"><span class="co" style="color: #5E5E5E;">#     'description': 'Latitude of the location to fetch weather data for',</span></span>
+<span id="cb7-51"><span class="co" style="color: #5E5E5E;">#     'type': 'number'},</span></span>
+<span id="cb7-52"><span class="co" style="color: #5E5E5E;">#    'longitude': {'title': 'Longitude',</span></span>
+<span id="cb7-53"><span class="co" style="color: #5E5E5E;">#     'description': 'Longitude of the location to fetch weather data for',</span></span>
+<span id="cb7-54"><span class="co" style="color: #5E5E5E;">#     'type': 'number'}},</span></span>
+<span id="cb7-55"><span class="co" style="color: #5E5E5E;">#   'required': ['latitude', 'longitude']}}</span></span></code></pre></div>
 <p>You can also convert an Open API spec into an OpenAI function</p>
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.chains.openai_functions.openapi <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> openapi_spec_to_openai_fn</span>
-<span id="cb8-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.utilities.openapi <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> OpenAPISpec</span>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;">from</span> langchain.chains.openai_functions.openapi <span class="im" style="color: #00769E;">import</span> openapi_spec_to_openai_fn</span>
+<span id="cb8-2"><span class="im" style="color: #00769E;">from</span> langchain.utilities.openapi <span class="im" style="color: #00769E;">import</span> OpenAPISpec</span>
 <span id="cb8-3"></span>
-<span id="cb8-4">text <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""</span></span>
-<span id="cb8-5"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">{</span></span>
-<span id="cb8-6"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  "openapi": "3.0.0",</span></span>
-<span id="cb8-7"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  "info": {</span></span>
-<span id="cb8-8"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "version": "1.0.0",</span></span>
-<span id="cb8-9"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "title": "Swagger Petstore",</span></span>
-<span id="cb8-10"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "license": {</span></span>
-<span id="cb8-11"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "name": "MIT"</span></span>
-<span id="cb8-12"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    }</span></span>
-<span id="cb8-13"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  },</span></span>
-<span id="cb8-14"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  "servers": [</span></span>
-<span id="cb8-15"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    {</span></span>
-<span id="cb8-16"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "url": "http://petstore.swagger.io/v1"</span></span>
-<span id="cb8-17"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    }</span></span>
-<span id="cb8-18"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  ],</span></span>
-<span id="cb8-19"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  "paths": {</span></span>
-<span id="cb8-20"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "/pets": {</span></span>
-<span id="cb8-21"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "get": {</span></span>
-<span id="cb8-22"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "summary": "List all pets",</span></span>
-<span id="cb8-23"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "operationId": "listPets",</span></span>
-<span id="cb8-24"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "tags": [</span></span>
-<span id="cb8-25"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "pets"</span></span>
-<span id="cb8-26"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-27"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "parameters": [</span></span>
-<span id="cb8-28"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          {</span></span>
-<span id="cb8-29"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "name": "limit",</span></span>
-<span id="cb8-30"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "in": "query",</span></span>
-<span id="cb8-31"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "How many items to return at one time (max 100)",</span></span>
-<span id="cb8-32"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "required": false,</span></span>
-<span id="cb8-33"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "schema": {</span></span>
-<span id="cb8-34"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "type": "integer",</span></span>
-<span id="cb8-35"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "maximum": 100,</span></span>
-<span id="cb8-36"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "format": "int32"</span></span>
-<span id="cb8-37"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-38"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-39"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-40"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "responses": {</span></span>
-<span id="cb8-41"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "200": {</span></span>
-<span id="cb8-42"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "A paged array of pets",</span></span>
-<span id="cb8-43"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "headers": {</span></span>
-<span id="cb8-44"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "x-next": {</span></span>
-<span id="cb8-45"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "description": "A link to the next page of responses",</span></span>
-<span id="cb8-46"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "schema": {</span></span>
-<span id="cb8-47"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                  "type": "string"</span></span>
-<span id="cb8-48"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                }</span></span>
-<span id="cb8-49"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              }</span></span>
-<span id="cb8-50"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            },</span></span>
-<span id="cb8-51"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "content": {</span></span>
-<span id="cb8-52"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "application/json": {</span></span>
-<span id="cb8-53"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "schema": {</span></span>
-<span id="cb8-54"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                  "$ref": "#/components/schemas/Pets"</span></span>
-<span id="cb8-55"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                }</span></span>
-<span id="cb8-56"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              }</span></span>
-<span id="cb8-57"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-58"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          },</span></span>
-<span id="cb8-59"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "default": {</span></span>
-<span id="cb8-60"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "unexpected error",</span></span>
-<span id="cb8-61"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "content": {</span></span>
-<span id="cb8-62"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "application/json": {</span></span>
-<span id="cb8-63"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "schema": {</span></span>
-<span id="cb8-64"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                  "$ref": "#/components/schemas/Error"</span></span>
-<span id="cb8-65"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                }</span></span>
-<span id="cb8-66"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              }</span></span>
-<span id="cb8-67"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-68"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-69"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        }</span></span>
-<span id="cb8-70"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      },</span></span>
-<span id="cb8-71"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "post": {</span></span>
-<span id="cb8-72"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "summary": "Create a pet",</span></span>
-<span id="cb8-73"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "operationId": "createPets",</span></span>
-<span id="cb8-74"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "tags": [</span></span>
-<span id="cb8-75"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "pets"</span></span>
-<span id="cb8-76"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-77"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "responses": {</span></span>
-<span id="cb8-78"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "201": {</span></span>
-<span id="cb8-79"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "Null response"</span></span>
-<span id="cb8-80"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          },</span></span>
-<span id="cb8-81"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "default": {</span></span>
-<span id="cb8-82"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "unexpected error",</span></span>
-<span id="cb8-83"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "content": {</span></span>
-<span id="cb8-84"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "application/json": {</span></span>
-<span id="cb8-85"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "schema": {</span></span>
-<span id="cb8-86"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                  "$ref": "#/components/schemas/Error"</span></span>
-<span id="cb8-87"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                }</span></span>
-<span id="cb8-88"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              }</span></span>
-<span id="cb8-89"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-90"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-91"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        }</span></span>
-<span id="cb8-92"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      }</span></span>
-<span id="cb8-93"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    },</span></span>
-<span id="cb8-94"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "/pets/</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{petId}</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">": {</span></span>
-<span id="cb8-95"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "get": {</span></span>
-<span id="cb8-96"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "summary": "Info for a specific pet",</span></span>
-<span id="cb8-97"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "operationId": "showPetById",</span></span>
-<span id="cb8-98"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "tags": [</span></span>
-<span id="cb8-99"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "pets"</span></span>
-<span id="cb8-100"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-101"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "parameters": [</span></span>
-<span id="cb8-102"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          {</span></span>
-<span id="cb8-103"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "name": "petId",</span></span>
-<span id="cb8-104"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "in": "path",</span></span>
-<span id="cb8-105"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "required": true,</span></span>
-<span id="cb8-106"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "The id of the pet to retrieve",</span></span>
-<span id="cb8-107"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "schema": {</span></span>
-<span id="cb8-108"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "type": "string"</span></span>
-<span id="cb8-109"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-110"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-111"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-112"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "responses": {</span></span>
-<span id="cb8-113"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "200": {</span></span>
-<span id="cb8-114"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "Expected response to a valid request",</span></span>
-<span id="cb8-115"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "content": {</span></span>
-<span id="cb8-116"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "application/json": {</span></span>
-<span id="cb8-117"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "schema": {</span></span>
-<span id="cb8-118"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                  "$ref": "#/components/schemas/Pet"</span></span>
-<span id="cb8-119"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                }</span></span>
-<span id="cb8-120"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              }</span></span>
-<span id="cb8-121"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-122"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          },</span></span>
-<span id="cb8-123"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "default": {</span></span>
-<span id="cb8-124"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "description": "unexpected error",</span></span>
-<span id="cb8-125"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "content": {</span></span>
-<span id="cb8-126"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              "application/json": {</span></span>
-<span id="cb8-127"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                "schema": {</span></span>
-<span id="cb8-128"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                  "$ref": "#/components/schemas/Error"</span></span>
-<span id="cb8-129"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">                }</span></span>
-<span id="cb8-130"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">              }</span></span>
-<span id="cb8-131"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            }</span></span>
-<span id="cb8-132"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-133"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        }</span></span>
-<span id="cb8-134"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      }</span></span>
-<span id="cb8-135"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    }</span></span>
-<span id="cb8-136"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  },</span></span>
-<span id="cb8-137"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  "components": {</span></span>
-<span id="cb8-138"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    "schemas": {</span></span>
-<span id="cb8-139"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "Pet": {</span></span>
-<span id="cb8-140"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "type": "object",</span></span>
-<span id="cb8-141"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "required": [</span></span>
-<span id="cb8-142"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "id",</span></span>
-<span id="cb8-143"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "name"</span></span>
-<span id="cb8-144"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-145"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "properties": {</span></span>
-<span id="cb8-146"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "id": {</span></span>
-<span id="cb8-147"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "type": "integer",</span></span>
-<span id="cb8-148"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "format": "int64"</span></span>
-<span id="cb8-149"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          },</span></span>
-<span id="cb8-150"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "name": {</span></span>
-<span id="cb8-151"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "type": "string"</span></span>
-<span id="cb8-152"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          },</span></span>
-<span id="cb8-153"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "tag": {</span></span>
-<span id="cb8-154"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "type": "string"</span></span>
-<span id="cb8-155"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-156"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        }</span></span>
-<span id="cb8-157"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      },</span></span>
-<span id="cb8-158"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "Pets": {</span></span>
-<span id="cb8-159"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "type": "array",</span></span>
-<span id="cb8-160"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "maxItems": 100,</span></span>
-<span id="cb8-161"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "items": {</span></span>
-<span id="cb8-162"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "$ref": "#/components/schemas/Pet"</span></span>
-<span id="cb8-163"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        }</span></span>
-<span id="cb8-164"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      },</span></span>
-<span id="cb8-165"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      "Error": {</span></span>
-<span id="cb8-166"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "type": "object",</span></span>
-<span id="cb8-167"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "required": [</span></span>
-<span id="cb8-168"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "code",</span></span>
-<span id="cb8-169"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "message"</span></span>
-<span id="cb8-170"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        ],</span></span>
-<span id="cb8-171"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        "properties": {</span></span>
-<span id="cb8-172"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "code": {</span></span>
-<span id="cb8-173"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "type": "integer",</span></span>
-<span id="cb8-174"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "format": "int32"</span></span>
-<span id="cb8-175"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          },</span></span>
-<span id="cb8-176"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          "message": {</span></span>
-<span id="cb8-177"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">            "type": "string"</span></span>
-<span id="cb8-178"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">          }</span></span>
-<span id="cb8-179"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">        }</span></span>
-<span id="cb8-180"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">      }</span></span>
-<span id="cb8-181"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    }</span></span>
-<span id="cb8-182"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">  }</span></span>
-<span id="cb8-183"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">}</span></span>
-<span id="cb8-184"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""</span></span>
+<span id="cb8-4">text <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"""</span></span>
+<span id="cb8-5"><span class="st" style="color: #20794D;">{</span></span>
+<span id="cb8-6"><span class="st" style="color: #20794D;">  "openapi": "3.0.0",</span></span>
+<span id="cb8-7"><span class="st" style="color: #20794D;">  "info": {</span></span>
+<span id="cb8-8"><span class="st" style="color: #20794D;">    "version": "1.0.0",</span></span>
+<span id="cb8-9"><span class="st" style="color: #20794D;">    "title": "Swagger Petstore",</span></span>
+<span id="cb8-10"><span class="st" style="color: #20794D;">    "license": {</span></span>
+<span id="cb8-11"><span class="st" style="color: #20794D;">      "name": "MIT"</span></span>
+<span id="cb8-12"><span class="st" style="color: #20794D;">    }</span></span>
+<span id="cb8-13"><span class="st" style="color: #20794D;">  },</span></span>
+<span id="cb8-14"><span class="st" style="color: #20794D;">  "servers": [</span></span>
+<span id="cb8-15"><span class="st" style="color: #20794D;">    {</span></span>
+<span id="cb8-16"><span class="st" style="color: #20794D;">      "url": "http://petstore.swagger.io/v1"</span></span>
+<span id="cb8-17"><span class="st" style="color: #20794D;">    }</span></span>
+<span id="cb8-18"><span class="st" style="color: #20794D;">  ],</span></span>
+<span id="cb8-19"><span class="st" style="color: #20794D;">  "paths": {</span></span>
+<span id="cb8-20"><span class="st" style="color: #20794D;">    "/pets": {</span></span>
+<span id="cb8-21"><span class="st" style="color: #20794D;">      "get": {</span></span>
+<span id="cb8-22"><span class="st" style="color: #20794D;">        "summary": "List all pets",</span></span>
+<span id="cb8-23"><span class="st" style="color: #20794D;">        "operationId": "listPets",</span></span>
+<span id="cb8-24"><span class="st" style="color: #20794D;">        "tags": [</span></span>
+<span id="cb8-25"><span class="st" style="color: #20794D;">          "pets"</span></span>
+<span id="cb8-26"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-27"><span class="st" style="color: #20794D;">        "parameters": [</span></span>
+<span id="cb8-28"><span class="st" style="color: #20794D;">          {</span></span>
+<span id="cb8-29"><span class="st" style="color: #20794D;">            "name": "limit",</span></span>
+<span id="cb8-30"><span class="st" style="color: #20794D;">            "in": "query",</span></span>
+<span id="cb8-31"><span class="st" style="color: #20794D;">            "description": "How many items to return at one time (max 100)",</span></span>
+<span id="cb8-32"><span class="st" style="color: #20794D;">            "required": false,</span></span>
+<span id="cb8-33"><span class="st" style="color: #20794D;">            "schema": {</span></span>
+<span id="cb8-34"><span class="st" style="color: #20794D;">              "type": "integer",</span></span>
+<span id="cb8-35"><span class="st" style="color: #20794D;">              "maximum": 100,</span></span>
+<span id="cb8-36"><span class="st" style="color: #20794D;">              "format": "int32"</span></span>
+<span id="cb8-37"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-38"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-39"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-40"><span class="st" style="color: #20794D;">        "responses": {</span></span>
+<span id="cb8-41"><span class="st" style="color: #20794D;">          "200": {</span></span>
+<span id="cb8-42"><span class="st" style="color: #20794D;">            "description": "A paged array of pets",</span></span>
+<span id="cb8-43"><span class="st" style="color: #20794D;">            "headers": {</span></span>
+<span id="cb8-44"><span class="st" style="color: #20794D;">              "x-next": {</span></span>
+<span id="cb8-45"><span class="st" style="color: #20794D;">                "description": "A link to the next page of responses",</span></span>
+<span id="cb8-46"><span class="st" style="color: #20794D;">                "schema": {</span></span>
+<span id="cb8-47"><span class="st" style="color: #20794D;">                  "type": "string"</span></span>
+<span id="cb8-48"><span class="st" style="color: #20794D;">                }</span></span>
+<span id="cb8-49"><span class="st" style="color: #20794D;">              }</span></span>
+<span id="cb8-50"><span class="st" style="color: #20794D;">            },</span></span>
+<span id="cb8-51"><span class="st" style="color: #20794D;">            "content": {</span></span>
+<span id="cb8-52"><span class="st" style="color: #20794D;">              "application/json": {</span></span>
+<span id="cb8-53"><span class="st" style="color: #20794D;">                "schema": {</span></span>
+<span id="cb8-54"><span class="st" style="color: #20794D;">                  "$ref": "#/components/schemas/Pets"</span></span>
+<span id="cb8-55"><span class="st" style="color: #20794D;">                }</span></span>
+<span id="cb8-56"><span class="st" style="color: #20794D;">              }</span></span>
+<span id="cb8-57"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-58"><span class="st" style="color: #20794D;">          },</span></span>
+<span id="cb8-59"><span class="st" style="color: #20794D;">          "default": {</span></span>
+<span id="cb8-60"><span class="st" style="color: #20794D;">            "description": "unexpected error",</span></span>
+<span id="cb8-61"><span class="st" style="color: #20794D;">            "content": {</span></span>
+<span id="cb8-62"><span class="st" style="color: #20794D;">              "application/json": {</span></span>
+<span id="cb8-63"><span class="st" style="color: #20794D;">                "schema": {</span></span>
+<span id="cb8-64"><span class="st" style="color: #20794D;">                  "$ref": "#/components/schemas/Error"</span></span>
+<span id="cb8-65"><span class="st" style="color: #20794D;">                }</span></span>
+<span id="cb8-66"><span class="st" style="color: #20794D;">              }</span></span>
+<span id="cb8-67"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-68"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-69"><span class="st" style="color: #20794D;">        }</span></span>
+<span id="cb8-70"><span class="st" style="color: #20794D;">      },</span></span>
+<span id="cb8-71"><span class="st" style="color: #20794D;">      "post": {</span></span>
+<span id="cb8-72"><span class="st" style="color: #20794D;">        "summary": "Create a pet",</span></span>
+<span id="cb8-73"><span class="st" style="color: #20794D;">        "operationId": "createPets",</span></span>
+<span id="cb8-74"><span class="st" style="color: #20794D;">        "tags": [</span></span>
+<span id="cb8-75"><span class="st" style="color: #20794D;">          "pets"</span></span>
+<span id="cb8-76"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-77"><span class="st" style="color: #20794D;">        "responses": {</span></span>
+<span id="cb8-78"><span class="st" style="color: #20794D;">          "201": {</span></span>
+<span id="cb8-79"><span class="st" style="color: #20794D;">            "description": "Null response"</span></span>
+<span id="cb8-80"><span class="st" style="color: #20794D;">          },</span></span>
+<span id="cb8-81"><span class="st" style="color: #20794D;">          "default": {</span></span>
+<span id="cb8-82"><span class="st" style="color: #20794D;">            "description": "unexpected error",</span></span>
+<span id="cb8-83"><span class="st" style="color: #20794D;">            "content": {</span></span>
+<span id="cb8-84"><span class="st" style="color: #20794D;">              "application/json": {</span></span>
+<span id="cb8-85"><span class="st" style="color: #20794D;">                "schema": {</span></span>
+<span id="cb8-86"><span class="st" style="color: #20794D;">                  "$ref": "#/components/schemas/Error"</span></span>
+<span id="cb8-87"><span class="st" style="color: #20794D;">                }</span></span>
+<span id="cb8-88"><span class="st" style="color: #20794D;">              }</span></span>
+<span id="cb8-89"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-90"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-91"><span class="st" style="color: #20794D;">        }</span></span>
+<span id="cb8-92"><span class="st" style="color: #20794D;">      }</span></span>
+<span id="cb8-93"><span class="st" style="color: #20794D;">    },</span></span>
+<span id="cb8-94"><span class="st" style="color: #20794D;">    "/pets/</span><span class="sc" style="color: #5E5E5E;">{petId}</span><span class="st" style="color: #20794D;">": {</span></span>
+<span id="cb8-95"><span class="st" style="color: #20794D;">      "get": {</span></span>
+<span id="cb8-96"><span class="st" style="color: #20794D;">        "summary": "Info for a specific pet",</span></span>
+<span id="cb8-97"><span class="st" style="color: #20794D;">        "operationId": "showPetById",</span></span>
+<span id="cb8-98"><span class="st" style="color: #20794D;">        "tags": [</span></span>
+<span id="cb8-99"><span class="st" style="color: #20794D;">          "pets"</span></span>
+<span id="cb8-100"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-101"><span class="st" style="color: #20794D;">        "parameters": [</span></span>
+<span id="cb8-102"><span class="st" style="color: #20794D;">          {</span></span>
+<span id="cb8-103"><span class="st" style="color: #20794D;">            "name": "petId",</span></span>
+<span id="cb8-104"><span class="st" style="color: #20794D;">            "in": "path",</span></span>
+<span id="cb8-105"><span class="st" style="color: #20794D;">            "required": true,</span></span>
+<span id="cb8-106"><span class="st" style="color: #20794D;">            "description": "The id of the pet to retrieve",</span></span>
+<span id="cb8-107"><span class="st" style="color: #20794D;">            "schema": {</span></span>
+<span id="cb8-108"><span class="st" style="color: #20794D;">              "type": "string"</span></span>
+<span id="cb8-109"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-110"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-111"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-112"><span class="st" style="color: #20794D;">        "responses": {</span></span>
+<span id="cb8-113"><span class="st" style="color: #20794D;">          "200": {</span></span>
+<span id="cb8-114"><span class="st" style="color: #20794D;">            "description": "Expected response to a valid request",</span></span>
+<span id="cb8-115"><span class="st" style="color: #20794D;">            "content": {</span></span>
+<span id="cb8-116"><span class="st" style="color: #20794D;">              "application/json": {</span></span>
+<span id="cb8-117"><span class="st" style="color: #20794D;">                "schema": {</span></span>
+<span id="cb8-118"><span class="st" style="color: #20794D;">                  "$ref": "#/components/schemas/Pet"</span></span>
+<span id="cb8-119"><span class="st" style="color: #20794D;">                }</span></span>
+<span id="cb8-120"><span class="st" style="color: #20794D;">              }</span></span>
+<span id="cb8-121"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-122"><span class="st" style="color: #20794D;">          },</span></span>
+<span id="cb8-123"><span class="st" style="color: #20794D;">          "default": {</span></span>
+<span id="cb8-124"><span class="st" style="color: #20794D;">            "description": "unexpected error",</span></span>
+<span id="cb8-125"><span class="st" style="color: #20794D;">            "content": {</span></span>
+<span id="cb8-126"><span class="st" style="color: #20794D;">              "application/json": {</span></span>
+<span id="cb8-127"><span class="st" style="color: #20794D;">                "schema": {</span></span>
+<span id="cb8-128"><span class="st" style="color: #20794D;">                  "$ref": "#/components/schemas/Error"</span></span>
+<span id="cb8-129"><span class="st" style="color: #20794D;">                }</span></span>
+<span id="cb8-130"><span class="st" style="color: #20794D;">              }</span></span>
+<span id="cb8-131"><span class="st" style="color: #20794D;">            }</span></span>
+<span id="cb8-132"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-133"><span class="st" style="color: #20794D;">        }</span></span>
+<span id="cb8-134"><span class="st" style="color: #20794D;">      }</span></span>
+<span id="cb8-135"><span class="st" style="color: #20794D;">    }</span></span>
+<span id="cb8-136"><span class="st" style="color: #20794D;">  },</span></span>
+<span id="cb8-137"><span class="st" style="color: #20794D;">  "components": {</span></span>
+<span id="cb8-138"><span class="st" style="color: #20794D;">    "schemas": {</span></span>
+<span id="cb8-139"><span class="st" style="color: #20794D;">      "Pet": {</span></span>
+<span id="cb8-140"><span class="st" style="color: #20794D;">        "type": "object",</span></span>
+<span id="cb8-141"><span class="st" style="color: #20794D;">        "required": [</span></span>
+<span id="cb8-142"><span class="st" style="color: #20794D;">          "id",</span></span>
+<span id="cb8-143"><span class="st" style="color: #20794D;">          "name"</span></span>
+<span id="cb8-144"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-145"><span class="st" style="color: #20794D;">        "properties": {</span></span>
+<span id="cb8-146"><span class="st" style="color: #20794D;">          "id": {</span></span>
+<span id="cb8-147"><span class="st" style="color: #20794D;">            "type": "integer",</span></span>
+<span id="cb8-148"><span class="st" style="color: #20794D;">            "format": "int64"</span></span>
+<span id="cb8-149"><span class="st" style="color: #20794D;">          },</span></span>
+<span id="cb8-150"><span class="st" style="color: #20794D;">          "name": {</span></span>
+<span id="cb8-151"><span class="st" style="color: #20794D;">            "type": "string"</span></span>
+<span id="cb8-152"><span class="st" style="color: #20794D;">          },</span></span>
+<span id="cb8-153"><span class="st" style="color: #20794D;">          "tag": {</span></span>
+<span id="cb8-154"><span class="st" style="color: #20794D;">            "type": "string"</span></span>
+<span id="cb8-155"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-156"><span class="st" style="color: #20794D;">        }</span></span>
+<span id="cb8-157"><span class="st" style="color: #20794D;">      },</span></span>
+<span id="cb8-158"><span class="st" style="color: #20794D;">      "Pets": {</span></span>
+<span id="cb8-159"><span class="st" style="color: #20794D;">        "type": "array",</span></span>
+<span id="cb8-160"><span class="st" style="color: #20794D;">        "maxItems": 100,</span></span>
+<span id="cb8-161"><span class="st" style="color: #20794D;">        "items": {</span></span>
+<span id="cb8-162"><span class="st" style="color: #20794D;">          "$ref": "#/components/schemas/Pet"</span></span>
+<span id="cb8-163"><span class="st" style="color: #20794D;">        }</span></span>
+<span id="cb8-164"><span class="st" style="color: #20794D;">      },</span></span>
+<span id="cb8-165"><span class="st" style="color: #20794D;">      "Error": {</span></span>
+<span id="cb8-166"><span class="st" style="color: #20794D;">        "type": "object",</span></span>
+<span id="cb8-167"><span class="st" style="color: #20794D;">        "required": [</span></span>
+<span id="cb8-168"><span class="st" style="color: #20794D;">          "code",</span></span>
+<span id="cb8-169"><span class="st" style="color: #20794D;">          "message"</span></span>
+<span id="cb8-170"><span class="st" style="color: #20794D;">        ],</span></span>
+<span id="cb8-171"><span class="st" style="color: #20794D;">        "properties": {</span></span>
+<span id="cb8-172"><span class="st" style="color: #20794D;">          "code": {</span></span>
+<span id="cb8-173"><span class="st" style="color: #20794D;">            "type": "integer",</span></span>
+<span id="cb8-174"><span class="st" style="color: #20794D;">            "format": "int32"</span></span>
+<span id="cb8-175"><span class="st" style="color: #20794D;">          },</span></span>
+<span id="cb8-176"><span class="st" style="color: #20794D;">          "message": {</span></span>
+<span id="cb8-177"><span class="st" style="color: #20794D;">            "type": "string"</span></span>
+<span id="cb8-178"><span class="st" style="color: #20794D;">          }</span></span>
+<span id="cb8-179"><span class="st" style="color: #20794D;">        }</span></span>
+<span id="cb8-180"><span class="st" style="color: #20794D;">      }</span></span>
+<span id="cb8-181"><span class="st" style="color: #20794D;">    }</span></span>
+<span id="cb8-182"><span class="st" style="color: #20794D;">  }</span></span>
+<span id="cb8-183"><span class="st" style="color: #20794D;">}</span></span>
+<span id="cb8-184"><span class="st" style="color: #20794D;">"""</span></span>
 <span id="cb8-185"></span>
-<span id="cb8-186">spec <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> OpenAPISpec.from_text(text)</span>
-<span id="cb8-187">pet_openai_functions, pet_callables <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> openapi_spec_to_openai_fn(spec)</span>
+<span id="cb8-186">spec <span class="op" style="color: #5E5E5E;">=</span> OpenAPISpec.from_text(text)</span>
+<span id="cb8-187">pet_openai_functions, pet_callables <span class="op" style="color: #5E5E5E;">=</span> openapi_spec_to_openai_fn(spec)</span>
 <span id="cb8-188">pet_openai_functions</span>
 <span id="cb8-189"></span>
-<span id="cb8-190"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># [{'name': 'listPets',</span></span>
-<span id="cb8-191"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'description': 'List all pets',</span></span>
-<span id="cb8-192"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'parameters': {'type': 'object',</span></span>
-<span id="cb8-193"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#    'properties': {'params': {'type': 'object',</span></span>
-<span id="cb8-194"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#      'properties': {'limit': {'type': 'integer',</span></span>
-<span id="cb8-195"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#        'maximum': 100.0,</span></span>
-<span id="cb8-196"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#        'schema_format': 'int32',</span></span>
-<span id="cb8-197"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#        'description': 'How many items to return at one time (max 100)'}},</span></span>
-<span id="cb8-198"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#      'required': []</span><span class="re">}}}</span><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">},</span></span>
-<span id="cb8-199"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  {'name': 'createPets',</span></span>
-<span id="cb8-200"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'description': 'Create a pet',</span></span>
-<span id="cb8-201"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'parameters': {'type': 'object', 'properties': {</span><span class="re">}}}</span><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">,</span></span>
-<span id="cb8-202"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  {'name': 'showPetById',</span></span>
-<span id="cb8-203"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'description': 'Info for a specific pet',</span></span>
-<span id="cb8-204"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#   'parameters': {'type': 'object',</span></span>
-<span id="cb8-205"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#    'properties': {'path_params': {'type': 'object',</span></span>
-<span id="cb8-206"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#      'properties': {'petId': {'type': 'string',</span></span>
-<span id="cb8-207"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#        'description': 'The id of the pet to retrieve'}},</span></span>
-<span id="cb8-208"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#      'required': ['petId']</span><span class="re">}}}</span><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}]</span></span>
+<span id="cb8-190"><span class="co" style="color: #5E5E5E;"># [{'name': 'listPets',</span></span>
+<span id="cb8-191"><span class="co" style="color: #5E5E5E;">#   'description': 'List all pets',</span></span>
+<span id="cb8-192"><span class="co" style="color: #5E5E5E;">#   'parameters': {'type': 'object',</span></span>
+<span id="cb8-193"><span class="co" style="color: #5E5E5E;">#    'properties': {'params': {'type': 'object',</span></span>
+<span id="cb8-194"><span class="co" style="color: #5E5E5E;">#      'properties': {'limit': {'type': 'integer',</span></span>
+<span id="cb8-195"><span class="co" style="color: #5E5E5E;">#        'maximum': 100.0,</span></span>
+<span id="cb8-196"><span class="co" style="color: #5E5E5E;">#        'schema_format': 'int32',</span></span>
+<span id="cb8-197"><span class="co" style="color: #5E5E5E;">#        'description': 'How many items to return at one time (max 100)'}},</span></span>
+<span id="cb8-198"><span class="co" style="color: #5E5E5E;">#      'required': []</span><span class="re">}}}</span><span class="co" style="color: #5E5E5E;">},</span></span>
+<span id="cb8-199"><span class="co" style="color: #5E5E5E;">#  {'name': 'createPets',</span></span>
+<span id="cb8-200"><span class="co" style="color: #5E5E5E;">#   'description': 'Create a pet',</span></span>
+<span id="cb8-201"><span class="co" style="color: #5E5E5E;">#   'parameters': {'type': 'object', 'properties': {</span><span class="re">}}}</span><span class="co" style="color: #5E5E5E;">,</span></span>
+<span id="cb8-202"><span class="co" style="color: #5E5E5E;">#  {'name': 'showPetById',</span></span>
+<span id="cb8-203"><span class="co" style="color: #5E5E5E;">#   'description': 'Info for a specific pet',</span></span>
+<span id="cb8-204"><span class="co" style="color: #5E5E5E;">#   'parameters': {'type': 'object',</span></span>
+<span id="cb8-205"><span class="co" style="color: #5E5E5E;">#    'properties': {'path_params': {'type': 'object',</span></span>
+<span id="cb8-206"><span class="co" style="color: #5E5E5E;">#      'properties': {'petId': {'type': 'string',</span></span>
+<span id="cb8-207"><span class="co" style="color: #5E5E5E;">#        'description': 'The id of the pet to retrieve'}},</span></span>
+<span id="cb8-208"><span class="co" style="color: #5E5E5E;">#      'required': ['petId']</span><span class="re">}}}</span><span class="co" style="color: #5E5E5E;">}]</span></span>
 <span id="cb8-209"></span>
-<span id="cb8-210">model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatOpenAI(temperature<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>).bind(functions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>pet_openai_functions)</span>
+<span id="cb8-210">model <span class="op" style="color: #5E5E5E;">=</span> ChatOpenAI(temperature<span class="op" style="color: #5E5E5E;">=</span><span class="dv" style="color: #AD0000;">0</span>).bind(functions<span class="op" style="color: #5E5E5E;">=</span>pet_openai_functions)</span>
 <span id="cb8-211"></span>
-<span id="cb8-212">model.invoke(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"what are three pet names"</span>)</span>
-<span id="cb8-213"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'listPets', 'arguments': '{\n  "params": {\n    "limit": 3\n  }\n}'}})</span></span></code></pre></div>
+<span id="cb8-212">model.invoke(<span class="st" style="color: #20794D;">"what are three pet names"</span>)</span>
+<span id="cb8-213"><span class="co" style="color: #5E5E5E;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'listPets', 'arguments': '{\n  "params": {\n    "limit": 3\n  }\n}'}})</span></span></code></pre></div>
 <p>You can also define routers to create rules for when an agent should use a tool.</p>
-<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.schema.agent <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> AgentFinish</span>
-<span id="cb9-2"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">def</span> route(result):</span>
-<span id="cb9-3">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">if</span> <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">isinstance</span>(result, AgentFinish):</span>
-<span id="cb9-4">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> result.return_values[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'output'</span>]</span>
-<span id="cb9-5">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">else</span>:</span>
-<span id="cb9-6">        tools <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb9-7">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"search_wikipedia"</span>: search_wikipedia, </span>
-<span id="cb9-8">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"get_current_temperature"</span>: get_current_temperature,</span>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;">from</span> langchain.schema.agent <span class="im" style="color: #00769E;">import</span> AgentFinish</span>
+<span id="cb9-2"><span class="kw" style="color: #003B4F;">def</span> route(result):</span>
+<span id="cb9-3">    <span class="cf" style="color: #003B4F;">if</span> <span class="bu" style="color: null;">isinstance</span>(result, AgentFinish):</span>
+<span id="cb9-4">        <span class="cf" style="color: #003B4F;">return</span> result.return_values[<span class="st" style="color: #20794D;">'output'</span>]</span>
+<span id="cb9-5">    <span class="cf" style="color: #003B4F;">else</span>:</span>
+<span id="cb9-6">        tools <span class="op" style="color: #5E5E5E;">=</span> {</span>
+<span id="cb9-7">            <span class="st" style="color: #20794D;">"search_wikipedia"</span>: search_wikipedia, </span>
+<span id="cb9-8">            <span class="st" style="color: #20794D;">"get_current_temperature"</span>: get_current_temperature,</span>
 <span id="cb9-9">        }</span>
-<span id="cb9-10">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">return</span> tools[result.tool].run(result.tool_input)</span>
+<span id="cb9-10">        <span class="cf" style="color: #003B4F;">return</span> tools[result.tool].run(result.tool_input)</span>
 <span id="cb9-11"></span>
-<span id="cb9-12">chain <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> OpenAIFunctionsAgentOutputParser() <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> route</span>
+<span id="cb9-12">chain <span class="op" style="color: #5E5E5E;">=</span> prompt <span class="op" style="color: #5E5E5E;">|</span> model <span class="op" style="color: #5E5E5E;">|</span> OpenAIFunctionsAgentOutputParser() <span class="op" style="color: #5E5E5E;">|</span> route</span>
 <span id="cb9-13"></span>
-<span id="cb9-14">chain.invoke({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"input"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"What is the weather in san francisco right now?"</span>})</span>
-<span id="cb9-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># uses the weather tool</span></span>
-<span id="cb9-16"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># 'The current temperature is 18.5°C'</span></span>
+<span id="cb9-14">chain.invoke({<span class="st" style="color: #20794D;">"input"</span>: <span class="st" style="color: #20794D;">"What is the weather in san francisco right now?"</span>})</span>
+<span id="cb9-15"><span class="co" style="color: #5E5E5E;"># uses the weather tool</span></span>
+<span id="cb9-16"><span class="co" style="color: #5E5E5E;"># 'The current temperature is 18.5°C'</span></span>
 <span id="cb9-17"></span>
-<span id="cb9-18"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># uses the wikipedia tool</span></span>
-<span id="cb9-19">chain.invoke({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"input"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"What is langchain?"</span>})</span>
-<span id="cb9-20"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># 'Page: LangChain\nSummary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain\'s use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.\n\nPage: Prompt engineering\nSummary: Prompt engineering is the process of structuring text that can be interpreted and understood by a generative AI model. A prompt is natural language text describing the task that an AI should perform.A prompt for a text-to-text model can be a query such as "what is Fermat\'s little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". A prompt may include a few examples for a model to learn from, such as "maison -&gt; house, chat -&gt; cat, chien -&gt;", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.\n\nPage: Sentence embedding\nSummary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT\'s sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT\'s [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. \nOther approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. \nAn alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.'</span></span></code></pre></div>
+<span id="cb9-18"><span class="co" style="color: #5E5E5E;"># uses the wikipedia tool</span></span>
+<span id="cb9-19">chain.invoke({<span class="st" style="color: #20794D;">"input"</span>: <span class="st" style="color: #20794D;">"What is langchain?"</span>})</span>
+<span id="cb9-20"><span class="co" style="color: #5E5E5E;"># 'Page: LangChain\nSummary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain\'s use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.\n\nPage: Prompt engineering\nSummary: Prompt engineering is the process of structuring text that can be interpreted and understood by a generative AI model. A prompt is natural language text describing the task that an AI should perform.A prompt for a text-to-text model can be a query such as "what is Fermat\'s little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". A prompt may include a few examples for a model to learn from, such as "maison -&gt; house, chat -&gt; cat, chien -&gt;", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.\n\nPage: Sentence embedding\nSummary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT\'s sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT\'s [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. \nOther approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. \nAn alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.'</span></span></code></pre></div>
 <p>You can also create a conversational agent that can use tools using the <code>AgentExecutor</code> class. I believe the <code>AgentExecutor</code> handles the message types and routing for you.</p>
-<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.schema.runnable <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> RunnablePassthrough</span>
-<span id="cb10-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.agents <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> AgentExecutor</span>
+<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;">from</span> langchain.schema.runnable <span class="im" style="color: #00769E;">import</span> RunnablePassthrough</span>
+<span id="cb10-2"><span class="im" style="color: #00769E;">from</span> langchain.agents <span class="im" style="color: #00769E;">import</span> AgentExecutor</span>
 <span id="cb10-3"></span>
-<span id="cb10-4">agent_chain <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RunnablePassthrough.assign(</span>
-<span id="cb10-5">    agent_scratchpad<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">lambda</span> x: format_to_openai_functions(x[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"intermediate_steps"</span>])</span>
-<span id="cb10-6">) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> chain</span>
+<span id="cb10-4">agent_chain <span class="op" style="color: #5E5E5E;">=</span> RunnablePassthrough.assign(</span>
+<span id="cb10-5">    agent_scratchpad<span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">lambda</span> x: format_to_openai_functions(x[<span class="st" style="color: #20794D;">"intermediate_steps"</span>])</span>
+<span id="cb10-6">) <span class="op" style="color: #5E5E5E;">|</span> chain</span>
 <span id="cb10-7"></span>
-<span id="cb10-8">agent_executor <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> AgentExecutor(agent<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>agent_chain, tools<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>tools, verbose<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span>
+<span id="cb10-8">agent_executor <span class="op" style="color: #5E5E5E;">=</span> AgentExecutor(agent<span class="op" style="color: #5E5E5E;">=</span>agent_chain, tools<span class="op" style="color: #5E5E5E;">=</span>tools, verbose<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>)</span>
 <span id="cb10-9"></span>
-<span id="cb10-10">agent_executor.invoke({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"input"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"what is langchain?"</span>})</span>
+<span id="cb10-10">agent_executor.invoke({<span class="st" style="color: #20794D;">"input"</span>: <span class="st" style="color: #20794D;">"what is langchain?"</span>})</span>
 <span id="cb10-11"></span>
-<span id="cb10-12"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># &gt; Entering new AgentExecutor chain...</span></span>
+<span id="cb10-12"><span class="co" style="color: #5E5E5E;"># &gt; Entering new AgentExecutor chain...</span></span>
 <span id="cb10-13"></span>
-<span id="cb10-14"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Invoking: `search_wikipedia` with `{'query': 'langchain'}`</span></span>
+<span id="cb10-14"><span class="co" style="color: #5E5E5E;"># Invoking: `search_wikipedia` with `{'query': 'langchain'}`</span></span>
 <span id="cb10-15"></span>
 <span id="cb10-16"></span>
-<span id="cb10-17"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Page: LangChain</span></span>
-<span id="cb10-18"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Summary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain's use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.</span></span>
+<span id="cb10-17"><span class="co" style="color: #5E5E5E;"># Page: LangChain</span></span>
+<span id="cb10-18"><span class="co" style="color: #5E5E5E;"># Summary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain's use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.</span></span>
 <span id="cb10-19"></span>
 <span id="cb10-20"></span>
 <span id="cb10-21"></span>
-<span id="cb10-22"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Page: Sentence embedding</span></span>
-<span id="cb10-23"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. </span></span>
-<span id="cb10-24"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. </span></span>
-<span id="cb10-25"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># An alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.</span></span>
+<span id="cb10-22"><span class="co" style="color: #5E5E5E;"># Page: Sentence embedding</span></span>
+<span id="cb10-23"><span class="co" style="color: #5E5E5E;"># Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. </span></span>
+<span id="cb10-24"><span class="co" style="color: #5E5E5E;"># Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. </span></span>
+<span id="cb10-25"><span class="co" style="color: #5E5E5E;"># An alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.</span></span>
 <span id="cb10-26"></span>
 <span id="cb10-27"></span>
 <span id="cb10-28"></span>
-<span id="cb10-29"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Page: Prompt engineering</span></span>
-<span id="cb10-30"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Summary: Prompt engineering, primarily used in communication with a text-to-text model and text-to-image model, is the process of structuring text that can be interpreted and understood by a generative AI model. Prompt engineering is enabled by in-context learning, defined as a model's ability to temporarily learn from prompts. The ability for in-context learning is an emergent ability of large language models.</span></span>
-<span id="cb10-31"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># A prompt is natural language text describing the task that an AI should perform. A prompt for a text-to-text model can be a query such as "what is Fermat's little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". Prompt engineering may consist of a single prompt that includes a few examples for a model to learn from, such as "maison -&gt; house, chat -&gt; cat, chien -&gt;", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.</span></span>
+<span id="cb10-29"><span class="co" style="color: #5E5E5E;"># Page: Prompt engineering</span></span>
+<span id="cb10-30"><span class="co" style="color: #5E5E5E;"># Summary: Prompt engineering, primarily used in communication with a text-to-text model and text-to-image model, is the process of structuring text that can be interpreted and understood by a generative AI model. Prompt engineering is enabled by in-context learning, defined as a model's ability to temporarily learn from prompts. The ability for in-context learning is an emergent ability of large language models.</span></span>
+<span id="cb10-31"><span class="co" style="color: #5E5E5E;"># A prompt is natural language text describing the task that an AI should perform. A prompt for a text-to-text model can be a query such as "what is Fermat's little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". Prompt engineering may consist of a single prompt that includes a few examples for a model to learn from, such as "maison -&gt; house, chat -&gt; cat, chien -&gt;", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.</span></span>
 <span id="cb10-32"></span>
-<span id="cb10-33"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). It is a language model integration framework that can be used for various purposes such as document analysis and summarization, chatbots, and code analysis. LangChain allows developers to leverage the power of language models in their applications.</span></span>
+<span id="cb10-33"><span class="co" style="color: #5E5E5E;"># LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). It is a language model integration framework that can be used for various purposes such as document analysis and summarization, chatbots, and code analysis. LangChain allows developers to leverage the power of language models in their applications.</span></span>
 <span id="cb10-34"></span>
-<span id="cb10-35"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># &gt; Finished chain.</span></span></code></pre></div>
+<span id="cb10-35"><span class="co" style="color: #5E5E5E;"># &gt; Finished chain.</span></span></code></pre></div>
 <p>You can also add memory to the Agent:</p>
-<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.memory <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ConversationBufferMemory</span>
-<span id="cb11-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.agents <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> AgentExecutor</span>
+<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;">from</span> langchain.memory <span class="im" style="color: #00769E;">import</span> ConversationBufferMemory</span>
+<span id="cb11-2"><span class="im" style="color: #00769E;">from</span> langchain.agents <span class="im" style="color: #00769E;">import</span> AgentExecutor</span>
 <span id="cb11-3"></span>
-<span id="cb11-4">prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatPromptTemplate.from_messages([</span>
-<span id="cb11-5">    (<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"system"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"You are helpful but sassy assistant"</span>),</span>
-<span id="cb11-6">    MessagesPlaceholder(variable_name<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"chat_history"</span>),</span>
-<span id="cb11-7">    (<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{input}</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>),</span>
-<span id="cb11-8">    MessagesPlaceholder(variable_name<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"agent_scratchpad"</span>)</span>
+<span id="cb11-4">prompt <span class="op" style="color: #5E5E5E;">=</span> ChatPromptTemplate.from_messages([</span>
+<span id="cb11-5">    (<span class="st" style="color: #20794D;">"system"</span>, <span class="st" style="color: #20794D;">"You are helpful but sassy assistant"</span>),</span>
+<span id="cb11-6">    MessagesPlaceholder(variable_name<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"chat_history"</span>),</span>
+<span id="cb11-7">    (<span class="st" style="color: #20794D;">"user"</span>, <span class="st" style="color: #20794D;">"</span><span class="sc" style="color: #5E5E5E;">{input}</span><span class="st" style="color: #20794D;">"</span>),</span>
+<span id="cb11-8">    MessagesPlaceholder(variable_name<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"agent_scratchpad"</span>)</span>
 <span id="cb11-9">])</span>
 <span id="cb11-10"></span>
-<span id="cb11-11">chain <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RunnablePassthrough.assign(</span>
-<span id="cb11-12">    agent_scratchpad<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-style: inherit;">lambda</span> x: format_to_openai_functions(x[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"intermediate_steps"</span>])</span>
-<span id="cb11-13">) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">|</span> OpenAIFunctionsAgentOutputParser()</span>
+<span id="cb11-11">chain <span class="op" style="color: #5E5E5E;">=</span> RunnablePassthrough.assign(</span>
+<span id="cb11-12">    agent_scratchpad<span class="op" style="color: #5E5E5E;">=</span> <span class="kw" style="color: #003B4F;">lambda</span> x: format_to_openai_functions(x[<span class="st" style="color: #20794D;">"intermediate_steps"</span>])</span>
+<span id="cb11-13">) <span class="op" style="color: #5E5E5E;">|</span> prompt <span class="op" style="color: #5E5E5E;">|</span> model <span class="op" style="color: #5E5E5E;">|</span> OpenAIFunctionsAgentOutputParser()</span>
 <span id="cb11-14"></span>
-<span id="cb11-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># what happens when conversation buffer memory gets too long?</span></span>
-<span id="cb11-16">memory <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ConversationBufferMemory(return_messages<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,memory_key<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"chat_history"</span>)</span>
+<span id="cb11-15"><span class="co" style="color: #5E5E5E;"># what happens when conversation buffer memory gets too long?</span></span>
+<span id="cb11-16">memory <span class="op" style="color: #5E5E5E;">=</span> ConversationBufferMemory(return_messages<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>,memory_key<span class="op" style="color: #5E5E5E;">=</span><span class="st" style="color: #20794D;">"chat_history"</span>)</span>
 <span id="cb11-17"></span>
-<span id="cb11-18">agent_executor <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> AgentExecutor(agent<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>chain, tools<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>tools, verbose<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>, memory<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>memory)</span>
+<span id="cb11-18">agent_executor <span class="op" style="color: #5E5E5E;">=</span> AgentExecutor(agent<span class="op" style="color: #5E5E5E;">=</span>chain, tools<span class="op" style="color: #5E5E5E;">=</span>tools, verbose<span class="op" style="color: #5E5E5E;">=</span><span class="va" style="color: #111111;">True</span>, memory<span class="op" style="color: #5E5E5E;">=</span>memory)</span>
 <span id="cb11-19"></span>
-<span id="cb11-20">query <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"What is the weather in san francisco right now?"</span></span>
-<span id="cb11-21">agent_executor.invoke({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"input"</span>:query})</span></code></pre></div>
+<span id="cb11-20">query <span class="op" style="color: #5E5E5E;">=</span> <span class="st" style="color: #20794D;">"What is the weather in san francisco right now?"</span></span>
+<span id="cb11-21">agent_executor.invoke({<span class="st" style="color: #20794D;">"input"</span>:query})</span></code></pre></div>
 </section>
 <section id="the-1000x-ai-engineer" class="level2">
 <h2 class="anchored" data-anchor-id="the-1000x-ai-engineer">The 1000x AI Engineer</h2>
