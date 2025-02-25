@@ -1089,7 +1089,7 @@
     "href": "posts/2025-02-24-karpathy-deep-dive-llms/index.html",
     "title": "Summary of Karpathy’s Deep Dive into LLMs like ChatGPT",
     "section": "",
-    "text": "I’ve been experimeting with writing CLI utilities to fetch and summarize YouTube videos. This is primarily for personal use. May open source the CLI in the future."
+    "text": "I’ve been experimeting with writing CLI utilities to fetch and summarize YouTube videos. This is primarily for personal use. May open source the CLI in the future. The model I used was gpt-4o-mini."
   },
   {
     "objectID": "posts/2025-02-24-karpathy-deep-dive-llms/index.html#summary",
