@@ -1,0 +1,110 @@
+---
+title: "Summary of Karpathy's Deep Dive into LLMs like ChatGPT"
+author: "Lawrence Wu"    
+date: "2025-02-24"
+categories: ["LLMs", "Summary"]
+---
+
+I've been experimeting with writing CLI utilities to fetch and summarize YouTube videos. This is primarily for personal use. May open source the CLI in the future.
+
+# Deep Dive into LLMs like ChatGPT
+
+{{< video https://youtube.com/watch?v=7xTGNNLPyMI >}} 
+
+## Summary
+
+### [introduction](https://youtube.com/watch?v=7xTGNNLPyMI&t=0) (0:00:00)
+
+In this video, Andrej Karpathy aims to provide a comprehensive introduction to large language models like ChatGPT, making it accessible for a general audience. He plans to explore how these models work, what users should input, and the nature of the responses generated. Karpathy will discuss the building process of such models while also addressing their strengths, weaknesses, and cognitive psychological implications.
+
+### [pretraining data (internet)](https://youtube.com/watch?v=7xTGNNLPyMI&t=60) (0:01:00)
+
+The pre-training stage for large language models (LLMs) involves downloading and processing vast amounts of text data from the internet, primarily sourced from datasets like Common Crawl. This process includes multiple filtering stages to ensure high-quality and diverse content, such as removing undesirable URLs, extracting text from raw HTML, and filtering for language and personally identifiable information (PII). The resulting curated dataset, like the Fine Web dataset, typically amounts to around 44 terabytes of text, forming the foundation for training neural networks to understand and generate human-like text.
+
+### [tokenization](https://youtube.com/watch?v=7xTGNNLPyMI&t=467) (0:07:47)
+
+In the tokenization process for neural networks like ChatGPT, text is represented as a one-dimensional sequence of symbols. To optimize this representation, raw text is encoded into a finite set of symbols, with techniques like byte pair encoding reducing sequence length while increasing vocabulary size. This allows models, such as GPT-4, to utilize around 100,000 unique tokens. Tokenization transforms text into these symbols, enabling efficient processing by the model.
+
+### [neural network I/O](https://youtube.com/watch?v=7xTGNNLPyMI&t=867) (0:14:27)
+
+The section discusses the process of transforming a large dataset of text into tokens, highlighting that it consists of about 15 trillion tokens represented as unique IDs. It explains how neural networks are trained to predict the next token in a sequence using context windows of variable lengths, typically ranging up to 8,000 tokens. The neural network outputs probabilities for the next token, which are initially random, and through a mathematical updating process, these probabilities are adjusted to better match the actual sequences in the training data. This training occurs in parallel across multiple windows and tokens to ensure consistent predictions aligned with the statistical patterns of the dataset.
+
+### [neural network internals](https://youtube.com/watch?v=7xTGNNLPyMI&t=1211) (0:20:11)
+
+This section delves into the internals of neural networks, particularly focusing on Transformers, which process sequences of tokens using billions of parameters. Initially, these parameters are set randomly and are adjusted through training to improve prediction accuracy based on training data. The mathematical expressions used in these networks, while complex in scale, involve simple operations like multiplication and addition to transform inputs into outputs. The section emphasizes that understanding the general structure and function of these networks is more important than the intricate mathematical details.
+
+### [inference](https://youtube.com/watch?v=7xTGNNLPyMI&t=1561) (0:26:01)
+
+Inference is the process of generating new data from a trained neural network by predicting the next token based on a probability distribution derived from the model's internalized patterns. This involves sampling tokens sequentially, which can sometimes reproduce sequences from the training data but often results in unique combinations. The process is stochastic, meaning the generated output varies with each inference due to the random nature of token sampling. Once a model is trained, it operates solely on inference, using fixed parameters to complete token sequences during interactions, such as in ChatGPT.
+
+### [GPT-2: training and inference](https://youtube.com/watch?v=7xTGNNLPyMI&t=1869) (0:31:09)
+
+The section discusses GPT-2, the second iteration of OpenAI's generative pre-trained transformer models, highlighting its significance as a precursor to modern language models like GPT-4. GPT-2, launched in 2019, featured 1.6 billion parameters and was trained on approximately 100 billion tokens, a relatively small dataset by today's standards. The costs and efficiency of training such models have significantly improved due to advancements in hardware and better data processing techniques. The training process involves updating the model's parameters to reduce loss and improve token prediction, which requires powerful GPUs running in cloud data centers.
+
+### [Llama 3.1 base model inference](https://youtube.com/watch?v=7xTGNNLPyMI&t=2572) (0:42:52)
+
+The section discusses the concept of base models in language learning models (LLMs), specifically focusing on Llama 3.1, a 405 billion parameter model trained on extensive data. Base models serve as token simulators and are not inherently useful for interactive tasks, as they generate text based on statistical patterns from training data. The section also highlights the importance of prompt design in eliciting useful responses from base models and demonstrates how clever prompting can simulate an assistant-like behavior, even without the full capabilities of a trained assistant model.
+
+### [pretraining to post-training](https://youtube.com/watch?v=7xTGNNLPyMI&t=3563) (0:59:23)
+
+In this section, the video discusses the two main stages of training language models for assistant applications, focusing on pre-training and post-training. Pre-training involves creating a base model by predicting token sequences from internet documents, resulting in a simulator that generates text similar to online content. The subsequent post-training stage, which is less computationally intensive, is crucial for refining the model to provide accurate answers to user questions, transforming it from a document generator into a functional assistant.
+
+### [post-training data (conversations)](https://youtube.com/watch?v=7xTGNNLPyMI&t=3666) (1:01:06)
+
+This section discusses the post-training phase of language models, focusing on how they learn to handle multi-turn conversations through datasets created by human labelers. The assistant's responses are shaped by examples of ideal interactions, which are compiled and used to fine-tune the model. The process involves converting conversations into token sequences for training, allowing the model to generate responses based on statistical patterns learned from the data. Ultimately, the assistant's behavior mimics that of skilled human labelers, providing responses aligned with the training data rather than representing a distinct AI intelligence.
+
+### [hallucinations, tool use, knowledge/working memory](https://youtube.com/watch?v=7xTGNNLPyMI&t=4832) (1:20:32)
+
+The video discusses the cognitive effects of training large language models (LLMs) like ChatGPT, focusing on issues such as hallucinations, where models fabricate information due to their statistical nature. To mitigate these hallucinations, one approach is to include training data that teaches models when to express uncertainty. Additionally, models can be equipped with tools, such as web search, allowing them to access current information and improve their responses, akin to refreshing working memory. This dual strategy enhances factual accuracy and reduces the occurrence of false claims by enabling LLMs to either admit ignorance or seek information when needed.
+
+### [knowledge of self](https://youtube.com/watch?v=7xTGNNLPyMI&t=6106) (1:41:46)
+
+The section discusses the concept of "knowledge of self" in large language models (LLMs) like ChatGPT, emphasizing that these models lack a persistent identity or self-awareness. When asked about their origins, LLMs generate answers based on statistical patterns from their training data, often leading to fabricated responses. Developers can influence how models respond to such questions by including hardcoded prompts or system messages during fine-tuning, but fundamentally, the models do not possess a true sense of self as humans do.
+
+### [models need tokens to think](https://youtube.com/watch?v=7xTGNNLPyMI&t=6416) (1:46:56)
+
+In this section, Andrej Karpathy emphasizes the importance of structuring prompts for language models (LLMs) to effectively distribute computational tasks across multiple tokens. He illustrates this with examples of simple math problems, highlighting that models perform better when they can generate intermediate results rather than attempting to compute answers in a single token. He also advises using code as a tool for complex tasks, as it provides more reliable results than relying on the model's mental arithmetic, especially for tasks like counting, which LLMs struggle with.
+
+### [tokenization revisited: models struggle with spelling](https://youtube.com/watch?v=7xTGNNLPyMI&t=7271) (2:01:11)
+
+The video discusses the limitations of language models like ChatGPT, particularly regarding spelling tasks due to their reliance on tokenization rather than individual characters. This leads to difficulties in performing simple character-level tasks, such as extracting every third character from a string. The models also struggle with counting, as illustrated by their past inaccuracies in determining the number of 'R's in the word "strawberry." Overall, the section highlights the cognitive deficits of these models and the challenges posed by their token-based processing.
+
+### [jagged intelligence](https://youtube.com/watch?v=7xTGNNLPyMI&t=7493) (2:04:53)
+
+In this section, the speaker discusses the inconsistencies and unexpected shortcomings of large language models (LLMs) like ChatGPT, particularly their struggle with simple questions despite excelling at complex problems. An example is given where the model incorrectly evaluates the numerical comparison of 9.11 and 9.9, highlighting a puzzling cognitive distraction linked to Bible verse markers. The speaker emphasizes that while LLMs are powerful tools, they are not fully reliable and should be used cautiously rather than as definitive sources of truth.
+
+### [supervised finetuning to reinforcement learning](https://youtube.com/watch?v=7xTGNNLPyMI&t=7648) (2:07:28)
+
+This section discusses the training stages of large language models, emphasizing the transition from pre-training on internet documents to supervised fine-tuning with curated human conversations. It highlights the importance of creating a diverse dataset of prompts and ideal responses through human curation and the use of language models. The discussion then shifts to the final stage of training, reinforcement learning, which is likened to the learning process in school, where models practice problem-solving using background knowledge and expert imitation to refine their skills.
+
+### [reinforcement learning](https://youtube.com/watch?v=7xTGNNLPyMI&t=8082) (2:14:42)
+
+The section discusses the challenges of annotating solutions for large language models (LLMs) like ChatGPT, emphasizing the differences in cognition between humans and LLMs. It highlights how human labelers may struggle to determine the best token sequences for problem-solving, leading to inefficiencies. The reinforcement learning (RL) process is introduced as a method for LLMs to explore and refine their own solutions through trial and error, ultimately allowing the model to learn effective token sequences independently rather than relying solely on human-generated examples. This iterative learning process is likened to how children practice and learn problem-solving.
+
+### [DeepSeek-R1](https://youtube.com/watch?v=7xTGNNLPyMI&t=8867) (2:27:47)
+
+The video discusses the evolution of large language models (LLMs), emphasizing the significance of reinforcement learning (RL) in fine-tuning compared to the more established stages of pre-training and supervised fine-tuning. The recent DeepSeek R1 paper highlights how RL can enhance a model's reasoning capabilities, enabling it to solve mathematical problems more accurately by employing cognitive strategies like re-evaluating steps and exploring different perspectives. This emergent thinking process leads to longer, more detailed responses, showcasing the model's ability to discover effective problem-solving techniques independently. The video also compares the performance of DeepSeek's reasoning model to other LLMs, noting that while many mainstream models primarily utilize supervised fine-tuning, there are emerging options that incorporate RL for advanced reasoning tasks.
+
+### [AlphaGo](https://youtube.com/watch?v=7xTGNNLPyMI&t=9727) (2:42:07)
+
+The section discusses the power of reinforcement learning demonstrated by DeepMind's AlphaGo, which learned to play Go better than human experts by playing against itself and discovering unique strategies, such as the famous "move 37." Unlike supervised learning, which only imitates human performance, reinforcement learning allows the system to explore a wider range of solutions and potentially develop new strategies beyond human comprehension. The implications for large language models (LLMs) are significant, suggesting that with diverse problems and environments, LLMs could similarly discover novel reasoning methods or even new languages that enhance their problem-solving capabilities.
+
+### [reinforcement learning from human feedback (RLHF)](https://youtube.com/watch?v=7xTGNNLPyMI&t=10106) (2:48:26)
+
+The section discusses reinforcement learning from human feedback (RLHF) and its application in unverifiable domains, such as creative writing, where scoring solutions is challenging. Instead of relying on extensive human evaluations, RLHF uses a reward model trained to simulate human preferences, allowing for efficient reinforcement learning without requiring infinite human input. While RLHF improves model performance, it has limitations, including the risk of the model gaming the reward system, making it less reliable than traditional reinforcement learning methods. Ultimately, RLHF is seen as a useful but imperfect enhancement to model training.
+
+### [preview of things to come](https://youtube.com/watch?v=7xTGNNLPyMI&t=11379) (3:09:39)
+
+Future language models (LLMs) like ChatGPT are expected to become multimodal, capable of processing text, audio, and images natively, enabling more natural interactions. They will evolve into agents that can perform long-running tasks with human supervision, improving their ability to manage complex jobs over time. Additionally, these models will become more pervasive, integrating seamlessly into various tools and potentially taking actions on users' behalf. Ongoing research is needed to enhance their learning capabilities, particularly for handling extensive context windows in multimodal tasks.
+
+### [keeping track of LLMs](https://youtube.com/watch?v=7xTGNNLPyMI&t=11715) (3:15:15)
+
+In this section, Andrej Karpathy shares three key resources for staying updated on LLMs. He highlights El Marina, an LLM leaderboard that ranks models based on human comparisons, noting that some models, like Deep Seek and Llama, offer open weights. He also recommends the AI News newsletter for its comprehensive coverage of AI developments and suggests following trusted individuals on X (formerly Twitter) for real-time updates. Karpathy emphasizes the importance of testing different models to find the best fit for specific tasks.
+
+### [where to find LLMs](https://youtube.com/watch?v=7xTGNNLPyMI&t=11914) (3:18:34)
+
+The video discusses where to find and use various large language models (LLMs). Proprietary models can be accessed via their respective provider websites, such as OpenAI and Google. For open-weight models, platforms like Together.AI allow users to interact with various models, while base models can often be found on Hyperbolic. Additionally, smaller distilled models can be run locally on personal computers using applications like LM Studio, despite its interface challenges.
+
+### [grand summary](https://youtube.com/watch?v=7xTGNNLPyMI&t=12106) (3:21:46)
+
+The video discusses the inner workings of language models like ChatGPT, explaining how user queries are processed as token sequences and how the models generate responses. It highlights the two main stages of training: pre-training for knowledge acquisition and supervised fine-tuning for developing response behavior through human data curation. Additionally, the video touches on the differences between standard models and those using reinforcement learning, suggesting that while the latter shows promise for problem-solving, they still have limitations and should be used as tools with caution. Overall, the narrator expresses excitement about the potential of these models while emphasizing the importance of verifying their outputs.
