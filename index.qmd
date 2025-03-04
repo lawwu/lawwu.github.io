@@ -1,8 +1,10 @@
 ---
 title: "Lawrence Wu"
+image: images/lawrence.jpg
 comments: false
 about:
-  template: jolla
+  template: trestles
+  image-width: 10em
   links:
     - icon: envelope
       text: Email
@@ -21,12 +23,15 @@ about:
       href: https://twitter.com/law_wu      
 ---
 
-
 ::: {#hero-heading}
-Hi! My name is Lawrence and I'm a data scientist who loves deriving insight and value from data. I enjoy  building machine learning and NLP solutions that make a difference. Currently I'm a Principal Data Scientist at [UKG](https://www.ukg.com/). Prior to that, I've held data science positions at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff](https://happymoney.com/) and [Allianz](https://allianz.com/). Prior to getting into data science, I was an actuary.
+<!-- ::: {.headshot}
+![](images/lawrence.jpg){width=200px style="border-radius: 50%; margin-bottom: 20px;"}
+::: -->
 
-On this site I keep a [technical blog](https://lawwu.github.io/blog.html), a [TIL](https://lawwu.github.io/til/) and resume. I also enjoy [writing about personal finance](https://lawwu.github.io/modest-money-guide/).
+ I am an experienced AI Engineer & Data Scientist who loves deriving insight and value from data. I enjoy building AI, Large Language Model (LLMs) and Machine Learning solutions that make a difference. Currently I'm a Principal Data Scientist at [UKG](https://www.ukg.com/). Prior to that, I've held data science positions at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff](https://happymoney.com/) and [Allianz](https://allianz.com/). Prior to getting into data science, I was an actuary.
 
-I am open for new consulting work and other engagements. If you are interested, you can [find more info here]((https://doxasolutions.ai)).
+On this site I keep a [technical blog](https://lawwu.github.io/blog.html), a [TIL](https://lawwu.github.io/til/) and resume. I also enjoy [running](https://lawwu.github.io/posts/2024-10-13-running-6-months/) and [writing about personal finance](https://lawwu.github.io/modest-money-guide/).
+
+I am open for new consulting work and other engagements. If you are interested, you can [find more info here](https://doxasolutions.ai).
 
 :::
