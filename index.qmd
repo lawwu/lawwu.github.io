@@ -25,6 +25,6 @@ about:
 ::: {#hero-heading}
 Hi! My name is Lawrence and I'm a data scientist who loves deriving insight and value from data. I enjoy  building machine learning and NLP solutions that make a difference. Currently I'm a Principal Data Scientist at [UKG](https://www.ukg.com/). Prior to that, I've held data science positions at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff](https://happymoney.com/) and [Allianz](https://allianz.com/). Prior to getting into data science, I was an actuary.
 
-On this site I keep a [technical blog](https://lawwu.github.io/blog.html), a [TIL](https://lawwu.github.io/til/) and resume. I also enjoy [writing about personal finance](https://lawwu.github.io/modest-money-guide/).
+On this site I keep a [technical blog](https://lawwu.github.io/blog.html), a [TIL](https://lawwu.github.io/til/) and resume. I also enjoy [writing about personal finance](https://lawwu.github.io/modest-money-guide/) and do I am available for [AI consulting](https://doxasolutions.ai).
 
 :::
