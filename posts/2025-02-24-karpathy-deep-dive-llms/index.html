@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2025-02-24">
+
+<title>Summary of Karpathy’s Deep Dive into LLMs like ChatGPT – Lawrence Wu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Summary of Karpathy’s Deep Dive into LLMs like ChatGPT – Lawrence Wu">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:site_name" content="Lawrence Wu">
+<meta name="twitter:title" content="Summary of Karpathy’s Deep Dive into LLMs like ChatGPT – Lawrence Wu">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://lawwu.github.io/til/"> 
+<span class="menu-text">TIL</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#deep-dive-into-llms-like-chatgpt" id="toc-deep-dive-into-llms-like-chatgpt" class="nav-link active" data-scroll-target="#deep-dive-into-llms-like-chatgpt">Deep Dive into LLMs like ChatGPT</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a>
+  <ul class="collapse">
+  <li><a href="#introduction-00000" id="toc-introduction-00000" class="nav-link" data-scroll-target="#introduction-00000">introduction (0:00:00)</a></li>
+  <li><a href="#pretraining-data-internet-00100" id="toc-pretraining-data-internet-00100" class="nav-link" data-scroll-target="#pretraining-data-internet-00100">pretraining data (internet) (0:01:00)</a></li>
+  <li><a href="#tokenization-00747" id="toc-tokenization-00747" class="nav-link" data-scroll-target="#tokenization-00747">tokenization (0:07:47)</a></li>
+  <li><a href="#neural-network-io-01427" id="toc-neural-network-io-01427" class="nav-link" data-scroll-target="#neural-network-io-01427">neural network I/O (0:14:27)</a></li>
+  <li><a href="#neural-network-internals-02011" id="toc-neural-network-internals-02011" class="nav-link" data-scroll-target="#neural-network-internals-02011">neural network internals (0:20:11)</a></li>
+  <li><a href="#inference-02601" id="toc-inference-02601" class="nav-link" data-scroll-target="#inference-02601">inference (0:26:01)</a></li>
+  <li><a href="#gpt-2-training-and-inference-03109" id="toc-gpt-2-training-and-inference-03109" class="nav-link" data-scroll-target="#gpt-2-training-and-inference-03109">GPT-2: training and inference (0:31:09)</a></li>
+  <li><a href="#llama-3.1-base-model-inference-04252" id="toc-llama-3.1-base-model-inference-04252" class="nav-link" data-scroll-target="#llama-3.1-base-model-inference-04252">Llama 3.1 base model inference (0:42:52)</a></li>
+  <li><a href="#pretraining-to-post-training-05923" id="toc-pretraining-to-post-training-05923" class="nav-link" data-scroll-target="#pretraining-to-post-training-05923">pretraining to post-training (0:59:23)</a></li>
+  <li><a href="#post-training-data-conversations-10106" id="toc-post-training-data-conversations-10106" class="nav-link" data-scroll-target="#post-training-data-conversations-10106">post-training data (conversations) (1:01:06)</a></li>
+  <li><a href="#hallucinations-tool-use-knowledgeworking-memory-12032" id="toc-hallucinations-tool-use-knowledgeworking-memory-12032" class="nav-link" data-scroll-target="#hallucinations-tool-use-knowledgeworking-memory-12032">hallucinations, tool use, knowledge/working memory (1:20:32)</a></li>
+  <li><a href="#knowledge-of-self-14146" id="toc-knowledge-of-self-14146" class="nav-link" data-scroll-target="#knowledge-of-self-14146">knowledge of self (1:41:46)</a></li>
+  <li><a href="#models-need-tokens-to-think-14656" id="toc-models-need-tokens-to-think-14656" class="nav-link" data-scroll-target="#models-need-tokens-to-think-14656">models need tokens to think (1:46:56)</a></li>
+  <li><a href="#tokenization-revisited-models-struggle-with-spelling-20111" id="toc-tokenization-revisited-models-struggle-with-spelling-20111" class="nav-link" data-scroll-target="#tokenization-revisited-models-struggle-with-spelling-20111">tokenization revisited: models struggle with spelling (2:01:11)</a></li>
+  <li><a href="#jagged-intelligence-20453" id="toc-jagged-intelligence-20453" class="nav-link" data-scroll-target="#jagged-intelligence-20453">jagged intelligence (2:04:53)</a></li>
+  <li><a href="#supervised-finetuning-to-reinforcement-learning-20728" id="toc-supervised-finetuning-to-reinforcement-learning-20728" class="nav-link" data-scroll-target="#supervised-finetuning-to-reinforcement-learning-20728">supervised finetuning to reinforcement learning (2:07:28)</a></li>
+  <li><a href="#reinforcement-learning-21442" id="toc-reinforcement-learning-21442" class="nav-link" data-scroll-target="#reinforcement-learning-21442">reinforcement learning (2:14:42)</a></li>
+  <li><a href="#deepseek-r1-22747" id="toc-deepseek-r1-22747" class="nav-link" data-scroll-target="#deepseek-r1-22747">DeepSeek-R1 (2:27:47)</a></li>
+  <li><a href="#alphago-24207" id="toc-alphago-24207" class="nav-link" data-scroll-target="#alphago-24207">AlphaGo (2:42:07)</a></li>
+  <li><a href="#reinforcement-learning-from-human-feedback-rlhf-24826" id="toc-reinforcement-learning-from-human-feedback-rlhf-24826" class="nav-link" data-scroll-target="#reinforcement-learning-from-human-feedback-rlhf-24826">reinforcement learning from human feedback (RLHF) (2:48:26)</a></li>
+  <li><a href="#preview-of-things-to-come-30939" id="toc-preview-of-things-to-come-30939" class="nav-link" data-scroll-target="#preview-of-things-to-come-30939">preview of things to come (3:09:39)</a></li>
+  <li><a href="#keeping-track-of-llms-31515" id="toc-keeping-track-of-llms-31515" class="nav-link" data-scroll-target="#keeping-track-of-llms-31515">keeping track of LLMs (3:15:15)</a></li>
+  <li><a href="#where-to-find-llms-31834" id="toc-where-to-find-llms-31834" class="nav-link" data-scroll-target="#where-to-find-llms-31834">where to find LLMs (3:18:34)</a></li>
+  <li><a href="#grand-summary-32146" id="toc-grand-summary-32146" class="nav-link" data-scroll-target="#grand-summary-32146">grand summary (3:21:46)</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Summary of Karpathy’s Deep Dive into LLMs like ChatGPT</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">LLMs</div>
+    <div class="quarto-category">Summary</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 24, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>I’ve been experimeting with writing CLI utilities to fetch and summarize YouTube videos. This is primarily for personal use. <del>May open source the CLI in the future</del>. The CLI is called <a href="https://github.com/lawwu/yt-transcript">yt-transcript</a>. The model I used was <code>gpt-4o-mini</code>. The summary of Andrej Karpathy’s Deep Dive into LLMs video is below:</p>
+<section id="deep-dive-into-llms-like-chatgpt" class="level1">
+<h1>Deep Dive into LLMs like ChatGPT</h1>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/7xTGNNLPyMI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<section id="introduction-00000" class="level3">
+<h3 class="anchored" data-anchor-id="introduction-00000"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=0">introduction</a> (0:00:00)</h3>
+<p>In this video, Andrej Karpathy aims to provide a comprehensive introduction to large language models like ChatGPT, making it accessible for a general audience. He plans to explore how these models work, what users should input, and the nature of the responses generated. Karpathy will discuss the building process of such models while also addressing their strengths, weaknesses, and cognitive psychological implications.</p>
+</section>
+<section id="pretraining-data-internet-00100" class="level3">
+<h3 class="anchored" data-anchor-id="pretraining-data-internet-00100"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=60">pretraining data (internet)</a> (0:01:00)</h3>
+<p>The pre-training stage for large language models (LLMs) involves downloading and processing vast amounts of text data from the internet, primarily sourced from datasets like Common Crawl. This process includes multiple filtering stages to ensure high-quality and diverse content, such as removing undesirable URLs, extracting text from raw HTML, and filtering for language and personally identifiable information (PII). The resulting curated dataset, like the Fine Web dataset, typically amounts to around 44 terabytes of text, forming the foundation for training neural networks to understand and generate human-like text.</p>
+</section>
+<section id="tokenization-00747" class="level3">
+<h3 class="anchored" data-anchor-id="tokenization-00747"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=467">tokenization</a> (0:07:47)</h3>
+<p>In the tokenization process for neural networks like ChatGPT, text is represented as a one-dimensional sequence of symbols. To optimize this representation, raw text is encoded into a finite set of symbols, with techniques like byte pair encoding reducing sequence length while increasing vocabulary size. This allows models, such as GPT-4, to utilize around 100,000 unique tokens. Tokenization transforms text into these symbols, enabling efficient processing by the model.</p>
+</section>
+<section id="neural-network-io-01427" class="level3">
+<h3 class="anchored" data-anchor-id="neural-network-io-01427"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=867">neural network I/O</a> (0:14:27)</h3>
+<p>The section discusses the process of transforming a large dataset of text into tokens, highlighting that it consists of about 15 trillion tokens represented as unique IDs. It explains how neural networks are trained to predict the next token in a sequence using context windows of variable lengths, typically ranging up to 8,000 tokens. The neural network outputs probabilities for the next token, which are initially random, and through a mathematical updating process, these probabilities are adjusted to better match the actual sequences in the training data. This training occurs in parallel across multiple windows and tokens to ensure consistent predictions aligned with the statistical patterns of the dataset.</p>
+</section>
+<section id="neural-network-internals-02011" class="level3">
+<h3 class="anchored" data-anchor-id="neural-network-internals-02011"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=1211">neural network internals</a> (0:20:11)</h3>
+<p>This section delves into the internals of neural networks, particularly focusing on Transformers, which process sequences of tokens using billions of parameters. Initially, these parameters are set randomly and are adjusted through training to improve prediction accuracy based on training data. The mathematical expressions used in these networks, while complex in scale, involve simple operations like multiplication and addition to transform inputs into outputs. The section emphasizes that understanding the general structure and function of these networks is more important than the intricate mathematical details.</p>
+</section>
+<section id="inference-02601" class="level3">
+<h3 class="anchored" data-anchor-id="inference-02601"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=1561">inference</a> (0:26:01)</h3>
+<p>Inference is the process of generating new data from a trained neural network by predicting the next token based on a probability distribution derived from the model’s internalized patterns. This involves sampling tokens sequentially, which can sometimes reproduce sequences from the training data but often results in unique combinations. The process is stochastic, meaning the generated output varies with each inference due to the random nature of token sampling. Once a model is trained, it operates solely on inference, using fixed parameters to complete token sequences during interactions, such as in ChatGPT.</p>
+</section>
+<section id="gpt-2-training-and-inference-03109" class="level3">
+<h3 class="anchored" data-anchor-id="gpt-2-training-and-inference-03109"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=1869">GPT-2: training and inference</a> (0:31:09)</h3>
+<p>The section discusses GPT-2, the second iteration of OpenAI’s generative pre-trained transformer models, highlighting its significance as a precursor to modern language models like GPT-4. GPT-2, launched in 2019, featured 1.6 billion parameters and was trained on approximately 100 billion tokens, a relatively small dataset by today’s standards. The costs and efficiency of training such models have significantly improved due to advancements in hardware and better data processing techniques. The training process involves updating the model’s parameters to reduce loss and improve token prediction, which requires powerful GPUs running in cloud data centers.</p>
+</section>
+<section id="llama-3.1-base-model-inference-04252" class="level3">
+<h3 class="anchored" data-anchor-id="llama-3.1-base-model-inference-04252"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=2572">Llama 3.1 base model inference</a> (0:42:52)</h3>
+<p>The section discusses the concept of base models in language learning models (LLMs), specifically focusing on Llama 3.1, a 405 billion parameter model trained on extensive data. Base models serve as token simulators and are not inherently useful for interactive tasks, as they generate text based on statistical patterns from training data. The section also highlights the importance of prompt design in eliciting useful responses from base models and demonstrates how clever prompting can simulate an assistant-like behavior, even without the full capabilities of a trained assistant model.</p>
+</section>
+<section id="pretraining-to-post-training-05923" class="level3">
+<h3 class="anchored" data-anchor-id="pretraining-to-post-training-05923"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=3563">pretraining to post-training</a> (0:59:23)</h3>
+<p>In this section, the video discusses the two main stages of training language models for assistant applications, focusing on pre-training and post-training. Pre-training involves creating a base model by predicting token sequences from internet documents, resulting in a simulator that generates text similar to online content. The subsequent post-training stage, which is less computationally intensive, is crucial for refining the model to provide accurate answers to user questions, transforming it from a document generator into a functional assistant.</p>
+</section>
+<section id="post-training-data-conversations-10106" class="level3">
+<h3 class="anchored" data-anchor-id="post-training-data-conversations-10106"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=3666">post-training data (conversations)</a> (1:01:06)</h3>
+<p>This section discusses the post-training phase of language models, focusing on how they learn to handle multi-turn conversations through datasets created by human labelers. The assistant’s responses are shaped by examples of ideal interactions, which are compiled and used to fine-tune the model. The process involves converting conversations into token sequences for training, allowing the model to generate responses based on statistical patterns learned from the data. Ultimately, the assistant’s behavior mimics that of skilled human labelers, providing responses aligned with the training data rather than representing a distinct AI intelligence.</p>
+</section>
+<section id="hallucinations-tool-use-knowledgeworking-memory-12032" class="level3">
+<h3 class="anchored" data-anchor-id="hallucinations-tool-use-knowledgeworking-memory-12032"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=4832">hallucinations, tool use, knowledge/working memory</a> (1:20:32)</h3>
+<p>The video discusses the cognitive effects of training large language models (LLMs) like ChatGPT, focusing on issues such as hallucinations, where models fabricate information due to their statistical nature. To mitigate these hallucinations, one approach is to include training data that teaches models when to express uncertainty. Additionally, models can be equipped with tools, such as web search, allowing them to access current information and improve their responses, akin to refreshing working memory. This dual strategy enhances factual accuracy and reduces the occurrence of false claims by enabling LLMs to either admit ignorance or seek information when needed.</p>
+</section>
+<section id="knowledge-of-self-14146" class="level3">
+<h3 class="anchored" data-anchor-id="knowledge-of-self-14146"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=6106">knowledge of self</a> (1:41:46)</h3>
+<p>The section discusses the concept of “knowledge of self” in large language models (LLMs) like ChatGPT, emphasizing that these models lack a persistent identity or self-awareness. When asked about their origins, LLMs generate answers based on statistical patterns from their training data, often leading to fabricated responses. Developers can influence how models respond to such questions by including hardcoded prompts or system messages during fine-tuning, but fundamentally, the models do not possess a true sense of self as humans do.</p>
+</section>
+<section id="models-need-tokens-to-think-14656" class="level3">
+<h3 class="anchored" data-anchor-id="models-need-tokens-to-think-14656"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=6416">models need tokens to think</a> (1:46:56)</h3>
+<p>In this section, Andrej Karpathy emphasizes the importance of structuring prompts for language models (LLMs) to effectively distribute computational tasks across multiple tokens. He illustrates this with examples of simple math problems, highlighting that models perform better when they can generate intermediate results rather than attempting to compute answers in a single token. He also advises using code as a tool for complex tasks, as it provides more reliable results than relying on the model’s mental arithmetic, especially for tasks like counting, which LLMs struggle with.</p>
+</section>
+<section id="tokenization-revisited-models-struggle-with-spelling-20111" class="level3">
+<h3 class="anchored" data-anchor-id="tokenization-revisited-models-struggle-with-spelling-20111"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=7271">tokenization revisited: models struggle with spelling</a> (2:01:11)</h3>
+<p>The video discusses the limitations of language models like ChatGPT, particularly regarding spelling tasks due to their reliance on tokenization rather than individual characters. This leads to difficulties in performing simple character-level tasks, such as extracting every third character from a string. The models also struggle with counting, as illustrated by their past inaccuracies in determining the number of ’R’s in the word “strawberry.” Overall, the section highlights the cognitive deficits of these models and the challenges posed by their token-based processing.</p>
+</section>
+<section id="jagged-intelligence-20453" class="level3">
+<h3 class="anchored" data-anchor-id="jagged-intelligence-20453"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=7493">jagged intelligence</a> (2:04:53)</h3>
+<p>In this section, the speaker discusses the inconsistencies and unexpected shortcomings of large language models (LLMs) like ChatGPT, particularly their struggle with simple questions despite excelling at complex problems. An example is given where the model incorrectly evaluates the numerical comparison of 9.11 and 9.9, highlighting a puzzling cognitive distraction linked to Bible verse markers. The speaker emphasizes that while LLMs are powerful tools, they are not fully reliable and should be used cautiously rather than as definitive sources of truth.</p>
+</section>
+<section id="supervised-finetuning-to-reinforcement-learning-20728" class="level3">
+<h3 class="anchored" data-anchor-id="supervised-finetuning-to-reinforcement-learning-20728"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=7648">supervised finetuning to reinforcement learning</a> (2:07:28)</h3>
+<p>This section discusses the training stages of large language models, emphasizing the transition from pre-training on internet documents to supervised fine-tuning with curated human conversations. It highlights the importance of creating a diverse dataset of prompts and ideal responses through human curation and the use of language models. The discussion then shifts to the final stage of training, reinforcement learning, which is likened to the learning process in school, where models practice problem-solving using background knowledge and expert imitation to refine their skills.</p>
+</section>
+<section id="reinforcement-learning-21442" class="level3">
+<h3 class="anchored" data-anchor-id="reinforcement-learning-21442"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=8082">reinforcement learning</a> (2:14:42)</h3>
+<p>The section discusses the challenges of annotating solutions for large language models (LLMs) like ChatGPT, emphasizing the differences in cognition between humans and LLMs. It highlights how human labelers may struggle to determine the best token sequences for problem-solving, leading to inefficiencies. The reinforcement learning (RL) process is introduced as a method for LLMs to explore and refine their own solutions through trial and error, ultimately allowing the model to learn effective token sequences independently rather than relying solely on human-generated examples. This iterative learning process is likened to how children practice and learn problem-solving.</p>
+</section>
+<section id="deepseek-r1-22747" class="level3">
+<h3 class="anchored" data-anchor-id="deepseek-r1-22747"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=8867">DeepSeek-R1</a> (2:27:47)</h3>
+<p>The video discusses the evolution of large language models (LLMs), emphasizing the significance of reinforcement learning (RL) in fine-tuning compared to the more established stages of pre-training and supervised fine-tuning. The recent DeepSeek R1 paper highlights how RL can enhance a model’s reasoning capabilities, enabling it to solve mathematical problems more accurately by employing cognitive strategies like re-evaluating steps and exploring different perspectives. This emergent thinking process leads to longer, more detailed responses, showcasing the model’s ability to discover effective problem-solving techniques independently. The video also compares the performance of DeepSeek’s reasoning model to other LLMs, noting that while many mainstream models primarily utilize supervised fine-tuning, there are emerging options that incorporate RL for advanced reasoning tasks.</p>
+</section>
+<section id="alphago-24207" class="level3">
+<h3 class="anchored" data-anchor-id="alphago-24207"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=9727">AlphaGo</a> (2:42:07)</h3>
+<p>The section discusses the power of reinforcement learning demonstrated by DeepMind’s AlphaGo, which learned to play Go better than human experts by playing against itself and discovering unique strategies, such as the famous “move 37.” Unlike supervised learning, which only imitates human performance, reinforcement learning allows the system to explore a wider range of solutions and potentially develop new strategies beyond human comprehension. The implications for large language models (LLMs) are significant, suggesting that with diverse problems and environments, LLMs could similarly discover novel reasoning methods or even new languages that enhance their problem-solving capabilities.</p>
+</section>
+<section id="reinforcement-learning-from-human-feedback-rlhf-24826" class="level3">
+<h3 class="anchored" data-anchor-id="reinforcement-learning-from-human-feedback-rlhf-24826"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=10106">reinforcement learning from human feedback (RLHF)</a> (2:48:26)</h3>
+<p>The section discusses reinforcement learning from human feedback (RLHF) and its application in unverifiable domains, such as creative writing, where scoring solutions is challenging. Instead of relying on extensive human evaluations, RLHF uses a reward model trained to simulate human preferences, allowing for efficient reinforcement learning without requiring infinite human input. While RLHF improves model performance, it has limitations, including the risk of the model gaming the reward system, making it less reliable than traditional reinforcement learning methods. Ultimately, RLHF is seen as a useful but imperfect enhancement to model training.</p>
+</section>
+<section id="preview-of-things-to-come-30939" class="level3">
+<h3 class="anchored" data-anchor-id="preview-of-things-to-come-30939"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=11379">preview of things to come</a> (3:09:39)</h3>
+<p>Future language models (LLMs) like ChatGPT are expected to become multimodal, capable of processing text, audio, and images natively, enabling more natural interactions. They will evolve into agents that can perform long-running tasks with human supervision, improving their ability to manage complex jobs over time. Additionally, these models will become more pervasive, integrating seamlessly into various tools and potentially taking actions on users’ behalf. Ongoing research is needed to enhance their learning capabilities, particularly for handling extensive context windows in multimodal tasks.</p>
+</section>
+<section id="keeping-track-of-llms-31515" class="level3">
+<h3 class="anchored" data-anchor-id="keeping-track-of-llms-31515"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=11715">keeping track of LLMs</a> (3:15:15)</h3>
+<p>In this section, Andrej Karpathy shares three key resources for staying updated on LLMs. He highlights El Marina, an LLM leaderboard that ranks models based on human comparisons, noting that some models, like Deep Seek and Llama, offer open weights. He also recommends the AI News newsletter for its comprehensive coverage of AI developments and suggests following trusted individuals on X (formerly Twitter) for real-time updates. Karpathy emphasizes the importance of testing different models to find the best fit for specific tasks.</p>
+</section>
+<section id="where-to-find-llms-31834" class="level3">
+<h3 class="anchored" data-anchor-id="where-to-find-llms-31834"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=11914">where to find LLMs</a> (3:18:34)</h3>
+<p>The video discusses where to find and use various large language models (LLMs). Proprietary models can be accessed via their respective provider websites, such as OpenAI and Google. For open-weight models, platforms like Together.AI allow users to interact with various models, while base models can often be found on Hyperbolic. Additionally, smaller distilled models can be run locally on personal computers using applications like LM Studio, despite its interface challenges.</p>
+</section>
+<section id="grand-summary-32146" class="level3">
+<h3 class="anchored" data-anchor-id="grand-summary-32146"><a href="https://youtube.com/watch?v=7xTGNNLPyMI&amp;t=12106">grand summary</a> (3:21:46)</h3>
+<p>The video discusses the inner workings of language models like ChatGPT, explaining how user queries are processed as token sequences and how the models generate responses. It highlights the two main stages of training: pre-training for knowledge acquisition and supervised fine-tuning for developing response behavior through human data curation. Additionally, the video touches on the differences between standard models and those using reinforcement learning, suggesting that while the latter shows promise for problem-solving, they still have limitations and should be used as tools with caution. Overall, the narrator expresses excitement about the potential of these models while emphasizing the importance of verifying their outputs.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lawwu\.github\.io\/blog\.html");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

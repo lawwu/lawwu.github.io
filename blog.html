@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lawrence Wu – blog</title>
+<title>blog – Lawrence Wu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,17 +39,23 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -58,6 +64,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -74,7 +81,8 @@ ul.task-list li input[type="checkbox"] {
 
     const options = {
       valueNames: ['listing-date','listing-title','listing-reading-time','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
+      page: 25,
+    pagination: { item: "<li class='page-item'><a class='page page-link' href='#'></a></li>" },
       searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
     };
 
@@ -113,76 +121,133 @@ cookieconsent.run({
   "notice_banner_reject_button_hide":false,
   "preferences_center_close_button_hide":false,
   "website_name":""
+  ,
+"language":"en"
   });
 });
 </script> 
   
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Lawrence Wu" href="blog.xml"></head>
+<link rel="alternate" type="application/rss+xml" title="Lawrence Wu" href="blog.xml" data-external="1"><meta property="og:title" content="Lawrence Wu">
+<meta property="og:site_name" content="Lawrence Wu">
+<meta name="twitter:title" content="Lawrence Wu">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
 
 <body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Lawrence Wu</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./blog.html" rel="" target="" aria-current="page">
- <span class="menu-text">Blog</span></a>
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./ai_resources.html" rel="" target="">
- <span class="menu-text">AI Resources</span></a>
+    <a class="nav-link" href="./projects.html"> 
+<span class="menu-text">Projects</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://github.com/lawwu" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="./conferences.html"> 
+<span class="menu-text">Conferences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://lawwu.github.io/til/"> 
+<span class="menu-text">TIL</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text">GitHub</span></a>
+<span class="menu-text">GitHub</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://twitter.com/law_wu" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text">Twitter</span></a>
+<span class="menu-text">Twitter</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./blog.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="./blog.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="AI">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Agents">Agents <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Code Interpreter">Code Interpreter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Analysis">Data Analysis <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Data Science">Data Science <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Developer Tools">Developer Tools <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Focus">Focus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="GPT">GPT <span class="quarto-category-count">(5)</span></div><div class="category" data-category="Isaacson">Isaacson <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Jobs">Jobs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="LLMs">LLMs <span class="quarto-category-count">(6)</span></div><div class="category" data-category="Layoffs">Layoffs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Musk">Musk <span class="quarto-category-count">(1)</span></div><div class="category" data-category="OpenAI">OpenAI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Production">Production <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Productivity">Productivity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Work">Work <span class="quarto-category-count">(4)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(33)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QUklMjBFbmdpbmVlcmluZw==">AI Engineering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QVNS">ASR <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QWNxdWlyZWQ=">Acquired <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QWdlbnRz">Agents <span class="quarto-category-count">(3)</span></div><div class="category" data-category="QW50aHJvcGlj">Anthropic <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QXhvbG90bA==">Axolotl <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QkVSVA==">BERT <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q2F1c2FsJTIwSW5mZXJlbmNl">Causal Inference <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Q2hyaXN0aWFuJTIwTGlmZQ==">Christian Life <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29kZSUyMEludGVycHJldGVy">Code Interpreter <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29sQkVSVA==">ColBERT <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29uZmVyZW5jZQ==">Conference <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Q29zdGNv">Costco <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RGF0YSUyMEFuYWx5c2lz">Data Analysis <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGF0YSUyMFNjaWVuY2U=">Data Science <span class="quarto-category-count">(2)</span></div><div class="category" data-category="RGV2ZWxvcGVyJTIwVG9vbHM=">Developer Tools <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RmluZS10dW5l">Fine-tune <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Rml0bmVzcw==">Fitness <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Rm9jdXM=">Focus <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RnVuY3Rpb24lMjBDYWxsaW5n">Function Calling <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R1BU">GPT <span class="quarto-category-count">(5)</span></div><div class="category" data-category="R2VtaW5p">Gemini <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R29k">God <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R29vZ2xl">Google <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SW5mb3JtYXRpb24lMjBSZXRyaWV2YWw=">Information Retrieval <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SXNhYWNzb24=">Isaacson <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sm9icw==">Jobs <span class="quarto-category-count">(3)</span></div><div class="category" data-category="S0RE">KDD <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TExN">LLM <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(19)</span></div><div class="category" data-category="TGFuZ0dyYXBo">LangGraph <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGF5b2Zmcw==">Layoffs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGxhbWE=">Llama <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TGxhbWEy">Llama2 <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWFycmlhZ2U=">Marriage <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TXVzaw==">Musk <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TkxV">NLU <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TmV1cklQUw==">NeurIPS <span class="quarto-category-count">(1)</span></div><div class="category" data-category="T3BlbkFJ">OpenAI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="UGFwZXIlMjBTdW1tYXJ5">Paper Summary <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvZHVjdGlvbg==">Production <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHJvZHVjdGl2aXR5">Productivity <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UHl0aG9u">Python <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UnVubmluZw==">Running <span class="quarto-category-count">(2)</span></div><div class="category" data-category="U3VtbWFyaXphdGlvbg==">Summarization <span class="quarto-category-count">(1)</span></div><div class="category" data-category="U3VtbWFyeQ==">Summary <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VHJhbnNjcmlwdHM=">Transcripts <span class="quarto-category-count">(1)</span></div><div class="category" data-category="VUtH">UKG <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2hpc3Blcg==">Whisper <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V29yaw==">Work <span class="quarto-category-count">(6)</span></div><div class="category" data-category="bGF5b2Zmcw==">layoffs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="b2RlJTIwdG8=">ode to <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -192,78 +257,853 @@ cookieconsent.run({
 
 
 
+
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="LLMs,Agents,Data Analysis,Data Science,Code Interpreter" data-listing-file-modified-sort="1689343018189" data-listing-reading-time-sort="35">
+<div class="quarto-post image-right" data-index="0" data-categories="TExNcyUyQ1N1bW1hcnk=" data-listing-date-sort="1740355200000" data-listing-file-modified-sort="1742276994883" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2234">
 <div class="body">
-<a href="./posts/2023-07-13-agents-code-interpreter/index.html">
 <h3 class="no-anchor listing-title">
-Data Analysis/Science Agents and Code Interpreter
+<a href="./posts/2025-02-24-karpathy-deep-dive-llms/index.html" class="no-external">Summary of Karpathy’s Deep Dive into LLMs like ChatGPT</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2025-02-24-karpathy-deep-dive-llms/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
 LLMs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Agents'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('U3VtbWFyeQ=='); return false;">
+Summary
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2025-02-24-karpathy-deep-dive-llms/index.html" class="no-external">I’ve been experimeting with writing CLI utilities to fetch and summarize YouTube videos. This is primarily for personal use. <del>May open source the CLI in the future</del>. The CLI…<code></code></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-02-24-karpathy-deep-dive-llms/index.html" class="no-external">
+<div class="listing-date">
+Feb 24, 2025
+</div>
+<div class="listing-reading-time">
+12 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="UnVubmluZyUyQ0ZpdG5lc3M=" data-listing-date-sort="1738454400000" data-listing-file-modified-sort="1742276994882" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="324">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2025-02-02-second-half-marathon/index.html" class="no-external">Second Half-Marathon in the Books</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2025-02-02-second-half-marathon/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('UnVubmluZw=='); return false;">
+Running
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Rml0bmVzcw=='); return false;">
+Fitness
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2025-02-02-second-half-marathon/index.html" class="no-external">Second half-marathon complete (Strava)! Goals for this race at Surf City 2025 was just to 1) not get injured and 2) beat my first HM time of 1:49. Felt like the conditions…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2025-02-02-second-half-marathon/index.html" class="no-external">
+<div class="listing-date">
+Feb 2, 2025
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="UnVubmluZyUyQ0ZpdG5lc3MlMkNDaHJpc3RpYW4lMjBMaWZl" data-listing-date-sort="1728777600000" data-listing-file-modified-sort="1742276994841" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3856">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-10-13-running-6-months/index.html" class="no-external">Running Lessons</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-10-13-running-6-months/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('UnVubmluZw=='); return false;">
+Running
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Rml0bmVzcw=='); return false;">
+Fitness
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Q2hyaXN0aWFuJTIwTGlmZQ=='); return false;">
+Christian Life
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-10-13-running-6-months/index.html" class="no-external">I never considered myself a runner. I actually never enjoyed the activity of running. I usually didn’t look forward to it. I would occassionally still do it because I knew…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-10-13-running-6-months/index.html" class="no-external">
+<div class="listing-date">
+Oct 13, 2024
+</div>
+<div class="listing-reading-time">
+20 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="TGFuZ0dyYXBoJTJDTExNcyUyQ0FnZW50cyUyQ1B5dGhvbg==" data-listing-date-sort="1726790400000" data-listing-file-modified-sort="1742276994830" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="7" data-listing-word-count-sort="1306">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-09-20-langgraph-tutorial/index.html" class="no-external">Introduction to LangGraph Tutorial</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-09-20-langgraph-tutorial/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TGFuZ0dyYXBo'); return false;">
+LangGraph
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QWdlbnRz'); return false;">
 Agents
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Analysis'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('UHl0aG9u'); return false;">
+Python
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-09-20-langgraph-tutorial/index.html" class="no-external">The LangChain team recently released the first course in their LangChain Academy called Introduction to LangGraph (repo). As I’m working through it I will make some notes on…<code></code></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-09-20-langgraph-tutorial/index.html" class="no-external">
+<div class="listing-date">
+Sep 20, 2024
+</div>
+<div class="listing-reading-time">
+7 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="4" data-categories="R29kJTJDTWFycmlhZ2UlMkNTdW1tYXJ5" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1742276994826" data-listing-date-modified-sort="1723593600000" data-listing-reading-time-sort="10" data-listing-word-count-sort="1813">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-08-14-gods-design-for-marriage/index.html" class="no-external">God’s Design for Marriage</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-08-14-gods-design-for-marriage/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">
+God
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">
+Marriage
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('U3VtbWFyeQ=='); return false;">
+Summary
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-08-14-gods-design-for-marriage/index.html" class="no-external">My church is hosting a retreat this weekend and we are privileged to have John Street as our speaker. He was planning to speak on God’s Design for Marriage. I was curious…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-08-14-gods-design-for-marriage/index.html" class="no-external">
+<div class="listing-date">
+Aug 14, 2024
+</div>
+<div class="listing-reading-time">
+10 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="5" data-categories="TExNcw==" data-listing-date-sort="1721952000000" data-listing-file-modified-sort="1742276994826" data-listing-date-modified-sort="1721952000000" data-listing-reading-time-sort="18" data-listing-word-count-sort="3541">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-07-26-dwarkesh-claude/index.html" class="no-external">How Dwarkesh Patel Uses AI &amp; Claude</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-07-26-dwarkesh-claude/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-07-26-dwarkesh-claude/index.html" class="no-external">Dwarkesh Patel is becoming the new Lex Fridman of podcasting. Lex got his start a podcaster interviewing AI experts. Since then Lex has branched out and most of his guests…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-07-26-dwarkesh-claude/index.html" class="no-external">
+<div class="listing-date">
+Jul 26, 2024
+</div>
+<div class="listing-reading-time">
+18 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="6" data-categories="bGF5b2ZmcyUyQ1VLRw==" data-listing-date-sort="1720483200000" data-listing-file-modified-sort="1742276994826" data-listing-date-modified-sort="1720483200000" data-listing-reading-time-sort="3" data-listing-word-count-sort="557">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-07-09-what-to-do-after-layoffs/index.html" class="no-external">What to do after getting laid off?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-07-09-what-to-do-after-layoffs/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('bGF5b2Zmcw=='); return false;">
+layoffs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VUtH'); return false;">
+UKG
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-07-09-what-to-do-after-layoffs/index.html" class="no-external">My company, UKG, announced layoffs last Wednesday (see an industry expert’s take on reasons why). 14% of the company was let go which is around 2,200 out of the 15,000…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-07-09-what-to-do-after-layoffs/index.html" class="no-external">
+<div class="listing-date">
+Jul 9, 2024
+</div>
+<div class="listing-reading-time">
+3 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="7" data-categories="TExNcyUyQ0ZpbmUtdHVuZSUyQ0F4b2xvdGw=" data-listing-date-sort="1716422400000" data-listing-file-modified-sort="1742276994826" data-listing-date-modified-sort="1716422400000" data-listing-reading-time-sort="27" data-listing-word-count-sort="5292">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-05-23-first-axolotl-finetune/index.html" class="no-external">Finetuning LLMs with Axolotl</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-05-23-first-axolotl-finetune/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RmluZS10dW5l'); return false;">
+Fine-tune
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QXhvbG90bA=='); return false;">
+Axolotl
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-05-23-first-axolotl-finetune/index.html" class="no-external">I started Hamel Husain’s <del>fine-tuning LLM course</del> Mastering LLM course last week. I don’t have a ton of experience fine-tuning LLMs so I thought this would be a good way to…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-05-23-first-axolotl-finetune/index.html" class="no-external">
+<div class="listing-date">
+May 23, 2024
+</div>
+<div class="listing-reading-time">
+27 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="8" data-categories="QW50aHJvcGljJTJDTExNcw==" data-listing-date-sort="1712707200000" data-listing-file-modified-sort="1742276994826" data-listing-date-modified-sort="1712707200000" data-listing-reading-time-sort="12" data-listing-word-count-sort="2235">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-04-10-dario-amodei-elad-gil/index.html" class="no-external">Dario Amodei &amp; Elad Gil</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-04-10-dario-amodei-elad-gil/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('QW50aHJvcGlj'); return false;">
+Anthropic
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-04-10-dario-amodei-elad-gil/index.html" class="no-external">At Google Cloud Next 2024, Elad Gil interviewed Dario Amodei, the CEO of Anthropic. I recorded the talk (really bad audio) and transcribed it using a whisper (small-en)…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-04-10-dario-amodei-elad-gil/index.html" class="no-external">
+<div class="listing-date">
+Apr 10, 2024
+</div>
+<div class="listing-reading-time">
+12 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="9" data-categories="TExNcyUyQ0pvYnMlMkNXb3JrJTJDQUk=" data-listing-date-sort="1709856000000" data-listing-file-modified-sort="1742276994817" data-listing-date-modified-sort="1709856000000" data-listing-reading-time-sort="2" data-listing-word-count-sort="377">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-03-08-ai-impact-on-jobs/index.html" class="no-external">AI Impact on Jobs</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-03-08-ai-impact-on-jobs/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sm9icw=='); return false;">
+Jobs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('V29yaw=='); return false;">
+Work
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">
+AI
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-03-08-ai-impact-on-jobs/index.html" class="no-external">Andrew Ng gave a talk recently on AI’s Potential Effect on the Labor Force. Here’s the transcript of the video.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-03-08-ai-impact-on-jobs/index.html" class="no-external">
+<div class="listing-date">
+Mar 8, 2024
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="10" data-categories="b2RlJTIwdG8lMkNDb3N0Y28lMkNBY3F1aXJlZA==" data-listing-date-sort="1709078400000" data-listing-file-modified-sort="1742276994817" data-listing-date-modified-sort="1709078400000" data-listing-reading-time-sort="10" data-listing-word-count-sort="1952">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-02-28-ode-to-costco/index.html" class="no-external">Ode to Costco</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-02-28-ode-to-costco/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('b2RlJTIwdG8='); return false;">
+ode to
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Q29zdGNv'); return false;">
+Costco
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QWNxdWlyZWQ='); return false;">
+Acquired
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-02-28-ode-to-costco/index.html" class="no-external">I’ve been a fan of Costco for many years. Charlie Munger famously loved Costco too. I still remember growing up and going to Price Club with my mom or dad and seeing them…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-02-28-ode-to-costco/index.html" class="no-external">
+<div class="listing-date">
+Feb 28, 2024
+</div>
+<div class="listing-reading-time">
+10 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="11" data-categories="QkVSVCUyQ0NvbEJFUlQlMkNJbmZvcm1hdGlvbiUyMFJldHJpZXZhbCUyQ05MVQ==" data-listing-date-sort="1705536000000" data-listing-file-modified-sort="1742276994817" data-listing-date-modified-sort="1706832000000" data-listing-reading-time-sort="8" data-listing-word-count-sort="1573">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-01-18-colbert-information-retrieval/index.html" class="no-external">ColBERT and Information Retrieval</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-01-18-colbert-information-retrieval/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('QkVSVA=='); return false;">
+BERT
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Q29sQkVSVA=='); return false;">
+ColBERT
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('SW5mb3JtYXRpb24lMjBSZXRyaWV2YWw='); return false;">
+Information Retrieval
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TkxV'); return false;">
+NLU
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-01-18-colbert-information-retrieval/index.html" class="no-external">I recently learned about ColBERT, a BERT-based model for efficient passage retrieval. The authors of the paper ColBERT: Efficient and Effective Passage Search via…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-01-18-colbert-information-retrieval/index.html" class="no-external">
+<div class="listing-date">
+Jan 18, 2024
+</div>
+<div class="listing-reading-time">
+8 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="12" data-categories="TExNcyUyQ1N1bW1hcml6YXRpb24lMkNOZXVySVBT" data-listing-date-sort="1704326400000" data-listing-file-modified-sort="1742276994813" data-listing-date-modified-sort="1704326400000" data-listing-reading-time-sort="63" data-listing-word-count-sort="12530">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2024-01-04-llm-summarization-neurips/index.html" class="no-external">LLM Summarization and NeurIPS Papers</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2024-01-04-llm-summarization-neurips/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('U3VtbWFyaXphdGlvbg=='); return false;">
+Summarization
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TmV1cklQUw=='); return false;">
+NeurIPS
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2024-01-04-llm-summarization-neurips/index.html" class="no-external">I didn’t get the chance to attend NeurIPS last week. The sheer number of papers submitted is staggering: 13,300 submitted papers that were reviewed by 1,000+ people. 3,540…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2024-01-04-llm-summarization-neurips/index.html" class="no-external">
+<div class="listing-date">
+Jan 4, 2024
+</div>
+<div class="listing-reading-time">
+63 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="13" data-categories="TExNcyUyQ0dvb2dsZSUyQ0dlbWluaSUyQ0Z1bmN0aW9uJTIwQ2FsbGluZw==" data-listing-date-sort="1703548800000" data-listing-file-modified-sort="1742276994812" data-listing-date-modified-sort="1703548800000" data-listing-reading-time-sort="18" data-listing-word-count-sort="3433">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-12-26-google-gemini-function-calling/index.html" class="no-external">Google Gemini and Function Calling</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-12-26-google-gemini-function-calling/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R29vZ2xl'); return false;">
+Google
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('R2VtaW5p'); return false;">
+Gemini
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RnVuY3Rpb24lMjBDYWxsaW5n'); return false;">
+Function Calling
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-12-26-google-gemini-function-calling/index.html" class="no-external">Google’s latest LLM called Gemini was released in December. Google trained three model sizes: Nano, Gemini and Ultra (small, medium and large respectively). Ultra hasn’t…<code></code><code></code><code></code><code></code></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-12-26-google-gemini-function-calling/index.html" class="no-external">
+<div class="listing-date">
+Dec 26, 2023
+</div>
+<div class="listing-reading-time">
+18 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="14" data-categories="V2hpc3BlciUyQ0FTUiUyQ1RyYW5zY3JpcHRz" data-listing-date-sort="1700006400000" data-listing-file-modified-sort="1742276994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="312">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-11-15-whisper-transcripts/index.html" class="no-external">Whisper Transcripts</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-11-15-whisper-transcripts/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('V2hpc3Blcg=='); return false;">
+Whisper
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QVNS'); return false;">
+ASR
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('VHJhbnNjcmlwdHM='); return false;">
+Transcripts
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-11-15-whisper-transcripts/index.html" class="no-external">Whisper is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-11-15-whisper-transcripts/index.html" class="no-external">
+<div class="listing-date">
+Nov 15, 2023
+</div>
+<div class="listing-reading-time">
+2 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="15" data-categories="Q29uZmVyZW5jZSUyQ0FJJTJDTExNcyUyQ0FJJTIwRW5naW5lZXJpbmc=" data-listing-date-sort="1696896000000" data-listing-file-modified-sort="1742276994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41" data-listing-word-count-sort="8113">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-10-10-ai-engineer-summit/index.html" class="no-external">AI Engineer Summit 2023</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-10-10-ai-engineer-summit/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">
+Conference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">
+AI
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QUklMjBFbmdpbmVlcmluZw=='); return false;">
+AI Engineering
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-10-10-ai-engineer-summit/index.html" class="no-external">sywx was the first to define the job title “AI Engineer” as a role in between a Data Scientist and Full Stack Software Engineer, someone that builds on top of large…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-10-10-ai-engineer-summit/index.html" class="no-external">
+<div class="listing-date">
+Oct 10, 2023
+</div>
+<div class="listing-reading-time">
+41 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="16" data-categories="TExNcyUyQ0pvYnMlMkNXb3Jr" data-listing-date-sort="1693267200000" data-listing-file-modified-sort="1742276994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1908">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-08-29-how-llms-will-affect-jobs/index.html" class="no-external">How LLMs will affect Jobs?</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-08-29-how-llms-will-affect-jobs/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Sm9icw=='); return false;">
+Jobs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('V29yaw=='); return false;">
+Work
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-08-29-how-llms-will-affect-jobs/index.html" class="no-external">I have been interested in how language models will affect the future of work. Having worked with LLMs the last ~6 months, I’ve seen their impact on my work as a data…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-08-29-how-llms-will-affect-jobs/index.html" class="no-external">
+<div class="listing-date">
+Aug 29, 2023
+</div>
+<div class="listing-reading-time">
+10 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="17" data-categories="Q29uZmVyZW5jZSUyQ0tERCUyQ0xMTQ==" data-listing-date-sort="1692921600000" data-listing-file-modified-sort="1742276994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="40">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-08-25-kdd2023-recap/index.html" class="no-external">KDD 2023 - Recap</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-08-25-kdd2023-recap/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">
+Conference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('S0RE'); return false;">
+KDD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TExN'); return false;">
+LLM
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-08-25-kdd2023-recap/index.html" class="no-external">I attended KDD 2023 which was held in Long Beach, CA from Aug 6-10, 2023.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-08-25-kdd2023-recap/index.html" class="no-external">
+<div class="listing-date">
+Aug 25, 2023
+</div>
+<div class="listing-reading-time">
+1 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="18" data-categories="Q2F1c2FsJTIwSW5mZXJlbmNl" data-listing-date-sort="1691452800000" data-listing-file-modified-sort="1742276994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3023">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-08-08-double-machine-learning/index.html" class="no-external">Double Machine Learning</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-08-08-double-machine-learning/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Q2F1c2FsJTIwSW5mZXJlbmNl'); return false;">
+Causal Inference
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-08-08-double-machine-learning/index.html" class="no-external">At KDD2023 I was introduced to the term “Double Machine Learning” (DML). I was surprised I had never heard the term before so here are some notes on this important method in…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-08-08-double-machine-learning/index.html" class="no-external">
+<div class="listing-date">
+Aug 8, 2023
+</div>
+<div class="listing-reading-time">
+16 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="19" data-categories="Q29uZmVyZW5jZSUyQ0tERCUyQ0xMTSUyQ0NhdXNhbCUyMEluZmVyZW5jZQ==" data-listing-date-sort="1691366400000" data-listing-file-modified-sort="1742276994811" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5160">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-08-07-kdd2023-day1/index.html" class="no-external">KDD 2023 - Workshops: LLM and Causal Inference</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-08-07-kdd2023-day1/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">
+Conference
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('S0RE'); return false;">
+KDD
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TExN'); return false;">
+LLM
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('Q2F1c2FsJTIwSW5mZXJlbmNl'); return false;">
+Causal Inference
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-08-07-kdd2023-day1/index.html" class="no-external">I attended KDD 2023 which was held in Long Beach, CA from Aug 6-10. The first day I attended was Monday which had half-day workshops around a topic. The two I attended were…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-08-07-kdd2023-day1/index.html" class="no-external">
+<div class="listing-date">
+Aug 7, 2023
+</div>
+<div class="listing-reading-time">
+26 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="20" data-categories="TExNcyUyQ0xsYW1hJTJDTGxhbWEyJTJDUGFwZXIlMjBTdW1tYXJ5" data-listing-date-sort="1690070400000" data-listing-file-modified-sort="1742276994809" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="15" data-listing-word-count-sort="2944">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-07-23-llama-2-paper-summary/index.html" class="no-external">Paper Summary: Llama2</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-07-23-llama-2-paper-summary/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TGxhbWE='); return false;">
+Llama
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TGxhbWEy'); return false;">
+Llama2
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('UGFwZXIlMjBTdW1tYXJ5'); return false;">
+Paper Summary
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-07-23-llama-2-paper-summary/index.html" class="no-external">Llama2 was released by Meta on 2023-07-18. My first exposure to the model was running it locally on my Mac and being blown away by the quality of the results. With most of…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-07-23-llama-2-paper-summary/index.html" class="no-external">
+<div class="listing-date">
+Jul 23, 2023
+</div>
+<div class="listing-reading-time">
+15 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="21" data-categories="TExNcyUyQ0xsYW1h" data-listing-date-sort="1689811200000" data-listing-file-modified-sort="1742276994803" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2055">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-07-20-llama-2-local/index.html" class="no-external">Running Llama2 Locally on a M1 Mac</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-07-20-llama-2-local/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('TGxhbWE='); return false;">
+Llama
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-07-20-llama-2-local/index.html" class="no-external">Llama2 was released by Meta 2 days ago. See the:</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-07-20-llama-2-local/index.html" class="no-external">
+<div class="listing-date">
+Jul 20, 2023
+</div>
+<div class="listing-reading-time">
+11 min
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="22" data-categories="TExNcyUyQ0FnZW50cyUyQ0RhdGElMjBBbmFseXNpcyUyQ0RhdGElMjBTY2llbmNlJTJDQ29kZSUyMEludGVycHJldGVy" data-listing-date-sort="1689206400000" data-listing-file-modified-sort="1742276994798" data-listing-date-modified-sort="1689292800000" data-listing-reading-time-sort="25" data-listing-word-count-sort="4977">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-07-13-agents-code-interpreter/index.html" class="no-external">Code Interpreter &amp; Data Analysis</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-07-13-agents-code-interpreter/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QWdlbnRz'); return false;">
+Agents
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEFuYWx5c2lz'); return false;">
 Data Analysis
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Data Science'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">
 Data Science
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Code Interpreter'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('Q29kZSUyMEludGVycHJldGVy'); return false;">
 Code Interpreter
 </div>
 </div>
-<a href="./posts/2023-07-13-agents-code-interpreter/index.html">
 <div class="listing-description">
-In…<code></code><code></code><code></code>
+<a href="./posts/2023-07-13-agents-code-interpreter/index.html" class="no-external">In this post I’ll go over some observations I’ve had while using OpenAI’s Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-07-13-agents-code-interpreter/index.html">
+<a href="./posts/2023-07-13-agents-code-interpreter/index.html" class="no-external">
+<div class="listing-date">
+Jul 13, 2023
+</div>
 <div class="listing-reading-time">
-35 min
+25 min
 </div>
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="AI,Jobs,Layoffs" data-listing-date-sort="1687564800000" data-listing-file-modified-sort="1689343018185" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="23" data-categories="TExNcyUyQ0FnZW50cyUyQ0RhdGElMjBBbmFseXNpcyUyQ0RhdGElMjBTY2llbmNl" data-listing-date-sort="1689120000000" data-listing-file-modified-sort="1742276994796" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="10" data-listing-word-count-sort="1884">
 <div class="body">
-<a href="./posts/2023-06-24-ai-layoffs/index.html">
 <h3 class="no-anchor listing-title">
-Layoffs Attributed to AI
+<a href="./posts/2023-07-12-langchain-agents/index.html" class="no-external">LLM Agents with Langchain</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-07-12-langchain-agents/index.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
+LLMs
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('QWdlbnRz'); return false;">
+Agents
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMEFuYWx5c2lz'); return false;">
+Data Analysis
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('RGF0YSUyMFNjaWVuY2U='); return false;">
+Data Science
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2023-07-12-langchain-agents/index.html" class="no-external">I’m currently working my way through the Databricks LLM101x Course on EdX. It’s actually pretty good. During the third section, there was this interesting example where they…<code></code></a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2023-07-12-langchain-agents/index.html" class="no-external">
+<div class="listing-date">
+Jul 12, 2023
+</div>
+<div class="listing-reading-time">
+10 min
 </div>
 </a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="24" data-categories="QUklMkNKb2JzJTJDTGF5b2Zmcw==" data-listing-date-sort="1687564800000" data-listing-file-modified-sort="1742276994795" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2023-06-24-ai-layoffs/index.html" class="no-external">Layoffs Attributed to AI</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2023-06-24-ai-layoffs/index.html" class="no-external"></a>
+</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('AI'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">
 AI
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Jobs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('Sm9icw=='); return false;">
 Jobs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Layoffs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TGF5b2Zmcw=='); return false;">
 Layoffs
 </div>
 </div>
-<a href="./posts/2023-06-24-ai-layoffs/index.html">
 <div class="listing-description">
-This WSJ article highlighted…
+<a href="./posts/2023-06-24-ai-layoffs/index.html" class="no-external">This WSJ article highlighted AI’s impact on marketing related roles. In one the paragraphs, a statistic was cited that I had never seen before, the number of layoffs that…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-06-24-ai-layoffs/index.html">
+<a href="./posts/2023-06-24-ai-layoffs/index.html" class="no-external">
 <div class="listing-date">
 Jun 24, 2023
 </div>
@@ -273,38 +1113,34 @@ Jun 24, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="Focus,Work,Musk,Isaacson" data-listing-date-sort="1687564800000" data-listing-file-modified-sort="1689343018185" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="25" data-categories="Rm9jdXMlMkNXb3JrJTJDTXVzayUyQ0lzYWFjc29u" data-listing-date-sort="1687564800000" data-listing-file-modified-sort="1742276994795" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="513">
 <div class="body">
-<a href="./posts/2023-06-24-focus-is-a-superpower/index.html">
 <h3 class="no-anchor listing-title">
-Being Able to Focus is a Superpower
+<a href="./posts/2023-06-24-focus-is-a-superpower/index.html" class="no-external">Being Able to Focus is a Superpower</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-06-24-focus-is-a-superpower/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Focus'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('Rm9jdXM='); return false;">
 Focus
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Work'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('V29yaw=='); return false;">
 Work
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Musk'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TXVzaw=='); return false;">
 Musk
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Isaacson'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('SXNhYWNzb24='); return false;">
 Isaacson
 </div>
 </div>
-<a href="./posts/2023-06-24-focus-is-a-superpower/index.html">
 <div class="listing-description">
-Walter Isaacson is set to release a biography of Elon Musk later this year. He was recently on a Twitter Space with a few other people talking about Musk. One of the things that stood out to me was Isaacson’s…
+<a href="./posts/2023-06-24-focus-is-a-superpower/index.html" class="no-external">Walter Isaacson is set to release a biography of Elon Musk later this year. He was recently on a Twitter Space with a few other people talking about Musk. One of the things…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-06-24-focus-is-a-superpower/index.html">
+<a href="./posts/2023-06-24-focus-is-a-superpower/index.html" class="no-external">
 <div class="listing-date">
 Jun 24, 2023
 </div>
@@ -314,32 +1150,28 @@ Jun 24, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="LLMs,Production" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1689343018185" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="26" data-categories="TExNcyUyQ1Byb2R1Y3Rpb24=" data-listing-date-sort="1687305600000" data-listing-file-modified-sort="1742276994795" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="178">
 <div class="body">
-<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html">
 <h3 class="no-anchor listing-title">
-LLM in Production Conference Takeaways
+<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html" class="no-external">LLM in Production Conference Takeaways</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
 LLMs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Production'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvZHVjdGlvbg=='); return false;">
 Production
 </div>
 </div>
-<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html">
 <div class="listing-description">
-I didn’t get to attend the LLM in Production Conference but found these takeaways Demetrios Brinkmann shared in an email to be quite insightful:
+<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html" class="no-external">I didn’t get to attend the LLM in Production Conference but found these takeaways Demetrios Brinkmann shared in an email to be quite insightful:</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html">
+<a href="./posts/2023-06-21-llm-in-production-takeaways/index.html" class="no-external">
 <div class="listing-date">
 Jun 21, 2023
 </div>
@@ -349,32 +1181,28 @@ Jun 21, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="LLMs,GPT" data-listing-date-sort="1686614400000" data-listing-file-modified-sort="1689343018181" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
+<div class="quarto-post image-right" data-index="27" data-categories="TExNcyUyQ0dQVA==" data-listing-date-sort="1686614400000" data-listing-file-modified-sort="1742276994793" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="830">
 <div class="body">
-<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html">
 <h3 class="no-anchor listing-title">
-State of GPT - Andrej Karpathy
+<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html" class="no-external">State of GPT - Andrej Karpathy</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
 LLMs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('GPT'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('R1BU'); return false;">
 GPT
 </div>
 </div>
-<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html">
 <div class="listing-description">
-Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT: 
+<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html" class="no-external">Andrej Karpathy gave a talk at a Microsoft conference in late May about the State of GPT: </a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html">
+<a href="./posts/2023-06-13-karpathy-state-of-gpt/index.html" class="no-external">
 <div class="listing-date">
 Jun 13, 2023
 </div>
@@ -384,35 +1212,31 @@ Jun 13, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="LLMs,Work,GPT" data-listing-date-sort="1686355200000" data-listing-file-modified-sort="1689343018177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="28" data-categories="TExNcyUyQ1dvcmslMkNHUFQ=" data-listing-date-sort="1686355200000" data-listing-file-modified-sort="1742276994789" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1031">
 <div class="body">
-<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html">
 <h3 class="no-anchor listing-title">
-All-In Hosts Opinion on Jobs
+<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html" class="no-external">All-In Hosts Opinion on Jobs</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
 LLMs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Work'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('V29yaw=='); return false;">
 Work
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('GPT'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('R1BU'); return false;">
 GPT
 </div>
 </div>
-<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html">
 <div class="listing-description">
-During Episode 132 of the All-In Podcast, (transcript here) the hosts took a live question from the audience:
+<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html" class="no-external">During Episode 132 of the All-In Podcast, (transcript here) the hosts took a live question from the audience:</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html">
+<a href="./posts/2023-06-10-all-in-opinion-on-jobs/index.html" class="no-external">
 <div class="listing-date">
 Jun 10, 2023
 </div>
@@ -422,35 +1246,31 @@ Jun 10, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="LLMs,Work,GPT" data-listing-date-sort="1685232000000" data-listing-file-modified-sort="1689343018177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3">
+<div class="quarto-post image-right" data-index="29" data-categories="TExNcyUyQ1dvcmslMkNHUFQ=" data-listing-date-sort="1685232000000" data-listing-file-modified-sort="1742276994789" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="520">
 <div class="body">
-<a href="./posts/2023-05-28-staying-human/index.html">
 <h3 class="no-anchor listing-title">
-Staying Human in the Age of LLMs
+<a href="./posts/2023-05-28-staying-human/index.html" class="no-external">Staying Human in the Age of LLMs</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-05-28-staying-human/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
 LLMs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Work'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('V29yaw=='); return false;">
 Work
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('GPT'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('R1BU'); return false;">
 GPT
 </div>
 </div>
-<a href="./posts/2023-05-28-staying-human/index.html">
 <div class="listing-description">
-The WSJ’s Ben Cohen wrote an article highlighting Professor Po-Shen Loh, a math professor from Carnegie Mellon University and coach for Team USA’s International Mathematical Olympiad. He’s currently touring…
+<a href="./posts/2023-05-28-staying-human/index.html" class="no-external">The WSJ’s Ben Cohen wrote an article highlighting Professor Po-Shen Loh, a math professor from Carnegie Mellon University and coach for Team USA’s International Mathematical…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-05-28-staying-human/index.html">
+<a href="./posts/2023-05-28-staying-human/index.html" class="no-external">
 <div class="listing-date">
 May 28, 2023
 </div>
@@ -460,38 +1280,34 @@ May 28, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="LLMs,Work,GPT,OpenAI" data-listing-date-sort="1683244800000" data-listing-file-modified-sort="1689343018177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6">
+<div class="quarto-post image-right" data-index="30" data-categories="TExNcyUyQ1dvcmslMkNHUFQlMkNPcGVuQUk=" data-listing-date-sort="1683244800000" data-listing-file-modified-sort="1742276994789" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1020">
 <div class="body">
-<a href="./posts/2023-05-05-llm-work-jobs/index.html">
 <h3 class="no-anchor listing-title">
-Large Language Models, Work and the Future of Jobs
+<a href="./posts/2023-05-05-llm-work-jobs/index.html" class="no-external">Large Language Models, Work and the Future of Jobs</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-05-05-llm-work-jobs/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('LLMs'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">
 LLMs
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Work'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('V29yaw=='); return false;">
 Work
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('GPT'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('R1BU'); return false;">
 GPT
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('OpenAI'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('T3BlbkFJ'); return false;">
 OpenAI
 </div>
 </div>
-<a href="./posts/2023-05-05-llm-work-jobs/index.html">
 <div class="listing-description">
-Last month, Allen Downey showcased the power of ChatGPT by using it to solve every problem in his Think Python books. As a result, he encouraged everyone who writes code to use…
+<a href="./posts/2023-05-05-llm-work-jobs/index.html" class="no-external">Last month, Allen Downey showcased the power of ChatGPT by using it to solve every problem in his Think Python books. As a result, he encouraged everyone who writes code to…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-05-05-llm-work-jobs/index.html">
+<a href="./posts/2023-05-05-llm-work-jobs/index.html" class="no-external">
 <div class="listing-date">
 May 5, 2023
 </div>
@@ -501,32 +1317,28 @@ May 5, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="GPT,OpenAI" data-listing-date-sort="1680566400000" data-listing-file-modified-sort="1689343018177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="31" data-categories="R1BUJTJDT3BlbkFJ" data-listing-date-sort="1680566400000" data-listing-file-modified-sort="1742276994789" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="678">
 <div class="body">
-<a href="./posts/2023-04-04-gpt4/index.html">
 <h3 class="no-anchor listing-title">
-GPT Related Papers, Code, and News
+<a href="./posts/2023-04-04-gpt4/index.html" class="no-external">GPT Related Papers, Code, and News</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-04-04-gpt4/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('GPT'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('R1BU'); return false;">
 GPT
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('OpenAI'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('T3BlbkFJ'); return false;">
 OpenAI
 </div>
 </div>
-<a href="./posts/2023-04-04-gpt4/index.html">
 <div class="listing-description">
-There’s seemingly a firehose of development in the last month or so. I’ve been trying to keep up with the latest developments in GPT and related models. Here’s…<span class="citation" data-cites="osanseviero"></span>
+<a href="./posts/2023-04-04-gpt4/index.html" class="no-external">There’s seemingly a firehose of development in the last month or so. I’ve been trying to keep up with the latest developments in GPT and related models. Here’s a list of…<span class="citation" data-cites="osanseviero"></span></a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-04-04-gpt4/index.html">
+<a href="./posts/2023-04-04-gpt4/index.html" class="no-external">
 <div class="listing-date">
 Apr 4, 2023
 </div>
@@ -536,32 +1348,28 @@ Apr 4, 2023
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="Productivity,Developer Tools" data-listing-date-sort="1679616000000" data-listing-file-modified-sort="1689343018177" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
+<div class="quarto-post image-right" data-index="32" data-categories="UHJvZHVjdGl2aXR5JTJDRGV2ZWxvcGVyJTIwVG9vbHM=" data-listing-date-sort="1679616000000" data-listing-file-modified-sort="1742276994789" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="756">
 <div class="body">
-<a href="./posts/2023-03-24-mac-apps/index.html">
 <h3 class="no-anchor listing-title">
-Useful Applications (mostly for Mac)
+<a href="./posts/2023-03-24-mac-apps/index.html" class="no-external">Useful Applications (mostly for Mac)</a>
 </h3>
 <div class="listing-subtitle">
-
+<a href="./posts/2023-03-24-mac-apps/index.html" class="no-external"></a>
 </div>
-</a>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('Productivity'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('UHJvZHVjdGl2aXR5'); return false;">
 Productivity
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Developer Tools'); return false;">
+<div class="listing-category" onclick="window.quartoListingCategory('RGV2ZWxvcGVyJTIwVG9vbHM='); return false;">
 Developer Tools
 </div>
 </div>
-<a href="./posts/2023-03-24-mac-apps/index.html">
 <div class="listing-description">
-In this blog post, I’ll introduce you to a list of useful applications, covering both developer tools and productivity applications that I’ve found useful over the years.…
+<a href="./posts/2023-03-24-mac-apps/index.html" class="no-external">In this blog post, I’ll introduce you to a list of useful applications, covering both developer tools and productivity applications that I’ve found useful over the years.…</a>
 </div>
-</a>
 </div>
 <div class="metadata">
-<a href="./posts/2023-03-24-mac-apps/index.html">
+<a href="./posts/2023-03-24-mac-apps/index.html" class="no-external">
 <div class="listing-date">
 Mar 24, 2023
 </div>
@@ -575,6 +1383,9 @@ Mar 24, 2023
 <div class="listing-no-matching d-none">
 No matching items
 </div>
+<nav id="listing-pagination" class="listing-pagination" aria-label="Page Navigation">
+  <ul class="pagination"></ul>
+</nav>
 </div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -611,18 +1422,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -654,11 +1454,48 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lawwu\.github\.io\/blog\.html");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -668,8 +1505,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -681,7 +1527,129 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -725,6 +1693,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -750,6 +1719,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -815,12 +1810,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-left">
       &nbsp;
     </div>   
-    <div class="nav-footer-center"><div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
   </div>
 </footer>
+
 
 
 

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.42">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2023-07-23">
+
+<title>Paper Summary: Llama2 – Lawrence Wu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-8647a4a42273f773479d27c00df3f9ed.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Paper Summary: Llama2 – Lawrence Wu">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:image" content="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure5_pretraining_loss.png">
+<meta property="og:site_name" content="Lawrence Wu">
+<meta property="og:image:height" content="1418">
+<meta property="og:image:width" content="2552">
+<meta name="twitter:title" content="Paper Summary: Llama2 – Lawrence Wu">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:image" content="https://lawwu.github.io/blog.html/posts/2023-07-23-llama-2-paper-summary/figure5_pretraining_loss.png">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1418">
+<meta name="twitter:image-width" content="2552">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://lawwu.github.io/til/"> 
+<span class="menu-text">TIL</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#llama2" id="toc-llama2" class="nav-link active" data-scroll-target="#llama2">Llama2</a></li>
+  <li><a href="#pretraining-2" id="toc-pretraining-2" class="nav-link" data-scroll-target="#pretraining-2">Pretraining (2)</a>
+  <ul class="collapse">
+  <li><a href="#academic-benchmarks" id="toc-academic-benchmarks" class="nav-link" data-scroll-target="#academic-benchmarks">Academic Benchmarks</a></li>
+  </ul></li>
+  <li><a href="#fine-tuning-3" id="toc-fine-tuning-3" class="nav-link" data-scroll-target="#fine-tuning-3">Fine-tuning (3)</a></li>
+  <li><a href="#supervised-fine-tuning-3.1" id="toc-supervised-fine-tuning-3.1" class="nav-link" data-scroll-target="#supervised-fine-tuning-3.1">Supervised Fine-tuning (3.1)</a></li>
+  <li><a href="#reinforcement-learning-with-human-feedback-3.2" id="toc-reinforcement-learning-with-human-feedback-3.2" class="nav-link" data-scroll-target="#reinforcement-learning-with-human-feedback-3.2">Reinforcement Learning with Human Feedback (3.2)</a>
+  <ul class="collapse">
+  <li><a href="#two-reward-models" id="toc-two-reward-models" class="nav-link" data-scroll-target="#two-reward-models">Two Reward Models</a></li>
+  <li><a href="#rejection-sampling-for-rl" id="toc-rejection-sampling-for-rl" class="nav-link" data-scroll-target="#rejection-sampling-for-rl">Rejection Sampling for RL</a></li>
+  <li><a href="#ghost-attention" id="toc-ghost-attention" class="nav-link" data-scroll-target="#ghost-attention">Ghost Attention</a></li>
+  <li><a href="#model-evaluation" id="toc-model-evaluation" class="nav-link" data-scroll-target="#model-evaluation">Model Evaluation</a></li>
+  <li><a href="#human-evaluation" id="toc-human-evaluation" class="nav-link" data-scroll-target="#human-evaluation">Human Evaluation</a></li>
+  <li><a href="#inter-rater-reliability" id="toc-inter-rater-reliability" class="nav-link" data-scroll-target="#inter-rater-reliability">Inter-Rater Reliability</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  </ul></li>
+  <li><a href="#key-observations-and-insights-5" id="toc-key-observations-and-insights-5" class="nav-link" data-scroll-target="#key-observations-and-insights-5">Key Observations and Insights (5)</a>
+  <ul class="collapse">
+  <li><a href="#rhlf-sft" id="toc-rhlf-sft" class="nav-link" data-scroll-target="#rhlf-sft">RHLF &gt; SFT</a></li>
+  <li><a href="#in-context-temperature-rescaling" id="toc-in-context-temperature-rescaling" class="nav-link" data-scroll-target="#in-context-temperature-rescaling">In-Context Temperature Rescaling</a></li>
+  <li><a href="#time-awareness" id="toc-time-awareness" class="nav-link" data-scroll-target="#time-awareness">Time Awareness</a></li>
+  <li><a href="#tool-use" id="toc-tool-use" class="nav-link" data-scroll-target="#tool-use">Tool Use</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Paper Summary: Llama2</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">LLMs</div>
+    <div class="quarto-category">Llama</div>
+    <div class="quarto-category">Llama2</div>
+    <div class="quarto-category">Paper Summary</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 23, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="llama2" class="level1">
+<h1>Llama2</h1>
+<p>Llama2 was released by Meta on 2023-07-18. My first exposure to the model was <a href="https://lawwu.github.io/posts/2023-07-20-llama-2-local/">running it locally on my Mac</a> and being blown away by the quality of the results. With most of the prompts I tried for simple questions, Llama2-Chat-13B was better than even ChatGPT. So I was naturally curious about the technical details of the Llama2 paper. In the post I’d like to summarize the <a href="https://ai.meta.com/research/publications/llama-2-open-foundation-and-fine-tuned-chat-models/">technical paper</a>.</p>
+<p>Note this write up isn’t the only game in town:</p>
+<ul>
+<li>Nathan Lambert has a <a href="https://www.interconnects.ai/p/llama-2-from-meta?sd=pf">nice writeup</a> of his thoughts on the model.</li>
+<li>AI Explained has a nice <a href="https://www.youtube.com/watch?v=zJBpRn2zTco&amp;ab_channel=AIExplained">video breakdown</a>.</li>
+<li>James Briggs also has built a <a href="https://www.youtube.com/watch?v=6iHVJyX2e50&amp;ab_channel=JamesBriggs">conversational agent that runs locally using Llama 2</a>.</li>
+</ul>
+</section>
+<section id="pretraining-2" class="level1">
+<h1>Pretraining (2)</h1>
+<p>They don’t specify what data they use other than saying it is publicly available and they do not use any proprietary data from Meta’s services. THe model was pre-trained on 2 trillion tokens.</p>
+<p>Given the training loss curves below it is clear they could easily keep training this model for better performance.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure5_pretraining_loss.png" class="img-fluid figure-img"></p>
+<figcaption>Pretraining Loss</figcaption>
+</figure>
+</div>
+<p>Tokenizer: Same tokenization strategy as Llama 1. I didn’t know Llama 1 used bytepair encoding, all numbers are split into individual characters and bytes are used to decompose unknown UTF-8 characters.</p>
+<p>All 4 flavors of Llama 2 was trained using 3.3M GPU hours. Llama 2 70B was trained using 1.72M GPU hours.</p>
+<section id="academic-benchmarks" class="level2">
+<h2 class="anchored" data-anchor-id="academic-benchmarks">Academic Benchmarks</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./table3_academic_bm.png" class="img-fluid figure-img"></p>
+<figcaption>Llama 2 Performance on Academic Benchmarks</figcaption>
+</figure>
+</div>
+<p>Llama 2 pretty soundly beats similarly sized MPT and Falcon models. I hadn’t heard of AGIEval before. This is the AGIEval <a href="https://github.com/microsoft/AGIEval">repo</a> and <a href="https://arxiv.org/pdf/2304.06364.pdf">paper</a>. I was interested to see how Llama 2 performed against closed source models on AGIEval. The authors say they use 3-5 shot to test AGIEval. Llama 2 70B is getting 54.2 on AGIEval. ChatGPT and GPT-4 were getting 45% and 61.3% respectively as shown in the table below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./table3_agieval.png" class="img-fluid figure-img"></p>
+<figcaption>AGIEval Performance for text-davinci-003, ChatGPT and GPT-4</figcaption>
+</figure>
+</div>
+<p>In my tests where I’ve been running llama2-13b-chat locally, I have been very impressed with the results of questions like “What’s the difference between data science and data engineering” or “What’s the purpose of life”? For these two examples, llama2-13b-chat is even providing better answers than Google’s PaLM2 text-bison, ChatGPT, and even GPT-4! I’m not clear why this is the case.</p>
+</section>
+</section>
+<section id="fine-tuning-3" class="level1">
+<h1>Fine-tuning (3)</h1>
+</section>
+<section id="supervised-fine-tuning-3.1" class="level1">
+<h1>Supervised Fine-tuning (3.1)</h1>
+<p>The authors note the importance of quality over quantity when it comes to datasets for supervised fine-tuning. They only used 27,540 annotations for this step.</p>
+<blockquote class="blockquote">
+<p>Quality Is All You Need. Third-party SFT data is available from many different sources, but we found that many of these have insufficient diversity and quality — in particular for aligning LLMs towards dialogue-style instructions. As a result, we focused first on collecting several thousand examples of high-quality SFT data, as illustrated in Table 5. By setting aside millions of examples from third-party datasets and using fewer but higher-quality examples from our own vendor-based annotation efforts, our results notably improved. These findings are similar in spirit to Zhou et al.&nbsp;(2023), which also finds that a limited set of clean instruction-tuning data can be sufficient to reach a high level of quality. We found that SFT annotations in the order of tens of thousands was enough to achieve a high-quality result. We stopped annotating SFT after collecting a total of 27,540 annotations. Note that we do not include any Meta user data.</p>
+</blockquote>
+</section>
+<section id="reinforcement-learning-with-human-feedback-3.2" class="level1">
+<h1>Reinforcement Learning with Human Feedback (3.2)</h1>
+<p>I liked the author’s succint definition of RLHF. Humans are selecting which model outputs they prefer and a reward model is trained that learns these human preferences.</p>
+<blockquote class="blockquote">
+<p>RLHF is a model training procedure that is applied to a fine-tuned language model to further align model behavior with human preferences and instruction following. We collect data that represents empirically sampled human preferences, whereby human annotators select which of two model outputs they prefer. This human feedback is subsequently used to train a reward model, which learns patterns in the preferences of the human annotators and can then automate preference decisions.</p>
+</blockquote>
+<section id="two-reward-models" class="level2">
+<h2 class="anchored" data-anchor-id="two-reward-models">Two Reward Models</h2>
+<p>Interestingly they also try to generate a diversity of model completions by using two different model variants and different temperature hyperparameters.</p>
+<blockquote class="blockquote">
+<p>Our annotation procedure proceeds as follows. We ask annotators to first write a prompt, then choose between two sampled model responses, based on provided criteria. In order to maximize the diversity, the two responses to a given prompt are sampled from two different model variants, and varying the temperature hyper-parameter. In addition to giving participants a forced choice, we also ask annotators to label the degree to which they prefer their chosen response over the alternative: either their choice is significantly better, better, slightly better, or negligibly better/ unsure.</p>
+</blockquote>
+<p>This model is a first for training two separate reward models, one for safety and one for helpfulness. Meta collected over 1.4M binary comparisons to train their safety and helpfulness reward models. The human annotators also had to pick between 5 different options: significantly better, better, slightly better, or negligibly better/ unsure.</p>
+<p>The training data for the RLHF models is actually their newly collected preference data along with open source datasets. They do not observe “negative transfer” happening from using open source data so they decided to keep it in to allow for better generalization. The RHLF models are only trained for one epoch to prevent overfitting.</p>
+<blockquote class="blockquote">
+<p>We combine our newly collected data with existing open-source preference datasets to form a larger training dataset. Initially, open-source datasets were used to bootstrap our reward models while we were in the process of collecting preference annotation data. We note that in the context of RLHF in this study, the role of reward signals is to learn human preference for Llama 2-Chat outputs rather than any model outputs. However, in our experiments, we do not observe negative transfer from the open-source preference datasets. Thus, we have decided to keep them in our data mixture, as they could enable better generalization for the reward model and prevent reward hacking, i.e.&nbsp;Llama 2-Chat taking advantage of some weaknesses of our reward, and so artificially inflating the score despite performing less well.</p>
+</blockquote>
+<ul>
+<li>Helpfulness reward model is eventually trained on all Meta Helpfulness data, combined with an equal parts of the remaining data uniformly sampled from Meta Safety and from the open-source datasets.</li>
+<li>Safety reward model is trained on all Meta Safety and Anthropic Harmless data, mixed with Meta Helpfulness and open-source helpfulness data in a 90/10 proportion. We found that the setting with 10% helpfulness data is especially beneficial for the accuracy on samples where both the chosen and rejected responses were deemed safe.</li>
+</ul>
+</section>
+<section id="rejection-sampling-for-rl" class="level2">
+<h2 class="anchored" data-anchor-id="rejection-sampling-for-rl">Rejection Sampling for RL</h2>
+<p>The authors also describe a method of RHLF that they tried called “Rejection Sampling fine-tuning” that was new to me. It is defined as</p>
+<blockquote class="blockquote">
+<p>We sample K outputs from the model and select the best candidate with our reward, consistent with Bai et al.&nbsp;(2022b). The same re-ranking strategy for LLMs was also proposed in Deng et al.&nbsp;(2019), where the reward is seen as an energy function. Here, we go one step further, and use the selected outputs for a gradient update. For each prompt, the sample obtaining the highest reward score is considered the new gold standard. Similar to Scialom et al.&nbsp;(2020a), we then fine-tune our model on the new set of ranked samples, reinforcing the reward.</p>
+</blockquote>
+<p>The two RL algorithms differ in:</p>
+<blockquote class="blockquote">
+<p>Breadth — in Rejection Sampling, the model explores K samples for a given prompt, while only one generation is done for PPO. Depth — in PPO, during training at step t the sample is a function of the updated model policy from t − 1 after the gradient update of the previous step. In Rejection Sampling fine-tuning, we sample all the outputs given the initial policy of our model to collect a new dataset, before applying the fine-tuning similar to SFT. However, since we applied iterative model updates, the fundamental differences between the two RL algorithms are less pronounced.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure7_max_reward.png" class="img-fluid figure-img"></p>
+<figcaption>Max Reward among N Samples</figcaption>
+</figure>
+</div>
+<p>The above plot is interesting in that it highlights the potential gain from using Rejection Sampling. Because more samples are generated, a diversity of completions can be explored and on average these generates a higher maximum reward. Though this plot has a <a href="https://en.wikipedia.org/wiki/Misleading_graph#Truncated_graph">truncated y-axis</a> which makes the difference look larger than it is.</p>
+</section>
+<section id="ghost-attention" class="level2">
+<h2 class="anchored" data-anchor-id="ghost-attention">Ghost Attention</h2>
+<p>When chatting with an LLM, there are sometimes instructions that should apply to all conversation turns, e.g.&nbsp;“Act as [insert public figure here]”.</p>
+<blockquote class="blockquote">
+<p>To address these limitations, we propose Ghost Attention (GAtt), a very simple method inspired by Context Distillation (Bai et al., 2022b) that hacks the fine-tuning data to help the attention focus in a multi-stage process. GAtt enables dialogue control over multiple turns</p>
+</blockquote>
+<p>The method is simple, they created a synthetic dialogue dataset by concatenating the system instruction that should be respected across all conversation turn to all user messages. During training, they only keep the instruction in the first turn and set the loss to zero for all tokens from previous turns. The dataset also contains a few synthetic constraints to sample from like hobbies, language or public figure (and random combinations of the above). This creates an SFT dataset which they use to finetune Llama2 Chat.</p>
+<p>The GAtt method leads to the model being able to follow instructions across 20+ turns.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure9_gatt.png" class="img-fluid figure-img"></p>
+<figcaption>Ghost Attention</figcaption>
+</figure>
+</div>
+</section>
+<section id="model-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="model-evaluation">Model Evaluation</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure11_evolution_of_results.png" class="img-fluid figure-img"></p>
+<figcaption>Evolution of Llama2-Chat</figcaption>
+</figure>
+</div>
+<p>I found the above two plots fascinating as a way to show models evaluating models. Each plot shows the win-rate% of Llama2-Chat versus ChatGPT on both safety (y-axis) and helpfulenss (x-axis) over different iterations of fine-tuning (SFT-v1) and RHLF (RHLF-v1 all the way up to RHLF-v5 with PPO). There were two judges, the Meta’s reward model used to train Llama2-Chat and GPT-4.</p>
+</section>
+<section id="human-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="human-evaluation">Human Evaluation</h2>
+<blockquote class="blockquote">
+<p>To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety. We compare the Llama 2-Chat models to open-source models (Falcon, MPT MosaicML NLP Team et al.&nbsp;(2023), Vicuna Chiang et al.&nbsp;(2023), as well as closed-source models (Chat- GPT (OpenAI, 2023) and PaLM Anil et al.&nbsp;(2023)) on over 4,000 single and multi-turn prompts. For ChatGPT, we use gpt-3.5-turbo-0301 model in all generations. For PaLM, we use the chat-bison-001 model in all generations.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure12_human_eval_all.png" class="img-fluid figure-img"></p>
+<figcaption>Human Evaluation Results for Llama2-Chat</figcaption>
+</figure>
+</div>
+<p>Llama2-Chat is beating similarly sized open source models like MPT, Vicuna, and Falcon. Surprisingly it is also competitive with ChatGPT (Win rate of 36%, tie rate of 31.5%)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure30_human_eval_chatgpt.png" class="img-fluid figure-img"></p>
+<figcaption>Human Evaluation Results for Llama2-Chat vs ChatGPT</figcaption>
+</figure>
+</div>
+<p>Llama2-Chat wins overall against ChatGPT on these 4,000 prompts. The authors broke down these 4,000 prompts into 4 categories:</p>
+<ul>
+<li>Dialogue</li>
+<li>Writing and content creation</li>
+<li>Factual Questions</li>
+<li>Language assistance</li>
+<li>Recommendations</li>
+</ul>
+<p>Llama2-Chat is losing against ChatGPT when it comes to Writing and content creation and Language Assistance but wins in the other 3 categories.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./table33_examples_of_prompts.png" class="img-fluid figure-img"></p>
+<figcaption>Examples of Prompts</figcaption>
+</figure>
+</div>
+<p>The above shows some examples of prompts that made it into the 4,000 human evaluation dataset. It’s not clear for the category of Language Assistance, whether this refers to programming language or foreign language.</p>
+</section>
+<section id="inter-rater-reliability" class="level2">
+<h2 class="anchored" data-anchor-id="inter-rater-reliability">Inter-Rater Reliability</h2>
+<p>I also learned about a metric called “Inter-Rater Reliability” (IRR) which measures how consistent raters are.</p>
+<blockquote class="blockquote">
+<p>In our human evaluations, three different annotators provided independent assessments for each model generation comparison. High IRR scores (closer to 1.0) are typically seen as better from a data quality perspective, however, context is important. Highly subjective tasks like evaluating the overall helpfulness of LLM generations will usually have lower IRR scores than more objective labelling tasks. There are relatively few public benchmarks for these contexts, so we feel sharing our analysis here will benefit the research community. We used Gwet’s AC1/2 statistic (Gwet, 2008, 2014) to measure inter-rater reliability (IRR), as we found it to be the most stable metric across different measurement scenarios. On the 7-point Likert scale helpfulness task that is used in our analysis, Gwet’s AC2 score varies between 0.37 and 0.55 depending on the specific model comparison. We see scores on the lower end of that range for ratings from model comparisons with similar win rates to each other (like the Llama 2-Chat-70B-chat vs.&nbsp;ChatGPT comparison). We see scores on the higher end of that range for ratings from model comparisons with a more clear winner (like the Llama 2-Chat-34b-chat vs.&nbsp;Falcon-40b-instruct).</p>
+</blockquote>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>They call out 4 limitations of their evaluation work:</p>
+<blockquote class="blockquote">
+<p>By academic and research standards, we have a large prompt set of 4k prompts. However, it does not cover real-world usage of these models, which will likely cover a significantly larger number of use cases. Diversity of the prompts could be another factor in our results. For example, our prompt set does not include any coding- or reasoning-related prompts. We only evaluate the final generation of a multi-turn conversation. A more interesting evaluation could be to ask the models to complete a task and rate the overall experience with the model over multiple turns. Human evaluation for generative models is inherently subjective and noisy. As a result, evaluation on a different set of prompts or with different instructions could result in different results.</p>
+</blockquote>
+</section>
+</section>
+<section id="key-observations-and-insights-5" class="level1">
+<h1>Key Observations and Insights (5)</h1>
+<section id="rhlf-sft" class="level2">
+<h2 class="anchored" data-anchor-id="rhlf-sft">RHLF &gt; SFT</h2>
+<p>The authors make a fascinating conclusion of the superiority of RHLF to supervised-finetuning because of the limitations of human authors to generate diverse and high-quality text.</p>
+<blockquote class="blockquote">
+<p>Even with proficient annotators, each individual writes with significant variation. A model fine-tuned on SFT annotation learns this diversity, including, unfortunately, the tail-end of poorly executed annotation. Fur- thermore, the model’s performance is capped by the writing abilities of the most skilled annotators. Human annotators are arguably less subject to discrepancy when comparing two outputs’ preference annotation for RLHF. Consequently, the reward mechanism swiftly learns to assign low scores to undesirable tail-end distribution and aligns towards the human preference. This phenomena is illustrated in Figure 20, where we can see that the worst answers are progressively removed, shifting the distribution to the right.</p>
+</blockquote>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure20_distribution_shift.png" class="img-fluid figure-img"></p>
+<figcaption>Distribution shift of SFT to RHLF models</figcaption>
+</figure>
+</div>
+<blockquote class="blockquote">
+<p>In addition, during annotation, the model has the potential to venture into writing trajectories that even the best annotators may not chart. Nonetheless, humans can still provide valuable feedback when comparing two answers, beyond their own writing competencies. Drawing a parallel, while we may not all be accomplished artists, our ability to appreciate and critique art remains intact. We posit that the superior writing abilities of LLMs, as manifested in surpassing human annotators in certain tasks, are fundamentally driven by RLHF, as documented in Gilardi et al.&nbsp;(2023) and Huang et al.&nbsp;(2023). Supervised data may no longer be the gold standard, and this evolving circumstance compels a re-evaluation of the concept of “supervision.”</p>
+</blockquote>
+<p>We may be entering an era where supervised data (human generated text) for supervised fine-tuning is no longer as useful as model-generated text from the most powerful models like GPT-4. Andrej Karpathy made a similar argument in his talk (<a href="https://youtu.be/bZQun8Y4L2A?t=1069">State of GPT at around 17:00</a>) saying that its easier for humans to compare two completions (what one does when creating training data for the reward model) vs.&nbsp;creating a completion from scratch (what one does when creating training data for the SFT model). This idea that model-generated text becoming more useful than human generated text reminds me of Microsoft’s paper Orca (<a href="https://arxiv.org/abs/2306.02707">Orca: Progressive Learning from Complex Explanation Traces of GPT-4</a>). Eric Hartford recently released an <a href="https://huggingface.co/ehartford/dolphin-llama-13b">open source implementation of Orca based on Llama1</a>, excited to see what he can do with Llama2.</p>
+</section>
+<section id="in-context-temperature-rescaling" class="level2">
+<h2 class="anchored" data-anchor-id="in-context-temperature-rescaling">In-Context Temperature Rescaling</h2>
+<p>The authors report that temperature affects different types of prompts different (e.g.&nbsp;creative vs factual). For creative prompts, the RHLF models continue to generate diverse completions. However for factual prompts, the RHLF models learn to generate similar completions.</p>
+<blockquote class="blockquote">
+<p>For instance, when it comes to prompts associated with creativity, such as “Write a poem,” an increase in temperature continues to generate diversity across our various RLHF iterations. This can be observed in the Self-BLEU slope, which mirrors a pattern comparable to that of the SFT model. On the other hand, for prompts based on factual information, such as “What is the capital of ?” the Self-BLEU slope diminishes over time. This pattern suggests that despite the rising temperature, the model learns to consistently provide the same response to factual prompts.</p>
+</blockquote>
+<p>It’s not clear to me why temperature here can be above 1.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure21_adapting_temperature.png" class="img-fluid figure-img"></p>
+<figcaption>RHLF learns to adapt temperature to type of prompt</figcaption>
+</figure>
+</div>
+</section>
+<section id="time-awareness" class="level2">
+<h2 class="anchored" data-anchor-id="time-awareness">Time Awareness</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure22_time_awareness.png" class="img-fluid figure-img"></p>
+<figcaption>Time Awareness</figcaption>
+</figure>
+</div>
+<p>Llama2-Chat also has the ability to organize it’s knowledge in a temporal manner. It sounds like they used 1,000 SFT examples to demonstrate it’s Llama2-Chat’s ability to understand time versus fine-tuning it to understand time.</p>
+<blockquote class="blockquote">
+<p>To instill a concept of time in Llama 2-Chat, we collected a set of 1,000 SFT examples that were related to specific dates. These examples included questions like “How long ago did Barack Obama become president?” Each was associated with two critical pieces of metadata: the date when the query was posed — which influenced the response — and the event date, a point in time prior to which the question would be nonsensical. The observation suggests that LLMs have internalized the concept of time to a greater extent than previously assumed, despite their training being solely based on next-token prediction and data that is randomly shuffled without regard to their chronological context.</p>
+</blockquote>
+</section>
+<section id="tool-use" class="level2">
+<h2 class="anchored" data-anchor-id="tool-use">Tool Use</h2>
+<p>Llama2-Chat also demonstrates an ability to use tools like a Calculator or Search even though it was not trained on this data.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./figure23_tool_use_emergence.png" class="img-fluid figure-img"></p>
+<figcaption>Tool Use Emergence</figcaption>
+</figure>
+</div>
+<p>LLama2-Chat because it can use a calculator demonstrates better performance than GPT-3 and Toolformer on a math benchmark.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./table15_tool_use_performance.png" class="img-fluid figure-img"></p>
+<figcaption>Tool Use Performance</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>From my limited experiments, I already knew Llama2-Chat was an exciting open source model. This paper is also an incredible artifact for learning and understanding details around RHLF (a novel idea around training two reward models), Ghost Attention (GAtt) and documenting interesting properties of the model like temporal awareness, tool use and the ability to adapt temperature to the type of prompt. I’m excited to see what the open source community builds on top of Llama2-Chat and the Llama2 family of models.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/lawwu\.github\.io\/blog\.html");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

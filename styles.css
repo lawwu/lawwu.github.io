@@ -1,1 +1,22 @@
 /* css styles */
+
+.github-stars {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 10;
+  margin-left: 4px;
+  vertical-align: middle;
+  height: 20px;
+  width: auto;
+  box-shadow: none;
+  font-size: 0.85em;
+  color: #f1c40f;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+a:hover .github-stars {
+  color: #f39c12;
+}
