@@ -88,6 +88,21 @@ cookieconsent.run({
 });
 </script> 
   
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
 
 
 <link rel="stylesheet" href="../../styles.css">
