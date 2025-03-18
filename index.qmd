@@ -18,9 +18,11 @@ about:
     - icon: github
       text: GitHub
       href: https://github.com/lawwu
+      target: _blank
     - icon: twitter
       text: Twitter
-      href: https://twitter.com/law_wu      
+      href: https://twitter.com/law_wu
+      target: _blank
 ---
 
 ::: {#hero-heading}
@@ -33,14 +35,14 @@ about:
 I'm an experienced **AI Engineer & Data Scientist** passionate about transforming data into actionable insights and impactful solutions. I specialize in building AI applications, working with Large Language Models (LLMs), and developing Machine Learning solutions that solve real-world problems.
 
 ### Professional Experience
-Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/), where I focus on applying AI to enhance workforce management solutions. My previous data science roles at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff](https://happymoney.com/), and [Allianz](https://allianz.com/) have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.
+Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/){target="_blank"}, where I focus on applying AI to enhance workforce management solutions. My previous data science roles at [Medidata](https://www.medidata.com/){target="_blank"}, [PIMCO](https://www.pimco.com/){target="_blank"}, [Payoff](https://happymoney.com/){target="_blank"}, and [Allianz](https://allianz.com/){target="_blank"} have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.
 
 ### What You'll Find Here
 - [Technical Blog](https://lawwu.github.io/blog.html) - My thoughts on AI, data science, and technology
 - [Today I Learned (TIL)](https://lawwu.github.io/til/) - Quick notes on things I learn daily
-- Personal interests including [running](https://lawwu.github.io/posts/2024-10-13-running-6-months/) and [personal finance](https://lawwu.github.io/modest-money-guide/)
+- Personal interests including [running](https://lawwu.github.io/posts/2024-10-13-running-6-months/){target="_blank"} and [personal finance](https://lawwu.github.io/modest-money-guide/){target="_blank"}
 
 ### Let's Connect
-I'm open to new consulting opportunities and collaborations. If you'd like to work together, please check out [Doxa Solutions](https://doxasolutions.ai) or reach out via any of the links above.
+I'm open to new consulting opportunities and collaborations. If you'd like to work together, please check out [Doxa Solutions](https://doxasolutions.ai){target="_blank"} or reach out via any of the links above.
 
 :::
