@@ -15326,7 +15326,7 @@ Recapping the past year in AI, and what open questions are <em>worth pursuing</e
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
 <p>The code to do this:</p>
-<div id="fe9914dc" class="cell" data-execution_count="1">
+<div id="e2ee6af5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.llms <span class="im" style="color: #00769E;
@@ -15425,7 +15425,7 @@ font-style: inherit;">False</span>,</span>
 <section id="a-couple-examples" class="level2">
 <h2 class="anchored" data-anchor-id="a-couple-examples">A Couple Examples</h2>
 <p>Running this for an entry-level data scientist:</p>
-<div id="4d7cf626" class="cell" data-execution_count="2">
+<div id="a1fae067" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">llm(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
@@ -15468,7 +15468,7 @@ background-color: null;
 font-style: inherit;"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code></pre></div>
 </div>
 <p>Repeating this for a Pediatric Pharmacist:</p>
-<div id="5e275ddf" class="cell" data-execution_count="3">
+<div id="25881abd" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">prompt<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
