@@ -33,7 +33,7 @@ about:
 I'm an experienced **AI Engineer & Data Scientist** passionate about transforming data into actionable insights and impactful solutions. I specialize in building AI applications, working with Large Language Models (LLMs), and developing Machine Learning solutions that solve real-world problems.
 
 ### Professional Experience
-Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/), where I focus on applying AI to enhance workforce management solutions. My previous data science roles at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff (Happy Money)](https://happymoney.com/), and [Allianz](https://allianz.com/) have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.
+Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/), where I focus on applying AI to enhance workforce management solutions. My previous data science roles at [Medidata](https://www.medidata.com/), [PIMCO](https://www.pimco.com/), [Payoff](https://happymoney.com/), and [Allianz](https://allianz.com/) have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.
 
 ### What You'll Find Here
 - [Technical Blog](https://lawwu.github.io/blog.html) - My thoughts on AI, data science, and technology
