@@ -85,6 +85,21 @@ cookieconsent.run({
 });
 </script> 
   
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
 
 
 <link rel="stylesheet" href="styles.css">
@@ -202,9 +217,26 @@ cookieconsent.run({
 <!-- ::: {.headshot}
 ![](images/lawrence.jpg){width=200px style="border-radius: 50%; margin-bottom: 20px;"}
 ::: -->
-<p>I am an experienced AI Engineer &amp; Data Scientist who loves deriving insight and value from data. I enjoy building AI, Large Language Model (LLMs) and Machine Learning solutions that make a difference. Currently I’m a Principal Data Scientist at <a href="https://www.ukg.com/">UKG</a>. Prior to that, I’ve held data science positions at <a href="https://www.medidata.com/">Medidata</a>, <a href="https://www.pimco.com/">PIMCO</a>, <a href="https://happymoney.com/">Payoff</a> and <a href="https://allianz.com/">Allianz</a>. Prior to getting into data science, I was an actuary.</p>
-<p>On this site I keep a <a href="https://lawwu.github.io/blog.html">technical blog</a>, a <a href="https://lawwu.github.io/til/">TIL</a> and resume. I also enjoy <a href="https://lawwu.github.io/posts/2024-10-13-running-6-months/">running</a> and <a href="https://lawwu.github.io/modest-money-guide/">writing about personal finance</a>.</p>
-<p>I am open for new consulting work and other engagements. If you are interested, you can <a href="https://doxasolutions.ai">find more info here</a>.</p>
+<section id="hello" class="level2">
+<h2 data-anchor-id="hello">Hello! 👋</h2>
+<p>I’m an experienced <strong>AI Engineer &amp; Data Scientist</strong> passionate about transforming data into actionable insights and impactful solutions. I specialize in building AI applications, working with Large Language Models (LLMs), and developing Machine Learning solutions that solve real-world problems.</p>
+<section id="professional-experience" class="level3">
+<h3 data-anchor-id="professional-experience">Professional Experience</h3>
+<p>Currently, I’m a Principal Data Scientist at <a href="https://www.ukg.com/">UKG</a>, where I focus on applying AI to enhance workforce management solutions. My previous data science roles at <a href="https://www.medidata.com/">Medidata</a>, <a href="https://www.pimco.com/">PIMCO</a>, <a href="https://happymoney.com/">Payoff (Happy Money)</a>, and <a href="https://allianz.com/">Allianz</a> have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.</p>
+</section>
+<section id="what-youll-find-here" class="level3">
+<h3 data-anchor-id="what-youll-find-here">What You’ll Find Here</h3>
+<ul>
+<li><a href="https://lawwu.github.io/blog.html">Technical Blog</a> - My thoughts on AI, data science, and technology</li>
+<li><a href="https://lawwu.github.io/til/">Today I Learned (TIL)</a> - Quick notes on things I learn daily</li>
+<li>Personal interests including <a href="https://lawwu.github.io/posts/2024-10-13-running-6-months/">running</a> and <a href="https://lawwu.github.io/modest-money-guide/">personal finance</a></li>
+</ul>
+</section>
+<section id="lets-connect" class="level3">
+<h3 data-anchor-id="lets-connect">Let’s Connect</h3>
+<p>I’m open to new consulting opportunities and collaborations. If you’d like to work together, please check out <a href="https://doxasolutions.ai">Doxa Solutions</a> or reach out via any of the links above.</p>
+</section>
+</section>
 </div>
 
 
