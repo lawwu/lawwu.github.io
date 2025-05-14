@@ -12,6 +12,104 @@
 <generator>quarto-1.7.31</generator>
 <lastBuildDate>Wed, 14 May 2025 00:00:00 GMT</lastBuildDate>
 <item>
+  <title>Andrew Ng &amp; Harrison Chase Fireside Chat</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2025-05-13-andrew-ng-harrison-chase-fireside-chat/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>The questions and answers extracted from the fireside chat between Harrison Chase (LangChain) and Andrew Ng (AI Fund) at LangChain Interrupt 2025.</p>
+<hr>
+<section id="q1-what-is-agenticness-and-has-your-thinking-changed" class="level2">
+<h2 class="anchored" data-anchor-id="q1-what-is-agenticness-and-has-your-thinking-changed">Q1: What is “agenticness,” and has your thinking changed?</h2>
+<p><strong>Andrew Ng:</strong><br>
+The debate over whether something “is an agent” is less productive than discussing <em>degrees of autonomy</em>. It’s more useful to see systems on a spectrum—from simple automation to full autonomy—rather than binary classification. Many business workflows are linear and agentic to a low degree but still valuable.</p>
+<hr>
+</section>
+<section id="q2-what-skills-are-most-important-for-building-agent-systems" class="level2">
+<h2 class="anchored" data-anchor-id="q2-what-skills-are-most-important-for-building-agent-systems">Q2: What skills are most important for building agent systems?</h2>
+<p><strong>Andrew Ng:</strong><br>
+- Break down complex tasks into modular steps<br>
+- Define the right KPIs (including evals)<br>
+- Interpret traces, debug step-by-step<br>
+- Develop “tactile knowledge” by building, testing, and iterating<br>
+- Use many tools to strengthen decision-making intuition</p>
+<hr>
+</section>
+<section id="q3-is-that-tactile-knowledge-mostly-about-llms" class="level2">
+<h2 class="anchored" data-anchor-id="q3-is-that-tactile-knowledge-mostly-about-llms">Q3: Is that tactile knowledge mostly about LLMs?</h2>
+<p><strong>Andrew Ng:</strong><br>
+It extends beyond LLMs. Think of tools like Lego bricks—the more diverse your pieces, the more flexible your build. You need squiggly, odd-shaped blocks sometimes, not just standard ones. Practicing with a wide toolset helps build strong product instincts.</p>
+<hr>
+</section>
+<section id="q4-what-lego-bricks-are-underrated" class="level2">
+<h2 class="anchored" data-anchor-id="q4-what-lego-bricks-are-underrated">Q4: What “Lego bricks” are underrated?</h2>
+<p><strong>Andrew Ng:</strong><br>
+<strong>Evals.</strong><br>
+People think they need to be comprehensive and perfect. Start with something fast and imperfect—5 examples and a simple check. Use it to catch regressions. You’ll naturally improve it over time.</p>
+<hr>
+</section>
+<section id="q5-any-underrated-application-areas" class="level2">
+<h2 class="anchored" data-anchor-id="q5-any-underrated-application-areas">Q5: Any underrated application areas?</h2>
+<p><strong>Andrew Ng:</strong><br>
+<strong>Voice stack applications.</strong><br>
+They’re low-friction for users but underexplored. Latency expectations make them hard (users expect 1–2s responses), but agents + voice stack pipelines are more controllable than end-to-end speech models.</p>
+<hr>
+</section>
+<section id="q6-is-building-voice-agents-similar-to-text-based-ones" class="level2">
+<h2 class="anchored" data-anchor-id="q6-is-building-voice-agents-similar-to-text-based-ones">Q6: Is building voice agents similar to text-based ones?</h2>
+<p><strong>Andrew Ng:</strong><br>
+Skills are transferable, but differences matter: - Voice has tighter latency constraints - Pre-response fillers (“Hmm…”) help mask lag - Background noise helps users tolerate delays - Voice interactions are more forgiving and expressive than typed ones</p>
+<hr>
+</section>
+<section id="q7-thoughts-on-mcp-model-component-protocol" class="level2">
+<h2 class="anchored" data-anchor-id="q7-thoughts-on-mcp-model-component-protocol">Q7: Thoughts on MCP (Model Component Protocol)?</h2>
+<p><strong>Andrew Ng:</strong><br>
+MCP is a promising step toward standardized tool calling and integration.<br>
+Today’s structure is flat, but future versions need hierarchy and composition.<br>
+MCP could help unify models, tools, and data across ecosystems.</p>
+<hr>
+</section>
+<section id="q8-what-about-agent-to-agent-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="q8-what-about-agent-to-agent-protocols">Q8: What about agent-to-agent protocols?</h2>
+<p><strong>Andrew Ng:</strong><br>
+Still early. Multi-agent systems work within single teams, but cross-team agent collaboration isn’t there yet. We’re a few steps away from successful real-world examples.</p>
+<hr>
+</section>
+<section id="q9-do-you-like-the-term-vibe-coding" class="level2">
+<h2 class="anchored" data-anchor-id="q9-do-you-like-the-term-vibe-coding">Q9: Do you like the term “vibe coding”?</h2>
+<p><strong>Andrew Ng:</strong><br>
+Not really.<br>
+The name is misleading—it sounds effortless, but it’s cognitively intense.<br>
+Coding is becoming more accessible, not obsolete.<br>
+Understanding how code works is still essential for prompting and debugging.</p>
+<hr>
+</section>
+<section id="q10-advice-for-ai-startup-founders" class="level2">
+<h2 class="anchored" data-anchor-id="q10-advice-for-ai-startup-founders">Q10: Advice for AI startup founders?</h2>
+<p><strong>Andrew Ng:</strong><br>
+- <strong>#1 predictor of success: SPEED</strong><br>
+- <strong>#2: Technical depth</strong><br>
+Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.</p>
+<hr>
+</section>
+<section id="full-transcript" class="level2">
+<h2 class="anchored" data-anchor-id="full-transcript">Full Transcript</h2>
+<p>Transcribed by whisper-small</p>
+<p>[INAUDIBLE] This is a track that we see more and more as a lot of the building blocks are starting to get figured out. I’m really excited for this next section. So we’ll be doing a fireside chat with Andrew and Andrew. Probably doesn’t need any introduction to most of our stuff here. I’m guessing a lot of people are thinking as soon as classes begin to work, Sarah will learn deep learning. But I have to admit that this is a big part of the building thing of the story. So I met Andrew a little over two years ago at a conference. We started talking about LinkedIn and he graciously invited us to do a course on LinkedIn. He’s learning, I think, in my son’s best of a second or third one that they ever did. And I know a lot of people here would probably watch that course or I started on LinkedIn because of that course. So Andrew has been a huge part of the LinkedIn journey and I’m super excited to welcome him on stage for a fireside chat. So let’s welcome him to it. [Applause] [Music] [Inaudible] [Inaudible] You’ve obviously touched and thought about so many things in this industry. But one of their takes that I cite a lot and probably people have talked about is your take on kind of like talking about the agendicness of an application as opposed to whether something is an agent. You know as we’re here now at an agent conference, maybe we should rename it to an adjunct conference, but would you mind clarifying that? And I think it was like a year and a half, two years ago that you said that and so I’m curious if things have changed in your mind since then. I remember I mentioned, how was it when I spoke at a conference over a year ago and at that time I think both of us were trying to convince a lot of people that agents are a fling machine. And that was before maybe I think it was this summer last year, a bunch of law underscored the agent in terms of starting to save that sticker everywhere it was. But to her, especially, I mean about a year and a half ago I saw that long people are arguing this is an agent, this is not a particular thing. My presence is a child of law, this is not an agent. And I felt that it was not at the argument that we would succeed. And I think that as a community we just say that there are decreases in something that is an agent. So then we just say that if you want to know an agent system, you can move with autonomy or a lot of autonomy, there’s a high ability to spend time arguing. This is truly an agent. That’s just how it seems an agent system to a different decrease in autonomy. And I think that actually hopefully producing a ton of people, at least it’s been argued that something is an agent. This is called an all-agent thing. Where on that spectrum of kind of like a little autonomy to a lot of autonomy do you see people building for this system? So on the team, the team uses many of these problems, right, with complex problems and so on. I’m also seeing tons of these opportunities that frankly are fairly in danger for a food system, they’re just vocational cyber-assures. So a lot of businesses are opportunities where you’re right now with people looking to form a website, doing a website, checking something. They would be able to see if it’s a compliance issue or if there are some issues, some certain stuff too. It’s kind of like take something, copy paste it into a website, do it in a different way. So in business processes they’re actually a lot of fairly free work. Those are linear with very small business-paginal branches. Usually you could look into a failure with a rejected smartphone though. So I see a lot of work too. But one of my challenges I see businesses have is it’s still pretty difficult to look at some stuff that’s being done in business and figure out how to turn it into a new, gender-work mode. So for this degree of granularity, we should try to bring down the state into a micro-touch and then out to people in the financial prototype. It doesn’t work well enough. Originally, SEVS team worked hard to improve performance. I think that whole bag of skills on how to look at a bunch of stuff that people are doing, break into sequential steps, where the small number of branches hardly put in place in the VALS, all that, that skillset is still hard to work with. And then of course in the national conference agency, I think you heard much about the very complex and most stuff that’s very valid as well. But I see much more in terms of number of opportunities that are now valid. There’s a lot of simple things that I think are still being done as well. Let’s talk about some of those skills. So you’ve been doing deep learning and a lot of courses are in pursuit of helping people kind of build a general. So what are some of the skills that you think each and every one of those all across the spectrum should kind of like master and get started with? Well, it’s a good question. I wish I could answer that. I think a lot about this actually is that I think one of the challenges of having a business process run through your law firm, which would be compliance, people, and the job, whatever the steps. How do you put the business in the background, type integration, how to see if the CEP helps us on that too, to adjust the data, and then how do you process and model steps to build this into a system? And one thing I see about this, putting in place the right key values for your work, to not only understand the performance of your process, but to trace the individual steps, to put in less than one step that is broken, less than one step that is broken to work on. I find that a lot of the teams probably would walk in the nation just using changing key values very effectively. You can sit there and talk about your own things. I see most teams probably slowly take over the place of key values, systematic values in this item. But I find that having the right mistakes, slowly taking two days to college, is still really difficult. The school teams, the teams are still learning how to deal with the off and build-down line-out of these very recent, like a few months, trying to improve one group or another. The most, as he would say, I don’t think this can ever be made to work, so just don’t just find the different variables as well. I wish I had been more efficient to get this almost tactile knowledge. Often you’re there, you know, look at the output, look at the trace, look at the last output, and just sort of make a decision, right, in minutes or hours on the two-to-mix, and that’s still very difficult. And is this kind of like tactile knowledge mostly around LLMs and their limitations, or more around like just the product, bringing those things and that skill of taking a job and breaking it down, that’s something that’s still getting to us. I think it’s all we need, actually. So I feel like over the last couple of years, the AI2 companies have created an amazing set of tools that this includes tools like, you know, that graph also helped you. I guess like, how do you think about the chat box, of many, many different ways of approaching family, and what else, how do you believe that was helping with the audience. But I feel like there’s this, you know, one strong link, a range of various I think tools. But what I’m trying to have in my head is, if all you have are, you know, purple makeup breaks, right, you can’t build out a GCC stuff. And I think of these tools as being the kinds of makeup breaks, right, that the more tools you have, it’s as if you don’t just have purple makeup breaks, but the red one, the black one, the yellow one, the blue one. And as you get more different colors and shades of makeup breaks, you can very quickly assemble them into really cool things. And so I think a lot of these tools, they want those random products, different types of makeup breaks. And when you’re trying to build something, you know, sometimes you need that very squiggly, weird-shaped makeup break, and some of you want to go with a makeup bucket, and just get the job done. But if you’ve never built e-dots at a certain time, then, you know, then you could actually end up spending three or two months doing something that someone else has done that before, because they all, well, we should just build e-dots this way, just to know how to manage it more. And just go through that process and get it done much faster. So one of the unfortunate things about AI is that it’s not just one tool that in my coding, I just use a whole bunch of different stuff, right, a lot of master, and I’ve stopped myself from doing enough tools to set that up. And I think how that practice with different tools also helps a lot of the chasm decision making. And one of the things, they’ve also changed, so for example, just all of a sudden, having longer, longer context, longer best practices, or rag, from, you know, a year and a half ago, or whatever, much less than today. You know, and ever, Harrison was pretty early, he took off the same cycle, played with a early man, changed rag frameworks, the crystal civilization and all that. As Elm Contest Reviews got longer, now we’ve just done the long stuff into our columns. As Elm’s practice got way, but the hyper-fronted team has gotten way easier. It’s a huge range of hyper-fronted that we’re, you know, just fine. So as Elm keeps practicing, the instincts will be holy, you know, two years ago, but they won’t be helping rather than you want to. You mentioned a lot of things that I want to talk about. So, okay, what are some of the level breaks that are maybe underrated right now that you would recommend that people aren’t talking about? Like, e-balls, I think, we have had, we have three people talking about e-balls, and I think that’s top of people’s mind. But what are some things that most people maybe haven’t thought of or haven’t heard of yet that you would recommend that we’re moving into? Good question. I don’t know. I’m sure, even though people talk about e-balls, there’s some ways that people don’t do it. I think it’s because people often have, I saw a post on e-balls right this long, people think of writing e-balls as this huge thing you have to do, right? I think that e-balls is something I’m going to fill together really quickly, you know, in 20 minutes, and it’s not that good, but it starts to complement my human eye-ball e-balls. And so what often happens is that our system has this one problem, right, do you want to get an e-bression? I thought I made it work, and it breaks, I’m sure our average of $1,000 has gotten a $1,000. Then the code is a very simple e-mail, maybe with, you know, five different examples, and some very simple administration to just check for this one regression, right, to this one thing. And then I’m not swapping out human e-mails for a multimeter e-mails, and I’m still looking all through my cell, but when I change something out from just e-mails to just take this word and something, psycho-pattern thing about it, and then what happens is, just like the way we write English, maybe, once you have some slightly helpful but clearly very broken imperfect e-mail, then you’re sad, you know what, I can improve my e-mail to make it better, and I can improve the e-mail to make it better. So just as when we build a lot of applications, we build some very quick and dirty thing that doesn’t work, and we improve e-mail better. From all of the way I go e-mails, I go really all-only-mails, they’re very home, and then when you look at what it does, you go, you know, it’s just e-mails broken, I can fix it, and you improve my e-mail to make it better. So that’s one thing. Actually, one thing that people have talked about, and I think is so automated, is the voice stack. This one thing is that I’m actually very excited about voice applications, a lot of my friends are very excited about voice applications. I see a bunch of logic interfaces, very excited about voice applications, very logic, very logic interfaces. For some reason, while there are some developers in this community to voice the amount of developer attention on voice stack applications, there is software, it’s not really a good thing, but that’s one thing that feels so much smaller than the large enterprise of the important ICS, which is what’s happening on the market. And not all of this is the real-time voice-in-house, it’s not all speech-to-speech-native, what we’re working on, all of this. I find those models are very hard to control, but we use more of an agent-to-e-voice stack for the code, which is great, which we find much more controllable. So, in the end, I’ve been working with a ton of teams on voice stack stuff that some of which hopefully did not seem to be a big problem. And then, other things that are automated, one of the ones that make this not automated, and one of those that should do it, I think many of you have seen that developers that use AI systems in our company is so much faster than developers that don’t. I’ve been, it’s been interesting to see how many companies, CIOs and CTOs still have policies that don’t let the geniuses use AI systems in their company. I think maybe sometimes they’re good reasons, but I think we have to work with them, because I think my teams in our hour just hate to ever have to code again with AI systems in their company, so I think some of this is just something different. I think underrated is the idea that I think everyone should learn to code. One fun fact about AI fun, everyone in the iPhone, including the person that runs out front is perceptionist, and my CFO, and my attorney, and the general counsel, everyone in the iPhone actually knows how to code. It’s not that one day to solve it, it’s not that they respect their job functions, maybe as a member of the code, but they’re able to tell the computer what they wanted to do, and so it’s actually driving the whole productivity across all of these job functions that are not solved in AI. Talking about AI, what tools are you using for that first time? So, we’re working on something that will not get announced. Exciting. So, maybe I do use cursor, red server, and some other things. Alright. Talking about voice, if people here want to get into voice and they’re familiar with building kind of like agents with LLMs, how similar is it? Are there a lot of ideas that are transferable, or what to do, what will they have to learn? So, in terms of the applications where I think voice is important, to increase certain interactions that are not much more important, in terms of the application perspective, input text problems are kind of intimidating. For other applications, we’re going to use the same type of machine, because it’s a local text problem, very much a text problem. That’s very intimidating for users. And one of the problems with that is people can use backspace, and so people are just slowly learning to respond via text. Whereas, the voice, time rules for when you’re just thinking, talking, you could change your mind, and you could say, “Oh, I changed my mind to get that early thing that I wanted, which is pretty good to do.” But I find that the amount of applications for the user are friction to just giving them to use in this little way. So, you know, tell me what you think, and then they respond to voice. So, in terms of voice, one of the biggest differences in terms of agent and client is the expectancy, is if someone says something, and I don’t really want to respond, you know, in some point or second, right? And that’s a fact that in those seconds is great, but really, I’m going to use something in a second. And with a lot of agent work flows that were run for many seconds. So, when you do that, then I want to grow avatar to build an avatar, and that is on my vision, tell the avatar if you want. I mean, this show version had kind of, I think, nine seconds of this, and it’s just an ad user experience. So, it’s something, you know, nine seconds of silence that might have to respond. But some of the building things went from a kind of pre-response. So, just as if you ask a question, I go, “Huh, that’s interesting.” [laughter] So, how to basically do that to hide the latency, and it actually seems to work great. And there are all these other little tricks as well. So, if you’re building a voice console service to chatbot, it turns out that when you play background noise at a console contact center, it’s a dead silence. People are much more sensitive of that, of that latency. So, I find that there are all of these things that are different in a pure text based algorithm. But in applications where a voice based modality doesn’t use to be comfortable and just not talking, I think it’s sometimes really good to use this to use a friction. So, I’m going to give you some information on that. I think when we talk, we don’t feel like we need to deliver perfection as much as we’re afraid. So, somehow, you see a bridge just starting to tell your ideas and change them on, and then we’re going to fail. And that lets us get the information from them that we need to help you use it to the point. [inaudible] Hi. [laughter] One of the new things that’s out there you mentioned recently is MCP. How are you seeing that transform of how people are building apps, what types of apps are building or what’s happening in the ecosystem? Yeah, I think it’s really exciting. Just this morning, we released a new enthralment, I’m sure, was an MCP. I actually saw a lot of stuff, you know, on the internet on MCP that I found quite confusing. So, what’s going on there is that, you know, let’s put a really good short pause on MCP that explains security. I think MCP is fantastic. I think it’s very clear, properly, that that open app adopted it. Also, I think it’s based on the importance of this. I think the MCP’s standard won’t continue to evolve. So, for example, I think many of you know what MCP is, right? It’s much easier for agents primarily, but frankly, I think other types of software took over the two types of data. When I’m using OBS myself or when I’m building applications, frankly, for all of us, we spend so much time on the platform, right? So, I think, for those of you from Washington, Pryce, as well, the AI, especially, you know, using OBS, are pretty darn intelligent to evolve stuff when doing the right context. So, I found that I spent my time working and applying on the data integration to get the context of the OBS to make it feel like it’s something that offers a pretty sensible market spread for the context. So, MCP, I think, is a fantastic way to try to standardize interface to other tools. You can call us as well, say, as well as this. It feels like, it feels a little bit like, wow, as long as the MCP serves, you finally internet do your work, right? And then the authentication systems are kind of, you know, even for the very large companies, you know, the MCP service of the company, the nuclear authentication token, token worlds, and these bias along that way on. I think the MCP protocol itself is also really, right now, MCP gives a long list of the resources in the role. You know, eventually, I think we’ll be something more hierarchical and destructive. So, imagine you want to build something, I don’t know, I know that there will be an MCP interface to a land graph, but land graph is still the API calls, you just kind of have like a long list of everything under the sun for agents to sort out. So, I think MCP is a really good task at first step. Definitely encourage you to learn about it. It won’t make your life easier. Probably, you’ll find a good MCP service in the communications service, in the communications operations. I think what we’re important is this idea of, you know, any models for agents and data sources, they show up in any type of effort to do all the integration and plus them. I think MCP is a fantastic first step. It will need to be all like a fantastic first step to what the data integration is. Another type of protocol that seems less likely than MCP is the agent-to-agent system. And I remember when we were in Harvard a year or so ago, I think you were talking about multi-agent systems, which this kind of enabled. So, how do you see some of the multi-agent or agent-to-agent stuff of the protocol? So, I think, you know, agent and AI are still so early. Both of us, right, we struggle, we didn’t make our code work. And so, making my code, my agent work with someone else’s agent, it feels like a two-miracle. [laughter] So, I see that one team is building multi-agent systems. That often works because people have a bunch of agents, they can be themselves and their protocols, that works. But right now, at least at this moment in time, maybe I’m off. The number of examples I’m seeing of when, you know, one team’s agent and correction agent successfully made agents, it’s totally different teams’ agent and correction agents. I think we’re a little bit early to that. I’m sure we’ll get there, but I’m not personally seeing, you know, real success, pure success stories of that. Yeah, I don’t think that’s true. No, I think it’s super early. I think if MCP is early, I think the agent stuff is super early. Another thing that’s kind of like top of what’s mine right now is it’s kind of vibe coding. And all that, I touched on it a little bit earlier with how people are using these AI coding systems. But how do you think about vibe coding? Is that a different skill than before or what kind of a mis-disaster? Yeah, so I think many of us code, we’re barely looking at the code, right? I think it’s a fantastic thing to do. I think it’s unfortunate that that code, “vine coding” is misleading a lot of people. I think it just goes by, you know, just like that. And frankly, when I’m coding for a day, you know, with vinyl or whatever, I forget code systems, I’m frankly exhausted by the end of the day, so I’m thinking it’s an Android device. And so I think the name is unfortunate, but the phenomenon is real and it’s been taking part in this great. So, I mean, over the last year, a few people have been advising others to come up to code on the basis that they have more to be coding. I think we’ll back this on the worst career advice that we’ve ever done. Because over the last many decades, as coding is getting easier, more people started to code. So it turns out, you know, when we went from punch-cost to key-cost, that’s how it went, very well. But it turns out, actually, thousands of variable algorithms went probably from a sending language to a literally code wall. There were people arguing back then, “Yeah, code wall is so easy, we don’t need programs anymore.” And I’ll say, it’s getting easier, more people are going to code. And so, we’ve been coding systems, more people should code. But I think, and it turns out, one of the most important schools in the future for developers and developers, is the ability to tell a code to exactly what you want, so they want to do it for you. And I think understanding at some level, which I’ll be talking about, understanding at some level how a computer works, lets you prompt on a stronger future, so they’re much more accessible. Which is why I still try to advise everyone to learn one program, and I try to hide them by something. And then, I think some of you know this, but I personally about, you know, a much stronger height than developer, I did say JavaScript, right? But with AI system coding, I now write a lot more JavaScript in types of code than I ever used to. But even with debugging, you know, JavaScript code, that something else, really understanding what are the error cases, what does that mean, that it’s pretty difficult to write on JavaScript. If you don’t like the name “by” coding, do you have a better name for “by”? Oh, that’s a good question. I shouldn’t think about that. We’ll get back to you on that. One of the things that you announced recently is a new fund for AI funds, so if you grab some of that, for people in the audience who are really thinking of starting a startup, what advice would you give them? So, in front of the just studios, we build companies, and we have to consider the investment companies that we co-founded. So, I think in terms of running back on AI funds lessons learned, I would say that the number one predictor of a startup success is split. I know it’s looking value, but I see it all the people that I’ve never seen yet, the speed through which a skilled team can execute, and if you’ve never seen it before, I know many of you have seen it. It’s just so much faster than anything that slow businesses can hardly do. And I think the number two predictor also very important is tech-con knowledge. It turns out that we look at the schools in the new sector to some things like how we market, how we sell, how we price. All that is important, but that knowledge has to be constantly more widespread. The knowledge that’s really rare is how this technology actually works, because technology evolves so quickly. So, I have deep respect for good market. How good pricing is hard, how good marketing is hard, position is hard, but that knowledge is more diffused. And the most rare reason is somewhat, they’re being understood how the technology works. So, what I found really is that there are community tech-con people that have good instincts, understand, do this, don’t do that, just as good ties as that. And then I think along with the business stuff, that the knowledge is very important to the transition needs here to figure out. Alright, that’s great advice for starting something. We are going to wrap this up. We’re going to go to a break now, but before we do, please join me in giving Andrew a big hand. [Applause] Our next session is in 15 minutes. [Indistinct conversation] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music]</p>
+
+
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>LLMs</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2025-05-13-andrew-ng-harrison-chase-fireside-chat/</guid>
+  <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
+</item>
+<item>
   <title>LangChain Interrupt Conference - Day 1</title>
   <dc:creator>Lawrence Wu</dc:creator>
   <link>https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/</link>
@@ -17465,7 +17563,7 @@ Recapping the past year in AI, and what open questions are <em>worth pursuing</e
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
 <p>The code to do this:</p>
-<div id="95ae7ec9" class="cell" data-execution_count="1">
+<div id="ec436012" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.llms <span class="im" style="color: #00769E;
@@ -17564,7 +17662,7 @@ font-style: inherit;">False</span>,</span>
 <section id="a-couple-examples" class="level2">
 <h2 class="anchored" data-anchor-id="a-couple-examples">A Couple Examples</h2>
 <p>Running this for an entry-level data scientist:</p>
-<div id="7ffa74f4" class="cell" data-execution_count="2">
+<div id="35312c48" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">llm(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
@@ -17607,7 +17705,7 @@ background-color: null;
 font-style: inherit;"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code></pre></div>
 </div>
 <p>Repeating this for a Pediatric Pharmacist:</p>
-<div id="0005b9ae" class="cell" data-execution_count="3">
+<div id="b2b9fbf4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">prompt<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
@@ -17710,647 +17808,6 @@ font-style: inherit;"># However, if properly implemented, these technologies hav
   <category>LLM</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-08-25-kdd2023-recap/</guid>
   <pubDate>Fri, 25 Aug 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Double Machine Learning</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>At KDD2023 I was introduced to the term “Double Machine Learning” (DML). I was surprised I had never heard the term before so here are some notes on this important method in causal machine learning from a conversation with GPT-4. I am very impressed with GPT-4’s ability to help explain complex concepts especially in areas where there there are libraries and code involved.</p>
-<p>The first 5 results from Google were not exactly what I was looking for:</p>
-<ul>
-<li><a href="https://towardsdatascience.com/double-machine-learning-for-causal-inference-78e0c6111f9d" class="uri">https://towardsdatascience.com/double-machine-learning-for-causal-inference-78e0c6111f9d</a> - I tend to avoid Medium articles because of the paywall</li>
-<li><a href="https://econml.azurewebsites.net/spec/estimation/dml.html" class="uri">https://econml.azurewebsites.net/spec/estimation/dml.html</a> - not enough detail explaining the concept of DML</li>
-<li><a href="https://docs.doubleml.org/stable/guide/basics.html" class="uri">https://docs.doubleml.org/stable/guide/basics.html</a> - It was difficult for me to follow this tutorial</li>
-<li><a href="https://dm13450.github.io/2021/05/28/Double-ML.html" class="uri">https://dm13450.github.io/2021/05/28/Double-ML.html</a> - This was actually the best tutorial I read however the code is in R and I preferred a Python example</li>
-<li><a href="https://arxiv.org/abs/1608.00060" class="uri">https://arxiv.org/abs/1608.00060</a> - Original paper proposing the method however I wanted something a tad more accessible</li>
-</ul>
-<p>Hence the need to have a conversation with GPT-4.</p>
-<section id="double-machine-learning-dml" class="level1">
-<h1>Double Machine Learning (DML)</h1>
-<p>Double machine learning (DML) is a methodology developed to estimate causal effects or treatment effects in the presence of a high-dimensional set of controls. This technique is particularly useful in scenarios where there are a lot of control variables, and we want to adjust for confounding effects to accurately determine the impact of a particular treatment or variable of interest.</p>
-<section id="concept-and-its-benefits" class="level2">
-<h2 class="anchored" data-anchor-id="concept-and-its-benefits">Concept and its Benefits</h2>
-<section id="concept" class="level3">
-<h3 class="anchored" data-anchor-id="concept">Concept</h3>
-<p><strong>Problem</strong>: Suppose you’re interested in estimating the causal effect of a treatment variable ( T ) on an outcome ( Y ), while controlling for a high-dimensional set of covariates ( X ). The relationship could be something like ( Y = + T + g(X) + ), where ( g(X) ) is a potentially complex and high-dimensional function, and ( ) is an error term.</p>
-<p><strong>High-Dimensionality Issue</strong>: Directly estimating ( ) is challenging because of the high dimensionality of ( g(X) ). Traditional methods might suffer from overfitting or might not capture the nuanced relationship of ( X ) with ( Y ).</p>
-<p><strong>Solution via DML</strong>: DML breaks down the problem into two stages:</p>
-<ol type="1">
-<li><strong>First Stage</strong>: Use machine learning methods to predict ( Y ) and ( T ) based on ( X ). Obtain the residuals from these predictions.</li>
-<li><strong>Second Stage</strong>: Regress the residuals of ( Y ) on the residuals of ( T ) to estimate ( ). This step isolates the effect of ( T ) on ( Y ), controlling for ( X ), without directly modeling ( g(X) ).</li>
-</ol>
-</section>
-<section id="benefits" class="level3">
-<h3 class="anchored" data-anchor-id="benefits">Benefits</h3>
-<ul>
-<li><strong>Flexibility</strong>: DML doesn’t make strong assumptions about the functional forms of relationships, allowing for the use of flexible ML techniques.</li>
-<li><strong>Robustness</strong>: By working with residuals, DML reduces concerns about model misspecification. Even if the first-stage models aren’t perfect, as long as they’re reasonably good, the second-stage estimate of ( ) can still be consistent and accurate.</li>
-<li><strong>High-Dimensional Controls</strong>: DML is particularly suited for cases with many control variables. This is common in modern datasets where one might have a vast number of potential confounders.</li>
-<li><strong>Interpretability</strong>: The final result, ( ), provides a clear and interpretable estimate of the causal effect of ( T ) on ( Y ).</li>
-</ul>
-</section>
-<section id="example" class="level3">
-<h3 class="anchored" data-anchor-id="example">Example</h3>
-<p>Imagine you want to estimate the effect of a training program (treatment ( T )) on employee performance (outcome ( Y )), controlling for a range of employee attributes ( X ) (like age, experience, past performance metrics, personality scores, and so on). Using DML, you would first predict performance and program participation based on all these controls using ML models. Then, you’d isolate the unexplained variations (residuals) of performance and program participation and estimate the effect of the training program using these residuals.</p>
-</section>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Double Machine Learning offers a robust and flexible way to estimate causal effects in high-dimensional settings, combining the strengths of traditional econometric methods with modern machine learning techniques.</p>
-<section id="source" class="level3">
-<h3 class="anchored" data-anchor-id="source">Source</h3>
-<p>Chernozhukov, V., Chetverikov, D., Demirer, M., Duflo, E., Hansen, C., Newey, W., &amp; Robins, J. (2018). Double/debiased machine learning for treatment and structural parameters. The Econometrics Journal, 21(1), C1-C68.</p>
-</section>
-</section>
-</section>
-<section id="how-is-the-dml-different-and-better-than-the-methods-that-were-used-before-this-method-was-introduced" class="level1">
-<h1>How is the DML different and better than the methods that were used before this method was introduced?</h1>
-<p>Double Machine Learning (DML) was introduced to address some of the limitations and challenges of traditional methods in econometrics, especially in settings with high-dimensional controls. Here’s a comparison of DML with conventional approaches and an overview of its advantages:</p>
-<section id="traditional-methods" class="level2">
-<h2 class="anchored" data-anchor-id="traditional-methods">Traditional Methods</h2>
-<section id="linear-regression-with-controls" class="level3">
-<h3 class="anchored" data-anchor-id="linear-regression-with-controls">Linear Regression with Controls</h3>
-<p>Traditionally, if researchers wanted to control for confounding variables, they would include these controls in a linear regression. But, with high-dimensional controls, this approach faces issues like overfitting or multicollinearity.</p>
-</section>
-<section id="instrumental-variables-iv" class="level3">
-<h3 class="anchored" data-anchor-id="instrumental-variables-iv">Instrumental Variables (IV)</h3>
-<p>IV methods are used when the treatment variable is endogenous (correlated with the error term). IV requires the identification and use of an instrument that affects the treatment but has no direct effect on the outcome. Finding such instruments can be challenging.</p>
-</section>
-<section id="difference-in-differences-did" class="level3">
-<h3 class="anchored" data-anchor-id="difference-in-differences-did">Difference-in-Differences (DiD)</h3>
-<p>DiD estimates causal effects by looking at changes in outcomes over time between a group that receives the treatment and a group that doesn’t. This method assumes that the two groups would have followed parallel trends in the absence of treatment, an assumption that’s sometimes hard to validate.</p>
-</section>
-<section id="matching-and-propensity-score-methods" class="level3">
-<h3 class="anchored" data-anchor-id="matching-and-propensity-score-methods">Matching and Propensity Score Methods</h3>
-<p>These involve pairing treated and untreated subjects that have similar observable characteristics. It’s often difficult to balance all covariates, especially in high dimensions, and unobserved confounding remains a challenge.</p>
-</section>
-</section>
-<section id="advantages-of-dml" class="level2">
-<h2 class="anchored" data-anchor-id="advantages-of-dml">Advantages of DML</h2>
-<section id="flexibility-with-high-dimensional-controls" class="level3">
-<h3 class="anchored" data-anchor-id="flexibility-with-high-dimensional-controls">Flexibility with High-Dimensional Controls</h3>
-<p>Traditional methods struggle with many control variables due to overfitting, multicollinearity, or the curse of dimensionality. DML can handle high-dimensional controls efficiently by leveraging machine learning techniques.</p>
-</section>
-<section id="robustness-to-model-misspecification" class="level3">
-<h3 class="anchored" data-anchor-id="robustness-to-model-misspecification">Robustness to Model Misspecification</h3>
-<p>DML’s two-stage process (predicting using ML and then regressing the residuals) ensures that even if the first-stage predictions aren’t perfect, the causal estimate can still be consistent and accurate.</p>
-</section>
-<section id="leverages-machine-learning" class="level3">
-<h3 class="anchored" data-anchor-id="leverages-machine-learning">Leverages Machine Learning</h3>
-<p>By integrating machine learning into causal inference, DML can use complex, non-linear models to control for confounding, something that’s challenging with traditional linear methods.</p>
-</section>
-<section id="no-need-for-strong-instruments-or-parallel-trends" class="level3">
-<h3 class="anchored" data-anchor-id="no-need-for-strong-instruments-or-parallel-trends">No Need for Strong Instruments or Parallel Trends</h3>
-<p>Unlike IV or DiD, DML doesn’t rely on finding strong instruments or making assumptions about parallel trends, making it applicable in a broader range of scenarios.</p>
-</section>
-<section id="interoperability-with-other-techniques" class="level3">
-<h3 class="anchored" data-anchor-id="interoperability-with-other-techniques">Interoperability with Other Techniques</h3>
-<p>DML can be combined with other methods like instrumental variables (e.g., in the form of Double/Debiased Machine Learning with Instruments) to tackle more complex causal questions.</p>
-<p>In essence, while traditional econometric methods have their value and are optimal in certain settings, DML provides a flexible and robust framework for causal inference in modern datasets with many covariates. It bridges the gap between the strengths of classical econometric methods and the power of machine learning.</p>
-</section>
-</section>
-</section>
-<section id="can-you-give-me-2-3-examples-of-applying-dml-in-a-human-resources-setting-explain-it-using-the-variable-x-confounders-t-treatment-and-y-outcome" class="level1">
-<h1>Can you give me 2-3 examples of applying DML in a human resources setting? Explain it using the variable X (Confounders), T (Treatment) and Y (Outcome)</h1>
-<p>Double Machine Learning (DML) can be an incredibly useful tool in the Human Resources (HR) context, particularly when one wants to infer causal relationships while adjusting for many potential confounding variables. Here are three examples applying DML in an HR setting:</p>
-<section id="impact-of-training-programs-on-employee-productivity" class="level2">
-<h2 class="anchored" data-anchor-id="impact-of-training-programs-on-employee-productivity">1. Impact of Training Programs on Employee Productivity</h2>
-<ul>
-<li><strong>T (Treatment):</strong> Participation in a specialized training program.</li>
-<li><strong>Y (Outcome):</strong> Employee productivity (could be measured as tasks completed per day, quality scores, or any other relevant metric).</li>
-<li><strong>X (Confounders):</strong>
-<ul>
-<li>Age of the employee.</li>
-<li>Years of experience in the field.</li>
-<li>Educational background.</li>
-<li>Previous training programs attended.</li>
-<li>Personality test scores.</li>
-<li>Prior productivity metrics.</li>
-</ul></li>
-<li><strong>DML Application:</strong> HR wants to understand if the new training program truly increases productivity. By employing DML, they can control for a vast array of confounders (like age, experience, prior training, etc.) to ascertain the genuine causal effect of the training on productivity.</li>
-</ul>
-</section>
-<section id="evaluating-the-effects-of-flexible-work-hours-on-employee-satisfaction" class="level2">
-<h2 class="anchored" data-anchor-id="evaluating-the-effects-of-flexible-work-hours-on-employee-satisfaction">2. Evaluating the Effects of Flexible Work Hours on Employee Satisfaction</h2>
-<ul>
-<li><strong>T (Treatment):</strong> Implementation of flexible work hours (e.g., 4-day work week, flexi-timings).</li>
-<li><strong>Y (Outcome):</strong> Employee satisfaction scores (from regular employee surveys or feedback forms).</li>
-<li><strong>X (Confounders):</strong>
-<ul>
-<li>Age of the employee.</li>
-<li>Department or team (e.g., sales, IT, management).</li>
-<li>Commute time to the office.</li>
-<li>Number of dependents (like children).</li>
-<li>Tenure at the company.</li>
-<li>Previous satisfaction scores.</li>
-</ul></li>
-<li><strong>DML Application:</strong> HR is considering a policy change to offer more flexible working hours. They implement a pilot program in a few departments and then wish to measure its effect on employee satisfaction. With many potential confounders, DML can help isolate the true impact of the flexible hours policy on satisfaction.</li>
-</ul>
-</section>
-<section id="understanding-the-causal-effect-of-health-benefits-on-employee-retention" class="level2">
-<h2 class="anchored" data-anchor-id="understanding-the-causal-effect-of-health-benefits-on-employee-retention">3. Understanding the Causal Effect of Health Benefits on Employee Retention</h2>
-<ul>
-<li><strong>T (Treatment):</strong> Provision of a comprehensive health benefits package.</li>
-<li><strong>Y (Outcome):</strong> Employee retention rate (measured as the number of years an employee stays with the company or a binary outcome of whether they stayed for a given period).</li>
-<li><strong>X (Confounders):</strong>
-<ul>
-<li>Age of the employee.</li>
-<li>Salary and other financial incentives.</li>
-<li>Department or team.</li>
-<li>Job role and responsibilities.</li>
-<li>Previous job-switching history.</li>
-<li>Size of the family or number of dependents.</li>
-</ul></li>
-<li><strong>DML Application:</strong> An organization introduces a new health benefits package, theorizing that it would lead to higher retention rates. However, before scaling it company-wide, they want to understand its true causal effect. Using DML, they can adjust for various confounding factors like salary, job role, and personal circumstances to determine the genuine influence of the health benefits on retention.</li>
-</ul>
-<p>In each of these scenarios, the objective is to tease out the causal relationship between a specific HR intervention (T) and an outcome of interest (Y), all while accounting for a myriad of confounding variables (X) that might distort this relationship. By integrating DML techniques, HR departments can make more informed decisions based on robust causal inferences.</p>
-</section>
-</section>
-<section id="can-you-give-me-some-code-in-python-to-implement-the-first-use-case-with-clear-comments-too" class="level1">
-<h1>Can you give me some code in Python to implement the first use case with clear comments too?</h1>
-<p>Certainly! Below is a simplified Python code that applies Double Machine Learning (DML) to the first use case: evaluating the impact of a specialized training program on employee productivity. The code assumes you have data with relevant columns for treatment, outcome, and confounders.</p>
-<p>For this example, I’m using the EconML library, which offers a robust implementation of DML among other causal inference tools.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Required Libraries</span></span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> np</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb1-4"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> LinearRegression</span>
-<span id="cb1-5"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> econml.dml <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> LinearDML</span>
-<span id="cb1-6"></span>
-<span id="cb1-7"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Load your dataset</span></span>
-<span id="cb1-8"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># df = pd.read_csv('your_data_file.csv')</span></span>
-<span id="cb1-9"></span>
-<span id="cb1-10"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Simulated dataset for the sake of this example</span></span>
-<span id="cb1-11">np.random.seed(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>)</span>
-<span id="cb1-12">n <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span></span>
-<span id="cb1-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Confounders</span></span>
-<span id="cb1-14">age <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">60</span>, size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>n)</span>
-<span id="cb1-15">years_of_experience <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">40</span>, size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>n)</span>
-<span id="cb1-16">prior_productivity <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>, n)</span>
-<span id="cb1-17"></span>
-<span id="cb1-18"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Treatment: whether they attended the training or not (1 for yes, 0 for no)</span></span>
-<span id="cb1-19">treatment <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.binomial(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>, n)</span>
-<span id="cb1-20"></span>
-<span id="cb1-21"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Outcome: productivity influenced by treatment, age, experience and some noise</span></span>
-<span id="cb1-22">productivity <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> treatment <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.05</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> age <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.3</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> years_of_experience <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> </span>
-<span id="cb1-23">                <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> prior_productivity <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, n))</span>
-<span id="cb1-24"></span>
-<span id="cb1-25">df <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.DataFrame({</span>
-<span id="cb1-26">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'age'</span>: age, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'experience'</span>: years_of_experience, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'prior_productivity'</span>: prior_productivity,</span>
-<span id="cb1-27">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'treatment'</span>: treatment, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'productivity'</span>: productivity</span>
-<span id="cb1-28">})</span>
-<span id="cb1-29"></span>
-<span id="cb1-30"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the treatment, outcome, and confounders</span></span>
-<span id="cb1-31">T <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'treatment'</span>]</span>
-<span id="cb1-32">Y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'productivity'</span>]</span>
-<span id="cb1-33">X <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'age'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'experience'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'prior_productivity'</span>]]</span>
-<span id="cb1-34"></span>
-<span id="cb1-35"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the machine learning model to use; here we're using linear regression for simplicity</span></span>
-<span id="cb1-36">ml_model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> LinearRegression()</span>
-<span id="cb1-37"></span>
-<span id="cb1-38"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Initialize the DML model</span></span>
-<span id="cb1-39">dml_model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> LinearDML(model_y<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>ml_model, model_t<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>ml_model)</span>
-<span id="cb1-40">dml_model.fit(Y, T, X<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>X)</span>
-<span id="cb1-41"></span>
-<span id="cb1-42"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Retrieve the causal effect (average treatment effect or ATE)</span></span>
-<span id="cb1-43">ate <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> dml_model.ate()</span>
-<span id="cb1-44"></span>
-<span id="cb1-45"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Average Treatment Effect of the Training Program on Productivity: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>ate<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span></code></pre></div>
-<p>Here’s what the code does:</p>
-<ol type="1">
-<li>Imports required libraries.</li>
-<li>Either loads or simulates a dataset with treatment, outcome, and confounders.</li>
-<li>Defines the treatment, outcome, and confounders from the dataset.</li>
-<li>Sets up the machine learning model to use. In this simple example, it’s linear regression, but more complex models like random forests or gradient boosting machines can be used.</li>
-<li>Initializes and fits the DML model.</li>
-<li>Retrieves the average treatment effect (ATE) of the training on productivity.</li>
-</ol>
-</section>
-<section id="can-you-implement-the-above-use-case-in-python-without-econml-for-pedagogical-purposes" class="level1">
-<h1>Can you implement the above use case in Python without econml for pedagogical purposes?</h1>
-<p>Absolutely. Implementing Double Machine Learning (DML) without relying on specialized libraries will require a bit more manual work, but it’s quite educational.</p>
-<p>Here’s a basic implementation of DML for the first use case:</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> numpy <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> np</span>
-<span id="cb2-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> pandas <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">as</span> pd</span>
-<span id="cb2-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> sklearn.linear_model <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> LinearRegression</span>
-<span id="cb2-4"></span>
-<span id="cb2-5"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Simulate the dataset</span></span>
-<span id="cb2-6">np.random.seed(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>)</span>
-<span id="cb2-7">n <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1000</span></span>
-<span id="cb2-8"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Confounders</span></span>
-<span id="cb2-9">age <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">20</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">60</span>, size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>n)</span>
-<span id="cb2-10">years_of_experience <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.randint(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">40</span>, size<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>n)</span>
-<span id="cb2-11">prior_productivity <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.normal(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">50</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">10</span>, n)</span>
-<span id="cb2-12"></span>
-<span id="cb2-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Treatment: whether they attended the training or not (1 for yes, 0 for no)</span></span>
-<span id="cb2-14">treatment <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> np.random.binomial(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span>, n)</span>
-<span id="cb2-15"></span>
-<span id="cb2-16"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Outcome: productivity influenced by treatment, age, experience, and some noise</span></span>
-<span id="cb2-17">productivity <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> treatment <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.05</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> age <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.3</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> years_of_experience <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span></span>
-<span id="cb2-18">                <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.5</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">*</span> prior_productivity <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> np.random.normal(<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">5</span>, n))</span>
-<span id="cb2-19"></span>
-<span id="cb2-20">df <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> pd.DataFrame({</span>
-<span id="cb2-21">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'age'</span>: age, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'experience'</span>: years_of_experience, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'prior_productivity'</span>: prior_productivity,</span>
-<span id="cb2-22">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'treatment'</span>: treatment, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'productivity'</span>: productivity</span>
-<span id="cb2-23">})</span>
-<span id="cb2-24"></span>
-<span id="cb2-25"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Define the treatment, outcome, and confounders</span></span>
-<span id="cb2-26">T <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'treatment'</span>].values.reshape(<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>, <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>)</span>
-<span id="cb2-27">Y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'productivity'</span>]</span>
-<span id="cb2-28">X <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> df[[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'age'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'experience'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'prior_productivity'</span>]]</span>
-<span id="cb2-29"></span>
-<span id="cb2-30"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Step 1: Partial out the effect of X on T and Y using Linear Regression</span></span>
-<span id="cb2-31">model_t <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> LinearRegression().fit(X, T)</span>
-<span id="cb2-32">residual_T <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> T <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> model_t.predict(X)</span>
-<span id="cb2-33"></span>
-<span id="cb2-34">model_y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> LinearRegression().fit(X, Y)</span>
-<span id="cb2-35">residual_Y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Y <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span> model_y.predict(X)</span>
-<span id="cb2-36"></span>
-<span id="cb2-37"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Step 2: Regress the residuals of Y on the residuals of T to obtain the treatment effect</span></span>
-<span id="cb2-38">ate_model <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> LinearRegression().fit(residual_T, residual_Y)</span>
-<span id="cb2-39">ate <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ate_model.coef_[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>]</span>
-<span id="cb2-40"></span>
-<span id="cb2-41"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Average Treatment Effect of the Training Program on Productivity: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>ate<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">:.3f}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span></code></pre></div>
-<p>Here’s the basic workflow:</p>
-<ol type="1">
-<li><p><strong>Partial Out the Effects of Confounders (X)</strong>: We first “partial out” the effects of the confounders ( X ) on both the treatment ( T ) and outcome ( Y ) using linear regression. This leaves us with residuals for ( T ) and ( Y ) that represent the portions of ( T ) and ( Y ) that are not explained by ( X ).</p></li>
-<li><p><strong>Regress the Residuals</strong>: We then regress the residual of ( Y ) on the residual of ( T ). The coefficient of this regression is our estimate of the average treatment effect.</p></li>
-</ol>
-<p>This method uses the concept that by “controlling” for ( X ) (through partialling out its effects), any remaining relationship between ( T ) and ( Y ) should be causal, under the assumption that there are no unobserved confounders.</p>
-<p>This is a basic pedagogical introduction to DML. In practice, the methodology can get more intricate, especially when leveraging more complex models, handling various assumptions, and ensuring the robustness of the results.</p>
-</section>
-<section id="do-the-ml-models-at-each-of-those-steps-need-to-be-the-same" class="level1">
-<h1>Do the ML models at each of those steps need to be the same?</h1>
-<p>No, the machine learning models used to partial out the effects of the confounders on the treatment ( T ) and the outcome ( Y ) do not need to be the same in Double Machine Learning (DML). In fact, one of the strengths of DML is its flexibility in allowing different models for different parts of the process.</p>
-<section id="heres-why-you-might-choose-different-models" class="level2">
-<h2 class="anchored" data-anchor-id="heres-why-you-might-choose-different-models">Here’s why you might choose different models:</h2>
-<section id="different-natures-of-relationships" class="level3">
-<h3 class="anchored" data-anchor-id="different-natures-of-relationships">Different Natures of Relationships</h3>
-<p>The relationship between the confounders and the treatment might be different from the relationship between the confounders and the outcome. For instance, a non-linear model like a decision tree or random forest might capture the relationship between the confounders and the treatment best, while a linear model might be most appropriate for the relationship between the confounders and the outcome.</p>
-</section>
-<section id="model-performance-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="model-performance-considerations">Model Performance Considerations</h3>
-<p>In some settings, certain machine learning models might perform better (in terms of predictive accuracy) for the treatment assignment, while others might be better suited for modeling the outcome.</p>
-</section>
-<section id="computational-considerations" class="level3">
-<h3 class="anchored" data-anchor-id="computational-considerations">Computational Considerations</h3>
-<p>In some scenarios, especially with large datasets, computational efficiency might dictate the choice of models. Training a complex model might be computationally prohibitive for one task but feasible for another, depending on the data’s dimensionality and the relationships present.</p>
-<p>While DML allows for such flexibility, it’s important to remember the foundational assumption: both models (for ( T ) and ( Y )) should be sufficiently rich to capture the true relationships in the data. If the models are misspecified or too simplistic, it can introduce bias in the estimated treatment effects.</p>
-<p>In practice, using cross-validation or other model selection techniques can help determine which models are best suited for each step in the DML process.</p>
-</section>
-</section>
-</section>
-<section id="how-do-you-handle-training-and-test-data-splits-in-this-method" class="level1">
-<h1>How do you handle training and test data splits in this method?</h1>
-<p>Handling training and test data splits in Double Machine Learning (DML) is crucial to ensure the validity and robustness of the causal effect estimates. In DML, cross-fitting or cross-validation plays a central role in avoiding overfitting and ensuring that nuisance estimates do not inadvertently leak information about the treatment effect.</p>
-<section id="heres-how-you-can-handle-training-and-test-data-splits-in-dml" class="level2">
-<h2 class="anchored" data-anchor-id="heres-how-you-can-handle-training-and-test-data-splits-in-dml">Here’s how you can handle training and test data splits in DML:</h2>
-<section id="cross-fitting" class="level3">
-<h3 class="anchored" data-anchor-id="cross-fitting">1. Cross-Fitting:</h3>
-<p>Cross-fitting involves splitting the dataset into ( K ) folds (similar to ( K )-fold cross-validation in standard machine learning). For each fold, the following steps are taken:</p>
-<ul>
-<li><strong>Training on ( K-1 ) folds:</strong> Train the ML models for the treatment and outcome on ( K-1 ) folds.</li>
-<li><strong>Predicting on the left-out fold:</strong> Use the trained models to predict the treatment and outcome for the left-out fold, producing residuals.</li>
-<li><strong>Repeat:</strong> Perform the same operation ( K ) times, each time leaving out a different fold.</li>
-<li><strong>Finally, with the residuals produced from all the folds, you can estimate the treatment effect.</strong></li>
-</ul>
-</section>
-<section id="train-test-split" class="level3">
-<h3 class="anchored" data-anchor-id="train-test-split">2. Train-Test Split:</h3>
-<p>A simpler approach involves just splitting the data into a training set and a test set.</p>
-<ul>
-<li><strong>Training on the training set:</strong> Train the ML models for the treatment and outcome on the training set.</li>
-<li><strong>Predicting on the test set:</strong> Use the trained models to predict the treatment and outcome for the test set, producing residuals.</li>
-<li><strong>Estimating the treatment effect:</strong> With the residuals from the test set, estimate the treatment effect.</li>
-</ul>
-<p>This method is less robust than cross-fitting but can be computationally less intensive.</p>
-</section>
-</section>
-<section id="notes" class="level2">
-<h2 class="anchored" data-anchor-id="notes">Notes:</h2>
-<ul>
-<li><strong>Overfitting Concerns:</strong> Without proper cross-fitting or a train-test split, DML can overfit. This is because the ML models for treatment and outcome might fit the noise in the data, leading to biased nuisance estimates and, subsequently, biased treatment effect estimates.</li>
-<li><strong>Cross-Fitting is Preferred:</strong> Cross-fitting is typically preferred in DML because it helps ensure that the estimated causal effects are not driven by overfitting to the idiosyncrasies in the data. It also provides a more robust estimate of the treatment effect across different subsets of the data.</li>
-<li><strong>Final Model Assessment:</strong> After obtaining the causal effect estimates using DML, it’s a good practice to assess the performance of the final model on a completely separate validation set, if available. This ensures that the DML procedure generalizes well to unseen data.</li>
-</ul>
-<p>To summarize, handling data splits in DML is integral to its methodology. Properly performed, it ensures that the estimated causal effects are both valid and generalizable.</p>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Causal Inference</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/</guid>
-  <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

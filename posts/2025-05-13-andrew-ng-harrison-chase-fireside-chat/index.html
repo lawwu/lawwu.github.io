@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2025-05-14">
+
+<title>Andrew Ng &amp; Harrison Chase Fireside Chat – Lawrence Wu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-630147fbe0b9ab2b2a517857e522e257.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Andrew Ng &amp; Harrison Chase Fireside Chat – Lawrence Wu">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:site_name" content="Lawrence Wu">
+<meta name="twitter:title" content="Andrew Ng &amp; Harrison Chase Fireside Chat – Lawrence Wu">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://lawwu.github.io/til/"> 
+<span class="menu-text">TIL</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#q1-what-is-agenticness-and-has-your-thinking-changed" id="toc-q1-what-is-agenticness-and-has-your-thinking-changed" class="nav-link active" data-scroll-target="#q1-what-is-agenticness-and-has-your-thinking-changed">Q1: What is “agenticness,” and has your thinking changed?</a></li>
+  <li><a href="#q2-what-skills-are-most-important-for-building-agent-systems" id="toc-q2-what-skills-are-most-important-for-building-agent-systems" class="nav-link" data-scroll-target="#q2-what-skills-are-most-important-for-building-agent-systems">Q2: What skills are most important for building agent systems?</a></li>
+  <li><a href="#q3-is-that-tactile-knowledge-mostly-about-llms" id="toc-q3-is-that-tactile-knowledge-mostly-about-llms" class="nav-link" data-scroll-target="#q3-is-that-tactile-knowledge-mostly-about-llms">Q3: Is that tactile knowledge mostly about LLMs?</a></li>
+  <li><a href="#q4-what-lego-bricks-are-underrated" id="toc-q4-what-lego-bricks-are-underrated" class="nav-link" data-scroll-target="#q4-what-lego-bricks-are-underrated">Q4: What “Lego bricks” are underrated?</a></li>
+  <li><a href="#q5-any-underrated-application-areas" id="toc-q5-any-underrated-application-areas" class="nav-link" data-scroll-target="#q5-any-underrated-application-areas">Q5: Any underrated application areas?</a></li>
+  <li><a href="#q6-is-building-voice-agents-similar-to-text-based-ones" id="toc-q6-is-building-voice-agents-similar-to-text-based-ones" class="nav-link" data-scroll-target="#q6-is-building-voice-agents-similar-to-text-based-ones">Q6: Is building voice agents similar to text-based ones?</a></li>
+  <li><a href="#q7-thoughts-on-mcp-model-component-protocol" id="toc-q7-thoughts-on-mcp-model-component-protocol" class="nav-link" data-scroll-target="#q7-thoughts-on-mcp-model-component-protocol">Q7: Thoughts on MCP (Model Component Protocol)?</a></li>
+  <li><a href="#q8-what-about-agent-to-agent-protocols" id="toc-q8-what-about-agent-to-agent-protocols" class="nav-link" data-scroll-target="#q8-what-about-agent-to-agent-protocols">Q8: What about agent-to-agent protocols?</a></li>
+  <li><a href="#q9-do-you-like-the-term-vibe-coding" id="toc-q9-do-you-like-the-term-vibe-coding" class="nav-link" data-scroll-target="#q9-do-you-like-the-term-vibe-coding">Q9: Do you like the term “vibe coding”?</a></li>
+  <li><a href="#q10-advice-for-ai-startup-founders" id="toc-q10-advice-for-ai-startup-founders" class="nav-link" data-scroll-target="#q10-advice-for-ai-startup-founders">Q10: Advice for AI startup founders?</a></li>
+  <li><a href="#full-transcript" id="toc-full-transcript" class="nav-link" data-scroll-target="#full-transcript">Full Transcript</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Andrew Ng &amp; Harrison Chase Fireside Chat</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">LLMs</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 14, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>The questions and answers extracted from the fireside chat between Harrison Chase (LangChain) and Andrew Ng (AI Fund) at LangChain Interrupt 2025.</p>
+<hr>
+<section id="q1-what-is-agenticness-and-has-your-thinking-changed" class="level2">
+<h2 class="anchored" data-anchor-id="q1-what-is-agenticness-and-has-your-thinking-changed">Q1: What is “agenticness,” and has your thinking changed?</h2>
+<p><strong>Andrew Ng:</strong><br>
+The debate over whether something “is an agent” is less productive than discussing <em>degrees of autonomy</em>. It’s more useful to see systems on a spectrum—from simple automation to full autonomy—rather than binary classification. Many business workflows are linear and agentic to a low degree but still valuable.</p>
+<hr>
+</section>
+<section id="q2-what-skills-are-most-important-for-building-agent-systems" class="level2">
+<h2 class="anchored" data-anchor-id="q2-what-skills-are-most-important-for-building-agent-systems">Q2: What skills are most important for building agent systems?</h2>
+<p><strong>Andrew Ng:</strong><br>
+- Break down complex tasks into modular steps<br>
+- Define the right KPIs (including evals)<br>
+- Interpret traces, debug step-by-step<br>
+- Develop “tactile knowledge” by building, testing, and iterating<br>
+- Use many tools to strengthen decision-making intuition</p>
+<hr>
+</section>
+<section id="q3-is-that-tactile-knowledge-mostly-about-llms" class="level2">
+<h2 class="anchored" data-anchor-id="q3-is-that-tactile-knowledge-mostly-about-llms">Q3: Is that tactile knowledge mostly about LLMs?</h2>
+<p><strong>Andrew Ng:</strong><br>
+It extends beyond LLMs. Think of tools like Lego bricks—the more diverse your pieces, the more flexible your build. You need squiggly, odd-shaped blocks sometimes, not just standard ones. Practicing with a wide toolset helps build strong product instincts.</p>
+<hr>
+</section>
+<section id="q4-what-lego-bricks-are-underrated" class="level2">
+<h2 class="anchored" data-anchor-id="q4-what-lego-bricks-are-underrated">Q4: What “Lego bricks” are underrated?</h2>
+<p><strong>Andrew Ng:</strong><br>
+<strong>Evals.</strong><br>
+People think they need to be comprehensive and perfect. Start with something fast and imperfect—5 examples and a simple check. Use it to catch regressions. You’ll naturally improve it over time.</p>
+<hr>
+</section>
+<section id="q5-any-underrated-application-areas" class="level2">
+<h2 class="anchored" data-anchor-id="q5-any-underrated-application-areas">Q5: Any underrated application areas?</h2>
+<p><strong>Andrew Ng:</strong><br>
+<strong>Voice stack applications.</strong><br>
+They’re low-friction for users but underexplored. Latency expectations make them hard (users expect 1–2s responses), but agents + voice stack pipelines are more controllable than end-to-end speech models.</p>
+<hr>
+</section>
+<section id="q6-is-building-voice-agents-similar-to-text-based-ones" class="level2">
+<h2 class="anchored" data-anchor-id="q6-is-building-voice-agents-similar-to-text-based-ones">Q6: Is building voice agents similar to text-based ones?</h2>
+<p><strong>Andrew Ng:</strong><br>
+Skills are transferable, but differences matter: - Voice has tighter latency constraints - Pre-response fillers (“Hmm…”) help mask lag - Background noise helps users tolerate delays - Voice interactions are more forgiving and expressive than typed ones</p>
+<hr>
+</section>
+<section id="q7-thoughts-on-mcp-model-component-protocol" class="level2">
+<h2 class="anchored" data-anchor-id="q7-thoughts-on-mcp-model-component-protocol">Q7: Thoughts on MCP (Model Component Protocol)?</h2>
+<p><strong>Andrew Ng:</strong><br>
+MCP is a promising step toward standardized tool calling and integration.<br>
+Today’s structure is flat, but future versions need hierarchy and composition.<br>
+MCP could help unify models, tools, and data across ecosystems.</p>
+<hr>
+</section>
+<section id="q8-what-about-agent-to-agent-protocols" class="level2">
+<h2 class="anchored" data-anchor-id="q8-what-about-agent-to-agent-protocols">Q8: What about agent-to-agent protocols?</h2>
+<p><strong>Andrew Ng:</strong><br>
+Still early. Multi-agent systems work within single teams, but cross-team agent collaboration isn’t there yet. We’re a few steps away from successful real-world examples.</p>
+<hr>
+</section>
+<section id="q9-do-you-like-the-term-vibe-coding" class="level2">
+<h2 class="anchored" data-anchor-id="q9-do-you-like-the-term-vibe-coding">Q9: Do you like the term “vibe coding”?</h2>
+<p><strong>Andrew Ng:</strong><br>
+Not really.<br>
+The name is misleading—it sounds effortless, but it’s cognitively intense.<br>
+Coding is becoming more accessible, not obsolete.<br>
+Understanding how code works is still essential for prompting and debugging.</p>
+<hr>
+</section>
+<section id="q10-advice-for-ai-startup-founders" class="level2">
+<h2 class="anchored" data-anchor-id="q10-advice-for-ai-startup-founders">Q10: Advice for AI startup founders?</h2>
+<p><strong>Andrew Ng:</strong><br>
+- <strong>#1 predictor of success: SPEED</strong><br>
+- <strong>#2: Technical depth</strong><br>
+Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.</p>
+<hr>
+</section>
+<section id="full-transcript" class="level2">
+<h2 class="anchored" data-anchor-id="full-transcript">Full Transcript</h2>
+<p>Transcribed by whisper-small</p>
+<p>[INAUDIBLE] This is a track that we see more and more as a lot of the building blocks are starting to get figured out. I’m really excited for this next section. So we’ll be doing a fireside chat with Andrew and Andrew. Probably doesn’t need any introduction to most of our stuff here. I’m guessing a lot of people are thinking as soon as classes begin to work, Sarah will learn deep learning. But I have to admit that this is a big part of the building thing of the story. So I met Andrew a little over two years ago at a conference. We started talking about LinkedIn and he graciously invited us to do a course on LinkedIn. He’s learning, I think, in my son’s best of a second or third one that they ever did. And I know a lot of people here would probably watch that course or I started on LinkedIn because of that course. So Andrew has been a huge part of the LinkedIn journey and I’m super excited to welcome him on stage for a fireside chat. So let’s welcome him to it. [Applause] [Music] [Inaudible] [Inaudible] You’ve obviously touched and thought about so many things in this industry. But one of their takes that I cite a lot and probably people have talked about is your take on kind of like talking about the agendicness of an application as opposed to whether something is an agent. You know as we’re here now at an agent conference, maybe we should rename it to an adjunct conference, but would you mind clarifying that? And I think it was like a year and a half, two years ago that you said that and so I’m curious if things have changed in your mind since then. I remember I mentioned, how was it when I spoke at a conference over a year ago and at that time I think both of us were trying to convince a lot of people that agents are a fling machine. And that was before maybe I think it was this summer last year, a bunch of law underscored the agent in terms of starting to save that sticker everywhere it was. But to her, especially, I mean about a year and a half ago I saw that long people are arguing this is an agent, this is not a particular thing. My presence is a child of law, this is not an agent. And I felt that it was not at the argument that we would succeed. And I think that as a community we just say that there are decreases in something that is an agent. So then we just say that if you want to know an agent system, you can move with autonomy or a lot of autonomy, there’s a high ability to spend time arguing. This is truly an agent. That’s just how it seems an agent system to a different decrease in autonomy. And I think that actually hopefully producing a ton of people, at least it’s been argued that something is an agent. This is called an all-agent thing. Where on that spectrum of kind of like a little autonomy to a lot of autonomy do you see people building for this system? So on the team, the team uses many of these problems, right, with complex problems and so on. I’m also seeing tons of these opportunities that frankly are fairly in danger for a food system, they’re just vocational cyber-assures. So a lot of businesses are opportunities where you’re right now with people looking to form a website, doing a website, checking something. They would be able to see if it’s a compliance issue or if there are some issues, some certain stuff too. It’s kind of like take something, copy paste it into a website, do it in a different way. So in business processes they’re actually a lot of fairly free work. Those are linear with very small business-paginal branches. Usually you could look into a failure with a rejected smartphone though. So I see a lot of work too. But one of my challenges I see businesses have is it’s still pretty difficult to look at some stuff that’s being done in business and figure out how to turn it into a new, gender-work mode. So for this degree of granularity, we should try to bring down the state into a micro-touch and then out to people in the financial prototype. It doesn’t work well enough. Originally, SEVS team worked hard to improve performance. I think that whole bag of skills on how to look at a bunch of stuff that people are doing, break into sequential steps, where the small number of branches hardly put in place in the VALS, all that, that skillset is still hard to work with. And then of course in the national conference agency, I think you heard much about the very complex and most stuff that’s very valid as well. But I see much more in terms of number of opportunities that are now valid. There’s a lot of simple things that I think are still being done as well. Let’s talk about some of those skills. So you’ve been doing deep learning and a lot of courses are in pursuit of helping people kind of build a general. So what are some of the skills that you think each and every one of those all across the spectrum should kind of like master and get started with? Well, it’s a good question. I wish I could answer that. I think a lot about this actually is that I think one of the challenges of having a business process run through your law firm, which would be compliance, people, and the job, whatever the steps. How do you put the business in the background, type integration, how to see if the CEP helps us on that too, to adjust the data, and then how do you process and model steps to build this into a system? And one thing I see about this, putting in place the right key values for your work, to not only understand the performance of your process, but to trace the individual steps, to put in less than one step that is broken, less than one step that is broken to work on. I find that a lot of the teams probably would walk in the nation just using changing key values very effectively. You can sit there and talk about your own things. I see most teams probably slowly take over the place of key values, systematic values in this item. But I find that having the right mistakes, slowly taking two days to college, is still really difficult. The school teams, the teams are still learning how to deal with the off and build-down line-out of these very recent, like a few months, trying to improve one group or another. The most, as he would say, I don’t think this can ever be made to work, so just don’t just find the different variables as well. I wish I had been more efficient to get this almost tactile knowledge. Often you’re there, you know, look at the output, look at the trace, look at the last output, and just sort of make a decision, right, in minutes or hours on the two-to-mix, and that’s still very difficult. And is this kind of like tactile knowledge mostly around LLMs and their limitations, or more around like just the product, bringing those things and that skill of taking a job and breaking it down, that’s something that’s still getting to us. I think it’s all we need, actually. So I feel like over the last couple of years, the AI2 companies have created an amazing set of tools that this includes tools like, you know, that graph also helped you. I guess like, how do you think about the chat box, of many, many different ways of approaching family, and what else, how do you believe that was helping with the audience. But I feel like there’s this, you know, one strong link, a range of various I think tools. But what I’m trying to have in my head is, if all you have are, you know, purple makeup breaks, right, you can’t build out a GCC stuff. And I think of these tools as being the kinds of makeup breaks, right, that the more tools you have, it’s as if you don’t just have purple makeup breaks, but the red one, the black one, the yellow one, the blue one. And as you get more different colors and shades of makeup breaks, you can very quickly assemble them into really cool things. And so I think a lot of these tools, they want those random products, different types of makeup breaks. And when you’re trying to build something, you know, sometimes you need that very squiggly, weird-shaped makeup break, and some of you want to go with a makeup bucket, and just get the job done. But if you’ve never built e-dots at a certain time, then, you know, then you could actually end up spending three or two months doing something that someone else has done that before, because they all, well, we should just build e-dots this way, just to know how to manage it more. And just go through that process and get it done much faster. So one of the unfortunate things about AI is that it’s not just one tool that in my coding, I just use a whole bunch of different stuff, right, a lot of master, and I’ve stopped myself from doing enough tools to set that up. And I think how that practice with different tools also helps a lot of the chasm decision making. And one of the things, they’ve also changed, so for example, just all of a sudden, having longer, longer context, longer best practices, or rag, from, you know, a year and a half ago, or whatever, much less than today. You know, and ever, Harrison was pretty early, he took off the same cycle, played with a early man, changed rag frameworks, the crystal civilization and all that. As Elm Contest Reviews got longer, now we’ve just done the long stuff into our columns. As Elm’s practice got way, but the hyper-fronted team has gotten way easier. It’s a huge range of hyper-fronted that we’re, you know, just fine. So as Elm keeps practicing, the instincts will be holy, you know, two years ago, but they won’t be helping rather than you want to. You mentioned a lot of things that I want to talk about. So, okay, what are some of the level breaks that are maybe underrated right now that you would recommend that people aren’t talking about? Like, e-balls, I think, we have had, we have three people talking about e-balls, and I think that’s top of people’s mind. But what are some things that most people maybe haven’t thought of or haven’t heard of yet that you would recommend that we’re moving into? Good question. I don’t know. I’m sure, even though people talk about e-balls, there’s some ways that people don’t do it. I think it’s because people often have, I saw a post on e-balls right this long, people think of writing e-balls as this huge thing you have to do, right? I think that e-balls is something I’m going to fill together really quickly, you know, in 20 minutes, and it’s not that good, but it starts to complement my human eye-ball e-balls. And so what often happens is that our system has this one problem, right, do you want to get an e-bression? I thought I made it work, and it breaks, I’m sure our average of $1,000 has gotten a $1,000. Then the code is a very simple e-mail, maybe with, you know, five different examples, and some very simple administration to just check for this one regression, right, to this one thing. And then I’m not swapping out human e-mails for a multimeter e-mails, and I’m still looking all through my cell, but when I change something out from just e-mails to just take this word and something, psycho-pattern thing about it, and then what happens is, just like the way we write English, maybe, once you have some slightly helpful but clearly very broken imperfect e-mail, then you’re sad, you know what, I can improve my e-mail to make it better, and I can improve the e-mail to make it better. So just as when we build a lot of applications, we build some very quick and dirty thing that doesn’t work, and we improve e-mail better. From all of the way I go e-mails, I go really all-only-mails, they’re very home, and then when you look at what it does, you go, you know, it’s just e-mails broken, I can fix it, and you improve my e-mail to make it better. So that’s one thing. Actually, one thing that people have talked about, and I think is so automated, is the voice stack. This one thing is that I’m actually very excited about voice applications, a lot of my friends are very excited about voice applications. I see a bunch of logic interfaces, very excited about voice applications, very logic, very logic interfaces. For some reason, while there are some developers in this community to voice the amount of developer attention on voice stack applications, there is software, it’s not really a good thing, but that’s one thing that feels so much smaller than the large enterprise of the important ICS, which is what’s happening on the market. And not all of this is the real-time voice-in-house, it’s not all speech-to-speech-native, what we’re working on, all of this. I find those models are very hard to control, but we use more of an agent-to-e-voice stack for the code, which is great, which we find much more controllable. So, in the end, I’ve been working with a ton of teams on voice stack stuff that some of which hopefully did not seem to be a big problem. And then, other things that are automated, one of the ones that make this not automated, and one of those that should do it, I think many of you have seen that developers that use AI systems in our company is so much faster than developers that don’t. I’ve been, it’s been interesting to see how many companies, CIOs and CTOs still have policies that don’t let the geniuses use AI systems in their company. I think maybe sometimes they’re good reasons, but I think we have to work with them, because I think my teams in our hour just hate to ever have to code again with AI systems in their company, so I think some of this is just something different. I think underrated is the idea that I think everyone should learn to code. One fun fact about AI fun, everyone in the iPhone, including the person that runs out front is perceptionist, and my CFO, and my attorney, and the general counsel, everyone in the iPhone actually knows how to code. It’s not that one day to solve it, it’s not that they respect their job functions, maybe as a member of the code, but they’re able to tell the computer what they wanted to do, and so it’s actually driving the whole productivity across all of these job functions that are not solved in AI. Talking about AI, what tools are you using for that first time? So, we’re working on something that will not get announced. Exciting. So, maybe I do use cursor, red server, and some other things. Alright. Talking about voice, if people here want to get into voice and they’re familiar with building kind of like agents with LLMs, how similar is it? Are there a lot of ideas that are transferable, or what to do, what will they have to learn? So, in terms of the applications where I think voice is important, to increase certain interactions that are not much more important, in terms of the application perspective, input text problems are kind of intimidating. For other applications, we’re going to use the same type of machine, because it’s a local text problem, very much a text problem. That’s very intimidating for users. And one of the problems with that is people can use backspace, and so people are just slowly learning to respond via text. Whereas, the voice, time rules for when you’re just thinking, talking, you could change your mind, and you could say, “Oh, I changed my mind to get that early thing that I wanted, which is pretty good to do.” But I find that the amount of applications for the user are friction to just giving them to use in this little way. So, you know, tell me what you think, and then they respond to voice. So, in terms of voice, one of the biggest differences in terms of agent and client is the expectancy, is if someone says something, and I don’t really want to respond, you know, in some point or second, right? And that’s a fact that in those seconds is great, but really, I’m going to use something in a second. And with a lot of agent work flows that were run for many seconds. So, when you do that, then I want to grow avatar to build an avatar, and that is on my vision, tell the avatar if you want. I mean, this show version had kind of, I think, nine seconds of this, and it’s just an ad user experience. So, it’s something, you know, nine seconds of silence that might have to respond. But some of the building things went from a kind of pre-response. So, just as if you ask a question, I go, “Huh, that’s interesting.” [laughter] So, how to basically do that to hide the latency, and it actually seems to work great. And there are all these other little tricks as well. So, if you’re building a voice console service to chatbot, it turns out that when you play background noise at a console contact center, it’s a dead silence. People are much more sensitive of that, of that latency. So, I find that there are all of these things that are different in a pure text based algorithm. But in applications where a voice based modality doesn’t use to be comfortable and just not talking, I think it’s sometimes really good to use this to use a friction. So, I’m going to give you some information on that. I think when we talk, we don’t feel like we need to deliver perfection as much as we’re afraid. So, somehow, you see a bridge just starting to tell your ideas and change them on, and then we’re going to fail. And that lets us get the information from them that we need to help you use it to the point. [inaudible] Hi. [laughter] One of the new things that’s out there you mentioned recently is MCP. How are you seeing that transform of how people are building apps, what types of apps are building or what’s happening in the ecosystem? Yeah, I think it’s really exciting. Just this morning, we released a new enthralment, I’m sure, was an MCP. I actually saw a lot of stuff, you know, on the internet on MCP that I found quite confusing. So, what’s going on there is that, you know, let’s put a really good short pause on MCP that explains security. I think MCP is fantastic. I think it’s very clear, properly, that that open app adopted it. Also, I think it’s based on the importance of this. I think the MCP’s standard won’t continue to evolve. So, for example, I think many of you know what MCP is, right? It’s much easier for agents primarily, but frankly, I think other types of software took over the two types of data. When I’m using OBS myself or when I’m building applications, frankly, for all of us, we spend so much time on the platform, right? So, I think, for those of you from Washington, Pryce, as well, the AI, especially, you know, using OBS, are pretty darn intelligent to evolve stuff when doing the right context. So, I found that I spent my time working and applying on the data integration to get the context of the OBS to make it feel like it’s something that offers a pretty sensible market spread for the context. So, MCP, I think, is a fantastic way to try to standardize interface to other tools. You can call us as well, say, as well as this. It feels like, it feels a little bit like, wow, as long as the MCP serves, you finally internet do your work, right? And then the authentication systems are kind of, you know, even for the very large companies, you know, the MCP service of the company, the nuclear authentication token, token worlds, and these bias along that way on. I think the MCP protocol itself is also really, right now, MCP gives a long list of the resources in the role. You know, eventually, I think we’ll be something more hierarchical and destructive. So, imagine you want to build something, I don’t know, I know that there will be an MCP interface to a land graph, but land graph is still the API calls, you just kind of have like a long list of everything under the sun for agents to sort out. So, I think MCP is a really good task at first step. Definitely encourage you to learn about it. It won’t make your life easier. Probably, you’ll find a good MCP service in the communications service, in the communications operations. I think what we’re important is this idea of, you know, any models for agents and data sources, they show up in any type of effort to do all the integration and plus them. I think MCP is a fantastic first step. It will need to be all like a fantastic first step to what the data integration is. Another type of protocol that seems less likely than MCP is the agent-to-agent system. And I remember when we were in Harvard a year or so ago, I think you were talking about multi-agent systems, which this kind of enabled. So, how do you see some of the multi-agent or agent-to-agent stuff of the protocol? So, I think, you know, agent and AI are still so early. Both of us, right, we struggle, we didn’t make our code work. And so, making my code, my agent work with someone else’s agent, it feels like a two-miracle. [laughter] So, I see that one team is building multi-agent systems. That often works because people have a bunch of agents, they can be themselves and their protocols, that works. But right now, at least at this moment in time, maybe I’m off. The number of examples I’m seeing of when, you know, one team’s agent and correction agent successfully made agents, it’s totally different teams’ agent and correction agents. I think we’re a little bit early to that. I’m sure we’ll get there, but I’m not personally seeing, you know, real success, pure success stories of that. Yeah, I don’t think that’s true. No, I think it’s super early. I think if MCP is early, I think the agent stuff is super early. Another thing that’s kind of like top of what’s mine right now is it’s kind of vibe coding. And all that, I touched on it a little bit earlier with how people are using these AI coding systems. But how do you think about vibe coding? Is that a different skill than before or what kind of a mis-disaster? Yeah, so I think many of us code, we’re barely looking at the code, right? I think it’s a fantastic thing to do. I think it’s unfortunate that that code, “vine coding” is misleading a lot of people. I think it just goes by, you know, just like that. And frankly, when I’m coding for a day, you know, with vinyl or whatever, I forget code systems, I’m frankly exhausted by the end of the day, so I’m thinking it’s an Android device. And so I think the name is unfortunate, but the phenomenon is real and it’s been taking part in this great. So, I mean, over the last year, a few people have been advising others to come up to code on the basis that they have more to be coding. I think we’ll back this on the worst career advice that we’ve ever done. Because over the last many decades, as coding is getting easier, more people started to code. So it turns out, you know, when we went from punch-cost to key-cost, that’s how it went, very well. But it turns out, actually, thousands of variable algorithms went probably from a sending language to a literally code wall. There were people arguing back then, “Yeah, code wall is so easy, we don’t need programs anymore.” And I’ll say, it’s getting easier, more people are going to code. And so, we’ve been coding systems, more people should code. But I think, and it turns out, one of the most important schools in the future for developers and developers, is the ability to tell a code to exactly what you want, so they want to do it for you. And I think understanding at some level, which I’ll be talking about, understanding at some level how a computer works, lets you prompt on a stronger future, so they’re much more accessible. Which is why I still try to advise everyone to learn one program, and I try to hide them by something. And then, I think some of you know this, but I personally about, you know, a much stronger height than developer, I did say JavaScript, right? But with AI system coding, I now write a lot more JavaScript in types of code than I ever used to. But even with debugging, you know, JavaScript code, that something else, really understanding what are the error cases, what does that mean, that it’s pretty difficult to write on JavaScript. If you don’t like the name “by” coding, do you have a better name for “by”? Oh, that’s a good question. I shouldn’t think about that. We’ll get back to you on that. One of the things that you announced recently is a new fund for AI funds, so if you grab some of that, for people in the audience who are really thinking of starting a startup, what advice would you give them? So, in front of the just studios, we build companies, and we have to consider the investment companies that we co-founded. So, I think in terms of running back on AI funds lessons learned, I would say that the number one predictor of a startup success is split. I know it’s looking value, but I see it all the people that I’ve never seen yet, the speed through which a skilled team can execute, and if you’ve never seen it before, I know many of you have seen it. It’s just so much faster than anything that slow businesses can hardly do. And I think the number two predictor also very important is tech-con knowledge. It turns out that we look at the schools in the new sector to some things like how we market, how we sell, how we price. All that is important, but that knowledge has to be constantly more widespread. The knowledge that’s really rare is how this technology actually works, because technology evolves so quickly. So, I have deep respect for good market. How good pricing is hard, how good marketing is hard, position is hard, but that knowledge is more diffused. And the most rare reason is somewhat, they’re being understood how the technology works. So, what I found really is that there are community tech-con people that have good instincts, understand, do this, don’t do that, just as good ties as that. And then I think along with the business stuff, that the knowledge is very important to the transition needs here to figure out. Alright, that’s great advice for starting something. We are going to wrap this up. We’re going to go to a break now, but before we do, please join me in giving Andrew a big hand. [Applause] Our next session is in 15 minutes. [Indistinct conversation] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music] [Music]</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawwu\.github\.io\/blog\.html");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
