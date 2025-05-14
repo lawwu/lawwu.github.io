@@ -9,8 +9,2148 @@
 <link>https://lawwu.github.io/blog.html/blog.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.6.42</generator>
-<lastBuildDate>Mon, 24 Feb 2025 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.7.31</generator>
+<lastBuildDate>Wed, 14 May 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>LangChain Interrupt Conference - Day 1</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I had the privilege of attending LangChain’s first conference. The first day was a hands-on workshop going through the creation of an agent (an email assistant) from scratch. It went through many of the components of building an agent:</p>
+<ul>
+<li>Overview of LangGraph</li>
+<li>Writing the Agent</li>
+<li>Evaluation / Testing</li>
+<li>Human Feedback</li>
+<li>Memory</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/email_assistant_diagram.png" class="img-fluid figure-img"></p>
+<figcaption>Email Assistant Diagram</figcaption>
+</figure>
+</div>
+<section id="code" class="level2">
+<h2 class="anchored" data-anchor-id="code">Code</h2>
+<ul>
+<li>Python: <a href="https://github.com/langchain-ai/agents-from-scratch">https://github.com/langchain-ai/agents-from-scratch</a></li>
+<li>Typescript: <a href="https://github.com/langchain-ai/agents-from-scratch-ts">https://github.com/langchain-ai/agents-from-scratch-ts</a> (this is the first time I’ve seen Typescript Jupyter notebooks)</li>
+</ul>
+</section>
+<section id="notebook-1-langgraph-101" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-1-langgraph-101">Notebook 1: LangGraph 101</h2>
+<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/langgraph_101.ipynb">langgraph_101.ipynb</a></p>
+<p>Lance Martin gave an overview of LangGraph that was largely review. It was a good reminder that “tool calling is just structured output.”</p>
+<p>LangGraph code to create the agent:</p>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> typing <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> Literal</span>
+<span id="cb1-2"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> langgraph.graph <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> MessagesState</span>
+<span id="cb1-3"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> email_assistant.utils <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> show_graph</span>
+<span id="cb1-4"></span>
+<span id="cb1-5"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> call_llm(state: MessagesState) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> MessagesState:</span>
+<span id="cb1-6">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Run LLM"""</span></span>
+<span id="cb1-7"></span>
+<span id="cb1-8">    output <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> model_with_tools.invoke(state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>])</span>
+<span id="cb1-9">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>: [output]}</span>
+<span id="cb1-10"></span>
+<span id="cb1-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># actually what happens when a tool call is made</span></span>
+<span id="cb1-12"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> run_tool(state: MessagesState):</span>
+<span id="cb1-13">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Performs the tool call"""</span></span>
+<span id="cb1-14"></span>
+<span id="cb1-15">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb1-16">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>][<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>].tool_calls:</span>
+<span id="cb1-17">        observation <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> write_email.invoke(tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>])</span>
+<span id="cb1-18">        result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb1-19">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>: result}</span>
+<span id="cb1-20"></span>
+<span id="cb1-21"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> should_continue(state: MessagesState) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Literal[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"run_tool"</span>, END]:</span>
+<span id="cb1-22">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Route to tool handler, or end if Done tool called"""</span></span>
+<span id="cb1-23">    </span>
+<span id="cb1-24">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get the last message</span></span>
+<span id="cb1-25">    messages <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>]</span>
+<span id="cb1-26">    last_message <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> messages[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb1-27">    </span>
+<span id="cb1-28">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># If the last message is a tool call, check if it's a Done tool call</span></span>
+<span id="cb1-29">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> last_message.tool_calls:</span>
+<span id="cb1-30">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"run_tool"</span></span>
+<span id="cb1-31">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Otherwise, we stop (reply to the user)</span></span>
+<span id="cb1-32">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> END</span>
+<span id="cb1-33"></span>
+<span id="cb1-34">workflow <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> StateGraph(MessagesState)</span>
+<span id="cb1-35">workflow.add_node(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"call_llm"</span>, call_llm)</span>
+<span id="cb1-36">workflow.add_node(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"run_tool"</span>, run_tool)</span>
+<span id="cb1-37">workflow.add_edge(START, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"call_llm"</span>)</span>
+<span id="cb1-38">workflow.add_conditional_edges(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"call_llm"</span>, should_continue, {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"run_tool"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"run_tool"</span>, END: END})</span>
+<span id="cb1-39">workflow.add_edge(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"run_tool"</span>, END)</span>
+<span id="cb1-40"></span>
+<span id="cb1-41"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Run the workflow</span></span>
+<span id="cb1-42">app <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> workflow.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">compile</span>()</span></code></pre></div>
+</section>
+<section id="notebook-2-building-the-agent" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-2-building-the-agent">Notebook 2: Building the Agent</h2>
+<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/agent.ipynb">agent.ipynb</a></p>
+<p>Example Code for the Router in LangGraph</p>
+<ul>
+<li><code>Command</code> does control flow AND state up dates in one</li>
+<li>In the example below: <code>return Command(goto=goto, update=update)</code></li>
+</ul>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">class</span> RouterSchema(BaseModel):</span>
+<span id="cb2-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Analyze the unread email and route it according to its content."""</span></span>
+<span id="cb2-3"></span>
+<span id="cb2-4">    reasoning: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> Field(</span>
+<span id="cb2-5">        description<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Step-by-step reasoning behind the classification."</span></span>
+<span id="cb2-6">    )</span>
+<span id="cb2-7">    classification: Literal[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ignore"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"respond"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"notify"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> Field(</span>
+<span id="cb2-8">        description<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The classification of an email: 'ignore' for irrelevant emails, "</span></span>
+<span id="cb2-9">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"'notify' for important information that doesn't need a response, "</span></span>
+<span id="cb2-10">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"'respond' for emails that need a reply"</span>,</span>
+<span id="cb2-11">    )</span>
+<span id="cb2-12"></span>
+<span id="cb2-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Initialize the LLM for use with router / structured output</span></span>
+<span id="cb2-14">llm <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> init_chat_model(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"openai:gpt-4.1"</span>, temperature<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.0</span>)</span>
+<span id="cb2-15">llm_router <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> llm.with_structured_output(RouterSchema) </span>
+<span id="cb2-16"></span>
+<span id="cb2-17"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> triage_router(state: State) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Command[Literal[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response_agent"</span>, END]]:</span>
+<span id="cb2-18">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Analyze email content to decide if we should respond, notify, or ignore."""</span></span>
+<span id="cb2-19">    </span>
+<span id="cb2-20">    author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> parse_email(state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"email_input"</span>])</span>
+<span id="cb2-21">    system_prompt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> triage_system_prompt.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(</span>
+<span id="cb2-22">        background<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>default_background,</span>
+<span id="cb2-23">        triage_instructions<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>default_triage_instructions</span>
+<span id="cb2-24">    )</span>
+<span id="cb2-25"></span>
+<span id="cb2-26">    user_prompt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> triage_user_prompt.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(</span>
+<span id="cb2-27">        author<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>author, to<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>to, subject<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>subject, email_thread<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>email_thread</span>
+<span id="cb2-28">    )</span>
+<span id="cb2-29"></span>
+<span id="cb2-30">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> llm_router.invoke(</span>
+<span id="cb2-31">        [</span>
+<span id="cb2-32">            {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"system"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: system_prompt},</span>
+<span id="cb2-33">            {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: user_prompt},</span>
+<span id="cb2-34">        ]</span>
+<span id="cb2-35">    )</span>
+<span id="cb2-36">    </span>
+<span id="cb2-37">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> result.classification <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"respond"</span>:</span>
+<span id="cb2-38">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"📧 Classification: RESPOND - This email requires a response"</span>)</span>
+<span id="cb2-39">        goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response_agent"</span></span>
+<span id="cb2-40">        update <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb2-41">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>: [</span>
+<span id="cb2-42">                {</span>
+<span id="cb2-43">                    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>,</span>
+<span id="cb2-44">                    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Respond to the email: </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>format_email_markdown(subject, author, to, email_thread)<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>,</span>
+<span id="cb2-45">                }</span>
+<span id="cb2-46">            ],</span>
+<span id="cb2-47">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"classification_decision"</span>: result.classification,</span>
+<span id="cb2-48">        }</span>
+<span id="cb2-49">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> result.classification <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ignore"</span>:</span>
+<span id="cb2-50">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"🚫 Classification: IGNORE - This email can be safely ignored"</span>)</span>
+<span id="cb2-51">        goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> END</span>
+<span id="cb2-52">        update <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>  {</span>
+<span id="cb2-53">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"classification_decision"</span>: result.classification,</span>
+<span id="cb2-54">        }</span>
+<span id="cb2-55">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> result.classification <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"notify"</span>:</span>
+<span id="cb2-56">        <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"🔔 Classification: NOTIFY - This email contains important information"</span>)</span>
+<span id="cb2-57">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># For now, we go to </span><span class="re">END</span><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">. But we will add to this later!</span></span>
+<span id="cb2-58">        goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> END</span>
+<span id="cb2-59">        update <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb2-60">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"classification_decision"</span>: result.classification,</span>
+<span id="cb2-61">        }</span>
+<span id="cb2-62">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb2-63">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid classification: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>result<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span>classification<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb2-64">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Command(goto<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>goto, update<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>update)</span></code></pre></div>
+<p>You can add agents in nodes in LangGraph:</p>
+<ul>
+<li>xray show true shows it</li>
+<li>If a LangGraph agent is deployed in LangGraph platform, I think I can also use this as a Remote Graph</li>
+</ul>
+</section>
+<section id="notebook-3-evaluating-the-agent" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-3-evaluating-the-agent">Notebook 3: Evaluating the Agent</h2>
+<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/evaluation.ipynb">evaluation</a></p>
+<ul>
+<li>When thinking of evaluations, if an expected input does not have a static expected output, you can define “Response Criteria” which a LLM as Judge could take in.</li>
+<li>Below is an example with “Response Criteria”</li>
+</ul>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>Users<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>lawrence.wu<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>github<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">/</span>agents<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span>scratch</span>
+<span id="cb3-2"></span>
+<span id="cb3-3">Email Input: {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'author'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Alice Smith &lt;alice.smith@company.com&gt;'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'to'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Lance Martin &lt;lance@company.com&gt;'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'subject'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'Quick question about API documentation'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'email_thread'</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Hi Lance,</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">I was reviewing the API documentation for the new authentication service and noticed a few endpoints seem to be missing from the specs. Could you help clarify if this was intentional or if we should update the docs?</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">Specifically, I'm looking at:</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- /auth/refresh</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- /auth/validate</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">Thanks!</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n</span><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">Alice"</span>}</span>
+<span id="cb3-4">Expected Triage Output: respond</span>
+<span id="cb3-5">Expected Tool Calls: [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'write_email'</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'done'</span>]</span>
+<span id="cb3-6">Response Criteria: </span>
+<span id="cb3-7">• Send email <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">with</span> write_email tool call to acknowledge the question <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">and</span> confirm it will be investigated  </span></code></pre></div>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">all_messages_str <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> format_messages_string(response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'messages'</span>])</span>
+<span id="cb4-2">eval_result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> criteria_eval_structured_llm.invoke([</span>
+<span id="cb4-3">        {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"system"</span>,</span>
+<span id="cb4-4">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: RESPONSE_CRITERIA_SYSTEM_PROMPT},</span>
+<span id="cb4-5">        {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>,</span>
+<span id="cb4-6">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"""</span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> Response criteria: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>success_criteria<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> Assistant's response: </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>all_messages_str<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> </span><span class="ch" style="color: #20794D;
+background-color: null;
+font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;"> Evaluate whether the assistant's response meets the criteria and provide justification for your evaluation."""</span>}</span>
+<span id="cb4-7">    ])</span>
+<span id="cb4-8">eval_result</span></code></pre></div>
+<p>new interrupt node</p>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> triage_interrupt_handler(state: State) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Command[Literal[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response_agent"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"__end__"</span>]]:</span>
+<span id="cb5-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Handles interrupts from the triage step."""</span></span>
+<span id="cb5-3">    </span>
+<span id="cb5-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Parse the email input</span></span>
+<span id="cb5-5">    author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> parse_email(state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"email_input"</span>])</span>
+<span id="cb5-6"></span>
+<span id="cb5-7">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create email markdown for Agent Inbox in case of notification  </span></span>
+<span id="cb5-8">    email_markdown <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> format_email_markdown(subject, author, to, email_thread)</span>
+<span id="cb5-9"></span>
+<span id="cb5-10">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create messages</span></span>
+<span id="cb5-11">    messages <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [{<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>,</span>
+<span id="cb5-12">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Email to notify user about: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>email_markdown<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb5-13">                }]</span>
+<span id="cb5-14"></span>
+<span id="cb5-15"></span>
+<span id="cb5-16">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create interrupt that is shown to the user</span></span>
+<span id="cb5-17">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># This request schema is what Agent Inbox expects</span></span>
+<span id="cb5-18">    request <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb5-19">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"action_request"</span>: {</span>
+<span id="cb5-20">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"action"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Email Assistant: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'classification_decision'</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>,</span>
+<span id="cb5-21">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>: {}</span>
+<span id="cb5-22">        },</span>
+<span id="cb5-23">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"config"</span>: {</span>
+<span id="cb5-24">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,  </span>
+<span id="cb5-25">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>, </span>
+<span id="cb5-26">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>, </span>
+<span id="cb5-27">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>,  </span>
+<span id="cb5-28">        },</span>
+<span id="cb5-29">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Email to show in Agent Inbox</span></span>
+<span id="cb5-30">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"description"</span>: email_markdown,</span>
+<span id="cb5-31">    }</span>
+<span id="cb5-32"></span>
+<span id="cb5-33">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Agent Inbox responds with a list of dicts with a single key `type` that can be `accept`, `edit`, `ignore`, or `response`.  </span></span>
+<span id="cb5-34">    response <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> interrupt([request])[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb5-35"></span>
+<span id="cb5-36">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># If user provides feedback, go to response agent and use feedback to respond to email   </span></span>
+<span id="cb5-37">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response"</span>:</span>
+<span id="cb5-38">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add feedback to messages </span></span>
+<span id="cb5-39">        user_input <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>]</span>
+<span id="cb5-40">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Used by the response agent</span></span>
+<span id="cb5-41">        messages.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>,</span>
+<span id="cb5-42">                        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"User wants to reply to the email. Use this feedback to respond: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>user_input<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span></span>
+<span id="cb5-43">                        })</span>
+<span id="cb5-44">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Go to response agent</span></span>
+<span id="cb5-45">        goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response_agent"</span></span>
+<span id="cb5-46"></span>
+<span id="cb5-47">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># If user ignores email, go to </span><span class="re">END</span></span>
+<span id="cb5-48">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ignore"</span>:</span>
+<span id="cb5-49">        goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> END</span>
+<span id="cb5-50"></span>
+<span id="cb5-51">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Catch all other responses</span></span>
+<span id="cb5-52">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb5-53">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid response: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>response<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb5-54"></span>
+<span id="cb5-55">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update the state </span></span>
+<span id="cb5-56">    update <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb5-57">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>: messages,</span>
+<span id="cb5-58">    }</span>
+<span id="cb5-59"></span>
+<span id="cb5-60">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Command(goto<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>goto, update<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>update)</span></code></pre></div>
+<p>Actually thinking through all of the different use cases and how it affects the workflow of the agent is important. Pretty complicated even just for a simple email assistant.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/response_agent_outcomes.png" class="img-fluid figure-img"></p>
+<figcaption>Response Agent Outcomes</figcaption>
+</figure>
+</div>
+<p>Interrupt handler, define the config for each node</p>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> interrupt_handler(state: State) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Command[Literal[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"llm_call"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"__end__"</span>]]:</span>
+<span id="cb6-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Creates an interrupt for human review of tool calls"""</span></span>
+<span id="cb6-3">    </span>
+<span id="cb6-4">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Store messages</span></span>
+<span id="cb6-5">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> []</span>
+<span id="cb6-6"></span>
+<span id="cb6-7">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Go to the LLM call node next</span></span>
+<span id="cb6-8">    goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"llm_call"</span></span>
+<span id="cb6-9"></span>
+<span id="cb6-10">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Iterate over the tool calls in the last message</span></span>
+<span id="cb6-11">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>][<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>].tool_calls:</span>
+<span id="cb6-12">        </span>
+<span id="cb6-13">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Allowed tools for HITL</span></span>
+<span id="cb6-14">        hitl_tools <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"write_email"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"schedule_meeting"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Question"</span>]</span>
+<span id="cb6-15">        </span>
+<span id="cb6-16">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># If tool is not in our HITL list, execute it directly without interruption</span></span>
+<span id="cb6-17">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">not</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> hitl_tools:</span>
+<span id="cb6-18"></span>
+<span id="cb6-19">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Execute search_memory and other tools without interruption</span></span>
+<span id="cb6-20">            tool <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>]]</span>
+<span id="cb6-21">            observation <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tool.invoke(tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>])</span>
+<span id="cb6-22">            result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-23">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">continue</span></span>
+<span id="cb6-24">            </span>
+<span id="cb6-25">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get original email from email_input in state</span></span>
+<span id="cb6-26">        email_input <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"email_input"</span>]</span>
+<span id="cb6-27">        author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> parse_email(email_input)</span>
+<span id="cb6-28">        original_email_markdown <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> format_email_markdown(subject, author, to, email_thread)</span>
+<span id="cb6-29">        </span>
+<span id="cb6-30">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Format tool call for display and prepend the original email</span></span>
+<span id="cb6-31">        tool_display <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> format_for_display(state, tool_call)</span>
+<span id="cb6-32">        description <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> original_email_markdown <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> tool_display</span>
+<span id="cb6-33"></span>
+<span id="cb6-34">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Configure what actions are allowed in Agent Inbox</span></span>
+<span id="cb6-35">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"write_email"</span>:</span>
+<span id="cb6-36">            config <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb6-37">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-38">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-39">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-40">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-41">            }</span>
+<span id="cb6-42">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"schedule_meeting"</span>:</span>
+<span id="cb6-43">            config <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb6-44">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-45">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-46">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-47">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-48">            }</span>
+<span id="cb6-49">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Question"</span>:</span>
+<span id="cb6-50">            config <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb6-51">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-52">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>,</span>
+<span id="cb6-53">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>,</span>
+<span id="cb6-54">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">False</span>,</span>
+<span id="cb6-55">            }</span>
+<span id="cb6-56">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb6-57">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb6-58"></span>
+<span id="cb6-59">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create the interrupt request</span></span>
+<span id="cb6-60">        request <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb6-61">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"action_request"</span>: {</span>
+<span id="cb6-62">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"action"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>],</span>
+<span id="cb6-63">                <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>]</span>
+<span id="cb6-64">            },</span>
+<span id="cb6-65">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"config"</span>: config,</span>
+<span id="cb6-66">            <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"description"</span>: description,</span>
+<span id="cb6-67">        }</span>
+<span id="cb6-68"></span>
+<span id="cb6-69">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Send to Agent Inbox and wait for response</span></span>
+<span id="cb6-70">        response <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> interrupt([request])[<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span>]</span>
+<span id="cb6-71"></span>
+<span id="cb6-72">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Handle the responses </span></span>
+<span id="cb6-73">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"accept"</span>:</span>
+<span id="cb6-74"></span>
+<span id="cb6-75">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Execute the tool with original args</span></span>
+<span id="cb6-76">            tool <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>]]</span>
+<span id="cb6-77">            observation <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tool.invoke(tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>])</span>
+<span id="cb6-78">            result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-79">                        </span>
+<span id="cb6-80">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"edit"</span>:</span>
+<span id="cb6-81"></span>
+<span id="cb6-82">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Tool selection </span></span>
+<span id="cb6-83">            tool <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>]]</span>
+<span id="cb6-84">            </span>
+<span id="cb6-85">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get edited args from Agent Inbox</span></span>
+<span id="cb6-86">            edited_args <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>][<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>]</span>
+<span id="cb6-87"></span>
+<span id="cb6-88">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update the AI message's tool call with edited content (reference to the message in the state)</span></span>
+<span id="cb6-89">            ai_message <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>][<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get the most recent message from the state</span></span>
+<span id="cb6-90">            current_id <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>] <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Store the ID of the tool call being edited</span></span>
+<span id="cb6-91">            </span>
+<span id="cb6-92">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a new list of tool calls by filtering out the one being edited and adding the updated version</span></span>
+<span id="cb6-93">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># This avoids modifying the original list directly (immutable approach)</span></span>
+<span id="cb6-94">            updated_tool_calls <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> [tc <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> tc <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> ai_message.tool_calls <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tc[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!=</span> current_id] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> [</span>
+<span id="cb6-95">                {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>], <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>: edited_args, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>: current_id}</span>
+<span id="cb6-96">            ]</span>
+<span id="cb6-97"></span>
+<span id="cb6-98">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Create a new copy of the message with updated tool calls rather than modifying the original</span></span>
+<span id="cb6-99">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># This ensures state immutability and prevents side effects in other parts of the code</span></span>
+<span id="cb6-100">            result.append(ai_message.model_copy(update<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_calls"</span>: updated_tool_calls}))</span>
+<span id="cb6-101"></span>
+<span id="cb6-102">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update the write_email tool call with the edited content from Agent Inbox</span></span>
+<span id="cb6-103">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"write_email"</span>:</span>
+<span id="cb6-104">                </span>
+<span id="cb6-105">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Execute the tool with edited args</span></span>
+<span id="cb6-106">                observation <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tool.invoke(edited_args)</span>
+<span id="cb6-107">                </span>
+<span id="cb6-108">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add only the tool response message</span></span>
+<span id="cb6-109">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: current_id})</span>
+<span id="cb6-110">            </span>
+<span id="cb6-111">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update the schedule_meeting tool call with the edited content from Agent Inbox</span></span>
+<span id="cb6-112">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"schedule_meeting"</span>:</span>
+<span id="cb6-113">                </span>
+<span id="cb6-114">                </span>
+<span id="cb6-115">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Execute the tool with edited args</span></span>
+<span id="cb6-116">                observation <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> tool.invoke(edited_args)</span>
+<span id="cb6-117">                </span>
+<span id="cb6-118">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add only the tool response message</span></span>
+<span id="cb6-119">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: current_id})</span>
+<span id="cb6-120">            </span>
+<span id="cb6-121">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Catch all other tool calls</span></span>
+<span id="cb6-122">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb6-123">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb6-124"></span>
+<span id="cb6-125">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"ignore"</span>:</span>
+<span id="cb6-126">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"write_email"</span>:</span>
+<span id="cb6-127">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Don't execute the tool, and tell the agent how to proceed</span></span>
+<span id="cb6-128">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"User ignored this email draft. Ignore this email and end the workflow."</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-129">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Go to </span><span class="re">END</span></span>
+<span id="cb6-130">                goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> END</span>
+<span id="cb6-131">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"schedule_meeting"</span>:</span>
+<span id="cb6-132">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Don't execute the tool, and tell the agent how to proceed</span></span>
+<span id="cb6-133">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"User ignored this calendar meeting draft. Ignore this email and end the workflow."</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-134">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Go to </span><span class="re">END</span></span>
+<span id="cb6-135">                goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> END</span>
+<span id="cb6-136">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Question"</span>:</span>
+<span id="cb6-137">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Don't execute the tool, and tell the agent how to proceed</span></span>
+<span id="cb6-138">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"User ignored this question. Ignore this email and end the workflow."</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-139">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Go to </span><span class="re">END</span></span>
+<span id="cb6-140">                goto <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> END</span>
+<span id="cb6-141">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb6-142">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb6-143">            </span>
+<span id="cb6-144">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response"</span>:</span>
+<span id="cb6-145">            <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># User provided feedback</span></span>
+<span id="cb6-146">            user_feedback <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"args"</span>]</span>
+<span id="cb6-147">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"write_email"</span>:</span>
+<span id="cb6-148">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Don't execute the tool, and add a message with the user feedback to incorporate into the email</span></span>
+<span id="cb6-149">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"User gave feedback, which can we incorporate into the email. Feedback: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>user_feedback<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-150">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"schedule_meeting"</span>:</span>
+<span id="cb6-151">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Don't execute the tool, and add a message with the user feedback to incorporate into the email</span></span>
+<span id="cb6-152">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"User gave feedback, which can we incorporate into the meeting request. Feedback: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>user_feedback<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-153">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Question"</span>:</span>
+<span id="cb6-154">                <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Don't execute the tool, and add a message with the user feedback to incorporate into the email</span></span>
+<span id="cb6-155">                result.append({<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"User answered the question, which can we can use for any follow up actions. Feedback: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>user_feedback<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"id"</span>]})</span>
+<span id="cb6-156">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb6-157">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb6-158"></span>
+<span id="cb6-159">        <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Catch all other responses</span></span>
+<span id="cb6-160">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb6-161">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Invalid response: </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{</span>response<span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"</span>)</span>
+<span id="cb6-162">            </span>
+<span id="cb6-163">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update the state </span></span>
+<span id="cb6-164">    update <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> {</span>
+<span id="cb6-165">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>: result,</span>
+<span id="cb6-166">    }</span>
+<span id="cb6-167"></span>
+<span id="cb6-168">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Command(goto<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>goto, update<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>update)</span></code></pre></div>
+<p>Then the graph looks like this now:</p>
+<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">from</span> email_assistant.utils <span class="im" style="color: #00769E;
+background-color: null;
+font-style: inherit;">import</span> show_graph</span>
+<span id="cb7-2"></span>
+<span id="cb7-3"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Conditional edge function</span></span>
+<span id="cb7-4"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> should_continue(state: State) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-&gt;</span> Literal[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"interrupt_handler"</span>, END]:</span>
+<span id="cb7-5">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Route to tool handler, or end if Done tool called"""</span></span>
+<span id="cb7-6">    messages <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"messages"</span>]</span>
+<span id="cb7-7">    last_message <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> messages[<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>]</span>
+<span id="cb7-8">    <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> last_message.tool_calls:</span>
+<span id="cb7-9">        <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">in</span> last_message.tool_calls: </span>
+<span id="cb7-10">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"Done"</span>:</span>
+<span id="cb7-11">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> END</span>
+<span id="cb7-12">            <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">else</span>:</span>
+<span id="cb7-13">                <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"interrupt_handler"</span></span>
+<span id="cb7-14"></span>
+<span id="cb7-15"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Build workflow</span></span>
+<span id="cb7-16">agent_builder <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> StateGraph(State)</span>
+<span id="cb7-17"></span>
+<span id="cb7-18"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add nodes</span></span>
+<span id="cb7-19">agent_builder.add_node(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"llm_call"</span>, llm_call)</span>
+<span id="cb7-20">agent_builder.add_node(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"interrupt_handler"</span>, interrupt_handler)</span>
+<span id="cb7-21"></span>
+<span id="cb7-22"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Add edges</span></span>
+<span id="cb7-23">agent_builder.add_edge(START, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"llm_call"</span>)</span>
+<span id="cb7-24">agent_builder.add_conditional_edges(</span>
+<span id="cb7-25">    <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"llm_call"</span>,</span>
+<span id="cb7-26">    should_continue,</span>
+<span id="cb7-27">    {</span>
+<span id="cb7-28">        <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"interrupt_handler"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"interrupt_handler"</span>,</span>
+<span id="cb7-29">        END: END,</span>
+<span id="cb7-30">    },</span>
+<span id="cb7-31">)</span>
+<span id="cb7-32"></span>
+<span id="cb7-33"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Compile the agent</span></span>
+<span id="cb7-34">response_agent <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> agent_builder.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">compile</span>()</span>
+<span id="cb7-35"></span>
+<span id="cb7-36"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Build overall workflow</span></span>
+<span id="cb7-37">overall_workflow <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> (</span>
+<span id="cb7-38">    StateGraph(State, <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>StateInput)</span>
+<span id="cb7-39">    .add_node(triage_router)</span>
+<span id="cb7-40">    .add_node(triage_interrupt_handler)</span>
+<span id="cb7-41">    .add_node(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"response_agent"</span>, response_agent)</span>
+<span id="cb7-42">    .add_edge(START, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"triage_router"</span>)</span>
+<span id="cb7-43">    </span>
+<span id="cb7-44">)</span>
+<span id="cb7-45"></span>
+<span id="cb7-46">email_assistant <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> overall_workflow.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">compile</span>()</span>
+<span id="cb7-47">show_graph(email_assistant, xray<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="va" style="color: #111111;
+background-color: null;
+font-style: inherit;">True</span>)</span></code></pre></div>
+</section>
+<section id="notebook-4-human-in-the-loop" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-4-human-in-the-loop">Notebook 4: Human-in-the-loop</h2>
+<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/hitl.ipynb">hitl.ipynb</a></p>
+<p>This was a very interesting demo showcasing how a LangGraph agent that has an interrupt, can send that interrupt to a UI, in this case <a href="https://github.com/langchain-ai/agent-inbox">Agent Inbox</a>. A human can give that feedback in the Agent Inbox UI and the LangGraph graph will take that feedback and continue processing.</p>
+</section>
+<section id="notebook-5-memory" class="level2">
+<h2 class="anchored" data-anchor-id="notebook-5-memory">Notebook 5: Memory</h2>
+<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/memory.ipynb">memory.ipynb</a></p>
+<p>Update memory instructions - some of this was taken from the gpt-4.1 prompting guide</p>
+<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">MEMORY_UPDATE_INSTRUCTIONS <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb8-2"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"># Role and Objective</span></span>
+<span id="cb8-3"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">You are a memory profile manager for an email assistant agent that selectively updates user preferences based on feedback messages from human-in-the-loop interactions with the email assistant.</span></span>
+<span id="cb8-4"></span>
+<span id="cb8-5"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"># Instructions</span></span>
+<span id="cb8-6"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- NEVER overwrite the entire memory profile</span></span>
+<span id="cb8-7"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- ONLY make targeted additions of new information</span></span>
+<span id="cb8-8"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- ONLY update specific facts that are directly contradicted by feedback messages</span></span>
+<span id="cb8-9"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- PRESERVE all other existing information in the profile</span></span>
+<span id="cb8-10"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- Format the profile consistently with the original style</span></span>
+<span id="cb8-11"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- Generate the profile as a string</span></span>
+<span id="cb8-12"></span>
+<span id="cb8-13"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"># Reasoning Steps</span></span>
+<span id="cb8-14"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">1. Analyze the current memory profile structure and content</span></span>
+<span id="cb8-15"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">2. Review feedback messages from human-in-the-loop interactions</span></span>
+<span id="cb8-16"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">3. Extract relevant user preferences from these feedback messages (such as edits to emails/calendar invites, explicit feedback on assistant performance, user decisions to ignore certain emails)</span></span>
+<span id="cb8-17"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">4. Compare new information against existing profile</span></span>
+<span id="cb8-18"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">5. Identify only specific facts to add or update</span></span>
+<span id="cb8-19"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">6. Preserve all other existing information</span></span>
+<span id="cb8-20"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">7. Output the complete updated profile</span></span>
+<span id="cb8-21"></span>
+<span id="cb8-22"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"># Example</span></span>
+<span id="cb8-23"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;memory_profile&gt;</span></span>
+<span id="cb8-24"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">RESPOND:</span></span>
+<span id="cb8-25"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- wife</span></span>
+<span id="cb8-26"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- specific questions</span></span>
+<span id="cb8-27"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- system admin notifications</span></span>
+<span id="cb8-28"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">NOTIFY: </span></span>
+<span id="cb8-29"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- meeting invites</span></span>
+<span id="cb8-30"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">IGNORE:</span></span>
+<span id="cb8-31"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- marketing emails</span></span>
+<span id="cb8-32"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- company-wide announcements</span></span>
+<span id="cb8-33"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- messages meant for other teams</span></span>
+<span id="cb8-34"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/memory_profile&gt;</span></span>
+<span id="cb8-35"></span>
+<span id="cb8-36"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;user_messages&gt;</span></span>
+<span id="cb8-37"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"The assistant shouldn't have responded to that system admin notification."</span></span>
+<span id="cb8-38"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/user_messages&gt;</span></span>
+<span id="cb8-39"></span>
+<span id="cb8-40"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;updated_profile&gt;</span></span>
+<span id="cb8-41"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">RESPOND:</span></span>
+<span id="cb8-42"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- wife</span></span>
+<span id="cb8-43"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- specific questions</span></span>
+<span id="cb8-44"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">NOTIFY: </span></span>
+<span id="cb8-45"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- meeting invites</span></span>
+<span id="cb8-46"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- system admin notifications</span></span>
+<span id="cb8-47"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">IGNORE:</span></span>
+<span id="cb8-48"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- marketing emails</span></span>
+<span id="cb8-49"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- company-wide announcements</span></span>
+<span id="cb8-50"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- messages meant for other teams</span></span>
+<span id="cb8-51"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/updated_profile&gt;</span></span>
+<span id="cb8-52"></span>
+<span id="cb8-53"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;"># Process current profile for </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{namespace}</span></span>
+<span id="cb8-54"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;memory_profile&gt;</span></span>
+<span id="cb8-55"><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">{current_profile}</span></span>
+<span id="cb8-56"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/memory_profile&gt;</span></span>
+<span id="cb8-57"></span>
+<span id="cb8-58"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">Think step by step about what specific feedback is being provided and what specific information should be added or updated in the profile while preserving everything else."""</span></span>
+<span id="cb8-59"></span>
+<span id="cb8-60">MEMORY_UPDATE_INSTRUCTIONS_REINFORCEMENT <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span>
+<span id="cb8-61"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">Remember:</span></span>
+<span id="cb8-62"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- NEVER overwrite the entire profile</span></span>
+<span id="cb8-63"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- ONLY make targeted additions or changes based on explicit feedback</span></span>
+<span id="cb8-64"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- PRESERVE all existing information not directly contradicted</span></span>
+<span id="cb8-65"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">- Output the complete updated profile as a string</span></span>
+<span id="cb8-66"><span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"""</span></span></code></pre></div>
+<p>Update Memory function, notably - this uses structured output to do the updating</p>
+<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">class</span> UserPreferences(BaseModel):</span>
+<span id="cb9-2">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""User preferences."""</span></span>
+<span id="cb9-3">    preferences: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span></span>
+<span id="cb9-4">    justification: <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">str</span></span>
+<span id="cb9-5"></span>
+<span id="cb9-6"><span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">def</span> update_memory(store, namespace, messages):</span>
+<span id="cb9-7">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">"""Update memory profile in the store.</span></span>
+<span id="cb9-8"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    </span></span>
+<span id="cb9-9"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    Args:</span></span>
+<span id="cb9-10"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        store: LangGraph BaseStore instance to update memory</span></span>
+<span id="cb9-11"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        namespace: Tuple defining the memory namespace, e.g. ("email_assistant", "triage_preferences")</span></span>
+<span id="cb9-12"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">        messages: List of messages to update the memory with</span></span>
+<span id="cb9-13"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">    """</span></span>
+<span id="cb9-14"></span>
+<span id="cb9-15">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Get the existing memory</span></span>
+<span id="cb9-16">    user_preferences <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> store.get(namespace, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user_preferences"</span>)</span>
+<span id="cb9-17"></span>
+<span id="cb9-18">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Update the memory</span></span>
+<span id="cb9-19">    llm <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> init_chat_model(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"openai:gpt-4.1"</span>, temperature<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.0</span>).with_structured_output(UserPreferences)</span>
+<span id="cb9-20">    result <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> llm.invoke(</span>
+<span id="cb9-21">        [</span>
+<span id="cb9-22">            {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"system"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: MEMORY_UPDATE_INSTRUCTIONS.<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">format</span>(current_profile<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>user_preferences.value, namespace<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span>namespace)},</span>
+<span id="cb9-23">            {<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user"</span>, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
+background-color: null;
+font-style: inherit;">f"Think carefully and update the memory profile based upon these user messages:"</span>}</span>
+<span id="cb9-24">        ] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> messages</span>
+<span id="cb9-25">    )</span>
+<span id="cb9-26">    </span>
+<span id="cb9-27">    <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;"># Save the updated memory to the store</span></span>
+<span id="cb9-28">    store.put(namespace, <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"user_preferences"</span>, result.preferences)</span></code></pre></div>
+<p>The triage function needs to be updated according to WHEN to update the user preferences</p>
+<ul>
+<li>Gave feedback to reply to this email –&gt; update the preferences accordingly</li>
+<li>Ignore email even when it was classified as notify –&gt; update the preferences accordingly</li>
+<li>If the user edits the email written by the AI –&gt; update the writing email preferences</li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>LangChain</category>
+  <category>Conference</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/</guid>
+  <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Summary of Karpathy’s Deep Dive into LLMs like ChatGPT</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -15220,10 +17360,9 @@ Making Large Language Models Production-Ready with Guardrails.</p>
 <li>Don’t mention competitors: Refrain from making direct comparisons with competing services unless explicitly asked.</li>
 <li>Ensure each sentence is from a verified source and is accurate: Fact-check information and, where possible, provide sources.</li>
 <li>No profanity is mentioned in text: Maintain a professional tone and avoid using profane language.</li>
-<li>Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.</li>
+<li><h2 id="prompt-injection-protection-safeguard-against-potential-vulnerabilities-by-not-executing-or-asking-to-execute-unsafe-code-snippets." class="anchored">Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.</h2></li>
 </ul></li>
 </ul>
-<hr>
 </section>
 <section id="open-questions-for-ai-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="open-questions-for-ai-engineering">Open Questions for AI Engineering</h2>
@@ -15326,7 +17465,7 @@ Recapping the past year in AI, and what open questions are <em>worth pursuing</e
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
 <p>The code to do this:</p>
-<div id="e2288aa6" class="cell" data-execution_count="1">
+<div id="95ae7ec9" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.llms <span class="im" style="color: #00769E;
@@ -15425,7 +17564,7 @@ font-style: inherit;">False</span>,</span>
 <section id="a-couple-examples" class="level2">
 <h2 class="anchored" data-anchor-id="a-couple-examples">A Couple Examples</h2>
 <p>Running this for an entry-level data scientist:</p>
-<div id="974775d7" class="cell" data-execution_count="2">
+<div id="7ffa74f4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">llm(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
@@ -15468,7 +17607,7 @@ background-color: null;
 font-style: inherit;"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code></pre></div>
 </div>
 <p>Repeating this for a Pediatric Pharmacist:</p>
-<div id="89d44280" class="cell" data-execution_count="3">
+<div id="0005b9ae" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">prompt<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
@@ -16212,619 +18351,6 @@ font-style: inherit;">"</span>)</span></code></pre></div>
   <category>Causal Inference</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-08-08-double-machine-learning/</guid>
   <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>KDD 2023 - Workshops: LLM and Causal Inference</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-08-07-kdd2023-day1/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I attended <a href="https://kdd.org/kdd2023/">KDD 2023</a> which was held in Long Beach, CA from Aug 6-10. The first day I attended was Monday which had half-day workshops around a topic. The two I attended were about LLMs (because I’m interested and it’s relevant to my work) and Causal Inference (because I haven’t used causal machine learning techniques in practice before and wanted exposure).</p>
-<section id="takeaways-from-day-1" class="level1">
-<h1>Takeaways from Day 1</h1>
-<ul>
-<li>Ed Chi had my favorite line from the day:
-<ul>
-<li>Humans + Search –&gt; Superhuman</li>
-<li>LLMS + Tools –&gt; Super LLMS</li>
-<li>Humans + Super LLM –&gt; Super super humans??</li>
-</ul></li>
-<li>Reaffirmed the LLM space is moving very quickly. There are areas of research that if not explored in the next year or so, it will be too late to make a meaningful contribution.</li>
-<li>Learned some new methodologies:
-<ul>
-<li>LLMs: Prompt Tuning, Mixture of Experts</li>
-<li>Causal ML: Double Machine Learning (DML), many packages to do Causal ML like CausalML, EconML and UpliftML</li>
-</ul></li>
-<li>Two groups in an A/B test may not be sufficient, need to account for 4 groups</li>
-</ul>
-</section>
-<section id="llm-workshop-foundations-and-applications-in-large-scale-ai-models---pre-training-fine-tuning-and-prompt-based-learning" class="level1">
-<h1>LLM Workshop: Foundations and Applications in Large-scale AI Models - Pre-training, Fine-tuning, and Prompt-based Learning</h1>
-<p>The website for this workshop is here: <a href="https://llm-ai.github.io/llmai/">https://llm-ai.github.io/llmai/</a>.</p>
-<section id="schedule" class="level2">
-<h2 class="anchored" data-anchor-id="schedule">Schedule</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 11%">
-<col style="width: 39%">
-<col style="width: 48%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Time</th>
-<th>Speaker</th>
-<th>Title</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>8:00-8:10AM, 2023/08/07 (PDT)</td>
-<td>Host Chair</td>
-<td>Welcome and Open Remarks</td>
-</tr>
-<tr class="even">
-<td>8:10-8:40AM, 2023/08/07 (PDT)</td>
-<td>Ed Chi [Google]</td>
-<td>Talk 1: LLM Revolution: Implications rom Chatbots and Tool-Use to Reasoning</td>
-</tr>
-<tr class="odd">
-<td>8:40-9:10AM, 2023/08/07 (PDT)</td>
-<td>Tania Bedrax-Weiss [Google]</td>
-<td>Talk 2: Large-scale AI Model Research at Google Pre-training, Fine-tuning, and Prompt-based Learning</td>
-</tr>
-<tr class="even">
-<td>9:10-9:25AM, 2023/08/07 (PDT)</td>
-<td>Michihiro Yasunaga, Armen Aghajanyan, Weijia Shi, Rich James, Jure Leskovec, Percy Liang, Mike Lewis, Luke Zettlemoyer and Wen-Tau Yih</td>
-<td>Paper-1: Retrieval-Augmented Multimodal Language Modeling</td>
-</tr>
-<tr class="odd">
-<td>9:25-9:40AM, 2023/08/07 (PDT)</td>
-<td>Silvia Terragni, Modestas Filipavicius, Nghia Khau, Bruna Guedes, André Manso and Roland Mathis</td>
-<td>Paper-2: In-Context Learning User Simulators for Task-Oriented Dialog Systems</td>
-</tr>
-<tr class="even">
-<td>9:40-9:55AM, 2023/08/07 (PDT)</td>
-<td>Piotr Kluska, Florian Scheidegger, A. Cristano I. Malossi and Enrique S. Quintana-Ortí</td>
-<td>Paper-3 : Challenges in post-training quantization of Vision Transformers</td>
-</tr>
-<tr class="odd">
-<td>9:55-10:10AM, 2023/08/07 (PDT)</td>
-<td>Haotian Ju, Dongyue Li, Aneesh Sharma and Hongyang Zhang</td>
-<td>Paper-4 : Generalization in Graph Neural Networks: Improved PAC-Bayesian Bounds on Graph Diffusion</td>
-</tr>
-<tr class="even">
-<td>10:10-10:30AM, 2023/08/07 (PDT)</td>
-<td>Coffee Break</td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>10:30-11:00AM, 2023/08/07 (PDT)</td>
-<td>Shafiq Joty [Salesforce]</td>
-<td>Talk 3: NLP Research in the Era of LLMs</td>
-</tr>
-<tr class="even">
-<td>11:00-11:30AM, 2023/08/07 (PDT)</td>
-<td>YiKang Shen[IBM]</td>
-<td>Talk 4: Modular Large Language Model and Principle-Driven alignment with Minimal Human Supervision</td>
-</tr>
-<tr class="odd">
-<td>11:30-11:40AM, 2023/08/07 (PDT)</td>
-<td>Hong Sun, Xue Li, Yinchuan Xu, Youkow Homma, Qi Cao, Min Wu, Jian Jiao and Denis Charles</td>
-<td>Paper-5: AutoHint: Automatic Prompt Optimization with Hint Generation</td>
-</tr>
-<tr class="even">
-<td>11:40-11:50AM, 2023/08/07 (PDT)</td>
-<td>Zhichao Wang, Mengyu Dai and Keld Lundgaard</td>
-<td>Paper-6: Text-to-Video: a Two-stage Framework for Zero-shot Identity-agnostic Talking-head Generation</td>
-</tr>
-<tr class="odd">
-<td>11:50-12:00PM, 2023/08/07 (PDT)</td>
-<td>Long Hoang Dang, Thao Minh Le, Tu Minh Phuong and Truyen Tran</td>
-<td>Paper-7: Compositional Prompting with Successive Decomposition for Multimodal Language Models</td>
-</tr>
-<tr class="even">
-<td>12:00PM-12:10PM, 2023/08/07 (PDT)</td>
-<td>Zhen Guo, Yanwei Wang, Peiqi Wang and Shangdi Yu</td>
-<td>Paper-8: Dr.&nbsp;LLaMA: Improving Small Language Models on PubMedQA via Generative Data Augmentation</td>
-</tr>
-<tr class="odd">
-<td>12:10-12:20PM, 2023/08/07 (PDT)</td>
-<td>Haopeng Zhang, Xiao Liu and Jiawei Zhang</td>
-<td>Paper-9 : Extractive Summarization via ChatGPT for Faithful Summary Generation</td>
-</tr>
-<tr class="even">
-<td>12:20-12:30PM, 2023/08/07 (PDT)</td>
-<td>Closing Remarks</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi" class="level2">
-<h2 class="anchored" data-anchor-id="llm-revolution-implications-from-chatbots-and-tool-use-to-reasoning---ed-chi">LLM Revolution: Implications from Chatbots and Tool-Use to Reasoning - Ed Chi</h2>
-<p>Ed Chi from Google gave this great talk.</p>
-<section id="functions-that-deep-neural-network-can-learn" class="level3">
-<h3 class="anchored" data-anchor-id="functions-that-deep-neural-network-can-learn">2016 - Functions that Deep Neural Network Can Learn</h3>
-<ul>
-<li>Pixels –&gt; Lion</li>
-<li>Audio –&gt; Audio to text</li>
-<li>Text –&gt; Text (translation)</li>
-<li>Pixels –&gt; Caption</li>
-</ul>
-</section>
-<section id="chatbots" class="level3">
-<h3 class="anchored" data-anchor-id="chatbots">Chatbots</h3>
-<ul>
-<li>Not just transactional</li>
-<li>We want chatbots to be contextual</li>
-<li>Personalized assistants for everyone</li>
-</ul>
-</section>
-<section id="lambda-bard-brought-to-you-by-eds-team" class="level3">
-<h3 class="anchored" data-anchor-id="lambda-bard-brought-to-you-by-eds-team">Lambda –&gt; Bard (Brought to You by Ed’s Team)</h3>
-<ul>
-<li>They wanted to publish Lambda in the form of Bard, but there were difficulties</li>
-</ul>
-</section>
-<section id="large-language-models-llm" class="level3">
-<h3 class="anchored" data-anchor-id="large-language-models-llm">Large Language Models (LLM)</h3>
-<ul>
-<li>Large knowledge base</li>
-<li>What is a plan to read 20 books a year? Reaches into the LLM to come up with a real plan</li>
-<li>Genesis of captions –&gt; not too far to be able to generate text</li>
-</ul>
-</section>
-<section id="programming" class="level3">
-<h3 class="anchored" data-anchor-id="programming">Programming</h3>
-<ul>
-<li>Coding is less about coding, more about data</li>
-<li>Data Science (DS) is going to be a bigger part of software development</li>
-</ul>
-</section>
-<section id="retrieval-augmentation-leveraging-external-knowledge" class="level3">
-<h3 class="anchored" data-anchor-id="retrieval-augmentation-leveraging-external-knowledge">Retrieval Augmentation: Leveraging External Knowledge</h3>
-<ul>
-<li>Factuality trigger</li>
-<li>Open-book Generative QA</li>
-<li>RETRO: Retrieval-augmented generative model</li>
-<li>Questions:
-<ul>
-<li>How big does the LLM need to be?</li>
-<li>How big does the external knowledge base need to be?</li>
-<li>Fruitful Line of Research</li>
-</ul></li>
-</ul>
-</section>
-<section id="multi-modality-output-not-just-text-could-be-images" class="level3">
-<h3 class="anchored" data-anchor-id="multi-modality-output-not-just-text-could-be-images">Multi-modality output (not just text, could be images)</h3>
-<ul>
-<li>Image retrieval</li>
-<li>Image input –&gt; Generate captions</li>
-</ul>
-</section>
-<section id="humans-and-llms-with-tools" class="level3">
-<h3 class="anchored" data-anchor-id="humans-and-llms-with-tools">Humans and LLMs with Tools</h3>
-<ul>
-<li>Humans + Search –&gt; Superhuman</li>
-<li>LLMS + Tools –&gt; Super LLMS</li>
-<li>Humans + Super LLM –&gt; Super super humans??</li>
-</ul>
-</section>
-<section id="future-challenges" class="level3">
-<h3 class="anchored" data-anchor-id="future-challenges">Future Challenges</h3>
-<ul>
-<li>Responsibility and Safety</li>
-<li>Factuality, Grounding, and Attribution</li>
-<li>Human &lt;-&gt; AI Content Loop and Ecosystem</li>
-<li>Personalization and User Memory</li>
-</ul>
-</section>
-<section id="keynote" class="level3">
-<h3 class="anchored" data-anchor-id="keynote">Keynote</h3>
-<ul>
-<li>Ed is going to give the keynote tomorrow</li>
-<li>You can interrogate a model for why it made a decision or prediction</li>
-<li>Area: Self-critique, self-reflection (next year or so)</li>
-<li>3-5 year research topics:
-<ul>
-<li>Hallucinations / Bias in areas where the LLM has not been trained</li>
-<li>Relationship between hallucinations and safety</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning" class="level2">
-<h2 class="anchored" data-anchor-id="large-scale-ai-model-research-at-google-pre-training-fine-tuning-and-prompt-based-learning">Large-scale AI Model Research at Google Pre-training, Fine-tuning, and Prompt-based Learning</h2>
-<p>Tania Bedrax-Weiss from Google gave this talk.</p>
-<section id="mixture-of-experts-models" class="level3">
-<h3 class="anchored" data-anchor-id="mixture-of-experts-models">Mixture of Experts Models</h3>
-<ul>
-<li>How to route the question to the right expert, right experts</li>
-</ul>
-</section>
-<section id="conditional-computation" class="level3">
-<h3 class="anchored" data-anchor-id="conditional-computation">Conditional Computation</h3>
-<ul>
-<li>COLT5 Transformer layer</li>
-<li>Scales to longer context</li>
-<li>Early exit</li>
-<li>Per step confidence thresholds</li>
-</ul>
-</section>
-<section id="multi-modal-work" class="level3">
-<h3 class="anchored" data-anchor-id="multi-modal-work">Multi-modal Work</h3>
-<ul>
-<li>Imagen - diffusion model
-<ul>
-<li><a href="https://imagen.research.google/">Imagen Research Google</a></li>
-</ul></li>
-<li>Parti - autoregressive model
-<ul>
-<li><a href="https://sites.research.google/parti/">Parti Research Google</a></li>
-</ul></li>
-</ul>
-</section>
-<section id="imagen-technical-details" class="level3">
-<h3 class="anchored" data-anchor-id="imagen-technical-details">Imagen: Technical Details</h3>
-<ul>
-<li>ViT-VQGAN as image tokenizer
-<ul>
-<li>What’s an image tokenizer? See: https://keras.io/examples/vision/token_learner/</li>
-</ul></li>
-<li>Autoregressively generate images in a similar way that LLMs generate text</li>
-<li>Can generate text reliably - spell words out unlike other models</li>
-</ul>
-</section>
-<section id="pali" class="level3">
-<h3 class="anchored" data-anchor-id="pali">Pali</h3>
-<ul>
-<li>Image to text</li>
-<li>State of the art text captioning model</li>
-</ul>
-</section>
-<section id="spotlight" class="level3">
-<h3 class="anchored" data-anchor-id="spotlight">Spotlight</h3>
-<ul>
-<li>Screenshots / user interfaces - understand what are the actions that a user can perform</li>
-<li>Execute commands in the user interface</li>
-</ul>
-</section>
-<section id="play-parametrically-condition-layout-generation-using-guidelines" class="level3">
-<h3 class="anchored" data-anchor-id="play-parametrically-condition-layout-generation-using-guidelines">PLay: Parametrically Condition Layout Generation Using Guidelines</h3>
-<ul>
-<li>Fine-tuning</li>
-<li>Prompt Tuning
-<ul>
-<li>Look at this more</li>
-</ul></li>
-</ul>
-</section>
-<section id="how-do-you-handle-ambiguity-in-an-answer" class="level3">
-<h3 class="anchored" data-anchor-id="how-do-you-handle-ambiguity-in-an-answer">How do you handle ambiguity in an answer?</h3>
-<ul>
-<li>LLMs are very eager to give an answer</li>
-<li>Types
-<ul>
-<li>Use multiple prompts to get different types of answers. This is my answer. Can you generate other answers?</li>
-<li>Diversity objectives</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="retrieval-augmented-multimodal-language-modeling" class="level2">
-<h2 class="anchored" data-anchor-id="retrieval-augmented-multimodal-language-modeling">Retrieval-Augmented Multimodal Language Modeling</h2>
-<p>Paper: <a href="https://arxiv.org/abs/2211.12561">https://arxiv.org/abs/2211.12561</a></p>
-<p>Recent multimodal models such as DALL-E and CM3 have achieved remarkable progress in text-to-image and image-to-text generation. However, these models store all learned knowledge (e.g., the appearance of the Eiffel Tower) in the model parameters, requiring increasingly larger models and training data to capture more knowledge. To integrate knowledge in a more scalable and modular way, we propose a retrieval-augmented multimodal model, which enables a base multimodal model (generator) to refer to relevant text and images fetched by a retriever from external memory (e.g., documents on the web). Specifically, for the retriever, we use a pretrained CLIP, and for the generator, we train a CM3 Transformer on the LAION dataset. Our resulting model, named Retrieval-Augmented CM3 (RA-CM3), is the first multimodal model that can retrieve and generate both text and images. We show that RA-CM3 significantly outperforms baseline multimodal models such as DALL-E and CM3 on both image and caption generation tasks (12 FID and 17 CIDEr improvements on MS-COCO), while requiring much less compute for training (&lt;30% of DALL-E). Moreover, we show that RA-CM3 exhibits novel capabilities, such as faithful image generation and multimodal in-context learning (e.g., image generation from demonstrations).</p>
-<ul>
-<li>Develop a retrieval-augmented multimodal model, a first of it’s kind</li>
-<li>The generator uses retrieved items for generation too</li>
-<li>Retrieval augmented training - helped a lot</li>
-</ul>
-</section>
-<section id="in-context-learning-user-simulators-for-task-oriented-dialog-systems" class="level2">
-<h2 class="anchored" data-anchor-id="in-context-learning-user-simulators-for-task-oriented-dialog-systems">In-Context Learning User Simulators for Task-Oriented Dialog Systems</h2>
-<ul>
-<li>Code: <a href="https://github.com/telepathylabsai/prompt-based-user-simulator">https://github.com/telepathylabsai/prompt-based-user-simulator</a></li>
-<li>Paper: <a href="https://arxiv.org/abs/2306.00774">https://arxiv.org/abs/2306.00774</a></li>
-</ul>
-<p>This paper presents a novel application of large language models in user simulation for task-oriented dialog systems, specifically focusing on an in-context learning approach. By harnessing the power of these models, the proposed approach generates diverse utterances based on user goals and limited dialog examples. Unlike traditional simulators, this method eliminates the need for labor-intensive rule definition or extensive annotated data, making it more efficient and accessible. Additionally, an error analysis of the interaction between the user simulator and dialog system uncovers common mistakes, providing valuable insights into areas that require improvement. Our implementation is available at this https URL.</p>
-<ul>
-<li>Rule based systems are still more accurate. However they mainly understand happy paths of a dialog system.</li>
-<li>These LLM based approaches can explore unexpected behavior of users</li>
-</ul>
-</section>
-<section id="challenges-in-post-training-quantization-of-vision-transformers" class="level2">
-<h2 class="anchored" data-anchor-id="challenges-in-post-training-quantization-of-vision-transformers">Challenges in post-training quantization of Vision Transformers</h2>
-<p>Paper: <a href="https://research.ibm.com/publications/challenges-in-post-training-quantization-of-vision-transformers">https://research.ibm.com/publications/challenges-in-post-training-quantization-of-vision-transformers</a></p>
-<p>Vision Transformers recently showed outstanding performance in computer vision tasks. However, those models are compute and memory intensive that require accelerators with a large amount of memory like NVIDIA A100 graphic processing unit for training and even for inference. Post-training quantization is an appealing compression method, as it does not require retraining the models and labels to tune the model. In this paper, we look in depth at multiple models in terms of size, architecture, and training procedure and provide guidelines on how to quantize the model to an 8-bit integer, both weights and activations. We perform a well-rounded study on the effects of quantization and sensitivity to the quantization error. Moreover, we show that applying mixed-data precision quantization works well for most vision transformer models achieving up to 90% compression ratio within a 2% top-1 accuracy drop. This kind of quantization offers a trade-off between memory, compute, and performance of the models that are deployable with the current software and hardware stack.</p>
-<ul>
-<li>There’s a difference between Static vs Dynamic Quantization</li>
-<li>Larger models are supposed to be easier to quantize, but not the case here</li>
-<li>Signal to noise quantization ratio - SNQR</li>
-<li>Partial Quantization: Some models that lost accuracy during dynamic quant, regained during 90% quant</li>
-</ul>
-</section>
-<section id="generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion" class="level2">
-<h2 class="anchored" data-anchor-id="generalization-in-graph-neural-networks-improved-pac-bayesian-bounds-on-graph-diffusion">Generalization in Graph Neural Networks: Improved PAC-Bayesian Bounds on Graph Diffusion</h2>
-<p>Paper: <a href="https://proceedings.mlr.press/v206/ju23a/ju23a.pdf">https://proceedings.mlr.press/v206/ju23a/ju23a.pdf</a></p>
-<p>Graph neural networks are widely used tools for graph prediction tasks. Motivated by their empirical performance, prior works have developed generalization bounds for graph neural networks, which scale with graph structures in terms of the maximum degree. In this paper, we present generalization bounds that instead scale with the largest singular value of the graph neural network’s feature diffusion matrix. These bounds are numerically much smaller than prior bounds for real-world graphs. We also construct a lower bound of the generalization gap that matches our upper bound asymptotically. To achieve these results, we analyze a unified model that includes prior works’ settings (i.e., convolutional and message-passing networks) and new settings (i.e., graph isomorphism networks). Our key idea is to measure the stability of graph neural networks against noise perturbations using Hessians. Empirically, we find that Hessian-based measurements correlate with observed generalization gaps of graph neural networks accurately; Optimizing noise stability properties for fine-tuning pretrained graph neural networks also improves the test performance on several graph-level classification tasks.</p>
-<ul>
-<li>Overfitting if there’s an imbalance between pretraining data and finetuning data size</li>
-<li>Generalization gap
-<ul>
-<li>Not just cross validation loss</li>
-<li>More detailed understanding - what networks are causing the overfitting</li>
-<li>Generalization gap - measures the gap between training/test losses</li>
-</ul></li>
-</ul>
-</section>
-<section id="nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering" class="level2">
-<h2 class="anchored" data-anchor-id="nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering">NLP Research in the Era of LLMs - Unleashing the Potential of LLMs through Task and Data Engineering</h2>
-<p>Shafiq Joty gave this talk: https://raihanjoty.github.io/</p>
-<section id="background-data-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="background-data-engineering">Background: Data Engineering</h3>
-<ul>
-<li>Hold the code fixed and invite research to improve the data (Andrew Ng)</li>
-</ul>
-</section>
-<section id="background-rise-of-task-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="background-rise-of-task-engineering">Background: Rise of Task Engineering</h3>
-<ul>
-<li>Multi-task models with task prompts</li>
-<li>Trained with many different instructions</li>
-<li>Mentions prompt tuning again (soft tokens) ???</li>
-</ul>
-</section>
-<section id="background-task-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="background-task-engineering">Background: Task Engineering</h3>
-</section>
-<section id="llm-lifecycle" class="level3">
-<h3 class="anchored" data-anchor-id="llm-lifecycle">LLM Lifecycle</h3>
-</section>
-<section id="xgen-llm-june-2023" class="level3">
-<h3 class="anchored" data-anchor-id="xgen-llm-june-2023"><strong>XGen LLM</strong>: June 2023</h3>
-<ul>
-<li><a href="https://github.com/salesforce/xgen">GitHub Link</a></li>
-<li>Goal is to outperform LLaMA1</li>
-</ul>
-</section>
-<section id="instructed-tuned" class="level3">
-<h3 class="anchored" data-anchor-id="instructed-tuned">Instructed tuned</h3>
-<ul>
-<li>Instructional data: WizardLM. <a href="https://arxiv.org/abs/2304.12244">Paper Link</a></li>
-</ul>
-</section>
-<section id="what-does-wizardlm-do-exactly-in-advancing-the-sota" class="level3">
-<h3 class="anchored" data-anchor-id="what-does-wizardlm-do-exactly-in-advancing-the-sota">What does WizardLM do exactly in advancing the SoTA?</h3>
-<ul>
-<li><p><a href="https://arxiv.org/abs/2304.12244">Details on WizardLM</a></p></li>
-<li><p>Training large language models (LLMs) with open-domain instruction following data brings colossal success. However, manually creating such instruction data is very time-consuming and labor-intensive. Moreover, humans may struggle to produce high-complexity instructions. In this paper, we show an avenue for creating large amounts of instruction data with varying levels of complexity using LLM instead of humans. Starting with an initial set of instructions, we use our proposed Evol-Instruct to rewrite them step by step into more complex instructions. Then, we mix all generated instruction data to fine-tune LLaMA. We call the resulting model WizardLM. Human evaluations on a complexity-balanced test bed and Vicuna’s testset show that instructions from Evol-Instruct are superior to human-created ones. By analyzing the human evaluation results of the high complexity part, we demonstrate that outputs from our WizardLM are preferred to outputs from OpenAI ChatGPT. In GPT-4 automatic evaluation, WizardLM achieves more than 90% capacity of ChatGPT on 17 out of 29 skills. Even though WizardLM still lags behind ChatGPT in some aspects, our findings suggest that fine-tuning with AI-evolved instructions is a promising direction for enhancing LLMs. Our code and data are public at this https URL</p></li>
-<li><p><strong>Verify and Edit CoT</strong> - Self-consistency</p></li>
-<li><p>Knowledge adapting framework</p></li>
-<li><p>Language diversity prompting</p></li>
-<li><p>Standard vs Personalized Distillation from LLMs</p></li>
-</ul>
-</section>
-</section>
-<section id="modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision" class="level2">
-<h2 class="anchored" data-anchor-id="modular-large-language-model-and-principle-driven-alignment-with-minimal-human-supervision">Modular Large Language Model and Principle-Driven alignment with Minimal Human Supervision</h2>
-<p>Yikang Shen from IBM gave this talk.</p>
-<section id="foundation-model-types" class="level3">
-<h3 class="anchored" data-anchor-id="foundation-model-types">Foundation model types</h3>
-<section id="challenges-of-llm" class="level4">
-<h4 class="anchored" data-anchor-id="challenges-of-llm">Challenges of LLM</h4>
-<ul>
-<li><strong>Efficiency</strong></li>
-<li><strong>Extendability</strong></li>
-<li><strong>Flexibility</strong></li>
-</ul>
-</section>
-</section>
-<section id="moduleformer---learning-modular-llm-from-uncurated-data" class="level3">
-<h3 class="anchored" data-anchor-id="moduleformer---learning-modular-llm-from-uncurated-data">ModuleFormer - Learning Modular LLM from Uncurated Data</h3>
-<ul>
-<li>Previous modular models were based on already labeled data</li>
-</ul>
-</section>
-<section id="mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners" class="level3">
-<h3 class="anchored" data-anchor-id="mod-squad---designing-a-mixture-of-experts-as-modular-multi-task-learners">Mod-Squad - designing a mixture of experts as modular multi-task learners</h3>
-<ul>
-<li>Can select the right experts for a task</li>
-<li>Experts can share knowledge!?</li>
-</ul>
-</section>
-<section id="dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles" class="level3">
-<h3 class="anchored" data-anchor-id="dromedary---efficiently-teach-ai-to-follow-a-given-set-of-principles">Dromedary - efficiently teach AI to follow a given set of principles</h3>
-<ul>
-<li><a href="https://github.com/IBM/Dromedary">GitHub Link for Dromedary</a></li>
-<li><strong>Principle Engraving</strong> -</li>
-<li><strong>Verbose Cloning</strong> - refining the model to produce in-depth and detailed response</li>
-<li>300 lines of annotations</li>
-<li>Kind of similar to Evol-Instruct/WizardLM to produce annotations to fine-tune a model</li>
-</ul>
-</section>
-</section>
-<section id="autohint-automatic-prompt-optimization-with-hint-generation" class="level2">
-<h2 class="anchored" data-anchor-id="autohint-automatic-prompt-optimization-with-hint-generation">AutoHint: Automatic Prompt Optimization with Hint Generation</h2>
-<p>Paper: <a href="https://arxiv.org/pdf/2307.07415.pdf">https://arxiv.org/pdf/2307.07415.pdf</a></p>
-<p>This paper presents AutoHint, a novel framework for automatic prompt engineering and optimization for Large Language Models (LLM). While LLMs have demonstrated remarkable ability in achieving high-quality annotation in various tasks, the key to applying this ability to specific tasks lies in developing high-quality prompts. Thus we propose a framework to inherit the merits of both in-context learning and zero-shot learning by incorporating enriched instructions derived from input-output demonstrations to optimize original prompt. We refer to the enrichment as the Hint and propose a framework to automatically generate the hint from labeled data. More concretely, starting from an initial prompt, our method first instructs a LLM to deduce new hints for selected samples from incorrect predictions, and then summarizes from per-sample hints and adds the results back to the initial prompt to form a new, enriched instruction. The proposed method is evaluated on the BIG-Bench Instruction Induction dataset for both zero-shot and few-short prompts, where experiments demonstrate our method is able to significantly boost accuracy for multiple tasks</p>
-</section>
-</section>
-<section id="causal-inference-workshop-causal-inference-and-machine-learning-in-practice" class="level1">
-<h1>Causal Inference Workshop: Causal Inference and Machine Learning in Practice</h1>
-<p>The website for this workshop is here: https://causal-machine-learning.github.io/kdd2023-workshop/</p>
-<section id="cog-creative-optimality-gap-for-video-advertising" class="level2">
-<h2 class="anchored" data-anchor-id="cog-creative-optimality-gap-for-video-advertising">COG: Creative Optimality Gap for Video Advertising</h2>
-<p>Raif Rustamov from Amazon gave this invited talk.</p>
-<section id="video-ads-motivation" class="level3">
-<h3 class="anchored" data-anchor-id="video-ads-motivation">Video ads motivation</h3>
-<ul>
-<li>How does a particular video affect shopper experience?</li>
-</ul>
-</section>
-<section id="goal" class="level3">
-<h3 class="anchored" data-anchor-id="goal">Goal</h3>
-<ul>
-<li>Driven by explicit hypotheses tied to quantifying value of the video</li>
-</ul>
-</section>
-<section id="approach---creative-optimality-gap-cog" class="level3">
-<h3 class="anchored" data-anchor-id="approach---creative-optimality-gap-cog">Approach - Creative Optimality Gap (COG)</h3>
-<ul>
-<li>If we were to replace the video of class 0 to video of class 1, what would be the improvement in the outcome for the ad?</li>
-<li><strong>Uplift or Heterogenous Treatment Effect modeling</strong></li>
-</ul>
-</section>
-<section id="benefits" class="level3">
-<h3 class="anchored" data-anchor-id="benefits">Benefits</h3>
-<ul>
-<li>Differentiated at the level of video features vs.&nbsp;global ATE
-<ul>
-<li><strong>ATE</strong> - average treatment effect - videos are good</li>
-<li><strong>ITE</strong> - individual treatment effect - noisy</li>
-<li><strong>HTE</strong> - heterogeneous treatment effect - in the middle, denoising</li>
-</ul></li>
-<li>Handle cold start ads</li>
-</ul>
-</section>
-<section id="preliminaries" class="level3">
-<h3 class="anchored" data-anchor-id="preliminaries">Preliminaries</h3>
-<ul>
-<li><strong>Treatment indicator (T)</strong></li>
-<li><strong>Video features</strong>
-<ul>
-<li>Computed using e.g.&nbsp;video embeddings</li>
-<li>Can contain non</li>
-</ul></li>
-<li><strong>Ad features</strong>
-<ul>
-<li>Contains non-video related features like price, product category</li>
-<li>Used as confounder/matching variables</li>
-</ul></li>
-<li><strong>Outcome = Y</strong></li>
-</ul>
-</section>
-<section id="cog-modeling" class="level3">
-<h3 class="anchored" data-anchor-id="cog-modeling">COG Modeling</h3>
-<ul>
-<li><strong>Step 1</strong></li>
-<li><strong>Step 2</strong></li>
-<li><strong>Step 3</strong> -
-<ul>
-<li>Used interpretable models in this step, why?</li>
-</ul></li>
-</ul>
-</section>
-<section id="cog-modeling-guardrails" class="level3">
-<h3 class="anchored" data-anchor-id="cog-modeling-guardrails">COG Modeling: Guardrails</h3>
-<section id="bias" class="level4">
-<h4 class="anchored" data-anchor-id="bias">Bias</h4>
-<ul>
-<li>Bias comes from G model, comes from regularization or not enough capacity in the model</li>
-<li>Bias is not constant but varies in the Z space</li>
-<li>Double ML?</li>
-</ul>
-</section>
-<section id="uncertaintyvariance" class="level4">
-<h4 class="anchored" data-anchor-id="uncertaintyvariance">Uncertainty/Variance</h4>
-</section>
-</section>
-<section id="solution" class="level3">
-<h3 class="anchored" data-anchor-id="solution">Solution</h3>
-<ul>
-<li>Conservative COG = lower bound of confidence interval</li>
-</ul>
-</section>
-</section>
-<section id="the-value-of-last-mile-delivery-in-online-retail" class="level2">
-<h2 class="anchored" data-anchor-id="the-value-of-last-mile-delivery-in-online-retail">The Value of Last-Mile Delivery in Online Retail</h2>
-<p>Ruomeng Cui from Emory gave this talk.</p>
-<section id="cainiao---chinese-company" class="level3">
-<h3 class="anchored" data-anchor-id="cainiao---chinese-company">Cainiao - Chinese Company</h3>
-<ul>
-<li>Alibaba’s logistics platform</li>
-<li>Largest logistics platform in China</li>
-<li>If there are differences in preferences, there is an opportunity for optimization</li>
-</ul>
-</section>
-<section id="use-causal-ml-estimating-ite" class="level3">
-<h3 class="anchored" data-anchor-id="use-causal-ml-estimating-ite">Use Causal ML: Estimating ITE</h3>
-<ul>
-<li><strong>Data:</strong> Post-treatment data Q4 2021</li>
-</ul>
-</section>
-<section id="models" class="level3">
-<h3 class="anchored" data-anchor-id="models">Models</h3>
-<ul>
-<li>Partial Linear DML</li>
-<li>First-difference DML</li>
-<li>Others</li>
-</ul>
-</section>
-<section id="account-for-knapsnack" class="level3">
-<h3 class="anchored" data-anchor-id="account-for-knapsnack">Account for Knapsnack</h3>
-<ul>
-<li>Tau does not capture economic efficiency</li>
-<li>Need to account for how much capacity a customer is using. A customer going from 0 to 1 unit sales is much more valuable than a customer going from 19 to 20 units sold because the latter is not using much capacity.</li>
-</ul>
-</section>
-</section>
-<section id="leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation" class="level2">
-<h2 class="anchored" data-anchor-id="leveraging-causal-uplift-modeling-for-budget-constrained-benefits-allocation">Leveraging Causal Uplift Modeling for Budget Constrained Benefits Allocation</h2>
-<p>Dmitri Goldenberg from Booking.com gave this talk. It was a very good talk with virtually no words on his slides.</p>
-</section>
-<section id="ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford" class="level2">
-<h2 class="anchored" data-anchor-id="ensemble-method-for-estimating-individualized-treatment-effects-kevin-wu-han-han-wu-stanford">Ensemble Method for Estimating Individualized Treatment Effects Kevin Wu Han, Han Wu (Stanford)</h2>
-<ul>
-<li>Paper: <a href="https://arxiv.org/abs/2202.12445">https://arxiv.org/abs/2202.12445</a></li>
-<li>Ensemble methods almost always perform a validation-set model selection based method!</li>
-</ul>
-</section>
-<section id="a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization" class="level2">
-<h2 class="anchored" data-anchor-id="a-scalable-and-debiased-approach-to-dynamic-pricing-with-causal-machine-learning-and-optimization">A Scalable and Debiased Approach to Dynamic Pricing with Causal Machine Learning and Optimization</h2>
-<ul>
-<li>Heard the term double machine learning for the second time which caused me to do to learn what it is.</li>
-</ul>
-</section>
-<section id="an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology" class="level2">
-<h2 class="anchored" data-anchor-id="an-ipw-based-unbiased-ranking-metric-in-two-sided-markets-keisho-oh-naoki-nishimura-recruit-co-minje-sung-ken-kobayashi-kazuhide-nakata-tokyo-institute-of-technology">An IPW-based Unbiased Ranking Metric in Two-sided Markets Keisho Oh, Naoki Nishimura (Recruit Co), Minje Sung, Ken Kobayashi, Kazuhide Nakata (Tokyo Institute of Technology)</h2>
-<p>In two-sided markets like job-matching or dating-apps, need to use an unbiased ranking metric which they propose in their paper.</p>
-</section>
-<section id="unit-selection-based-on-counterfactual-logic" class="level2">
-<h2 class="anchored" data-anchor-id="unit-selection-based-on-counterfactual-logic">Unit Selection Based on Counterfactual Logic</h2>
-<p>This was an invited talk by Ang Li about this paper: <a href="https://ftp.cs.ucla.edu/pub/stat_ser/r488.pdf">https://ftp.cs.ucla.edu/pub/stat_ser/r488.pdf</a>.</p>
-<p>My main takeaway was dividing a population into a typical A/B test where one group receives a treatment and the other group is the control is too simplistic. There are actually 4 groups we should be concerned about:</p>
-<ul>
-<li>Complier: Individuals who would respond positively if treated and negatively if not treated.</li>
-<li>Always-taker: Individuals who always respond positively no matter whether they are treated or not.</li>
-<li>Never-taker: Individuals who always respond negatively no matter whether they are treated or not.</li>
-<li>Defier: Individuals who would respond negatively if treated and positively if not treated.</li>
-</ul>
-<p>Along with a benefit vector that assigns a positive or negative value to each of these 4 groups, we can use this to select the best treatment for each individual.</p>
-<p>Ang also used the Pfizer Covid vaccine as a motivating example for why these 4 groups should be accounted for.</p>
-</section>
-<section id="towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml" class="level2">
-<h2 class="anchored" data-anchor-id="towards-automating-the-causal-machine-learning-pipeline-vasilis-syrgkanis-stanfordeconml">Towards Automating the Causal Machine Learning Pipeline Vasilis Syrgkanis (Stanford/EconML)</h2>
-<ul>
-<li>A large variety of causal estimands that arise in complex static and longitudinal data analysis can be automatically de-biased when regularized machine learning algorithms are used to estimate nuisance models</li>
-<li>Estimation of the de-biasing term itself can be performed with generic machine learning</li>
-<li>Experimental results using neural nets and random forests for automated de-biasing provide examples superior performance to plug-in approaches and to prior automatically debasing approaches based solely on linear models</li>
-</ul>
-
-
-</section>
-</section>
-
- ]]></description>
-  <category>Conference</category>
-  <category>KDD</category>
-  <category>LLM</category>
-  <category>Causal Inference</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2023-08-07-kdd2023-day1/</guid>
-  <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

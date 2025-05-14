@@ -9,7 +9,7 @@
 <link>https://lawwu.github.io/blog.html/conferences.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/conferences.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.6.42</generator>
+<generator>quarto-1.7.31</generator>
 <lastBuildDate>Wed, 14 Aug 2024 00:00:00 GMT</lastBuildDate>
 <item>
   <title>John Street - God’s Design for Marriage</title>
@@ -2664,10 +2664,9 @@ Making Large Language Models Production-Ready with Guardrails.</p>
 <li>Don’t mention competitors: Refrain from making direct comparisons with competing services unless explicitly asked.</li>
 <li>Ensure each sentence is from a verified source and is accurate: Fact-check information and, where possible, provide sources.</li>
 <li>No profanity is mentioned in text: Maintain a professional tone and avoid using profane language.</li>
-<li>Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.</li>
+<li><h2 id="prompt-injection-protection-safeguard-against-potential-vulnerabilities-by-not-executing-or-asking-to-execute-unsafe-code-snippets." class="anchored">Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.</h2></li>
 </ul></li>
 </ul>
-<hr>
 </section>
 <section id="open-questions-for-ai-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="open-questions-for-ai-engineering">Open Questions for AI Engineering</h2>
