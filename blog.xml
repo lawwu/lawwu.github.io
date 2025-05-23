@@ -21,6 +21,7 @@
 
 
 <p><em>This page contains AI-generated summaries of the LangChain Interrupt 2025 conference talks.</em></p>
+<p>The code to do this is in this <a href="https://github.com/lawwu/langchain_conference_ai_summaries">repo</a>.</p>
 <section id="interrupt-2025-keynote" class="level2">
 <h2 class="anchored" data-anchor-id="interrupt-2025-keynote">Interrupt 2025 Keynote</h2>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/DrygcOI-kG8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
@@ -18280,7 +18281,7 @@ Recapping the past year in AI, and what open questions are <em>worth pursuing</e
 <section id="code" class="level2">
 <h2 class="anchored" data-anchor-id="code">Code</h2>
 <p>The code to do this:</p>
-<div id="cb14b8f1" class="cell" data-execution_count="1">
+<div id="27e3bcc6" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.llms <span class="im" style="color: #00769E;
@@ -18379,7 +18380,7 @@ font-style: inherit;">False</span>,</span>
 <section id="a-couple-examples" class="level2">
 <h2 class="anchored" data-anchor-id="a-couple-examples">A Couple Examples</h2>
 <p>Running this for an entry-level data scientist:</p>
-<div id="acb6d7d6" class="cell" data-execution_count="2">
+<div id="1669058f" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">llm(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
@@ -18422,7 +18423,7 @@ background-color: null;
 font-style: inherit;"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code></pre></div>
 </div>
 <p>Repeating this for a Pediatric Pharmacist:</p>
-<div id="8ff409c8" class="cell" data-execution_count="3">
+<div id="0db7f945" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">prompt<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;

@@ -536,7 +536,7 @@
     "href": "posts/2025-05-23-langchain-interrupt-2025-recap/index.html",
     "title": "LangChain Interrupt Conference 2025 AI Recap",
     "section": "",
-    "text": "This page contains AI-generated summaries of the LangChain Interrupt 2025 conference talks."
+    "text": "This page contains AI-generated summaries of the LangChain Interrupt 2025 conference talks.\nThe code to do this is in this repo."
   },
   {
     "objectID": "posts/2025-05-23-langchain-interrupt-2025-recap/index.html#interrupt-2025-keynote",
