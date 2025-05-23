@@ -7,6 +7,8 @@ categories: ["LangChain", "Conference"]
 
 *This page contains AI-generated summaries of the LangChain Interrupt 2025 conference talks.*
 
+The code to do this is in this [repo](https://github.com/lawwu/langchain_conference_ai_summaries). 
+
 ## Interrupt 2025 Keynote
 
 {{< video https://www.youtube.com/watch?v=DrygcOI-kG8 >}}
