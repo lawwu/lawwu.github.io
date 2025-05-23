@@ -5,10 +5,6 @@ date: "2025-05-23"
 categories: ["LangChain", "Conference"]
 ---
 
-AI Summaries of all the talks from the LangChain Conference.
-
-# LangChain Interrupt 2025 - AI-Generated Talk Summaries
-
 *This page contains AI-generated summaries of the LangChain Interrupt 2025 conference talks.*
 
 ## Interrupt 2025 Keynote
