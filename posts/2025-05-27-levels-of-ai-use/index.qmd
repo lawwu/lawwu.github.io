@@ -30,7 +30,7 @@ Here are the levels:
 ## **Level 1 – Occasional Use**
 > "I use AI once in a while when I’m stuck or curious."
 
-- **Developers**: Use AI code completition like GitHub Copilot or ChatGPT to get unstuck occasionally. Paste errors or ask for code snippets.
+- **Developers**: Use AI code completion like GitHub Copilot or ChatGPT to get unstuck occasionally. Paste errors or ask for code snippets.
 - **Non-developers**: Use AI for one-off tasks like drafting emails, summarizing notes, or brainstorming ideas.
 
 ---
