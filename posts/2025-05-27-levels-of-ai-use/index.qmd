@@ -66,7 +66,7 @@ Example: Spotify's CEO Tobias Lutke has changed how his company hires because of
 ---
 
 ## **Level 5 – AI-First Innovation**
-> "AI isn’t just part of the work—it defines *what’s possible*."
+> "AI isn’t just part of the work—it changes *what’s possible*."
 
 - **Developers**: Build entirely new paradigms of software with AI at the center. Move beyond LLM wrappers into agent-based systems, multi-agent systems, AI-native architectures, and emergent behavior. Actively experimenting with not just Foundation LLM APIs but real-time audio APIs (audio in and out).
 - **Non-developers**: Rethink roles, products, and business models from the ground up with AI as the foundation. Co-create with AI to scale impact in ways that were previously unimaginable.
