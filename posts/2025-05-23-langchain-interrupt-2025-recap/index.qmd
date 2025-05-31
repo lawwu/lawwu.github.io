@@ -1,7 +1,7 @@
 ---
-title: "LangChain Interrupt Conference 2025 Recap"
+title: "LangChain Interrupt Conference 2025 AI Recap"
 author: "Lawrence Wu"    
-date: "2025-05-30"
+date: "2025-05-23"
 categories: ["LangChain", "Conference", "Recap"]
 ---
 
