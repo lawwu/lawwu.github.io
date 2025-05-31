@@ -1,0 +1,11 @@
+---
+title: "LangChain Interrupt Agent Conference 2025"
+author: "Lawrence Wu"    
+date: "2025-05-30"
+categories: ["Conference", "LangChain"]
+---
+
+Some content related to the LangChain Conference:
+
+- <https://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/>
+- <https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/>
