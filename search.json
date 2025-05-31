@@ -1015,109 +1015,60 @@
     "text": "Towards Automating the Causal Machine Learning Pipeline Vasilis Syrgkanis (Stanford/EconML)\n\nA large variety of causal estimands that arise in complex static and longitudinal data analysis can be automatically de-biased when regularized machine learning algorithms are used to estimate nuisance models\nEstimation of the de-biasing term itself can be performed with generic machine learning\nExperimental results using neural nets and random forests for automated de-biasing provide examples superior performance to plug-in approaches and to prior automatically debasing approaches based solely on linear models"
   },
   {
-    "objectID": "conferences/2024-05-28-mllms-workshop3/index.html",
-    "href": "conferences/2024-05-28-mllms-workshop3/index.html",
-    "title": "Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting & Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)",
+    "objectID": "conferences/2025-05-30-langchain-interrupt-2025/index.html",
+    "href": "conferences/2025-05-30-langchain-interrupt-2025/index.html",
+    "title": "LangChain Interrupt Agent Conference 2025",
     "section": "",
-    "text": "Key Takeaways:\n\nEvaluation is critical: It drives the iterative process of improving your LLM application, enabling you to make informed decisions about prompt engineering, fine-tuning, and model selection.\nDon’t overcomplicate things: Start simple with unit tests and focus on practical metrics that align with your specific use case. Avoid building overly complex evaluation frameworks prematurely.\nHuman judgment is still essential: While LMs can assist with evaluation, human experts are ultimately responsible for defining what constitutes good performance and aligning the LLM to those preferences.\nLook at your data: Regularly examine the inputs and outputs of your LLM system, as well as production data, to identify failure modes, refine evaluation criteria, and ensure the system is behaving as intended.\nEvaluation is iterative: Both evaluation criteria and the methods for evaluating those criteria will evolve as you learn more about the task and gather more data. Be prepared to adapt and refine your evaluation process over time.\n\n\n\nInsights:\n\nTraditional ML evaluation principles still apply: Leverage existing evaluation techniques and adapt them to the nuances of LLMs. Don’t treat LLM evaluation as an entirely new field.\nUse case experts are invaluable: Involve them in the evaluation process from the beginning to ensure alignment between evaluation metrics and user needs.\nLM-assisted evaluation is not a silver bullet: While helpful for scaling evaluations and providing directional insights, it requires careful and methodical application. Multiple judges, models, and shots should be used, and human alignment should be checked regularly.\nProduction endpoints are key: Evaluating directly against production endpoints minimizes drift and ensures consistency between development and production environments.\n\n\n\nAction Items:\n\nImplement unit tests: Identify and codify basic sanity checks for your LLM application to catch common errors.\nStart logging traces: Use existing tools like LangSmith, Braintrust, or Instruct to capture the inputs and outputs of your LLM pipeline for detailed analysis and debugging.\nDevelop a simple evaluation framework: Focus on key metrics relevant to your use case, and build the framework iteratively as you gain more experience and data.\nInvolve use case experts: Work with them to define evaluation criteria, review outputs, and provide feedback on the evaluation process.\nExplore LLM-assisted evaluation: Experiment with tools and techniques that leverage LLMs to scale your evaluation efforts, but do so with a critical eye and ensure human alignment.\n\n\n\nOther Interesting Information:\n\nSeveral tools and resources for LLM evaluation were mentioned, including LangSmith, Braintrust, Weights & Biases, Instruct, Identic.Logfire, Weave, OpenTelemetry, and a book on recommendation systems by Brian Bishop.\nA research prototype interface called EvalGen was presented, which assists developers in creating and iterating on LLM evaluations in a more intuitive and user-friendly way.\nThe talk emphasized the importance of minimizing wait time in the evaluation process by involving humans in the loop for tasks like editing criteria, refining criteria, and interactively grading LLM outputs."
+    "text": "Some content related to the LangChain Conference:\n\nhttps://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/\nhttps://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "",
-    "text": "Note: This summary is AI generated by Claude 3.5 Sonnet."
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#main-points",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#main-points",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "Main Points",
-    "text": "Main Points\n\n00:00:52 Sex and marriage is a pure and very holy thing\n00:15:48 Sex is not the basis of marriage, and marriage is not just a sexual relationship\n00:23:55 Sex has as its primary goal the satisfaction of one’s spouse\n00:36:06 God created both husband and wife with an equal ability to satisfy one another\n00:44:09 Pleasure in sex is not sinful and forbidden, but assured and even encouraged within marriage\n00:50:14 Sexual relationships should be regular and continuous in marriage"
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#arguments",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#arguments",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "Arguments",
-    "text": "Arguments\n\n00:07:52 God created males and females fully and completely, and called this creation “very good”\n00:16:34 Unity in marriage goes beyond just the sexual relationship\n00:24:33 When you said “I do,” you gave yourself to your spouse for their fulfillment\n00:36:18 No one has sole power or authority in the sexual relationship; it should be equal and reciprocal\n00:45:49 Greed-oriented sex has no place in the Christian life\n00:50:56 Paul outlines four guidelines for when not to have sex in marriage"
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#bible-verses",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#bible-verses",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "Bible Verses",
-    "text": "Bible Verses\n\n00:13:18 Hebrews 13:4 - Marriage bed should be held in honor and kept undefiled\n00:21:58 1 Corinthians 7:3-4 - Spouses should fulfill marital duty to each other\n00:41:01 Proverbs 5:18-19 - Be intoxicated with your spouse’s love\n00:45:38 Ephesians 5:3 - Sexual immorality must not be named among believers\n00:50:22 1 Corinthians 7:5 - Do not deprive one another except by agreement for a limited time"
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#practical-applications",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#practical-applications",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "Practical Applications",
-    "text": "Practical Applications\n\n00:27:55 Focus on giving pleasure to your spouse rather than getting pleasure for yourself\n00:33:35 Take initiative to make sure your spouse is fulfilled sexually\n00:37:36 Leave energy for your spouse at the end of the day\n00:46:56 Avoid pornography and other forms of sexual gratification outside of marriage\n00:52:59 Do not expect your spouse to do things they find repugnant in the sexual relationship"
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#overview",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#overview",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "Overview",
-    "text": "Overview\nJohn Street’s marriage seminar focuses on presenting a biblical view of sexuality within marriage. The central message emphasizes that sex is a pure, holy, and God-designed aspect of marriage, intended for mutual satisfaction and enjoyment between spouses. Street argues against both extremes of viewing sex as dirty or taboo and seeing it as the highest form of human relationship.\nThroughout the seminar, Street uses biblical passages to support his main points, drawing primarily from 1 Corinthians 7, Proverbs 5, and other relevant verses. He emphasizes that the Bible presents sex as a good gift from God, but one that should be expressed exclusively within the confines of a heterosexual, monogamous marriage. The arguments and verses are used to reinforce the idea that sexual intimacy in marriage should be characterized by mutual giving, equal rights and responsibilities, and regular engagement.\nStreet’s approach to marriage and sexuality is deeply rooted in biblical principles, challenging cultural norms and encouraging couples to view their sexual relationship as a ministry to each other. He stresses the importance of putting one’s spouse’s needs and satisfaction above personal gratification, presenting this as a reflection of Christ-like love and service within marriage."
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#recurring-themes-and-unique-perspectives",
-    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#recurring-themes-and-unique-perspectives",
-    "title": "John Street - God’s Design for Marital Union",
-    "section": "Recurring Themes and Unique Perspectives",
-    "text": "Recurring Themes and Unique Perspectives\n\nEmphasis on the purity and holiness of marital sexuality\nRejection of both Victorian prudishness and modern sexual liberation\nFocus on mutual satisfaction and giving rather than self-gratification\nEqual rights and responsibilities for both husband and wife in the sexual relationship\nWarning against pornography and other forms of sexual immorality\nPresentation of sexual intimacy as a form of ministry to one’s spouse\n\nThe seminar presents a comprehensive and nuanced view of Christian sexuality, addressing common misconceptions and providing practical advice for married couples. Street’s teaching style is direct and sometimes humorous, using personal anecdotes and hypothetical scenarios to illustrate his points."
-  },
-  {
-    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html",
-    "href": "conferences/2024-08-14-john-street-4-communication/index.html",
-    "title": "John Street - God’s Design for Communication",
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html",
+    "title": "John Street - God’s Design for Marriage",
     "section": "",
     "text": "Note: This summary is AI generated by Claude 3.5 Sonnet."
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#main-points",
-    "href": "conferences/2024-08-14-john-street-4-communication/index.html#main-points",
-    "title": "John Street - God’s Design for Communication",
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#main-points",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#main-points",
+    "title": "John Street - God’s Design for Marriage",
     "section": "Main Points",
-    "text": "Main Points\n\n00:00:39 Good communication in Christian marriage does not happen automatically.\n00:01:17 Christian marriages are not immune from problems.\n00:01:45 The myth of compatibility in dating and marriage\n00:02:33 Every marriage is dysfunctional due to sin\n00:03:21 Sinful nature complicates communication in marriage\n00:03:51 Biblical reconciliation goes beyond conflict resolution\n00:04:37 The root cause of conflicts in relationships\n00:15:49 Four rules of communication for a godly marriage"
+    "text": "Main Points\n\n4:44 God designed marriage, not humans\n31:56 Marriage is given by God as a covenant relationship\n34:51 Marriage is not to compete with human options or substitutes\n39:38 The primary purpose of marriage is companionship, not procreation\n53:01 The parent-child relationship is intended to be temporary, while the husband-wife relationship is permanent"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#arguments",
-    "href": "conferences/2024-08-14-john-street-4-communication/index.html#arguments",
-    "title": "John Street - God’s Design for Communication",
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#arguments",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#arguments",
+    "title": "John Street - God’s Design for Marriage",
     "section": "Arguments",
-    "text": "Arguments\n\n00:01:51 Dating websites promote a myth of compatibility that doesn’t account for the reality of differences and sin in marriage.\n00:02:40 Every marriage is dysfunctional because it involves two sinners making vows to each other.\n00:04:54 Personality differences are not the root cause of conflicts; rather, it’s the passions and desires within each person that lead to conflicts.\n00:09:01 Legitimate desires can become idolatrous and lead to sinful responses in marriage.\n00:15:56 Permanent change in Christian life requires both putting off sinful practices and putting on godly practices."
+    "text": "Arguments\n\n15:02 Contemporary societal views on marriage (e.g., trial marriages, contract marriages) contradict God’s design\n26:30 Adam’s naming of the animals demonstrates his loneliness and need for a suitable companion\n46:58 The foundation of marriage should be commitment, not romantic feelings\n56:58 Becoming “one flesh” involves unity in all aspects of life, not just physical intimacy"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#bible-verses",
-    "href": "conferences/2024-08-14-john-street-4-communication/index.html#bible-verses",
-    "title": "John Street - God’s Design for Communication",
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#bible-verses",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#bible-verses",
+    "title": "John Street - God’s Design for Marriage",
     "section": "Bible Verses",
-    "text": "Bible Verses\n\n00:04:25 James 4:1 - Used to explain the source of conflicts in relationships\n00:07:03 Matthew 5 - Referenced to explain Jesus’ teaching on hatred and murder\n00:15:22 Ephesians 4:22-24 - Explains the process of putting off the old self and putting on the new self\n00:19:59 Ephesians 4:25 - First rule of communication: Be honest\n00:28:15 Colossians 3:9 - Instruction not to lie to one another\n00:28:52 Ephesians 4:15 - Speaking the truth in love\n00:30:52 Ephesians 4:26-27 - Second rule of communication: Keep current\n00:36:51 Ephesians 4:29 - Third rule of communication: Attack the problem, not the person\n00:43:12 Ephesians 4:31-32 - Fourth rule of communication: Act, don’t react"
+    "text": "Bible Verses\n\n26:09 Genesis 1:26-27 - Discusses the creation of man and woman in God’s image\n36:36 Genesis 2:18 - “It is not good for man to be alone”\n50:27 Genesis 2:24 - Describes leaving, cleaving, and becoming one flesh in marriage\n50:43 Proverbs 2:17 and Malachi 2:14 - Referenced to describe marriage as a covenant"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#practical-applications",
-    "href": "conferences/2024-08-14-john-street-4-communication/index.html#practical-applications",
-    "title": "John Street - God’s Design for Communication",
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#practical-applications",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#practical-applications",
+    "title": "John Street - God’s Design for Marriage",
     "section": "Practical Applications",
-    "text": "Practical Applications\n\n00:17:55 Practice putting off sinful communication habits and putting on godly ones.\n00:20:36 Speak up and be truthful in communication; avoid clamming up or giving the silent treatment.\n00:22:51 Be aware of subtle forms of dishonesty in communication, such as incongruities and disguised communication.\n00:28:59 Speak the truth with the other person’s best interest in mind.\n00:31:59 Deal with anger as soon as possible; don’t let it linger.\n00:37:28 Use edifying words that focus on the problem, not attacking the person’s character.\n00:41:29 Use phrases that express a desire to understand and work through problems together.\n00:46:17 Practice being kind, tenderhearted, and forgiving in conflicts."
+    "text": "Practical Applications\n\n57:56 Prioritize the spouse over children in daily life (e.g., serving food, opening car doors)\n59:52 Base marriage on commitment rather than feelings or what the other person brings to the relationship\n1:07:53 Work towards unity in all aspects of life (e.g., parenting philosophy, finances, spiritual views)\n1:05:34 Understand that losing some individuality in marriage is positive, leading to true companionship"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#overview",
-    "href": "conferences/2024-08-14-john-street-4-communication/index.html#overview",
-    "title": "John Street - God’s Design for Communication",
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#overview",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#overview",
+    "title": "John Street - God’s Design for Marriage",
     "section": "Overview",
-    "text": "Overview\nJohn Street’s marriage seminar focuses on the importance of godly communication in Christian marriages. The central message emphasizes that good communication doesn’t happen automatically, even in Christian relationships, and that every marriage faces challenges due to the sinful nature of humans. Street argues against the popular notion of compatibility, asserting that conflicts arise not from personality differences but from internal desires and passions.\nThe seminar is structured around four main rules of communication derived from Ephesians 4: be honest, keep current, attack the problem (not the person), and act (don’t react). Street uses various Bible verses to support these points, particularly drawing from Ephesians and James. He emphasizes the need for Christians to not only stop negative communication patterns but also actively practice positive ones.\nStreet’s approach to marriage is deeply rooted in biblical principles, focusing on personal responsibility, forgiveness, and the pursuit of godliness in marital relationships. He stresses the importance of understanding the root causes of conflicts and addressing them promptly and lovingly. The seminar provides practical applications for implementing these communication rules in daily life, encouraging couples to be intentional about changing their habits to align with biblical teachings.\nThroughout the seminar, there is a recurring theme of the transformative power of applying biblical principles to marriage. Street consistently emphasizes the need for deliberate effort in changing communication patterns and the importance of viewing one’s spouse through the lens of grace and forgiveness. His teaching style combines theological explanation with practical examples, making the content accessible and applicable to his audience."
+    "text": "Overview\nJohn Street’s marriage seminar presents a biblical perspective on the institution of marriage, emphasizing its divine origin and purpose. The central message is that God designed marriage as a covenant relationship primarily for companionship, not procreation or personal fulfillment. Street argues against contemporary societal views that undermine the permanence and sanctity of marriage, using Scripture to support his points.\nThroughout the seminar, Street uses biblical passages, particularly from Genesis, to illustrate God’s intentions for marriage. He contrasts these with modern concepts like trial marriages and robotic companions, arguing that these deviate from God’s design. The seminar emphasizes the importance of commitment over feelings, the permanence of the marital relationship compared to the temporary nature of the parent-child relationship, and the concept of “becoming one flesh” in all aspects of life.\nStreet’s approach to marriage is deeply rooted in biblical teaching, presenting a conservative, traditional view of marital roles and purposes. He challenges modern cultural norms and encourages couples to base their marriages on God’s design rather than societal trends or personal desires."
   },
   {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "TIL - “Today I learned” - documenting things I’ve learned today\nConference Recap and Summaries - Conference Recaps and Summaries\nTranscripts - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html\ndata-science-toolkit - A toolkit for new hires in data science. Designed with Python users in mind\nawesome-llamas - Llama resources\nAI Resources - A curated collection of resources to learn AI"
+    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#recurring-themes",
+    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#recurring-themes",
+    "title": "John Street - God’s Design for Marriage",
+    "section": "Recurring Themes",
+    "text": "Recurring Themes\n\nThe divine origin of marriage\nThe primacy of the marital relationship over all other human relationships\nThe importance of commitment and covenant in marriage\nThe contrast between biblical marriage and contemporary societal views\nThe comprehensive nature of marital unity (“one flesh”)"
   },
   {
     "objectID": "conferences/2024-08-14-john-street-3-wives/index.html",
@@ -1169,53 +1120,109 @@
     "text": "Recurring Themes\n\nThe importance of following God’s design for marriage\nMisconceptions about biblical submission\nThe influence of cultural feminism on modern marriages\nThe role of wives in supporting and respecting their husbands\nThe transformative power of living according to biblical principles in marriage"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html",
-    "title": "John Street - God’s Design for Marriage",
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "TIL - “Today I learned” - documenting things I’ve learned today\nConference Recap and Summaries - Conference Recaps and Summaries\nTranscripts - Transcripts for various Youtube Channels inspired by https://karpathy.ai/lexicap/index.html\ndata-science-toolkit - A toolkit for new hires in data science. Designed with Python users in mind\nawesome-llamas - Llama resources\nAI Resources - A curated collection of resources to learn AI"
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html",
+    "href": "conferences/2024-08-14-john-street-4-communication/index.html",
+    "title": "John Street - God’s Design for Communication",
     "section": "",
     "text": "Note: This summary is AI generated by Claude 3.5 Sonnet."
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#main-points",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#main-points",
-    "title": "John Street - God’s Design for Marriage",
+    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#main-points",
+    "href": "conferences/2024-08-14-john-street-4-communication/index.html#main-points",
+    "title": "John Street - God’s Design for Communication",
     "section": "Main Points",
-    "text": "Main Points\n\n4:44 God designed marriage, not humans\n31:56 Marriage is given by God as a covenant relationship\n34:51 Marriage is not to compete with human options or substitutes\n39:38 The primary purpose of marriage is companionship, not procreation\n53:01 The parent-child relationship is intended to be temporary, while the husband-wife relationship is permanent"
+    "text": "Main Points\n\n00:00:39 Good communication in Christian marriage does not happen automatically.\n00:01:17 Christian marriages are not immune from problems.\n00:01:45 The myth of compatibility in dating and marriage\n00:02:33 Every marriage is dysfunctional due to sin\n00:03:21 Sinful nature complicates communication in marriage\n00:03:51 Biblical reconciliation goes beyond conflict resolution\n00:04:37 The root cause of conflicts in relationships\n00:15:49 Four rules of communication for a godly marriage"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#arguments",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#arguments",
-    "title": "John Street - God’s Design for Marriage",
+    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#arguments",
+    "href": "conferences/2024-08-14-john-street-4-communication/index.html#arguments",
+    "title": "John Street - God’s Design for Communication",
     "section": "Arguments",
-    "text": "Arguments\n\n15:02 Contemporary societal views on marriage (e.g., trial marriages, contract marriages) contradict God’s design\n26:30 Adam’s naming of the animals demonstrates his loneliness and need for a suitable companion\n46:58 The foundation of marriage should be commitment, not romantic feelings\n56:58 Becoming “one flesh” involves unity in all aspects of life, not just physical intimacy"
+    "text": "Arguments\n\n00:01:51 Dating websites promote a myth of compatibility that doesn’t account for the reality of differences and sin in marriage.\n00:02:40 Every marriage is dysfunctional because it involves two sinners making vows to each other.\n00:04:54 Personality differences are not the root cause of conflicts; rather, it’s the passions and desires within each person that lead to conflicts.\n00:09:01 Legitimate desires can become idolatrous and lead to sinful responses in marriage.\n00:15:56 Permanent change in Christian life requires both putting off sinful practices and putting on godly practices."
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#bible-verses",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#bible-verses",
-    "title": "John Street - God’s Design for Marriage",
+    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#bible-verses",
+    "href": "conferences/2024-08-14-john-street-4-communication/index.html#bible-verses",
+    "title": "John Street - God’s Design for Communication",
     "section": "Bible Verses",
-    "text": "Bible Verses\n\n26:09 Genesis 1:26-27 - Discusses the creation of man and woman in God’s image\n36:36 Genesis 2:18 - “It is not good for man to be alone”\n50:27 Genesis 2:24 - Describes leaving, cleaving, and becoming one flesh in marriage\n50:43 Proverbs 2:17 and Malachi 2:14 - Referenced to describe marriage as a covenant"
+    "text": "Bible Verses\n\n00:04:25 James 4:1 - Used to explain the source of conflicts in relationships\n00:07:03 Matthew 5 - Referenced to explain Jesus’ teaching on hatred and murder\n00:15:22 Ephesians 4:22-24 - Explains the process of putting off the old self and putting on the new self\n00:19:59 Ephesians 4:25 - First rule of communication: Be honest\n00:28:15 Colossians 3:9 - Instruction not to lie to one another\n00:28:52 Ephesians 4:15 - Speaking the truth in love\n00:30:52 Ephesians 4:26-27 - Second rule of communication: Keep current\n00:36:51 Ephesians 4:29 - Third rule of communication: Attack the problem, not the person\n00:43:12 Ephesians 4:31-32 - Fourth rule of communication: Act, don’t react"
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#practical-applications",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#practical-applications",
-    "title": "John Street - God’s Design for Marriage",
+    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#practical-applications",
+    "href": "conferences/2024-08-14-john-street-4-communication/index.html#practical-applications",
+    "title": "John Street - God’s Design for Communication",
     "section": "Practical Applications",
-    "text": "Practical Applications\n\n57:56 Prioritize the spouse over children in daily life (e.g., serving food, opening car doors)\n59:52 Base marriage on commitment rather than feelings or what the other person brings to the relationship\n1:07:53 Work towards unity in all aspects of life (e.g., parenting philosophy, finances, spiritual views)\n1:05:34 Understand that losing some individuality in marriage is positive, leading to true companionship"
+    "text": "Practical Applications\n\n00:17:55 Practice putting off sinful communication habits and putting on godly ones.\n00:20:36 Speak up and be truthful in communication; avoid clamming up or giving the silent treatment.\n00:22:51 Be aware of subtle forms of dishonesty in communication, such as incongruities and disguised communication.\n00:28:59 Speak the truth with the other person’s best interest in mind.\n00:31:59 Deal with anger as soon as possible; don’t let it linger.\n00:37:28 Use edifying words that focus on the problem, not attacking the person’s character.\n00:41:29 Use phrases that express a desire to understand and work through problems together.\n00:46:17 Practice being kind, tenderhearted, and forgiving in conflicts."
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#overview",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#overview",
-    "title": "John Street - God’s Design for Marriage",
+    "objectID": "conferences/2024-08-14-john-street-4-communication/index.html#overview",
+    "href": "conferences/2024-08-14-john-street-4-communication/index.html#overview",
+    "title": "John Street - God’s Design for Communication",
     "section": "Overview",
-    "text": "Overview\nJohn Street’s marriage seminar presents a biblical perspective on the institution of marriage, emphasizing its divine origin and purpose. The central message is that God designed marriage as a covenant relationship primarily for companionship, not procreation or personal fulfillment. Street argues against contemporary societal views that undermine the permanence and sanctity of marriage, using Scripture to support his points.\nThroughout the seminar, Street uses biblical passages, particularly from Genesis, to illustrate God’s intentions for marriage. He contrasts these with modern concepts like trial marriages and robotic companions, arguing that these deviate from God’s design. The seminar emphasizes the importance of commitment over feelings, the permanence of the marital relationship compared to the temporary nature of the parent-child relationship, and the concept of “becoming one flesh” in all aspects of life.\nStreet’s approach to marriage is deeply rooted in biblical teaching, presenting a conservative, traditional view of marital roles and purposes. He challenges modern cultural norms and encourages couples to base their marriages on God’s design rather than societal trends or personal desires."
+    "text": "Overview\nJohn Street’s marriage seminar focuses on the importance of godly communication in Christian marriages. The central message emphasizes that good communication doesn’t happen automatically, even in Christian relationships, and that every marriage faces challenges due to the sinful nature of humans. Street argues against the popular notion of compatibility, asserting that conflicts arise not from personality differences but from internal desires and passions.\nThe seminar is structured around four main rules of communication derived from Ephesians 4: be honest, keep current, attack the problem (not the person), and act (don’t react). Street uses various Bible verses to support these points, particularly drawing from Ephesians and James. He emphasizes the need for Christians to not only stop negative communication patterns but also actively practice positive ones.\nStreet’s approach to marriage is deeply rooted in biblical principles, focusing on personal responsibility, forgiveness, and the pursuit of godliness in marital relationships. He stresses the importance of understanding the root causes of conflicts and addressing them promptly and lovingly. The seminar provides practical applications for implementing these communication rules in daily life, encouraging couples to be intentional about changing their habits to align with biblical teachings.\nThroughout the seminar, there is a recurring theme of the transformative power of applying biblical principles to marriage. Street consistently emphasizes the need for deliberate effort in changing communication patterns and the importance of viewing one’s spouse through the lens of grace and forgiveness. His teaching style combines theological explanation with practical examples, making the content accessible and applicable to his audience."
   },
   {
-    "objectID": "conferences/2024-08-14-john-street-1-marriage/index.html#recurring-themes",
-    "href": "conferences/2024-08-14-john-street-1-marriage/index.html#recurring-themes",
-    "title": "John Street - God’s Design for Marriage",
-    "section": "Recurring Themes",
-    "text": "Recurring Themes\n\nThe divine origin of marriage\nThe primacy of the marital relationship over all other human relationships\nThe importance of commitment and covenant in marriage\nThe contrast between biblical marriage and contemporary societal views\nThe comprehensive nature of marital unity (“one flesh”)"
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "",
+    "text": "Note: This summary is AI generated by Claude 3.5 Sonnet."
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#main-points",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#main-points",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "Main Points",
+    "text": "Main Points\n\n00:00:52 Sex and marriage is a pure and very holy thing\n00:15:48 Sex is not the basis of marriage, and marriage is not just a sexual relationship\n00:23:55 Sex has as its primary goal the satisfaction of one’s spouse\n00:36:06 God created both husband and wife with an equal ability to satisfy one another\n00:44:09 Pleasure in sex is not sinful and forbidden, but assured and even encouraged within marriage\n00:50:14 Sexual relationships should be regular and continuous in marriage"
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#arguments",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#arguments",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "Arguments",
+    "text": "Arguments\n\n00:07:52 God created males and females fully and completely, and called this creation “very good”\n00:16:34 Unity in marriage goes beyond just the sexual relationship\n00:24:33 When you said “I do,” you gave yourself to your spouse for their fulfillment\n00:36:18 No one has sole power or authority in the sexual relationship; it should be equal and reciprocal\n00:45:49 Greed-oriented sex has no place in the Christian life\n00:50:56 Paul outlines four guidelines for when not to have sex in marriage"
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#bible-verses",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#bible-verses",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "Bible Verses",
+    "text": "Bible Verses\n\n00:13:18 Hebrews 13:4 - Marriage bed should be held in honor and kept undefiled\n00:21:58 1 Corinthians 7:3-4 - Spouses should fulfill marital duty to each other\n00:41:01 Proverbs 5:18-19 - Be intoxicated with your spouse’s love\n00:45:38 Ephesians 5:3 - Sexual immorality must not be named among believers\n00:50:22 1 Corinthians 7:5 - Do not deprive one another except by agreement for a limited time"
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#practical-applications",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#practical-applications",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "Practical Applications",
+    "text": "Practical Applications\n\n00:27:55 Focus on giving pleasure to your spouse rather than getting pleasure for yourself\n00:33:35 Take initiative to make sure your spouse is fulfilled sexually\n00:37:36 Leave energy for your spouse at the end of the day\n00:46:56 Avoid pornography and other forms of sexual gratification outside of marriage\n00:52:59 Do not expect your spouse to do things they find repugnant in the sexual relationship"
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#overview",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#overview",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "Overview",
+    "text": "Overview\nJohn Street’s marriage seminar focuses on presenting a biblical view of sexuality within marriage. The central message emphasizes that sex is a pure, holy, and God-designed aspect of marriage, intended for mutual satisfaction and enjoyment between spouses. Street argues against both extremes of viewing sex as dirty or taboo and seeing it as the highest form of human relationship.\nThroughout the seminar, Street uses biblical passages to support his main points, drawing primarily from 1 Corinthians 7, Proverbs 5, and other relevant verses. He emphasizes that the Bible presents sex as a good gift from God, but one that should be expressed exclusively within the confines of a heterosexual, monogamous marriage. The arguments and verses are used to reinforce the idea that sexual intimacy in marriage should be characterized by mutual giving, equal rights and responsibilities, and regular engagement.\nStreet’s approach to marriage and sexuality is deeply rooted in biblical principles, challenging cultural norms and encouraging couples to view their sexual relationship as a ministry to each other. He stresses the importance of putting one’s spouse’s needs and satisfaction above personal gratification, presenting this as a reflection of Christ-like love and service within marriage."
+  },
+  {
+    "objectID": "conferences/2024-08-14-john-street-5-marital-union/index.html#recurring-themes-and-unique-perspectives",
+    "href": "conferences/2024-08-14-john-street-5-marital-union/index.html#recurring-themes-and-unique-perspectives",
+    "title": "John Street - God’s Design for Marital Union",
+    "section": "Recurring Themes and Unique Perspectives",
+    "text": "Recurring Themes and Unique Perspectives\n\nEmphasis on the purity and holiness of marital sexuality\nRejection of both Victorian prudishness and modern sexual liberation\nFocus on mutual satisfaction and giving rather than self-gratification\nEqual rights and responsibilities for both husband and wife in the sexual relationship\nWarning against pornography and other forms of sexual immorality\nPresentation of sexual intimacy as a form of ministry to one’s spouse\n\nThe seminar presents a comprehensive and nuanced view of Christian sexuality, addressing common misconceptions and providing practical advice for married couples. Street’s teaching style is direct and sometimes humorous, using personal anecdotes and hypothetical scenarios to illustrate his points."
+  },
+  {
+    "objectID": "conferences/2024-05-28-mllms-workshop3/index.html",
+    "href": "conferences/2024-05-28-mllms-workshop3/index.html",
+    "title": "Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting & Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)",
+    "section": "",
+    "text": "Key Takeaways:\n\nEvaluation is critical: It drives the iterative process of improving your LLM application, enabling you to make informed decisions about prompt engineering, fine-tuning, and model selection.\nDon’t overcomplicate things: Start simple with unit tests and focus on practical metrics that align with your specific use case. Avoid building overly complex evaluation frameworks prematurely.\nHuman judgment is still essential: While LMs can assist with evaluation, human experts are ultimately responsible for defining what constitutes good performance and aligning the LLM to those preferences.\nLook at your data: Regularly examine the inputs and outputs of your LLM system, as well as production data, to identify failure modes, refine evaluation criteria, and ensure the system is behaving as intended.\nEvaluation is iterative: Both evaluation criteria and the methods for evaluating those criteria will evolve as you learn more about the task and gather more data. Be prepared to adapt and refine your evaluation process over time.\n\n\n\nInsights:\n\nTraditional ML evaluation principles still apply: Leverage existing evaluation techniques and adapt them to the nuances of LLMs. Don’t treat LLM evaluation as an entirely new field.\nUse case experts are invaluable: Involve them in the evaluation process from the beginning to ensure alignment between evaluation metrics and user needs.\nLM-assisted evaluation is not a silver bullet: While helpful for scaling evaluations and providing directional insights, it requires careful and methodical application. Multiple judges, models, and shots should be used, and human alignment should be checked regularly.\nProduction endpoints are key: Evaluating directly against production endpoints minimizes drift and ensures consistency between development and production environments.\n\n\n\nAction Items:\n\nImplement unit tests: Identify and codify basic sanity checks for your LLM application to catch common errors.\nStart logging traces: Use existing tools like LangSmith, Braintrust, or Instruct to capture the inputs and outputs of your LLM pipeline for detailed analysis and debugging.\nDevelop a simple evaluation framework: Focus on key metrics relevant to your use case, and build the framework iteratively as you gain more experience and data.\nInvolve use case experts: Work with them to define evaluation criteria, review outputs, and provide feedback on the evaluation process.\nExplore LLM-assisted evaluation: Experiment with tools and techniques that leverage LLMs to scale your evaluation efforts, but do so with a critical eye and ensure human alignment.\n\n\n\nOther Interesting Information:\n\nSeveral tools and resources for LLM evaluation were mentioned, including LangSmith, Braintrust, Weights & Biases, Instruct, Identic.Logfire, Weave, OpenTelemetry, and a book on recommendation systems by Brian Bishop.\nA research prototype interface called EvalGen was presented, which assists developers in creating and iterating on LLM evaluations in a more intuitive and user-friendly way.\nThe talk emphasized the importance of minimizing wait time in the evaluation process by involving humans in the loop for tasks like editing criteria, refining criteria, and interactively grading LLM outputs."
   },
   {
     "objectID": "conferences/2024-08-14-john-street-2-husbands/index.html",
@@ -1383,7 +1390,7 @@
     "href": "conferences.html",
     "title": "Lawrence Wu",
     "section": "",
-    "text": "John Street - God’s Design for Marriage\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n3 min\n\n\n\n\n\n\nJohn Street - God’s Design for Husbands\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\nHusbands\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n5 min\n\n\n\n\n\n\nJohn Street - God’s Design for Wives\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\nWives\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n3 min\n\n\n\n\n\n\nJohn Street - God’s Design for Communication\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\nCommunication\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n4 min\n\n\n\n\n\n\nJohn Street - God’s Design for Marital Union\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n4 min\n\n\n\n\n\n\nJohn Street - God’s Design for Marriage Q&A\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n6 min\n\n\n\n\n\n\nMastering LLMs - Fine-Tuning Workshop 3 - Instrumenting & Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)\n\n\n\nConference\n\nAI\n\nLLMs\n\nMastering LLMs\n\nEvaluation\n\n\n\n\n\n\n\n\n\nMay 28, 2024\n\n3 min\n\n\n\n\n\n\nAI Engineer Summit 2023\n\n\n\nConference\n\nAI\n\nLLMs\n\nAI Engineering\n\n\n\n\n\n\n\n\n\nOct 10, 2023\n\n41 min\n\n\n\n\n\n\nKDD 2023 - Workshops: LLM and Causal Inference\n\n\n\nConference\n\nKDD\n\nLLM\n\nCausal Inference\n\n\n\n\n\n\n\n\n\nAug 7, 2023\n\n26 min\n\n\n\n\nNo matching items"
+    "text": "LangChain Interrupt Agent Conference 2025\n\n\n\nConference\n\nLangChain\n\n\n\n\n\n\n\n\n\nMay 30, 2025\n\n1 min\n\n\n\n\n\n\nJohn Street - God’s Design for Marriage\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n3 min\n\n\n\n\n\n\nJohn Street - God’s Design for Husbands\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\nHusbands\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n5 min\n\n\n\n\n\n\nJohn Street - God’s Design for Wives\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\nWives\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n3 min\n\n\n\n\n\n\nJohn Street - God’s Design for Communication\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\nCommunication\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n4 min\n\n\n\n\n\n\nJohn Street - God’s Design for Marital Union\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n4 min\n\n\n\n\n\n\nJohn Street - God’s Design for Marriage Q&A\n\n\n\nConference\n\nMarriage\n\nGod\n\nJohn Street\n\n\n\n\n\n\n\n\n\nAug 14, 2024\n\n6 min\n\n\n\n\n\n\nMastering LLMs - Fine-Tuning Workshop 3 - Instrumenting & Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)\n\n\n\nConference\n\nAI\n\nLLMs\n\nMastering LLMs\n\nEvaluation\n\n\n\n\n\n\n\n\n\nMay 28, 2024\n\n3 min\n\n\n\n\n\n\nAI Engineer Summit 2023\n\n\n\nConference\n\nAI\n\nLLMs\n\nAI Engineering\n\n\n\n\n\n\n\n\n\nOct 10, 2023\n\n41 min\n\n\n\n\n\n\nKDD 2023 - Workshops: LLM and Causal Inference\n\n\n\nConference\n\nKDD\n\nLLM\n\nCausal Inference\n\n\n\n\n\n\n\n\n\nAug 7, 2023\n\n26 min\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/2023-07-23-llama-2-paper-summary/index.html",

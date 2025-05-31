@@ -10,7 +10,30 @@
 <atom:link href="https://lawwu.github.io/blog.html/conferences.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.7.31</generator>
-<lastBuildDate>Wed, 14 Aug 2024 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>LangChain Interrupt Agent Conference 2025</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/conferences/2025-05-30-langchain-interrupt-2025/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Some content related to the LangChain Conference:</p>
+<ul>
+<li><a href="https://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/" class="uri">https://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/" class="uri">https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/</a></li>
+</ul>
+
+
+
+ ]]></description>
+  <category>Conference</category>
+  <category>LangChain</category>
+  <guid>https://lawwu.github.io/blog.html/conferences/2025-05-30-langchain-interrupt-2025/</guid>
+  <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>John Street - God’s Design for Marriage</title>
   <dc:creator>Lawrence Wu</dc:creator>
