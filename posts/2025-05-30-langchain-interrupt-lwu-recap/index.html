@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lawrence Wu">
-<meta name="dcterms.date" content="2025-05-27">
+<meta name="dcterms.date" content="2025-05-30">
 
-<title>Levels of AI Use – Lawrence Wu</title>
+<title>LangChain Interrupt Conference 2025 Recap – Lawrence Wu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -116,10 +116,10 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Levels of AI Use – Lawrence Wu">
+<meta property="og:title" content="LangChain Interrupt Conference 2025 Recap – Lawrence Wu">
 <meta property="og:description" content="This is Lawrence Wu’s personal website">
 <meta property="og:site_name" content="Lawrence Wu">
-<meta name="twitter:title" content="Levels of AI Use – Lawrence Wu">
+<meta name="twitter:title" content="LangChain Interrupt Conference 2025 Recap – Lawrence Wu">
 <meta name="twitter:description" content="This is Lawrence Wu’s personal website">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
@@ -189,28 +189,19 @@ cookieconsent.run({
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#level-0-no-use" id="toc-level-0-no-use" class="nav-link active" data-scroll-target="#level-0-no-use"><strong>Level 0 – No Use</strong></a></li>
-  <li><a href="#level-1-occasional-use" id="toc-level-1-occasional-use" class="nav-link" data-scroll-target="#level-1-occasional-use"><strong>Level 1 – Occasional Use</strong></a></li>
-  <li><a href="#level-2-regular-use" id="toc-level-2-regular-use" class="nav-link" data-scroll-target="#level-2-regular-use"><strong>Level 2 – Regular Use</strong></a></li>
-  <li><a href="#level-3-workflow-integration" id="toc-level-3-workflow-integration" class="nav-link" data-scroll-target="#level-3-workflow-integration"><strong>Level 3 – Workflow Integration</strong></a></li>
-  <li><a href="#level-4-ai-native-thinking" id="toc-level-4-ai-native-thinking" class="nav-link" data-scroll-target="#level-4-ai-native-thinking"><strong>Level 4 – AI-Native Thinking</strong></a></li>
-  <li><a href="#level-5-ai-first-innovation" id="toc-level-5-ai-first-innovation" class="nav-link" data-scroll-target="#level-5-ai-first-innovation"><strong>Level 5 – AI-First Innovation</strong></a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Levels of AI Use</h1>
+<h1 class="title">LangChain Interrupt Conference 2025 Recap</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">AI</div>
+    <div class="quarto-category">LangChain</div>
+    <div class="quarto-category">Conference</div>
+    <div class="quarto-category">Recap</div>
   </div>
   </div>
 
@@ -228,7 +219,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">May 27, 2025</p>
+      <p class="date">May 30, 2025</p>
     </div>
   </div>
   
@@ -240,91 +231,16 @@ cookieconsent.run({
 </header>
 
 
-<p>As I’ve talked to different people at work and amongst friends, there is a growing gap between those that use AI (mostly ChatGPT) and those that do not. It got me thinking there are levels to this for both developers (or anyone who writes code as part of their job) and non-developers (those that do not write code).</p>
-<p>Whether you use AI frequently or infrequently, there are some important things to consider.</p>
-<ol type="1">
-<li>AI used well has the potential to accelerate and augment people’s capabilities. I’ve experienced this the last few years. Co-workers who have learned to prompt language models well have generally become more capable and productive employees. And prompting language models is just one skill needed now in this age of AI.</li>
-<li>AI usage can lead to increase mental strain though. As your productivity increases (documents written, code written, applications deployed), there are more things to manage. AI is not quite at the point where it can be a true orchestrator of work in the software/tools that people use. Humans are still required here and it can become cognitively taxing switching between contexts.</li>
-<li>If you aren’t using AI now, it is a great time to start.
+<p>I tried my best to condense the ~16 hours of content from the LangChain Interrupt Conference to less than an hour.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/YBlFn8R5T9o" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 <ul>
-<li>A simple thing you can do is try using ChatGPT for half of your Google searches and see what the results are. (Though with Google testing <a href="https://blog.google/products/search/ai-mode-search/">AI Mode</a>, which is similar to ChatGPT’s chat interface, this may eventually be the default for <a href="https://www.google.com/">www.google.com</a>)</li>
-<li>Learn to code - Some people have started saying humans do not need to write code anymore because AI can write better code. But I think it is still important to learn this skill. Writing code will help you understand what AI is doing. For example, some of the models in ChatGPT are reasoning models that also have access to a native code generation and execution tool. So if you ask a query where the model thinks it makes sense to write code to answer your question, it will do that. I recently asked a question about <a href="https://chatgpt.com/share/683697b2-5da4-8011-8d43-445172d7876e">how fast I would have run a half-marathon in a pair of supershoes</a>. The model thought for 1 minute 11 seconds. If you expand the reasoning trace, you’ll see it actually wrote code to do some math.</li>
-</ul></li>
-<li>Using AI can make you mentally lazy. As humans rely more on technology, this leads to <a href="https://www.ie.edu/center-for-health-and-well-being/blog/ais-cognitive-implications-the-decline-of-our-thinking-skills/">cognitive offloading</a> where “where individuals shift memory and problem-solving tasks to technology.” It happened when people started using calculators. It happened when people first starting using GPS. People’s spatial awareness decreased. AI is a much much more general tool than a calculator or a GPS. AI can now write code better than most (?) developers, it has super-human knowledge of the world, it can generate audio, images and video, the capabilities and possibilities are growing each day. As a daily user of AI tools, I sometimes have to remind myself to not off-loading everything to AI otherwise I’m not exercising certain critical thinking or creative areas of my brain.</li>
-<li>AI’s voice mode has gotten quite good. You can use your voice to chat with AI now and it will respond in real-time.</li>
-</ol>
-<p>Here are the levels:</p>
-<hr>
-<section id="level-0-no-use" class="level2">
-<h2 class="anchored" data-anchor-id="level-0-no-use"><strong>Level 0 – No Use</strong></h2>
-<blockquote class="blockquote">
-<p>“I don’t use AI at all.”</p>
-</blockquote>
-<ul>
-<li><strong>Developers</strong>: Write and ship code without AI assistance. May be unaware of AI tools or skeptical about their value. Write most code in an IDE or text editor, relying on traditional resources (documentation, Google, Stack Overflow) for help.</li>
-<li><strong>Non-developers</strong>: Haven’t tried ChatGPT yet. Or maybe have used it once. Do not use other AI tools (e.g., ChatGPT, Copilot, Notion AI). AI feels distant, abstract, or risky.</li>
+<li><a href="https://docs.google.com/presentation/d/1RMGq3dCbmQ-JZPeHYLD9XKTRXk9IKHTFUnHbVXAjqHU/edit">Slides</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLnbEdh6BRkSjXMPmvxkmOz0VM3p4jtQ7d">Conference Talks</a></li>
+<li><a href="https://lawwu.github.io/transcripts/index_langchain_interrupt_2025_official.html">Transcripts</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/">AI Summaries of each talk</a>]</li>
 </ul>
-<hr>
-</section>
-<section id="level-1-occasional-use" class="level2">
-<h2 class="anchored" data-anchor-id="level-1-occasional-use"><strong>Level 1 – Occasional Use</strong></h2>
-<blockquote class="blockquote">
-<p>“I use AI once in a while when I’m stuck or curious.”</p>
-</blockquote>
-<ul>
-<li><strong>Developers</strong>: Use AI code completion like GitHub Copilot or ChatGPT to get unstuck occasionally. Paste errors or ask for code snippets.</li>
-<li><strong>Non-developers</strong>: Use AI for one-off tasks like drafting emails, summarizing notes, or brainstorming ideas.</li>
-</ul>
-<hr>
-</section>
-<section id="level-2-regular-use" class="level2">
-<h2 class="anchored" data-anchor-id="level-2-regular-use"><strong>Level 2 – Regular Use</strong></h2>
-<blockquote class="blockquote">
-<p>“AI is part of my daily toolkit.”</p>
-</blockquote>
-<ul>
-<li><strong>Developers</strong>: AI helps with writing boilerplate, generating tests, or exploring APIs. Copilot is turned on. They still edit heavily.</li>
-<li><strong>Non-developers</strong>: AI helps draft documents, rewrite content, or explore new ideas. May use AI across 2–3 tools. ChatGPT has replaced most of my Google searches.</li>
-</ul>
-<p>Example: My wife falls into this camp. ChatGPT has largely replaced her Google searches. She uses ChatGPT daily for idea generation for homeschooling, cooking, defining terms (esp.&nbsp;for kids).</p>
-<hr>
-</section>
-<section id="level-3-workflow-integration" class="level2">
-<h2 class="anchored" data-anchor-id="level-3-workflow-integration"><strong>Level 3 – Workflow Integration</strong></h2>
-<blockquote class="blockquote">
-<p>“AI changes <em>how</em> I work.”</p>
-</blockquote>
-<ul>
-<li><strong>Developers</strong>: AI tools are deeply integrated into IDEs and workflows. Prompts are crafted with intent. Created RAG systems. Using AI-native IDEs like Cursor or Windsurf.</li>
-<li><strong>Non-developers</strong>: Automate repeated tasks (e.g., meeting summaries → action items), combine tools (e.g., ChatGPT + Zapier), and create custom GPTs or workflows.</li>
-</ul>
-<hr>
-</section>
-<section id="level-4-ai-native-thinking" class="level2">
-<h2 class="anchored" data-anchor-id="level-4-ai-native-thinking"><strong>Level 4 – AI-Native Thinking</strong></h2>
-<blockquote class="blockquote">
-<p>“AI is a co-worker. I design around it.”</p>
-</blockquote>
-<ul>
-<li><strong>Developers</strong>: Design software and infrastructure assuming AI is part of the team—building AI agents, integrating LLMs, evaluating agents and other AI applications as well as fine-tuning models. Very familiar with LLM capabilities like structured output, reasoning models and multi-modality. Experimented with various agent frameworks, agent architectures and MCP.</li>
-<li><strong>Non-developers</strong>: Reimagine job roles around what AI can do: delegate, refine, and accelerate work with agents, workflows, and bespoke GPTs. Created scripts to automate some of their work or small applications using coding agents in an IDE or Replit.</li>
-</ul>
-<p>Example: Spotify’s CEO Tobias Lutke has changed how his company hires because of AI. He wrote in a <a href="https://x.com/tobi/status/1909231499448401946">memo</a> that employees have to prove they “cannot get what they watn done using AI” before asking for more headcount and resources.</p>
-<hr>
-</section>
-<section id="level-5-ai-first-innovation" class="level2">
-<h2 class="anchored" data-anchor-id="level-5-ai-first-innovation"><strong>Level 5 – AI-First Innovation</strong></h2>
-<blockquote class="blockquote">
-<p>“AI isn’t just part of the work—it changes <em>what’s possible</em>.”</p>
-</blockquote>
-<ul>
-<li><strong>Developers</strong>: Build entirely new paradigms of software with AI at the center. Move beyond LLM wrappers into agent-based systems, multi-agent systems, AI-native architectures, and emergent behavior. Actively experimenting with not just Foundation LLM APIs but real-time audio APIs (audio in and out).</li>
-<li><strong>Non-developers</strong>: Rethink roles, products, and business models from the ground up with AI as the foundation. Co-create with AI to scale impact in ways that were previously unimaginable.</li>
-</ul>
-<p>What level are you?</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
