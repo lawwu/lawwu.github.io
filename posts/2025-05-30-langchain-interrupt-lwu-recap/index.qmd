@@ -1,0 +1,15 @@
+---
+title: "LangChain Interrupt Conference 2025 Recap"
+author: "Lawrence Wu"    
+date: "2025-05-30"
+categories: ["LangChain", "Conference", "Recap"]
+---
+
+I tried my best to condense the ~16 hours of content from the LangChain Interrupt Conference to less than an hour.
+
+{{< video https://www.youtube.com/watch?v=YBlFn8R5T9o&ab_channel=LawrenceWu >}}
+
+- [Slides](https://docs.google.com/presentation/d/1RMGq3dCbmQ-JZPeHYLD9XKTRXk9IKHTFUnHbVXAjqHU/edit)
+- [Conference Talks](https://www.youtube.com/playlist?list=PLnbEdh6BRkSjXMPmvxkmOz0VM3p4jtQ7d)
+- [Transcripts](https://lawwu.github.io/transcripts/index_langchain_interrupt_2025_official.html)
+- [AI Summaries of each talk](https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/)]
