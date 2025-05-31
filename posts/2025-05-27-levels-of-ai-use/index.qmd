@@ -22,7 +22,7 @@ Here are the levels:
 ---
 
 ## **Level 0 – No Use**
-> "AI is irrelevant to me."
+> "I don't use AI at all."
 
 - **Developers**: Write and ship code without AI assistance. May be unaware of AI tools or skeptical about their value. Write most code in an IDE or text editor, relying on traditional resources (documentation, Google, Stack Overflow) for help.
 - **Non-developers**: Haven't tried ChatGPT yet. Or maybe have used it once. Do not use other AI tools (e.g., ChatGPT, Copilot, Notion AI). AI feels distant, abstract, or risky.
