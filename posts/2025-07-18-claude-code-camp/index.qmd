@@ -5,7 +5,7 @@ date: "2025-07-18"
 categories: ["Claude Code", "Agents"]
 ---
 
-[Every](https://every.to/) hosted a Claude Code Camp today for an hour. Different members from their team shared in detail how they use Claude Code. I've only started using Claude Code in my developer workflow in the past 2-3 weeks so it was super helpful to see how the team was using it.
+[Every](https://every.to/) hosted a Claude Code Camp today for an hour. Different members from their team shared in detail how they use [Claude Code](https://github.com/anthropics/claude-code). I've only started using Claude Code in my developer workflow in the past 2-3 weeks so it was super helpful to see how the team was using it.
 
 ## 1. Some of notes and takeaways:
 
@@ -34,7 +34,7 @@ categories: ["Claude Code", "Agents"]
         - Pull Request review
             - /review - default in claude code
             - /best_practice
-    - use monologue for voice to text - https://monologue.to/?ref=XTOKQDS
+    - use monologue for voice to text - <https://monologue.to/>
 - Plan
     - Make a context file prompt
         - ![](./context_file_prompt.png)
@@ -58,11 +58,11 @@ categories: ["Claude Code", "Agents"]
 			- Opponent processors - agents with different personas
 				- Expense report - 1 from my own perspective, 2 from an auditor's perspective
 - Other tools
-	- vibe tunnel - https://github.com/amantus-ai/vibetunnel
+	- vibe tunnel - <https://github.com/amantus-ai/vibetunnel>
 	- claude-prune
-        - https://x.com/DannyAziz97/status/1945958948227461329
-		- https://github.com/DannyAziz/claude-prune
-	- Claude Conductor: https://github.com/superbasicstudio/claude-conductor
+        - <https://x.com/DannyAziz97/status/1945958948227461329>
+		- <https://github.com/DannyAziz/claude-prune>
+	- Claude Conductor: <https://github.com/superbasicstudio/claude-conductor>
 - Quotes: 
 	- Someone asked a question around you guys all have different ways of approaching plans
 		- Alex Duffy: "AI is a leverage for your subject matter expertise"
