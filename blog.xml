@@ -9,8 +9,266 @@
 <link>https://lawwu.github.io/blog.html/blog.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.7.31</generator>
-<lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
+<generator>quarto-1.7.32</generator>
+<lastBuildDate>Fri, 18 Jul 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Claude Code Camp - hosted by Every</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p><a href="https://every.to/">Every</a> hosted a Claude Code Camp today for an hour. Different members from their team shared in detail how they use Claude Code. I’ve only started using Claude Code in my developer workflow in the past 2-3 weeks so it was super helpful to see how the team was using it.</p>
+<section id="some-of-notes-and-takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="some-of-notes-and-takeaways">1. Some of notes and takeaways:</h2>
+<ul>
+<li>Compounding Engineering
+<ul>
+<li>Each unit of engineering work should make subsequent units of work easier</li>
+<li>Loop - These 4 steps below were really helpful!
+<ul>
+<li>Plan –&gt; plan out a feature or bug fix in detail
+<ul>
+<li>A lot of prompts to plan. Check if they share it.</li>
+</ul></li>
+<li>Delegate -&gt; do the work</li>
+<li>Assess –&gt; make sure it works as expected
+<ul>
+<li>Testing</li>
+</ul></li>
+<li>Codify –&gt; record learnings for the next time
+<ul>
+<li>CLAUDE.md</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Some of Kieran Klaasan’s tips
+<ul>
+<li>bash aliases to set up
+<ul>
+<li><code>cc</code> with <code>claude --dangerously-skip-permissions</code></li>
+<li><code>wt</code> create a git worktree</li>
+<li><code>ccw</code> - run claude code with a git worktree
+<ul>
+<li><img src="https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/ccw.png" class="img-fluid"></li>
+</ul></li>
+</ul></li>
+<li>He had a ton of slash commands saved in <code>.claude/commands</code>
+<ul>
+<li>LOT OF PROMPTS HERE!</li>
+<li>slash commands</li>
+<li>issues.md</li>
+<li>/work 309
+<ul>
+<li>implements Github issue 309</li>
+</ul></li>
+<li>Pull Request review
+<ul>
+<li>/review - default in claude code</li>
+<li>/best_practice</li>
+</ul></li>
+</ul></li>
+<li>use monologue for voice to text - https://monologue.to/?ref=XTOKQDS</li>
+</ul></li>
+<li>Plan
+<ul>
+<li>Make a context file prompt
+<ul>
+<li><img src="https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/context_file_prompt.png" class="img-fluid"></li>
+</ul></li>
+<li>Make an Experiment Log
+<ul>
+<li><img src="https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/experiment_log.png" class="img-fluid"></li>
+</ul></li>
+</ul></li>
+<li>Delegate
+<ul>
+<li>This step is easy when your plan is good</li>
+</ul></li>
+<li>Assess
+<ul>
+<li>Other notes
+<ul>
+<li>Kieran had Claude Code assess itself to understand how to push it</li>
+<li>Consider alternative methods</li>
+<li>Make Claude think outside the box</li>
+</ul></li>
+</ul></li>
+<li>Codify
+<ul>
+<li>Dictating to Monologue</li>
+<li>Take learnings from comments and update CLAUDE.md
+<ul>
+<li><img src="https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/learnings.png" class="img-fluid"></li>
+</ul></li>
+<li>Subagents of Claude Code?!
+<ul>
+<li>Can call up to 10 subagents</li>
+<li>Use Cases
+<ul>
+<li>Process Data</li>
+<li>Opponent processors - agents with different personas
+<ul>
+<li>Expense report - 1 from my own perspective, 2 from an auditor’s perspective</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Other tools
+<ul>
+<li>vibe tunnel - https://github.com/amantus-ai/vibetunnel</li>
+<li>claude-prune
+<ul>
+<li>https://x.com/DannyAziz97/status/1945958948227461329</li>
+<li>https://github.com/DannyAziz/claude-prune</li>
+</ul></li>
+<li>Claude Conductor: https://github.com/superbasicstudio/claude-conductor</li>
+</ul></li>
+<li>Quotes:
+<ul>
+<li>Someone asked a question around you guys all have different ways of approaching plans
+<ul>
+<li>Alex Duffy: “AI is a leverage for your subject matter expertise”</li>
+<li>Kieran: Be inspired by what others do</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>Below are some learnings extracted by o3 from the transcribed transcript.</p>
+<hr>
+</section>
+<section id="key-learnings-top-510" class="level2">
+<h2 class="anchored" data-anchor-id="key-learnings-top-510">2. Key Learnings (Top 5–10)</h2>
+<ul>
+<li>Claude Code enables shipping features in unfamiliar codebases far faster than traditional onboarding.</li>
+<li>Productivity follows a repeatable loop: <strong>Plan → Delegate → Assess → Codify</strong>.</li>
+<li>Strong up‑front plans let agents “just build” while poor plans create rework.</li>
+<li>GitHub issues and PRs are the contract between Claude and humans for traceability.</li>
+<li>Dictation (e.g., Monologue) captures richer prompts; voice often beats typing.</li>
+<li>Folder‑level context files shrink token usage and boost model accuracy.</li>
+<li>Keep <strong>experiment logs</strong> so goals, findings, and next steps survive context resets.</li>
+<li><strong>Subagents</strong> provide parallel processing and multiple viewpoints.</li>
+<li>Codify every PR lesson into commands or <code>Claude.md</code> to create compounding returns.</li>
+<li>Git worktrees, session‑pruning, and remote terminals keep multi‑feature work safe and light.</li>
+</ul>
+<hr>
+</section>
+<section id="actionable-advice" class="level2">
+<h2 class="anchored" data-anchor-id="actionable-advice">3. Actionable Advice</h2>
+<ul>
+<li>Start with one simple planning command; iterate after each run.</li>
+<li>Auto‑generate a GitHub issue from the plan; use <code>/work &lt;issue&gt;</code> to delegate.</li>
+<li>Use multi‑persona reviews (strict bot + human style) on each PR.</li>
+<li>Distill review comments into updated best‑practice commands or <code>Claude.md</code>.</li>
+<li>Summarize each folder in an <code>llms.txt</code> or similar for leaner context loading.</li>
+<li>Maintain an <strong>experiment_log.md</strong> with goals, errors and revised plans.</li>
+<li>Explicitly ask for parallel subagents when processing large corpora.</li>
+<li>Adopt TDD in plans; require failing tests before code generation.</li>
+<li>Use dictation tools to give fuller context rapidly.</li>
+<li>Employ git worktrees (or Conductor UI) for parallel agent branches; prune chat history regularly.</li>
+</ul>
+<hr>
+</section>
+<section id="memorable-quotes" class="level2">
+<h2 class="anchored" data-anchor-id="memorable-quotes">4. Memorable Quotes</h2>
+<blockquote class="blockquote">
+<p>“Claude Code has radically altered the way we work—processes, parameters, mental models—everything.” — Dan</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“I shipped two features this week in codebases I’d never touched; that shouldn’t be possible.” — Dan</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Each unit of engineering should make the next one easier—that’s compounding engineering.” — Dan</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“If your plan is amazing, the feature basically builds itself.” — Dan</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“CC is my alias that starts Claude Code bypassing permissions—so it just works.” — Kieran</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Forty‑five minutes of uninterrupted Claude work is my personal record.” — Kieran</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Make your own system; be inspired, but tailor it to your workflow.” — Kieran</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Voice prompts give fuller context; I get better results than typing.” — Naveen</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“AI is leverage for your subject‑matter expertise.” — Alex</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Let it run, move on, come back when it’s done—that’s the mindset shift.” — Kieran</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Don’t juggle mega‑prompts; lean into agents and their tools.” — Kieran</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Experiment logs keep the model honest across context resets.” — Alex</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Reviewing with strict TypeScript bot against Ruby creates constructive tension.” — Kieran</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>“Prune old chat instead of trusting weak auto‑summaries.” — Danny</p>
+</blockquote>
+<hr>
+</section>
+<section id="important-data-stats-frameworks" class="level2">
+<h2 class="anchored" data-anchor-id="important-data-stats-frameworks">5. Important Data / Stats / Frameworks</h2>
+<ul>
+<li><strong>Compounding Engineering Loop:</strong> Plan → Delegate → Assess → Codify.</li>
+<li><strong>Time‑Savings Example:</strong> Two unfamiliar‑codebase features shipped in a week vs.&nbsp;~2‑3 weeks ramp‑up each.</li>
+<li><strong>Continuous Work Duration:</strong> 45‑minute single Claude session noted.</li>
+<li><strong>Business‑Model Change (Monologue):</strong> Paid‑only to freemium cap (~2 k words) requiring full‑stack update.</li>
+<li><strong>Parallelization:</strong> Up to 10 subagents requested for concurrent processing.</li>
+<li><strong>Subscription Bundle:</strong> Every subscription includes Cora, Monologue, Spiral, Sparkle at no add’l cost.</li>
+<li><strong>Context Principle:</strong> Larger windows can hurt accuracy; mitigate with hierarchical summaries.</li>
+<li><strong>Bug‑avoidance Strategy:</strong> Multi‑model reviews, experiment logs, TDD catch shortcut fixes.</li>
+<li><strong>Session Management:</strong> Use <code>world prune</code> to keep recent N messages; avoid poor auto‑summaries.</li>
+</ul>
+<hr>
+</section>
+<section id="suggested-followup-resources" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-followup-resources">6. Suggested Follow‑up Resources</h2>
+<ul>
+<li><strong>Claude Code</strong> terminal agent (Anthropic)<br>
+</li>
+<li><strong>Claude.md / folder context files</strong> (<code>/init</code>)<br>
+</li>
+<li><strong>Custom <code>/issues</code>, <code>/work</code>, <code>/review</code> commands</strong><br>
+</li>
+<li><strong>Monologue</strong> dictation app<br>
+</li>
+<li><strong>Cora</strong> email chief‑of‑staff; <strong>Spiral</strong> copywriter; <strong>Sparkle</strong> desktop organizer<br>
+</li>
+<li><strong>AI Diplomacy</strong> game (Alex)<br>
+</li>
+<li><strong>Warp Terminal</strong>; <strong>Vibe Tunnel</strong> (remote terminal)<br>
+</li>
+<li><strong>World Prune</strong> (<code>npx world prune</code>) chat‑trim tool<br>
+</li>
+<li><strong>Conductor</strong> git‑worktree UI<br>
+</li>
+<li><strong>Every Newsletter, Discord, Consulting</strong> for ongoing training &amp; content.</li>
+</ul>
+<hr>
+</section>
+<section id="onesentence-summary-25-words" class="level2">
+<h2 class="anchored" data-anchor-id="onesentence-summary-25-words">7. One‑Sentence Summary (25 words)</h2>
+<p>Every’s team demonstrates how Claude Code enables “compounding engineering”—plan, delegate, assess, codify—to ship multi‑codebase features rapidly by capturing and recycling best‑practice knowledge.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>Claude Code</category>
+  <category>Agents</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/</guid>
+  <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>LangChain Interrupt Conference 2025 - 1 Hour Recap</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -16226,91 +16484,6 @@ font-style: inherit;">'lives close by'</span>}]</span></code></pre></div>
   <category>Function Calling</category>
   <guid>https://lawwu.github.io/blog.html/posts/2023-12-26-google-gemini-function-calling/</guid>
   <pubDate>Tue, 26 Dec 2023 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Whisper Transcripts</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2023-11-15-whisper-transcripts/</link>
-  <description><![CDATA[ 
-
-
-
-
-<section id="whisper-and-whisper.cpp" class="level1">
-<h1>Whisper and whisper.cpp</h1>
-<p><a href="https://github.com/openai/whisper">Whisper</a> is a speech recognition model by OpenAI that is open source. It is a multi-task, multilingual model that can perform speech recognition, speech translation and language identification. It was released in September 2022 and achieved state of the art results. The latest model is <a href="https://huggingface.co/openai/whisper-large-v3">whisper-large-v3</a> which OpenAI released on their Dev Day.</p>
-<p>I had heard about Whisper when it was released but got interested in using Whisper after <a href="https://twitter.com/ggerganov?lang=en">Georgi Gerganov</a> of <a href="https://github.com/ggerganov/llama.cpp">llama.cpp</a> fame created an equivalent library called <a href="https://github.com/ggerganov/whisper.cpp">whisper.cpp</a>. He ported Whisper to C/C++ and also added accelerated inference on Apple Metal. This means that llama.cpp and whisper.cpp both allow you to run these transformer based models locally using a CPU or if you have a M1/M2/M3 Mac, to run these models at a reasonable speed.</p>
-</section>
-<section id="using-whisper.cpp" class="level1">
-<h1>Using whisper.cpp</h1>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">git</span> clone https://github.com/ggerganov/whisper.cpp</span>
-<span id="cb1-2"><span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">cd</span> whisper.cpp</span>
-<span id="cb1-3"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">make</span> clean</span>
-<span id="cb1-4"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">make</span> <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">-j</span></span>
-<span id="cb1-5"></span>
-<span id="cb1-6"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># download a model</span></span>
-<span id="cb1-7"><span class="fu" style="color: #4758AB;
-background-color: null;
-font-style: inherit;">bash</span> ./models/download-ggml-model.sh large</span>
-<span id="cb1-8"></span>
-<span id="cb1-9"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># run inference</span></span>
-<span id="cb1-10"><span class="ex" style="color: null;
-background-color: null;
-font-style: inherit;">./main</span> <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">-m</span> models/ggml-large.bin <span class="at" style="color: #657422;
-background-color: null;
-font-style: inherit;">-f</span> samples/jfk.wav</span></code></pre></div>
-<section id="speed-benchmarks" class="level2">
-<h2 class="anchored" data-anchor-id="speed-benchmarks">Speed benchmarks</h2>
-<p>The accuracy of Whisper’s large model is quite good. Coupled with the accelerated inference that whisper.cpp offers on a Mac, it’s becoming easy to transcribe audio quickly and accurately. For example, running <code>ggml-large-v2</code>, I can transcribe around 1 hour of audio in about 13 minutes on an M2 Pro (200 GB/s) or in 4 minutes on an M2 Ultra (800 GB/s).</p>
-</section>
-</section>
-<section id="building-a-personal-transcript-repository" class="level1">
-<h1>Building a personal transcript repository</h1>
-<p>One use case is building a personal transcript library. I enjoy listening to podcasts and sermons and often like to reference what was said. Having a transcript handy makes this trivial. I was inspired by what Andrej Karpathy created in transcribing Lex Fridman’s podcasts: <a href="https://karpathy.ai/lexicap/" class="uri">https://karpathy.ai/lexicap/</a> and built something similar for a handful of podcasts I enjoy listening to: <a href="https://lawwu.github.io/transcripts/" class="uri">https://lawwu.github.io/transcripts/</a>.</p>
-<ul>
-<li><a href="https://lawwu.github.io/transcripts/index_ai_explained.html">AI Explained</a></li>
-<li><a href="https://lawwu.github.io/transcripts/index_all_in.html">All In</a></li>
-<li><a href="https://lawwu.github.io/transcripts/index_lex_fridman.html">Lex Fridman</a></li>
-<li><a href="https://lawwu.github.io/transcripts/index_radical_personal_finance.html">Radical Personal Finance</a></li>
-</ul>
-<p>The code to generate the transcripts using Whisper and to generate the webpages is here: <a href="https://github.com/lawwu/transcripts" class="uri">https://github.com/lawwu/transcripts</a>.</p>
-</section>
-<section id="related-whisper-libraries" class="level1">
-<h1>Related Whisper libraries</h1>
-<p>There are other libraries that allow you to run Whisper faster.</p>
-<ul>
-<li><a href="https://github.com/guillaumekln/faster-whisper" class="uri">https://github.com/guillaumekln/faster-whisper</a></li>
-<li><a href="https://github.com/sanchit-gandhi/whisper-jax" class="uri">https://github.com/sanchit-gandhi/whisper-jax</a></li>
-<li><a href="https://github.com/huggingface/distil-whisper" class="uri">https://github.com/huggingface/distil-whisper</a></li>
-<li><a href="https://github.com/MahmoudAshraf97/whisper-diarization" class="uri">https://github.com/MahmoudAshraf97/whisper-diarization</a></li>
-<li><a href="https://github.com/Vaibhavs10/insanely-fast-whisper" class="uri">https://github.com/Vaibhavs10/insanely-fast-whisper</a></li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>Whisper</category>
-  <category>ASR</category>
-  <category>Transcripts</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2023-11-15-whisper-transcripts/</guid>
-  <pubDate>Wed, 15 Nov 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
