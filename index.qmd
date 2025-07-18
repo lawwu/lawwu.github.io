@@ -9,9 +9,6 @@ about:
     - icon: envelope
       text: Email
       href: mailto:lawrencewu1+blog@gmail.com
-    - icon: file-pdf
-      text: Resume
-      href: https://www.dropbox.com/s/dkg62407k1rp8zn/Resume%20-%20Lawrence%20Wu.pdf?dl=0
     - icon: linkedin
       text: LinkedIn
       href: https://www.linkedin.com/in/lawrencewu920/
@@ -44,5 +41,9 @@ Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/){target=
 
 ### Let's Connect
 I'm open to new consulting opportunities and collaborations. If you'd like to work together, please check out [Doxa Solutions](https://doxasolutions.ai){target="_blank"} or reach out via any of the links above.
+
+You can also [subscribe](https://lawrencewu.substack.com/subscribe) to my newsletter:
+
+<iframe src="https://lawrencewu.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 
 :::
