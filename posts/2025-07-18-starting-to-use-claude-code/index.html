@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lawrence Wu">
-<meta name="dcterms.date" content="2023-08-29">
+<meta name="dcterms.date" content="2025-07-18">
 
-<title>How LLMs will affect Jobs? – Lawrence Wu</title>
+<title>Starting to Use Claude Code – Lawrence Wu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-dbb97d4087b534fae0b20d4a7da373fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-a986a95301e671fce2c6472dffc862a1.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -151,10 +151,10 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="How LLMs will affect Jobs? – Lawrence Wu">
+<meta property="og:title" content="Starting to Use Claude Code – Lawrence Wu">
 <meta property="og:description" content="This is Lawrence Wu’s personal website">
 <meta property="og:site_name" content="Lawrence Wu">
-<meta name="twitter:title" content="How LLMs will affect Jobs? – Lawrence Wu">
+<meta name="twitter:title" content="Starting to Use Claude Code – Lawrence Wu">
 <meta name="twitter:description" content="This is Lawrence Wu’s personal website">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
@@ -229,13 +229,11 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-will-llms-affect-data-science-work" id="toc-how-will-llms-affect-data-science-work" class="nav-link active" data-scroll-target="#how-will-llms-affect-data-science-work">How will LLMs affect data science work?</a></li>
-  <li><a href="#how-will-llms-affect-the-future-of-work" id="toc-how-will-llms-affect-the-future-of-work" class="nav-link" data-scroll-target="#how-will-llms-affect-the-future-of-work">How will LLMs affect the future of work?</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
-  <li><a href="#a-couple-examples" id="toc-a-couple-examples" class="nav-link" data-scroll-target="#a-couple-examples">A Couple Examples</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#streamlit-app" id="toc-streamlit-app" class="nav-link" data-scroll-target="#streamlit-app">Streamlit App</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up">Set Up</a></li>
+  <li><a href="#first-experiments" id="toc-first-experiments" class="nav-link" data-scroll-target="#first-experiments">First Experiments</a></li>
+  <li><a href="#some-best-practices-ive-arrived-at" id="toc-some-best-practices-ive-arrived-at" class="nav-link" data-scroll-target="#some-best-practices-ive-arrived-at">Some best practices I’ve arrived at</a></li>
+  <li><a href="#claude-code-utilities" id="toc-claude-code-utilities" class="nav-link" data-scroll-target="#claude-code-utilities">Claude Code Utilities</a></li>
+  <li><a href="#other-links" id="toc-other-links" class="nav-link" data-scroll-target="#other-links">Other Links</a></li>
   </ul>
 </nav>
     </div>
@@ -244,11 +242,10 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How LLMs will affect Jobs?</h1>
+<h1 class="title">Starting to Use Claude Code</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">LLMs</div>
-    <div class="quarto-category">Jobs</div>
-    <div class="quarto-category">Work</div>
+    <div class="quarto-category">Claude Code</div>
+    <div class="quarto-category">Agents</div>
   </div>
   </div>
 
@@ -266,7 +263,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 29, 2023</p>
+      <p class="date">July 18, 2025</p>
     </div>
   </div>
   
@@ -278,117 +275,64 @@ cookieconsent.run({
 </header>
 
 
-<p>I have been interested in how language models will affect the future of work. Having worked with LLMs the last ~6 months, I’ve seen their impact on my work as a data scientist. Jason Wei gave a talk at KDD 2023 called <a href="https://docs.google.com/presentation/d/1hQF8EXNdePFPpws_jxwqHWi5ohV_TeGL17WIjvUvG6E/edit?resourcekey=0-xA6WdGyYp1EexLgoXgjOjg#slide=id.g16197112905_0_0">Scaling, Emergence and Reasoning in Large Language Models</a> that was great. He works at the intersection of LLMs and AI Research and has a good view into how LLMs will change the field of AI Research. We need this same sort of thinking applied in other fields to get a sense for how to answer the question “How will LLMs change the future of work?” It’s important for more people to be aware the potential for LLMs to disrupt jobs and to get ahead of any changes.</p>
-<section id="how-will-llms-affect-data-science-work" class="level2">
-<h2 class="anchored" data-anchor-id="how-will-llms-affect-data-science-work">How will LLMs affect data science work?</h2>
-<p>In terms of how I’ve seen LLMs affect data science work are:</p>
-<p><strong>5 years ago:</strong></p>
-<ol type="1">
-<li>Start with data: First step after a use case is defined for any data science problem –&gt; acquire a data set and spend time preparing/cleaning the data</li>
-<li>Need to hire data labelers to label data or evaluate model output at scale</li>
-<li>Coding with Stack Overflow</li>
-</ol>
-<p><strong>Now</strong></p>
-<ol type="1">
-<li>Start with a model: Does a pre-trained model (embeddings, LLMs) solve your use case?</li>
-<li>A pre-trained model can generate required labels or evaluate model results directly</li>
-<li>Coding with GitHub Copilot, ChatGPT and Code Interpreter</li>
-</ol>
-</section>
-<section id="how-will-llms-affect-the-future-of-work" class="level2">
-<h2 class="anchored" data-anchor-id="how-will-llms-affect-the-future-of-work">How will LLMs affect the future of work?</h2>
-<p>I had the idea of using an LLM to assess the impact of LLMs on jobs. Having got llama2 up and running on my Mac M1 Pro using <code>llama.cpp</code>, it was pretty easy to use <code>langchain</code>, a set of occupations from ONET, and the <code>llama2-13b-chat</code> model to generate 10 ways that LLMs will affect a given occupation for the 1,016 ONET occupations. This took about 50 seconds per title to run and in total around 14 hours (and an unknown amount of electricity).</p>
-<p>The idea and the prompt I used was partially inspired by the paper <a href="https://arxiv.org/abs/2303.10130">GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models</a> where the framework they used to evaluate the impact of LLMs on jobs used LLMs to do the evaluation and their measure of a given job’s exposure used:</p>
+<p>I had tried Claude Code briefly when it first came out <a href="https://www.youtube.com/watch?v=AJpK3YTTKZ4&amp;ab_channel=Anthropic">4 months ago</a>. However I wasn’t that impressed. Lately though, I’ve seen more and more people turn to Claude Code. The step change was the <a href="https://www.anthropic.com/news/claude-4">release of Claude 4 Sonnet and Opus</a> on May 22, 2025. I think something was unlocked where given a powerful enough reasoning model (Claude 4) and access to generic tools, Claude Code is an amazing tool.</p>
+<p>Some of the things I read/watched that motivated me to try it again:</p>
 <ul>
-<li><strong>Direct exposure (E1)</strong> if using the described LLM via ChatGPT or the OpenAI playground can decrease the time required to complete the DWA or task by at least half (50%).</li>
-<li><strong>LLM+ Exposed (E2)</strong> if access to the described LLM alone would not reduce the time required to complete the activity/task by at least half, but additional software could be developed on top of the LLM that could reduce the time it takes to complete the specific activity/task with quality by at least half. Among these systems, we count access to image generation systems.</li>
+<li>Watching Claude Code creator’s, Boris Chemy’s talk about the <a href="https://www.youtube.com/watch?v=Lue8K2jqfKk&amp;ab_channel=AIEngineer">evolution of agentic coding</a> <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Lue8K2jqfKk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+<li>seeing Eric J Ma’s post about it where it created a receipt scanner in <a href="https://ericmjl.github.io/blog/2025/7/1/one-hour-and-eight-minutes-building-a-receipt-scanner-with-the-weirdest-tech-stack-imaginable/">1 hour and 8 minutes</a></li>
+<li><a href="https://www.youtube.com/@ArminRonacher">Armin Ronacher’s</a> YouTube Tutorials: <a href="https://www.youtube.com/watch?v=nfOVgz_omlU&amp;ab_channel=ArminRonacher">here</a> and <a href="https://www.youtube.com/watch?v=Y4_YYrIKLac&amp;t=2184s&amp;ab_channel=ArminRonacher">here</a>. The second one I only watched the first 30 minutes. <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nfOVgz_omlU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y4_YYrIKLac" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
 </ul>
-<p>So the prompt I used was:</p>
-<pre><code>"As an {TITLE}, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</code></pre>
+<section id="set-up" class="level2">
+<h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
+<p>At work, we use VertexAI. Google has signed an agreement with Anthropic to license Claude models that you can then call via VertexAI. The <a href="https://docs.anthropic.com/en/docs/claude-code/google-vertex-ai">instructions</a> are easy to follow. In my <code>~/.zshrc</code>, I just have:</p>
+<pre><code>export CLAUDE_CODE_USE_VERTEX=1
+export CLOUD_ML_REGION=YOUR_GCP_REGION
+export ANTHROPIC_VERTEX_PROJECT_ID=YOUR_GCP_PROJECT_ID
+export ANTHROPIC_MODEL='claude-sonnet-4@20250514'</code></pre>
+<p>You then authenticate with Google Cloud:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth login</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Install Claude Code:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install <span class="at">-g</span> @anthropic-ai/claude-code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then in your project directory or a new directory, start Claude Code:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>I eventually started running:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> <span class="at">--dangerously-skip-permissions</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="code" class="level2">
-<h2 class="anchored" data-anchor-id="code">Code</h2>
-<p>The code to do this:</p>
-<div id="369745b5" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.llms <span class="im">import</span> LlamaCpp</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>MODEL_LLAMA2_13B <span class="op">=</span> <span class="st">"llama-2-13b-chat.ggmlv3.q4_0.bin"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>n_gpu_layers <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Metal set to 1 is enough.</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n_batch <span class="op">=</span> <span class="dv">512</span>  <span class="co"># Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>llm <span class="op">=</span> LlamaCpp(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            model_path<span class="op">=</span>MODEL_LLAMA2_13B,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            temperature<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            top_p<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            max_tokens<span class="op">=</span><span class="dv">2048</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            n_ctx<span class="op">=</span><span class="dv">2048</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            n<span class="op">=-</span><span class="dv">1</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            repeat_penalty<span class="op">=</span><span class="fl">1.1</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            n_threads<span class="op">=</span><span class="dv">8</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="co"># callback_manager=callback_manager,</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            n_gpu_layers<span class="op">=</span>n_gpu_layers,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            n_batch<span class="op">=</span><span class="dv">2048</span>,  <span class="co"># Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            f16_kv<span class="op">=</span><span class="va">True</span>,  <span class="co"># MUST set to True, otherwise you will run into problem after a couple of calls</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            verbose<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<section id="first-experiments" class="level2">
+<h2 class="anchored" data-anchor-id="first-experiments">First Experiments</h2>
+<p>While I was on PTO during the July 4th week, I used Claude Code to build an application I’ve always wanted internally at my company. I had wanted to make a website using <a href="https://github.com/AnswerDotAI/fasthtml">FastHTML</a> since I had heard it was much more flexible than Streamlit/Gradio apps. So I finally got around to it thanks to Claude Code. It also figured out you can combine a FastHTML and a FastAPI service because they are both Starlette applications.</p>
+<p>The second thing I built was an MCP Server using <a href="https://github.com/jlowin/fastmcp">FastMCP</a> that implemented <a href="https://gofastmcp.com/servers/auth/bearer">bearer token authentication</a>.</p>
+<p>Both of the above tasks I estimate would’ve taken me 2-3 days to do but it take Claude Code &lt;2 hours with ~5 prompts to implement.</p>
 </section>
-<section id="a-couple-examples" class="level2">
-<h2 class="anchored" data-anchor-id="a-couple-examples">A Couple Examples</h2>
-<p>Running this for an entry-level data scientist:</p>
-<div id="89fbb145" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>llm(<span class="st">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Here's a list of 10 areas of my work as an entry-level Data Scientist that I think will be disrupted by the widespread usage of Large Language Models (LLMs) or tools built on LLMs:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Data Preprocessing: Many tasks in data preprocessing, such as tokenization, stemming, and lemmatization, can be automated using LLMs. This could make my work more efficient and reduce the time spent on these tasks.</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Feature Engineering: LLMs can help generate new features that can improve model performance. For example, LLMs can be used to generate sentiment scores or topic models for text data. This could lead to better insights and improved accuracy in machine learning models.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Data Visualization: LLMs can be used to generate interactive visualizations that provide more detailed insights into data. For example, LLMs can be used to create interactive heatmaps or word clouds that show the distribution of words in a dataset.</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Text Summarization: LLMs can be used to summarize long documents or articles into shorter summaries. This could be useful for quickly grasping the main points of a document or article.</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Sentiment Analysis: LLMs can be used to analyze text data and provide sentiment scores. This could be useful for understanding public opinion on a particular topic or product.</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Named Entity Recognition (NER): LLMs can be used to automatically identify and extract named entities such as people, organizations, and locations from text data. This could save time and improve the accuracy of downstream tasks such as information extraction or summarization.</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Part-of-speech Tagging: LLMs can be used to automatically assign part-of-speech tags to words in a sentence. This could improve the accuracy of downstream tasks such as named entity recognition and sentiment analysis.</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Dependency Parsing: LLMs can be used to analyze the grammatical structure of sentences and identify the relationships between words. This could lead to better insights into language usage and improved accuracy in natural language processing tasks.</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. Information Extraction: LLMs can be used to automatically extract structured data from unstructured text. For example, LLMs can be used to extract names, dates, and locations from news articles or social media posts.</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. Question Answering: LLMs can be used to answer questions based on the content of a document or article. This could be useful for providing quick answers to common customer support queries or for automating content search engines.</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Repeating this for a Pediatric Pharmacist:</p>
-<div id="f0947ac5" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prompt<span class="op">=</span><span class="st">"""</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">As an entry-level Pediatric Pharmacist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>llm(prompt)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Although I am an early career pharmacist, and I lack industry expertise as a seasoned professional in the field of pediatrics or AI technology I can imagine several ways that LLMs could disrupt various aspects of my work:</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Medication dosing: One potential area of disruption is medication dosing. LLMs may be able to quickly and accurately determine appropriate drug dosages for children based on their weight, age, and other factors, potentially reducing the need for human intervention and improving medication safety. </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.Drug interactions: Another possible area of disruption is the identification of potential drug interactions. LLMs may be able to analyze large amounts of data and identify potential drug interaction that a human pharmacist might miss, helping to prevent adverse events and improve patient outcomes. </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Allergic reactions: With their ability to analyze large amounts of data, LLMs may also be useful in identifying patterns related to allergic reactions, allowing healthcare providers to take proactive steps to prevent these reactions or quickly respond to them if they occur.</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Developmental delays: The use of LLMs could help identify children at risk for developmental delays and provide early interventions that can improve outcomes for those children.</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Pediatric clinical decision support: With the ability to process vast amounts of data, LLMs may be able provide real-time clinical decision support to healthcare providers, improving diagnostic accuracy and reducing errors in patient care.  </span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Medical coding and billing: The use of LLMs could improve the accuracy of medical coding and billing, potentially reducing errors and improving reimbursement for healthcare providers. </span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Pharmacovigilance: With their ability to analyze large amounts of data, LLMs may also be useful in pharmacovigilance by identifying potential safety issues related to pediatric medication use and allowing healthcare providers to take proactive steps to mitigate these risks.</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 8 Patient education: The use of LLMs could improve patient education, allowing healthcare providers to provide tailored information that addresses the unique needs of each child based on their medical history, allergies, and other factors. </span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. Referrals and consultations: With the ability to diagnose and treat a wide range of pediatric conditions, LLMs could help identify children who require specialist care or consultation with other healthcare providers, potentially reducing unnecessary referrals and improving patient outcomes.  </span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. Public health surveillance: Finally, the use of LLMs could improve public health surveillance by analyzing large amounts of data related to pediatric health issues, allowing healthcare providers to identify trends and patterns that can inform population-based interventions and policies. </span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># As an early career pharmacist, I recognize that the widespread adoption of LLMs or tools built on these technologies will require significant investment in training and infrastructure, as well as careful consideration of ethical and legal issues related to health data privacy and security.  </span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if properly implemented, these technologies have the potential to transform the field of pediatric pharmacology, improving patient outcomes and reducing healthcare costs over time. Despite the challenges ahead, I remain excited about the potential applications of LLMs in pediatric pharmacology practice and look forward to seeing how these developments shape the future of our profession.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Hopefully this inspires some food for thought on how LLMs will affect the future of work. I think it would benefit most people to think about how a general purpose technology like LLMs (<a href="https://youtu.be/5p248yoa3oE?si=oh6SAP5kPkGLsVor&amp;t=81">Andrew Ng calls AI like electricity in their broad applicability</a>) will affect the specific things they are working and how they can use this technology to make themselves more productive. A similar analogy is those who have gotten good at searching with Google are that much more productive than those who haven’t. LLMs are a much more powerful tool than a search engine (after all <a href="https://python.langchain.com/docs/integrations/tools/search_tools">you can give an LLM a search tool</a>) and it’s important more people understand how to use this new tool.</p>
-</section>
-<section id="streamlit-app" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-app">Streamlit App</h2>
-<p>Here’s a Streamlit app you can use to explore all 1,016 titles and how it will potentially be impacted by LLMs: <a href="https://llm-impact-on-jobs.streamlit.app/" class="uri">https://llm-impact-on-jobs.streamlit.app/</a></p>
-<iframe src="https://llm-impact-on-jobs.streamlit.app/?embed=true" height="1200" style="width:100%;border:none;">
-</iframe>
-</section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
+<section id="some-best-practices-ive-arrived-at" class="level2">
+<h2 class="anchored" data-anchor-id="some-best-practices-ive-arrived-at">Some best practices I’ve arrived at</h2>
 <ul>
-<li><a href="https://github.com/lawwu/llm_impact_on_jobs">Repo</a></li>
-<li><a href="https://github.com/lawwu/llm_impact_on_jobs/blob/main/notebooks/onet_titles_llm_risk.ipynb">Notebook to generate the dataset</a></li>
-<li><a href="https://github.com/lawwu/llm_impact_on_jobs/blob/main/data/list_onet_titles_llm_risk_all.json">Dataset</a></li>
+<li>Right now I just run Claude Code in a terminal. Sometimes I run it in an IDE (VS Code, Windsurf) where the UI is a little different.</li>
+<li><code>claude --dangerously-skip-permissions</code> so Claude doesn’t have to ask for permissions.</li>
+<li>Run the slash command <code>/init</code> to create CLAUDE.md</li>
+<li>add links to documentation in your prmopts so Claude Code can use it’s fetch tool to learn how to use APIs. Many services/projects have <a href="https://llmstxt.org/">llms.txt</a> that are a good starting point. For example when working with FastHTML, I passed it <a href="https://www.fastht.ml/docs/llms-ctx.txt">this</a>.</li>
+<li>ask Claude to make plans and write those plans in a markdown file in <code>docs/</code> with a date, e.g.&nbsp;<code>docs/plan_20250715_implement_feature_a.md</code> with ‘ultrathink’ which increases the thinking budget to the max</li>
+<li>Then you can ask Claude Code to implement the plan</li>
+<li>Make commits after each successful run of the agent</li>
+<li>Though today I attended a Claude Code Camp hosted by Every. <a href="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/">I learned a ton</a> about aliases, slash commands, how you can trigger subagents in Claude Code and how to think about the 4 step loop of development: planning, delegating, assessing and codifying.</li>
+</ul>
+</section>
+<section id="claude-code-utilities" class="level2">
+<h2 class="anchored" data-anchor-id="claude-code-utilities">Claude Code Utilities</h2>
+<ul>
+<li>Monitor your usage and cost: <a href="https://github.com/chiphuyen/sniffly" class="uri">https://github.com/chiphuyen/sniffly</a></li>
+<li><a href="https://www.vibekanban.com/">Vibe Kanban</a> - tried it but didn’t really like it</li>
+</ul>
+</section>
+<section id="other-links" class="level2">
+<h2 class="anchored" data-anchor-id="other-links">Other Links</h2>
+<ul>
+<li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" class="uri">https://www.anthropic.com/engineering/claude-code-best-practices</a></li>
+<li><a href="https://github.com/hesreallyhim/awesome-claude-code" class="uri">https://github.com/hesreallyhim/awesome-claude-code</a></li>
+<li><a href="https://www.pulsemcp.com/posts/how-to-use-claude-code-to-wield-coding-agent-clusters" class="uri">https://www.pulsemcp.com/posts/how-to-use-claude-code-to-wield-coding-agent-clusters</a></li>
+<li><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Lh_X32t9_po" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+<li>Someone pointed me to this person’s tutorials which look decent but haven’t had a chance to watch: <a href="https://www.youtube.com/@indydevdan" class="uri">https://www.youtube.com/@indydevdan</a></li>
+<li>2025-07-18 - Anthropic cuts usage limits on max plans: Anthropic tightens usage limits for Claude Code — without telling users | TechCrunch - <a href="https://techcrunch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/" class="uri">https://techcrunch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/</a></li>
 </ul>
 
 
