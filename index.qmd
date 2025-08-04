@@ -29,7 +29,7 @@ about:
 
 ## Hello! 👋
 
-I'm an experienced **AI Engineer & Data Scientist** passionate about transforming data into actionable insights and impactful solutions. I specialize in building AI applications, working with Large Language Models (LLMs), and developing Machine Learning solutions that solve real-world problems.
+I am a Principal level ML/AI engineer who codes daily and ships reliable systems. Passionate about [MCP](https://modelcontextprotocol.io/docs/getting-started/intro) and [A2A](https://github.com/a2aproject/A2A) as standard interfaces for AI; I build with Windsurf and [Claude Code](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/). I enjoy building AI systems using tooling like Foundational Model API SDKs, agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) along with robust evals (that run in CI/CD like GitHub Actions). I’m a curious learner who is fascinated with AI and its impact on work and society at large.
 
 ### Professional Experience
 Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/){target="_blank"}, where I focus on applying AI to enhance workforce management solutions. My previous data science roles at [Medidata](https://www.medidata.com/){target="_blank"}, [PIMCO](https://www.pimco.com/){target="_blank"}, [Payoff](https://happymoney.com/){target="_blank"}, and [Allianz](https://allianz.com/){target="_blank"} have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.
