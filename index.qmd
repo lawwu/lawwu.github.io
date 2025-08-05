@@ -29,7 +29,7 @@ about:
 
 ## Hello! 👋
 
-I am a Principal level ML/AI engineer who codes daily and ships reliable systems. Passionate about [MCP](https://github.com/jlowin/fastmcp) and [A2A](https://github.com/a2aproject/A2A) as standard interfaces for AI; I build with Windsurf and [Claude Code](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/). I enjoy building AI systems using tooling like Foundational Model API SDKs, agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) along with robust evals (that run in CI/CD like GitHub Actions). I’m a curious learner who is fascinated with AI and its impact on work and society at large.
+I am a Principal level ML/AI engineer who codes daily and ships reliable systems. Passionate about [MCP](https://github.com/jlowin/fastmcp) and [A2A](https://github.com/a2aproject/A2A) as standard interfaces for AI; I build with Windsurf and [Claude Code](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/). I enjoy building AI systems using common protocols like MCP, agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) along with robust evals (that run in CI/CD like GitHub Actions). I’m a curious learner who is fascinated with AI and its impact on work and society at large.
 
 ### Professional Experience
 Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/){target="_blank"}, where I focus on applying AI to enhance workforce management solutions. My previous data science roles at [Medidata](https://www.medidata.com/){target="_blank"}, [PIMCO](https://www.pimco.com/){target="_blank"}, [Payoff](https://happymoney.com/){target="_blank"}, and [Allianz](https://allianz.com/){target="_blank"} have given me a diverse background across healthcare, finance, and insurance. Before transitioning to data science, I worked as an actuary.
@@ -37,7 +37,7 @@ Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/){target=
 ### What You'll Find Here
 - [Technical Blog](https://lawwu.github.io/blog.html) - My thoughts on AI, data science, and technology
 - [Today I Learned (TIL)](https://lawwu.github.io/til/) - Quick notes on things I learn daily
-- Personal interests including [running](https://lawwu.github.io/posts/2024-10-13-running-6-months/){target="_blank"} and [personal finance](https://lawwu.github.io/modest-money-guide/){target="_blank"}
+- Personal interests including [running](https://lawwu.github.io/blog.html#category=Running){target="_blank"} and [personal finance](https://lawwu.github.io/modest-money-guide/){target="_blank"}
 
 ### Let's Connect
 I'm open to new consulting opportunities and collaborations. If you'd like to work together, please check out [Doxa Solutions](https://doxasolutions.ai){target="_blank"} or reach out via any of the links above.
