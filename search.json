@@ -2389,43 +2389,8 @@
   {
     "objectID": "ai_resources.html",
     "href": "ai_resources.html",
-    "title": "AI/ML/NLP Resources",
+    "title": "AI Resources",
     "section": "",
-    "text": "Maintaining a ml_timeline, inspired by @osanseviero"
-  },
-  {
-    "objectID": "ai_resources.html#podcasts",
-    "href": "ai_resources.html#podcasts",
-    "title": "AI/ML/NLP Resources",
-    "section": "Podcasts",
-    "text": "Podcasts\n\nDeepPapers - Deep Papers is a podcast series featuring deep dives on today’s seminal AI papers and research"
-  },
-  {
-    "objectID": "ai_resources.html#youtube",
-    "href": "ai_resources.html#youtube",
-    "title": "AI/ML/NLP Resources",
-    "section": "YouTube",
-    "text": "YouTube\n\n@lexfridman - and associated transcripts\n@AndrejKarpathy\n@jamesbriggs\n@ai-explained-"
-  },
-  {
-    "objectID": "ai_resources.html#twitter",
-    "href": "ai_resources.html#twitter",
-    "title": "AI/ML/NLP Resources",
-    "section": "Twitter",
-    "text": "Twitter\n\n@jeremyphoward\n@radekosmulski\n@omarsar0"
-  },
-  {
-    "objectID": "ai_resources.html#newsletters",
-    "href": "ai_resources.html#newsletters",
-    "title": "AI/ML/NLP Resources",
-    "section": "Newsletters",
-    "text": "Newsletters\n\nDavis Summarizes Papers\nData Science Programming News - Run by Eric J Ma"
-  },
-  {
-    "objectID": "ai_resources.html#libraries-tools",
-    "href": "ai_resources.html#libraries-tools",
-    "title": "AI/ML/NLP Resources",
-    "section": "Libraries / Tools",
-    "text": "Libraries / Tools\n\nGithub Copilot - I use Copilot in my IDE, VS Code and it’s dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer’s ‘flow’ is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a blog post for how to set this up.\nLangChain - Building applications with LLMs through composability\nllama_index - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM’s with external data.\nstreamlit - Python framework for buliding UIs. I’ve used this a lot for data science demos. Resources to inspire you: awesome-streamlit and Streamlit’s gallery\ngradio - similar to Streamlit but more for ML/NLP models.\nmarvin - Meet Marvin: a batteries-included library for building AI-powered software. Marvin’s job is to integrate AI directly into your codebase by making it look and feel like any other function."
+    "text": "I often get asked how to stay up to date with AI. Here are some of my sources.\n\nNewsletters\nI find email newsletters still to be a fantastic source of information. Easily skimmable. I usually learn 1-2 new things from each of these.\n\nAI News: http://news.smol.ai/\nLatent Space: https://www.latent.space/\nEvery: https://every.to/newsletter\nPragmatic Engineer: https://www.pragmaticengineer.com/\nPulseMCP: https://www.pulsemcp.com/\nData Science Programming News - Run by Eric J Ma\n\n\n\nBlogs/Websites (I use Feedly)\n\nSimon Willison: https://simonwillison.net/\nHackernews: https://news.ycombinator.com/\nKarpathy has a blog: https://karpathy.bearblog.dev/\nBen Thompson: https://stratechery.com/\nJay Alammar: https://jalammar.github.io/\n\n\n\nYouTube\nNote, I don’t always watch a YouTube video in full. It’s easy to transcribe videos now ever since Whisper came out. I transcribe some YouTube channels here, see the project called transcripts. I’ll also use yt-dlp to download videos and transcribe them with MacWhisper.\n\n@AndrejKarpathy\n@ai-explained-\n@LangChain\n@allin\n@Bg2Pod\n@jamesbriggs\n@lexfridman - and associated transcripts\n\n\n\nPodcasts\n\nLatent Space\nDwarkesh Podcast\n\n\n\nTwitter\n\nkarpathy\nchipro\njeremyphoward\nradekosmulski\nomarsar0\n\n\n\nGithub\nI follow a bunch of accounts/repos and find the Github feed useful, which I subscribe via RSS:\n\nAstral: https://github.com/astral-sh\nLangChain: https://github.com/langchain-ai\nhttps://github.com/BerriAI/litellm\nhttps://github.com/All-Hands-AI/OpenHands\n\n\n\nResources\n\nLarge Language Modles Explained - Timothy Lee (journalist) spends a couple months writing up this explainer of LLMs\nWhat are Embeddings - Vicki Boykis deep dive into embeddings starting from fundamentals, PDF here\nLLM Bootcamp - from Full Stack Deep Learning, 2 day bootcamp on LLMs run during Spring 2023\nDive into Deep Learning - Comprehensive guide to deep learning\nFast.ai\nGoogle’s Deep learning tuning playbook\nCourse Notes from Andrew Ng’s Deep Learning Specialization\nJay Alammar’s personal site - Visualizing machine learning one concept at a time\nPractical Deep Learning for Coders\n\nPart 2 - released 2023-04 tweet\nPart 1 - “v5” - released 2022-07-21\n\nWhat is Prompt Engineering - like how Googling became a skill (aka “Google-fu”), I think Prompt Engineering is an important skill to develop\nawesome-chatgpt-prompts - A curated list of awesome ChatGPT prompts. I like “Act as a Linux Terminal” prompt.\nPrompt Engineering Guide - “Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering.” Code: repo"
   }
 ]
