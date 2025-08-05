@@ -1,10 +1,64 @@
 ---
-title: "AI/ML/NLP Resources"
+title: "AI Resources"
 comments: false
 ---
 
-# Timeline
-Maintaining a [ml_timeline](https://github.com/lawwu/ml_timeline), inspired by [@osanseviero](https://github.com/osanseviero/ml_timeline)
+I often get asked how to stay up to date with AI. Here are some of my sources.
+
+# Newsletters
+
+I find email newsletters still to be a fantastic source of information. Easily skimmable. I usually learn 1-2 new things from each of these.
+
+- AI News: <http://news.smol.ai/>
+- Latent Space: <https://www.latent.space/>
+- Every: <https://every.to/newsletter>
+- Pragmatic Engineer: <https://www.pragmaticengineer.com/>
+- PulseMCP: <https://www.pulsemcp.com/>
+- [Data Science Programming News](https://dspn.substack.com/) - Run by [Eric J Ma](https://ericmjl.github.io/)
+
+# Blogs/Websites (I use [Feedly](https://feedly.com/))
+
+- Simon Willison: <https://simonwillison.net/>
+- Hackernews: <https://news.ycombinator.com/>
+- Karpathy has a blog: <https://karpathy.bearblog.dev/>
+- Ben Thompson: <https://stratechery.com/>
+- Jay Alammar: <https://jalammar.github.io/>
+
+# YouTube
+
+Note, I don't always watch a YouTube video in full. It's easy to transcribe videos now ever since [Whisper](https://lawwu.github.io/posts/2023-11-15-whisper-transcripts/) came out. I transcribe some YouTube channels [here](https://lawwu.github.io/transcripts/), see the project called [transcripts](https://github.com/lawwu/transcripts). I'll also use [yt-dlp](https://github.com/yt-dlp/yt-dlp) to download videos and transcribe them with [MacWhisper](https://goodsnooze.gumroad.com/l/macwhisper).
+
+- [@AndrejKarpathy](https://www.youtube.com/c/AndrejKarpathy)
+- [@ai-explained-](https://www.youtube.com/@ai-explained-)
+- [@LangChain](https://www.youtube.com/@LangChain)
+- [@allin](https://www.youtube.com/@allin)
+- [@Bg2Pod](https://www.youtube.com/@Bg2Pod)
+- [@jamesbriggs](https://www.youtube.com/@jamesbriggs)
+- [@lexfridman](https://www.youtube.com/@lexfridman) - and associated [transcripts](https://karpathy.ai/lexicap/)
+
+
+# Podcasts
+
+- [Latent Space](https://podcasts.apple.com/us/podcast/latent-space-the-ai-engineer-podcast/id1674008350)
+- [Dwarkesh Podcast](https://podcasts.apple.com/us/podcast/dwarkesh-podcast/id1516093381)
+
+
+# Twitter
+
+- [karpathy](https://x.com/karpathy)
+- [chipro](https://x.com/chipro)
+- [jeremyphoward](https://x.com/jeremyphoward)
+- [radekosmulski](https://x.com/radekosmulski)
+- [omarsar0](https://x.com/omarsar0)
+
+# Github
+
+I follow a bunch of accounts/repos and find the Github feed useful, which I subscribe via RSS:
+
+- Astral: <https://github.com/astral-sh>
+- LangChain: <https://github.com/langchain-ai>
+- <https://github.com/BerriAI/litellm>
+- <https://github.com/All-Hands-AI/OpenHands>
 
 # Resources
 
@@ -22,80 +76,3 @@ Maintaining a [ml_timeline](https://github.com/lawwu/ml_timeline), inspired by [
 - [What is Prompt Engineering](https://prmpts.ai/blog/what-is-prompt-engineering) - like how Googling became a skill (aka "Google-fu"), I think Prompt Engineering is an important skill to develop
 - [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) - A curated list of awesome ChatGPT prompts. I like "Act as a Linux Terminal" prompt.
 - [Prompt Engineering Guide](https://www.promptingguide.ai/) - "Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering." Code: [repo](https://github.com/dair-ai/Prompt-Engineering-Guide)
-
-## Podcasts
-
-- [DeepPapers](https://www.deeppapers.dev/) - Deep Papers is a podcast series featuring deep dives on today’s seminal AI papers and research
-
-## YouTube
-
-- [@lexfridman](https://www.youtube.com/@lexfridman) - and associated [transcripts](https://karpathy.ai/lexicap/)
-- [@AndrejKarpathy](https://www.youtube.com/c/AndrejKarpathy)
-- [@jamesbriggs](https://www.youtube.com/@jamesbriggs)
-- [@ai-explained-](https://www.youtube.com/@ai-explained-)
-
-## Twitter
-
-- [@jeremyphoward](https://twitter.com/jeremyphoward)
-- [@radekosmulski](https://twitter.com/radekosmulski)
-- [@omarsar0](https://twitter.com/omarsar0)
-
-## Newsletters
-
-- [Davis Summarizes Papers](https://dblalock.substack.com/)
-- [Data Science Programming News](https://dspn.substack.com/) - Run by [Eric J Ma](https://ericmjl.github.io/)
-
-## Libraries / Tools
-
-- [Github Copilot](https://github.com/features/copilot) - I use Copilot in my IDE, VS Code and it's dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer's 'flow' is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a [blog post](https://radekosmulski.com/an-ide-for-the-era-of-ai/) for how to set this up.
-- [LangChain](https://github.com/hwchase17/langchain) - Building applications with LLMs through composability
-- [llama_index](https://github.com/jerryjliu/llama_index) - LlamaIndex (GPT Index) is a project that provides a central interface to connect your LLM's with external data.
-- [streamlit](https://github.com/streamlit/streamlit) - Python framework for buliding UIs. I've used this a lot for data science demos. Resources to inspire you: [awesome-streamlit](https://github.com/MarcSkovMadsen/awesome-streamlit) and [Streamlit's gallery](https://streamlit.io/gallery)
-- [gradio](https://github.com/gradio-app/gradio) - similar to Streamlit but more for ML/NLP models.
-- [marvin](https://github.com/PrefectHQ/marvin) - Meet Marvin: a batteries-included library for building AI-powered software. Marvin's job is to integrate AI directly into your codebase by making it look and feel like any other function.
-
-# Ethical AI
-
-- [Ethics & Society at HuggingFace](https://huggingface.co/spaces/society-ethics/about)
-
-# Transformers
-
-- [transformers](https://github.com/huggingface/transformers)
-- 2023-04-24 - Brandon Rohrer's transformers from scratch [tutorial](https://e2eml.school/transformers.html)
-- 2023-04-16 - Sebastian Raschka explains the historical evolution of transformers [here](https://magazine.sebastianraschka.com/p/understanding-large-language-models)
-- 2023-01-27 - [The Transfomer Family Version 2.0](https://lilianweng.github.io/posts/2023-01-27-the-transformer-family-v2/)
-- 2023-01-17 - [Let's build GPT: from scratch, in code, spelled out](https://www.youtube.com/watch?v=kCc8FmEb1nY) - fantastic, in-depth tutorial by Andrej Karpathy building up transformers from scratch
-- 2022-01-03 - [Illustrated Retrieval Transformer](https://jalammar.github.io/illustrated-retrieval-transformer/)
-- 2020-12-17 - [Explaining Transformers](https://jalammar.github.io/explaining-transformers/)
-- 2020-07-27 - [How GPT3 Works Visually](https://jalammar.github.io/how-gpt3-works-visualizations-animations/)
-- 2020-04-07 - [The Transformer Family](https://lilianweng.github.io/posts/2020-04-07-the-transformer-family/)
-- 2019-08-12 - [Illustrated GPT2](https://jalammar.github.io/illustrated-gpt2/)
-- 2018-06-27 - [Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
-- 2018-04-03 - [Annotated Transformer](https://nlp.seas.harvard.edu/2018/04/03/attention.html)
-- 2017-06-12 - [Attention is All You Need](https://arxiv.org/abs/1706.03762)
-
-# GPT
-
-| Model   | Parameters         | Number of Transformer Layers | Tokens Trained On (Estimated) | GPU Hours / Cost to Train      | Release Date | Changes                                                                 | Link to Paper                                                           |
-| ------- | ------------------ | ---------------------------- | ----------------------------- | ------------------------------ | ------------ | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| GPT-1   | 117M               | 12                           | 8.3 billion                   | Not publicly disclosed          | June 2018    | Initial release of the GPT architecture                                 | [paper](https://s3-us-west-2.amazonaws.com/openai-assets/research-covers/language-unsupervised/language_understanding_paper.pdf) |
-| GPT-2   | 1.5B        | 48 (largest model)           | 40 billion                    | ~256 GPU hours (estimated)      | February 2019| Increased model size, dataset, and training compute                     | [paper](https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf) |
-| GPT-3   | 175B        | 96 (largest model)           | 45 terabytes (raw text)       | ~355,000 GPU hours (estimated)  | June 2020    | [Alternates dense and sprase self-attention layers](https://jalammar.github.io/how-gpt3-works-visualizations-animations/). Further increase in model size, dataset, and training compute           | [papers](https://arxiv.org/abs/2005.14165) |
-| GPT-3.5 / ChatGPT | 355B | ? | ? | ? | 2022-11-30 | RLHF Alignment | [post](https://openai.com/blog/chatgpt) |
-| GPT-4   | 1 trillion (?)      | 196 (largest model)          | 100 terabytes (raw text)      | Not publicly disclosed          | 2023-03-14 | Context windows of 8,192 and 32,768 tokens, introduction of the System Message, multi-modal (images and text)                           | [GPT-4 Technical Report](https://arxiv.org/abs/2303.08774)
-                                    |
-
-
-The above table was generated by GPT-4 using the prompt "For each of the models GPT-1, GPT-2, GPT-3, and GPT-4, can you provide a table with the following fields? 
-| Model | Parameters | Number of Transformer Layers | Tokens Trained On (Estimated) | GPU Hours / Cost to Train | Release Date | Changes | Link to Paper |  Can you provide the table in markdown code but wrap it in ``` so it doesn't get rendered by the browser" and then edited
-
-
-
-# Predictions
-
-- 2023-04-29 - [Jason Calacanis](https://steno.ai/all-in-with-chamath-jason-sacks/e126-big-tech-blow-out-powells-recession-warning-lab-grown-meat-rfk#00:31:182) - The cost of knowledge work will drop by 90% in the next 5-10 quarters. [David Friedberg](https://steno.ai/all-in-with-chamath-jason-sacks/e126-big-tech-blow-out-powells-recession-warning-lab-grown-meat-rfk#00:33:283) - Not so much worried about jobs but all the new products that will be built based on Generative AI tech: "what's going to come from that is a whole set of new products and ideas and things that we are certainly not thinking about today, but in six months, is going to become almost mainstay. And many new categories of products, many new industries, many new businesses are going to emerge that we're not even thinking about. So the Ludite argument of, oh, this is going to destroy jobs and destroy the economy and drop costs by 90% lawyers are going to get cheaper, etc, etc. I think that doesn't even matter. It's the tip of the iceberg. What's more exciting is all the new evolutionary stuff that's going to hit the market that's really going to transform the things that we can do, and that we didn't realize we could do. 
-- 2023-04-01 - [@AllenDowney](https://mobile.twitter.com/AllenDowney) predicts "The great majority of coding will be LLM-assisted, starting now." ([tweet](https://mobile.twitter.com/AllenDowney/status/1642292405201190915), [blog](https://www.allendowney.com/blog/2023/04/02/llm-assisted-programming/))
-- 2020-05-08
-  - [Ilya Sutskever](https://www.youtube.com/watch?v=13CZPWmke6A&t=2548&ab_channel=LexFridman) - Doesn't think backpropogation will be replaced. 
-  - [Ilya Sutskever](https://www.youtube.com/watch?v=13CZPWmke6A&t=2055s&ab_channel=LexFridman) - It is no longer possible for one person with one GPU to make significant breakthroughs in deep learning research. The deep learning "stack" is too deep. Ilya describes the stack as: ideas, systems to build datasets, distributed programming, building the actual cluster, GPU programming and putting it all together. "It can be quite hard for a single person to become world class in every single layer of the stack." OpenAI's technical paper: enumerate the number of people in each list.
-  - [Ilya Sutskever](https://www.youtube.com/watch?v=13CZPWmke6A&t=2565&ab_channel=LexFridman) - I think that the neural networks that will produce the reasoning breakthroughs of the future will be very similar to the architectures that exist today... Humans can reason. So why can't neural networks?
