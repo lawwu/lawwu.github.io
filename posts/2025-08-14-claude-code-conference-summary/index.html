@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2025-08-15">
+
+<title>Summaries of Talks from Claude Code Conference 2025 – Lawrence Wu</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-4df3b0c4fafa0f66eafcead0ee6cff11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+  
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+  
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Summaries of Talks from Claude Code Conference 2025 – Lawrence Wu">
+<meta property="og:site_name" content="Lawrence Wu">
+<meta name="twitter:title" content="Summaries of Talks from Claude Code Conference 2025 – Lawrence Wu">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../projects.html"> 
+<span class="menu-text">Projects</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../conferences.html"> 
+<span class="menu-text">Conferences</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://lawwu.github.io/til/"> 
+<span class="menu-text">TIL</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#claude-code-conference-2025-complete-guide-and-key-insights" id="toc-claude-code-conference-2025-complete-guide-and-key-insights" class="nav-link active" data-scroll-target="#claude-code-conference-2025-complete-guide-and-key-insights">Claude Code Conference 2025: Complete Guide and Key Insights</a>
+  <ul class="collapse">
+  <li><a href="#overall-summary" id="toc-overall-summary" class="nav-link" data-scroll-target="#overall-summary">Overall Summary</a></li>
+  <li><a href="#top-10-key-takeaways-for-developers" id="toc-top-10-key-takeaways-for-developers" class="nav-link" data-scroll-target="#top-10-key-takeaways-for-developers">Top 10 Key Takeaways for Developers</a></li>
+  <li><a href="#claude-plays-pokemon-tool-use-and-agent-improvements" id="toc-claude-plays-pokemon-tool-use-and-agent-improvements" class="nav-link" data-scroll-target="#claude-plays-pokemon-tool-use-and-agent-improvements">Claude Plays Pokemon: Tool Use and Agent Improvements</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights" id="toc-key-points-and-insights" class="nav-link" data-scroll-target="#key-points-and-insights">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers" id="toc-main-takeaways-for-developersusers" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#mastering-claude-code-in-30-minutes" id="toc-mastering-claude-code-in-30-minutes" class="nav-link" data-scroll-target="#mastering-claude-code-in-30-minutes">Mastering Claude Code in 30 Minutes</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-1" id="toc-key-points-and-insights-1" class="nav-link" data-scroll-target="#key-points-and-insights-1">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-1" id="toc-main-takeaways-for-developersusers-1" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-1">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#spotlight-on-databricks-enterprise-ai-implementation" id="toc-spotlight-on-databricks-enterprise-ai-implementation" class="nav-link" data-scroll-target="#spotlight-on-databricks-enterprise-ai-implementation">Spotlight on Databricks: Enterprise AI Implementation</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-2" id="toc-key-points-and-insights-2" class="nav-link" data-scroll-target="#key-points-and-insights-2">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-2" id="toc-main-takeaways-for-developersusers-2" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-2">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#building-ai-agents-with-claude-in-amazon-bedrock" id="toc-building-ai-agents-with-claude-in-amazon-bedrock" class="nav-link" data-scroll-target="#building-ai-agents-with-claude-in-amazon-bedrock">Building AI Agents with Claude in Amazon Bedrock</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-3" id="toc-key-points-and-insights-3" class="nav-link" data-scroll-target="#key-points-and-insights-3">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-3" id="toc-main-takeaways-for-developersusers-3" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-3">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#startups-building-new-products-with-claude" id="toc-startups-building-new-products-with-claude" class="nav-link" data-scroll-target="#startups-building-new-products-with-claude">Startups Building New Products with Claude</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-4" id="toc-key-points-and-insights-4" class="nav-link" data-scroll-target="#key-points-and-insights-4">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-4" id="toc-main-takeaways-for-developersusers-4" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-4">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#spotlight-on-canva-democratizing-interactive-prototyping" id="toc-spotlight-on-canva-democratizing-interactive-prototyping" class="nav-link" data-scroll-target="#spotlight-on-canva-democratizing-interactive-prototyping">Spotlight on Canva: Democratizing Interactive Prototyping</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-5" id="toc-key-points-and-insights-5" class="nav-link" data-scroll-target="#key-points-and-insights-5">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-5" id="toc-main-takeaways-for-developersusers-5" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-5">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#building-headless-automation-with-claude-code" id="toc-building-headless-automation-with-claude-code" class="nav-link" data-scroll-target="#building-headless-automation-with-claude-code">Building Headless Automation with Claude Code</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-6" id="toc-key-points-and-insights-6" class="nav-link" data-scroll-target="#key-points-and-insights-6">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-6" id="toc-main-takeaways-for-developersusers-6" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-6">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#vibe-coding-in-production" id="toc-vibe-coding-in-production" class="nav-link" data-scroll-target="#vibe-coding-in-production">Vibe Coding in Production</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-7" id="toc-key-points-and-insights-7" class="nav-link" data-scroll-target="#key-points-and-insights-7">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-7" id="toc-main-takeaways-for-developersusers-7" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-7">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#claude-code-best-practices" id="toc-claude-code-best-practices" class="nav-link" data-scroll-target="#claude-code-best-practices">Claude Code Best Practices</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-8" id="toc-key-points-and-insights-8" class="nav-link" data-scroll-target="#key-points-and-insights-8">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-8" id="toc-main-takeaways-for-developersusers-8" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-8">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#mcp-201-advanced-model-context-protocol" id="toc-mcp-201-advanced-model-context-protocol" class="nav-link" data-scroll-target="#mcp-201-advanced-model-context-protocol">MCP 201: Advanced Model Context Protocol</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-9" id="toc-key-points-and-insights-9" class="nav-link" data-scroll-target="#key-points-and-insights-9">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-9" id="toc-main-takeaways-for-developersusers-9" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-9">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#mcp-at-sourcegraph-building-enterprise-coding-agents" id="toc-mcp-at-sourcegraph-building-enterprise-coding-agents" class="nav-link" data-scroll-target="#mcp-at-sourcegraph-building-enterprise-coding-agents">MCP at Sourcegraph: Building Enterprise Coding Agents</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-10" id="toc-key-points-and-insights-10" class="nav-link" data-scroll-target="#key-points-and-insights-10">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-10" id="toc-main-takeaways-for-developersusers-10" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-10">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#taking-claude-to-the-next-level-claude-4-features" id="toc-taking-claude-to-the-next-level-claude-4-features" class="nav-link" data-scroll-target="#taking-claude-to-the-next-level-claude-4-features">Taking Claude to the Next Level: Claude 4 Features</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-11" id="toc-key-points-and-insights-11" class="nav-link" data-scroll-target="#key-points-and-insights-11">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-11" id="toc-main-takeaways-for-developersusers-11" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-11">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#building-blocks-for-tomorrows-ai-agents" id="toc-building-blocks-for-tomorrows-ai-agents" class="nav-link" data-scroll-target="#building-blocks-for-tomorrows-ai-agents">Building Blocks for Tomorrow’s AI Agents</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-12" id="toc-key-points-and-insights-12" class="nav-link" data-scroll-target="#key-points-and-insights-12">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-12" id="toc-main-takeaways-for-developersusers-12" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-12">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#how-students-build-with-claude" id="toc-how-students-build-with-claude" class="nav-link" data-scroll-target="#how-students-build-with-claude">How Students Build with Claude</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-13" id="toc-key-points-and-insights-13" class="nav-link" data-scroll-target="#key-points-and-insights-13">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-13" id="toc-main-takeaways-for-developersusers-13" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-13">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#building-ai-agents-with-claude-in-google-clouds-vertex-ai" id="toc-building-ai-agents-with-claude-in-google-clouds-vertex-ai" class="nav-link" data-scroll-target="#building-ai-agents-with-claude-in-google-clouds-vertex-ai">Building AI Agents with Claude in Google Cloud’s Vertex AI</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-14" id="toc-key-points-and-insights-14" class="nav-link" data-scroll-target="#key-points-and-insights-14">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-14" id="toc-main-takeaways-for-developersusers-14" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-14">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#spotlight-on-manus-building-hands-for-ai-models" id="toc-spotlight-on-manus-building-hands-for-ai-models" class="nav-link" data-scroll-target="#spotlight-on-manus-building-hands-for-ai-models">Spotlight on Manus: Building Hands for AI Models</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-15" id="toc-key-points-and-insights-15" class="nav-link" data-scroll-target="#key-points-and-insights-15">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-15" id="toc-main-takeaways-for-developersusers-15" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-15">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#spotlight-on-shopify-structured-workflow-orchestration-with-roast" id="toc-spotlight-on-shopify-structured-workflow-orchestration-with-roast" class="nav-link" data-scroll-target="#spotlight-on-shopify-structured-workflow-orchestration-with-roast">Spotlight on Shopify: Structured Workflow Orchestration with Roast</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-16" id="toc-key-points-and-insights-16" class="nav-link" data-scroll-target="#key-points-and-insights-16">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-16" id="toc-main-takeaways-for-developersusers-16" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-16">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#prompting-for-agents" id="toc-prompting-for-agents" class="nav-link" data-scroll-target="#prompting-for-agents">Prompting for Agents</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-17" id="toc-key-points-and-insights-17" class="nav-link" data-scroll-target="#key-points-and-insights-17">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-17" id="toc-main-takeaways-for-developersusers-17" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-17">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  <li><a href="#prompting-101-fundamentals-of-effective-ai-communication" id="toc-prompting-101-fundamentals-of-effective-ai-communication" class="nav-link" data-scroll-target="#prompting-101-fundamentals-of-effective-ai-communication">Prompting 101: Fundamentals of Effective AI Communication</a>
+  <ul class="collapse">
+  <li><a href="#key-points-and-insights-18" id="toc-key-points-and-insights-18" class="nav-link" data-scroll-target="#key-points-and-insights-18">Key Points and Insights</a></li>
+  <li><a href="#main-takeaways-for-developersusers-18" id="toc-main-takeaways-for-developersusers-18" class="nav-link" data-scroll-target="#main-takeaways-for-developersusers-18">Main Takeaways for Developers/Users</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Summaries of Talks from Claude Code Conference 2025</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">Claude Code</div>
+    <div class="quarto-category">Claude</div>
+    <div class="quarto-category">Conference</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 15, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="claude-code-conference-2025-complete-guide-and-key-insights" class="level1">
+<h1>Claude Code Conference 2025: Complete Guide and Key Insights</h1>
+<section id="overall-summary" class="level2">
+<h2 class="anchored" data-anchor-id="overall-summary">Overall Summary</h2>
+<p>The Claude Code Conference 2025 showcased groundbreaking developments in AI-powered development tools, enterprise AI implementations, and the future of human-AI collaboration in software engineering. The conference highlighted the evolution from simple AI assistants to sophisticated autonomous agents capable of complex reasoning and long-term task execution.</p>
+<p>Key themes included the introduction of Claude 4’s extended thinking capabilities, the emergence of Model Context Protocol (MCP) as the universal standard for AI-tool integration, and real-world enterprise implementations demonstrating significant productivity gains. The conference also emphasized the importance of proper prompting techniques, agent evaluation frameworks, and the shift toward “agentic” development paradigms.</p>
+</section>
+<section id="top-10-key-takeaways-for-developers" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-key-takeaways-for-developers">Top 10 Key Takeaways for Developers</h2>
+<ol type="1">
+<li><p><strong>Start with codebase Q&amp;A before writing code</strong> - This approach reduces onboarding time from 2-3 weeks to 2-3 days and helps understand existing patterns and architecture.</p></li>
+<li><p><strong>Invest in Claude.md configuration files</strong> - These provide persistent context and coding standards across sessions, dramatically improving AI performance on your specific projects.</p></li>
+<li><p><strong>Embrace parallel tool calling and extended thinking</strong> - Claude 4’s new capabilities enable more efficient workflows and better planning between actions.</p></li>
+<li><p><strong>Use MCP servers as the standard for AI-tool integration</strong> - MCP is becoming the “USB-C of LLMs” and provides a standardized way to connect AI to external systems.</p></li>
+<li><p><strong>Focus on tool design over complex prompting</strong> - Clear tool descriptions and proper interfaces are more important than elaborate prompt engineering for agent performance.</p></li>
+<li><p><strong>Implement proper evaluation frameworks</strong> - Use realistic tasks and LLM-as-judge approaches rather than relying solely on benchmarks like SweeBench.</p></li>
+<li><p><strong>Think beyond traditional code review for AI-generated code</strong> - Design verifiable systems with clear inputs/outputs rather than trying to review every line of AI-generated code.</p></li>
+<li><p><strong>Leverage the model-tool binding principle</strong> - The best performing agents use foundation models specifically trained on the tools they use (like Sonnet with bash commands).</p></li>
+<li><p><strong>Build composable, multi-step agent systems</strong> - Enterprise reliability comes from breaking complex tasks into manageable, evaluable components with clear feedback loops.</p></li>
+<li><p><strong>Prepare for rapid capability growth</strong> - AI task capability is doubling every 7 months, requiring adaptive development approaches and architectural thinking.</p></li>
+</ol>
+<hr>
+</section>
+<section id="claude-plays-pokemon-tool-use-and-agent-improvements" class="level2">
+<h2 class="anchored" data-anchor-id="claude-plays-pokemon-tool-use-and-agent-improvements">Claude Plays Pokemon: Tool Use and Agent Improvements</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0XUzn-DEoY8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speaker:</strong> David (Creator of Claude Plays Pokemon, Anthropic’s PodAI team)</p>
+<section id="key-points-and-insights" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights">Key Points and Insights</h3>
+<ul>
+<li><strong>Extended thinking between tool calls</strong>: Claude 4 introduces extended thinking between tool calls, allowing models to plan, reflect, and question assumptions before acting</li>
+<li><strong>Parallel tool calling capability</strong>: Models can now make multiple tool calls simultaneously, improving efficiency and reducing latency</li>
+<li><strong>Tool use evolution</strong>: From simple calculator aids to driving complex agentic workflows with plan-act-learn loops</li>
+<li><strong>Scale of tool handling</strong>: Models can now handle 50-100 tools effectively with proper tool design and clear descriptions</li>
+<li><strong>Real-world validation</strong>: Claude 4 Opus successfully executed a 24-hour Pokemon catching session, demonstrating improved long-term planning</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Focus on tool design and clear descriptions rather than complex prompting</li>
+<li>Extended thinking mode helps agents recover from errors and adapt plans dynamically</li>
+<li>Parallel tool calling significantly reduces development time by eliminating sequential tool call overhead</li>
+<li>Models are becoming more capable agents that can work over longer time horizons with less human intervention</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="mastering-claude-code-in-30-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mastering-claude-code-in-30-minutes">Mastering Claude Code in 30 Minutes</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/6eBSHbLKuN0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speaker:</strong> Boris (Member of Technical Staff at Anthropic, Creator of Claude Code)</p>
+<section id="key-points-and-insights-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-1">Key Points and Insights</h3>
+<ul>
+<li><strong>Codebase Q&amp;A first</strong>: Start with codebase Q&amp;A before writing code - reduces onboarding from 2-3 weeks to 2-3 days at Anthropic</li>
+<li><strong>Full multimodal support</strong>: Claude Code is fully multimodal and works across all IDEs without requiring workflow changes</li>
+<li><strong>Context is king</strong>: Use claude.md files, slash commands, and MCP servers to provide relevant project information</li>
+<li><strong>Hierarchical configuration</strong>: Configuration system allows enterprise policies, project configs, and personal preferences</li>
+<li><strong>SDK capabilities</strong>: Claude Code SDK enables building agents and automation pipelines with Unix-style utility approach</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-1" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-1">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Begin every new project/codebase with Q&amp;A to understand structure and patterns</li>
+<li>Invest time in configuring claude.md and context files for dramatic performance improvements</li>
+<li>Use iterative workflows with verification tools (testing, screenshots) for better results</li>
+<li>Leverage the SDK for CI/CD pipelines, incident response, and automated workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-databricks-enterprise-ai-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-databricks-enterprise-ai-implementation">Spotlight on Databricks: Enterprise AI Implementation</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/67a5yrKH-nI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speaker:</strong> Craig (Product Management Leader at Databricks, former Google Vertex AI/AWS SageMaker)</p>
+<section id="key-points-and-insights-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-2">Key Points and Insights</h3>
+<ul>
+<li><strong>Enterprise governance requirements</strong>: Enterprise AI requires governance and evaluation for production deployment in high-risk environments</li>
+<li><strong>Multi-step agent superiority</strong>: Multi-step agentic systems outperform simple input-output models (Berkeley research validation)</li>
+<li><strong>Tool calling excellence</strong>: Claude’s superior tool calling enables deterministic systems using probabilistic backends</li>
+<li><strong>Real customer results</strong>: FactSet improved accuracy from 59% to 85% and reduced latency from 15s to 6s by decomposing prompts into multi-step workflows</li>
+<li><strong>Productivity transformation</strong>: Claude integration reduces analyst questionnaire work from hundreds of hours to editing near-final drafts</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-2" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-2">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Build composable, multi-node agent systems for enterprise reliability</li>
+<li>Implement rigorous evaluation frameworks to measure and improve system performance</li>
+<li>Use Claude’s governance features to control data, model, and tool access at granular levels</li>
+<li>Focus on connecting AI systems deeply with enterprise data infrastructure</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-ai-agents-with-claude-in-amazon-bedrock" class="level2">
+<h2 class="anchored" data-anchor-id="building-ai-agents-with-claude-in-amazon-bedrock">Building AI Agents with Claude in Amazon Bedrock</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/8gTpgWru0Wg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speakers:</strong> Dewan Lightfoot, Banjo Abiyami, Suman Devanath (AWS Developer Advocates)</p>
+<section id="key-points-and-insights-3" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-3">Key Points and Insights</h3>
+<ul>
+<li><strong>Strands Agent SDK simplicity</strong>: Simplifies agent building to just three components: models, tools, and prompts</li>
+<li><strong>Claude 3.5 Sonnet default</strong>: Default model with built-in tools like HTTP requests requiring minimal setup</li>
+<li><strong>MCP server integration</strong>: Provides structured way to connect LLMs to external APIs and documentation</li>
+<li><strong>Live demo success</strong>: Showed creating weather agents, AWS documentation agents, and architecture diagram generators</li>
+<li><strong>Seamless Bedrock integration</strong>: Claude Code integration with Bedrock enables development without requiring separate Anthropic API keys</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-3" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-3">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use Strands for rapid prototyping with minimal boilerplate code</li>
+<li>MCP servers are the “USB-C of LLMs” for connecting to external systems and data</li>
+<li>AWS provides comprehensive MCP server ecosystem for cloud services integration</li>
+<li>Agents work best when given specific context and clear tool definitions</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="startups-building-new-products-with-claude" class="level2">
+<h2 class="anchored" data-anchor-id="startups-building-new-products-with-claude">Startups Building New Products with Claude</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/91Haz1CRoxY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speakers:</strong> Multiple startup founders (Tempo Labs, Zen, Gamma, Bitto, Refusion, Create)</p>
+<section id="key-points-and-insights-4" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-4">Key Points and Insights</h3>
+<ul>
+<li><strong>Tempo Labs democratization</strong>: “Cursor for PMs and designers” - enables non-engineers to generate 10-15% of frontend PRs directly</li>
+<li><strong>Gamma model upgrade impact</strong>: Sonnet 3.5 to 3.7 upgrade with web search improved user satisfaction metrics by 8%</li>
+<li><strong>Bitto code review transformation</strong>: AI code review platform reducing PR closure time from 50 hours to 5 hours using Claude’s reasoning capabilities</li>
+<li><strong>Refusion creative applications</strong>: Claude powers “Ghostwriter” for music lyric generation, used tens of millions of times</li>
+<li><strong>Create democratized app development</strong>: Text-to-app builder enabling non-technical users to create full mobile apps end-to-end</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-4" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-4">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Claude enables product categories that democratize technical capabilities to non-engineers</li>
+<li>Model upgrades (especially with new capabilities like web search) can dramatically impact user metrics</li>
+<li>Successful products leverage Claude’s reasoning for domain-specific applications (code review, music, design)</li>
+<li>Integration of frontend design tools with Claude enables visual, collaborative development workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-canva-democratizing-interactive-prototyping" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-canva-democratizing-interactive-prototyping">Spotlight on Canva: Democratizing Interactive Prototyping</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Ac4LiuoJT20" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Danny Wu (Head of AI Products at Canva)</p>
+<section id="key-points-and-insights-5" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-5">Key Points and Insights</h3>
+<ul>
+<li><strong>Canva Code democratization</strong>: Built to democratize interactive prototyping using Claude, allowing non-technical users to create apps with simple prompts</li>
+<li><strong>Functional prototype strategy</strong>: Used functional prototypes built with Claude to test concepts and gather user feedback before integrating into the main codebase</li>
+<li><strong>Model selection beyond metrics</strong>: Chose Claude’s models for their ability to handle under-specified prompts, create beautiful web designs, and generate quality SVGs and animations</li>
+<li><strong>User-focused targeting</strong>: Focused on targeting non-technical users first, then scaling up to more sophisticated functionality</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-5" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-5">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Think beyond traditional evals when choosing models - consider complete user experience including design quality and creativity</li>
+<li>Build functional prototypes outside main codebase to enable faster experimentation in AI product development</li>
+<li>Focus on your unique strengths and target specific user segments rather than trying to serve everyone</li>
+<li>Communicate AI limitations clearly to users to prevent confusion and set proper expectations</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-headless-automation-with-claude-code" class="level2">
+<h2 class="anchored" data-anchor-id="building-headless-automation-with-claude-code">Building Headless Automation with Claude Code</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/dRsjO-88nBs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Sirbit Asaria (Engineer on Claude Code team)</p>
+<section id="key-points-and-insights-6" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-6">Key Points and Insights</h3>
+<ul>
+<li><strong>SDK programmatic access</strong>: Claude Code SDK enables programmatic access to Claude Code agent in headless mode, opening new automation possibilities</li>
+<li><strong>Unix tool philosophy</strong>: Can be used as Unix tool, integrated into CI/CD pipelines, and for building custom chatbots or remote coding environments</li>
+<li><strong>Advanced features</strong>: Features structured JSON output, session state management, and permission prompt tools for real-time user interaction</li>
+<li><strong>GitHub Actions integration</strong>: Demonstrated GitHub Action built on SDK that can review code, create features, and manage pull requests automatically</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-6" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-6">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Claude Code SDK acts as a new primitive for building applications that weren’t possible before</li>
+<li>Unix-style tool philosophy makes it pluggable anywhere you can run bash or terminal commands</li>
+<li>Structured output and session management enable building interactive user experiences on top of the SDK</li>
+<li>GitHub Actions integration shows how to safely automate code review and development workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="vibe-coding-in-production" class="level2">
+<h2 class="anchored" data-anchor-id="vibe-coding-in-production">Vibe Coding in Production</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/fHWFF_pnqDk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Eric (Researcher at Anthropic focused on coding agents)</p>
+<section id="key-points-and-insights-7" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-7">Key Points and Insights</h3>
+<ul>
+<li><strong>Vibe coding philosophy</strong>: Means fully embracing AI code generation and “forgetting the code exists” while staying focused on product outcomes</li>
+<li><strong>AI capability acceleration</strong>: AI task capability is doubling every 7 months, making traditional code review approaches unsustainable for large-scale AI-generated work</li>
+<li><strong>Production deployment success</strong>: Successfully deployed 22,000-line AI-generated change to production by focusing on leaf nodes, creating verifiable tests, and acting as Claude’s product manager</li>
+<li><strong>Abstraction layer focus</strong>: Key is finding abstraction layers you can verify without understanding implementation details</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-7" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-7">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Focus vibe coding on “leaf nodes” in codebase where tech debt won’t impact core architecture</li>
+<li>Act as an effective product manager for Claude by providing context, requirements, and guidance</li>
+<li>Design systems with verifiable inputs/outputs and stress tests to validate correctness without reading all code</li>
+<li>Embrace the exponential growth in AI capabilities rather than trying to review every line of generated code</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="claude-code-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="claude-code-best-practices">Claude Code Best Practices</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gv0WHhKelSE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Cal (Applied AI team at Anthropic, core Claude Code contributor)</p>
+<section id="key-points-and-insights-8" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-8">Key Points and Insights</h3>
+<ul>
+<li><strong>Agentic search approach</strong>: Claude Code works as a pure agent using agentic search (glob, grep, find) rather than code indexing to understand codebases</li>
+<li><strong>Claude.md importance</strong>: Claude.md files are essential for sharing context and instructions across sessions and team members</li>
+<li><strong>Workflow optimization</strong>: Permission management, CLI tool integration, and context management (using /clear or /compact) are crucial for effective workflows</li>
+<li><strong>New feature releases</strong>: Features include model switching, thinking between tool calls, and improved VS Code/JetBrains integrations</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-8" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-8">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use Claude.md files in projects to provide persistent context and coding standards for Claude</li>
+<li>Master permission management and auto-accept modes to speed up workflow without sacrificing safety</li>
+<li>Leverage Claude’s terminal expertise by integrating CLI tools and MCP servers for expanded capabilities</li>
+<li>Stay updated with rapid feature releases and experiment with advanced techniques like multi-agent workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="mcp-201-advanced-model-context-protocol" class="level2">
+<h2 class="anchored" data-anchor-id="mcp-201-advanced-model-context-protocol">MCP 201: Advanced Model Context Protocol</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/HNzH5Us1Rvg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> David (Member of Technical Staff at Anthropic, co-creator of MCP)</p>
+<section id="key-points-and-insights-9" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-9">Key Points and Insights</h3>
+<ul>
+<li><strong>Five MCP primitives</strong>: Offers 5 primitives beyond basic tool calling: prompts (user-driven templates), resources (application-driven data), tools (model-driven actions), sampling (server requests completion from client), and roots (client context inquiry)</li>
+<li><strong>Interaction model clarity</strong>: Defines when to use what: prompts for user-driven interactions, resources for application-driven data access, tools for model-driven actions</li>
+<li><strong>Evolution to web-based</strong>: MCP is evolving from local experiences to web-based servers with OAuth 2.1 authorization and streamable HTTP for scaling</li>
+<li><strong>Future developments</strong>: Include asynchronous tasks, elicitation (user input requests), official registry, and multi-modality support</li>
+<li><strong>Sampling power</strong>: Allows powerful chaining where servers can request model completions without managing API keys, keeping clients in control</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-9" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-9">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use the full power of MCP’s primitives to build richer interactions beyond simple tool calling</li>
+<li>Consider the interaction model when designing MCP servers: user-driven vs application-driven vs model-driven</li>
+<li>Prepare for web-based MCP servers with proper OAuth implementation for enterprise integration</li>
+<li>Future-proof applications by understanding upcoming features like sampling and async task support</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="mcp-at-sourcegraph-building-enterprise-coding-agents" class="level2">
+<h2 class="anchored" data-anchor-id="mcp-at-sourcegraph-building-enterprise-coding-agents">MCP at Sourcegraph: Building Enterprise Coding Agents</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/j8NlbEWAsmc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Biong (CTO and co-founder of Sourcegraph)</p>
+<section id="key-points-and-insights-10" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-10">Key Points and Insights</h3>
+<ul>
+<li><strong>Three waves of AI architecture</strong>: Evolution through co-pilot era (text completion), RAG chat era, and now the agents era with tool calling and MCP</li>
+<li><strong>AMP agent architecture</strong>: Sourcegraph built AMP, a new coding agent from scratch using the “recipe for AI agents”: strong tool-use LLM + MCP + feedback loops + imperative UX</li>
+<li><strong>Comprehensive MCP integration</strong>: Spans local tools (Playwright, Postgres) and external services (Linear, Sentry) with secure secret handling via OAuth proxy</li>
+<li><strong>Toolmageddon avoidance</strong>: Too many MCP tools can confuse models; focus on three buckets: context finding, feedback provision, and success declaration</li>
+<li><strong>Future agent patterns</strong>: Sub-agents and dynamic tool synthesis represent the future, with parallels to early programming language development</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-10" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-10">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Rethink application architecture for the agentic era rather than retrofitting existing RAG-chat applications</li>
+<li>Focus on feedback loops and design patterns that make agents reliable and self-correcting</li>
+<li>Implement secure MCP integration with proper OAuth handling for enterprise environments</li>
+<li>Consider sub-agents as tools and prepare for more sophisticated tool composition patterns</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="taking-claude-to-the-next-level-claude-4-features" class="level2">
+<h2 class="anchored" data-anchor-id="taking-claude-to-the-next-level-claude-4-features">Taking Claude to the Next Level: Claude 4 Features</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nZCy8E5jlok" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Lisa Crowfoot (Research Product Manager at Anthropic)</p>
+<section id="key-points-and-insights-11" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-11">Key Points and Insights</h3>
+<ul>
+<li><strong>Four major improvements</strong>: Claude 4 (Opus and Sonnet) introduces interleaved thinking and tool use, memory capabilities, complex instruction following, and reduced reward hacking</li>
+<li><strong>Memory enables persistence</strong>: Sustained performance over hours, with Claude Opus tracking progress across 64 Pokemon battles (12+ hours of gameplay)</li>
+<li><strong>Better instruction following</strong>: Claude 4 models are less “over-eager” by default and better at following complex system prompts (16k+ tokens)</li>
+<li><strong>Reduced reward hacking</strong>: 80%+ reduction in reward hacking behavior makes Claude more trustworthy for autonomous tasks</li>
+<li><strong>Model specialization</strong>: Opus excels at complex tasks (large codebases, migrations), while Sonnet 4 is optimized for speed and human-in-the-loop scenarios</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-11" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-11">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Remove anti-over-eagerness language from prompts when upgrading to Claude 4</li>
+<li>Leverage parallel tool calling and specify thinking targets for better agent performance</li>
+<li>Use Opus for complex, long-horizon tasks and Sonnet for rapid iteration and human collaboration</li>
+<li>Invest in prompt engineering as small changes can significantly impact performance</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-blocks-for-tomorrows-ai-agents" class="level2">
+<h2 class="anchored" data-anchor-id="building-blocks-for-tomorrows-ai-agents">Building Blocks for Tomorrow’s AI Agents</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/oDks2gVHu4k" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Brad Abrams (Product Manager at Anthropic)</p>
+<section id="key-points-and-insights-12" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-12">Key Points and Insights</h3>
+<ul>
+<li><strong>Three pillars for agents</strong>: Build (Claude 4 + code execution), Connect (web search + MCP connector), and Optimize (caching + batch + priority tiers)</li>
+<li><strong>Code execution capabilities</strong>: Provides dedicated containers per organization with streaming results, enabling complex data analysis and computational tasks</li>
+<li><strong>Agentic web search</strong>: Delivers agentic, multi-turn search with automatic citation and domain restriction capabilities</li>
+<li><strong>MCP Connector enterprise</strong>: Enables secure OAuth-based integration with remote MCP servers (Asana, Zapier, CloudFlare-hosted services)</li>
+<li><strong>Optimization features</strong>: 1-hour prompt caching, batch API as async agentic API, and priority tier for dedicated capacity</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-12" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-12">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Combine code execution with web search for powerful analytical capabilities</li>
+<li>Leverage remote MCP servers with OAuth for enterprise-grade integrations</li>
+<li>Use batch processing as an async agentic API with 50% cost savings</li>
+<li>Take advantage of extended prompt caching (1 hour) for long-running agent sessions</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="how-students-build-with-claude" class="level2">
+<h2 class="anchored" data-anchor-id="how-students-build-with-claude">How Students Build with Claude</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/PHuXXeadV_g" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speakers:</strong> Greg (Student Outreach Lead), Isabel (Stanford), Mason (UC Berkeley), Rohil (UC Berkeley), Daniel (USC)</p>
+<section id="key-points-and-insights-13" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-13">Key Points and Insights</h3>
+<ul>
+<li><strong>Nuclear research breakthrough</strong>: Isabel used Claude to build nuclear weapon detection simulations using CERN’s Geant4 software, enabling graduate-level research as an undergraduate</li>
+<li><strong>Top-down learning approach</strong>: Mason learned coding through Claude, building CalGBT and codebase visualization tools without traditional CS education</li>
+<li><strong>Innovative role reversal</strong>: Rohil created SideQuest, flipping the script to have AI agents hire humans for physical tasks with real-time video verification</li>
+<li><strong>Multi-agent systems</strong>: Daniel built Claude Cortex, a multi-agent system that dynamically creates specialized agents for complex decision-making scenarios</li>
+<li><strong>Rapid iteration cycles</strong>: Students demonstrate rapid prototyping cycles (1 day to 1 week) and focus on user value over technical perfection</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-13" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-13">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>No learning curve is too steep with AI assistance - tackle existential problems and complex domains</li>
+<li>Focus on iterative workflows with AI rather than trying to build perfect systems upfront</li>
+<li>Think of AI as infrastructure and system architecture rather than just feature development</li>
+<li>Emphasize practical outcomes and user impact over technical sophistication or completeness</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-ai-agents-with-claude-in-google-clouds-vertex-ai" class="level2">
+<h2 class="anchored" data-anchor-id="building-ai-agents-with-claude-in-google-clouds-vertex-ai">Building AI Agents with Claude in Google Cloud’s Vertex AI</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TUysIAtxyrQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Ivan Nardini, Developer Advocate at Google Cloud</p>
+<section id="key-points-and-insights-14" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-14">Key Points and Insights</h3>
+<ul>
+<li><strong>Four-component agent stack</strong>: Google Cloud’s agent stack includes Agent Development Kit (ADK), MCP integration, Vertex AI Agent Engine, and Agent-to-Agent Protocol</li>
+<li><strong>ADK developer-friendly</strong>: Open-source, developer-friendly framework for building, evaluating, and deploying agents at scale</li>
+<li><strong>Standardized MCP integration</strong>: Allows standardized communication between agents and tools</li>
+<li><strong>Managed platform</strong>: Vertex AI Agent Engine provides managed platform for deploying and scaling agents in production with built-in monitoring and governance</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-14" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-14">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use ADK for rapid agent development with minimal code (just 3 files needed: agent.py, environment variables, and init file)</li>
+<li>Leverage MCP servers to avoid reinventing tools - any existing MCP server can be integrated with just 2 lines of code</li>
+<li>Deploy agents to production easily using Vertex AI Agent Engine for automatic scaling and operational management</li>
+<li>Focus on building agent logic rather than infrastructure concerns</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-manus-building-hands-for-ai-models" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-manus-building-hands-for-ai-models">Spotlight on Manus: Building Hands for AI Models</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/UjboGsztHd8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Tao (HighCloud), Co-founder and CPO of Manus AI</p>
+<section id="key-points-and-insights-15" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-15">Key Points and Insights</h3>
+<ul>
+<li><strong>AI hands concept</strong>: Manus provides AI models with “hands” through virtual machines with full access to browsers, terminals, VS Code, and file systems</li>
+<li><strong>Less structure, more intelligence</strong>: Philosophy of minimal predefined workflows, maximum model autonomy</li>
+<li><strong>High engagement metrics</strong>: Users can achieve 2+ hours of daily GPU consumption, with goal to reach 24-hour influence per user</li>
+<li><strong>Inspiration from non-coders</strong>: Inspired by observing non-coders using Cursor to solve daily tasks without caring about the underlying code</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-15" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-15">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Agent frameworks should provide computing environments rather than just chat interfaces</li>
+<li>Cloud-based execution enables fire-and-forget task assignment without requiring user attention</li>
+<li>Teaching agents through personal knowledge systems is more effective than hard-coded workflows</li>
+<li>Focus on giving models the right tools and context rather than micromanaging their decision process</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-shopify-structured-workflow-orchestration-with-roast" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-shopify-structured-workflow-orchestration-with-roast">Spotlight on Shopify: Structured Workflow Orchestration with Roast</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/xlEQ6Y3WNNI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Obi Fernandez, Principal Engineer, Shopify’s Augmented Engineering Group</p>
+<section id="key-points-and-insights-16" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-16">Key Points and Insights</h3>
+<ul>
+<li><strong>Complementary approaches</strong>: Two approaches: agentic tools (for exploratory/ambiguous tasks) vs structured workflows (for predictable, repeatable tasks)</li>
+<li><strong>Roast framework</strong>: <a href="https://github.com/Shopify/roast">Roast</a>: Open-source Ruby framework for orchestrating deterministic workflows with AI components</li>
+<li><strong>Powerful combinations</strong>: Interleaving structured workflows with Claude Code creates powerful combinations for large-scale code transformations</li>
+<li><strong>Scale at Shopify</strong>: 500+ daily active users of Claude Code with 250k requests/second at peak</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-16" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-16">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use structured workflows for tasks like legacy migrations, test generation, and systematic refactoring</li>
+<li>Combine deterministic steps with non-deterministic AI reasoning for optimal results</li>
+<li>Roast provides session saving, function caching, and convention-oriented development</li>
+<li>Scale AI applications by minimizing instructions per step and breaking complex tasks into manageable components</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prompting-for-agents" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-for-agents">Prompting for Agents</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XSZP9GhhuAc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speakers:</strong> Hannah and Jeremy from Anthropic’s Applied AI team</p>
+<section id="key-points-and-insights-17" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-17">Key Points and Insights</h3>
+<ul>
+<li><strong>Agent definition</strong>: Agents are “models using tools in a loop” - best for complex, valuable tasks with unclear solution paths</li>
+<li><strong>Think like your agents</strong>: Simulate their environment and tool responses to understand their perspective</li>
+<li><strong>Provide guidance</strong>: Reasonable heuristics and budgets (e.g., “use under 5 tool calls for simple queries”)</li>
+<li><strong>Interleaved thinking</strong>: Guide the thinking process and use interleaved thinking between tool calls for better reasoning</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-17" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-17">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Start with simple prompts and iterate based on edge cases and failures</li>
+<li>Use structured evals with small sample sizes initially - focus on realistic tasks over arbitrary benchmarks</li>
+<li>Tool selection is crucial - provide clear guidance on which tools to use in different contexts</li>
+<li>LLM-as-judge with rubrics is effective for evaluating agent outputs</li>
+<li>Context window management through compaction, external files, or sub-agents extends agent capabilities</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prompting-101-fundamentals-of-effective-ai-communication" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-101-fundamentals-of-effective-ai-communication">Prompting 101: Fundamentals of Effective AI Communication</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ysPbXH0LpIE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speakers:</strong> Hannah and Christian from Anthropic’s Applied AI team</p>
+<section id="key-points-and-insights-18" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-18">Key Points and Insights</h3>
+<ul>
+<li><strong>Programming in natural language</strong>: Prompt engineering is “programming in natural language” requiring clear structure and organization</li>
+<li><strong>Recommended structure</strong>: Task context → content → detailed instructions → examples → reminders → output formatting</li>
+<li><strong>XML tags and delimiters</strong>: Use XML tags and delimiters to help Claude understand and organize information</li>
+<li><strong>Order of analysis matters</strong>: Guide Claude through logical step-by-step reasoning processes</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-18" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-18">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Follow iterative, empirical approach - start simple and build based on what fails</li>
+<li>Provide background context and data that won’t change (great for prompt caching)</li>
+<li>Use examples and few-shot learning for difficult edge cases</li>
+<li>Include clear reminders about guidelines and confidence requirements</li>
+<li>Structure output with XML tags or pre-filled responses for downstream processing</li>
+<li>Extended thinking can serve as a debugging tool to understand Claude’s reasoning process</li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawwu\.github\.io\/blog\.html");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

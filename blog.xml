@@ -10,7 +10,519 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.7.33</generator>
-<lastBuildDate>Thu, 14 Aug 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 15 Aug 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Summaries of Talks from Claude Code Conference 2025</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2025-08-14-claude-code-conference-summary/</link>
+  <description><![CDATA[ 
+
+
+
+
+<section id="claude-code-conference-2025-complete-guide-and-key-insights" class="level1">
+<h1>Claude Code Conference 2025: Complete Guide and Key Insights</h1>
+<section id="overall-summary" class="level2">
+<h2 class="anchored" data-anchor-id="overall-summary">Overall Summary</h2>
+<p>The Claude Code Conference 2025 showcased groundbreaking developments in AI-powered development tools, enterprise AI implementations, and the future of human-AI collaboration in software engineering. The conference highlighted the evolution from simple AI assistants to sophisticated autonomous agents capable of complex reasoning and long-term task execution.</p>
+<p>Key themes included the introduction of Claude 4’s extended thinking capabilities, the emergence of Model Context Protocol (MCP) as the universal standard for AI-tool integration, and real-world enterprise implementations demonstrating significant productivity gains. The conference also emphasized the importance of proper prompting techniques, agent evaluation frameworks, and the shift toward “agentic” development paradigms.</p>
+</section>
+<section id="top-10-key-takeaways-for-developers" class="level2">
+<h2 class="anchored" data-anchor-id="top-10-key-takeaways-for-developers">Top 10 Key Takeaways for Developers</h2>
+<ol type="1">
+<li><p><strong>Start with codebase Q&amp;A before writing code</strong> - This approach reduces onboarding time from 2-3 weeks to 2-3 days and helps understand existing patterns and architecture.</p></li>
+<li><p><strong>Invest in Claude.md configuration files</strong> - These provide persistent context and coding standards across sessions, dramatically improving AI performance on your specific projects.</p></li>
+<li><p><strong>Embrace parallel tool calling and extended thinking</strong> - Claude 4’s new capabilities enable more efficient workflows and better planning between actions.</p></li>
+<li><p><strong>Use MCP servers as the standard for AI-tool integration</strong> - MCP is becoming the “USB-C of LLMs” and provides a standardized way to connect AI to external systems.</p></li>
+<li><p><strong>Focus on tool design over complex prompting</strong> - Clear tool descriptions and proper interfaces are more important than elaborate prompt engineering for agent performance.</p></li>
+<li><p><strong>Implement proper evaluation frameworks</strong> - Use realistic tasks and LLM-as-judge approaches rather than relying solely on benchmarks like SweeBench.</p></li>
+<li><p><strong>Think beyond traditional code review for AI-generated code</strong> - Design verifiable systems with clear inputs/outputs rather than trying to review every line of AI-generated code.</p></li>
+<li><p><strong>Leverage the model-tool binding principle</strong> - The best performing agents use foundation models specifically trained on the tools they use (like Sonnet with bash commands).</p></li>
+<li><p><strong>Build composable, multi-step agent systems</strong> - Enterprise reliability comes from breaking complex tasks into manageable, evaluable components with clear feedback loops.</p></li>
+<li><p><strong>Prepare for rapid capability growth</strong> - AI task capability is doubling every 7 months, requiring adaptive development approaches and architectural thinking.</p></li>
+</ol>
+<hr>
+</section>
+<section id="claude-plays-pokemon-tool-use-and-agent-improvements" class="level2">
+<h2 class="anchored" data-anchor-id="claude-plays-pokemon-tool-use-and-agent-improvements">Claude Plays Pokemon: Tool Use and Agent Improvements</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/0XUzn-DEoY8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speaker:</strong> David (Creator of Claude Plays Pokemon, Anthropic’s PodAI team)</p>
+<section id="key-points-and-insights" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights">Key Points and Insights</h3>
+<ul>
+<li><strong>Extended thinking between tool calls</strong>: Claude 4 introduces extended thinking between tool calls, allowing models to plan, reflect, and question assumptions before acting</li>
+<li><strong>Parallel tool calling capability</strong>: Models can now make multiple tool calls simultaneously, improving efficiency and reducing latency</li>
+<li><strong>Tool use evolution</strong>: From simple calculator aids to driving complex agentic workflows with plan-act-learn loops</li>
+<li><strong>Scale of tool handling</strong>: Models can now handle 50-100 tools effectively with proper tool design and clear descriptions</li>
+<li><strong>Real-world validation</strong>: Claude 4 Opus successfully executed a 24-hour Pokemon catching session, demonstrating improved long-term planning</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Focus on tool design and clear descriptions rather than complex prompting</li>
+<li>Extended thinking mode helps agents recover from errors and adapt plans dynamically</li>
+<li>Parallel tool calling significantly reduces development time by eliminating sequential tool call overhead</li>
+<li>Models are becoming more capable agents that can work over longer time horizons with less human intervention</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="mastering-claude-code-in-30-minutes" class="level2">
+<h2 class="anchored" data-anchor-id="mastering-claude-code-in-30-minutes">Mastering Claude Code in 30 Minutes</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/6eBSHbLKuN0" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speaker:</strong> Boris (Member of Technical Staff at Anthropic, Creator of Claude Code)</p>
+<section id="key-points-and-insights-1" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-1">Key Points and Insights</h3>
+<ul>
+<li><strong>Codebase Q&amp;A first</strong>: Start with codebase Q&amp;A before writing code - reduces onboarding from 2-3 weeks to 2-3 days at Anthropic</li>
+<li><strong>Full multimodal support</strong>: Claude Code is fully multimodal and works across all IDEs without requiring workflow changes</li>
+<li><strong>Context is king</strong>: Use claude.md files, slash commands, and MCP servers to provide relevant project information</li>
+<li><strong>Hierarchical configuration</strong>: Configuration system allows enterprise policies, project configs, and personal preferences</li>
+<li><strong>SDK capabilities</strong>: Claude Code SDK enables building agents and automation pipelines with Unix-style utility approach</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-1" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-1">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Begin every new project/codebase with Q&amp;A to understand structure and patterns</li>
+<li>Invest time in configuring claude.md and context files for dramatic performance improvements</li>
+<li>Use iterative workflows with verification tools (testing, screenshots) for better results</li>
+<li>Leverage the SDK for CI/CD pipelines, incident response, and automated workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-databricks-enterprise-ai-implementation" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-databricks-enterprise-ai-implementation">Spotlight on Databricks: Enterprise AI Implementation</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/67a5yrKH-nI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speaker:</strong> Craig (Product Management Leader at Databricks, former Google Vertex AI/AWS SageMaker)</p>
+<section id="key-points-and-insights-2" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-2">Key Points and Insights</h3>
+<ul>
+<li><strong>Enterprise governance requirements</strong>: Enterprise AI requires governance and evaluation for production deployment in high-risk environments</li>
+<li><strong>Multi-step agent superiority</strong>: Multi-step agentic systems outperform simple input-output models (Berkeley research validation)</li>
+<li><strong>Tool calling excellence</strong>: Claude’s superior tool calling enables deterministic systems using probabilistic backends</li>
+<li><strong>Real customer results</strong>: FactSet improved accuracy from 59% to 85% and reduced latency from 15s to 6s by decomposing prompts into multi-step workflows</li>
+<li><strong>Productivity transformation</strong>: Claude integration reduces analyst questionnaire work from hundreds of hours to editing near-final drafts</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-2" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-2">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Build composable, multi-node agent systems for enterprise reliability</li>
+<li>Implement rigorous evaluation frameworks to measure and improve system performance</li>
+<li>Use Claude’s governance features to control data, model, and tool access at granular levels</li>
+<li>Focus on connecting AI systems deeply with enterprise data infrastructure</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-ai-agents-with-claude-in-amazon-bedrock" class="level2">
+<h2 class="anchored" data-anchor-id="building-ai-agents-with-claude-in-amazon-bedrock">Building AI Agents with Claude in Amazon Bedrock</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/8gTpgWru0Wg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speakers:</strong> Dewan Lightfoot, Banjo Abiyami, Suman Devanath (AWS Developer Advocates)</p>
+<section id="key-points-and-insights-3" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-3">Key Points and Insights</h3>
+<ul>
+<li><strong>Strands Agent SDK simplicity</strong>: Simplifies agent building to just three components: models, tools, and prompts</li>
+<li><strong>Claude 3.5 Sonnet default</strong>: Default model with built-in tools like HTTP requests requiring minimal setup</li>
+<li><strong>MCP server integration</strong>: Provides structured way to connect LLMs to external APIs and documentation</li>
+<li><strong>Live demo success</strong>: Showed creating weather agents, AWS documentation agents, and architecture diagram generators</li>
+<li><strong>Seamless Bedrock integration</strong>: Claude Code integration with Bedrock enables development without requiring separate Anthropic API keys</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-3" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-3">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use Strands for rapid prototyping with minimal boilerplate code</li>
+<li>MCP servers are the “USB-C of LLMs” for connecting to external systems and data</li>
+<li>AWS provides comprehensive MCP server ecosystem for cloud services integration</li>
+<li>Agents work best when given specific context and clear tool definitions</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="startups-building-new-products-with-claude" class="level2">
+<h2 class="anchored" data-anchor-id="startups-building-new-products-with-claude">Startups Building New Products with Claude</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/91Haz1CRoxY" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<p><strong>Speakers:</strong> Multiple startup founders (Tempo Labs, Zen, Gamma, Bitto, Refusion, Create)</p>
+<section id="key-points-and-insights-4" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-4">Key Points and Insights</h3>
+<ul>
+<li><strong>Tempo Labs democratization</strong>: “Cursor for PMs and designers” - enables non-engineers to generate 10-15% of frontend PRs directly</li>
+<li><strong>Gamma model upgrade impact</strong>: Sonnet 3.5 to 3.7 upgrade with web search improved user satisfaction metrics by 8%</li>
+<li><strong>Bitto code review transformation</strong>: AI code review platform reducing PR closure time from 50 hours to 5 hours using Claude’s reasoning capabilities</li>
+<li><strong>Refusion creative applications</strong>: Claude powers “Ghostwriter” for music lyric generation, used tens of millions of times</li>
+<li><strong>Create democratized app development</strong>: Text-to-app builder enabling non-technical users to create full mobile apps end-to-end</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-4" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-4">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Claude enables product categories that democratize technical capabilities to non-engineers</li>
+<li>Model upgrades (especially with new capabilities like web search) can dramatically impact user metrics</li>
+<li>Successful products leverage Claude’s reasoning for domain-specific applications (code review, music, design)</li>
+<li>Integration of frontend design tools with Claude enables visual, collaborative development workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-canva-democratizing-interactive-prototyping" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-canva-democratizing-interactive-prototyping">Spotlight on Canva: Democratizing Interactive Prototyping</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Ac4LiuoJT20" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Danny Wu (Head of AI Products at Canva)</p>
+<section id="key-points-and-insights-5" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-5">Key Points and Insights</h3>
+<ul>
+<li><strong>Canva Code democratization</strong>: Built to democratize interactive prototyping using Claude, allowing non-technical users to create apps with simple prompts</li>
+<li><strong>Functional prototype strategy</strong>: Used functional prototypes built with Claude to test concepts and gather user feedback before integrating into the main codebase</li>
+<li><strong>Model selection beyond metrics</strong>: Chose Claude’s models for their ability to handle under-specified prompts, create beautiful web designs, and generate quality SVGs and animations</li>
+<li><strong>User-focused targeting</strong>: Focused on targeting non-technical users first, then scaling up to more sophisticated functionality</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-5" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-5">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Think beyond traditional evals when choosing models - consider complete user experience including design quality and creativity</li>
+<li>Build functional prototypes outside main codebase to enable faster experimentation in AI product development</li>
+<li>Focus on your unique strengths and target specific user segments rather than trying to serve everyone</li>
+<li>Communicate AI limitations clearly to users to prevent confusion and set proper expectations</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-headless-automation-with-claude-code" class="level2">
+<h2 class="anchored" data-anchor-id="building-headless-automation-with-claude-code">Building Headless Automation with Claude Code</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/dRsjO-88nBs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Sirbit Asaria (Engineer on Claude Code team)</p>
+<section id="key-points-and-insights-6" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-6">Key Points and Insights</h3>
+<ul>
+<li><strong>SDK programmatic access</strong>: Claude Code SDK enables programmatic access to Claude Code agent in headless mode, opening new automation possibilities</li>
+<li><strong>Unix tool philosophy</strong>: Can be used as Unix tool, integrated into CI/CD pipelines, and for building custom chatbots or remote coding environments</li>
+<li><strong>Advanced features</strong>: Features structured JSON output, session state management, and permission prompt tools for real-time user interaction</li>
+<li><strong>GitHub Actions integration</strong>: Demonstrated GitHub Action built on SDK that can review code, create features, and manage pull requests automatically</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-6" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-6">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Claude Code SDK acts as a new primitive for building applications that weren’t possible before</li>
+<li>Unix-style tool philosophy makes it pluggable anywhere you can run bash or terminal commands</li>
+<li>Structured output and session management enable building interactive user experiences on top of the SDK</li>
+<li>GitHub Actions integration shows how to safely automate code review and development workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="vibe-coding-in-production" class="level2">
+<h2 class="anchored" data-anchor-id="vibe-coding-in-production">Vibe Coding in Production</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/fHWFF_pnqDk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Eric (Researcher at Anthropic focused on coding agents)</p>
+<section id="key-points-and-insights-7" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-7">Key Points and Insights</h3>
+<ul>
+<li><strong>Vibe coding philosophy</strong>: Means fully embracing AI code generation and “forgetting the code exists” while staying focused on product outcomes</li>
+<li><strong>AI capability acceleration</strong>: AI task capability is doubling every 7 months, making traditional code review approaches unsustainable for large-scale AI-generated work</li>
+<li><strong>Production deployment success</strong>: Successfully deployed 22,000-line AI-generated change to production by focusing on leaf nodes, creating verifiable tests, and acting as Claude’s product manager</li>
+<li><strong>Abstraction layer focus</strong>: Key is finding abstraction layers you can verify without understanding implementation details</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-7" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-7">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Focus vibe coding on “leaf nodes” in codebase where tech debt won’t impact core architecture</li>
+<li>Act as an effective product manager for Claude by providing context, requirements, and guidance</li>
+<li>Design systems with verifiable inputs/outputs and stress tests to validate correctness without reading all code</li>
+<li>Embrace the exponential growth in AI capabilities rather than trying to review every line of generated code</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="claude-code-best-practices" class="level2">
+<h2 class="anchored" data-anchor-id="claude-code-best-practices">Claude Code Best Practices</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/gv0WHhKelSE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Cal (Applied AI team at Anthropic, core Claude Code contributor)</p>
+<section id="key-points-and-insights-8" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-8">Key Points and Insights</h3>
+<ul>
+<li><strong>Agentic search approach</strong>: Claude Code works as a pure agent using agentic search (glob, grep, find) rather than code indexing to understand codebases</li>
+<li><strong>Claude.md importance</strong>: Claude.md files are essential for sharing context and instructions across sessions and team members</li>
+<li><strong>Workflow optimization</strong>: Permission management, CLI tool integration, and context management (using /clear or /compact) are crucial for effective workflows</li>
+<li><strong>New feature releases</strong>: Features include model switching, thinking between tool calls, and improved VS Code/JetBrains integrations</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-8" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-8">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use Claude.md files in projects to provide persistent context and coding standards for Claude</li>
+<li>Master permission management and auto-accept modes to speed up workflow without sacrificing safety</li>
+<li>Leverage Claude’s terminal expertise by integrating CLI tools and MCP servers for expanded capabilities</li>
+<li>Stay updated with rapid feature releases and experiment with advanced techniques like multi-agent workflows</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="mcp-201-advanced-model-context-protocol" class="level2">
+<h2 class="anchored" data-anchor-id="mcp-201-advanced-model-context-protocol">MCP 201: Advanced Model Context Protocol</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/HNzH5Us1Rvg" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> David (Member of Technical Staff at Anthropic, co-creator of MCP)</p>
+<section id="key-points-and-insights-9" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-9">Key Points and Insights</h3>
+<ul>
+<li><strong>Five MCP primitives</strong>: Offers 5 primitives beyond basic tool calling: prompts (user-driven templates), resources (application-driven data), tools (model-driven actions), sampling (server requests completion from client), and roots (client context inquiry)</li>
+<li><strong>Interaction model clarity</strong>: Defines when to use what: prompts for user-driven interactions, resources for application-driven data access, tools for model-driven actions</li>
+<li><strong>Evolution to web-based</strong>: MCP is evolving from local experiences to web-based servers with OAuth 2.1 authorization and streamable HTTP for scaling</li>
+<li><strong>Future developments</strong>: Include asynchronous tasks, elicitation (user input requests), official registry, and multi-modality support</li>
+<li><strong>Sampling power</strong>: Allows powerful chaining where servers can request model completions without managing API keys, keeping clients in control</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-9" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-9">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use the full power of MCP’s primitives to build richer interactions beyond simple tool calling</li>
+<li>Consider the interaction model when designing MCP servers: user-driven vs application-driven vs model-driven</li>
+<li>Prepare for web-based MCP servers with proper OAuth implementation for enterprise integration</li>
+<li>Future-proof applications by understanding upcoming features like sampling and async task support</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="mcp-at-sourcegraph-building-enterprise-coding-agents" class="level2">
+<h2 class="anchored" data-anchor-id="mcp-at-sourcegraph-building-enterprise-coding-agents">MCP at Sourcegraph: Building Enterprise Coding Agents</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/j8NlbEWAsmc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Biong (CTO and co-founder of Sourcegraph)</p>
+<section id="key-points-and-insights-10" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-10">Key Points and Insights</h3>
+<ul>
+<li><strong>Three waves of AI architecture</strong>: Evolution through co-pilot era (text completion), RAG chat era, and now the agents era with tool calling and MCP</li>
+<li><strong>AMP agent architecture</strong>: Sourcegraph built AMP, a new coding agent from scratch using the “recipe for AI agents”: strong tool-use LLM + MCP + feedback loops + imperative UX</li>
+<li><strong>Comprehensive MCP integration</strong>: Spans local tools (Playwright, Postgres) and external services (Linear, Sentry) with secure secret handling via OAuth proxy</li>
+<li><strong>Toolmageddon avoidance</strong>: Too many MCP tools can confuse models; focus on three buckets: context finding, feedback provision, and success declaration</li>
+<li><strong>Future agent patterns</strong>: Sub-agents and dynamic tool synthesis represent the future, with parallels to early programming language development</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-10" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-10">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Rethink application architecture for the agentic era rather than retrofitting existing RAG-chat applications</li>
+<li>Focus on feedback loops and design patterns that make agents reliable and self-correcting</li>
+<li>Implement secure MCP integration with proper OAuth handling for enterprise environments</li>
+<li>Consider sub-agents as tools and prepare for more sophisticated tool composition patterns</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="taking-claude-to-the-next-level-claude-4-features" class="level2">
+<h2 class="anchored" data-anchor-id="taking-claude-to-the-next-level-claude-4-features">Taking Claude to the Next Level: Claude 4 Features</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nZCy8E5jlok" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Lisa Crowfoot (Research Product Manager at Anthropic)</p>
+<section id="key-points-and-insights-11" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-11">Key Points and Insights</h3>
+<ul>
+<li><strong>Four major improvements</strong>: Claude 4 (Opus and Sonnet) introduces interleaved thinking and tool use, memory capabilities, complex instruction following, and reduced reward hacking</li>
+<li><strong>Memory enables persistence</strong>: Sustained performance over hours, with Claude Opus tracking progress across 64 Pokemon battles (12+ hours of gameplay)</li>
+<li><strong>Better instruction following</strong>: Claude 4 models are less “over-eager” by default and better at following complex system prompts (16k+ tokens)</li>
+<li><strong>Reduced reward hacking</strong>: 80%+ reduction in reward hacking behavior makes Claude more trustworthy for autonomous tasks</li>
+<li><strong>Model specialization</strong>: Opus excels at complex tasks (large codebases, migrations), while Sonnet 4 is optimized for speed and human-in-the-loop scenarios</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-11" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-11">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Remove anti-over-eagerness language from prompts when upgrading to Claude 4</li>
+<li>Leverage parallel tool calling and specify thinking targets for better agent performance</li>
+<li>Use Opus for complex, long-horizon tasks and Sonnet for rapid iteration and human collaboration</li>
+<li>Invest in prompt engineering as small changes can significantly impact performance</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-blocks-for-tomorrows-ai-agents" class="level2">
+<h2 class="anchored" data-anchor-id="building-blocks-for-tomorrows-ai-agents">Building Blocks for Tomorrow’s AI Agents</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/oDks2gVHu4k" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Brad Abrams (Product Manager at Anthropic)</p>
+<section id="key-points-and-insights-12" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-12">Key Points and Insights</h3>
+<ul>
+<li><strong>Three pillars for agents</strong>: Build (Claude 4 + code execution), Connect (web search + MCP connector), and Optimize (caching + batch + priority tiers)</li>
+<li><strong>Code execution capabilities</strong>: Provides dedicated containers per organization with streaming results, enabling complex data analysis and computational tasks</li>
+<li><strong>Agentic web search</strong>: Delivers agentic, multi-turn search with automatic citation and domain restriction capabilities</li>
+<li><strong>MCP Connector enterprise</strong>: Enables secure OAuth-based integration with remote MCP servers (Asana, Zapier, CloudFlare-hosted services)</li>
+<li><strong>Optimization features</strong>: 1-hour prompt caching, batch API as async agentic API, and priority tier for dedicated capacity</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-12" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-12">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Combine code execution with web search for powerful analytical capabilities</li>
+<li>Leverage remote MCP servers with OAuth for enterprise-grade integrations</li>
+<li>Use batch processing as an async agentic API with 50% cost savings</li>
+<li>Take advantage of extended prompt caching (1 hour) for long-running agent sessions</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="how-students-build-with-claude" class="level2">
+<h2 class="anchored" data-anchor-id="how-students-build-with-claude">How Students Build with Claude</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/PHuXXeadV_g" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speakers:</strong> Greg (Student Outreach Lead), Isabel (Stanford), Mason (UC Berkeley), Rohil (UC Berkeley), Daniel (USC)</p>
+<section id="key-points-and-insights-13" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-13">Key Points and Insights</h3>
+<ul>
+<li><strong>Nuclear research breakthrough</strong>: Isabel used Claude to build nuclear weapon detection simulations using CERN’s Geant4 software, enabling graduate-level research as an undergraduate</li>
+<li><strong>Top-down learning approach</strong>: Mason learned coding through Claude, building CalGBT and codebase visualization tools without traditional CS education</li>
+<li><strong>Innovative role reversal</strong>: Rohil created SideQuest, flipping the script to have AI agents hire humans for physical tasks with real-time video verification</li>
+<li><strong>Multi-agent systems</strong>: Daniel built Claude Cortex, a multi-agent system that dynamically creates specialized agents for complex decision-making scenarios</li>
+<li><strong>Rapid iteration cycles</strong>: Students demonstrate rapid prototyping cycles (1 day to 1 week) and focus on user value over technical perfection</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-13" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-13">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>No learning curve is too steep with AI assistance - tackle existential problems and complex domains</li>
+<li>Focus on iterative workflows with AI rather than trying to build perfect systems upfront</li>
+<li>Think of AI as infrastructure and system architecture rather than just feature development</li>
+<li>Emphasize practical outcomes and user impact over technical sophistication or completeness</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="building-ai-agents-with-claude-in-google-clouds-vertex-ai" class="level2">
+<h2 class="anchored" data-anchor-id="building-ai-agents-with-claude-in-google-clouds-vertex-ai">Building AI Agents with Claude in Google Cloud’s Vertex AI</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/TUysIAtxyrQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Ivan Nardini, Developer Advocate at Google Cloud</p>
+<section id="key-points-and-insights-14" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-14">Key Points and Insights</h3>
+<ul>
+<li><strong>Four-component agent stack</strong>: Google Cloud’s agent stack includes Agent Development Kit (ADK), MCP integration, Vertex AI Agent Engine, and Agent-to-Agent Protocol</li>
+<li><strong>ADK developer-friendly</strong>: Open-source, developer-friendly framework for building, evaluating, and deploying agents at scale</li>
+<li><strong>Standardized MCP integration</strong>: Allows standardized communication between agents and tools</li>
+<li><strong>Managed platform</strong>: Vertex AI Agent Engine provides managed platform for deploying and scaling agents in production with built-in monitoring and governance</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-14" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-14">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use ADK for rapid agent development with minimal code (just 3 files needed: agent.py, environment variables, and init file)</li>
+<li>Leverage MCP servers to avoid reinventing tools - any existing MCP server can be integrated with just 2 lines of code</li>
+<li>Deploy agents to production easily using Vertex AI Agent Engine for automatic scaling and operational management</li>
+<li>Focus on building agent logic rather than infrastructure concerns</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-manus-building-hands-for-ai-models" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-manus-building-hands-for-ai-models">Spotlight on Manus: Building Hands for AI Models</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/UjboGsztHd8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Tao (HighCloud), Co-founder and CPO of Manus AI</p>
+<section id="key-points-and-insights-15" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-15">Key Points and Insights</h3>
+<ul>
+<li><strong>AI hands concept</strong>: Manus provides AI models with “hands” through virtual machines with full access to browsers, terminals, VS Code, and file systems</li>
+<li><strong>Less structure, more intelligence</strong>: Philosophy of minimal predefined workflows, maximum model autonomy</li>
+<li><strong>High engagement metrics</strong>: Users can achieve 2+ hours of daily GPU consumption, with goal to reach 24-hour influence per user</li>
+<li><strong>Inspiration from non-coders</strong>: Inspired by observing non-coders using Cursor to solve daily tasks without caring about the underlying code</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-15" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-15">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Agent frameworks should provide computing environments rather than just chat interfaces</li>
+<li>Cloud-based execution enables fire-and-forget task assignment without requiring user attention</li>
+<li>Teaching agents through personal knowledge systems is more effective than hard-coded workflows</li>
+<li>Focus on giving models the right tools and context rather than micromanaging their decision process</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="spotlight-on-shopify-structured-workflow-orchestration-with-roast" class="level2">
+<h2 class="anchored" data-anchor-id="spotlight-on-shopify-structured-workflow-orchestration-with-roast">Spotlight on Shopify: Structured Workflow Orchestration with Roast</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/xlEQ6Y3WNNI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speaker:</strong> Obi Fernandez, Principal Engineer, Shopify’s Augmented Engineering Group</p>
+<section id="key-points-and-insights-16" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-16">Key Points and Insights</h3>
+<ul>
+<li><strong>Complementary approaches</strong>: Two approaches: agentic tools (for exploratory/ambiguous tasks) vs structured workflows (for predictable, repeatable tasks)</li>
+<li><strong>Roast framework</strong>: <a href="https://github.com/Shopify/roast">Roast</a>: Open-source Ruby framework for orchestrating deterministic workflows with AI components</li>
+<li><strong>Powerful combinations</strong>: Interleaving structured workflows with Claude Code creates powerful combinations for large-scale code transformations</li>
+<li><strong>Scale at Shopify</strong>: 500+ daily active users of Claude Code with 250k requests/second at peak</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-16" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-16">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Use structured workflows for tasks like legacy migrations, test generation, and systematic refactoring</li>
+<li>Combine deterministic steps with non-deterministic AI reasoning for optimal results</li>
+<li>Roast provides session saving, function caching, and convention-oriented development</li>
+<li>Scale AI applications by minimizing instructions per step and breaking complex tasks into manageable components</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prompting-for-agents" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-for-agents">Prompting for Agents</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/XSZP9GhhuAc" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speakers:</strong> Hannah and Jeremy from Anthropic’s Applied AI team</p>
+<section id="key-points-and-insights-17" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-17">Key Points and Insights</h3>
+<ul>
+<li><strong>Agent definition</strong>: Agents are “models using tools in a loop” - best for complex, valuable tasks with unclear solution paths</li>
+<li><strong>Think like your agents</strong>: Simulate their environment and tool responses to understand their perspective</li>
+<li><strong>Provide guidance</strong>: Reasonable heuristics and budgets (e.g., “use under 5 tool calls for simple queries”)</li>
+<li><strong>Interleaved thinking</strong>: Guide the thinking process and use interleaved thinking between tool calls for better reasoning</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-17" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-17">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Start with simple prompts and iterate based on edge cases and failures</li>
+<li>Use structured evals with small sample sizes initially - focus on realistic tasks over arbitrary benchmarks</li>
+<li>Tool selection is crucial - provide clear guidance on which tools to use in different contexts</li>
+<li>LLM-as-judge with rubrics is effective for evaluating agent outputs</li>
+<li>Context window management through compaction, external files, or sub-agents extends agent capabilities</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="prompting-101-fundamentals-of-effective-ai-communication" class="level2">
+<h2 class="anchored" data-anchor-id="prompting-101-fundamentals-of-effective-ai-communication">Prompting 101: Fundamentals of Effective AI Communication</h2>
+<p><strong>Watch:</strong> </p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/ysPbXH0LpIE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div><p></p>
+<p><strong>Speakers:</strong> Hannah and Christian from Anthropic’s Applied AI team</p>
+<section id="key-points-and-insights-18" class="level3">
+<h3 class="anchored" data-anchor-id="key-points-and-insights-18">Key Points and Insights</h3>
+<ul>
+<li><strong>Programming in natural language</strong>: Prompt engineering is “programming in natural language” requiring clear structure and organization</li>
+<li><strong>Recommended structure</strong>: Task context → content → detailed instructions → examples → reminders → output formatting</li>
+<li><strong>XML tags and delimiters</strong>: Use XML tags and delimiters to help Claude understand and organize information</li>
+<li><strong>Order of analysis matters</strong>: Guide Claude through logical step-by-step reasoning processes</li>
+</ul>
+</section>
+<section id="main-takeaways-for-developersusers-18" class="level3">
+<h3 class="anchored" data-anchor-id="main-takeaways-for-developersusers-18">Main Takeaways for Developers/Users</h3>
+<ul>
+<li>Follow iterative, empirical approach - start simple and build based on what fails</li>
+<li>Provide background context and data that won’t change (great for prompt caching)</li>
+<li>Use examples and few-shot learning for difficult edge cases</li>
+<li>Include clear reminders about guidelines and confidence requirements</li>
+<li>Structure output with XML tags or pre-filled responses for downstream processing</li>
+<li>Extended thinking can serve as a debugging tool to understand Claude’s reasoning process</li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>Claude Code</category>
+  <category>Claude</category>
+  <category>Conference</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2025-08-14-claude-code-conference-summary/</guid>
+  <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Summary of Armin’s Talk - Agentic Coding Ecosystem 2025: Navigating the Tool Explosion</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -14391,398 +14903,6 @@ font-style: inherit;">wandb: Find logs at: ./wandb/run-20240524_000556-iewv47f2/
   <category>Acquired</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-02-28-ode-to-costco/</guid>
   <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>ColBERT and Information Retrieval</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2024-01-18-colbert-information-retrieval/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I recently learned about ColBERT, a BERT-based model for efficient passage retrieval. The authors of the paper <a href="https://arxiv.org/abs/2004.12832">ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT</a> claim that ColBERT is able to achieve state-of-the-art performance on the MS MARCO passage ranking task while being 10x faster than the previous state-of-the-art model. This is a post to summarize my learnings about ColBERT and how it compares to dense retrieval methods like BERT and sentence-transformers.</p>
-<section id="colbert-vs.-bert-vs.-traditional-ir-methods" class="level1">
-<h1>ColBERT vs.&nbsp;BERT vs.&nbsp;Traditional IR Methods</h1>
-<p>First ColBERT stands for <strong>co</strong>ntextualized <strong>l</strong>ate interaction over BERT, hence the name ColBERT.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-01-18-colbert-information-retrieval/colbert_figure2.png" class="img-fluid figure-img"></p>
-<figcaption>Colbertv1 Paper - Figure 2</figcaption>
-</figure>
-</div>
-<p>As 2d illustrates, ColBERT relies on fine-grained contextual late interaction: it encodes each passage into a matrix of token-level embeddings (shown above in blue). Then at search time, it embeds every query into another matrix (shown in green) and efficiently finds passages that contextually match the query using scalable vector-similarity (MaxSim) operators.</p>
-<p>Figure 2 also nicely summarizes pre-BERT retrieval methods.</p>
-<section id="pre-bert-methods" class="level2">
-<h2 class="anchored" data-anchor-id="pre-bert-methods">Pre-BERT Methods</h2>
-<ul>
-<li>2a: Representation-based similarity - Here you have a bi-encoder where you create representations that are dense embeddings of the query and document separately and interact them somehow (cosine similarity)</li>
-<li>2b: Query-Document interaction - Compute similarity pairs of all documents and queries and then do some aggregation of these</li>
-</ul>
-</section>
-<section id="bert-methods" class="level2">
-<h2 class="anchored" data-anchor-id="bert-methods">BERT Methods</h2>
-<p>This is represent in Figure 2c: All-to-all interaction (BERT)</p>
-<p>This has been the state of the art of the it is computationally very expensive. BERT can be used in Bi-Encoders and Cross-Encoders. This post from <a href="https://www.sbert.net/examples/applications/cross-encoder/README.html">sbert</a> explains it quite well.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-01-18-colbert-information-retrieval/cross_encoders.png" class="img-fluid figure-img"></p>
-<figcaption>Cross Encoders</figcaption>
-</figure>
-</div>
-<ul>
-<li>Bi-Encoders produce an embedding for each input sentence. So for two sentences, two embeddings are produced and these can be compared using cosine similarity.</li>
-<li>With Cross-Encoders, both input sentences are passed at the same time to the Transformer, it produces not an embedding but a value between 0 and 1 that represents the similarity between the two sentences.</li>
-<li>Cross-Encoders achieve better performance than Bi-Encoders but for many large scale information retrieval applications they are not practical because since embeddings are not produced, there is no way to index the data and retrieve it efficiently.</li>
-<li>From the above post: “Bi-Encoders are used whenever you need a sentence embedding in a vector space for efficient comparison. Applications are for example Information Retrieval / Semantic Search or Clustering. Cross-Encoders would be the wrong choice for these application: Clustering 10,000 sentence with CrossEncoders would require computing similarity scores for about 50 Million sentence combinations, which takes about 65 hours. With a Bi-Encoder, you compute the embedding for each sentence, which takes only 5 seconds. You can then perform the clustering.”</li>
-<li>You can combine Bi-Encoders and Cross-Encoders. Use Bi-Encoders to retrieve the top-k documents and then use Cross-Encoders to re-rank the top-k documents. An example for this common retrieve and re-rank strategy is <a href="https://www.sbert.net/examples/applications/retrieve_rerank/README.html">here</a>.</li>
-</ul>
-</section>
-</section>
-<section id="colbert" class="level1">
-<h1>ColBERT</h1>
-<p>ColBERT creates query and document embeddings (notably at the token level). From the paper: “Every query embedding interacts with all document embeddings via a MaxSim operator, which computes maximum similarity (e.g.&nbsp;cosine similarity), and the scalar outputs of these operators are summed across query terms.”</p>
-<p>With BERT or even sentence-transformers, you need to embed the entire text into one embedding for both the query and the document (call this the single-vector approach). But with ColBERT, we are generating contextualized embeddings for each token (e.g.&nbsp;bank could appear multiple times and have different meanings in the same document). Call this the multi-vector approach, the paper calls this “bag of contextualized embeddings” which had me confused for awhile. But it’s simply moving for a <code>1 x d</code> representation to a <code>m x d</code> representation where m is the number of tokens in the document.</p>
-<p>Shout out to the author of the <a href="https://github.com/bclavie/RAGatouille">RAGatouille</a> library who also wrote a fantastic <a href="https://ben.clavie.eu/ragatouille/">post</a> making the case for these late interaction retrievers like ColBERT. He has a <a href="https://ben.clavie.eu/ragatouille/#longer-might-read">section</a> comparing the pros and cons of:</p>
-<ul>
-<li>BM25/Keyword Sparse Retrieval</li>
-<li>Cross-Encoders</li>
-<li>Dense Retrieval/Embeddings</li>
-</ul>
-<p>The main downside of dense retrieval methods is they often generalize poorly whereas ColBERT has shown strong generalization capabilities.</p>
-</section>
-<section id="ragatouille" class="level1">
-<h1>RAGatouille</h1>
-<p>RAGatouille is a library that makes using ColBERT easier. I haven’t used the original ColBERT code but RAGatouille is very easy to get started with.</p>
-<p>First you need to index your documents which is a few lines of code. This will create the token level embeddings for each and persist it to disk. This will act as basically your vector database that you’ll use to compare against your query.</p>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> ragatouille <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> RAGPretrainedModel</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> ragatouille.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> get_wikipedia_page</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> ragatouille.data <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> CorpusProcessor</span>
-<span id="cb1-4"></span>
-<span id="cb1-5"></span>
-<span id="cb1-6">RAG <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RAGPretrainedModel.from_pretrained(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"colbert-ir/colbertv2.0"</span>)</span>
-<span id="cb1-7">my_documents <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [get_wikipedia_page(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hayao_Miyazaki"</span>), get_wikipedia_page(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Studio_Ghibli"</span>)]</span>
-<span id="cb1-8">processor <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> CorpusProcessor()</span>
-<span id="cb1-9">my_documents <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> processor.process_corpus(my_documents)</span>
-<span id="cb1-10">index_path <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RAG.index(index_name<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"my_index"</span>, collection<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>my_documents)</span></code></pre></div>
-<p>Then you can run queries on this index.</p>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> ragatouille <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> RAGPretrainedModel</span>
-<span id="cb2-2"></span>
-<span id="cb2-3">query <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"ColBERT my dear ColBERT, who is the fairest document of them all?"</span></span>
-<span id="cb2-4">RAG <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RAGPretrainedModel.from_index(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"path_to_your_index"</span>)</span>
-<span id="cb2-5">results <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RAG.search(query)</span></code></pre></div>
-<p>The search results are turned either as a list of dictionaries or a list of list of dictionaries depending on if you passed in a single or multi-query.</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># single-query result</span></span>
-<span id="cb3-2">[</span>
-<span id="cb3-3">    {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"blablabla"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"score"</span>: <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">42.424242</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rank"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>},</span>
-<span id="cb3-4">    ...,</span>
-<span id="cb3-5">    {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"albalbalba"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"score"</span>: <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">24.242424</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rank"</span>: k},</span>
-<span id="cb3-6">]</span>
-<span id="cb3-7"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># multi-query result</span></span>
-<span id="cb3-8">[</span>
-<span id="cb3-9">    [</span>
-<span id="cb3-10">        {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"blablabla"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"score"</span>: <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">42.424242</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rank"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>},</span>
-<span id="cb3-11">        ...,</span>
-<span id="cb3-12">        {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"albalbalba"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"score"</span>: <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">24.242424</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rank"</span>: k},</span>
-<span id="cb3-13">    ],</span>
-<span id="cb3-14">    [</span>
-<span id="cb3-15">        {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"blablabla"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"score"</span>: <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">42.424242</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rank"</span>: <span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>},</span>
-<span id="cb3-16">        ...,</span>
-<span id="cb3-17">        {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"albalbalba"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"score"</span>: <span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">24.242424</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"rank"</span>: k},</span>
-<span id="cb3-18">    ],</span>
-<span id="cb3-19"> ]</span></code></pre></div>
-<p>It is also easy to convert this ColBERT model into a langchain retriever to use in any langchain chain.</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">retriever <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> RAG.as_langchain_retriever(k<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">3</span>)</span></code></pre></div>
-<p>You can use this to retrieve documents</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">retriever.invoke(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"What animation studio did Miyazaki found?"</span>)</span>
-<span id="cb5-2"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># [Document(page_content='In April 1984, Miyazaki opened his own office in Suginami Ward, naming it Nibariki.\n\n\n=== Studio Ghibli ===\n\n\n==== Early films (1985–1996) ====\nIn June 1985, Miyazaki, Takahata, Tokuma and Suzuki founded the animation production company Studio Ghibli, with funding from Tokuma Shoten. Studio Ghibli\'s first film, Laputa: Castle in the Sky (1986), employed the same production crew of Nausicaä. Miyazaki\'s designs for the film\'s setting were inspired by Greek architecture and "European urbanistic templates".'),</span></span>
-<span id="cb5-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  Document(page_content='Hayao Miyazaki (宮崎 駿 or 宮﨑 駿, Miyazaki Hayao, [mijaꜜzaki hajao]; born January 5, 1941) is a Japanese animator, filmmaker, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.\nBorn in Tokyo City in the Empire of Japan, Miyazaki expressed interest in manga and animation from an early age, and he joined Toei Animation in 1963. During his early years at Toei Animation he worked as an in-between artist and later collaborated with director Isao Takahata.'),</span></span>
-<span id="cb5-4"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">#  Document(page_content='Glen Keane said Miyazaki is a "huge influence" on Walt Disney Animation Studios and has been "part of our heritage" ever since The Rescuers Down Under (1990). The Disney Renaissance era was also prompted by competition with the development of Miyazaki\'s films. Artists from Pixar and Aardman Studios signed a tribute stating, "You\'re our inspiration, Miyazaki-san!"')]</span></span></code></pre></div>
-<p>But you can also use the retriever in a RAG chain too:</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.chains <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> create_retrieval_chain</span>
-<span id="cb6-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain.chains.combine_documents <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> create_stuff_documents_chain</span>
-<span id="cb6-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain_core.prompts <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ChatPromptTemplate</span>
-<span id="cb6-4"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langchain_openai <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> ChatOpenAI</span>
-<span id="cb6-5"></span>
-<span id="cb6-6">prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatPromptTemplate.from_template(</span>
-<span id="cb6-7">   <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""Answer the following question based only on the provided context:</span></span>
-<span id="cb6-8"></span>
-<span id="cb6-9"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;context&gt;</span></span>
-<span id="cb6-10"><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{context}</span></span>
-<span id="cb6-11"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;/context&gt;</span></span>
-<span id="cb6-12"></span>
-<span id="cb6-13"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Question: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{input}</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""</span></span>
-<span id="cb6-14">)</span>
-<span id="cb6-15"></span>
-<span id="cb6-16">llm <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> ChatOpenAI()</span>
-<span id="cb6-17"></span>
-<span id="cb6-18">document_chain <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> create_stuff_documents_chain(llm, prompt)</span>
-<span id="cb6-19">retrieval_chain <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> create_retrieval_chain(retriever, document_chain)</span>
-<span id="cb6-20">retrieval_chain.invoke({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"input"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"What animation studio did Miyazaki found?"</span>})</span>
-<span id="cb6-21"></span>
-<span id="cb6-22"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># the retrieved documents and answer will be returned</span></span>
-<span id="cb6-23">{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'input'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'What animation studio did Miyazaki found?'</span>,</span>
-<span id="cb6-24"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'context'</span>: [Document(page_content<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'In April 1984, Miyazaki opened his own office in Suginami Ward, naming it Nibariki.</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">=== Studio Ghibli ===</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">==== Early films (1985–1996) ====</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">In June 1985, Miyazaki, Takahata, Tokuma and Suzuki founded the animation production company Studio Ghibli, with funding from Tokuma Shoten. Studio Ghibli</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\'</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">s first film, Laputa: Castle in the Sky (1986), employed the same production crew of Nausicaä. Miyazaki</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\'</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">s designs for the film</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\'</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">s setting were inspired by Greek architecture and "European urbanistic templates".'</span>),</span>
-<span id="cb6-25"> Document(page_content<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Hayao Miyazaki (宮崎 駿 or 宮﨑 駿, Miyazaki Hayao, [mijaꜜzaki hajao]; born January 5, 1941) is a Japanese animator, filmmaker, and manga artist. A co-founder of Studio Ghibli, he has attained international acclaim as a masterful storyteller and creator of Japanese animated feature films, and is widely regarded as one of the most accomplished filmmakers in the history of animation.</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Born in Tokyo City in the Empire of Japan, Miyazaki expressed interest in manga and animation from an early age, and he joined Toei Animation in 1963. During his early years at Toei Animation he worked as an in-between artist and later collaborated with director Isao Takahata.'</span>),</span>
-<span id="cb6-26"> Document(page_content<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Glen Keane said Miyazaki is a "huge influence" on Walt Disney Animation Studios and has been "part of our heritage" ever since The Rescuers Down Under (1990). The Disney Renaissance era was also prompted by competition with the development of Miyazaki</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\'</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">s films. Artists from Pixar and Aardman Studios signed a tribute stating, "You</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\'</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">re our inspiration, Miyazaki-san!"'</span>)],</span>
-<span id="cb6-27"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'answer'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Miyazaki founded Studio Ghibli.'</span>}</span></code></pre></div>
-<p>See this <a href="https://python.langchain.com/docs/integrations/retrievers/ragatouille">langchain tutorial page</a> for more information.</p>
-</section>
-<section id="links" class="level1">
-<h1>Links</h1>
-<ul>
-<li><a href="https://arxiv.org/pdf/2004.12832.pdf">ColBERT paper</a></li>
-<li><a href="https://arxiv.org/pdf/2112.01488.pdf">ColBERTv2 paper</a></li>
-<li><a href="https://github.com/stanford-futuredata/ColBERT">ColBERT Github Repo</a></li>
-<li>I’ve used ColBERT through the <a href="https://github.com/bclavie/RAGatouille">RAGatouille</a> library which makes it really easy to get started and converted it to a langchain retriever using this <a href="https://python.langchain.com/docs/integrations/retrievers/ragatouille">tutorial</a>.</li>
-<li>Cool <a href="https://colbert.aiserv.cloud/">webapp</a> to visualize ColBERT embeddings via a browser</li>
-<li>Simon Willison also wrote a <a href="https://til.simonwillison.net/llms/colbert-ragatouille">short post</a> about his learnings about ColBERT</li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>BERT</category>
-  <category>ColBERT</category>
-  <category>Information Retrieval</category>
-  <category>NLU</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2024-01-18-colbert-information-retrieval/</guid>
-  <pubDate>Thu, 18 Jan 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
