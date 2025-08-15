@@ -12,7 +12,7 @@
 <generator>quarto-1.7.33</generator>
 <lastBuildDate>Fri, 15 Aug 2025 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Summaries of Talks from Claude Code Conference 2025</title>
+  <title>Summaries of Talks from Code with Claude Conference 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
   <link>https://lawwu.github.io/blog.html/posts/2025-08-14-claude-code-conference-summary/</link>
   <description><![CDATA[ 
@@ -20,8 +20,9 @@
 
 
 
-<section id="claude-code-conference-2025-complete-guide-and-key-insights" class="level1">
-<h1>Claude Code Conference 2025: Complete Guide and Key Insights</h1>
+<section id="code-with-claude-conference-2025-key-insights-summaries" class="level1">
+<h1>Code with Claude Conference 2025: Key Insights &amp; Summaries</h1>
+<p>Claude had a <a href="https://www.anthropic.com/events/code-with-claude-2025">conference</a> recently all about Claude Code. I transcribed all of the talks using <a href="https://github.com/lawwu/transcripts">transcripts</a> and hosted it <a href="https://lawwu.github.io/transcripts/index_claude_code_conference.html">here</a>. The YouTube playlist is <a href="https://www.youtube.com/playlist?list=PLf2m23nhTg1P5BsOHUOXyQz5RhfUSSVUi">here</a>. Below are summaries of the talks.</p>
 <section id="overall-summary" class="level2">
 <h2 class="anchored" data-anchor-id="overall-summary">Overall Summary</h2>
 <p>The Claude Code Conference 2025 showcased groundbreaking developments in AI-powered development tools, enterprise AI implementations, and the future of human-AI collaboration in software engineering. The conference highlighted the evolution from simple AI assistants to sophisticated autonomous agents capable of complex reasoning and long-term task execution.</p>
