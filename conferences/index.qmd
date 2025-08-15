@@ -1,9 +1,8 @@
 ---
 listing:
-  contents: posts/**/*.qmd
+  contents: /**/*.qmd
   sort: "date desc"
-  type: default
-  categories: true
+  type: table
   sort-ui: false
   filter-ui: false
   fields: [date, title, reading-time, description, categories]
