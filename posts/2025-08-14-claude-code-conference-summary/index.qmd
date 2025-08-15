@@ -1,8 +1,7 @@
 ---
-title: "Claude Code Conference 2025: Complete Guide and Key Insights"
+title: "Summaries of Talks from Claude Code Conference 2025"
 date: "2025-01-14"
-categories: [AI, Claude, Development, Conference]
-description: "Complete summary of all talks from the Claude Code Conference 2025, covering agent development, MCP, prompting best practices, and enterprise AI implementations."
+categories: [AI, Claude Code, Claude, Conference]
 ---
 
 # Claude Code Conference 2025: Complete Guide and Key Insights
