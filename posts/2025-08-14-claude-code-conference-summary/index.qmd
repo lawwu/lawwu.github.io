@@ -1,6 +1,6 @@
 ---
 title: "Summaries of Talks from Claude Code Conference 2025"
-date: "2025-01-14"
+date: "2025-08-15"
 categories: [AI, Claude Code, Claude, Conference]
 ---
 
