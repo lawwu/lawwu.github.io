@@ -16,24 +16,35 @@ website:
     creator: "@law_wu"  
   navbar:
     right:
+      - text: "Home"
+        href: index.qmd
+      - sidebar:technical
       - text: Blog
-        href: blog.qmd
+        href: blog/
       - text: Projects
-        href: projects.qmd
+        href: projects/
       - text: Conferences
-        href: conferences.qmd
+        href: conferences/
       - text: TIL
         href: https://lawwu.github.io/til/
       - icon: github
         text: GitHub
         href: https://github.com/lawwu
-      - icon: twitter
-        text: Twitter
-        href: https://twitter.com/law_wu   
       - icon: envelope
         href: mailto:lawrencewu1+blog@gmail.com
       - icon: rss
-        href: blog.xml  
+        href: blog.xml
+
+  sidebar:
+    - id: technical
+      title: "Technical"
+      style: "docked"
+      background: light
+      collapse-level: 2
+      contents: 
+        - blog/index.qmd
+        - projects/index.qmd
+        - conferences/index.qmd
 format:
   html:
     theme: cosmo
