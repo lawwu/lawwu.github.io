@@ -92,7 +92,7 @@ I've interacted with the Lightcast API a fair amount and open-sourced an MCP Ser
 
 ## Popular Remote MCP Servers
 
-Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the [Claude Code MCP docs](https://docs.anthropic.com/en/docs/claude-code/mcp):
+Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the [Claude Code MCP docs](https://docs.anthropic.com/en/docs/claude-code/mcp) and from [awesome-remote-mcp-servers](https://github.com/jaw9c/awesome-remote-mcp-servers).
 
 ### Adding Remote Servers to Claude Code
 
