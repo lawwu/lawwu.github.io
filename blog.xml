@@ -10,7 +10,277 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.7.33</generator>
-<lastBuildDate>Fri, 15 Aug 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 21 Aug 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Why Companies Should Open Source and Host Their Own MCP Servers</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2025-08-21-open-source-mcp-servers/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>The <strong>Model Context Protocol (MCP)</strong> is quickly becoming a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting <strong>public-facing MCP servers</strong>. For example, Atlassian provides one here: <a href="https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/">Getting Started with the Atlassian Remote MCP Server</a>.</p>
+<p>Their MCP server lives at: <a href="https://mcp.atlassian.com/v1/sse">https://mcp.atlassian.com/v1/sse</a>.</p>
+<p>This means customers can simply plug in that URL, add their authentication credentials, and instantly connect <strong>any MCP client</strong>—whether that’s VS Code, Windsurf, ChatGPT (<a href="https://platform.openai.com/docs/guides/tools-remote-mcp">directly now in their Responses API</a>, <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code</a>), or agent frameworks like <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> and <a href="https://github.com/google/adk-python">ADK</a>. The customer never has to worry about deploying or managing their own MCP instance.</p>
+<p>That’s a powerful model—and one that more companies should follow.</p>
+<hr>
+<section id="why-this-matters-for-companies" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-for-companies">Why This Matters for Companies</h2>
+<p>Each company has an opportunity to be forward-leaning and recognized as an <strong>AI-first company</strong> in how they adopt and expose MCP internally and externally.</p>
+<p>Right now, very few companies are both:</p>
+<ul>
+<li><strong>Open sourcing their MCP Server code</strong>, and<br>
+</li>
+<li><strong>Hosting public remote MCP servers</strong>.</li>
+</ul>
+<p>I think companies should do both. Here’s how.</p>
+<hr>
+</section>
+<section id="recommended-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-next-steps">Recommended Next Steps</h2>
+<section id="identify-endpoints-and-workflows-to-expose-as-mcp-tools" class="level3">
+<h3 class="anchored" data-anchor-id="identify-endpoints-and-workflows-to-expose-as-mcp-tools">1. Identify Endpoints and Workflows to Expose as MCP Tools</h3>
+<p>Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on <strong>common workflows</strong> that agents will use.</p>
+<ul>
+<li><p>Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required <em>three</em> separate API calls. Instead, I created a <strong>dedicated workflow API</strong> that bundled those calls together—much more natural for an agent.</p></li>
+<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>:<br>
+&gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
+</ul>
+<p>You should design with the agent in mind. That might mean rethinking data formats (YAML is often better than JSON) or collapsing multi-step operations into a single MCP tool.</p>
+<hr>
+</section>
+<section id="build-the-api-client-mcp-server-and-tools" class="level3">
+<h3 class="anchored" data-anchor-id="build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</h3>
+<p>The typical stack looks like this:</p>
+<ul>
+<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.<br>
+</li>
+<li><strong>MCP Server</strong>: Implements the MCP protocol on top of that client.</li>
+</ul>
+<p>All of the MCP servers I’ve written so far are in Python, using <a href="https://github.com/jlowin/fastmcp">FastMCP</a> as the framework. The pattern is straightforward:</p>
+<ol type="1">
+<li>Write an API Client.<br>
+</li>
+<li>Layer the MCP protocol logic on top.</li>
+</ol>
+<p>You can use agentic coding tools like Claude Code to quickly spin these up.</p>
+<hr>
+</section>
+<section id="deploy-the-mcp-server-publicly" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</h3>
+<p>There are more options than ever for running lightweight public services:<br>
+- <a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a><br>
+- <a href="https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/">Cloudflare Workers</a></p>
+<p>Each of these can make your MCP server accessible with minimal operational overhead.</p>
+<hr>
+</section>
+<section id="provide-example-clients-and-agents" class="level3">
+<h3 class="anchored" data-anchor-id="provide-example-clients-and-agents">4. Provide Example Clients and Agents</h3>
+<p>To encourage adoption, publish sample implementations that connect to the server. These could be:</p>
+<ul>
+<li>VS Code extensions<br>
+</li>
+<li>LangGraph or ADK agents<br>
+</li>
+<li>Example workflows in ChatGPT or Claude</li>
+</ul>
+<p>This lowers the barrier for customers to experiment quickly.</p>
+<hr>
+</section>
+<section id="open-source-the-mcp-server" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-the-mcp-server">5. Open Source the MCP Server</h3>
+<p>Some of the most popular MCP servers today aren’t even official. For example, the <strong><a href="https://github.com/sooperset/mcp-atlassian">mcp-atlassian</a></strong> project is developed by an open-source developer <a href="https://github.com/sooperset">Hyeonsoo Lee</a> and not by Atlassian. That’s a missed opportunity.</p>
+<p>If companies open source their MCP servers, the benefits are significant:</p>
+<ul>
+<li>Community contributions and bug fixes<br>
+</li>
+<li>Customer self-hosting when desired<br>
+</li>
+<li>Stronger trust and transparency</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="popular-remote-mcp-servers" class="level2">
+<h2 class="anchored" data-anchor-id="popular-remote-mcp-servers">Popular Remote MCP Servers</h2>
+<p>Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP docs</a>:</p>
+<section id="adding-remote-servers-to-claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="adding-remote-servers-to-claude-code">Adding Remote Servers to Claude Code</h3>
+<p>You can easily add these servers to Claude Code using the CLI. Note some of these are not remote MCP servers. Here are the exact commands:</p>
+<section id="development-testing-tools" class="level4">
+<h4 class="anchored" data-anchor-id="development-testing-tools">Development &amp; Testing Tools</h4>
+<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http sentry https://mcp.sentry.dev/mcp</span>
+<span id="cb1-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http socket https://mcp.socket.dev/</span>
+<span id="cb1-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http hugging-face https://huggingface.co/mcp</span>
+<span id="cb1-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http jam https://mcp.jam.dev/mcp</span></code></pre></div>
+</section>
+<section id="project-management" class="level4">
+<h4 class="anchored" data-anchor-id="project-management">Project Management</h4>
+<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse asana https://mcp.asana.com/sse</span>
+<span id="cb2-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse atlassian https://mcp.atlassian.com/v1/sse</span>
+<span id="cb2-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add clickup <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--env</span> CLICKUP_API_KEY=YOUR_KEY <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--env</span> CLICKUP_TEAM_ID=YOUR_ID <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--</span> npx <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-y</span> @hauptsache.net/clickup-mcp</span>
+<span id="cb2-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http intercom https://mcp.intercom.com/mcp</span>
+<span id="cb2-5"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse linear https://mcp.linear.app/sse</span>
+<span id="cb2-6"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http notion https://mcp.notion.com/mcp</span>
+<span id="cb2-7"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http box https://mcp.box.com/</span>
+<span id="cb2-8"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http fireflies https://api.fireflies.ai/mcp</span>
+<span id="cb2-9"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse monday https://mcp.monday.com/sse</span></code></pre></div>
+</section>
+<section id="databases" class="level4">
+<h4 class="anchored" data-anchor-id="databases">Databases</h4>
+<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add airtable <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--env</span> AIRTABLE_API_KEY=YOUR_KEY <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--</span> npx <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">-y</span> airtable-mcp-server</span>
+<span id="cb3-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http daloopa https://mcp.daloopa.com/server/mcp</span>
+<span id="cb3-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http hubspot https://mcp.hubspot.com/anthropic</span></code></pre></div>
+</section>
+<section id="payments-commerce" class="level4">
+<h4 class="anchored" data-anchor-id="payments-commerce">Payments &amp; Commerce</h4>
+<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http paypal https://mcp.paypal.com/mcp</span>
+<span id="cb4-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse plaid https://api.dashboard.plaid.com/mcp/sse</span>
+<span id="cb4-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse square https://mcp.squareup.com/sse</span>
+<span id="cb4-4"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http stripe https://mcp.stripe.com</span></code></pre></div>
+</section>
+<section id="design" class="level4">
+<h4 class="anchored" data-anchor-id="design">Design</h4>
+<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp</span>
+<span id="cb5-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> sse invideo https://mcp.invideo.io/sse</span>
+<span id="cb5-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http canva https://mcp.canva.com/mcp</span></code></pre></div>
+</section>
+<section id="infrastructure-devops" class="level4">
+<h4 class="anchored" data-anchor-id="infrastructure-devops">Infrastructure / DevOps</h4>
+<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http netlify https://netlify-mcp.netlify.app/mcp</span>
+<span id="cb6-2"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http stytch http://mcp.stytch.dev/mcp</span>
+<span id="cb6-3"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> mcp add <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</span></code></pre></div>
+<p>For more details, see the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP documentation</a>.</p>
+<hr>
+
+
+</section>
+</section>
+</section>
+
+ ]]></description>
+  <category>AI</category>
+  <category>MCP</category>
+  <category>LLMs</category>
+  <category>Claude Code</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2025-08-21-open-source-mcp-servers/</guid>
+  <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Summaries of Talks from Code with Claude Conference 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -14815,95 +15085,6 @@ font-style: inherit;">wandb: Find logs at: ./wandb/run-20240524_000556-iewv47f2/
   <category>AI</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-03-08-ai-impact-on-jobs/</guid>
   <pubDate>Fri, 08 Mar 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Ode to Costco</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2024-02-28-ode-to-costco/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I’ve been a fan of Costco for many years. Charlie Munger <a href="https://finance.yahoo.com/news/charlie-munger-obsessed-costco-heres-035148471.html">famously loved Costco too</a>. I still remember growing up and going to Price Club with my mom or dad and seeing them write checks because they didn’t accept credit cards yet. There are many reasons to love Costco. It’s honestly one of my favorite places to shop. Some of my favorite things are in no particular order:</p>
-<ul>
-<li>Great buyers who do an incredible job selecting products</li>
-<li>Employees who seem to love their jobs and draw happy faces on receipts for kids</li>
-<li>Free samples</li>
-<li>Gasoline that is typically 25-45 cents cheaper per gallon</li>
-<li>$5 Rotisserie Chicken</li>
-<li>$1.50 Hot dog + Soda</li>
-<li>$9.99 full size pizza</li>
-<li>Great value on bulk items on goods like diapers, toilet paper, paper towels, etc.</li>
-<li>Generous return policy - even for Apple products this goes up to 90 days</li>
-<li>Cheapest place to get glasses and lenses</li>
-<li>Microwavable bacon</li>
-<li>Whole Brisket (Prime/Choice that is typically around $4/lb)</li>
-<li>Up to 7.25% cash back on all spend: Using a BofA credit card + BofA Preferred Rewards status + as a Costco Executive Membership, you can earn 5.25% cash back using Costco Shop Cards. Details in this <a href="https://frugalprofessor.com/best-credit-card-rewards-strategy-2019-edition/">post</a>. He also has his own post on <a href="https://frugalprofessor.com/how-to-shop-at-costco-like-a-boss/">how to shop at Costco like a boss</a>.</li>
-<li>Milk that has absurdly long expired-by dates</li>
-<li><del>Photo Prints</del> - It used to be the cheapest place to get photo prints but they’ve since discontinued the business</li>
-</ul>
-<p>I recently learned about the Acquired podcast from Cal Newport’s post, <a href="https://calnewport.com/how-the-acquired-podcast-became-a-sensation/">How the Acquired Podcast Became a Sensation</a>. They do long deep dives into business. One of their recent episodes was a <a href="https://www.acquired.fm/episodes/costco">3-hour dive into all things Costco</a>, the history of the company ad how it traces it’s roots into the people behind Fedmart and Price Club. After listening to the episode, I now appreciate Costco as a business even more. One of the biggest learnings was Costco capping their gross margins at 14%! This means they are intentionally leaving profits on the table to provide more value to their members! From the episode:</p>
-<blockquote class="blockquote">
-<p>And because of Costco’s gross margins always being targeted at 11% capped at 14%, this means that for every dollar that Costco gets a supplier to reduce the price on something—again, tough but fair—the customer actually sees most 89% of the benefit. Costco really does just get to pass whenever they get a benefit, 89% of that benefit goes to the member.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>The way I look at this is some companies always look for ways to make more margin. Costco specifically does the opposite. They look for ways to provide more value to members, retain them for members as longer, and get them to get their friends to be members. They try hard across the board to get lower overhead costs through cleverness and efficiency, not through squeezing, underpaying, or anything like that.</p>
-</blockquote>
-<p>Based on the episode, here are 33 reasons why Costco is considered an extraordinary business:</p>
-<ol type="1">
-<li><strong>Bulk Sales Model</strong>: “What if I told you that there was one place where you could get all these things under one roof? A 2½ pound container of cashews, prescription eyeglasses, a tank of gas, new tires for your car, 96 rolls of toilet paper, a new refrigerator, an outdoor shed, a 10 carat diamond ring, some freshly prepared sushi, fine wine at a great price.” - Ben illustrates the diverse and bulk offerings of Costco, underscoring the convenience and variety it provides to members.</li>
-<li><strong>Consistent Low Prices</strong>: “And you could even grab a hot dog with a soda and a free refill on your way out for just $1.50. Hey, it has been the same price for 40 years now.” - Highlighting Costco’s commitment to maintaining low prices for its food court items, which enhances the shopping experience and customer loyalty.</li>
-<li><strong>Innovative Operations</strong>: “But what really makes it work are the 50 clever innovations that they’ve refined over the years, that all work together like an orchestra that’s been rehearsing for decades.” - David acknowledges Costco’s operational ingenuity and continuous improvement mindset.</li>
-<li><strong>Quality Products</strong>: “If your goal is to offer extremely great value to your customers on high-quality products at the lowest possible prices, there are a lot of ways that you could go about doing that.” - Ben emphasizes the company’s dedication to quality alongside its value proposition.</li>
-<li><strong>Customer Value Focus</strong>: “Today, we will walk through the very specific path of decisions and trade-offs that Costco has chosen to accomplish just this.” - Introducing the strategic decisions Costco makes to uphold its value proposition.</li>
-<li><strong>Revenue Growth</strong>: “Costco has grown revenue right about 10% for over 30 years in a row.” - Showcasing Costco’s remarkable consistency in revenue growth.</li>
-<li><strong>Efficient Space Utilization</strong>: “Their revenue per square foot of their warehouses belongs more in a conversation with Tiffany than Walmart.” - Highlighting how efficiently Costco utilizes its warehouse space to generate high revenue.</li>
-<li><strong>Kirkland Signature Brand</strong>: “Their store brand, Kirkland Signature, does more revenue alone, not including anything else in the store, than all of Nike.” - Demonstrating the success and scale of Costco’s private label brand.</li>
-<li><strong>International Expansion Potential</strong>: “They seem to have incredible running room ahead of them to expand internationally and here in North America.” - Noting Costco’s significant potential for further global expansion.</li>
-<li><strong>Customer Loyalty</strong>: “Most of you are very familiar with this Disneyland of consumer value that I’m referring to.” - Ben alludes to the strong customer loyalty and fondness for Costco.</li>
-<li><strong>Supply Chain Mastery</strong>: “Jim Sinegal, of course, co-founder and CEO of Costco, tells the story that a reporter once asked him if he learned a lot from Sol. Jim replied, no, that’s inaccurate. I didn’t learn a lot, I learned everything.” - Reflecting on the foundational knowledge and principles Costco inherited from its predecessors.</li>
-<li><strong>Legal Compliance and Ethics</strong>: “Obey the law” - The primary code of ethics at Costco, ensuring that the company operates within legal boundaries and ethical standards.</li>
-<li><strong>Employee Care</strong>: “Take care of our employees” - Costco’s commitment to employee welfare, indicating the company’s recognition of its workforce as a key stakeholder.</li>
-<li><strong>Supplier Respect</strong>: “Respect our suppliers” - Highlighting Costco’s ethical approach to dealing with suppliers, fostering mutual respect and long-term relationships.</li>
-<li><strong>Membership Model Efficiency</strong>: “The economics of membership…selects for wealthy customers.” - Discussing how the membership model not only generates revenue but also curates a specific customer demographic.</li>
-<li><strong>Low Shrinkage Rates</strong>: “Membership further decreases shrinkage.” - The impact of the membership model on reducing theft and loss within Costco warehouses.</li>
-<li><strong>High-Quality Member Demographic</strong>: “The typical Costco consumer makes about $125,000 a year in household income.” - Indicating the affluent demographic of Costco’s membership base.</li>
-<li><strong>Stringent Product Markups</strong>: “Strict cap on the margin…only markup anything a maximum of 14% above what the suppliers sell it to them for.” - Explaining Costco’s policy on limiting product markups to ensure low prices for members.</li>
-<li><strong>Global Expansion Success</strong>: “First, they go to the UK, then they go to Korea, to Taiwan, to Japan…” - Detailing Costco’s strategic and successful international expansion efforts.</li>
-<li><strong>Sustainable Growth Strategy</strong>: “Amazon is a company that works hard to charge its customers less, and that is directly from Jim Sinegal.” - Highlighting Costco’s influence on other major retailers regarding pricing strategy.</li>
-<li><strong>Member Trust and Transparency</strong>: “Members have to trust that they are going to get the absolute best price on everything…” - The importance of maintaining member trust through transparent pricing and consistent value.</li>
-<li><strong>Efficient Inventory Management</strong>: “Costco actually turns their inventory 12.4 times per year…” - Showcasing Costco’s exceptional efficiency in inventory management and the benefits of a negative cash conversion cycle.</li>
-<li><strong>Selective Product Offering</strong>: “Each buyer is only really adding 3, 5, 10, maybe 15 new SKUs a year…” - Reflecting on the curated and limited product selection strategy that ensures quality and value.</li>
-<li><strong>Ethical Supplier Negotiations</strong>: “Costco buyers always ask why when a supplier tries to increase the price…” - Demonstrating Costco’s fair and informed approach to supplier negotiations.</li>
-<li><strong>Commitment to Social Responsibility</strong>: “Sol and Robert are great at creative ideas in retail. They’re not so great at scale execution.” - Acknowledging the founders’ innovative contributions to retail, balanced with an awareness of their limitations in executing at scale, leading to strategic decisions that shaped Costco’s trajectory.</li>
-<li><strong>Limited SKU Strategy</strong>: “Costco makes the opposite bet. They bet that you don’t need selection, as long as you ensure that everything you can buy is high quality…Consumers, because they do all that work ahead of time, are basically just okay, sacrificing selection entirely and saying, yeah, as long as you give us good value on great stuff, we’re totally okay with that.”</li>
-<li><strong>Trust and Quality Over Selection</strong>: “That’s an important unlock. You can’t just have low selection and be like, well, it’s all cheap stuff. It has to be high quality in its category and the best deal on the market in order for people to be okay with low selection, which drives low SKU count, which drives all the amazing things we’ve talked about so far.”</li>
-<li><strong>The Intelligent Loss of Sales Principle:</strong> “Sol uses the example in the book of household lubricating oil, like WD-40 type stuff. He’s like, we only carried the eight ounce can, even though there was a three ounce can out there…But it was worth it to us to forgo that, because by only having the eight ounce can, we could reduce the number of SKUs that we had and get all these benefits that you’re talking about, Ben.”</li>
-<li><strong>Simplifying Logistics Through Limited SKUs:</strong>: “They only have so many suppliers who are bringing goods to Costco. The fact that they sell in bulk means that they can bring a whole pallet into a warehouse and consumers just come and pluck it off the pallet…This is so much simpler, and it really plays into that cash flow dynamic, where things can be available for sale so fast.”</li>
-<li><strong>Employee Compensation and Efficiency</strong>: “This also plays into this labor thing. You can totally pay your employees more when you need less people to generate the same amount of sales. You don’t have wasted manpower unwrapping items from pallets, no one turning the labels out to look pretty. The customers do all of this. It legitimately means they just need less people.”</li>
-<li><strong>The Membership Model as a Profit Center</strong>: “A lot of people like to make a lot of hay about the idea that Costco generates all their profit on memberships and that retail is just a break-even business. This has been popular to say because they run the retail business at such thin margins. Memberships are nearly a 100% margin business.”</li>
-<li><strong>High Renewal Rates and Customer Loyalty</strong>: “Executive members, as you would guess, also renew at a higher rate. It helps with retention…Ninety-three percent of members in the US renew every single year.”</li>
-<li><strong>Innovative Crossdocking</strong>:</li>
-</ol>
-<blockquote class="blockquote">
-<p>Exactly, but here’s how the distribution centers work. Trucks pull up on one side and unload pallets, that’s where the suppliers trucks are. On the other side of the warehouse, there are Costco trucks.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>What happens is, since they move stuff entirely by the pallet, no partial pallets, these few things go to this store, these few things go to that store, the supplier trucks unload the pallets. They just get scooted across the dock to go directly to a Costco warehouse. Within minutes to hours, that truck leaves, and there’s no unwrapping of individual boxes. There’s nothing sitting overnight in the facility.</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>This is so much simpler, and it really plays into that cash flow dynamic, where things can be available for sale so fast. Just to underscore how differentiated the system is, 92% of Costco’s merchandise is crossdocked. Only 10% of Walmart has crossdocked merchandise on a pallet system like this.</p>
-</blockquote>
-
-
-
- ]]></description>
-  <category>ode to</category>
-  <category>Costco</category>
-  <category>Acquired</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2024-02-28-ode-to-costco/</guid>
-  <pubDate>Wed, 28 Feb 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>

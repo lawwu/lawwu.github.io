@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lawrence Wu">
-<meta name="dcterms.date" content="2023-08-29">
+<meta name="dcterms.date" content="2025-08-21">
 
-<title>How LLMs will affect Jobs? – Lawrence Wu</title>
+<title>Why Companies Should Open Source and Host Their Own MCP Servers – Lawrence Wu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -78,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-44ca6d71b5c3fd1b21885b1aaf9f7138.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4df3b0c4fafa0f66eafcead0ee6cff11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -151,10 +151,10 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="How LLMs will affect Jobs? – Lawrence Wu">
+<meta property="og:title" content="Why Companies Should Open Source and Host Their Own MCP Servers – Lawrence Wu">
 <meta property="og:description" content="This is Lawrence Wu’s personal website">
 <meta property="og:site_name" content="Lawrence Wu">
-<meta name="twitter:title" content="How LLMs will affect Jobs? – Lawrence Wu">
+<meta name="twitter:title" content="Why Companies Should Open Source and Host Their Own MCP Servers – Lawrence Wu">
 <meta name="twitter:description" content="This is Lawrence Wu’s personal website">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
@@ -229,13 +229,19 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-will-llms-affect-data-science-work" id="toc-how-will-llms-affect-data-science-work" class="nav-link active" data-scroll-target="#how-will-llms-affect-data-science-work">How will LLMs affect data science work?</a></li>
-  <li><a href="#how-will-llms-affect-the-future-of-work" id="toc-how-will-llms-affect-the-future-of-work" class="nav-link" data-scroll-target="#how-will-llms-affect-the-future-of-work">How will LLMs affect the future of work?</a></li>
-  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
-  <li><a href="#a-couple-examples" id="toc-a-couple-examples" class="nav-link" data-scroll-target="#a-couple-examples">A Couple Examples</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
-  <li><a href="#streamlit-app" id="toc-streamlit-app" class="nav-link" data-scroll-target="#streamlit-app">Streamlit App</a></li>
-  <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links">Links</a></li>
+  <li><a href="#why-this-matters-for-companies" id="toc-why-this-matters-for-companies" class="nav-link active" data-scroll-target="#why-this-matters-for-companies">Why This Matters for Companies</a></li>
+  <li><a href="#recommended-next-steps" id="toc-recommended-next-steps" class="nav-link" data-scroll-target="#recommended-next-steps">Recommended Next Steps</a>
+  <ul class="collapse">
+  <li><a href="#identify-endpoints-and-workflows-to-expose-as-mcp-tools" id="toc-identify-endpoints-and-workflows-to-expose-as-mcp-tools" class="nav-link" data-scroll-target="#identify-endpoints-and-workflows-to-expose-as-mcp-tools">1. Identify Endpoints and Workflows to Expose as MCP Tools</a></li>
+  <li><a href="#build-the-api-client-mcp-server-and-tools" id="toc-build-the-api-client-mcp-server-and-tools" class="nav-link" data-scroll-target="#build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</a></li>
+  <li><a href="#deploy-the-mcp-server-publicly" id="toc-deploy-the-mcp-server-publicly" class="nav-link" data-scroll-target="#deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</a></li>
+  <li><a href="#provide-example-clients-and-agents" id="toc-provide-example-clients-and-agents" class="nav-link" data-scroll-target="#provide-example-clients-and-agents">4. Provide Example Clients and Agents</a></li>
+  <li><a href="#open-source-the-mcp-server" id="toc-open-source-the-mcp-server" class="nav-link" data-scroll-target="#open-source-the-mcp-server">5. Open Source the MCP Server</a></li>
+  </ul></li>
+  <li><a href="#popular-remote-mcp-servers" id="toc-popular-remote-mcp-servers" class="nav-link" data-scroll-target="#popular-remote-mcp-servers">Popular Remote MCP Servers</a>
+  <ul class="collapse">
+  <li><a href="#adding-remote-servers-to-claude-code" id="toc-adding-remote-servers-to-claude-code" class="nav-link" data-scroll-target="#adding-remote-servers-to-claude-code">Adding Remote Servers to Claude Code</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -244,11 +250,12 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">How LLMs will affect Jobs?</h1>
+<h1 class="title">Why Companies Should Open Source and Host Their Own MCP Servers</h1>
   <div class="quarto-categories">
+    <div class="quarto-category">AI</div>
+    <div class="quarto-category">MCP</div>
     <div class="quarto-category">LLMs</div>
-    <div class="quarto-category">Jobs</div>
-    <div class="quarto-category">Work</div>
+    <div class="quarto-category">Claude Code</div>
   </div>
   </div>
 
@@ -266,7 +273,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">August 29, 2023</p>
+      <p class="date">August 21, 2025</p>
     </div>
   </div>
   
@@ -278,120 +285,143 @@ cookieconsent.run({
 </header>
 
 
-<p>I have been interested in how language models will affect the future of work. Having worked with LLMs the last ~6 months, I’ve seen their impact on my work as a data scientist. Jason Wei gave a talk at KDD 2023 called <a href="https://docs.google.com/presentation/d/1hQF8EXNdePFPpws_jxwqHWi5ohV_TeGL17WIjvUvG6E/edit?resourcekey=0-xA6WdGyYp1EexLgoXgjOjg#slide=id.g16197112905_0_0">Scaling, Emergence and Reasoning in Large Language Models</a> that was great. He works at the intersection of LLMs and AI Research and has a good view into how LLMs will change the field of AI Research. We need this same sort of thinking applied in other fields to get a sense for how to answer the question “How will LLMs change the future of work?” It’s important for more people to be aware the potential for LLMs to disrupt jobs and to get ahead of any changes.</p>
-<section id="how-will-llms-affect-data-science-work" class="level2">
-<h2 class="anchored" data-anchor-id="how-will-llms-affect-data-science-work">How will LLMs affect data science work?</h2>
-<p>In terms of how I’ve seen LLMs affect data science work are:</p>
-<p><strong>5 years ago:</strong></p>
-<ol type="1">
-<li>Start with data: First step after a use case is defined for any data science problem –&gt; acquire a data set and spend time preparing/cleaning the data</li>
-<li>Need to hire data labelers to label data or evaluate model output at scale</li>
-<li>Coding with Stack Overflow</li>
-</ol>
-<p><strong>Now</strong></p>
-<ol type="1">
-<li>Start with a model: Does a pre-trained model (embeddings, LLMs) solve your use case?</li>
-<li>A pre-trained model can generate required labels or evaluate model results directly</li>
-<li>Coding with GitHub Copilot, ChatGPT and Code Interpreter</li>
-</ol>
-</section>
-<section id="how-will-llms-affect-the-future-of-work" class="level2">
-<h2 class="anchored" data-anchor-id="how-will-llms-affect-the-future-of-work">How will LLMs affect the future of work?</h2>
-<p>I had the idea of using an LLM to assess the impact of LLMs on jobs. Having got llama2 up and running on my Mac M1 Pro using <code>llama.cpp</code>, it was pretty easy to use <code>langchain</code>, a set of occupations from ONET, and the <code>llama2-13b-chat</code> model to generate 10 ways that LLMs will affect a given occupation for the 1,016 ONET occupations. This took about 50 seconds per title to run and in total around 14 hours (and an unknown amount of electricity).</p>
-<p>The idea and the prompt I used was partially inspired by the paper <a href="https://arxiv.org/abs/2303.10130">GPTs are GPTs: An Early Look at the Labor Market Impact Potential of Large Language Models</a> where the framework they used to evaluate the impact of LLMs on jobs used LLMs to do the evaluation and their measure of a given job’s exposure used:</p>
+<p>The <strong>Model Context Protocol (MCP)</strong> is quickly becoming a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting <strong>public-facing MCP servers</strong>. For example, Atlassian provides one here: <a href="https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/">Getting Started with the Atlassian Remote MCP Server</a>.</p>
+<p>Their MCP server lives at: <a href="https://mcp.atlassian.com/v1/sse">https://mcp.atlassian.com/v1/sse</a>.</p>
+<p>This means customers can simply plug in that URL, add their authentication credentials, and instantly connect <strong>any MCP client</strong>—whether that’s VS Code, Windsurf, ChatGPT (<a href="https://platform.openai.com/docs/guides/tools-remote-mcp">directly now in their Responses API</a>, <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code</a>), or agent frameworks like <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> and <a href="https://github.com/google/adk-python">ADK</a>. The customer never has to worry about deploying or managing their own MCP instance.</p>
+<p>That’s a powerful model—and one that more companies should follow.</p>
+<hr>
+<section id="why-this-matters-for-companies" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-for-companies">Why This Matters for Companies</h2>
+<p>Each company has an opportunity to be forward-leaning and recognized as an <strong>AI-first company</strong> in how they adopt and expose MCP internally and externally.</p>
+<p>Right now, very few companies are both:</p>
 <ul>
-<li><strong>Direct exposure (E1)</strong> if using the described LLM via ChatGPT or the OpenAI playground can decrease the time required to complete the DWA or task by at least half (50%).</li>
-<li><strong>LLM+ Exposed (E2)</strong> if access to the described LLM alone would not reduce the time required to complete the activity/task by at least half, but additional software could be developed on top of the LLM that could reduce the time it takes to complete the specific activity/task with quality by at least half. Among these systems, we count access to image generation systems.</li>
+<li><strong>Open sourcing their MCP Server code</strong>, and<br>
+</li>
+<li><strong>Hosting public remote MCP servers</strong>.</li>
 </ul>
-<p>So the prompt I used was:</p>
-<pre><code>"As an {TITLE}, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</code></pre>
+<p>I think companies should do both. Here’s how.</p>
+<hr>
 </section>
-<section id="code" class="level2">
-<h2 class="anchored" data-anchor-id="code">Code</h2>
-<p>The code to do this:</p>
-<div id="32e804da" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.llms <span class="im">import</span> LlamaCpp</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>MODEL_LLAMA2_13B <span class="op">=</span> <span class="st">"llama-2-13b-chat.ggmlv3.q4_0.bin"</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>n_gpu_layers <span class="op">=</span> <span class="dv">1</span>  <span class="co"># Metal set to 1 is enough.</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>n_batch <span class="op">=</span> <span class="dv">512</span>  <span class="co"># Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>llm <span class="op">=</span> LlamaCpp(</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>            model_path<span class="op">=</span>MODEL_LLAMA2_13B,</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>            temperature<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>            top_p<span class="op">=</span><span class="dv">1</span>,</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            max_tokens<span class="op">=</span><span class="dv">2048</span>,</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            n_ctx<span class="op">=</span><span class="dv">2048</span>,</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>            n<span class="op">=-</span><span class="dv">1</span>,</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>            repeat_penalty<span class="op">=</span><span class="fl">1.1</span>,</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>            n_threads<span class="op">=</span><span class="dv">8</span>,</span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>            <span class="co"># callback_manager=callback_manager,</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>            n_gpu_layers<span class="op">=</span>n_gpu_layers,</span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>            n_batch<span class="op">=</span><span class="dv">2048</span>,  <span class="co"># Should be between 1 and n_ctx, consider the amount of RAM of your Apple Silicon Chip.</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>            f16_kv<span class="op">=</span><span class="va">True</span>,  <span class="co"># MUST set to True, otherwise you will run into problem after a couple of calls</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>            verbose<span class="op">=</span><span class="va">False</span>,</span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="a-couple-examples" class="level2">
-<h2 class="anchored" data-anchor-id="a-couple-examples">A Couple Examples</h2>
-<p>Running this for an entry-level data scientist:</p>
-<div id="baa5c28f" class="cell" data-execution_count="2">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>llm(<span class="st">"As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Here's a list of 10 areas of my work as an entry-level Data Scientist that I think will be disrupted by the widespread usage of Large Language Models (LLMs) or tools built on LLMs:</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Data Preprocessing: Many tasks in data preprocessing, such as tokenization, stemming, and lemmatization, can be automated using LLMs. This could make my work more efficient and reduce the time spent on these tasks.</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Feature Engineering: LLMs can help generate new features that can improve model performance. For example, LLMs can be used to generate sentiment scores or topic models for text data. This could lead to better insights and improved accuracy in machine learning models.</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Data Visualization: LLMs can be used to generate interactive visualizations that provide more detailed insights into data. For example, LLMs can be used to create interactive heatmaps or word clouds that show the distribution of words in a dataset.</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Text Summarization: LLMs can be used to summarize long documents or articles into shorter summaries. This could be useful for quickly grasping the main points of a document or article.</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Sentiment Analysis: LLMs can be used to analyze text data and provide sentiment scores. This could be useful for understanding public opinion on a particular topic or product.</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Named Entity Recognition (NER): LLMs can be used to automatically identify and extract named entities such as people, organizations, and locations from text data. This could save time and improve the accuracy of downstream tasks such as information extraction or summarization.</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Part-of-speech Tagging: LLMs can be used to automatically assign part-of-speech tags to words in a sentence. This could improve the accuracy of downstream tasks such as named entity recognition and sentiment analysis.</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. Dependency Parsing: LLMs can be used to analyze the grammatical structure of sentences and identify the relationships between words. This could lead to better insights into language usage and improved accuracy in natural language processing tasks.</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. Information Extraction: LLMs can be used to automatically extract structured data from unstructured text. For example, LLMs can be used to extract names, dates, and locations from news articles or social media posts.</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. Question Answering: LLMs can be used to answer questions based on the content of a document or article. This could be useful for providing quick answers to common customer support queries or for automating content search engines.</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Overall, the widespread adoption of LLMs and tools built on LLMs has the potential to significantly improve the efficiency and accuracy of many tasks in data science, particularly those involving natural language processing.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Repeating this for a Pediatric Pharmacist:</p>
-<div id="5fcb27c6" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>prompt<span class="op">=</span><span class="st">"""</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="st">As an entry-level Pediatric Pharmacist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>llm(prompt)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Although I am an early career pharmacist, and I lack industry expertise as a seasoned professional in the field of pediatrics or AI technology I can imagine several ways that LLMs could disrupt various aspects of my work:</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Medication dosing: One potential area of disruption is medication dosing. LLMs may be able to quickly and accurately determine appropriate drug dosages for children based on their weight, age, and other factors, potentially reducing the need for human intervention and improving medication safety. </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2.Drug interactions: Another possible area of disruption is the identification of potential drug interactions. LLMs may be able to analyze large amounts of data and identify potential drug interaction that a human pharmacist might miss, helping to prevent adverse events and improve patient outcomes. </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Allergic reactions: With their ability to analyze large amounts of data, LLMs may also be useful in identifying patterns related to allergic reactions, allowing healthcare providers to take proactive steps to prevent these reactions or quickly respond to them if they occur.</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Developmental delays: The use of LLMs could help identify children at risk for developmental delays and provide early interventions that can improve outcomes for those children.</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. Pediatric clinical decision support: With the ability to process vast amounts of data, LLMs may be able provide real-time clinical decision support to healthcare providers, improving diagnostic accuracy and reducing errors in patient care.  </span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. Medical coding and billing: The use of LLMs could improve the accuracy of medical coding and billing, potentially reducing errors and improving reimbursement for healthcare providers. </span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. Pharmacovigilance: With their ability to analyze large amounts of data, LLMs may also be useful in pharmacovigilance by identifying potential safety issues related to pediatric medication use and allowing healthcare providers to take proactive steps to mitigate these risks.</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 8 Patient education: The use of LLMs could improve patient education, allowing healthcare providers to provide tailored information that addresses the unique needs of each child based on their medical history, allergies, and other factors. </span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. Referrals and consultations: With the ability to diagnose and treat a wide range of pediatric conditions, LLMs could help identify children who require specialist care or consultation with other healthcare providers, potentially reducing unnecessary referrals and improving patient outcomes.  </span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. Public health surveillance: Finally, the use of LLMs could improve public health surveillance by analyzing large amounts of data related to pediatric health issues, allowing healthcare providers to identify trends and patterns that can inform population-based interventions and policies. </span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="co"># As an early career pharmacist, I recognize that the widespread adoption of LLMs or tools built on these technologies will require significant investment in training and infrastructure, as well as careful consideration of ethical and legal issues related to health data privacy and security.  </span></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if properly implemented, these technologies have the potential to transform the field of pediatric pharmacology, improving patient outcomes and reducing healthcare costs over time. Despite the challenges ahead, I remain excited about the potential applications of LLMs in pediatric pharmacology practice and look forward to seeing how these developments shape the future of our profession.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
-<p>Hopefully this inspires some food for thought on how LLMs will affect the future of work. I think it would benefit most people to think about how a general purpose technology like LLMs (<a href="https://youtu.be/5p248yoa3oE?si=oh6SAP5kPkGLsVor&amp;t=81">Andrew Ng calls AI like electricity in their broad applicability</a>) will affect the specific things they are working and how they can use this technology to make themselves more productive. A similar analogy is those who have gotten good at searching with Google are that much more productive than those who haven’t. LLMs are a much more powerful tool than a search engine (after all <a href="https://python.langchain.com/docs/integrations/tools/search_tools">you can give an LLM a search tool</a>) and it’s important more people understand how to use this new tool.</p>
-</section>
-<section id="streamlit-app" class="level2">
-<h2 class="anchored" data-anchor-id="streamlit-app">Streamlit App</h2>
-<p>Here’s a Streamlit app you can use to explore all 1,016 titles and how it will potentially be impacted by LLMs: <a href="https://llm-impact-on-jobs.streamlit.app/" class="uri">https://llm-impact-on-jobs.streamlit.app/</a></p>
-<iframe src="https://llm-impact-on-jobs.streamlit.app/?embed=true" height="1200" style="width:100%;border:none;">
-</iframe>
-</section>
-<section id="links" class="level2">
-<h2 class="anchored" data-anchor-id="links">Links</h2>
+<section id="recommended-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-next-steps">Recommended Next Steps</h2>
+<section id="identify-endpoints-and-workflows-to-expose-as-mcp-tools" class="level3">
+<h3 class="anchored" data-anchor-id="identify-endpoints-and-workflows-to-expose-as-mcp-tools">1. Identify Endpoints and Workflows to Expose as MCP Tools</h3>
+<p>Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on <strong>common workflows</strong> that agents will use.</p>
 <ul>
-<li><a href="https://github.com/lawwu/llm_impact_on_jobs">Repo</a></li>
-<li><a href="https://github.com/lawwu/llm_impact_on_jobs/blob/main/notebooks/onet_titles_llm_risk.ipynb">Notebook to generate the dataset</a></li>
-<li><a href="https://github.com/lawwu/llm_impact_on_jobs/blob/main/data/list_onet_titles_llm_risk_all.json">Dataset</a></li>
+<li><p>Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required <em>three</em> separate API calls. Instead, I created a <strong>dedicated workflow API</strong> that bundled those calls together—much more natural for an agent.</p></li>
+<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>:<br>
+&gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
 </ul>
+<p>You should design with the agent in mind. That might mean rethinking data formats (YAML is often better than JSON) or collapsing multi-step operations into a single MCP tool.</p>
+<hr>
+</section>
+<section id="build-the-api-client-mcp-server-and-tools" class="level3">
+<h3 class="anchored" data-anchor-id="build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</h3>
+<p>The typical stack looks like this:</p>
+<ul>
+<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.<br>
+</li>
+<li><strong>MCP Server</strong>: Implements the MCP protocol on top of that client.</li>
+</ul>
+<p>All of the MCP servers I’ve written so far are in Python, using <a href="https://github.com/jlowin/fastmcp">FastMCP</a> as the framework. The pattern is straightforward:</p>
+<ol type="1">
+<li>Write an API Client.<br>
+</li>
+<li>Layer the MCP protocol logic on top.</li>
+</ol>
+<p>You can use agentic coding tools like Claude Code to quickly spin these up.</p>
+<hr>
+</section>
+<section id="deploy-the-mcp-server-publicly" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</h3>
+<p>There are more options than ever for running lightweight public services:<br>
+- <a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a><br>
+- <a href="https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/">Cloudflare Workers</a></p>
+<p>Each of these can make your MCP server accessible with minimal operational overhead.</p>
+<hr>
+</section>
+<section id="provide-example-clients-and-agents" class="level3">
+<h3 class="anchored" data-anchor-id="provide-example-clients-and-agents">4. Provide Example Clients and Agents</h3>
+<p>To encourage adoption, publish sample implementations that connect to the server. These could be:</p>
+<ul>
+<li>VS Code extensions<br>
+</li>
+<li>LangGraph or ADK agents<br>
+</li>
+<li>Example workflows in ChatGPT or Claude</li>
+</ul>
+<p>This lowers the barrier for customers to experiment quickly.</p>
+<hr>
+</section>
+<section id="open-source-the-mcp-server" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-the-mcp-server">5. Open Source the MCP Server</h3>
+<p>Some of the most popular MCP servers today aren’t even official. For example, the <strong><a href="https://github.com/sooperset/mcp-atlassian">mcp-atlassian</a></strong> project is developed by an open-source developer <a href="https://github.com/sooperset">Hyeonsoo Lee</a> and not by Atlassian. That’s a missed opportunity.</p>
+<p>If companies open source their MCP servers, the benefits are significant:</p>
+<ul>
+<li>Community contributions and bug fixes<br>
+</li>
+<li>Customer self-hosting when desired<br>
+</li>
+<li>Stronger trust and transparency</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="popular-remote-mcp-servers" class="level2">
+<h2 class="anchored" data-anchor-id="popular-remote-mcp-servers">Popular Remote MCP Servers</h2>
+<p>Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP docs</a>:</p>
+<section id="adding-remote-servers-to-claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="adding-remote-servers-to-claude-code">Adding Remote Servers to Claude Code</h3>
+<p>You can easily add these servers to Claude Code using the CLI. Note some of these are not remote MCP servers. Here are the exact commands:</p>
+<section id="development-testing-tools" class="level4">
+<h4 class="anchored" data-anchor-id="development-testing-tools">Development &amp; Testing Tools</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http sentry https://mcp.sentry.dev/mcp</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http socket https://mcp.socket.dev/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http hugging-face https://huggingface.co/mcp</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http jam https://mcp.jam.dev/mcp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="project-management" class="level4">
+<h4 class="anchored" data-anchor-id="project-management">Project Management</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse asana https://mcp.asana.com/sse</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse atlassian https://mcp.atlassian.com/v1/sse</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add clickup <span class="at">--env</span> CLICKUP_API_KEY=YOUR_KEY <span class="at">--env</span> CLICKUP_TEAM_ID=YOUR_ID <span class="at">--</span> npx <span class="at">-y</span> @hauptsache.net/clickup-mcp</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http intercom https://mcp.intercom.com/mcp</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse linear https://mcp.linear.app/sse</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http notion https://mcp.notion.com/mcp</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http box https://mcp.box.com/</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http fireflies https://api.fireflies.ai/mcp</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse monday https://mcp.monday.com/sse</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="databases" class="level4">
+<h4 class="anchored" data-anchor-id="databases">Databases</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add airtable <span class="at">--env</span> AIRTABLE_API_KEY=YOUR_KEY <span class="at">--</span> npx <span class="at">-y</span> airtable-mcp-server</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http daloopa https://mcp.daloopa.com/server/mcp</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http hubspot https://mcp.hubspot.com/anthropic</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="payments-commerce" class="level4">
+<h4 class="anchored" data-anchor-id="payments-commerce">Payments &amp; Commerce</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http paypal https://mcp.paypal.com/mcp</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse plaid https://api.dashboard.plaid.com/mcp/sse</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse square https://mcp.squareup.com/sse</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http stripe https://mcp.stripe.com</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="design" class="level4">
+<h4 class="anchored" data-anchor-id="design">Design</h4>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse invideo https://mcp.invideo.io/sse</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http canva https://mcp.canva.com/mcp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="infrastructure-devops" class="level4">
+<h4 class="anchored" data-anchor-id="infrastructure-devops">Infrastructure / DevOps</h4>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http netlify https://netlify-mcp.netlify.app/mcp</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http stytch http://mcp.stytch.dev/mcp</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http vercel https://mcp.vercel.com/</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For more details, see the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP documentation</a>.</p>
+<hr>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
