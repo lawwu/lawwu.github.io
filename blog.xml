@@ -110,7 +110,7 @@
 </section>
 <section id="popular-remote-mcp-servers" class="level2">
 <h2 class="anchored" data-anchor-id="popular-remote-mcp-servers">Popular Remote MCP Servers</h2>
-<p>Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP docs</a>:</p>
+<p>Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP docs</a> and from <a href="https://github.com/jaw9c/awesome-remote-mcp-servers">awesome-remote-mcp-servers</a>.</p>
 <section id="adding-remote-servers-to-claude-code" class="level3">
 <h3 class="anchored" data-anchor-id="adding-remote-servers-to-claude-code">Adding Remote Servers to Claude Code</h3>
 <p>You can easily add these servers to Claude Code using the CLI. Note some of these are not remote MCP servers. Here are the exact commands:</p>
