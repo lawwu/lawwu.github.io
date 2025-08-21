@@ -4,11 +4,9 @@ date: 2025-08-21
 categories: [AI, MCP, LLMs, Claude Code]
 ---
 
-The **Model Context Protocol (MCP)** is quickly becoming a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting **public-facing MCP servers**. For example, Atlassian provides one here: [Getting Started with the Atlassian Remote MCP Server](https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/).  
+[**Model Context Protocol (MCP)**](https://github.com/modelcontextprotocol/modelcontextprotocol) has quickly become a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting **public-facing MCP servers** with authorization. For example, Atlassian provides one here: [Getting Started with the Atlassian Remote MCP Server](https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/). Their MCP server lives at: [https://mcp.atlassian.com/v1/sse](https://mcp.atlassian.com/v1/sse).
 
-Their MCP server lives at: [https://mcp.atlassian.com/v1/sse](https://mcp.atlassian.com/v1/sse).
-
-This means customers can simply plug in that URL, add their authentication credentials, and instantly connect **any MCP client**—whether that’s VS Code, Windsurf, ChatGPT ([directly now in their Responses API](https://platform.openai.com/docs/guides/tools-remote-mcp), [Claude Code](https://docs.anthropic.com/en/docs/claude-code/mcp)), or agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) and [ADK](https://github.com/google/adk-python). The customer never has to worry about deploying or managing their own MCP instance.  
+This means customers can simply plug in that URL, add their authentication credentials, and instantly connect **any MCP client**—whether that’s VS Code, Windsurf, ChatGPT ([directly now in their Responses API](https://platform.openai.com/docs/guides/tools-remote-mcp), [Claude Code](https://docs.anthropic.com/en/docs/claude-code/mcp)), or agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) and [ADK](https://github.com/google/adk-python). Users don't have to worry about deploying or managing their own MCP instance. Users also do not need to rely on companies to build agents or AI applications for their services. Users can go ahead and use their LLM or AI tool of choice and plug in these remote MCP servers to build their own agents and AI applications. 
 
 That’s a powerful model—and one that more companies should follow.  
 
@@ -16,7 +14,7 @@ That’s a powerful model—and one that more companies should follow.
 
 ## Why This Matters for Companies
 
-Each company has an opportunity to be forward-leaning and recognized as an **AI-first company** in how they adopt and expose MCP internally and externally.  
+Each company has an opportunity to be forward-leaning and recognized as an **AI-first company** in how they adopt and expose MCP internally and externally.
 
 Right now, very few companies are both:
 
@@ -32,7 +30,7 @@ I think companies should do both. Here’s how.
 ### 1. Identify Endpoints and Workflows to Expose as MCP Tools  
 Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on **common workflows** that agents will use.  
 
-- Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required *three* separate API calls. Instead, I created a **dedicated workflow API** that bundled those calls together—much more natural for an agent.  
+- Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required *three* separate API calls (normalize_title, map normalized title to a Lightcast Specialized Occupation and get related skills to that Lightcast Specialized Occupation). Instead, I created a **dedicated tool/API** that bundled those calls together—much more natural for an agent.
 
 - Jeremiah Lowin (creator of FastMCP) describes this well in [Stop Converting REST APIs to MCP](https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp):  
   > *“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”*  
@@ -57,7 +55,8 @@ You can use agentic coding tools like Claude Code to quickly spin these up.
 ---
 
 ### 3. Deploy the MCP Server Publicly  
-There are more options than ever for running lightweight public services:  
+There are more options than ever for running lightweight public services:
+
 - [Google Cloud Run](https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes)  
 - [Cloudflare Workers](https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/)   
 
@@ -86,6 +85,10 @@ If companies open source their MCP servers, the benefits are significant:
 - Stronger trust and transparency
 
 ---
+
+### 6. Lightcast MCP Server
+
+I've interacted with the Lightcast API a fair amount and open-sourced an MCP Server for Lightcast called [mcp-lightcast](https://github.com/lawwu/mcp-lightcast).
 
 ## Popular Remote MCP Servers
 
