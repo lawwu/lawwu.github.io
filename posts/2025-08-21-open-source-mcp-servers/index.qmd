@@ -1,7 +1,7 @@
 ---
 title: "Why Companies Should Open Source and Host Their Own MCP Servers"
 date: 2025-08-21
-categories: [AI, MCP, LLMs, Infrastructure]
+categories: [AI, MCP, LLMs, Claude Code]
 ---
 
 The **Model Context Protocol (MCP)** is quickly becoming a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting **public-facing MCP servers**. For example, Atlassian provides one here: [Getting Started with the Atlassian Remote MCP Server](https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/).  
