@@ -14,7 +14,12 @@ That’s a powerful model—and one that more companies should follow.
 
 ## Why This Matters for Companies
 
-Each company has an opportunity to be forward-leaning and recognized as an **AI-first company** in how they adopt and expose MCP internally and externally.
+Each company has an opportunity to be forward-leaning and recognized as an **AI-first company** in how they adopt and expose MCP internally and externally. By exposing MCPs, they will allow their customers the flexibility to build custom agents and AI applications on top of the company's APIs and their data in the vendor. 
+
+For example, now that there is an Atlassian MCP Server that is compatible with JIRA and Confluence, anyone can build a:
+
+- JIRA Agent that uses JIRA tools in the Atlassian MCP Server in any AI tool: ChatGPT, Claude, Claude Code, LangGraph, you name it. 
+- Confluence Deep Research Agent that uses Confluence tools in the Atlassian MCP Server in any AI tool with any reasoning model like [o3-deep-research](https://platform.openai.com/docs/models/o3-deep-research) or [gemini-2.5-pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro) or any open source model of your choice.
 
 Right now, very few companies are both:
 
