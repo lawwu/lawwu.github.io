@@ -50,7 +50,7 @@ I recommend starting with ChatGPT. ChatGPT is the de-facto chat-based interface 
 
 ## Learn to Code
 
-I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes.
+I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because of AI can help you learn. This course [AI Python for Beginners](https://www.deeplearning.ai/short-courses/ai-python-for-beginners/) would be a good place to start.
 
 ## Understand AI-tools in your domain
 
