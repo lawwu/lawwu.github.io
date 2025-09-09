@@ -6,7 +6,7 @@ categories: [Learn, AI]
 
 I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI's development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. I'll try my best.
 
-My recommendations are different if you are someone who writes code vs. someone who doesn't. There are many forms of AI but in this article I'll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning.
+My recommendations are different if you are someone who writes code vs. someone who doesn't. There are many forms of AI but in this article I'll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning. First some resources for both groups:
 
 # Coders and Non-Coders
 
