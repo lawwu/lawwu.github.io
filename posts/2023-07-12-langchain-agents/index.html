@@ -291,7 +291,7 @@ cookieconsent.run({
 <section id="setting-up-the-agent" class="level2">
 <h2 class="anchored" data-anchor-id="setting-up-the-agent">Setting Up the Agent</h2>
 <p>First to define the agent using <code>langchain</code>, <code>OpenAI</code> and then giving it some tools.</p>
-<div id="51710491" class="cell" data-execution_count="1">
+<div id="d1e8139f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># For DaScie we need to load in some tools for it to use, as well as an LLM for the brain/reasoning</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.agents <span class="im">import</span> load_tools  <span class="co"># This will allow us to load tools we need</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.agents <span class="im">import</span> initialize_agent</span>
@@ -312,13 +312,13 @@ cookieconsent.run({
 <section id="simple-example" class="level2">
 <h2 class="anchored" data-anchor-id="simple-example">Simple Example</h2>
 <p>To run the agent, you just pass an instruction:</p>
-<div id="7d61313d" class="cell" data-execution_count="2">
+<div id="480e8d89" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>dascie.run(</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Create a dataset (DO NOT try to download one, you MUST create one based on what you find) on the performance of the Mercedes AMG F1 team in 2020 and do some analysis. You need to plot your results."</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The output is:</p>
-<div id="5ba29384" class="cell" data-execution_count="3">
+<div id="68fd8af0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Entering new AgentExecutor chain...</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  I need to find some data on the Mercedes AMG F1 team that I can use to create a dataset.</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Action: Search</span></span>
@@ -342,7 +342,7 @@ cookieconsent.run({
 <span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>After generating the plot, the agent concludes that it has finished the task.</p>
-<div id="e6b4b1cf" class="cell" data-execution_count="4">
+<div id="45ffd1cc" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Observation: </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Thought: I now have a graph of the Mercedes AMG F1 team's performance in 2020.</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Final Answer: The Mercedes AMG F1 team achieved great lap records at eight different tracks in 2020, with five falling to Lewis Hamilton, two to Valtteri Bottas, and one to George Russell. A graph of their performance can be seen below. (graph should be included)</span></span>
@@ -353,7 +353,7 @@ cookieconsent.run({
 <section id="passing-data-to-the-agent" class="level2">
 <h2 class="anchored" data-anchor-id="passing-data-to-the-agent">Passing Data to the Agent</h2>
 <p>You can actually pass data to <code>langchain</code> agents using <code>create_pandas_dataframe_agent</code></p>
-<div id="0b3239ff" class="cell" data-execution_count="5">
+<div id="b20a94b2" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.agents <span class="im">import</span> create_pandas_dataframe_agent</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -364,7 +364,7 @@ cookieconsent.run({
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now we can run the agent again:</p>
-<div id="d2425578" class="cell" data-execution_count="6">
+<div id="bb4eea14" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>dascie.run(<span class="st">"Analyze this data, tell me any interesting trends. Make some pretty plots."</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &gt; Entering new AgentExecutor chain...</span></span>
@@ -406,14 +406,14 @@ cookieconsent.run({
 </section>
 <section id="can-the-agent-train-a-model" class="level2">
 <h2 class="anchored" data-anchor-id="can-the-agent-train-a-model">Can the agent train a model?</h2>
-<div id="da3fc761" class="cell" data-execution_count="7">
+<div id="d4411260" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Not bad! Now for something even more complex.... can we get out LLM model do some ML!?</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>dascie.run(</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Train a random forest regressor to predict salary using the most important features. Show me the what variables are most influential to this model"</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The agent struggles with indentation but is able to self-debug and fix the issue. When I ran this, I was surprised <code>gpt-3.5-turbo</code> + <code>langchain</code> was able to do this.</p>
-<div id="8108ff80" class="cell" data-execution_count="8">
+<div id="8ee23553" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#  [1m&gt; Entering new AgentExecutor chain... [0m</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  [32;1m [1;3mThought: I need to find the most important features and then use them to train a model</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Action: python_repl_ast</span></span>
