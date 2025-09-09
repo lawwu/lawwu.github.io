@@ -30,6 +30,9 @@ For everyone I recommend this 1-hour talk by Andrej Karpathy as an introduction 
 
 There is a ton of AI-related content. You'll need to curate a set of trusted sources that is appropriate to your level. I've compiled some of my favorite resources [here](https://lawwu.github.io/ai_resources.html).
 
+## Take a course
+
+I've taken a few of the short courses from [DeepLearning.ai](https://www.deeplearning.ai/courses/) and found them helpful.
 
 # Non-Coders
 

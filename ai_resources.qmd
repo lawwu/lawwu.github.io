@@ -62,6 +62,7 @@ I follow a bunch of accounts/repos and find the Github feed useful, which I subs
 
 # Resources
 
+- [DeepLearning.ai](https://www.deeplearning.ai/courses/) - very good short courses
 - [Trending Papers](https://huggingface.co/papers/trending) - Huggingface purchased paperswithcode.com so that redirects here now.
 - [Large Language Modles Explained](https://www.understandingai.org/p/large-language-models-explained-with) - Timothy Lee (journalist) spends a couple months writing up this explainer of LLMs
 - [What are Embeddings](https://github.com/veekaybee/what_are_embeddings) - Vicki Boykis deep dive into embeddings starting from fundamentals, [PDF here](https://raw.githubusercontent.com/veekaybee/what_are_embeddings/main/embeddings.pdf)
