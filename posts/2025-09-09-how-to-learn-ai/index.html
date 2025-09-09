@@ -7,9 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lawrence Wu">
-<meta name="dcterms.date" content="2025-07-18">
+<meta name="dcterms.date" content="2025-09-09">
 
-<title>Claude Code Camp - hosted by Every – Lawrence Wu</title>
+<title>How to Learn AI – Lawrence Wu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -116,19 +151,13 @@ cookieconsent.run({
 
 
 <link rel="stylesheet" href="../../styles.css">
-<meta property="og:title" content="Claude Code Camp - hosted by Every – Lawrence Wu">
+<meta property="og:title" content="How to Learn AI – Lawrence Wu">
 <meta property="og:description" content="This is Lawrence Wu’s personal website">
-<meta property="og:image" content="https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/ccw.png">
 <meta property="og:site_name" content="Lawrence Wu">
-<meta property="og:image:height" content="468">
-<meta property="og:image:width" content="2128">
-<meta name="twitter:title" content="Claude Code Camp - hosted by Every – Lawrence Wu">
+<meta name="twitter:title" content="How to Learn AI – Lawrence Wu">
 <meta name="twitter:description" content="This is Lawrence Wu’s personal website">
-<meta name="twitter:image" content="https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/ccw.png">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image-height" content="468">
-<meta name="twitter:image-width" content="2128">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -200,13 +229,34 @@ cookieconsent.run({
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#some-of-notes-and-takeaways" id="toc-some-of-notes-and-takeaways" class="nav-link active" data-scroll-target="#some-of-notes-and-takeaways">1. Some of notes and takeaways:</a></li>
-  <li><a href="#key-learnings-top-510" id="toc-key-learnings-top-510" class="nav-link" data-scroll-target="#key-learnings-top-510">2. Key Learnings (Top 5–10)</a></li>
-  <li><a href="#actionable-advice" id="toc-actionable-advice" class="nav-link" data-scroll-target="#actionable-advice">3. Actionable Advice</a></li>
-  <li><a href="#memorable-quotes" id="toc-memorable-quotes" class="nav-link" data-scroll-target="#memorable-quotes">4. Memorable Quotes</a></li>
-  <li><a href="#important-data-stats-frameworks" id="toc-important-data-stats-frameworks" class="nav-link" data-scroll-target="#important-data-stats-frameworks">5. Important Data / Stats / Frameworks</a></li>
-  <li><a href="#suggested-followup-resources" id="toc-suggested-followup-resources" class="nav-link" data-scroll-target="#suggested-followup-resources">6. Suggested Follow‑up Resources</a></li>
-  <li><a href="#onesentence-summary-25-words" id="toc-onesentence-summary-25-words" class="nav-link" data-scroll-target="#onesentence-summary-25-words">7. One‑Sentence Summary (25 words)</a></li>
+  <li><a href="#coders-and-non-coders" id="toc-coders-and-non-coders" class="nav-link active" data-scroll-target="#coders-and-non-coders">Coders and Non-Coders</a>
+  <ul class="collapse">
+  <li><a href="#watch-some-helpful-videos" id="toc-watch-some-helpful-videos" class="nav-link" data-scroll-target="#watch-some-helpful-videos">Watch some helpful videos</a></li>
+  <li><a href="#blue1brown---large-language-models-explained-briefly" id="toc-blue1brown---large-language-models-explained-briefly" class="nav-link" data-scroll-target="#blue1brown---large-language-models-explained-briefly">3Blue1Brown - Large Language Models Explained Briefly</a></li>
+  <li><a href="#karpathy---how-i-use-llms" id="toc-karpathy---how-i-use-llms" class="nav-link" data-scroll-target="#karpathy---how-i-use-llms">Karpathy - How I Use LLMs</a>
+  <ul class="collapse">
+  <li><a href="#karpathy---intro-to-llms" id="toc-karpathy---intro-to-llms" class="nav-link" data-scroll-target="#karpathy---intro-to-llms">Karpathy - Intro to LLMs</a></li>
+  </ul></li>
+  <li><a href="#curate-some-trusted-learning-sources" id="toc-curate-some-trusted-learning-sources" class="nav-link" data-scroll-target="#curate-some-trusted-learning-sources">Curate some trusted learning sources</a></li>
+  </ul></li>
+  <li><a href="#non-coders" id="toc-non-coders" class="nav-link" data-scroll-target="#non-coders">Non-Coders</a>
+  <ul class="collapse">
+  <li><a href="#start-using-ai" id="toc-start-using-ai" class="nav-link" data-scroll-target="#start-using-ai">Start using AI</a></li>
+  <li><a href="#learn-to-code" id="toc-learn-to-code" class="nav-link" data-scroll-target="#learn-to-code">Learn to Code</a></li>
+  <li><a href="#understand-ai-tools-in-your-domain" id="toc-understand-ai-tools-in-your-domain" class="nav-link" data-scroll-target="#understand-ai-tools-in-your-domain">Understand AI-tools in your domain</a></li>
+  </ul></li>
+  <li><a href="#coders" id="toc-coders" class="nav-link" data-scroll-target="#coders">Coders</a>
+  <ul class="collapse">
+  <li><a href="#watch-some-of-karpathys-talks" id="toc-watch-some-of-karpathys-talks" class="nav-link" data-scroll-target="#watch-some-of-karpathys-talks">Watch some of Karpathy’s talks</a>
+  <ul class="collapse">
+  <li><a href="#karpathy---software-engineering-is-changing-again" id="toc-karpathy---software-engineering-is-changing-again" class="nav-link" data-scroll-target="#karpathy---software-engineering-is-changing-again">Karpathy - Software engineering is changing again</a></li>
+  <li><a href="#karpathy---deep-dive-into-llms" id="toc-karpathy---deep-dive-into-llms" class="nav-link" data-scroll-target="#karpathy---deep-dive-into-llms">Karpathy - Deep Dive into LLMs</a></li>
+  </ul></li>
+  <li><a href="#use-an-ai-assistant-in-an-ide" id="toc-use-an-ai-assistant-in-an-ide" class="nav-link" data-scroll-target="#use-an-ai-assistant-in-an-ide">Use an AI Assistant in an IDE</a></li>
+  <li><a href="#use-agentic-coding" id="toc-use-agentic-coding" class="nav-link" data-scroll-target="#use-agentic-coding">Use Agentic Coding</a></li>
+  <li><a href="#understand-standard-interfaces-to-ai" id="toc-understand-standard-interfaces-to-ai" class="nav-link" data-scroll-target="#understand-standard-interfaces-to-ai">Understand Standard Interfaces to AI</a></li>
+  <li><a href="#understand-what-foundation-models-are-capable-of" id="toc-understand-what-foundation-models-are-capable-of" class="nav-link" data-scroll-target="#understand-what-foundation-models-are-capable-of">Understand What Foundation Models are Capable of</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -215,10 +265,10 @@ cookieconsent.run({
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Claude Code Camp - hosted by Every</h1>
+<h1 class="title">How to Learn AI</h1>
   <div class="quarto-categories">
-    <div class="quarto-category">Claude Code</div>
-    <div class="quarto-category">Agents</div>
+    <div class="quarto-category">Learn</div>
+    <div class="quarto-category">AI</div>
   </div>
   </div>
 
@@ -236,7 +286,7 @@ cookieconsent.run({
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 18, 2025</p>
+      <p class="date">September 9, 2025</p>
     </div>
   </div>
   
@@ -248,247 +298,146 @@ cookieconsent.run({
 </header>
 
 
-<p><a href="https://every.to/">Every</a> hosted a Claude Code Camp today for an hour. Different members from their team shared in detail how they use <a href="https://github.com/anthropics/claude-code">Claude Code</a>. I’ve only started using Claude Code in my developer workflow in the past 2-3 weeks so it was super helpful to see how the team was using it.</p>
-<section id="some-of-notes-and-takeaways" class="level2">
-<h2 class="anchored" data-anchor-id="some-of-notes-and-takeaways">1. Some of notes and takeaways:</h2>
+<p>I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI’s development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. I’ll try my best.</p>
+<p>My recommendations are different if you are someone who writes code vs.&nbsp;someone who doesn’t. There are many forms of AI but in this article I’ll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning.</p>
+<section id="coders-and-non-coders" class="level1">
+<h1>Coders and Non-Coders</h1>
+<section id="watch-some-helpful-videos" class="level2">
+<h2 class="anchored" data-anchor-id="watch-some-helpful-videos">Watch some helpful videos</h2>
+</section>
+<section id="blue1brown---large-language-models-explained-briefly" class="level2">
+<h2 class="anchored" data-anchor-id="blue1brown---large-language-models-explained-briefly">3Blue1Brown - Large Language Models Explained Briefly</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/LPZh9BOjkQs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="karpathy---how-i-use-llms" class="level2">
+<h2 class="anchored" data-anchor-id="karpathy---how-i-use-llms">Karpathy - How I Use LLMs</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/EWvNQjAaOHw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<section id="karpathy---intro-to-llms" class="level3">
+<h3 class="anchored" data-anchor-id="karpathy---intro-to-llms">Karpathy - Intro to LLMs</h3>
+<p>For everyone I recommend this 1-hour talk by Andrej Karpathy as an introduction to Large Language Models. He is a fantastic educator who can explain complicated topics quite simply.</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/zjkBMFhNj_g" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
+<section id="curate-some-trusted-learning-sources" class="level2">
+<h2 class="anchored" data-anchor-id="curate-some-trusted-learning-sources">Curate some trusted learning sources</h2>
+<p>There is a ton of AI-related content. You’ll need to curate a set of trusted sources that is appropriate to your level. I’ve compiled some of my favorite resources <a href="https://lawwu.github.io/ai_resources.html">here</a>.</p>
+</section>
+</section>
+<section id="non-coders" class="level1">
+<h1>Non-Coders</h1>
+<section id="start-using-ai" class="level2">
+<h2 class="anchored" data-anchor-id="start-using-ai">Start using AI</h2>
+<p>I recommend starting with ChatGPT. ChatGPT is the de-facto chat-based interface to a large language model. You can access their flagship model <code>gpt-5</code> for free. You can use it for things you would normally search for. You will develop intuition for things it is good for and not good for. You’ll get a sense for when the model will use more reasoning or some of it’s built in tools like Search or Coding. Some of the things I use ChatGPT for are:</p>
 <ul>
-<li>Compounding Engineering
-<ul>
-<li>Each unit of engineering work should make subsequent units of work easier</li>
-<li>Loop - These 4 steps below were really helpful!
-<ul>
-<li>Plan –&gt; plan out a feature or bug fix in detail
-<ul>
-<li>A lot of prompts to plan. Check if they share it.</li>
-</ul></li>
-<li>Delegate -&gt; do the work</li>
-<li>Assess –&gt; make sure it works as expected
-<ul>
-<li>Testing</li>
-</ul></li>
-<li>Codify –&gt; record learnings for the next time
-<ul>
-<li>CLAUDE.md</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Some of Kieran Klaasan’s tips
-<ul>
-<li>bash aliases to set up
-<ul>
-<li><code>cc</code> with <code>claude --dangerously-skip-permissions</code></li>
-<li><code>wt</code> create a git worktree</li>
-<li><code>ccw</code> - run claude code with a git worktree
-<ul>
-<li><img src="./ccw.png" class="img-fluid"></li>
-</ul></li>
-</ul></li>
-<li>He had a ton of slash commands saved in <code>.claude/commands</code>
-<ul>
-<li>LOT OF PROMPTS HERE!</li>
-<li>slash commands</li>
-<li>issues.md</li>
-<li>/work 309
-<ul>
-<li>implements Github issue 309</li>
-</ul></li>
-<li>Pull Request review
-<ul>
-<li>/review - default in claude code</li>
-<li>/best_practice</li>
-</ul></li>
-</ul></li>
-<li>use monologue for voice to text - <a href="https://monologue.to/" class="uri">https://monologue.to/</a></li>
-</ul></li>
-<li>Plan
-<ul>
-<li>Make a context file prompt
-<ul>
-<li><img src="./context_file_prompt.png" class="img-fluid"></li>
-</ul></li>
-<li>Make an Experiment Log
-<ul>
-<li><img src="./experiment_log.png" class="img-fluid"></li>
-</ul></li>
-</ul></li>
-<li>Delegate
-<ul>
-<li>This step is easy when your plan is good</li>
-</ul></li>
-<li>Assess
-<ul>
-<li>Other notes
-<ul>
-<li>Kieran had Claude Code assess itself to understand how to push it</li>
-<li>Consider alternative methods</li>
-<li>Make Claude think outside the box</li>
-</ul></li>
-</ul></li>
-<li>Codify
-<ul>
-<li>Dictating to Monologue</li>
-<li>Take learnings from comments and update CLAUDE.md
-<ul>
-<li><img src="./learnings.png" class="img-fluid"></li>
-</ul></li>
-<li>Subagents of Claude Code?!
-<ul>
-<li>Can call up to 10 subagents</li>
-<li>Use Cases
-<ul>
-<li>Process Data</li>
-<li>Opponent processors - agents with different personas
-<ul>
-<li>Expense report - 1 from my own perspective, 2 from an auditor’s perspective</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Other tools
-<ul>
-<li>vibe tunnel - <a href="https://github.com/amantus-ai/vibetunnel" class="uri">https://github.com/amantus-ai/vibetunnel</a></li>
-<li>claude-prune
-<ul>
-<li><a href="https://x.com/DannyAziz97/status/1945958948227461329" class="uri">https://x.com/DannyAziz97/status/1945958948227461329</a></li>
-<li><a href="https://github.com/DannyAziz/claude-prune" class="uri">https://github.com/DannyAziz/claude-prune</a></li>
-</ul></li>
-<li>Claude Conductor: <a href="https://github.com/superbasicstudio/claude-conductor" class="uri">https://github.com/superbasicstudio/claude-conductor</a></li>
-</ul></li>
-<li>Quotes:
-<ul>
-<li>Someone asked a question around you guys all have different ways of approaching plans
-<ul>
-<li>Alex Duffy: “AI is a leverage for your subject matter expertise”</li>
-<li>Kieran: Be inspired by what others do</li>
-</ul></li>
-</ul></li>
+<li>Creating summaries of long-form content like sermons or <a href="https://lawwu.github.io/transcripts/">YouTube videos</a>. I record talks I listen to with my iPhone and generate transcripts on device. These transcripts can be fed into AI to generate summaries, extract quotes, etc.</li>
+<li>Acting as a running coach: giving me feedback on completed runs, recommended nutrition for an upcoming race, random questions I have about different types of runs</li>
+<li>Helping me learn new tools like <a href="https://obsidian.md/">Obsidian</a>, how to use templates to organize notes from reading books</li>
+<li>Taking pictures of things to identify them, figure out what is wrong (e.g.&nbsp;plants in our garden or something broken)</li>
+<li>Taking pictures of documents to extract text. For example a handout at church or seminar, you can take a picture and extract the text</li>
 </ul>
-<p>Below are some learnings extracted by o3 from the transcribed transcript.</p>
-<hr>
 </section>
-<section id="key-learnings-top-510" class="level2">
-<h2 class="anchored" data-anchor-id="key-learnings-top-510">2. Key Learnings (Top 5–10)</h2>
+<section id="learn-to-code" class="level2">
+<h2 class="anchored" data-anchor-id="learn-to-code">Learn to Code</h2>
+<p>I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes.</p>
+</section>
+<section id="understand-ai-tools-in-your-domain" class="level2">
+<h2 class="anchored" data-anchor-id="understand-ai-tools-in-your-domain">Understand AI-tools in your domain</h2>
+<p>Companies are now creating AI-powered products. Your domain likely has one or will have one soon. For example lawyers have <a href="https://www.harvey.ai/">Harvey</a>. Product Managers have Replit or Lovable to quickly create functional prototypes of software or a new feature.</p>
+</section>
+</section>
+<section id="coders" class="level1">
+<h1>Coders</h1>
+<section id="watch-some-of-karpathys-talks" class="level2">
+<h2 class="anchored" data-anchor-id="watch-some-of-karpathys-talks">Watch some of Karpathy’s talks</h2>
+<section id="karpathy---software-engineering-is-changing-again" class="level3">
+<h3 class="anchored" data-anchor-id="karpathy---software-engineering-is-changing-again">Karpathy - Software engineering is changing again</h3>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/LCEmiRjPEtQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="karpathy---deep-dive-into-llms" class="level3">
+<h3 class="anchored" data-anchor-id="karpathy---deep-dive-into-llms">Karpathy - Deep Dive into LLMs</h3>
+<p>Long but pretty good</p>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/7xTGNNLPyMI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+</section>
+<section id="use-an-ai-assistant-in-an-ide" class="level2">
+<h2 class="anchored" data-anchor-id="use-an-ai-assistant-in-an-ide">Use an AI Assistant in an IDE</h2>
+<p>AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completition. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It’s hard to recommend one but you can’t really go wrong with one of these.</p>
+</section>
+<section id="use-agentic-coding" class="level2">
+<h2 class="anchored" data-anchor-id="use-agentic-coding">Use Agentic Coding</h2>
+<p>Claude Code was the first truly useful agentic coding tool. I started using it in <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">mid July</a> and wrote about it <a href="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/">here</a> and again <a href="https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/">here</a>. I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a <code>Bash</code> and <code>Edit</code> file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in <code>Bash</code> is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I’ve done with Claude Code are:</p>
 <ul>
-<li>Claude Code enables shipping features in unfamiliar codebases far faster than traditional onboarding.</li>
-<li>Productivity follows a repeatable loop: <strong>Plan → Delegate → Assess → Codify</strong>.</li>
-<li>Strong up‑front plans let agents “just build” while poor plans create rework.</li>
-<li>GitHub issues and PRs are the contract between Claude and humans for traceability.</li>
-<li>Dictation (e.g., Monologue) captures richer prompts; voice often beats typing.</li>
-<li>Folder‑level context files shrink token usage and boost model accuracy.</li>
-<li>Keep <strong>experiment logs</strong> so goals, findings, and next steps survive context resets.</li>
-<li><strong>Subagents</strong> provide parallel processing and multiple viewpoints.</li>
-<li>Codify every PR lesson into commands or <code>Claude.md</code> to create compounding returns.</li>
-<li>Git worktrees, session‑pruning, and remote terminals keep multi‑feature work safe and light.</li>
+<li>created a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint</li>
+<li>explored data in Big Query (I actually didn’t know there was a <code>bq</code> command line tool until Claude Code started using it to explore some Big QUery tables)</li>
+<li>wrote and executed Kubeflow machine learning pipelines in VertexAI</li>
+<li>implemented ideas from a research paper</li>
+<li>created an MCP server for Lightcast called <a href="https://github.com/lawwu/mcp-lightcast">mcp-lightcast</a></li>
 </ul>
-<hr>
 </section>
-<section id="actionable-advice" class="level2">
-<h2 class="anchored" data-anchor-id="actionable-advice">3. Actionable Advice</h2>
+<section id="understand-standard-interfaces-to-ai" class="level2">
+<h2 class="anchored" data-anchor-id="understand-standard-interfaces-to-ai">Understand Standard Interfaces to AI</h2>
+<p>This may deserve a longer post but you should be aware of the common interfaces to AI. Every company has an API you will call to gain access to their models. OpenAI, Google and Anthropic are the 3 largest providers. There are libraries like <a href="https://github.com/langchain-ai/langchain">langchain</a> that provide a common interface to call these models if you use a supported language (in this case it’s Python or Typescript). However at the API level there are common interfaces. OpenAI’s Chat Completions schema is one of those standard interfaces. The docs are <a href="https://platform.openai.com/docs/api-reference/chat/create">here</a> and the endpoint is a <code>POST</code> to <code>https://api.openai.com/v1/chat/completions</code>. If you use <a href="https://github.com/openai/openai-python">OpenAI’s Python SDK</a>, you can call the LLM using this code below:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>completion <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  model<span class="op">=</span><span class="st">"gpt-5"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  messages<span class="op">=</span>[</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"developer"</span>, <span class="st">"content"</span>: <span class="st">"You are a helpful assistant."</span>},</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"Hello!"</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(completion.choices[<span class="dv">0</span>].message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>What is powerful about this interface is, other companies have adopted it. For example, <a href="https://github.com/ollama/ollama">ollama</a> <a href="https://ollama.com/blog/openai-compatibility">started supporting the OpenAI Chat Completions API in 2024</a>. There are LLM proxies like <a href="https://github.com/BerriAI/litellm/">LiteLLM</a> that expose a Chat Completions API interface to EVERY model provider. So you can call Google, Anthropic or any vendor’s model through the same API. For example if you have a deployed LiteLLM proxy server and you’ve authenticated to Google’s models, you can call them with the same OpenAI Python SDK, just swapping in your LiteLLM <code>base_url</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> openai</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> openai.OpenAI(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    api_key<span class="op">=</span><span class="st">"sk-1234"</span>,             <span class="co"># pass litellm proxy key, if you're using virtual keys</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    base_url<span class="op">=</span><span class="st">"http://0.0.0.0:4000"</span> <span class="co"># litellm-proxy-base url</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"team1-gemini-pro"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    messages <span class="op">=</span> [</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"content"</span>: <span class="st">"what llm are you"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Some other common interfaces you should learn and be aware of:</p>
 <ul>
-<li>Start with one simple planning command; iterate after each run.</li>
-<li>Auto‑generate a GitHub issue from the plan; use <code>/work &lt;issue&gt;</code> to delegate.</li>
-<li>Use multi‑persona reviews (strict bot + human style) on each PR.</li>
-<li>Distill review comments into updated best‑practice commands or <code>Claude.md</code>.</li>
-<li>Summarize each folder in an <code>llms.txt</code> or similar for leaner context loading.</li>
-<li>Maintain an <strong>experiment_log.md</strong> with goals, errors and revised plans.</li>
-<li>Explicitly ask for parallel subagents when processing large corpora.</li>
-<li>Adopt TDD in plans; require failing tests before code generation.</li>
-<li>Use dictation tools to give fuller context rapidly.</li>
-<li>Employ git worktrees (or Conductor UI) for parallel agent branches; prune chat history regularly.</li>
+<li>OpenAI Responses API</li>
+<li><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">MCP</a> - Model Context Protocol is a protocol original from Anthropic to standarize the interface between AI and tools. Well adopted by many companies and has become a standard. Though in many cases, especially in the case of coding agents, I’ve had more success giving the agent the ability to just use a command line tool. For example, using the <code>gh cli</code> instead of the <a href="https://github.com/github/github-mcp-server">Github MCP Server</a>.</li>
+<li><a href="https://github.com/a2aproject/A2A">A2A</a> - a protocol from Google that is to standardize the interface between AI Agents</li>
+<li><a href="https://github.com/ag-ui-protocol/ag-ui">AG-UI</a> - Agent-User Interaction protocol from copilotkit. This is a newer framework that is supposed to standardize the interface between a user (frontend) and the agent/AI backend.</li>
+<li><a href="https://github.com/BerriAI/litellm/">LiteLLM</a> - LLM Proxies like LiteLLM are very powerful and useful in large organizations to give developers a common interface to AI. <a href="https://www.youtube.com/watch?v=u-3IILWQPRM&amp;t=1306s&amp;ab_channel=ThePragmaticEngineer">Shopify uses LiteLLM internally</a>. You can also read about their usage <a href="https://newsletter.pragmaticengineer.com/p/how-ai-is-changing-software-engineering">here</a>.</li>
+<li>Agent Frameworks like LangGraph, Google’s ADK. There are dozens of these now.</li>
 </ul>
-<hr>
 </section>
-<section id="memorable-quotes" class="level2">
-<h2 class="anchored" data-anchor-id="memorable-quotes">4. Memorable Quotes</h2>
-<blockquote class="blockquote">
-<p>“Claude Code has radically altered the way we work—processes, parameters, mental models—everything.” — Dan</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“I shipped two features this week in codebases I’d never touched; that shouldn’t be possible.” — Dan</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Each unit of engineering should make the next one easier—that’s compounding engineering.” — Dan</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“If your plan is amazing, the feature basically builds itself.” — Dan</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“CC is my alias that starts Claude Code bypassing permissions—so it just works.” — Kieran</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Forty‑five minutes of uninterrupted Claude work is my personal record.” — Kieran</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Make your own system; be inspired, but tailor it to your workflow.” — Kieran</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Voice prompts give fuller context; I get better results than typing.” — Naveen</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“AI is leverage for your subject‑matter expertise.” — Alex</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Let it run, move on, come back when it’s done—that’s the mindset shift.” — Kieran</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Don’t juggle mega‑prompts; lean into agents and their tools.” — Kieran</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Experiment logs keep the model honest across context resets.” — Alex</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Reviewing with strict TypeScript bot against Ruby creates constructive tension.” — Kieran</p>
-</blockquote>
-<blockquote class="blockquote">
-<p>“Prune old chat instead of trusting weak auto‑summaries.” — Danny</p>
-</blockquote>
-<hr>
-</section>
-<section id="important-data-stats-frameworks" class="level2">
-<h2 class="anchored" data-anchor-id="important-data-stats-frameworks">5. Important Data / Stats / Frameworks</h2>
+<section id="understand-what-foundation-models-are-capable-of" class="level2">
+<h2 class="anchored" data-anchor-id="understand-what-foundation-models-are-capable-of">Understand What Foundation Models are Capable of</h2>
+<p>ChatGPT was first released in 2022. Since that time there has been so many capabilities added to these model APIs that is difficult to keep up. A non-complete list is:</p>
 <ul>
-<li><strong>Compounding Engineering Loop:</strong> Plan → Delegate → Assess → Codify.</li>
-<li><strong>Time‑Savings Example:</strong> Two unfamiliar‑codebase features shipped in a week vs.&nbsp;~2‑3 weeks ramp‑up each.</li>
-<li><strong>Continuous Work Duration:</strong> 45‑minute single Claude session noted.</li>
-<li><strong>Business‑Model Change (Monologue):</strong> Paid‑only to freemium cap (~2 k words) requiring full‑stack update.</li>
-<li><strong>Parallelization:</strong> Up to 10 subagents requested for concurrent processing.</li>
-<li><strong>Subscription Bundle:</strong> Every subscription includes Cora, Monologue, Spiral, Sparkle at no add’l cost.</li>
-<li><strong>Context Principle:</strong> Larger windows can hurt accuracy; mitigate with hierarchical summaries.</li>
-<li><strong>Bug‑avoidance Strategy:</strong> Multi‑model reviews, experiment logs, TDD catch shortcut fixes.</li>
-<li><strong>Session Management:</strong> Use <code>world prune</code> to keep recent N messages; avoid poor auto‑summaries.</li>
+<li>Structured Output - you can define schemas and pass these schemas to the LLM to force it to generate valid JSON, useful for tasks like data extraction</li>
+<li>Longer Context Windows</li>
+<li>Tool Calling</li>
+<li>Search tools</li>
+<li>Code Execution</li>
+<li>Computer Use</li>
+<li>Memory</li>
+<li>Deep Research</li>
+<li>Reasoning - these models have thinking/reasoning budgets</li>
+<li>Audio Understanding / Generation</li>
+<li>Image Understanding / Generation</li>
+<li>Video Understanding / Generation</li>
+<li>Realtime audio capabilities</li>
 </ul>
-<hr>
-</section>
-<section id="suggested-followup-resources" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-followup-resources">6. Suggested Follow‑up Resources</h2>
-<ul>
-<li><strong>Claude Code</strong> terminal agent (Anthropic)<br>
-</li>
-<li><strong>Claude.md / folder context files</strong> (<code>/init</code>)<br>
-</li>
-<li><strong>Custom <code>/issues</code>, <code>/work</code>, <code>/review</code> commands</strong><br>
-</li>
-<li><strong>Monologue</strong> dictation app<br>
-</li>
-<li><strong>Cora</strong> email chief‑of‑staff; <strong>Spiral</strong> copywriter; <strong>Sparkle</strong> desktop organizer<br>
-</li>
-<li><strong>AI Diplomacy</strong> game (Alex)<br>
-</li>
-<li><strong>Warp Terminal</strong>; <strong>Vibe Tunnel</strong> (remote terminal)<br>
-</li>
-<li><strong>World Prune</strong> (<code>npx world prune</code>) chat‑trim tool<br>
-</li>
-<li><strong>Conductor</strong> git‑worktree UI<br>
-</li>
-<li><strong>Every Newsletter, Discord, Consulting</strong> for ongoing training &amp; content.</li>
-</ul>
-<hr>
-</section>
-<section id="onesentence-summary-25-words" class="level2">
-<h2 class="anchored" data-anchor-id="onesentence-summary-25-words">7. One‑Sentence Summary (25 words)</h2>
-<p>Every’s team demonstrates how Claude Code enables “compounding engineering”—plan, delegate, assess, codify—to ship multi‑codebase features rapidly by capturing and recycling best‑practice knowledge.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
