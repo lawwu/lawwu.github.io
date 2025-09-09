@@ -4,7 +4,7 @@ date: 2025-09-09
 categories: [Learn, AI]
 ---
 
-I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI's development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. I'll try my best.
+I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI's development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. Il'l try my best here.
 
 My recommendations are different if you are someone who writes code vs. someone who doesn't. There are many forms of AI but in this article I'll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning. First some resources for both groups:
 
@@ -50,7 +50,7 @@ I recommend starting with ChatGPT. ChatGPT is the de-facto chat-based interface 
 
 ## Learn to Code
 
-I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because of AI can help you learn. This course [AI Python for Beginners](https://www.deeplearning.ai/short-courses/ai-python-for-beginners/) would be a good place to start.
+I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because AI can help you learn.. This course [AI Python for Beginners](https://www.deeplearning.ai/short-courses/ai-python-for-beginners/) would be a good place to start.
 
 ## Understand AI-tools in your domain
 
@@ -74,14 +74,14 @@ Long but pretty good
 
 ## Use an AI Assistant in an IDE
 
-AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completition. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It's hard to recommend one but you can't really go wrong with one of these.
+AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completion. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It's hard to recommend one but you can't really go wrong with one of these.
 
 ## Use Agentic Coding
 
 Claude Code was the first truly useful agentic coding tool. I started using it in [mid July](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/) and wrote about it [here](https://lawwu.github.io/posts/2025-07-18-claude-code-camp/) and again [here](https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/). I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a `Bash` and `Edit` file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in `Bash` is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I've done with Claude Code are:
 
 - created a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint
-- explored data in Big Query (I actually didn't know there was a `bq` command line tool until Claude Code started using it to explore some Big QUery tables)
+- explored data in Big Query (I actually didn't know there was a `bq` command line tool until Claude Code started using it to explore some Big Query tables)
 - wrote and executed Kubeflow machine learning pipelines in VertexAI
 - implemented ideas from a research paper
 - created an MCP server for Lightcast called [mcp-lightcast](https://github.com/lawwu/mcp-lightcast)
@@ -154,3 +154,5 @@ ChatGPT was first released in 2022. Since that time there has been so many capab
 - Image Understanding / Generation
 - Video Understanding / Generation
 - Realtime audio capabilities
+
+No matter your background, the best way to learn AI is by using it, experimenting, and staying curious. The landscape changes constantly, but the principles of exploration and practice remain the same.
