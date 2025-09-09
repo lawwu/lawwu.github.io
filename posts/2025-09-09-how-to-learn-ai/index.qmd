@@ -1,0 +1,151 @@
+---
+title: "How to Learn AI"
+date: 2025-09-09
+categories: [Learn, AI]
+---
+
+I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI's development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. I'll try my best.
+
+My recommendations are different if you are someone who writes code vs. someone who doesn't. There are many forms of AI but in this article I'll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning.
+
+# Coders and Non-Coders
+
+## Watch some helpful videos
+
+## 3Blue1Brown - Large Language Models Explained Briefly
+
+{{< video https://www.youtube.com/watch?v=LPZh9BOjkQs&t=1s&ab_channel=3Blue1Brown >}}
+
+## Karpathy - How I Use LLMs
+
+{{< video https://www.youtube.com/watch?v=EWvNQjAaOHw&ab_channel=AndrejKarpathy >}}
+
+### Karpathy - Intro to LLMs
+
+For everyone I recommend this 1-hour talk by Andrej Karpathy as an introduction to Large Language Models. He is a fantastic educator who can explain complicated topics quite simply.
+
+{{< video https://www.youtube.com/watch?v=zjkBMFhNj_g&ab_channel=AndrejKarpathy >}}
+
+## Curate some trusted learning sources
+
+There is a ton of AI-related content. You'll need to curate a set of trusted sources that is appropriate to your level. I've compiled some of my favorite resources [here](https://lawwu.github.io/ai_resources.html).
+
+
+# Non-Coders
+
+## Start using AI
+
+I recommend starting with ChatGPT. ChatGPT is the de-facto chat-based interface to a large language model. You can access their flagship model `gpt-5` for free. You can use it for things you would normally search for. You will develop intuition for things it is good for and not good for. You'll get a sense for when the model will use more reasoning or some of it's built in tools like Search or Coding. Some of the things I use ChatGPT for are:
+
+- Creating summaries of long-form content like sermons or [YouTube videos](https://lawwu.github.io/transcripts/). I record talks I listen to with my iPhone and generate transcripts on device. These transcripts can be fed into AI to generate summaries, extract quotes, etc.
+- Acting as a running coach: giving me feedback on completed runs, recommended nutrition for an upcoming race, random questions I have about different types of runs
+- Helping me learn new tools like [Obsidian](https://obsidian.md/), how to use templates to organize notes from reading books
+- Taking pictures of things to identify them, figure out what is wrong (e.g. plants in our garden or something broken)
+- Taking pictures of documents to extract text. For example a handout at church or seminar, you can take a picture and extract the text
+
+## Learn to Code
+
+I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes.
+
+## Understand AI-tools in your domain
+
+Companies are now creating AI-powered products. Your domain likely has one or will have one soon. For example lawyers have [Harvey](https://www.harvey.ai/). Product Managers have Replit or Lovable to quickly create functional prototypes of software or a new feature.
+
+
+# Coders
+
+## Watch some of Karpathy's talks
+
+### Karpathy - Software engineering is changing again
+
+{{< video https://www.youtube.com/watch?v=LCEmiRjPEtQ&ab_channel=YCombinator >}}
+
+### Karpathy - Deep Dive into LLMs
+
+Long but pretty good
+
+{{< video https://www.youtube.com/watch?v=7xTGNNLPyMI&ab_channel=AndrejKarpathy >}}
+
+
+## Use an AI Assistant in an IDE
+
+AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completition. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It's hard to recommend one but you can't really go wrong with one of these.
+
+## Use Agentic Coding
+
+Claude Code was the first truly useful agentic coding tool. I started using it in [mid July](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/) and wrote about it [here](https://lawwu.github.io/posts/2025-07-18-claude-code-camp/) and again [here](https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/). I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a `Bash` and `Edit` file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in `Bash` is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I've done with Claude Code are:
+
+- created a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint
+- explored data in Big Query (I actually didn't know there was a `bq` command line tool until Claude Code started using it to explore some Big QUery tables)
+- wrote and executed Kubeflow machine learning pipelines in VertexAI
+- implemented ideas from a research paper
+- created an MCP server for Lightcast called [mcp-lightcast](https://github.com/lawwu/mcp-lightcast)
+
+## Understand Standard Interfaces to AI
+
+This may deserve a longer post but you should be aware of the common interfaces to AI. Every company has an API you will call to gain access to their models. OpenAI, Google and Anthropic are the 3 largest providers. There are libraries like [langchain](https://github.com/langchain-ai/langchain) that provide a common interface to call these models if you use a supported language (in this case it's Python or Typescript). However at the API level there are common interfaces. OpenAI's Chat Completions schema is one of those standard interfaces. The docs are [here](https://platform.openai.com/docs/api-reference/chat/create) and the endpoint is a `POST` to `https://api.openai.com/v1/chat/completions`. If you use [OpenAI's Python SDK](https://github.com/openai/openai-python), you can call the LLM using this code below:
+
+```python
+from openai import OpenAI
+client = OpenAI()
+
+completion = client.chat.completions.create(
+  model="gpt-5",
+  messages=[
+    {"role": "developer", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Hello!"}
+  ]
+)
+
+print(completion.choices[0].message)
+```
+
+What is powerful about this interface is, other companies have adopted it. For example, [ollama](https://github.com/ollama/ollama) [started supporting the OpenAI Chat Completions API in 2024](https://ollama.com/blog/openai-compatibility). There are LLM proxies like [LiteLLM](https://github.com/BerriAI/litellm/) that expose a Chat Completions API interface to EVERY model provider. So you can call Google, Anthropic or any vendor's model through the same API. For example if you have a deployed LiteLLM proxy server and you've authenticated to Google's models, you can call them with the same OpenAI Python SDK, just swapping in your LiteLLM `base_url`:
+
+```python
+import openai
+client = openai.OpenAI(
+    api_key="sk-1234",             # pass litellm proxy key, if you're using virtual keys
+    base_url="http://0.0.0.0:4000" # litellm-proxy-base url
+)
+
+response = client.chat.completions.create(
+    model="team1-gemini-pro",
+    messages = [
+        {
+            "role": "user",
+            "content": "what llm are you"
+        }
+    ],
+)
+
+print(response)
+```
+
+Some other common interfaces you should learn and be aware of:
+
+- OpenAI Responses API
+- [MCP](https://github.com/modelcontextprotocol/modelcontextprotocol) - Model Context Protocol is a protocol original from Anthropic to standarize the interface between AI and tools. Well adopted by many companies and has become a standard. Though in many cases, especially in the case of coding agents, I've had more success giving the agent the ability to just use a command line tool. For example, using the `gh cli` instead of the [Github MCP Server](https://github.com/github/github-mcp-server).
+- [A2A](https://github.com/a2aproject/A2A) - a protocol from Google that is to standardize the interface between AI Agents
+- [AG-UI](https://github.com/ag-ui-protocol/ag-ui) - Agent-User Interaction protocol from copilotkit. This is a newer framework that is supposed to standardize the interface between a user (frontend) and the agent/AI backend.
+- [LiteLLM](https://github.com/BerriAI/litellm/) - LLM Proxies like LiteLLM are very powerful and useful in large organizations to give developers a common interface to AI. [Shopify uses LiteLLM internally](https://www.youtube.com/watch?v=u-3IILWQPRM&t=1306s&ab_channel=ThePragmaticEngineer). You can also read about their usage [here](https://newsletter.pragmaticengineer.com/p/how-ai-is-changing-software-engineering).
+- Agent Frameworks like LangGraph, Google's ADK. There are dozens of these now.
+
+
+## Understand What Foundation Models are Capable of
+
+ChatGPT was first released in 2022. Since that time there has been so many capabilities added to these model APIs that is difficult to keep up. A non-complete list is:
+
+- Structured Output - you can define schemas and pass these schemas to the LLM to force it to generate valid JSON, useful for tasks like data extraction
+- Longer Context Windows
+- Tool Calling
+- Search tools
+- Code Execution
+- Computer Use
+- Memory
+- Deep Research
+- Reasoning - these models have thinking/reasoning budgets
+- Audio Understanding / Generation
+- Image Understanding / Generation
+- Video Understanding / Generation
+- Realtime audio capabilities
