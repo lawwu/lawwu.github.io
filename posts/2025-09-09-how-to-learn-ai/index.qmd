@@ -16,15 +16,15 @@ My recommendations are different if you are someone who writes code vs. someone 
 
 {{< video https://www.youtube.com/watch?v=LPZh9BOjkQs&t=1s&ab_channel=3Blue1Brown >}}
 
-## Karpathy - How I Use LLMs
-
-{{< video https://www.youtube.com/watch?v=EWvNQjAaOHw&ab_channel=AndrejKarpathy >}}
-
 ### Karpathy - Intro to LLMs
 
 For everyone I recommend this 1-hour talk by Andrej Karpathy as an introduction to Large Language Models. He is a fantastic educator who can explain complicated topics quite simply.
 
 {{< video https://www.youtube.com/watch?v=zjkBMFhNj_g&ab_channel=AndrejKarpathy >}}
+
+## Karpathy - How I Use LLMs
+
+{{< video https://www.youtube.com/watch?v=EWvNQjAaOHw&ab_channel=AndrejKarpathy >}}
 
 ## Curate some trusted learning sources
 
