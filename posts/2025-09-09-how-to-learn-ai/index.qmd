@@ -45,6 +45,8 @@ I recommend starting with ChatGPT. ChatGPT is the de-facto chat-based interface 
 - Helping me learn new tools like [Obsidian](https://obsidian.md/), how to use templates to organize notes from reading books
 - Taking pictures of things to identify them, figure out what is wrong (e.g. plants in our garden or something broken)
 - Taking pictures of documents to extract text. For example a handout at church or seminar, you can take a picture and extract the text
+- asking how to explain a certain word or concept to an 8-year old
+- using voice mode to explain things to myself and the kids or do live translation
 
 ## Learn to Code
 
