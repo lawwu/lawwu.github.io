@@ -20,7 +20,7 @@
 
 
 
-<p>I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI’s development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. I’ll try my best.</p>
+<p>I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI’s development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. Il’l try my best here.</p>
 <p>My recommendations are different if you are someone who writes code vs.&nbsp;someone who doesn’t. There are many forms of AI but in this article I’ll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning. First some resources for both groups:</p>
 <section id="coders-and-non-coders" class="level1">
 <h1>Coders and Non-Coders</h1>
@@ -66,7 +66,7 @@
 </section>
 <section id="learn-to-code" class="level2">
 <h2 class="anchored" data-anchor-id="learn-to-code">Learn to Code</h2>
-<p>I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because of AI can help you learn. This course <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/">AI Python for Beginners</a> would be a good place to start.</p>
+<p>I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because AI can help you learn.. This course <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/">AI Python for Beginners</a> would be a good place to start.</p>
 </section>
 <section id="understand-ai-tools-in-your-domain" class="level2">
 <h2 class="anchored" data-anchor-id="understand-ai-tools-in-your-domain">Understand AI-tools in your domain</h2>
@@ -89,14 +89,14 @@
 </section>
 <section id="use-an-ai-assistant-in-an-ide" class="level2">
 <h2 class="anchored" data-anchor-id="use-an-ai-assistant-in-an-ide">Use an AI Assistant in an IDE</h2>
-<p>AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completition. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It’s hard to recommend one but you can’t really go wrong with one of these.</p>
+<p>AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completion. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It’s hard to recommend one but you can’t really go wrong with one of these.</p>
 </section>
 <section id="use-agentic-coding" class="level2">
 <h2 class="anchored" data-anchor-id="use-agentic-coding">Use Agentic Coding</h2>
 <p>Claude Code was the first truly useful agentic coding tool. I started using it in <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">mid July</a> and wrote about it <a href="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/">here</a> and again <a href="https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/">here</a>. I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a <code>Bash</code> and <code>Edit</code> file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in <code>Bash</code> is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I’ve done with Claude Code are:</p>
 <ul>
 <li>created a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint</li>
-<li>explored data in Big Query (I actually didn’t know there was a <code>bq</code> command line tool until Claude Code started using it to explore some Big QUery tables)</li>
+<li>explored data in Big Query (I actually didn’t know there was a <code>bq</code> command line tool until Claude Code started using it to explore some Big Query tables)</li>
 <li>wrote and executed Kubeflow machine learning pipelines in VertexAI</li>
 <li>implemented ideas from a research paper</li>
 <li>created an MCP server for Lightcast called <a href="https://github.com/lawwu/mcp-lightcast">mcp-lightcast</a></li>
@@ -231,6 +231,7 @@ font-style: inherit;">print</span>(response)</span></code></pre></div>
 <li>Video Understanding / Generation</li>
 <li>Realtime audio capabilities</li>
 </ul>
+<p>No matter your background, the best way to learn AI is by using it, experimenting, and staying curious. The landscape changes constantly, but the principles of exploration and practice remain the same.</p>
 
 
 </section>

@@ -1775,7 +1775,7 @@
     "href": "posts/2025-09-09-how-to-learn-ai/index.html",
     "title": "How to Learn AI",
     "section": "",
-    "text": "I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI’s development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. I’ll try my best.\nMy recommendations are different if you are someone who writes code vs. someone who doesn’t. There are many forms of AI but in this article I’ll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning. First some resources for both groups:"
+    "text": "I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI’s development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. Il’l try my best here.\nMy recommendations are different if you are someone who writes code vs. someone who doesn’t. There are many forms of AI but in this article I’ll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning. First some resources for both groups:"
   },
   {
     "objectID": "posts/2025-09-09-how-to-learn-ai/index.html#watch-some-helpful-videos",
@@ -1824,7 +1824,7 @@
     "href": "posts/2025-09-09-how-to-learn-ai/index.html#learn-to-code",
     "title": "How to Learn AI",
     "section": "Learn to Code",
-    "text": "Learn to Code\nI would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because of AI can help you learn. This course AI Python for Beginners would be a good place to start."
+    "text": "Learn to Code\nI would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because AI can help you learn.. This course AI Python for Beginners would be a good place to start."
   },
   {
     "objectID": "posts/2025-09-09-how-to-learn-ai/index.html#understand-ai-tools-in-your-domain",
@@ -1845,14 +1845,14 @@
     "href": "posts/2025-09-09-how-to-learn-ai/index.html#use-an-ai-assistant-in-an-ide",
     "title": "How to Learn AI",
     "section": "Use an AI Assistant in an IDE",
-    "text": "Use an AI Assistant in an IDE\nAI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completition. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It’s hard to recommend one but you can’t really go wrong with one of these."
+    "text": "Use an AI Assistant in an IDE\nAI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completion. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It’s hard to recommend one but you can’t really go wrong with one of these."
   },
   {
     "objectID": "posts/2025-09-09-how-to-learn-ai/index.html#use-agentic-coding",
     "href": "posts/2025-09-09-how-to-learn-ai/index.html#use-agentic-coding",
     "title": "How to Learn AI",
     "section": "Use Agentic Coding",
-    "text": "Use Agentic Coding\nClaude Code was the first truly useful agentic coding tool. I started using it in mid July and wrote about it here and again here. I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a Bash and Edit file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in Bash is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I’ve done with Claude Code are:\n\ncreated a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint\nexplored data in Big Query (I actually didn’t know there was a bq command line tool until Claude Code started using it to explore some Big QUery tables)\nwrote and executed Kubeflow machine learning pipelines in VertexAI\nimplemented ideas from a research paper\ncreated an MCP server for Lightcast called mcp-lightcast"
+    "text": "Use Agentic Coding\nClaude Code was the first truly useful agentic coding tool. I started using it in mid July and wrote about it here and again here. I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a Bash and Edit file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in Bash is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I’ve done with Claude Code are:\n\ncreated a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint\nexplored data in Big Query (I actually didn’t know there was a bq command line tool until Claude Code started using it to explore some Big Query tables)\nwrote and executed Kubeflow machine learning pipelines in VertexAI\nimplemented ideas from a research paper\ncreated an MCP server for Lightcast called mcp-lightcast"
   },
   {
     "objectID": "posts/2025-09-09-how-to-learn-ai/index.html#understand-standard-interfaces-to-ai",
@@ -1866,7 +1866,7 @@
     "href": "posts/2025-09-09-how-to-learn-ai/index.html#understand-what-foundation-models-are-capable-of",
     "title": "How to Learn AI",
     "section": "Understand What Foundation Models are Capable of",
-    "text": "Understand What Foundation Models are Capable of\nChatGPT was first released in 2022. Since that time there has been so many capabilities added to these model APIs that is difficult to keep up. A non-complete list is:\n\nStructured Output - you can define schemas and pass these schemas to the LLM to force it to generate valid JSON, useful for tasks like data extraction\nLonger Context Windows\nTool Calling\nSearch tools\nCode Execution\nComputer Use\nMemory\nDeep Research\nReasoning - these models have thinking/reasoning budgets\nAudio Understanding / Generation\nImage Understanding / Generation\nVideo Understanding / Generation\nRealtime audio capabilities"
+    "text": "Understand What Foundation Models are Capable of\nChatGPT was first released in 2022. Since that time there has been so many capabilities added to these model APIs that is difficult to keep up. A non-complete list is:\n\nStructured Output - you can define schemas and pass these schemas to the LLM to force it to generate valid JSON, useful for tasks like data extraction\nLonger Context Windows\nTool Calling\nSearch tools\nCode Execution\nComputer Use\nMemory\nDeep Research\nReasoning - these models have thinking/reasoning budgets\nAudio Understanding / Generation\nImage Understanding / Generation\nVideo Understanding / Generation\nRealtime audio capabilities\n\nNo matter your background, the best way to learn AI is by using it, experimenting, and staying curious. The landscape changes constantly, but the principles of exploration and practice remain the same."
   },
   {
     "objectID": "posts/2023-10-10-ai-engineer-summit/index.html",
