@@ -1,8 +1,8 @@
 ---
-title: "KDD 2023 - Workshops: LLM and Causal Inference"
-author: "Lawrence Wu"    
-date: "2023-08-07"
-categories: ["Conference", "KDD", "LLM", "Causal Inference"]
+title: 'KDD 2023 - Workshops: LLM and Causal Inference'
+author: Lawrence Wu
+date: '2023-08-07'
+categories: [ai, events]
 ---
 
 I attended [KDD 2023](https://kdd.org/kdd2023/) which was held in Long Beach, CA from Aug 6-10. The first day I attended was Monday which had half-day workshops around a topic. The two I attended were about LLMs (because I'm interested and it's relevant to my work) and Causal Inference (because I haven't used causal machine learning techniques in practice before and wanted exposure).

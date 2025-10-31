@@ -1,8 +1,8 @@
 ---
-title: "Running Llama2 Locally on a M1 Mac"
-author: "Lawrence Wu"    
-date: "2023-07-20"
-categories: ["LLMs", "Llama"]
+title: Running Llama2 Locally on a M1 Mac
+author: Lawrence Wu
+date: '2023-07-20'
+categories: [ai]
 ---
 
 # Llama2

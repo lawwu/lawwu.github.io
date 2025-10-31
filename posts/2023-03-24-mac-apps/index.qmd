@@ -1,8 +1,8 @@
 ---
-title: "Useful Applications (mostly for Mac)"
-date: "2023-03-24"
-author: "Lawrence Wu"
-categories: ["Productivity", "Developer Tools"]
+title: Useful Applications (mostly for Mac)
+date: '2023-03-24'
+author: Lawrence Wu
+categories: [productivity]
 ---
 
 In this blog post, I'll introduce you to a list of useful applications, covering both developer tools and productivity applications that I've found useful over the years. I'll also provide you with a brief overview of each app, including its key features and how it can help you improve your workflow. This is mostly Mac focused, though some of these are available on other operating systems.

@@ -1,8 +1,8 @@
 ---
-title: "Large Language Models, Work and the Future of Jobs"
-date: "2023-05-05"
-author: "Lawrence Wu"
-categories: ["LLMs", "Work", "GPT", "OpenAI"]
+title: Large Language Models, Work and the Future of Jobs
+date: '2023-05-05'
+author: Lawrence Wu
+categories: [ai, career]
 ---
 
 Last month, [Allen Downey](https://twitter.com/AllenDowney) showcased the power of ChatGPT by using it to solve every problem in his Think Python books. As a result, he encouraged [everyone who writes code to use LLM-assistance in their development](https://twitter.com/AllenDowney/status/1642292405201190915). This inspired me to further explore the capabilities of GPT-4 and its potential effects on work and productivity.

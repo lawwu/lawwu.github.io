@@ -1,9 +1,9 @@
 ---
-title: "God's Design for Marriage"
-author: "Lawrence Wu"    
-date: "2024-08-14"
-date-modified: "2024-08-14"
-categories: ["God", "Marriage", "Summary"]
+title: God's Design for Marriage
+author: Lawrence Wu
+date: '2024-08-14'
+date-modified: '2024-08-14'
+categories: [faith, summary]
 ---
 
 My church is hosting a retreat this weekend and we are privileged to have [John Street](https://www.masters.edu/faculty_staff_bio/john-d-street/) as our speaker. He was planning to speak on God's Design for Marriage. I was curious whether he had taught similar sessions before. He actually did at [FBC Weston back in 2018](https://www.youtube.com/playlist?list=PLdY75M-gUuKC1G4PAseaT8O5IOte9yb3H). Interestingly he gave 6 sessions (5 + a Q&A). To get a preview, I [transcribed all of those talks](https://lawwu.github.io/transcripts/index_john_street_gods_design_for_marriage.html) using my [transcripts repo](https://github.com/lawwu/transcripts) and summarized them using Claude 3.5 Sonnet.

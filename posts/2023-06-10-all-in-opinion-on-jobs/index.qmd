@@ -1,8 +1,8 @@
 ---
-title: "All-In Hosts Opinion on Jobs"
-date: "2023-06-10"
-author: "Lawrence Wu"
-categories: ["LLMs", "Work", "GPT"]
+title: All-In Hosts Opinion on Jobs
+date: '2023-06-10'
+author: Lawrence Wu
+categories: [ai, career]
 ---
 
 During [Episode 132 of the All-In Podcast](https://www.youtube.com/watch?v=aPMNbMR1p70&ab_channel=All-InPodcast), (transcript [here](https://steno.ai/all-in-with-chamath-jason-sacks/e132-sec-goes-after-crypto-giants-sequoia-splits-livpga-messis)) the hosts took a live question from the audience:

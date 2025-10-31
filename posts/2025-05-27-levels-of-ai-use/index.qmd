@@ -1,8 +1,8 @@
 ---
-title: "Levels of AI Use"
-author: "Lawrence Wu"    
-date: "2025-05-27"
-categories: ["AI"]
+title: Levels of AI Use
+author: Lawrence Wu
+date: '2025-05-27'
+categories: [ai]
 ---
 
 As I've talked to different people at work and amongst friends, there is a growing gap between those that use AI (mostly ChatGPT) and those that do not. It got me thinking there are levels to this for both developers (or anyone who writes code as part of their job) and non-developers (those that do not write code). 

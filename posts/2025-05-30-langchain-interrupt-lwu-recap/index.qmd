@@ -1,8 +1,8 @@
 ---
-title: "LangChain Interrupt Conference 2025 - 1 Hour Recap"
-author: "Lawrence Wu"    
-date: "2025-05-30"
-categories: ["LangChain", "Conference", "Recap"]
+title: LangChain Interrupt Conference 2025 - 1 Hour Recap
+author: Lawrence Wu
+date: '2025-05-30'
+categories: [ai, events]
 ---
 
 I tried my best to condense the ~16 hours of content from the LangChain Interrupt Conference to less than an hour.

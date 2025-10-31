@@ -1,8 +1,8 @@
 ---
-title: "LangChain Interrupt Conference - Day 1"
-author: "Lawrence Wu"    
-date: "2025-05-14"
-categories: ["LangChain", "Conference"]
+title: LangChain Interrupt Conference - Day 1
+author: Lawrence Wu
+date: '2025-05-14'
+categories: [ai, events]
 ---
 
 I had the privilege of attending LangChain's first conference. The first day was a hands-on workshop going through the creation of an agent (an email assistant) from scratch. It went through many of the components of building an agent:

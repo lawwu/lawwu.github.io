@@ -1,8 +1,8 @@
 ---
-title: "Being Able to Focus is a Superpower"
-date: "2023-06-24"
-author: "Lawrence Wu"
-categories: ["Focus", "Work", "Musk", "Isaacson"]
+title: Being Able to Focus is a Superpower
+date: '2023-06-24'
+author: Lawrence Wu
+categories: [career, productivity]
 ---
 
 Walter Isaacson is set to release a biography of Elon Musk later this year. He was recently on a [Twitter Space](https://youtu.be/-yhuiovST4A?t=181) with a few other people talking about Musk. One of the things that stood out to me was Isaacson's description of Musk's ability to focus. Here's a transcript of what he said:

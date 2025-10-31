@@ -1,8 +1,8 @@
 ---
-title: "GPT Related Papers, Code, and News"
-date: "2023-04-04"
-author: "Lawrence Wu"
-categories: ["GPT", "OpenAI"]
+title: GPT Related Papers, Code, and News
+date: '2023-04-04'
+author: Lawrence Wu
+categories: [ai]
 ---
 
 There's seemingly a firehose of development in the last month or so. I've been trying to keep up with the latest developments in GPT and related models. Here's a list of papers, code, and news that I've found interesting. This is mainly for myself to have a reference, but I hope it's useful to others as well. I was largely inspired by [@osanseviero](https://twitter.com/osanseviero) who created [ml_timeline](https://github.com/osanseviero/ml_timeline).

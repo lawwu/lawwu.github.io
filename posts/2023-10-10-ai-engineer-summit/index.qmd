@@ -1,8 +1,8 @@
 ---
-title: "AI Engineer Summit 2023"
-author: "Lawrence Wu"    
-date: "2023-10-10"
-categories: ["Conference", "AI", "LLMs", "AI Engineering"]
+title: AI Engineer Summit 2023
+author: Lawrence Wu
+date: '2023-10-10'
+categories: [ai, events]
 ---
 
 # AI Engineer Summit

@@ -1,8 +1,8 @@
 ---
-title: "Introduction to LangGraph Tutorial"
-author: "Lawrence Wu"    
-date: "2024-09-20"
-categories: ["LangGraph", "LLMs", "Agents", "Python"]
+title: Introduction to LangGraph Tutorial
+author: Lawrence Wu
+date: '2024-09-20'
+categories: [ai, summary]
 ---
 
 The LangChain team recently released the first course in their LangChain Academy called Introduction to LangGraph ([repo](https://github.com/langchain-ai/langchain-academy)). As I'm working through it I will make some notes on what I've learned. Note many of these snippets were generated using Claude 3.5 Sonnet (passing a prompt and the Jupyter notebook plain text, it did a better job than `o1-preview`, surprisingly)

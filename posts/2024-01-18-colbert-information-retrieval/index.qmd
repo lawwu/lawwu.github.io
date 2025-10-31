@@ -1,15 +1,15 @@
 ---
-title: "ColBERT and Information Retrieval"
-author: "Lawrence Wu"    
-date: "2024-01-18"
-date-modified: "2024-02-02"
-categories: ["BERT", "ColBERT", "Information Retrieval", "NLU"]
+title: ColBERT and Information Retrieval
+author: Lawrence Wu
+date: '2024-01-18'
+date-modified: '2024-02-02'
+categories: [ai, summary]
 jupyter: python3
 format:
   html:
     code-overflow: wrap
 execute:
-    freeze: true
+  freeze: true
 ---
 
 I recently learned about ColBERT, a BERT-based model for efficient passage retrieval. The authors of the paper [ColBERT: Efficient and Effective Passage Search via Contextualized Late Interaction over BERT](https://arxiv.org/abs/2004.12832) claim that ColBERT is able to achieve state-of-the-art performance on the MS MARCO passage ranking task while being 10x faster than the previous state-of-the-art model. This is a post to summarize my learnings about ColBERT and how it compares to dense retrieval methods like BERT and sentence-transformers.

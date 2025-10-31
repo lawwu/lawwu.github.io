@@ -1,9 +1,9 @@
 ---
-title: "How Dwarkesh Patel Uses AI & Claude"
-author: "Lawrence Wu"    
-date: "2024-07-26"
-date-modified: "2024-07-26"
-categories: ["LLMs"]
+title: How Dwarkesh Patel Uses AI & Claude
+author: Lawrence Wu
+date: '2024-07-26'
+date-modified: '2024-07-26'
+categories: [ai, summary]
 ---
 
 Dwarkesh Patel is becoming the new Lex Fridman of podcasting. Lex got his start a podcaster interviewing AI experts. Since then Lex has branched out and most of his guests are non AI-experts. Dwarkesh has filled this gap. In this interview, Dan Shipper interviews him:

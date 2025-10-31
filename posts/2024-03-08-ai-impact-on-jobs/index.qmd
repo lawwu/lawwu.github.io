@@ -1,9 +1,9 @@
 ---
-title: "AI Impact on Jobs"
-author: "Lawrence Wu"    
-date: "2024-03-08"
-date-modified: "2024-03-08"
-categories: ["LLMs", "Jobs", "Work", "AI"]
+title: AI Impact on Jobs
+author: Lawrence Wu
+date: '2024-03-08'
+date-modified: '2024-03-08'
+categories: [ai, career]
 ---
 
 Andrew Ng gave a talk recently on [AI's Potential Effect on the Labor Force](https://www.youtube.com/watch?v=-mIjwN1o7nE). Here's the transcript of the [video](https://lawwu.github.io/transcripts/transcript_-mIjwN1o7nE.html).
