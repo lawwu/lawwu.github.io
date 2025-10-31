@@ -1,8 +1,8 @@
 ---
-title: "Layoffs Attributed to AI"
-date: "2023-06-24"
-author: "Lawrence Wu"
-categories: ["AI", "Jobs", "Layoffs"]
+title: Layoffs Attributed to AI
+date: '2023-06-24'
+author: Lawrence Wu
+categories: [ai, career]
 ---
 
 This [WSJ article](https://www.wsj.com/articles/ai-isnt-coming-for-marketers-jobsnot-yet-at-least-3bc18750?page=1) highlighted AI's impact on marketing related roles. In one the paragraphs, a statistic was cited that I had never seen before, the number of layoffs that were attributed to AI. 

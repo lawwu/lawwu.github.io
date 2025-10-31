@@ -1,14 +1,14 @@
 ---
-title: "LLM Agents with Langchain"
-author: "Lawrence Wu"    
-date: "2023-07-12"
-categories: ["LLMs", "Agents", "Data Analysis", "Data Science"]
+title: LLM Agents with Langchain
+author: Lawrence Wu
+date: '2023-07-12'
+categories: [ai]
 jupyter: python3
 format:
   html:
     code-overflow: wrap
 execute:
-    freeze: true
+  freeze: true
 ---
 
 # Agents with `langchain`

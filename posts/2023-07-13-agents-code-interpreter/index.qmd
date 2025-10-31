@@ -1,16 +1,16 @@
 ---
-title: "Code Interpreter & Data Analysis"
-author: "Lawrence Wu"    
-date: "2023-07-13"
-date-modified: "2023-07-14"
-categories: ["LLMs", "Agents", "Data Analysis", "Data Science", "Code Interpreter"]
+title: Code Interpreter & Data Analysis
+author: Lawrence Wu
+date: '2023-07-13'
+date-modified: '2023-07-14'
+categories: [ai]
 image: code_interpreter.png
 jupyter: python3
 format:
   html:
     code-overflow: wrap
 execute:
-    freeze: true    
+  freeze: true
 ---
 
 In this post I'll go over some observations I've had while using OpenAI's Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month). 

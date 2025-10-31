@@ -1,7 +1,7 @@
 ---
-title: "How to Learn AI"
+title: How to Learn AI
 date: 2025-09-09
-categories: [Learn, AI]
+categories: [ai]
 ---
 
 I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI's development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. Il'l try my best here.

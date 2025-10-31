@@ -1,8 +1,8 @@
 ---
-title: "Paper Summary: Llama2"
-author: "Lawrence Wu"    
-date: "2023-07-23"
-categories: ["LLMs", "Llama", "Llama2", "Paper Summary"]
+title: 'Paper Summary: Llama2'
+author: Lawrence Wu
+date: '2023-07-23'
+categories: [ai, summary]
 ---
 
 # Llama2

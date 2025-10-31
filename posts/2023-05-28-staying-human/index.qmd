@@ -1,8 +1,8 @@
 ---
-title: "Staying Human in the Age of LLMs"
-date: "2023-05-28"
-author: "Lawrence Wu"
-categories: ["LLMs", "Work", "GPT"]
+title: Staying Human in the Age of LLMs
+date: '2023-05-28'
+author: Lawrence Wu
+categories: [ai, career]
 ---
 
 The WSJ's Ben Cohen wrote an [article](https://www.wsj.com/articles/chatgpt-ai-math-po-shen-loh-1e9f80dc?page=1) highlighting Professor Po-Shen Loh, a math professor from Carnegie Mellon University and coach for Team USA’s International Mathematical Olympiad. He's currently touring the country with a mission to inspire a love of mathematics and provide practical guidance for the new challenges brought by AI and tools like ChatGPT (giving 50 lectures in 32 cities in 35 days!). Loh's message is clear: to survive in this era of artificial intelligence, one must lean into what makes us human.

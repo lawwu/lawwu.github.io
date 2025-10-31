@@ -1,8 +1,8 @@
 ---
-title: "Whisper Transcripts"
-author: "Lawrence Wu"    
-date: "2023-11-15"
-categories: ["Whisper", "ASR", "Transcripts"]
+title: Whisper Transcripts
+author: Lawrence Wu
+date: '2023-11-15'
+categories: [ai]
 ---
 
 # Whisper and whisper.cpp

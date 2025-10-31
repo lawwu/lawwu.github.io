@@ -1,7 +1,7 @@
 ---
-title: "Summaries of Talks from Code with Claude Conference 2025"
-date: "2025-08-15"
-categories: [AI, Claude Code, Claude, Conference]
+title: Summaries of Talks from Code with Claude Conference 2025
+date: '2025-08-15'
+categories: [ai, events, summary]
 ---
 
 # Code with Claude Conference 2025: Key Insights & Summaries

@@ -1,9 +1,9 @@
 ---
-title: "Finetuning LLMs with Axolotl"
-author: "Lawrence Wu"    
-date: "2024-05-23"
-date-modified: "2024-05-23"
-categories: ["LLMs", "Fine-tune", "Axolotl"]
+title: Finetuning LLMs with Axolotl
+author: Lawrence Wu
+date: '2024-05-23'
+date-modified: '2024-05-23'
+categories: [ai]
 ---
 
 I started Hamel Husain's ~~fine-tuning LLM course~~ Mastering LLM course last week. I don't have a ton of experience fine-tuning LLMs so I thought this would be a good way to learn.

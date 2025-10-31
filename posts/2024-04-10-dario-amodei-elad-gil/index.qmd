@@ -1,9 +1,9 @@
 ---
-title: "Dario Amodei & Elad Gil"
-author: "Lawrence Wu"    
-date: "2024-04-10"
-date-modified: "2024-04-10"
-categories: ["Anthropic", "LLMs"]
+title: Dario Amodei & Elad Gil
+author: Lawrence Wu
+date: '2024-04-10'
+date-modified: '2024-04-10'
+categories: [ai, events, summary]
 ---
 
 At Google Cloud Next 2024, Elad Gil interviewed Dario Amodei, the CEO of Anthropic. I recorded the talk (really bad audio) and transcribed it using a whisper (small-en) model. I passed the transcription to Claude 3 (Haiku), Gemini Pro 1.5 and GPT-4 to summarize it with this prompt:

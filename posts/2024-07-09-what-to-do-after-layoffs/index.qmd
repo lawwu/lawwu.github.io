@@ -1,9 +1,9 @@
 ---
-title: "What to do after getting laid off?"
-author: "Lawrence Wu"    
-date: "2024-07-09"
-date-modified: "2024-07-09"
-categories: ["layoffs", "UKG"]
+title: What to do after getting laid off?
+author: Lawrence Wu
+date: '2024-07-09'
+date-modified: '2024-07-09'
+categories: [career]
 ---
 
 My company, UKG, [announced layoffs](https://www.sun-sentinel.com/2024/07/a05/2200-layoffs-loom-for-technology-firm-ukg-in-south-florida-north-america-and-overseas/) last Wednesday (see an [industry expert's take](https://joshbersin.com/2024/07/ukg-14-reduction-in-force-a-growth-move-that-makes-sense/) on reasons why). 14% of the company was let go which is around 2,200 out of the 15,000 employees. Many of my teammates and friends were let go. I have been a part of companies that have had larger percentage layoffs (>30%). However, the sheer number of people that were affected is somewhat shocking. Considering the number of lives, families, and children that were disrupted is difficult to think about.

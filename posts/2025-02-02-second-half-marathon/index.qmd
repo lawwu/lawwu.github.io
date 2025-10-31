@@ -1,8 +1,8 @@
 ---
-title: "Second Half-Marathon in the Books"
-author: "Lawrence Wu"
-date: "2025-02-02"
-categories: ["Running", "Fitness"]
+title: Second Half-Marathon in the Books
+author: Lawrence Wu
+date: '2025-02-02'
+categories: [running]
 ---
 
 ![Finish Line Picture!](./finish_pic.jpg){width=50%}

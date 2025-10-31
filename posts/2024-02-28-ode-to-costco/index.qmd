@@ -1,9 +1,9 @@
 ---
-title: "Ode to Costco"
-author: "Lawrence Wu"    
-date: "2024-02-28"
-date-modified: "2024-02-28"
-categories: ["ode to", "Costco", "Acquired"]
+title: Ode to Costco
+author: Lawrence Wu
+date: '2024-02-28'
+date-modified: '2024-02-28'
+categories: [personal]
 ---
 
 I've been a fan of Costco for many years. Charlie Munger [famously loved Costco too](https://finance.yahoo.com/news/charlie-munger-obsessed-costco-heres-035148471.html). I still remember growing up and going to Price Club with my mom or dad and seeing them write checks because they didn't accept credit cards yet. There are many reasons to love Costco. It's honestly one of my favorite places to shop. Some of my favorite things are in no particular order:

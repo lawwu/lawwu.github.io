@@ -1,15 +1,15 @@
 ---
-title: "LLM Summarization and NeurIPS Papers"
-author: "Lawrence Wu"    
-date: "2024-01-04"
-date-modified: "2024-01-04"
-categories: ["LLMs", "Summarization", "NeurIPS"]
+title: LLM Summarization and NeurIPS Papers
+author: Lawrence Wu
+date: '2024-01-04'
+date-modified: '2024-01-04'
+categories: [ai, events, summary]
 jupyter: python3
 format:
   html:
     code-overflow: wrap
 execute:
-    freeze: true    
+  freeze: true
 ---
 
 I didn't get the chance to attend NeurIPS last week. The sheer number of papers submitted is [staggering](https://blog.neurips.cc/tag/neurips2023/): 13,300 submitted papers that were reviewed by 1,000+ people. 3,540 papers were accepted and 502 papers were flagged for ethics reviews!

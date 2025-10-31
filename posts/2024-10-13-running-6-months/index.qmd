@@ -1,8 +1,8 @@
 ---
-title: "Running Lessons"
-author: "Lawrence Wu"    
-date: "2024-10-13"
-categories: ["Running", "Fitness", "Christian Life"]
+title: Running Lessons
+author: Lawrence Wu
+date: '2024-10-13'
+categories: [running, faith]
 ---
 
 I never considered myself a runner. I actually never enjoyed the activity of running. I usually didn't look forward to it. I would occassionally still do it because I knew it was good for me. I also usually did enjoy how I felt afterwards, feeling like I put in some work, got my heart pumping and it was generally healthy. Over the past 5 months though, I've come to really enjoy running. I'll share some of the things I've learned along the way about running and life.

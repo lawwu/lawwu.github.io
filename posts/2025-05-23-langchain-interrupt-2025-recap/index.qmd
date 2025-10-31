@@ -1,8 +1,8 @@
 ---
-title: "LangChain Interrupt Conference 2025 AI Recap"
-author: "Lawrence Wu"    
-date: "2025-05-23"
-categories: ["LangChain", "Conference", "Recap"]
+title: LangChain Interrupt Conference 2025 AI Recap
+author: Lawrence Wu
+date: '2025-05-23'
+categories: [ai, events]
 ---
 
 *This page contains AI-generated summaries of the LangChain Interrupt 2025 conference talks.*
