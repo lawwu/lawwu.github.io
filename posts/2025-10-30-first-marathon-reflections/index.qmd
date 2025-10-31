@@ -1,0 +1,104 @@
+---
+title: "First Marathon Reflections"
+date: 2025-10-30
+categories: [Running]
+draft: true
+---
+
+I did it. I ran a marathon. Long Beach 2025 Marathon done and done. What an amazing day. I’ve heard that a race is a celebration of the training you have put in. That rings so much truer now that the race is over. All those easy runs, tempo/interval runs, long runs on Saturday or Sundays. It’s been a long journey with many ups and downs along the way. 
+
+![Post marathon joy](./long_beach_2025_marathon.jpg){width=400px style="border-radius: 50%; margin-bottom: 20px;"}
+
+# Race Report
+The race didn’t start out great. Parking was a pain. It felt way more crowded than last year.The spot I booked turned out to be not open. But the weather was good at the start. I started out in the 3:45-4:15 corral and I found myself with the 3:50 pacers and stuck with them for probably the first half of the race. The first half of the marathon was relatively easy since it was the same as [last year’s HM course](https://lawwu.github.io/posts/2024-10-13-running-6-months/). When the course split and then rounded CSULB, it got tough around mile 18 because of the hills, the unfamiliar course and some pain in my left foot. I tried my best to dig deep at that point and just push through. Thankfully the pain was tolerable and didn’t get much worse. I then had some more pain in my right leg at mile 22 but mentally the end felt pretty close. Seeing people cramp up left and right didn’t help my confidence. The course narrowed a lot at mile 23-25 so it was hard to maintain a sub 9 pace but I don’t think I could’ve physically managed that so it was God’s mercy on me. I imagine if I pushed hard the last 6 miles I could’ve tried for sub 3:50 but didn’t want to get greedy and also didn’t want to get hurt. I ended up finishing with a time of 3:52:12 which is about a 8:51 min per mile pace. I was and am so happy with this result.
+
+![Mile splits](./long_beach_2025_marathon_splits.png){width=400px style="border-radius: 50%; margin-bottom: 20px;"}
+
+The above were my mile splits. Starting around mile 20 was when I started to slow down. Heart rate started creeping up too. I still had some left in the tank the last stretch though!
+
+# Race Goals
+
+My goals for the race were: 
+
+- Goal A: to train for it in a way that most glorifies God
+- Goal B: not get injured
+- Goal C: Go sub 4-hours
+
+By God’s grace, I was able to achieve all those goals!
+
+## Training in a God Glorifying Way
+
+Since starting to run in 2024, I had run two previous half marathons that I wrote about [here](https://lawwu.github.io/posts/2024-10-13-running-6-months/) and [here](https://lawwu.github.io/posts/2025-02-02-second-half-marathon/). I had wanted to run a full marathon before turning 40 and I thought the Long Beach Marathon would be a good fit since the majority of the training would happen during summer months when I had more time because my church’s Bible study is on break. In training for the two half marathons I’ve done, there were times I prioritized preparing for it over other more important responsibilities like my family. I told myself I had to be able to prioritize the right things first before even considering training for the full. I tried my best to do my long runs early Saturday or Sunday morning and to be back in time before my kids woke up. It didn’t always work out and I definitely had to sacrifice some time spent with my wife and kids if I otherwise wasn’t training. 
+
+## Not Get Injured
+
+My B goal was to not get injured. I’ve had a number of serious leg injuries playing basketball. I’m really grateful God has allowed me to run still and now run longer distances. I have yet to have a serious injury yet while running. The pain in my left foot and right leg wasn't manageable during the race. Going for sub 3:50 crossed my mind but the risk of blowing up and getting hurt also crossed my mind. I tried running 5 days after the race but my foot still had a little pain. The same thing happened a week later. In total I took 2.5 weeks off after the race to let my foot heal.
+
+# Run sub 4 hours
+
+To run a sub-4-hour marathon, you have to maintain a pace of 9:09 min per mile. I used [Runna](https://web.runna.com/welcome?redirectUrl=https%3A%2F%2Fweb.runna.com%2Fredeem%3Fcode%3DRUNNANSB2XBJ) again to train for my marathon. I thought the app prepared me well for the race. About 4 weeks out, I was pretty confident I was going to be able to run sub 4. Runna had me do a Race Practice Long Run that was 22 miles with 12 miles of race pace (at the end!). That was by far the hardest workout mentally and physically. But completing that workout gave me confidence that sub 4 was going to be do-able since I was able to do the 12 mile block at a 9:08 pace. Going into race day, I felt like I had put in the necessary work and it was just time to reap the fruit and enjoy the race. Praise God I was able to cross the finish line 8 minutes faster than my goal at 3:52:12. You can see the official results [here](https://results2.xacte.com/#/e/2611/searchable/23299).
+
+# Lesson 1: Training was the most valuable piece
+
+My training block:
+
+- May 5, 2025 to Oct 5, 2025
+- 152 days
+- 20 weeks
+- ~100 runs
+- ~600 miles
+- 28 miles per week
+- 95 hours, 4.4 hours per week
+- 4 19+ mi runs
+- 14 10+ mi runs
+
+Reflecting on the training block numbers, it was 20 weeks at about 30 miles per week. I spent 95 hours running or 4.4 hours per week. For this block I also added strength training at around once a week. I ran 19+ miles 4 times.
+
+The race being around 4 hours was <5% of the total time. So 95% of the time related to the marathon was spent training for it. This makes me think about all of the sports I watch, 95% of the time and effort has already been put in. I imagine this also applies to any sort of public performance (musical, comedy, etc). Simply going through the training my VO2 max has improved going from 43.7 in May 2024 to 57.7 in October 2025.
+
+![VO2 Max](./post_marathon_vo2_max.jpg){width=400px style="border-radius: 50%; margin-bottom: 20px;"}
+
+[I started running](https://lawwu.github.io/posts/2024-10-13-running-6-months/#why-i-started-running) because I wanted to be able to do normal activities like play with my grandchildren in my 70s and 80s. I'm so grateful to have gotten to this point of having better cardio fitness (as measured by VO2 max). I feel better physically. I have clearer thinking. I have more energy through the day.
+
+# Lesson 2: There are so many facets to improving as a runner (or anything else)
+
+There are so many different facets to improving as a runner. There are the different types of runs you can do: easy, tempo, intervals, progression runs, fartlek, long runs, strides, long runs with race pace blocks, etc. There’s also strength training, nutrition (in general) and during runs. There’s running shoes and other gear. There’s all these metrics you can look at: pace, heart rate, VO2 max, cadence, stride length, etc. And I’m only 1.5 years into this running journey.
+
+There are different types of practicing, depending on what your goal is. For the marathon training block, I had less speed work. Much more of the time was spent extending the long runs from 13 miles (in a half marathon training plan) to 22 miles. I actually don’t think I improved my 1 mile, 5k, 10k or half-marathon time.
+
+To grow in any area, it's important to keep in mind the different types of knowledge and the different types of practice in that domain.
+
+- Personal finances: managing spending/saving, growing your income, being a disciplined investor, understanding taxes, using different investment accounts (Roth IRA, Backdoor IRA, Megabackdoor Roth, HSAs)
+- Professionally in AI, ML, Data Science, AI Engineering: how to query and manipulate data, [how to use a command line, git and other topics](https://missing.csail.mit.edu/), communicating with technical and non-technical audiences, training traditional ML, cloud, generative AI, how LLMs work, agentic coding
+- Prayer: adoration, confession, thanksgiving, supplication, studying the different types of prayers in the Bible
+- Bible: there are different ways to grow in the Word. Devotions (reading 1 chapter a day, reading a few verses at a time, reading 4 chapters a day (Disciples reading plan, Piper likes this), reading 1 book of the Bible a day (JMac)), there’s doing inductive Bible study by reading one passage (reading multiple translations, understanding the context, asking questions), doing deeper study Biblical theology type study on a topic like what is the temple and how that idea develops between the OT and NT
+
+The lesson here is if you want to grow in an area, there's knowledge you need to accumulate and different forms of practice you need to engage in.
+
+# Lesson 3: Running is getting popular!
+
+The graph below shows the number of half-marathon, marathon and total participants in the Long Beach races. You can see since the COVID 2020 year, the number of runners has gone up each year. 
+
+![Long Beach Marathon Participation by year](./long_beach_marathon_participants_by_year.png){width=800px style="border-radius: 50%; margin-bottom: 20px;"}
+
+There were 20,126 total participants in 2025 compared to 16,818, a 20% increase. I really felt it this year as everything felt more crowded: parking, race start, on the course, finishing the race felt like we were cattle being herded.
+
+The data and code for every year for the Long Beach marathon is [here](https://github.com/lawwu/long_beach_marathons). Note I did use [codex](https://github.com/openai/codex) to pull this data.
+
+# Lesson 4: Physical training is of some value
+
+> For physical training is of some value, but godliness has value for all things, holding promise for both the present life and the life to come. (1 Timothy 4:8, NIV)
+
+
+
+
+
+Spiritual Lessons
+You really get what you put in
+Do not be deceived: God cannot be mocked. A man reaps what he sows. (Galatians 6:7)
+Hebrews 12:1 
+Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and let us run with endurance the race that is set before us 
+Phil 3:13-14
+Brothers, I do not consider that I have made it my own. But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus.
+1 Cor 9:24-27
+Do you not know that in a race all the runners run, but only one receives the prize? So run that you may obtain it. Every athlete exercises self-control in all things. They do it to receive a perishable wreath, but we an imperishable. So I do not run aimlessly; I do not box as one beating the air. But I discipline my body and keep it under control, lest after preaching to others I myself should be disqualified.
