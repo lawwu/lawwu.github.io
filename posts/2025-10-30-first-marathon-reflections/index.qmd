@@ -2,10 +2,9 @@
 title: "First Marathon Reflections"
 date: 2025-10-30
 categories: [Running]
-draft: true
 ---
 
-I did it. I ran a marathon. Long Beach 2025 Marathon done and done. What an amazing day. I’ve heard that a race is a celebration of the training you have put in. That rings so much truer now that the race is over. All those easy runs, tempo/interval runs, long runs on Saturday or Sundays. It’s been a long journey with many ups and downs along the way. 
+I did it. I ran a marathon. Long Beach 2025 Marathon is finished. What an amazing race day and training block. I’ve heard that a race is a celebration of the training you have put in. That rings so much truer now that the race is over. All those easy runs, tempo/interval runs, long runs on Saturday or Sundays. It’s been a long journey with many ups and downs along the way.
 
 ![Post marathon joy](./long_beach_2025_marathon.jpg){width=400px style="border-radius: 50%; margin-bottom: 20px;"}
 
@@ -60,18 +59,28 @@ The race being around 4 hours was <5% of the total time. So 95% of the time rela
 
 [I started running](https://lawwu.github.io/posts/2024-10-13-running-6-months/#why-i-started-running) because I wanted to be able to do normal activities like play with my grandchildren in my 70s and 80s. I'm so grateful to have gotten to this point of having better cardio fitness (as measured by VO2 max). I feel better physically. I have clearer thinking. I have more energy through the day.
 
+It's been awhile since I've set a goal and worked for many months to accomplish that goal. Training for a marathon and using a training plan through Runna (though there are many other plans too), broke this down into manageble pieces. It was 20 weeks with 5 scheduled runs per week. The app took much of the mental strain of planning runs (tpye of runs, distance) which I really enjoyed. It's so meaningful looking back to put my mind and body toward a goal and then finally accomplishing it. Going through this journey with running challenges me to set goals in other areas of life to grow in.
+
 # Lesson 2: There are so many facets to improving as a runner (or anything else)
 
 There are so many different facets to improving as a runner. There are the different types of runs you can do: easy, tempo, intervals, progression runs, fartlek, long runs, strides, long runs with race pace blocks, etc. There’s also strength training, nutrition (in general) and during runs. There’s running shoes and other gear. There’s all these metrics you can look at: pace, heart rate, VO2 max, cadence, stride length, etc. And I’m only 1.5 years into this running journey.
 
 There are different types of practicing, depending on what your goal is. For the marathon training block, I had less speed work. Much more of the time was spent extending the long runs from 13 miles (in a half marathon training plan) to 22 miles. I actually don’t think I improved my 1 mile, 5k, 10k or half-marathon time.
 
-To grow in any area, it's important to keep in mind the different types of knowledge and the different types of practice in that domain.
+To grow in any area, it's important to keep in mind the different types of knowledge and the different types of practice in that domain. For example:
 
-- Personal finances: managing spending/saving, growing your income, being a disciplined investor, understanding taxes, using different investment accounts (Roth IRA, Backdoor IRA, Megabackdoor Roth, HSAs)
-- Professionally in AI, ML, Data Science, AI Engineering: how to query and manipulate data, [how to use a command line, git and other topics](https://missing.csail.mit.edu/), communicating with technical and non-technical audiences, training traditional ML, cloud, generative AI, how LLMs work, agentic coding
-- Prayer: adoration, confession, thanksgiving, supplication, studying the different types of prayers in the Bible
-- Bible: there are different ways to grow in the Word. Devotions (reading 1 chapter a day, reading a few verses at a time, reading 4 chapters a day (Disciples reading plan, Piper likes this), reading 1 book of the Bible a day (JMac)), there’s doing inductive Bible study by reading one passage (reading multiple translations, understanding the context, asking questions), doing deeper study Biblical theology type study on a topic like what is the temple and how that idea develops between the OT and NT
+- Personal finances: 
+  - knowledge: understanding taxes, knowing different investment accounts (Roth IRA, Backdoor IRA, Megabackdoor Roth, HSAs)
+  - practice: managing spending/saving, growing your income, being a disciplined investor, opening different accounts, taking advantage of credit card rewards, giving
+- Professionally in AI, ML, Data Science, AI Engineering:
+  - knowledge: how businesses work, what [tidy data](https://r4ds.had.co.nz/tidy-data.html) is, how machine learning models work, how language models are trained, different types of services a cloud provider has, MLOps best practices
+  - practice: working with data, [how to use a command line, git and other topics](https://missing.csail.mit.edu/), using languages like SQL/Python, training ML models, creating an AI agent with different AI frameworks, understanding the mechanics of agentic coding
+- Prayer: 
+  - knowledge: understanding what prayer is, studying the different types of prayers in the Bible
+  - practice: praying differnt types of prayers like adoration, confession, thanksgiving, supplication, prayer walks, secret prayer, corporate prayer, prayer with spouse, prayer with kids
+- Bible: 
+  - knowledge: understanding the reliability of the Bible, different genre's of the Bible (I really benefitted from Fee's [How to Read the Bible for All It's Worth](https://amzn.to/4nHxh0Y)), understanding different types of theology: Biblical Theology, Historical Theology, Systematic Theology and Practical Theology (I've learned a lot from DeRouchie and Naselli's books on [Old Testament](https://amzn.to/43NgRg7) and [New Testament Exegesis](https://amzn.to/4nHxktG))
+  - practice: there are different ways to grow in the Word. Devotions (reading 1 chapter a day, reading a few verses at a time, reading 4 chapters a day (Disciples reading plan, Piper likes this), reading 1 book of the Bible a day (JMac)), there’s doing inductive Bible study by reading one passage (reading multiple translations, understanding the context, asking questions), doing deeper study Biblical theology type study on a topic like what is the temple and how that idea develops between the OT and NT
 
 The lesson here is if you want to grow in an area, there's knowledge you need to accumulate and different forms of practice you need to engage in.
 
@@ -87,18 +96,10 @@ The data and code for every year for the Long Beach marathon is [here](https://g
 
 # Lesson 4: Physical training is of some value
 
-> For physical training is of some value, but godliness has value for all things, holding promise for both the present life and the life to come. (1 Timothy 4:8, NIV)
+> For physical training is of some value, but godliness has value for all things, holding promise for both the present life and the life to come. ([1 Timothy 4:8, NIV](https://www.biblegateway.com/passage/?search=1%20timothy%204%3A8&version=NIV))
 
+This verse says that physical training is of some value. I have certainly seen the "some value" play out in my life. We weren't created to be sedentary creatures. I feel overall healthier, have lost >5 lbs, have higher VO2 max and have finally found a form of cardio that I enjoy and can do regularly. 
 
+The verse goes on to say that "godliness has value for all things" because it holds "promise for both the present life and the life to come." Growing in godliness and Christ-likeness is what I hope to learn to value more than physical training and grow in more in the coming months and years. I am interested in reading this book [A Little Theology of Exercise: Enjoying Christ in Body and Soul](https://amzn.to/3JEccGu) by David Mathis. I heard about this book through this video:
 
-
-
-Spiritual Lessons
-You really get what you put in
-Do not be deceived: God cannot be mocked. A man reaps what he sows. (Galatians 6:7)
-Hebrews 12:1 
-Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and let us run with endurance the race that is set before us 
-Phil 3:13-14
-Brothers, I do not consider that I have made it my own. But one thing I do: forgetting what lies behind and straining forward to what lies ahead, I press on toward the goal for the prize of the upward call of God in Christ Jesus.
-1 Cor 9:24-27
-Do you not know that in a race all the runners run, but only one receives the prize? So run that you may obtain it. Every athlete exercises self-control in all things. They do it to receive a perishable wreath, but we an imperishable. So I do not run aimlessly; I do not box as one beating the air. But I discipline my body and keep it under control, lest after preaching to others I myself should be disqualified.
+{{< video https://www.youtube.com/watch?v=7diw2lK1aZ0 >}}
