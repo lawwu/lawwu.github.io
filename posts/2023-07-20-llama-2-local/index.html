@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d68be38d83eca2bb035acf846ffba811.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -173,6 +174,8 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Lawrence Wu</span>
     </a>
@@ -294,7 +297,7 @@ cookieconsent.run({
 <section id="running-llama2-locally-on-a-mac" class="level1">
 <h1>Running Llama2 locally on a Mac</h1>
 <p>I saw this <a href="https://twitter.com/AdrienBrault/status/1681606803522461696">tweet</a> yesterday about running the model locally on a M1 mac and tried it. The instructions are just in this <a href="https://gist.github.com/adrienbrault/b76631c56c736def9bc1bc2167b5d129">gist</a> and it was trivial to setup. The below script uses the <code>llama-2-13b-chat.ggmlv3.q4_0.bin</code> model file but you can find other versions of the llama2-13-chat model on <a href="https://huggingface.co/TheBloke/Llama-2-13B-chat-GGML">Huggingface here</a>. It’s truly amazing how quickly new model releases get ported over to llama.cpp and quantized (1-2 days).</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone llama.cpp</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Clone llama.cpp</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/ggerganov/llama.cpp.git</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> llama.cpp</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -317,7 +320,7 @@ cookieconsent.run({
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">--temp</span> 0.7 <span class="dt">\</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="at">--repeat_penalty</span> 1.1 <span class="dt">\</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="at">-n</span> <span class="at">-1</span> <span class="dt">\</span></span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">-p</span> <span class="st">"[INST] </span><span class="va">${PROMPT}</span><span class="st"> [/INST]"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">-p</span> <span class="st">"[INST] </span><span class="va">${PROMPT}</span><span class="st"> [/INST]"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
@@ -391,7 +394,7 @@ cookieconsent.run({
 <section id="llama.cpp-output" class="level1">
 <h1>llama.cpp output</h1>
 <p>Running this in a terminal produces a bunch of llama.cpp output:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">main:</span> build = 852 <span class="er">(</span><span class="ex">294f424</span><span class="kw">)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">main:</span> build = 852 <span class="er">(</span><span class="ex">294f424</span><span class="kw">)</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">main:</span> seed  = 1689913536</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">llama.cpp:</span> loading model from llama-2-13b-chat.ggmlv3.q4_0.bin</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">llama_model_load_internal:</span> format     = ggjt v3 <span class="er">(</span><span class="ex">latest</span><span class="kw">)</span></span>
@@ -457,7 +460,7 @@ cookieconsent.run({
 <span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="ex">system_info:</span> n_threads = 8 / 10 <span class="kw">|</span> <span class="ex">AVX</span> = 0 <span class="kw">|</span> <span class="ex">AVX2</span> = 0 <span class="kw">|</span> <span class="ex">AVX512</span> = 0 <span class="kw">|</span> <span class="ex">AVX512_VBMI</span> = 0 <span class="kw">|</span> <span class="ex">AVX512_VNNI</span> = 0 <span class="kw">|</span> <span class="ex">FMA</span> = 0 <span class="kw">|</span> <span class="ex">NEON</span> = 1 <span class="kw">|</span> <span class="ex">ARM_FMA</span> = 1 <span class="kw">|</span> <span class="ex">F16C</span> = 0 <span class="kw">|</span> <span class="ex">FP16_VA</span> = 1 <span class="kw">|</span> <span class="ex">WASM_SIMD</span> = 0 <span class="kw">|</span> <span class="ex">BLAS</span> = 1 <span class="kw">|</span> <span class="ex">SSE3</span> = 0 <span class="kw">|</span> <span class="ex">VSX</span> = 0 <span class="kw">|</span></span>
 <span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="ex">sampling:</span> repeat_last_n = 64, repeat_penalty = 1.100000, presence_penalty = 0.000000, frequency_penalty = 0.000000, top_k = 40, tfs_z = 1.000000, top_p = 0.950000, typical_p = 1.000000, temp = 0.700000, mirostat = 0, mirostat_lr = 0.100000, mirostat_ent = 5.000000</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="ex">generate:</span> n_ctx = 2048, n_batch = 512, n_predict = <span class="at">-1,</span> n_keep = 0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="ex">generate:</span> n_ctx = 2048, n_batch = 512, n_predict = <span class="at">-1,</span> n_keep = 0</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -514,13 +517,14 @@ cookieconsent.run({
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

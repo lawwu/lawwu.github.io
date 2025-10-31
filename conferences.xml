@@ -9,7 +9,7 @@
 <link>https://lawwu.github.io/blog.html/conferences.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/conferences.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.7.34</generator>
+<generator>quarto-1.8.25</generator>
 <lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>LangChain Interrupt Agent Conference 2025</title>
@@ -740,7 +740,7 @@
 <li>OpenAI function calling within LangChain to do structured data extraction, build agents to do extraction and tagging and use tools. Also a quick tutorial on</li>
 <li>LangChain Expression Language (LCEL) is a relatively new way (introduced in Aug 2023) to compose langchain components</li>
 </ul>
-<div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.prompts <span class="im" style="color: #00769E;
 background-color: null;
@@ -792,13 +792,13 @@ font-style: inherit;"># don't .run() the chain but call .invoke()</span></span>
 background-color: null;
 font-style: inherit;">"topic"</span>: <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"bears"</span>})</span></code></pre></div>
+font-style: inherit;">"bears"</span>})</span></code></pre></div></div>
 <ul>
 <li>OpenAI’s Function Calling is a way to get OpenAI’s language models to return structured data (arguments to run a function or extract structured data from text). This is a powerful feature!</li>
 <li>I’m surprised other LLM providers have not yet introduced this functionality.</li>
 <li>langchain exposes helper function to make working with function calling easier</li>
 </ul>
-<div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.utils.openai_functions <span class="im" style="color: #00769E;
 background-color: null;
@@ -852,9 +852,9 @@ background-color: null;
 font-style: inherit;">#     'type': 'string'}},</span></span>
 <span id="cb2-18"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">#   'required': ['airport_code']}}</span></span></code></pre></div>
+font-style: inherit;">#   'required': ['airport_code']}}</span></span></code></pre></div></div>
 <p>then you can pass the weather function to the LLM</p>
-<div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.chat_models <span class="im" style="color: #00769E;
 background-color: null;
@@ -867,15 +867,15 @@ background-color: null;
 font-style: inherit;">"What is the weather in San Francisco right now?"</span>,</span>
 <span id="cb3-4">             functions<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span>[weather_function])  </span></code></pre></div>
+font-style: inherit;">=</span>[weather_function])  </span></code></pre></div></div>
 <p>You can also bind the function to the model:</p>
-<div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">model_with_function <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">model_with_function <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span>[weather_function])</span></code></pre></div>
+font-style: inherit;">=</span>[weather_function])</span></code></pre></div></div>
 <p>You can force OpenAI to use a function, but you can only pass one function here.</p>
-<div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">model_forced_function <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">model_forced_function <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> model.bind(functions<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -885,9 +885,9 @@ font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"name"</span>:<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"WeatherSearch"</span>})</span></code></pre></div>
+font-style: inherit;">"WeatherSearch"</span>})</span></code></pre></div></div>
 <p>Function calling is a great way to do structured data extraction from text for example extracting name, age tuples.</p>
-<div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> typing <span class="im" style="color: #00769E;
 background-color: null;
@@ -953,11 +953,11 @@ font-style: inherit;">"Joe is 30. Joe's mom is Martha"</span>)</span>
 <span id="cb6-14"></span>
 <span id="cb6-15"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'Information', 'arguments': '{\n  "people": [\n    {\n      "name": "Joe",\n      "age": 30\n    },\n    {\n      "name": "Martha",\n      "age": 0\n    }\n  ]\n}'}})</span></span></code></pre></div>
+font-style: inherit;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'Information', 'arguments': '{\n  "people": [\n    {\n      "name": "Joe",\n      "age": 30\n    },\n    {\n      "name": "Martha",\n      "age": 0\n    }\n  ]\n}'}})</span></span></code></pre></div></div>
 <ul>
 <li>You can create your own tools using the <span class="citation" data-cites="tool">@tool</span> decorator and pass these tools to OpenAI</li>
 </ul>
-<div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.agents <span class="im" style="color: #00769E;
 background-color: null;
@@ -1194,9 +1194,9 @@ background-color: null;
 font-style: inherit;">#     'type': 'number'}},</span></span>
 <span id="cb7-55"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">#   'required': ['latitude', 'longitude']}}</span></span></code></pre></div>
+font-style: inherit;">#   'required': ['latitude', 'longitude']}}</span></span></code></pre></div></div>
 <p>You can also convert an Open API spec into an OpenAI function</p>
-<div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.chains.openai_functions.openapi <span class="im" style="color: #00769E;
 background-color: null;
@@ -1844,9 +1844,9 @@ background-color: null;
 font-style: inherit;">"what are three pet names"</span>)</span>
 <span id="cb8-213"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'listPets', 'arguments': '{\n  "params": {\n    "limit": 3\n  }\n}'}})</span></span></code></pre></div>
+font-style: inherit;"># AIMessage(content='', additional_kwargs={'function_call': {'name': 'listPets', 'arguments': '{\n  "params": {\n    "limit": 3\n  }\n}'}})</span></span></code></pre></div></div>
 <p>You can also define routers to create rules for when an agent should use a tool.</p>
-<div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.schema.agent <span class="im" style="color: #00769E;
 background-color: null;
@@ -1918,9 +1918,9 @@ background-color: null;
 font-style: inherit;">"What is langchain?"</span>})</span>
 <span id="cb9-20"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># 'Page: LangChain\nSummary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain\'s use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.\n\nPage: Prompt engineering\nSummary: Prompt engineering is the process of structuring text that can be interpreted and understood by a generative AI model. A prompt is natural language text describing the task that an AI should perform.A prompt for a text-to-text model can be a query such as "what is Fermat\'s little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". A prompt may include a few examples for a model to learn from, such as "maison -&gt; house, chat -&gt; cat, chien -&gt;", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.\n\nPage: Sentence embedding\nSummary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT\'s sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT\'s [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. \nOther approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. \nAn alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.'</span></span></code></pre></div>
+font-style: inherit;"># 'Page: LangChain\nSummary: LangChain is a framework designed to simplify the creation of applications using large language models (LLMs). As a language model integration framework, LangChain\'s use-cases largely overlap with those of language models in general, including document analysis and summarization, chatbots, and code analysis.\n\nPage: Prompt engineering\nSummary: Prompt engineering is the process of structuring text that can be interpreted and understood by a generative AI model. A prompt is natural language text describing the task that an AI should perform.A prompt for a text-to-text model can be a query such as "what is Fermat\'s little theorem?", a command such as "write a poem about leaves falling", a short statement of feedback (for example, "too verbose", "too formal", "rephrase again", "omit this word") or a longer statement including context, instructions, and input data. Prompt engineering may involve phrasing a query, specifying a style, providing relevant context or assigning a role to the AI such as "Act as a native French speaker". A prompt may include a few examples for a model to learn from, such as "maison -&gt; house, chat -&gt; cat, chien -&gt;", an approach called few-shot learning.When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as "a high-quality photo of an astronaut riding a horse" or "Lo-fi slow BPM electro chill with organic samples". Prompting a text-to-image model may involve adding, removing, emphasizing and re-ordering words to achieve a desired subject, style, layout, lighting, and aesthetic.\n\nPage: Sentence embedding\nSummary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT\'s sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT\'s [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. \nOther approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. \nAn alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.'</span></span></code></pre></div></div>
 <p>You can also create a conversational agent that can use tools using the <code>AgentExecutor</code> class. I believe the <code>AgentExecutor</code> handles the message types and routing for you.</p>
-<div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.schema.runnable <span class="im" style="color: #00769E;
 background-color: null;
@@ -2013,9 +2013,9 @@ font-style: inherit;"># LangChain is a framework designed to simplify the creati
 <span id="cb10-34"></span>
 <span id="cb10-35"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># &gt; Finished chain.</span></span></code></pre></div>
+font-style: inherit;"># &gt; Finished chain.</span></span></code></pre></div></div>
 <p>You can also add memory to the Agent:</p>
-<div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="im" style="color: #00769E;
 background-color: null;
 font-style: inherit;">from</span> langchain.memory <span class="im" style="color: #00769E;
 background-color: null;
@@ -2110,7 +2110,7 @@ background-color: null;
 font-style: inherit;">"What is the weather in san francisco right now?"</span></span>
 <span id="cb11-21">agent_executor.invoke({<span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"input"</span>:query})</span></code></pre></div>
+font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
 </section>
 <section id="the-1000x-ai-engineer" class="level2">
 <h2 class="anchored" data-anchor-id="the-1000x-ai-engineer">The 1000x AI Engineer</h2>

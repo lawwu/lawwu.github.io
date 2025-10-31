@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -71,14 +71,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-d68be38d83eca2bb035acf846ffba811.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -167,6 +168,8 @@ cookieconsent.run({
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Lawrence Wu</span>
     </a>
@@ -288,20 +291,20 @@ cookieconsent.run({
 <p>One of the examples he is using throughout the course is fine-tuning an LLM to generate Honeycomb queries. So you can turn natural language into a domain specific language. My goal was to reproduce the model he trained <a href="https://huggingface.co/parlance-labs/hc-mistral-alpaca">here</a>. Here are the steps I took to reproduce what Hamel did:</p>
 <p>The class gave us $200 of Jarvislabs credits so I spun up a VM using the <a href="https://jarvislabs.ai/templates/axolotl">Axolotl template</a>. I picked an <del>RTX5000 with 16GB VRAM</del> 1x A100 with 100GB of disk space. The default 20GB of disk space is not enough as the base models take 5-10GB of space each.</p>
 <p>I cloned the repo:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> lfs install</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://huggingface.co/parlance-labs/hc-mistral-alpaca</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> lfs install</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://huggingface.co/parlance-labs/hc-mistral-alpaca</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I logged into Weights and Biases:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install wandb</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install wandb</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb</span> login</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># paste your api key from https://wandb.ai/home</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># paste your api key from https://wandb.ai/home</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I logged into Huggingface. Make sure your token has <code>WRITE</code> access:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-U</span> <span class="st">"huggingface_hub[cli]"</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-U</span> <span class="st">"huggingface_hub[cli]"</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">huggingface-cli</span> login</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># paste your huggingface token from https://huggingface.co/settings/tokens</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># paste your huggingface token from https://huggingface.co/settings/tokens</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="fine-tuning-with-a-smaller-sample" class="level1">
 <h1>Fine-Tuning with a Smaller Sample</h1>
 <p>I sampled 100 rows of his training data to make the first fine-tune go faster. The uploaded model to huggingface is <a href="https://huggingface.co/lawrencewu/hc-mistral-7B-v0.3-alpaca-first-100">here</a>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> read_jsonl(file_path):</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> []</span>
@@ -329,9 +332,9 @@ cookieconsent.run({
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="co"># Write the first 100 rows to the output file</span></span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>write_jsonl(first_100_rows, output_file_path)</span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"First 100 rows have been written to </span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"First 100 rows have been written to </span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This is the Axolotl config file I wound up with below. Some changes I made: - updated the base model to <code>mistralai/Mistral-7B-v0.3</code> - used a smaller dataset <code>data/output_first_100.jsonl</code> - updated <code>hub_model_id</code> and <code>wandb_project</code> and <code>wandb_entity</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">base_model</span><span class="kw">:</span><span class="at"> mistralai/Mistral-7B-v0.3</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">base_model</span><span class="kw">:</span><span class="at"> mistralai/Mistral-7B-v0.3</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model_type</span><span class="kw">:</span><span class="at"> MistralForCausalLM</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tokenizer_type</span><span class="kw">:</span><span class="at"> LlamaTokenizer</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">is_mistral_derived_model</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
@@ -419,11 +422,11 @@ cookieconsent.run({
 <span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">bos_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;s&gt;"</span></span>
 <span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">eos_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;/s&gt;"</span></span>
 <span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">unk_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;unk&gt;"</span></span>
-<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="fu">save_safetensors</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="fu">save_safetensors</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I launched the training script:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">accelerate</span> launch <span class="at">-m</span> axolotl.cli.train hc-first-100.yml </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">accelerate</span> launch <span class="at">-m</span> axolotl.cli.train hc-first-100.yml </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Weighs and biases provides a nice summary of the run too:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> / 0.123 MB of 0.123 MB uploaded</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> / 0.123 MB of 0.123 MB uploaded</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Run history:</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>               eval/loss █▇▁</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>            eval/runtime ▁▅█</span>
@@ -454,14 +457,14 @@ cookieconsent.run({
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> 🚀 View run scarlet-lake-4 at: https://wandb.ai/law/hc-axolotl-mistral/runs/wrnox7vk</span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral</span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Synced 6 W<span class="kw">&amp;</span><span class="ex">B</span> file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span><span class="ex">,</span> 0 media file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span><span class="ex">,</span> 1 artifact file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span> <span class="ex">and</span> 1 other file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Find logs at: ./wandb/run-20240523_235927-wrnox7vk/logs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Find logs at: ./wandb/run-20240523_235927-wrnox7vk/logs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="some-things-i-learned" class="level1">
 <h1>Some things I learned</h1>
 <section id="runtimeerror-_amp_foreach_non_finite_check_and_unscale_cuda-not-implemented-for-bfloat16" class="level2">
 <h2 class="anchored" data-anchor-id="runtimeerror-_amp_foreach_non_finite_check_and_unscale_cuda-not-implemented-for-bfloat16">RuntimeError: “_amp_foreach_non_finite_check_and_unscale_cuda” not implemented for ‘BFloat16’</h2>
 <p>For one run I got this error:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iciency_estimate:</span> 0.96 total_num_tokens per device: 414041</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">iciency_estimate:</span> 0.96 total_num_tokens per device: 414041</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Traceback</span> <span class="er">(</span><span class="ex">most</span> recent call last<span class="kw">)</span><span class="bu">:</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">File</span> <span class="st">"/root/miniconda3/envs/py3.10/lib/python3.10/runpy.py"</span>, line 196, in _run_module_as_main</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ex">_run_code</span><span class="er">(</span><span class="ex">code,</span> main_globals, None,</span>
@@ -493,13 +496,13 @@ cookieconsent.run({
 <span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="va">optimizer_state</span><span class="op">[</span><span class="st">"found_inf_per_device"</span><span class="op">]</span> <span class="ex">=</span> self._unscale_grads_<span class="er">(</span></span>
 <span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  <span class="ex">File</span> <span class="st">"/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/torch/cuda/amp/grad_scaler.py"</span>, line 248, in _unscale_grads_</span>
 <span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">torch._amp_foreach_non_finite_check_and_unscale_</span><span class="er">(</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="ex">RuntimeError:</span> <span class="st">"_amp_foreach_non_finite_check_and_unscale_cuda"</span> not implemented for <span class="st">'BFloat16'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="ex">RuntimeError:</span> <span class="st">"_amp_foreach_non_finite_check_and_unscale_cuda"</span> not implemented for <span class="st">'BFloat16'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Setting the parameter <code>bf16: false</code> resolved this issue. Although switching from an RTX5000 GPU to a 1x A100 GPU also resolved the issue.</p>
 </section>
 <section id="running-out-of-gpu-memory" class="level2">
 <h2 class="anchored" data-anchor-id="running-out-of-gpu-memory">Running out of GPU memory</h2>
 <p>I had a run where the GPU ran out of memory.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torch.cuda.OutOfMemoryError:</span> CUDA out of memory. Tried to allocate 784.00 MiB. GPU 0 has a total capacty of 15.74 GiB of which 58.62 MiB is free. Process 1065967 has 15.67 GiB memory in use. Of the allocated memory 13.22 GiB is allocated by PyTorch, and 2.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">torch.cuda.OutOfMemoryError:</span> CUDA out of memory. Tried to allocate 784.00 MiB. GPU 0 has a total capacty of 15.74 GiB of which 58.62 MiB is free. Process 1065967 has 15.67 GiB memory in use. Of the allocated memory 13.22 GiB is allocated by PyTorch, and 2.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> 🚀 View run crimson-aardvark-1 at: https://wandb.ai/law/hc-axolotl-mistral/runs/itak6glk</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Synced 6 W<span class="kw">&amp;</span><span class="ex">B</span> file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span><span class="ex">,</span> 0 media file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span><span class="ex">,</span> 1 artifact file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span> <span class="ex">and</span> 1 other file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span></span>
@@ -513,14 +516,14 @@ cookieconsent.run({
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">simple_launcher</span><span class="er">(</span><span class="ex">args</span><span class="kw">)</span></span>
 <span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>  <span class="ex">File</span> <span class="st">"/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/accelerate/commands/launch.py"</span>, line 688, in simple_launcher</span>
 <span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">raise</span> subprocess.CalledProcessError<span class="er">(</span><span class="va">returncode</span><span class="op">=</span>process.returncode, <span class="va">cmd</span><span class="op">=</span>cmd<span class="kw">)</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="ex">subprocess.CalledProcessError:</span> Command <span class="st">'['</span>/root/miniconda3/envs/py3.10/bin/python<span class="st">', '</span>-m<span class="st">', '</span>axolotl.cli.train<span class="st">', '</span>hc-first-100.yml<span class="st">']'</span> returned non-zero exit status 1.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="ex">subprocess.CalledProcessError:</span> Command <span class="st">'['</span>/root/miniconda3/envs/py3.10/bin/python<span class="st">', '</span>-m<span class="st">', '</span>axolotl.cli.train<span class="st">', '</span>hc-first-100.yml<span class="st">']'</span> returned non-zero exit status 1.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I wound up needing to use a larger GPU to finetune <code>mistralai/Mistral-7B-v0.3</code>.</p>
 </section>
 </section>
 <section id="fine-tuning-with-the-full-dataset" class="level1">
 <h1>Fine-Tuning with the full dataset</h1>
 <p>The config file I used is below:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">base_model</span><span class="kw">:</span><span class="at"> mistralai/Mistral-7B-v0.3</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">base_model</span><span class="kw">:</span><span class="at"> mistralai/Mistral-7B-v0.3</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model_type</span><span class="kw">:</span><span class="at"> MistralForCausalLM</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tokenizer_type</span><span class="kw">:</span><span class="at"> LlamaTokenizer</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="fu">is_mistral_derived_model</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
@@ -608,12 +611,12 @@ cookieconsent.run({
 <span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">bos_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;s&gt;"</span></span>
 <span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">eos_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;/s&gt;"</span></span>
 <span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">unk_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;unk&gt;"</span></span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="fu">save_safetensors</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="fu">save_safetensors</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I launched a run with:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">accelerate</span> launch <span class="at">-m</span> axolotl.cli.train hc.yml</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">accelerate</span> launch <span class="at">-m</span> axolotl.cli.train hc.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I didn’t finish this run because it was going to take ~30 hours.</p>
 <p>The logs are here:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@6df7cfbf0d81:~/axolotl/hc-mistral-alpaca#</span> accelerate launch <span class="at">-m</span> axolotl.cli.train hc.yml</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">root@6df7cfbf0d81:~/axolotl/hc-mistral-alpaca#</span> accelerate launch <span class="at">-m</span> axolotl.cli.train hc.yml</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> following values were not passed to <span class="kw">`</span><span class="ex">accelerate</span> launch<span class="kw">`</span> and had defaults used instead:</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">`</span><span class="ex">--num_processes</span><span class="kw">`</span> was set to a value of <span class="kw">`</span><span class="ex">1</span><span class="kw">`</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="kw">`</span><span class="ex">--num_machines</span><span class="kw">`</span> was set to a value of <span class="kw">`</span><span class="ex">1</span><span class="kw">`</span></span>
@@ -1038,7 +1041,7 @@ cookieconsent.run({
 <span id="cb12-423"><a href="#cb12-423" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: 🚀 View run lyric-wildflower-5 at: https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2</span></span>
 <span id="cb12-424"><a href="#cb12-424" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral</span></span>
 <span id="cb12-425"><a href="#cb12-425" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: Synced 6 W&amp;B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)</span></span>
-<span id="cb12-426"><a href="#cb12-426" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: Find logs at: ./wandb/run-20240524_000556-iewv47f2/logs</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-426"><a href="#cb12-426" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: Find logs at: ./wandb/run-20240524_000556-iewv47f2/logs</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>
@@ -1095,13 +1098,14 @@ cookieconsent.run({
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
