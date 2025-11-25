@@ -1,6 +1,7 @@
 ---
 title: 'Summary of Armin''s Talk - Agentic Coding Ecosystem 2025: Navigating the Tool
   Explosion'
+author: Lawrence Wu
 date: '2025-08-14'
 categories: [ai, events, summary]
 ---

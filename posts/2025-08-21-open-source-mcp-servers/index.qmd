@@ -1,5 +1,6 @@
 ---
 title: Why Companies Should Open Source and Host Their Own MCP Servers
+author: Lawrence Wu
 date: 2025-08-21
 categories: [ai]
 ---
