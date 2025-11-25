@@ -10,6 +10,7 @@ format:
   html:
     code-overflow: wrap
 execute:
+  eval: false
   freeze: true
 ---
 
