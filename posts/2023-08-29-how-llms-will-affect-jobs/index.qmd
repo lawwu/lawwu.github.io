@@ -9,6 +9,7 @@ format:
     code-overflow: wrap
 execute:
   freeze: true
+  eval: false  
 ---
 
 I have been interested in how language models will affect the future of work. Having worked with LLMs the last ~6 months, I've seen their impact on my work as a data scientist. Jason Wei gave a talk at KDD 2023 called [Scaling, Emergence and Reasoning in Large Language Models](https://docs.google.com/presentation/d/1hQF8EXNdePFPpws_jxwqHWi5ohV_TeGL17WIjvUvG6E/edit?resourcekey=0-xA6WdGyYp1EexLgoXgjOjg#slide=id.g16197112905_0_0) that was great. He works at the intersection of LLMs and AI Research and has a good view into how LLMs will change the field of AI Research. We need this same sort of thinking applied in other fields to get a sense for how to answer the question "How will LLMs change the future of work?” It's important for more people to be aware the potential for LLMs to disrupt jobs and to get ahead of any changes.
