@@ -1,7 +1,7 @@
 ---
 title: 'Building Career Intelligence with MCP Lightcast: A Model Context Protocol
   Server for Job Market Data'
-author: MCP Lightcast Team
+author: Lawrence Wu
 date: '2025-08-21'
 format:
   html:
@@ -16,6 +16,8 @@ categories: [ai, career]
 description: Discover how MCP Lightcast brings real-world job market intelligence
   to AI assistants through seamless integration with Lightcast's comprehensive career
   data APIs.
+execute:
+  eval: false
 ---
 
 ## Introduction: Bridging AI and Career Intelligence
