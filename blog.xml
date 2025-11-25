@@ -9,7 +9,7 @@
 <link>https://lawwu.github.io/blog.html/blog.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.8.25</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Thu, 30 Oct 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>First Marathon Reflections</title>
@@ -109,8 +109,22 @@
 <li>Bible:
 <ul>
 <li>knowledge: understanding the reliability of the Bible, different genre’s of the Bible (I really benefitted from Fee’s <a href="https://amzn.to/4nHxh0Y">How to Read the Bible for All It’s Worth</a>), understanding different types of theology: Biblical Theology, Historical Theology, Systematic Theology and Practical Theology (I’ve learned a lot from DeRouchie and Naselli’s books on <a href="https://amzn.to/43NgRg7">Old Testament</a> and <a href="https://amzn.to/4nHxktG">New Testament Exegesis</a>)</li>
-<li>practice: there are different ways to grow in the Word. Devotions (reading 1 chapter a day, reading a few verses at a time, reading 4 chapters a day (Disciples reading plan, Piper likes this), reading 1 book of the Bible a day (JMac)), there’s doing inductive Bible study by reading one passage (reading multiple translations, understanding the context, asking questions), doing deeper study Biblical theology type study on a topic like what is the temple and how that idea develops between the OT and NT</li>
+<li>practice: there are different ways to grow in the Word. Devotions (reading 1 chapter a day, reading a few verses at a time, reading 4 chapters a day (Disciples reading plan, Piper likes this), reading 1 book of the Bible a day (JMac)), there’s doing inductive Bible study by reading one passage (reading multiple translations, understanding the context, asking questions), doing deeper study Biblical theology type study on a topic like what is the temple and how that idea develops between the OT and</li>
 </ul></li>
+</ul>
+<p>This applies to all kinds of topics like:</p>
+<ul>
+<li>reading</li>
+<li>writing</li>
+<li>marriage</li>
+<li>parenting/kids</li>
+<li>lifting weights</li>
+<li>eating / nutrition</li>
+<li>fishing</li>
+<li>camping</li>
+<li>learning a music instrument</li>
+<li>cooking, baking</li>
+<li>personal productivity</li>
 </ul>
 <p>The lesson here is if you want to grow in an area, there’s knowledge you need to accumulate and different forms of practice you need to engage in.</p>
 </section>
@@ -139,7 +153,7 @@
 </section>
 
  ]]></description>
-  <category>Running</category>
+  <category>running</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-10-30-first-marathon-reflections/</guid>
   <pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate>
 </item>
@@ -370,8 +384,7 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 </section>
 
  ]]></description>
-  <category>Learn</category>
-  <category>AI</category>
+  <category>ai</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-09-09-how-to-learn-ai/</guid>
   <pubDate>Tue, 09 Sep 2025 00:00:00 GMT</pubDate>
 </item>
@@ -649,10 +662,7 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 </section>
 
  ]]></description>
-  <category>AI</category>
-  <category>MCP</category>
-  <category>LLMs</category>
-  <category>Claude Code</category>
+  <category>ai</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-08-21-open-source-mcp-servers/</guid>
   <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
 </item>
@@ -1162,10 +1172,9 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 </section>
 
  ]]></description>
-  <category>AI</category>
-  <category>Claude Code</category>
-  <category>Claude</category>
-  <category>Conference</category>
+  <category>ai</category>
+  <category>events</category>
+  <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-08-14-claude-code-conference-summary/</guid>
   <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
 </item>
@@ -1216,10 +1225,9 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 </section>
 
  ]]></description>
-  <category>AI</category>
-  <category>Coding</category>
-  <category>Tools</category>
-  <category>Agents</category>
+  <category>ai</category>
+  <category>events</category>
+  <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-08-14-armin-agentic-coding-ecosystem/</guid>
   <pubDate>Thu, 14 Aug 2025 00:00:00 GMT</pubDate>
 </item>
@@ -1476,8 +1484,8 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 </section>
 
  ]]></description>
-  <category>Claude Code</category>
-  <category>Agents</category>
+  <category>ai</category>
+  <category>events</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-07-18-claude-code-camp/</guid>
   <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
 </item>
@@ -1566,8 +1574,7 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 </section>
 
  ]]></description>
-  <category>Claude Code</category>
-  <category>Agents</category>
+  <category>ai</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-07-18-starting-to-use-claude-code/</guid>
   <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
 </item>
@@ -1592,9 +1599,8 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 
 
  ]]></description>
-  <category>LangChain</category>
-  <category>Conference</category>
-  <category>Recap</category>
+  <category>ai</category>
+  <category>events</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-05-30-langchain-interrupt-lwu-recap/</guid>
   <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
 </item>
@@ -1694,7 +1700,7 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 </section>
 
  ]]></description>
-  <category>AI</category>
+  <category>ai</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-05-27-levels-of-ai-use/</guid>
   <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
 </item>
@@ -2411,9 +2417,8 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 </section>
 
  ]]></description>
-  <category>LangChain</category>
-  <category>Conference</category>
-  <category>Recap</category>
+  <category>ai</category>
+  <category>events</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-05-23-langchain-interrupt-2025-recap/</guid>
   <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
 </item>
@@ -2510,8 +2515,8 @@ Business knowledge is widespread, but deep tech knowledge and instincts are rare
 </section>
 
  ]]></description>
-  <category>AI</category>
-  <category>LLMs</category>
+  <category>ai</category>
+  <category>events</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-05-13-andrew-ng-harrison-chase-fireside-chat/</guid>
   <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
 </item>
@@ -4650,8 +4655,8 @@ font-style: inherit;">"user_preferences"</span>, result.preferences)</span></cod
 </section>
 
  ]]></description>
-  <category>LangChain</category>
-  <category>Conference</category>
+  <category>ai</category>
+  <category>events</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/</guid>
   <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
 </item>
@@ -4772,8 +4777,8 @@ font-style: inherit;">"user_preferences"</span>, result.preferences)</span></cod
 </section>
 
  ]]></description>
-  <category>LLMs</category>
-  <category>Summary</category>
+  <category>ai</category>
+  <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-02-24-karpathy-deep-dive-llms/</guid>
   <pubDate>Mon, 24 Feb 2025 00:00:00 GMT</pubDate>
 </item>
@@ -4824,8 +4829,7 @@ font-style: inherit;">"user_preferences"</span>, result.preferences)</span></cod
 </section>
 
  ]]></description>
-  <category>Running</category>
-  <category>Fitness</category>
+  <category>running</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-02-02-second-half-marathon/</guid>
   <pubDate>Sun, 02 Feb 2025 00:00:00 GMT</pubDate>
 </item>
@@ -5081,9 +5085,8 @@ font-style: inherit;">"user_preferences"</span>, result.preferences)</span></cod
 </section>
 
  ]]></description>
-  <category>Running</category>
-  <category>Fitness</category>
-  <category>Christian Life</category>
+  <category>running</category>
+  <category>faith</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/</guid>
   <pubDate>Sun, 13 Oct 2024 00:00:00 GMT</pubDate>
 </item>
@@ -6007,10 +6010,8 @@ font-style: inherit;">1</span>:]:</span>
 </section>
 
  ]]></description>
-  <category>LangGraph</category>
-  <category>LLMs</category>
-  <category>Agents</category>
-  <category>Python</category>
+  <category>ai</category>
+  <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-09-20-langgraph-tutorial/</guid>
   <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
 </item>
@@ -6418,9 +6419,8 @@ font-style: inherit;">7. </span>The importance of maintaining biblical standards
 </section>
 
  ]]></description>
-  <category>God</category>
-  <category>Marriage</category>
-  <category>Summary</category>
+  <category>faith</category>
+  <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-08-14-gods-design-for-marriage/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
@@ -6806,7 +6806,8 @@ font-style: inherit;">7. </span>The importance of maintaining biblical standards
 </section>
 
  ]]></description>
-  <category>LLMs</category>
+  <category>ai</category>
+  <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-07-26-dwarkesh-claude/</guid>
   <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
 </item>
@@ -6896,8 +6897,7 @@ font-style: inherit;">7. </span>The importance of maintaining biblical standards
 </section>
 
  ]]></description>
-  <category>layoffs</category>
-  <category>UKG</category>
+  <category>career</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-07-09-what-to-do-after-layoffs/</guid>
   <pubDate>Tue, 09 Jul 2024 00:00:00 GMT</pubDate>
 </item>
@@ -15254,9 +15254,7 @@ font-style: inherit;">wandb: Find logs at: ./wandb/run-20240524_000556-iewv47f2/
 </section>
 
  ]]></description>
-  <category>LLMs</category>
-  <category>Fine-tune</category>
-  <category>Axolotl</category>
+  <category>ai</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-05-23-first-axolotl-finetune/</guid>
   <pubDate>Thu, 23 May 2024 00:00:00 GMT</pubDate>
 </item>
