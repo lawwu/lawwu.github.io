@@ -67,7 +67,7 @@ MCP Lightcast is built with enterprise-grade reliability in mind:
 
 The codebase follows clean architecture principles:
 
-```python
+```
 # Dynamic OAuth scoping based on API requirements
 API_SCOPES = {
     "skills": "emsi_open",
@@ -100,7 +100,7 @@ Built on [FastMCP](https://github.com/phdowling/fastmcp), the server provides:
 
 One of the most powerful features is the ability to analyze career pathways:
 
-```python
+```
 # Example: Find skills needed to transition from Data Analyst to Data Scientist
 async with TitleNormalizationWorkflow() as workflow:
     result = await workflow.normalize_title_and_get_skills(
@@ -118,7 +118,7 @@ async with TitleNormalizationWorkflow() as workflow:
 
 Transform unstructured job postings into actionable skill insights:
 
-```python
+```
 # Extract skills from a job description
 job_description = """
 We're looking for a Python developer with experience in 
@@ -137,7 +137,7 @@ skills = await classification_client.extract_skills_from_text(
 
 Access real-time job market data:
 
-```python
+```
 # Get top skills for software engineers
 top_skills = await job_postings_client.get_top_skills(
     occupation_ids=["15-1252.00"],  # Software Developers SOC code
@@ -240,7 +240,7 @@ make dev-server
 
 ### Built-in Resilience
 
-```python
+```
 # Automatic retry logic with exponential backoff
 async def _make_request(self, method, endpoint, **kwargs):
     try:
@@ -304,7 +304,7 @@ We welcome contributions in:
 
 ### Error Handling and Resilience
 
-```python
+```
 class BaseLightcastClient:
     async def _make_request(self, method, endpoint, **kwargs):
         """Make authenticated request with comprehensive error handling."""
@@ -338,7 +338,7 @@ class BaseLightcastClient:
 
 The system supports flexible configuration through multiple layers:
 
-```python
+```
 # Environment-based configuration with fallbacks
 class LightcastConfig(BaseSettings):
     model_config = ConfigDict(extra="ignore")
