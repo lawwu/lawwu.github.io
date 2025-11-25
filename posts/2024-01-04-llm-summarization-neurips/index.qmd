@@ -10,6 +10,7 @@ format:
     code-overflow: wrap
 execute:
   freeze: true
+  eval: false  
 ---
 
 I didn't get the chance to attend NeurIPS last week. The sheer number of papers submitted is [staggering](https://blog.neurips.cc/tag/neurips2023/): 13,300 submitted papers that were reviewed by 1,000+ people. 3,540 papers were accepted and 502 papers were flagged for ethics reviews!

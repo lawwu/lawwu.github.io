@@ -10,6 +10,7 @@ format:
     code-overflow: wrap
 execute:
   freeze: true
+  eval: false
 ---
 
 Google's latest LLM called Gemini was released in December. Google trained three model sizes: Nano, Gemini and Ultra (small, medium and large respectively). Ultra hasn't been released publicly yet. There are reports that Gemini has similar performance to `gpt-3.5-turbo`. Based on lmsys' [Chatbot Arena Leaderboard](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard), Gemini Pro's Elo is `1111` while `gpt-3.5-turbo-0613` is a tick higher at `1117` (as of this writing 2023-12-26).
