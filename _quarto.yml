@@ -20,8 +20,6 @@ website:
         href: blog.qmd
       - text: Projects
         href: projects.qmd
-      - text: Conferences
-        href: conferences.qmd
       - text: TIL
         href: https://lawwu.github.io/til/
       - icon: github
