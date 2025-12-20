@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>conferences – Lawrence Wu</title>
+<title>claude – Lawrence Wu</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +65,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/cookie-consent/cookie-consent.js"></script>
 <link href="site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
@@ -72,35 +105,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-reading-time','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
 
 <script type="text/plain" cookie-consent="tracking">
@@ -155,48 +159,21 @@ cookieconsent.run({
   BLB.Tagger.NoSearchClassNames = 'noTag doNotTag';
 </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Lawrence Wu" href="conferences.xml" data-external="1"><meta property="og:title" content="Lawrence Wu">
+<meta property="og:title" content="Lawrence Wu">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
 <meta property="og:site_name" content="Lawrence Wu">
 <meta name="twitter:title" content="Lawrence Wu">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -250,324 +227,111 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(10)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(2)</span></div><div class="category" data-category="QUklMjBFbmdpbmVlcmluZw==">AI Engineering <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q2F1c2FsJTIwSW5mZXJlbmNl">Causal Inference <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29tbXVuaWNhdGlvbg==">Communication <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q29uZmVyZW5jZQ==">Conference <span class="quarto-category-count">(10)</span></div><div class="category" data-category="RXZhbHVhdGlvbg==">Evaluation <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R29k">God <span class="quarto-category-count">(6)</span></div><div class="category" data-category="SHVzYmFuZHM=">Husbands <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Sm9obiUyMFN0cmVldA==">John Street <span class="quarto-category-count">(6)</span></div><div class="category" data-category="S0RE">KDD <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGFuZ0NoYWlu">LangChain <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExN">LLM <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TExNcw==">LLMs <span class="quarto-category-count">(2)</span></div><div class="category" data-category="TWFycmlhZ2U=">Marriage <span class="quarto-category-count">(6)</span></div><div class="category" data-category="TWFzdGVyaW5nJTIwTExNcw==">Mastering LLMs <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2l2ZXM=">Wives <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="Q29uZmVyZW5jZSUyQ0xhbmdDaGFpbg==" data-listing-date-sort="1748563200000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2025-05-30-langchain-interrupt-2025/index.html" class="no-external">LangChain Interrupt Agent Conference 2025</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGFuZ0NoYWlu'); return false;">LangChain</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2025-05-30-langchain-interrupt-2025/index.html" class="no-external">
-Some content related to the LangChain Conference:
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2025-05-30-langchain-interrupt-2025/index.html" class="no-external">
-<div class="listing-date">
-May 30, 2025
-</div>
-<div class="listing-reading-time">1 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="Q29uZmVyZW5jZSUyQ01hcnJpYWdlJTJDR29kJTJDSm9obiUyMFN0cmVldA==" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="452">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-08-14-john-street-1-marriage/index.html" class="no-external">John Street - God’s Design for Marriage</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">Marriage</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">God</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9obiUyMFN0cmVldA=='); return false;">John Street</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-08-14-john-street-1-marriage/index.html" class="no-external">
-Note: This summary is AI generated by Claude 3.5 Sonnet.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-08-14-john-street-1-marriage/index.html" class="no-external">
-<div class="listing-date">
-Aug 14, 2024
-</div>
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="Q29uZmVyZW5jZSUyQ01hcnJpYWdlJTJDR29kJTJDSm9obiUyMFN0cmVldCUyQ0h1c2JhbmRz" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5" data-listing-word-count-sort="875">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-08-14-john-street-2-husbands/index.html" class="no-external">John Street - God’s Design for Husbands</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">Marriage</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">God</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9obiUyMFN0cmVldA=='); return false;">John Street</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('SHVzYmFuZHM='); return false;">Husbands</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-08-14-john-street-2-husbands/index.html" class="no-external">
-Note: This summary is AI generated by Claude 3 Opus and Claude 3.5 Sonnet. I actually preferred Claude 3.5 Sonnet’s summary. See the appendix for the Opus summary.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-08-14-john-street-2-husbands/index.html" class="no-external">
-<div class="listing-date">
-Aug 14, 2024
-</div>
-<div class="listing-reading-time">5 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="Q29uZmVyZW5jZSUyQ01hcnJpYWdlJTJDR29kJTJDSm9obiUyMFN0cmVldCUyQ1dpdmVz" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="436">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-08-14-john-street-3-wives/index.html" class="no-external">John Street - God’s Design for Wives</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">Marriage</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">God</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9obiUyMFN0cmVldA=='); return false;">John Street</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2l2ZXM='); return false;">Wives</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-08-14-john-street-3-wives/index.html" class="no-external">
-Note: This summary is AI generated by Claude 3.5 Sonnet.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-08-14-john-street-3-wives/index.html" class="no-external">
-<div class="listing-date">
-Aug 14, 2024
-</div>
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="Q29uZmVyZW5jZSUyQ01hcnJpYWdlJTJDR29kJTJDSm9obiUyMFN0cmVldCUyQ0NvbW11bmljYXRpb24=" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="635">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-08-14-john-street-4-communication/index.html" class="no-external">John Street - God’s Design for Communication</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">Marriage</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">God</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9obiUyMFN0cmVldA=='); return false;">John Street</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29tbXVuaWNhdGlvbg=='); return false;">Communication</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-08-14-john-street-4-communication/index.html" class="no-external">
-Note: This summary is AI generated by Claude 3.5 Sonnet.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-08-14-john-street-4-communication/index.html" class="no-external">
-<div class="listing-date">
-Aug 14, 2024
-</div>
-<div class="listing-reading-time">4 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="Q29uZmVyZW5jZSUyQ01hcnJpYWdlJTJDR29kJTJDSm9obiUyMFN0cmVldA==" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="603">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-08-14-john-street-5-marital-union/index.html" class="no-external">John Street - God’s Design for Marital Union</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">Marriage</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">God</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9obiUyMFN0cmVldA=='); return false;">John Street</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-08-14-john-street-5-marital-union/index.html" class="no-external">
-Note: This summary is AI generated by Claude 3.5 Sonnet.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-08-14-john-street-5-marital-union/index.html" class="no-external">
-<div class="listing-date">
-Aug 14, 2024
-</div>
-<div class="listing-reading-time">4 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="Q29uZmVyZW5jZSUyQ01hcnJpYWdlJTJDR29kJTJDSm9obiUyMFN0cmVldA==" data-listing-date-sort="1723593600000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1061">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-08-14-john-street-6-qa/index.html" class="no-external">John Street - God’s Design for Marriage Q&amp;A</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFycmlhZ2U='); return false;">Marriage</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('R29k'); return false;">God</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Sm9obiUyMFN0cmVldA=='); return false;">John Street</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-08-14-john-street-6-qa/index.html" class="no-external">
-Note: This summary is AI generated by Claude 3.5 Sonnet.
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-08-14-john-street-6-qa/index.html" class="no-external">
-<div class="listing-date">
-Aug 14, 2024
-</div>
-<div class="listing-reading-time">6 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="Q29uZmVyZW5jZSUyQ0FJJTJDTExNcyUyQ01hc3RlcmluZyUyMExMTXMlMkNFdmFsdWF0aW9u" data-listing-date-sort="1716854400000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="466">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2024-05-28-mllms-workshop3/index.html" class="no-external">Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting &amp; Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TWFzdGVyaW5nJTIwTExNcw=='); return false;">Mastering LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXZhbHVhdGlvbg=='); return false;">Evaluation</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2024-05-28-mllms-workshop3/index.html" class="no-external">
-
-
+<section id="claude.md" class="level1">
+<h1>CLAUDE.md</h1>
+<p>This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.</p>
+<section id="project-overview" class="level2">
+<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
+<p>This is Lawrence Wu’s personal website/blog built with <a href="https://quarto.org/">Quarto</a>. It’s a static site generator that combines Markdown with executable code blocks, similar to Jupyter notebooks. The site includes blog posts, project pages, and conference notes.</p>
+</section>
+<section id="key-commands" class="level2">
+<h2 class="anchored" data-anchor-id="key-commands">Key Commands</h2>
+<section id="local-development" class="level3">
+<h3 class="anchored" data-anchor-id="local-development">Local Development</h3>
 <ul>
-<li>Evaluation is critical: It drives the iterative process of improving your LLM application, enabling you to make informed decisions about prompt engineering, fine-tuning…</li><li></li><li></li><li></li><li></li></ul>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2024-05-28-mllms-workshop3/index.html" class="no-external">
-<div class="listing-date">
-May 28, 2024
-</div>
-<div class="listing-reading-time">3 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="Q29uZmVyZW5jZSUyQ0FJJTJDTExNcyUyQ0FJJTIwRW5naW5lZXJpbmc=" data-listing-date-sort="1696896000000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="41" data-listing-word-count-sort="8113">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2023-10-10-ai-engineer-summit/index.html" class="no-external">AI Engineer Summit 2023</a>
-</h3>
-<div class="listing-categories">
+<li><code>quarto preview</code> - Start local development server with live reload</li>
+<li><code>quarto render</code> - Build the site locally (outputs to <code>docs/</code> directory)</li>
+<li><code>make render</code> - Alternative way to render using Makefile</li>
+</ul>
+</section>
+<section id="deployment" class="level3">
+<h3 class="anchored" data-anchor-id="deployment">Deployment</h3>
+<p>The site uses automated GitHub Actions deployment: - Pushes to <code>main</code> branch automatically trigger deployment - Manual deployment: Go to Actions tab → “Quarto Publish” workflow → “Run workflow” - Site is published to <code>gh-pages</code> branch and served via GitHub Pages</p>
+</section>
+</section>
+<section id="architecture" class="level2">
+<h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
+<section id="directory-structure" class="level3">
+<h3 class="anchored" data-anchor-id="directory-structure">Directory Structure</h3>
+<ul>
+<li><code>posts/</code> - Blog posts, each in date-named subdirectories with <code>index.qmd</code> files</li>
+<li><code>conferences/</code> - Conference notes and summaries<br>
+</li>
+<li><code>docs/</code> - Rendered HTML output (auto-generated, don’t edit directly)</li>
+<li><code>_freeze/</code> - Quarto’s computational cache (auto-generated)</li>
+<li><code>images/</code> - Static images and assets</li>
+<li><code>js/</code> - JavaScript files (e.g., GitHub stars widget)</li>
+</ul>
+</section>
+<section id="configuration-files" class="level3">
+<h3 class="anchored" data-anchor-id="configuration-files">Configuration Files</h3>
+<ul>
+<li><code>_quarto.yml</code> - Main Quarto configuration (site structure, theme, navbar)</li>
+<li><code>posts/_metadata.yml</code> - Default settings for all blog posts (author, TOC, comments)</li>
+<li><code>.github/workflows/publish.yml</code> - GitHub Actions deployment workflow</li>
+<li><code>.python-version</code> - Python version (3.12.9) for reproducible builds</li>
+</ul>
+</section>
+<section id="content-format" class="level3">
+<h3 class="anchored" data-anchor-id="content-format">Content Format</h3>
+<ul>
+<li>All content is written in <code>.qmd</code> (Quarto Markdown) files</li>
+<li>Supports executable Python/R code blocks that run during rendering</li>
+<li>Blog posts use YAML frontmatter for metadata (title, date, author, etc.)</li>
+<li>Comments powered by Utterances (GitHub issues-based)</li>
+</ul>
+</section>
+<section id="theme-and-styling" class="level3">
+<h3 class="anchored" data-anchor-id="theme-and-styling">Theme and Styling</h3>
+<ul>
+<li>Uses Cosmo Bootstrap theme</li>
+<li>Custom CSS in <code>styles.css</code></li>
+<li>Responsive design with navbar navigation</li>
+<li>Social media integration (Twitter cards, Open Graph)</li>
+</ul>
+</section>
+</section>
+<section id="development-notes" class="level2">
+<h2 class="anchored" data-anchor-id="development-notes">Development Notes</h2>
+<section id="adding-new-posts" class="level3">
+<h3 class="anchored" data-anchor-id="adding-new-posts">Adding New Posts</h3>
+<ol type="1">
+<li>Create new directory in <code>posts/</code> with format <code>YYYY-MM-DD-slug/</code></li>
+<li>Add <code>index.qmd</code> file with proper YAML frontmatter</li>
+<li>Include any images/assets in the same directory</li>
+<li>Quarto will automatically include in blog listing</li>
+</ol>
+</section>
+<section id="content-with-code" class="level3">
+<h3 class="anchored" data-anchor-id="content-with-code">Content with Code</h3>
+<ul>
+<li>Python code blocks are executed during rendering (requires Jupyter)</li>
+<li>Use <code>freeze: false</code> in metadata to re-execute code on each render</li>
+<li>Computational results are cached in <code>_freeze/</code> directory</li>
+</ul>
+</section>
+<section id="image-optimization" class="level3">
+<h3 class="anchored" data-anchor-id="image-optimization">Image Optimization</h3>
+<p>Use this command to compress PNG files:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install pngquant</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.png<span class="kw">;</span> <span class="cf">do</span> <span class="ex">pngquant</span> <span class="at">--force</span> <span class="at">--output</span> <span class="st">"</span><span class="va">$file</span><span class="st">"</span> <span class="at">--quality</span> 60-80 <span class="st">"</span><span class="va">$file</span><span class="st">"</span><span class="kw">;</span> <span class="cf">done</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
 
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
+</section>
+</section>
+</section>
 
-<div class="listing-category" onclick="window.quartoListingCategory('TExNcw=='); return false;">LLMs</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUklMjBFbmdpbmVlcmluZw=='); return false;">AI Engineering</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2023-10-10-ai-engineer-summit/index.html" class="no-external">
-sywx was the first to define the job title “AI Engineer” as a role in between a Data Scientist and Full Stack Software Engineer, someone that builds on top of large…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2023-10-10-ai-engineer-summit/index.html" class="no-external">
-<div class="listing-date">
-Oct 10, 2023
-</div>
-<div class="listing-reading-time">41 min</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="9" data-categories="Q29uZmVyZW5jZSUyQ0tERCUyQ0xMTSUyQ0NhdXNhbCUyMEluZmVyZW5jZQ==" data-listing-date-sort="1691366400000" data-listing-file-modified-sort="1766216948213" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="26" data-listing-word-count-sort="5160">
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./conferences/2023-08-07-kdd2023-day1/index.html" class="no-external">KDD 2023 - Workshops: LLM and Causal Inference</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q29uZmVyZW5jZQ=='); return false;">Conference</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('S0RE'); return false;">KDD</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TExN'); return false;">LLM</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q2F1c2FsJTIwSW5mZXJlbmNl'); return false;">Causal Inference</div>
-
-</div>
-<div class="delink listing-description"><a href="./conferences/2023-08-07-kdd2023-day1/index.html" class="no-external">
-I attended KDD 2023 which was held in Long Beach, CA from Aug 6-10. The first day I attended was Monday which had half-day workshops around a topic. The two I attended were…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./conferences/2023-08-07-kdd2023-day1/index.html" class="no-external">
-<div class="listing-date">
-Aug 7, 2023
-</div>
-<div class="listing-reading-time">26 min</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
