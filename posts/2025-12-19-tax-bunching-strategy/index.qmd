@@ -1,0 +1,88 @@
+---
+title: "Bunching Charitable Contributions in 2025"
+author: Lawrence Wu
+date: '2025-12-19'
+categories: [personal finance, taxes]
+---
+
+I recently took advantage of a strategy called "bunching" where you combine multiple years of charitable contributions into one year. I'll use a made up example here but you could plug in your own numbers.
+
+This strategy has worked in years past but it's gotten better because of the 2025 One Big Beautiful Bill Act which increased the SALT cap to $40,000 (from $10,000). SALT = state and local taxes, which can include income taxes (or sales taxes instead), plus property taxes. It's important here because you are allowed to deduct state and local income taxes from your federal return. This change is [effective for tax years 2025-2029](https://www.hrblock.com/tax-center/irs/tax-law-and-policy/one-big-beautiful-bill-salt-deduction/).
+
+## What is Bunching?
+
+The idea is simple:
+
+- **Year 1:** Donate 2 years worth of charity in one year → Itemize deductions 
+    - When I've done this, I give next year's amount (2026) in the last month of the prior year (Dec 2025).
+    - You could also put two years of charitable contributions into a Donor Advised Fund, take the itemized deduction in that year and then spread the donations out over two years.
+- **Year 2:** Make no charitable donations → Take standard deduction
+- **Result:** More total deductions over 2 years than taking the standard deduction both years
+
+You can also prepay property tax payments. Property tax is deductible in the year you *pay* it, not when it's due. In [Orange County, CA, property tax](https://taxbill.octreasurer.gov/) comes in two installments (December and April). In your bunching year, you can pay three installments: April, December and the next April (early). 
+
+It's kind of interesting if you search "california prepay property taxes", many of the articles (like [this one](https://www.sfchronicle.com/business/networth/article/Should-you-prepay-your-state-income-and-property-12448762.php) and this [Bogleheads post](https://www.bogleheads.org/forum/viewtopic.php?t=235950)) are from 2017 because the TCJA capped SALT deductions (including property tax) at $10,000 so it didn't make a lot of sense to prepay property tax like this.
+
+## Example Scenario
+
+Let's use a realistic example to see how this works:
+
+- Income: $150,000 (married filing jointly)
+- Location: California (or another high tax state)
+- Charitable giving: 10% of income = $15,000 per year, so $30,000 over 2 years
+- Property tax: $5,000/year
+- Mortgage interest: $10,000/year
+
+## The Result
+
+**Traditional approach:** Itemize $36,035 each year (charity + property tax + state tax + mortgage interest), total of $72,070 of total deductions.
+
+**Bunching strategy:**
+
+- Year 1: Itemize $53,535 (bunch 2 years of charity + accelerate property tax)
+- Year 2: Take $31,500 standard deduction (no charity, less property tax)
+- Total deductions of $85,035 (increased deductions of $12,965) which results in a tax savings of **~$2,803 over 2 years**
+
+Here's the visual breakdown:
+
+![Total deductions over 2 years](images/deductions_comparison.png)
+
+![Year-by-year breakdown](images/deductions_breakdown.png)
+
+## Should You Do This?
+
+Bunching works when your Year 1 itemized deductions exceed $31,500.
+
+**You're a good candidate if you have:**
+
+- Mortgage interest ($3,000+)
+- Regular charitable giving (8-10%+ of income)
+- High state taxes (CA, NY, NJ, etc.)
+- Property tax to accelerate
+
+**Skip it if:**
+
+- Your itemized deductions won't beat $31,500 even when bunched
+- You want simplicity (totally fair!)
+
+Here's when it starts to work based on your mortgage interest:
+
+![Threshold analysis](images/threshold_analysis.png)
+
+Higher income households benefit more because they pay more state tax:
+
+![Savings by income level](images/savings_by_income.png)
+
+## My Takeaway
+
+After running the numbers on scenarios like this, it's clear that bunching can be worthwhile for many households, especially with the higher SALT cap in 2025.
+
+Don't assume bunching works without running your own numbers. The 2025 tax changes help here. Under the old $10k SALT cap, this example would save $2,530. Under the new $40k cap, it saves $2,803.
+
+If you're in a high-tax state with a mortgage and regular charitable giving, spend some time to run the numbers for your specific situation.
+
+---
+
+*AI Disclaimer*: Claude Code & Claude Sonnet 4.5 helped me write this article and generate the ocde for these visualizations. I reviewed the output and made a bunch of edits which included deleting 75% of what was generated.
+
+*Disclaimer: This blog post is for educational purposes only and does not constitute tax, legal, or financial advice. Tax laws are complex and change frequently. Consult with a qualified tax professional about your specific situation before making any tax-related decisions.*
