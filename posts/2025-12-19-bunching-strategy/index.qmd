@@ -7,7 +7,13 @@ categories: [personal finance, taxes]
 
 I recently took advantage of a strategy called "bunching" where you combine multiple years of charitable contributions into one year. I'll use a made up example here but you could plug in your own numbers.
 
-This strategy has worked in years past but it's gotten better because of the 2025 One Big Beautiful Bill Act which increased the SALT cap to $40,000 (from $10,000). SALT = state and local taxes, which can include income taxes (or sales taxes instead), plus property taxes. It's important here because you are allowed to deduct state and local income taxes from your federal return. This change is [effective for tax years 2025-2029](https://www.hrblock.com/tax-center/irs/tax-law-and-policy/one-big-beautiful-bill-salt-deduction/).
+~~This strategy has worked in years past but it's gotten better because of the 2025 One Big Beautiful Bill Act which increased the SALT cap to $40,000 (from $10,000). SALT = state and local taxes, which can include income taxes (or sales taxes instead), plus property taxes. It's important here because you are allowed to deduct state and local income taxes from your federal return. This change is [effective for tax years 2025-2029](https://www.hrblock.com/tax-center/irs/tax-law-and-policy/one-big-beautiful-bill-salt-deduction/).~~
+
+::: {.callout-important}
+## Correction
+
+I was mistaken. The increase in SALT from $10,000 to $40,000 actually makes bunching make sense less in most years because if you live in a high tax state you can now deduct up to $40,000 in SALT. If your SALT is above $31,500 in a given year, it doesn't make a lot of sense to bunch.
+:::
 
 ## What is Bunching?
 
@@ -62,6 +68,7 @@ Bunching works when your Year 1 itemized deductions exceed $31,500.
 
 **Skip it if:**
 
+- Your SALT + mortgage interest already is greater than $31,500
 - Your itemized deductions won't beat $31,500 even when bunched
 - You want simplicity (totally fair!)
 
