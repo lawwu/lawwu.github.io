@@ -66,12 +66,6 @@ Bunching works when your Year 1 itemized deductions exceed $31,500.
 - High state taxes (CA, NY, NJ, etc.)
 - Property tax to prepay
 
-**Skip it if:**
-
-- Your SALT + mortgage interest already is greater than $31,500
-- Your itemized deductions won't beat $31,500 even when bunched
-- You want simplicity (totally fair!)
-
 ## Try It Yourself: Interactive Calculator
 
 Want to see if bunching works for your situation? Adjust the sliders below to run your own numbers:
