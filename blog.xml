@@ -21,7 +21,20 @@
 
 
 <p>I recently took advantage of a strategy called “bunching” where you combine multiple years of charitable contributions into one year. I’ll use a made up example here but you could plug in your own numbers.</p>
-<p>This strategy has worked in years past but it’s gotten better because of the 2025 One Big Beautiful Bill Act which increased the SALT cap to $40,000 (from $10,000). SALT = state and local taxes, which can include income taxes (or sales taxes instead), plus property taxes. It’s important here because you are allowed to deduct state and local income taxes from your federal return. This change is <a href="https://www.hrblock.com/tax-center/irs/tax-law-and-policy/one-big-beautiful-bill-salt-deduction/">effective for tax years 2025-2029</a>.</p>
+<p><del>This strategy has worked in years past but it’s gotten better because of the 2025 One Big Beautiful Bill Act which increased the SALT cap to $40,000 (from $10,000). SALT = state and local taxes, which can include income taxes (or sales taxes instead), plus property taxes. It’s important here because you are allowed to deduct state and local income taxes from your federal return. This change is <a href="https://www.hrblock.com/tax-center/irs/tax-law-and-policy/one-big-beautiful-bill-salt-deduction/">effective for tax years 2025-2029</a>.</del></p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Correction
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>I was mistaken. The increase in SALT from $10,000 to $40,000 actually makes bunching make sense less in most years because if you live in a high tax state you can now deduct up to $40,000 in SALT. If your SALT is above $31,500 in a given year, it doesn’t make a lot of sense to bunch.</p>
+</div>
+</div>
 <section id="what-is-bunching" class="level2">
 <h2 class="anchored" data-anchor-id="what-is-bunching">What is Bunching?</h2>
 <p>The idea is simple:</p>
@@ -81,17 +94,12 @@
 <li>High state taxes (CA, NY, NJ, etc.)</li>
 <li>Property tax to prepay</li>
 </ul>
-<p><strong>Skip it if:</strong></p>
-<ul>
-<li>Your itemized deductions won’t beat $31,500 even when bunched</li>
-<li>You want simplicity (totally fair!)</li>
-</ul>
 </section>
 <section id="try-it-yourself-interactive-calculator" class="level2">
 <h2 class="anchored" data-anchor-id="try-it-yourself-interactive-calculator">Try It Yourself: Interactive Calculator</h2>
 <p>Want to see if bunching works for your situation? Adjust the sliders below to run your own numbers:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="75" data-source-offset="-1" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 74;"><span id="cb1-75">viewof income <span class="op" style="color: #5E5E5E;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="76" data-source-offset="-1" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 75;"><span id="cb1-76">viewof income <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> Inputs<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -106,7 +114,7 @@ background-color: null;
 font-style: inherit;">500000</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span> {</span>
-<span id="cb1-76">  <span class="dt" style="color: #AD0000;
+<span id="cb1-77">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">value</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -115,7 +123,7 @@ background-color: null;
 font-style: inherit;">150000</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-77">  <span class="dt" style="color: #AD0000;
+<span id="cb1-78">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">step</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -124,16 +132,16 @@ background-color: null;
 font-style: inherit;">5000</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-78">  <span class="dt" style="color: #AD0000;
+<span id="cb1-79">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Annual Income (MFJ):"</span></span>
-<span id="cb1-79">})</span>
-<span id="cb1-80"></span>
-<span id="cb1-81">viewof charityPct <span class="op" style="color: #5E5E5E;
+<span id="cb1-80">})</span>
+<span id="cb1-81"></span>
+<span id="cb1-82">viewof charityPct <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> Inputs<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -148,7 +156,7 @@ background-color: null;
 font-style: inherit;">20</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span> {</span>
-<span id="cb1-82">  <span class="dt" style="color: #AD0000;
+<span id="cb1-83">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">value</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -157,7 +165,7 @@ background-color: null;
 font-style: inherit;">10</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-83">  <span class="dt" style="color: #AD0000;
+<span id="cb1-84">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">step</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -166,16 +174,16 @@ background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-84">  <span class="dt" style="color: #AD0000;
+<span id="cb1-85">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Charitable Giving (% of income):"</span></span>
-<span id="cb1-85">})</span>
-<span id="cb1-86"></span>
-<span id="cb1-87">viewof propertyTax <span class="op" style="color: #5E5E5E;
+<span id="cb1-86">})</span>
+<span id="cb1-87"></span>
+<span id="cb1-88">viewof propertyTax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> Inputs<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -190,7 +198,7 @@ background-color: null;
 font-style: inherit;">50000</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span> {</span>
-<span id="cb1-88">  <span class="dt" style="color: #AD0000;
+<span id="cb1-89">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">value</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -199,7 +207,7 @@ background-color: null;
 font-style: inherit;">5000</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-89">  <span class="dt" style="color: #AD0000;
+<span id="cb1-90">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">step</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -208,16 +216,16 @@ background-color: null;
 font-style: inherit;">500</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-90">  <span class="dt" style="color: #AD0000;
+<span id="cb1-91">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Annual Property Tax:"</span></span>
-<span id="cb1-91">})</span>
-<span id="cb1-92"></span>
-<span id="cb1-93">viewof mortgageInterest <span class="op" style="color: #5E5E5E;
+<span id="cb1-92">})</span>
+<span id="cb1-93"></span>
+<span id="cb1-94">viewof mortgageInterest <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> Inputs<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -232,7 +240,7 @@ background-color: null;
 font-style: inherit;">30000</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span> {</span>
-<span id="cb1-94">  <span class="dt" style="color: #AD0000;
+<span id="cb1-95">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">value</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -241,7 +249,7 @@ background-color: null;
 font-style: inherit;">10000</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-95">  <span class="dt" style="color: #AD0000;
+<span id="cb1-96">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">step</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -250,16 +258,16 @@ background-color: null;
 font-style: inherit;">1000</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-96">  <span class="dt" style="color: #AD0000;
+<span id="cb1-97">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Annual Mortgage Interest:"</span></span>
-<span id="cb1-97">})</span>
-<span id="cb1-98"></span>
-<span id="cb1-99">viewof state <span class="op" style="color: #5E5E5E;
+<span id="cb1-98">})</span>
+<span id="cb1-99"></span>
+<span id="cb1-100">viewof state <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> Inputs<span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -286,7 +294,7 @@ background-color: null;
 font-style: inherit;">"Florida"</span>]<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span> {</span>
-<span id="cb1-100">  <span class="dt" style="color: #AD0000;
+<span id="cb1-101">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">value</span><span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -295,14 +303,14 @@ background-color: null;
 font-style: inherit;">"California"</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span></span>
-<span id="cb1-101">  <span class="dt" style="color: #AD0000;
+<span id="cb1-102">  <span class="dt" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"State:"</span></span>
-<span id="cb1-102">})</span></code></pre></div></div>
+<span id="cb1-103">})</span></code></pre></div></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-1-1" data-nodetype="declaration">
@@ -340,7 +348,7 @@ font-style: inherit;">"State:"</span></span>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="109" data-source-offset="-54" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 108;"><span id="cb2-109"><span class="kw" style="color: #003B4F;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="110" data-source-offset="-54" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 109;"><span id="cb2-110"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
@@ -348,7 +356,7 @@ background-color: null;
 font-style: inherit;">calculateStateTax</span>(income<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">,</span> state) {</span>
-<span id="cb2-110">  <span class="kw" style="color: #003B4F;
+<span id="cb2-111">  <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">const</span> caStdDeduction <span class="op" style="color: #5E5E5E;
@@ -358,7 +366,7 @@ background-color: null;
 font-style: inherit;">11080</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-111">  <span class="kw" style="color: #003B4F;
+<span id="cb2-112">  <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">const</span> taxableIncome <span class="op" style="color: #5E5E5E;
@@ -368,8 +376,8 @@ background-color: null;
 font-style: inherit;">-</span> caStdDeduction<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-112"></span>
-<span id="cb2-113">  <span class="cf" style="color: #003B4F;
+<span id="cb2-113"></span>
+<span id="cb2-114">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (state <span class="op" style="color: #5E5E5E;
@@ -377,10 +385,10 @@ background-color: null;
 font-style: inherit;">===</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"California"</span>) {</span>
-<span id="cb2-114">    <span class="co" style="color: #5E5E5E;
+<span id="cb2-115">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// CA MFJ brackets (simplified)</span></span>
-<span id="cb2-115">    <span class="cf" style="color: #003B4F;
+<span id="cb2-116">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -397,7 +405,7 @@ background-color: null;
 font-style: inherit;">0.01</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-116">    <span class="cf" style="color: #003B4F;
+<span id="cb2-117">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -422,7 +430,7 @@ background-color: null;
 font-style: inherit;">0.02</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-117">    <span class="cf" style="color: #003B4F;
+<span id="cb2-118">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -447,7 +455,7 @@ background-color: null;
 font-style: inherit;">0.04</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-118">    <span class="cf" style="color: #003B4F;
+<span id="cb2-119">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -472,7 +480,7 @@ background-color: null;
 font-style: inherit;">0.06</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-119">    <span class="cf" style="color: #003B4F;
+<span id="cb2-120">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -497,7 +505,7 @@ background-color: null;
 font-style: inherit;">0.08</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-120">    <span class="cf" style="color: #003B4F;
+<span id="cb2-121">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
@@ -515,8 +523,8 @@ background-color: null;
 font-style: inherit;">0.093</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-121">  }</span>
-<span id="cb2-122">  <span class="cf" style="color: #003B4F;
+<span id="cb2-122">  }</span>
+<span id="cb2-123">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (state <span class="op" style="color: #5E5E5E;
@@ -535,7 +543,7 @@ background-color: null;
 font-style: inherit;">;</span> <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Simplified</span></span>
-<span id="cb2-123">  <span class="cf" style="color: #003B4F;
+<span id="cb2-124">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (state <span class="op" style="color: #5E5E5E;
@@ -554,7 +562,7 @@ background-color: null;
 font-style: inherit;">;</span> <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Simplified</span></span>
-<span id="cb2-124">  <span class="cf" style="color: #003B4F;
+<span id="cb2-125">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (state <span class="op" style="color: #5E5E5E;
@@ -577,7 +585,7 @@ background-color: null;
 font-style: inherit;">;</span> <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// No state income tax</span></span>
-<span id="cb2-125">  <span class="cf" style="color: #003B4F;
+<span id="cb2-126">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
@@ -585,18 +593,18 @@ background-color: null;
 font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-126">}</span>
-<span id="cb2-127"></span>
-<span id="cb2-128"><span class="co" style="color: #5E5E5E;
+<span id="cb2-127">}</span>
+<span id="cb2-128"></span>
+<span id="cb2-129"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Calculate federal tax</span></span>
-<span id="cb2-129"><span class="kw" style="color: #003B4F;
+<span id="cb2-130"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">calculateFederalTax</span>(taxableIncome) {</span>
-<span id="cb2-130">  <span class="cf" style="color: #003B4F;
+<span id="cb2-131">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -613,7 +621,7 @@ background-color: null;
 font-style: inherit;">0.10</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-131">  <span class="cf" style="color: #003B4F;
+<span id="cb2-132">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -638,7 +646,7 @@ background-color: null;
 font-style: inherit;">0.12</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-132">  <span class="cf" style="color: #003B4F;
+<span id="cb2-133">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -663,7 +671,7 @@ background-color: null;
 font-style: inherit;">0.22</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-133">  <span class="cf" style="color: #003B4F;
+<span id="cb2-134">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">if</span> (taxableIncome <span class="op" style="color: #5E5E5E;
@@ -688,7 +696,7 @@ background-color: null;
 font-style: inherit;">0.24</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-134">  <span class="cf" style="color: #003B4F;
+<span id="cb2-135">  <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> <span class="dv" style="color: #AD0000;
@@ -706,12 +714,12 @@ background-color: null;
 font-style: inherit;">0.32</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-135">}</span>
-<span id="cb2-136"></span>
-<span id="cb2-137"><span class="co" style="color: #5E5E5E;
+<span id="cb2-136">}</span>
+<span id="cb2-137"></span>
+<span id="cb2-138"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Calculations</span></span>
-<span id="cb2-138">charityPerYear <span class="op" style="color: #5E5E5E;
+<span id="cb2-139">charityPerYear <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (income <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -722,7 +730,7 @@ background-color: null;
 font-style: inherit;">100</span>)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-139">stateTax <span class="op" style="color: #5E5E5E;
+<span id="cb2-140">stateTax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -731,18 +739,18 @@ background-color: null;
 font-style: inherit;">,</span> state)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-140">standardDeduction <span class="op" style="color: #5E5E5E;
+<span id="cb2-141">standardDeduction <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">31500</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-141"></span>
-<span id="cb2-142"><span class="co" style="color: #5E5E5E;
+<span id="cb2-142"></span>
+<span id="cb2-143"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Traditional approach (itemize each year)</span></span>
-<span id="cb2-143">traditionalItemized <span class="op" style="color: #5E5E5E;
+<span id="cb2-144">traditionalItemized <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> charityPerYear <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -753,7 +761,7 @@ background-color: null;
 font-style: inherit;">+</span> mortgageInterest<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-144">traditionalDeduction <span class="op" style="color: #5E5E5E;
+<span id="cb2-145">traditionalDeduction <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -766,7 +774,7 @@ background-color: null;
 font-style: inherit;">,</span> standardDeduction)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-145">traditionalFederalTax <span class="op" style="color: #5E5E5E;
+<span id="cb2-146">traditionalFederalTax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -775,7 +783,7 @@ background-color: null;
 font-style: inherit;">-</span> traditionalDeduction)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-146">traditionalTotal2Year <span class="op" style="color: #5E5E5E;
+<span id="cb2-147">traditionalTotal2Year <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> traditionalFederalTax <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -784,11 +792,11 @@ background-color: null;
 font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-147"></span>
-<span id="cb2-148"><span class="co" style="color: #5E5E5E;
+<span id="cb2-148"></span>
+<span id="cb2-149"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Bunching approach</span></span>
-<span id="cb2-149">bunchedYear1Itemized <span class="op" style="color: #5E5E5E;
+<span id="cb2-150">bunchedYear1Itemized <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (charityPerYear <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -807,7 +815,7 @@ background-color: null;
 font-style: inherit;">+</span> mortgageInterest<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-150">bunchedYear1FederalTax <span class="op" style="color: #5E5E5E;
+<span id="cb2-151">bunchedYear1FederalTax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -816,8 +824,8 @@ background-color: null;
 font-style: inherit;">-</span> bunchedYear1Itemized)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-151"></span>
-<span id="cb2-152">bunchedYear2Itemized <span class="op" style="color: #5E5E5E;
+<span id="cb2-152"></span>
+<span id="cb2-153">bunchedYear2Itemized <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="dv" style="color: #AD0000;
 background-color: null;
@@ -834,7 +842,7 @@ background-color: null;
 font-style: inherit;">+</span> mortgageInterest<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-153">bunchedYear2Deduction <span class="op" style="color: #5E5E5E;
+<span id="cb2-154">bunchedYear2Deduction <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
 background-color: null;
@@ -847,7 +855,7 @@ background-color: null;
 font-style: inherit;">,</span> standardDeduction)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-154">bunchedYear2FederalTax <span class="op" style="color: #5E5E5E;
+<span id="cb2-155">bunchedYear2FederalTax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
 background-color: null;
@@ -856,26 +864,26 @@ background-color: null;
 font-style: inherit;">-</span> bunchedYear2Deduction)<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-155"></span>
-<span id="cb2-156">bunchedTotal2Year <span class="op" style="color: #5E5E5E;
+<span id="cb2-156"></span>
+<span id="cb2-157">bunchedTotal2Year <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> bunchedYear1FederalTax <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">+</span> bunchedYear2FederalTax<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-157"></span>
-<span id="cb2-158"><span class="co" style="color: #5E5E5E;
+<span id="cb2-158"></span>
+<span id="cb2-159"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">// Savings</span></span>
-<span id="cb2-159">savings <span class="op" style="color: #5E5E5E;
+<span id="cb2-160">savings <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> traditionalTotal2Year <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">-</span> bunchedTotal2Year<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-160">savingsPercent <span class="op" style="color: #5E5E5E;
+<span id="cb2-161">savingsPercent <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> (savings <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -886,7 +894,7 @@ background-color: null;
 font-style: inherit;">100</span><span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span></span>
-<span id="cb2-161">worthIt <span class="op" style="color: #5E5E5E;
+<span id="cb2-162">worthIt <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> savings <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -1023,28 +1031,28 @@ font-style: inherit;">;</span></span></code></pre></div></div>
 </div>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="165" data-source-offset="0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 164;"><span id="cb3-165"><span class="fu" style="color: #4758AB;
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="166" data-source-offset="0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 165;"><span id="cb3-166"><span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">html</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`</span></span>
-<span id="cb3-166"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #3498db;"&gt;</span></span>
 <span id="cb3-167"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">  &lt;h3 style="margin-top: 0; color: #2c3e50;"&gt;📊 Results&lt;/h3&gt;</span></span>
-<span id="cb3-168"></span>
-<span id="cb3-169"><span class="vs" style="color: #20794D;
+font-style: inherit;">&lt;div style="background-color: #f0f8ff; padding: 20px; border-radius: 10px; margin: 20px 0; border: 2px solid #3498db;"&gt;</span></span>
+<span id="cb3-168"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">  &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;"&gt;</span></span>
+font-style: inherit;">  &lt;h3 style="margin-top: 0; color: #2c3e50;"&gt;📊 Results&lt;/h3&gt;</span></span>
+<span id="cb3-169"></span>
 <span id="cb3-170"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">    &lt;div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"&gt;</span></span>
+font-style: inherit;">  &lt;div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0;"&gt;</span></span>
 <span id="cb3-171"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">      &lt;h4 style="margin-top: 0; color: #555;"&gt;Traditional Approach&lt;/h4&gt;</span></span>
+font-style: inherit;">    &lt;div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"&gt;</span></span>
 <span id="cb3-172"><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">      &lt;h4 style="margin-top: 0; color: #555;"&gt;Traditional Approach&lt;/h4&gt;</span></span>
+<span id="cb3-173"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;Year 1 Deductions:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1067,7 +1075,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-173"><span class="vs" style="color: #20794D;
+<span id="cb3-174"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;Year 2 Deductions:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1090,7 +1098,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-174"><span class="vs" style="color: #20794D;
+<span id="cb3-175"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;2-Year Total Deductions:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1117,10 +1125,10 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-175"><span class="vs" style="color: #20794D;
+<span id="cb3-176"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;hr style="border: none; border-top: 1px solid #eee; margin: 10px 0;"&gt;</span></span>
-<span id="cb3-176"><span class="vs" style="color: #20794D;
+<span id="cb3-177"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 16px;"&gt;&lt;strong&gt;Total Federal Tax:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1143,11 +1151,11 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-177"><span class="vs" style="color: #20794D;
+<span id="cb3-178"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">    &lt;/div&gt;</span></span>
-<span id="cb3-178"></span>
-<span id="cb3-179"><span class="vs" style="color: #20794D;
+<span id="cb3-179"></span>
+<span id="cb3-180"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">    &lt;div style="background: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 2px solid </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1164,10 +1172,10 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">;"&gt;</span></span>
-<span id="cb3-180"><span class="vs" style="color: #20794D;
+<span id="cb3-181"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;h4 style="margin-top: 0; color: #555;"&gt;Bunching Strategy&lt;/h4&gt;</span></span>
-<span id="cb3-181"><span class="vs" style="color: #20794D;
+<span id="cb3-182"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;Year 1 Deductions:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1190,7 +1198,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-182"><span class="vs" style="color: #20794D;
+<span id="cb3-183"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;Year 2 Deductions:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1213,7 +1221,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-183"><span class="vs" style="color: #20794D;
+<span id="cb3-184"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 14px;"&gt;&lt;strong&gt;2-Year Total Deductions:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1238,10 +1246,10 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-184"><span class="vs" style="color: #20794D;
+<span id="cb3-185"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;hr style="border: none; border-top: 1px solid #eee; margin: 10px 0;"&gt;</span></span>
-<span id="cb3-185"><span class="vs" style="color: #20794D;
+<span id="cb3-186"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      &lt;p style="margin: 5px 0; font-size: 16px;"&gt;&lt;strong&gt;Total Federal Tax:&lt;/strong&gt; $</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1264,14 +1272,14 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">&lt;/p&gt;</span></span>
-<span id="cb3-186"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    &lt;/div&gt;</span></span>
 <span id="cb3-187"><span class="vs" style="color: #20794D;
 background-color: null;
+font-style: inherit;">    &lt;/div&gt;</span></span>
+<span id="cb3-188"><span class="vs" style="color: #20794D;
+background-color: null;
 font-style: inherit;">  &lt;/div&gt;</span></span>
-<span id="cb3-188"></span>
-<span id="cb3-189"><span class="vs" style="color: #20794D;
+<span id="cb3-189"></span>
+<span id="cb3-190"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">  &lt;div style="background: </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1302,7 +1310,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">;"&gt;</span></span>
-<span id="cb3-190"><span class="vs" style="color: #20794D;
+<span id="cb3-191"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">    &lt;h3 style="margin: 0; color: </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1319,7 +1327,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">; font-size: 24px;"&gt;</span></span>
-<span id="cb3-191"><span class="vs" style="color: #20794D;
+<span id="cb3-192"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1374,10 +1382,10 @@ background-color: null;
 font-style: inherit;">0</span>})<span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span>
-<span id="cb3-192"><span class="vs" style="color: #20794D;
+<span id="cb3-193"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">    &lt;/h3&gt;</span></span>
-<span id="cb3-193"><span class="vs" style="color: #20794D;
+<span id="cb3-194"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">    &lt;p style="margin: 10px 0 0 0; font-size: 16px; color: </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
@@ -1394,12 +1402,12 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">;"&gt;</span></span>
-<span id="cb3-194"><span class="vs" style="color: #20794D;
+<span id="cb3-195"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">      </span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">${</span>worthIt</span>
-<span id="cb3-195">        <span class="op" style="color: #5E5E5E;
+<span id="cb3-196">        <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">?</span> <span class="vs" style="color: #20794D;
 background-color: null;
@@ -1416,19 +1424,19 @@ background-color: null;
 font-style: inherit;">}</span><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">% over 2 years with bunching! 🎉`</span></span>
-<span id="cb3-196">        <span class="op" style="color: #5E5E5E;
+<span id="cb3-197">        <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> savings <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> <span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">0</span></span>
-<span id="cb3-197">          <span class="op" style="color: #5E5E5E;
+<span id="cb3-198">          <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">?</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'Small benefit - bunching might not be worth the hassle'</span></span>
-<span id="cb3-198">          <span class="op" style="color: #5E5E5E;
+<span id="cb3-199">          <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">:</span> <span class="st" style="color: #20794D;
 background-color: null;
@@ -1439,26 +1447,26 @@ background-color: null;
 font-style: inherit;">t help - stick with traditional approach'</span><span class="sc" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">}</span></span>
-<span id="cb3-199"><span class="vs" style="color: #20794D;
-background-color: null;
-font-style: inherit;">    &lt;/p&gt;</span></span>
 <span id="cb3-200"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">  &lt;/div&gt;</span></span>
-<span id="cb3-201"></span>
-<span id="cb3-202"><span class="vs" style="color: #20794D;
+font-style: inherit;">    &lt;/p&gt;</span></span>
+<span id="cb3-201"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">  &lt;p style="margin-top: 15px; font-size: 12px; color: #666; font-style: italic;"&gt;</span></span>
+font-style: inherit;">  &lt;/div&gt;</span></span>
+<span id="cb3-202"></span>
 <span id="cb3-203"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">    💡 Note: This calculator uses simplified tax calculations and assumes you're in the 2025 tax year with the new $40k SALT cap. It doesn't account for AMT, phase-outs, or all state-specific rules. Consult a tax professional for accurate advice specific to your situation.</span></span>
+font-style: inherit;">  &lt;p style="margin-top: 15px; font-size: 12px; color: #666; font-style: italic;"&gt;</span></span>
 <span id="cb3-204"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">  &lt;/p&gt;</span></span>
+font-style: inherit;">    💡 Note: This calculator uses simplified tax calculations and assumes you're in the 2025 tax year with the new $40k SALT cap. It doesn't account for AMT, phase-outs, or all state-specific rules. Consult a tax professional for accurate advice specific to your situation.</span></span>
 <span id="cb3-205"><span class="vs" style="color: #20794D;
 background-color: null;
-font-style: inherit;">&lt;/div&gt;</span></span>
+font-style: inherit;">  &lt;/p&gt;</span></span>
 <span id="cb3-206"><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">&lt;/div&gt;</span></span>
+<span id="cb3-207"><span class="vs" style="color: #20794D;
 background-color: null;
 font-style: inherit;">`</span></span></code></pre></div></div>
 <div class="cell-output cell-output-display">
