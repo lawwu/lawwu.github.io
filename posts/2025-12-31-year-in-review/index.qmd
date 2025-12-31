@@ -6,7 +6,7 @@ categories: [personal]
 image: "strava/stats.PNG"
 ---
 
-This is the first time I'm taking some time to do a year in review and posting it on my blog. Overall I've enjoyed the exercise of writing and sharing ideas and things I've learned across a variety of topics with others. The main categories I've written about thus far are about AI and personal finances. I wrote my first [book review](https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/) and would like to write more of those. I'd like to also continue blogging next year.
+This is the first time I'm taking some time to do a year in review and posting it on my blog. Overall I've enjoyed the exercise of writing and sharing ideas about things I've learned across a variety of topics with others. The main categories I've written about thus far are about AI and personal finances. I wrote my first [book review](https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/) and would like to write more of those. I'd like to also continue blogging next year.
 
 In this review, I'll go through [blogging](#blogging), [books](#books) I read, reflections in [Biblical counseling](#biblical-counseling), review of [personal finances](#personal-finances) this year, [running](#running) and [AI](#ai) (mainly some thoughts on [agentic coding and Claude Code](#agentic-coding)).
 
