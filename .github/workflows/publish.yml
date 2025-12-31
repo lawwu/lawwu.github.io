@@ -33,6 +33,16 @@ jobs:
           uv sync
           echo "${{ github.workspace }}/.venv/bin" >> $GITHUB_PATH
 
+      - name: Cache Quarto freeze
+        uses: actions/cache@v5
+        with:
+          path: |
+            _freeze
+            .quarto
+          key: quarto-freeze-${{ hashFiles('posts/**/*.qmd', 'posts/**/*.ipynb') }}
+          restore-keys: |
+            quarto-freeze-
+
       - name: Configure git for publish
         run: |
           git config --global user.email "actions@github.com"
