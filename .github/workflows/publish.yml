@@ -14,7 +14,7 @@ jobs:
       contents: write
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -30,9 +30,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          uv pip install jupyter
-          # If you have a requirements.txt file, uncomment the following line
-          # uv pip install -r requirements.txt
+          uv sync
 
       - name: Configure git for publish
         run: |
