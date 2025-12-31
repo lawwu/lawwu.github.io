@@ -10,7 +10,351 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.8.26</generator>
-<lastBuildDate>Fri, 19 Dec 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Wed, 31 Dec 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Year in Review - 2025</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>This is the first time I’m taking some time to do a year in review and posting it on my blog. Overall I’ve enjoyed the exercise of writing and sharing ideas and things I’ve learned across a variety of topics with others. The main categories I’ve written about thus far are about AI and personal finances. I wrote my first <a href="https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/">book review</a> and would like to write more of those. I’d like to also continue blogging next year.</p>
+<p>In this review, I’ll go through blogging, books I read, reflections in Biblical counseling, review of personal finances this year, running and AI (mainly some thoughts on agentic coding and Claude Code).</p>
+<section id="blogging" class="level2">
+<h2 class="anchored" data-anchor-id="blogging">Blogging</h2>
+<p>I started blogging in 2023. The first post I wrote was about <a href="https://lawwu.github.io/posts/2023-03-24-mac-apps/" target="_blank">useful Mac applications</a>. I wrote 20 posts in 2023, 11 posts in 2024 and 16 posts in 2025. Right now I mostly share my posts on Facebook and LinkedIn. The most popular posts by views:</p>
+<ul>
+<li><a href="https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/" target="_blank">2025-05-23: LangChain Interrupt Conference 2025 AI Recap</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-12-19-bunching-strategy/" target="_blank">2025-12-19: Bunching Charitable Contributions in 2025</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/" target="_blank">2025-10-30: First Marathon Reflections</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/" target="_blank">2025-07-18: Claude Code Camp - hosted by Every</a></li>
+<li><a href="https://lawwu.github.io/posts/2024-05-23-first-axolotl-finetune/" target="_blank">2024-05-23: Finetuning LLMs with Axolotl</a></li>
+</ul>
+<p>The posts with the most engagement time:</p>
+<ul>
+<li><a href="https://lawwu.github.io/posts/2025-05-27-levels-of-ai-use/" target="_blank">2025-05-27: Levels of AI Use</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-08-21-open-source-mcp-servers/" target="_blank">2025-08-21: Why Companies Should Open Source and Host Their Own MCP Servers</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/" target="_blank">2025-10-30: First Marathon Reflections</a></li>
+<li><a href="https://lawwu.github.io/posts/2025-12-19-bunching-strategy/" target="_blank">2025-12-19: Bunching Charitable Contributions in 2025</a></li>
+<li><a href="https://lawwu.github.io/posts/2024-09-20-langgraph-tutorial/" target="_blank">2024-09-20: Introduction to LangGraph Tutorial</a></li>
+</ul>
+</section>
+<section id="books" class="level2">
+<h2 class="anchored" data-anchor-id="books">Books</h2>
+<p>Still really enjoy reading. I love reading because the author of the book you are holding has spent countless hours going deep on a topic and taken the time to write a book on this topic. You are literally getting a person’s best thoughts about a topic. Books are so information dense.</p>
+<p><a href="https://amzn.to/4pc5Pc9" target="_blank"><strong>David Mathis - A Little Theology of Exercise</strong></a></p>
+<p><a href="https://amzn.to/4pc5Pc9" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-11-24-little-theology-of-exercise/little_theology_of_exercise.jpg" class="img-fluid" width="200"></a></p>
+<p>Short read that changed my perspective on exercise from a merely physical activity that was good for my body (which it is) to something that instead is for my mind. Research shows exercise helps the brain and in turn I can use my mind to love God and love others (Matthew 22:37-38). I wrote a review of this book <a href="https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/">here</a>.</p>
+<p><a href="https://amzn.to/3LfW5zF" target="_blank"><strong>Andy David Naselli - How to Understand and Apply the New Testament</strong></a></p>
+<p><a href="https://amzn.to/3LfW5zF" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/how-to-read-new-testament.jpg" class="img-fluid" width="200"></a></p>
+<p>I read the companion book, <a href="https://amzn.to/3LfW5zF" target="_blank">How to Understand and Apply the Old Testament</a> last year with a friend. We decided to read the NT version. Andy Naselli has a sample of the book on his <a href="https://andynaselli.com/how-to-understand-and-apply-the-new-testament-twelve-steps-from-exegesis-to-theology" target="_blank">blog</a>. Reading these two books gave me a greater appreciation for the current Bible I hold. There are so many people who have dedicated their lives to studying the original languages (Hebrew and/or Greek), studying the original manuscripts and laboring to faithfully translate the Bible. Another idea that stood out is Biblical Theology aka tracing a theme or idea from the Old Testament to the New Testament. It’s neat doing this with things like:</p>
+<ul>
+<li>Law</li>
+<li>Temple</li>
+<li>Priest</li>
+<li>Kingdom of God</li>
+<li>people of God</li>
+<li>Holiness</li>
+</ul>
+<p><a href="https://amzn.to/3YldZ7f" target="_blank"><strong>Morgan Housel - The Art of Spending Money</strong></a></p>
+<p><a href="https://amzn.to/3YldZ7f" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/art-of-spending.jpg" class="img-fluid" width="200"></a></p>
+<p>Morgan Housel is one of the best personal finance writers right now. He is such a clear and succinct writer with an ability to tell such great stories. He has such good pithy sayings too.</p>
+<p>I liked his list of money thoughts that guide his home:</p>
+<ul>
+<li>spend less than you make</li>
+<li>Quietly compound</li>
+<li>Money serves you, not the other way around</li>
+<li>No one is thinking about you as much as you are</li>
+<li>Independence is wealth</li>
+<li>Health is wealth</li>
+<li>Aim to be a good ancestor</li>
+<li>Love your family</li>
+</ul>
+<p><a href="https://amzn.to/44TcdxL" target="_blank"><strong>Sahil Bloom - The 5 Types of Wealth</strong></a></p>
+<p><a href="https://amzn.to/44TcdxL" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/5-types-of-wealth.jpg" class="img-fluid" width="200"></a></p>
+<p>The author talks about 5 types of wealth:</p>
+<ul>
+<li>Time</li>
+<li>Social</li>
+<li>Mental</li>
+<li>Physical</li>
+<li>Financial</li>
+</ul>
+<p>I thought it was helpful thinking about wealth from the these other 4 perspectives since we usually think of wealth from a financial perspective. I would add a 6th type of wealth to this: “Spiritual.” These are things that matter to God, have an eternal value, aka treasures in heaven (Matthew 6:19-21).</p>
+<p><a href="https://amzn.to/4piSMG8" target="_blank"><strong>Nick Maggiulli - The Wealth Ladder</strong></a></p>
+<p><a href="https://amzn.to/4piSMG8" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/wealth-ladder.jpg" class="img-fluid" width="200"></a></p>
+<p>I didn’t think this had to be a book, I thought Nick’s <a href="https://ofdollarsanddata.com/climbing-the-wealth-ladder/" target="_blank">blog post from 2019</a> already summarized this idea well. His framing for the mindset at each level was helpful (using a rule of thumb you can safely spend 0.1% of your net worth without it making a huge dent). He defines 6 levels of wealth with a different mindset and strategy to get to the next level:</p>
+<ul>
+<li>Level 1: &lt;$10K (lower class)
+<ul>
+<li>Mindset: All prices matter</li>
+<li>Build marketable skills</li>
+</ul></li>
+<li>Level 2: $10K–$100K (working class)
+<ul>
+<li>Mindset: Grocery prices matter less</li>
+<li>Get education to unlock higher income</li>
+</ul></li>
+<li>Level 3: $100K–$1M (middle class)
+<ul>
+<li>Mindset: Restaurant prices matter less</li>
+<li>Invest in income producing assets</li>
+</ul></li>
+<li>Level 4: $1M–$10M (upper middle class)
+<ul>
+<li>Mindset: Vacation prices matter less</li>
+<li>Own a business</li>
+</ul></li>
+<li>Level 5: $10M–$100M (upper class)
+<ul>
+<li>Mindset: Home prices matter less</li>
+<li>Scale a business</li>
+</ul></li>
+<li>Level 6: &gt;$100M (the superrich)
+<ul>
+<li>Mindset: What are prices?</li>
+</ul></li>
+</ul>
+<p><a href="https://amzn.to/4qyxw06" target="_blank"><strong>Corlette Sande - The Young Peacemaker</strong></a></p>
+<p><a href="https://amzn.to/4qyxw06" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/young-peacemaker.jpg" class="img-fluid" width="200"></a></p>
+<p>Similar material from Ken Sande’s book the Peacemaker but designed to go through with your kids on how to respond to conflict in a Biblical manner.</p>
+<p><a href="https://amzn.to/4pi1qEM" target="_blank"><strong>Michael and Melissa Kruger - 5 Things to Pray for Your Spouse</strong></a></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/5-things-pray-kids.jpg" class="img-fluid" width="200"></p>
+<p>Found this helpful to diversify my prayers for my wife. Gives you 5 different things to pray for your wife each day based on a verse.</p>
+<p><a href="https://amzn.to/3N22AGY" target="_blank"><strong>Melissa Kruger - 5 Things to Pray for Your Kids</strong></a></p>
+<p><a href="https://amzn.to/3N22AGY" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/5-things-pray-spouse.jpg" class="img-fluid" width="200"></a></p>
+<p>Same book as above but for kids, still helpful. For example</p>
+<p><a href="https://amzn.to/4q4dxXg" target="_blank"><strong>Marty Machowski - Promises Made, Promises Kept</strong></a></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/promises-made-kept.jpg" class="img-fluid" width="200"></p>
+<p>I really like Marty Machowski’s books. He’s such a great writer, being able to explain theological concepts to children. For example The Ology was a great book. Promises Made, Promises Kept is an interesting book. There are two books in one. You start the Promises Made on December 18 which talk about all of the promises God made that were eventually fulfilled in Christ (through 7 stories). Then on Christmas, December 25, you start Promises Kept which unpacks how Christ’s life, death and resurrection fulfills these promises (again through 7 stories).</p>
+<p><a href="https://amzn.to/3YPwa51" target="_blank"><strong>Paul David Tripp - Marriage: 6 Gospel Commitments Every Couple Needs to Make</strong></a></p>
+<p><a href="https://amzn.to/3YPwa51" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/marriage-tripp.jpg" class="img-fluid" width="200"></a></p>
+<p>I like how Tripp is faithful to the Bible in his books. I would describe most of his books I’ve read on a given topic are really books about the gospel. So you won’t get a lot of practical advice on how to approach marriage but you will get reoriented on the foundation of marriage.</p>
+<p><a href="https://amzn.to/48YFpWE" target="_blank"><strong>Chip Huyen - AI Engineering</strong></a></p>
+<p><a href="https://amzn.to/48YFpWE" target="_blank"><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/images/ai-engineering.jpg" class="img-fluid" width="200"></a></p>
+<p>This book came out December 2024. I like Chip Huyen’s writing on her <a href="https://huyenchip.com/blog/" target="_blank">blog</a>. I found this book to be a pretty good overview of this emerging new field of AI Engineering where as an engineer, you build applications on top of AI APIs. It’s a field where I’ve observed software engineering skills matter more than traditional AI/ML/DS skills. Bceause of the pace of AI development, some of the things in this book are likely dated now.</p>
+</section>
+<section id="biblical-counseling" class="level2">
+<h2 class="anchored" data-anchor-id="biblical-counseling">Biblical Counseling</h2>
+<p>I started working toward a Biblical Counseling certificiation through ACBC in 2021. Phase 1 was relatively painless. Phase 2 has been much more of a slog. I finally finished my last essay. One of biggest motivations for pursuing this path was because I wanted to counsel myself and my family in a more Biblical manner. Through going through this process, some things I learned:</p>
+<ul>
+<li>Everyone counsels - if you talk to people and give advice, you are “unoffiically counseling” people. As a Christian, if I believe the Bible is the greatest source of authority, literally the Word of God or God’s words, then my advice/counsel should be based on the Bible.</li>
+<li>The sufficiency of Scripture - this is a theological term that means the Bible contains all that we need to live out the Christian life. Wayne Grudem defines sufficiency as it <em>“means that Scripture contains all the words of God we need for salvation, for trusting him perfectly, and for obeying him perfectly. This definition emphasizes that it is in Scripture alone that we are to search for God’s words to us. It also reminds us that God considers what he has told us in the Bible to be enough for us and that we should rejoice in the great revelation he has given us and be content with it.”</em> (Systematic Theology, page 333-334) More than my experiences, traditions or worldly wisdom, Scripture is what I need to go back to find answers.</li>
+<li>AI can write a pretty good ACBC essay. However, the value in writing these essays (and writing in general) is gives you the writer an opportunity to process what you’ve learned. <a href="https://www.nature.com/articles/s44222-025-00323-4" target="_blank">Writing is thinking</a>. As we enter the age of AI, I actually believe thinking is even more important. We cannot allow AI to think for us. Having to write essays on a variety of theological and counseling based situations gave me an opportunity to consume material on the topic, synthesize the material into an outline and then bring it all together by writing hopefully coherent paragraphs.</li>
+</ul>
+</section>
+<section id="personal-finances" class="level2">
+<h2 class="anchored" data-anchor-id="personal-finances">Personal Finances</h2>
+<section id="investments" class="level3">
+<h3 class="anchored" data-anchor-id="investments">Investments</h3>
+<p>I stopped trading individual securities around 10 years ago. I’m content just earning the market return year in and year out, without needing to choose the best stocks, fund managers or sector ETFs. I don’t need to monitor them for when to sell them. I don’t need to worry about quarterly earnings. The market and low-cost market-cap index funds/ETFs weighted are one of the greatest innovations that retail investors like myself have access to. If you buy and hold these investment vehicles, you’ll likely beat 90+% of professional money managers.</p>
+<p>My portfolio hasn’t changed over the last 5 years. It is:</p>
+<ul>
+<li>90% stocks</li>
+<li>10% cash</li>
+</ul>
+<p>The stock portion is:</p>
+<ul>
+<li>70% US Stocks</li>
+<li>30% International</li>
+</ul>
+<p>The funds I own are either US funds like a total stock VTI or an S&amp;P 500 fund like FXAIX, international funds (VXUS, FTIHX, FSPSX), a world fund like VT or a Bitcoin ETF (FBTC).</p>
+<p>Here are the VT (Vanguard Total World Stock ETF) returns since 2016:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Year</th>
+<th>VT Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2016</td>
+<td>8.5%</td>
+</tr>
+<tr class="even">
+<td>2017</td>
+<td>24.5%</td>
+</tr>
+<tr class="odd">
+<td>2018</td>
+<td>-9.8%</td>
+</tr>
+<tr class="even">
+<td>2019</td>
+<td>26.8%</td>
+</tr>
+<tr class="odd">
+<td>2020</td>
+<td>16.6%</td>
+</tr>
+<tr class="even">
+<td>2021</td>
+<td>18.3%</td>
+</tr>
+<tr class="odd">
+<td>2022</td>
+<td>-18.0%</td>
+</tr>
+<tr class="even">
+<td>2023</td>
+<td>22.0%</td>
+</tr>
+<tr class="odd">
+<td>2024</td>
+<td>16.5%</td>
+</tr>
+<tr class="even">
+<td>2025</td>
+<td>23.6%</td>
+</tr>
+</tbody>
+</table>
+<p>It’s been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more with only 2 down years. If you invested $10,000 at the beginning of 2016, you will have tripled your investment.</p>
+<div id="c7d6b22c" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="348e3b21-a471-41cb-8fa0-ac9b882bd85a" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("348e3b21-a471-41cb-8fa0-ac9b882bd85a")) {                    Plotly.newPlot(                        "348e3b21-a471-41cb-8fa0-ac9b882bd85a",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+                            
+var gd = document.getElementById('348e3b21-a471-41cb-8fa0-ac9b882bd85a');
+var x = new MutationObserver(function (mutations, observer) {{
+        var display = window.getComputedStyle(gd).display;
+        if (!display || display === 'none') {{
+            console.log([gd, 'removed!']);
+            Plotly.purge(gd);
+            observer.disconnect();
+        }}
+}});
+
+// Listen for the removal of the full notebook cells
+var notebookContainer = gd.closest('#notebook-container');
+if (notebookContainer) {{
+    x.observe(notebookContainer, {childList: true});
+}}
+
+// Listen for the clearing of the current output cell
+var outputEl = gd.closest('.output');
+if (outputEl) {{
+    x.observe(outputEl, {childList: true});
+}}
+
+                        })                };            </script>        </div>
+</div>
+</div>
+</section>
+<section id="cash-emergency-fund" class="level3">
+<h3 class="anchored" data-anchor-id="cash-emergency-fund">Cash / Emergency Fund</h3>
+<p>I no longer own any I-Bonds. I sold my last ones in 2024. All of our cash / emergency funds is in a Fidelity CMA account that currently earns 3.42%. All of it is automatically invested in SPAXX, Fidelity’s Government Money Market Fund. One of the great things about a CMA account is you can pay bills from it and Fidelity will sell your core cash position (SPAXX is the default) to pay the bill. The Frugal Professor has written a post on the Fidelity CMA <a href="https://frugalprofessor.com/the-ultimate-guide-to-fidelitys-cash-management-account-cma/" target="_blank">here</a>.</p>
+</section>
+<section id="credit-cards" class="level3">
+<h3 class="anchored" data-anchor-id="credit-cards">Credit Cards</h3>
+<p>The US Bank Smartly 4% cash back card came and went. It was a little too good to be true and I got the infamous <a href="https://www.doctorofcredit.com/u-s-bank-to-nerf-existing-smartly-cardholders-on-september-15/" target="_blank">bad letter</a> in September. I moved all of our credit card spending to the <a href="https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/" target="_blank">BofA Premium Rewards Elite</a> where I earn 3.5% on travel/dining and 2.625% on all other spend.</p>
+<p>I got a couple credit card sign up bonuses this year:</p>
+<ul>
+<li>American Express - Marriott Bonvoy Bevy - 155,000 Marriott points</li>
+<li>American Express - Platinum - 80,000 MR points</li>
+</ul>
+<p>The Amex Platinum takes a fair amount of work to maximize it’s rewards. I don’t really like the overhead and probably won’t keep it.</p>
+</section>
+</section>
+<section id="running" class="level2">
+<h2 class="anchored" data-anchor-id="running">Running</h2>
+<p>Ran my <a href="https://lawwu.github.io/posts/2025-02-02-second-half-marathon/">second half-marathon</a> and <a href="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/">first full-marathon</a> this year. Running continues to be my favorite form of cardio. God willing, hopefully I have many more years of running ahead of me.</p>
+<section id="strava---year-in-sport" class="level3">
+<h3 class="anchored" data-anchor-id="strava---year-in-sport">Strava - Year in Sport</h3>
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/strava/stats.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/strava/trophy_case.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/strava/hours_active.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/strava/days_active.PNG" class="img-fluid" width="600"></p>
+</section>
+</section>
+<section id="ai" class="level2">
+<h2 class="anchored" data-anchor-id="ai">AI</h2>
+<section id="agentic-coding" class="level3">
+<h3 class="anchored" data-anchor-id="agentic-coding">Agentic Coding</h3>
+<p>One of the big changes this year was the rise of agentic coding tools like Claude Code. I started using it in <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">July 2025</a> and have been using it almost daily since it came out. Anthropic has created an amazing tool. We’ve seen the underlying model improve. It’s still hard to believe the intial release of Claude Code used Claude 3.7 Sonnet (I would’ve guessed this was last year)! We’re now on Claude Opus 4.5. There has also been improvements in the Claude Code agentic harness too with todo lists, subagents, improvements to the system prompts, better tool calling, adding agent skills. Just look at the <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank">CHANGELOG</a> to look at all these improvements over time.</p>
+<p>Some of the things I’ve used Claude Code for this year:</p>
+<ul>
+<li>Agentic ML: using the <code>bq</code> cli to explore data source in Big Query, create ML features and create ML training scripts</li>
+<li>Exploring and understanding new code using the <a href="https://github.com/cli/cli" target="_blank">gh cli</a> - I find Claude Code is more effective at using CLI tools than an MCP Server. I prefer Claude Code using the Github CLI rather than the <a href="https://github.com/github/github-mcp-server" target="_blank">Github MCP</a></li>
+<li>Creating slides that are themed according to my company using Quarto and RevealJS</li>
+<li>Troubleshooting Kubernetes pods</li>
+<li>Writing documentation</li>
+<li>Writing Confluence documentation using the <a href="https://github.com/sooperset/mcp-atlassian" target="_blank">mcp-atlassian</a> MCP Server</li>
+<li>Creating MCP Servers using <a href="https://github.com/jlowin/fastmcp" target="_blank">FastMCP</a></li>
+<li>Adding graphs / visuals to my blg posts</li>
+<li>Creating Github Actions</li>
+<li>Creating and maintaining Cookiecutter templates for Python libraries and services</li>
+<li>Scraping Long Beach Marathon data to get the total finishers in the last 15 years for this <a href="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/#lesson-3-running-is-getting-popular">post</a></li>
+</ul>
+<p>Claude Code really does amplify and leverage a developer’s (or even non-developer’s) ideas. Whatever ideas you have, you can bring them into reality so much faster.</p>
+<p>There are many world class software developers that now use tools like Claude Code:</p>
+<p><strong>Andrej Karpathy</strong> - <a href="https://x.com/karpathy/status/2002118205729562949" target="_blank">Year in Review where he talks about Claude Code and Vibe Coding</a></p>
+<iframe src="https://platform.twitter.com/embed/Tweet.html?id=2004607146781278521" width="550" height="400" frameborder="0">
+</iframe>
+<p><strong>Boris Cherny</strong></p>
+<blockquote class="blockquote">
+<p>A year ago, Claude struggled to generate bash commands without escaping issues. It worked for seconds or minutes at a time. We saw early signs that it may become broadly useful for coding one day. Fast forward to today. In the last thirty days, I landed 259 PRs – 497 commits, 40k lines added, 38k lines removed. Every single line was written by Claude Code + Opus 4.5. Claude consistently runs for minutes, hours, and days at a time (using Stop hooks). Software engineering is changing, and we are entering a new period in coding history. And we’re still just getting started..</p>
+</blockquote>
+<iframe src="https://platform.twitter.com/embed/Tweet.html?id=2004887829252317325" width="550" height="400" frameborder="0">
+</iframe>
+<p><strong>Armin Ronacher</strong> - Summarized the year as a <a href="https://lucumr.pocoo.org/2025/12/22/a-year-of-vibes/" target="_blank">Year of Vibes</a></p>
+<p><strong>Simon Willison</strong> - prolific blogger and prolific user of LLMs, one of his posts he talked about <a href="https://simonwillison.net/2025/Oct/8/claude-datasette-plugins/" target="_blank">how Claude Opus 4.5 can create full datasette plugins now</a>.</p>
+<p>It’s fun to see how things have evolved in the last year just looking at Anthropic’s Claude and Claude Code releated announcements:</p>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-3-7-sonnet" target="_blank">Feb 24, 2025 - Initial Claude Code Release alongside Claude 3.7 Sonnet</a> - <a href="https://github.com/anthropics/claude-code" target="_blank">repo</a> though this doesn’t have the source code</li>
+<li><a href="https://www.anthropic.com/news/Introducing-code-with-claude" target="_blank">April 3, 2025 - Anthropic announces their first developer conference</a> - which I summarized the talks <a href="https://lawwu.github.io/posts/2025-08-14-claude-code-conference-summary/">here</a>.</li>
+<li><a href="https://www.anthropic.com/news/claude-4" target="_blank">May 22, 2025 - Claude Sonnet and Opus 4 released</a></li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-1" target="_blank">August 5, 2025 - Claude Opus 4.1 released</a></li>
+<li><a href="https://github.com/anthropics/claude-code-action/" target="_blank">August 26, 2025 - Claude Code Github Action 1.0 Release</a></li>
+<li><a href="https://www.anthropic.com/news/claude-sonnet-4-5" target="_blank">September 29, 2025 - Claude Sonnet 4.5</a></li>
+<li><a href="https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk" target="_blank">September 29, 2025 - Claude Agents SDK</a></li>
+<li><a href="https://github.com/anthropics/claude-plugins-official/" target="_blank">October 9, 2025 - Claude Code Plugins</a></li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-5" target="_blank">October 15, 2025 - Claude Haiku 4.5</a></li>
+<li><a href="https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills" target="_blank">October 16, 2025 - Claude Skills</a></li>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-5" target="_blank">November 24, 2025 - Claude Opus 4.5</a></li>
+<li><a href="https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone" target="_blank">December 2, 2025 - Claude Code reaches $1B run-rate revenue</a></li>
+</ul>
+</section>
+<section id="chatgpt---year-in-review" class="level3">
+<h3 class="anchored" data-anchor-id="chatgpt---year-in-review">ChatGPT - Year in Review</h3>
+<p>ChatGPT created a year in review for me based on my chat history. Here are some highlights:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/recap_chatgpt/year_in_poem.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Year in Poem</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/recap_chatgpt/chat_stats.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Chat Stats</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/recap_chatgpt/3_themes.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>3 Themes</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/recap_chatgpt/image_summary.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Image Summary</figcaption>
+</figure>
+</div>
+
+
+</section>
+</section>
+
+ ]]></description>
+  <category>personal</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2025-12-31-year-in-review/</guid>
+  <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Bunching Charitable Contributions in 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -7993,393 +8337,6 @@ font-style: inherit;">7. </span>The importance of maintaining biblical standards
   <category>summary</category>
   <guid>https://lawwu.github.io/blog.html/posts/2024-08-14-gods-design-for-marriage/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>How Dwarkesh Patel Uses AI &amp; Claude</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2024-07-26-dwarkesh-claude/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>Dwarkesh Patel is becoming the new Lex Fridman of podcasting. Lex got his start a podcaster interviewing AI experts. Since then Lex has branched out and most of his guests are non AI-experts. Dwarkesh has filled this gap. In this interview, Dan Shipper interviews him:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Vm49oIPtyRE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<p>I listened to 15 minutes but didn’t want to listen to the rest of it. But I was still curious how Dwarkesh uses AI in his day-to-day. So I grabbed the transcript (which is available via Youtube’s API). You can use a Python library <a href="https://pypi.org/project/youtube-transcript-api/">youtube-transcript-api</a> or <a href="https://youtubetranscript.com/?v=Vm49oIPtyRE">web services</a> that do the same thing from a web interface.</p>
-<p>I copied the whole transcript into ChatGPT and Claude with the following prompt:</p>
-<blockquote class="blockquote">
-<p>What are the main ways that Dhwarkesh uses AI in his workflow based on this transcript summary below? Output the thing and more detail about it.</p>
-</blockquote>
-<p>with the full transcript below. ChatGPT actually was unable to process that amount of text but Claude 3.5 Sonnet was. Claude’s output is below (prompted it to regenerate in Markdown so it’s copy-pastable in a Quarto markdown document):</p>
-<section id="dhwarkeshs-ai-workflow" class="level1">
-<h1>Dhwarkesh’s AI Workflow</h1>
-<section id="research-assistance" class="level2">
-<h2 class="anchored" data-anchor-id="research-assistance">1. Research Assistance</h2>
-<ul>
-<li>Uses Claude to help understand complex topics and ideas when preparing for interviews</li>
-<li>Uploads books/papers to Claude projects and asks questions to gain deeper understanding</li>
-<li>Uses Claude to explain concepts he doesn’t fully grasp from his reading</li>
-</ul>
-</section>
-<section id="space-repetition-flashcards" class="level2">
-<h2 class="anchored" data-anchor-id="space-repetition-flashcards">2. Space Repetition Flashcards</h2>
-<ul>
-<li>Uses an AI tool (likely Claude) to generate question-answer pairs from content he’s studying</li>
-<li>Adds these to a spaced repetition app called Mochi to reinforce learning over time</li>
-</ul>
-</section>
-<section id="interview-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="interview-preparation">3. Interview Preparation</h2>
-<ul>
-<li>Experiments with using Claude to analyze patterns in his past interview questions</li>
-<li>Tries to use this to generate potential questions for upcoming interviews, though with limited success so far</li>
-</ul>
-</section>
-<section id="post-production-assistance" class="level2">
-<h2 class="anchored" data-anchor-id="post-production-assistance">4. Post-production Assistance</h2>
-<ul>
-<li>Uses AI speech-to-text (Assembly AI) to generate initial podcast transcripts</li>
-<li>Experiments with using GPT-4 to clean up and improve readability of transcripts</li>
-<li>Working on workflows to use AI to generate title ideas, clip suggestions, and highlights from transcripts</li>
-</ul>
-</section>
-<section id="writing-assistance" class="level2">
-<h2 class="anchored" data-anchor-id="writing-assistance">5. Writing Assistance</h2>
-<ul>
-<li>Uses Claude projects to organize notes, quotes, and ideas for long-form writing</li>
-<li>Asks Claude for help analyzing themes and creating outlines from his scattered notes</li>
-</ul>
-</section>
-<section id="general-learning-companion" class="level2">
-<h2 class="anchored" data-anchor-id="general-learning-companion">6. General Learning Companion</h2>
-<ul>
-<li>Frequently turns to Claude as a “first thing” when trying to understand new concepts or get context on topics</li>
-</ul>
-<p>I have been wanting to try Claude more so I signed up for a paid service. They’ve introduced a notion of <a href="https://www.anthropic.com/news/projects">Projects</a> which are areas where you can group chats and upload data to chat over.</p>
-<p>In the “How to Use Claude” example project, one of the files is a Claude Prompting Guide that I found useful as a refresher for good prompt engineering practices:</p>
-</section>
-</section>
-<section id="claude-prompting-guide" class="level1">
-<h1>Claude prompting guide</h1>
-<section id="general-tips-for-effective-prompting" class="level2">
-<h2 class="anchored" data-anchor-id="general-tips-for-effective-prompting">General tips for effective prompting</h2>
-<section id="be-clear-and-specific" class="level3">
-<h3 class="anchored" data-anchor-id="be-clear-and-specific">1. Be clear and specific</h3>
-<ul>
-<li>Clearly state your task or question at the beginning of your message.</li>
-<li>Provide context and details to help Claude understand your needs.</li>
-<li>Break complex tasks into smaller, manageable steps.</li>
-</ul>
-<p>Bad prompt: <prompt> “Help me with a presentation.” </prompt></p>
-<p>Good prompt: <prompt> “I need help creating a 10-slide presentation for our quarterly sales meeting. The presentation should cover our Q2 sales performance, top-selling products, and sales targets for Q3. Please provide an outline with key points for each slide.” </prompt></p>
-<p>Why it’s better: The good prompt provides specific details about the task, including the number of slides, the purpose of the presentation, and the key topics to be covered.</p>
-</section>
-<section id="use-examples" class="level3">
-<h3 class="anchored" data-anchor-id="use-examples">2. Use examples</h3>
-<ul>
-<li>Provide examples of the kind of output you’re looking for.</li>
-<li>If you want a specific format or style, show Claude an example.</li>
-</ul>
-<p>Bad prompt: <prompt> “Write a professional email.” </prompt></p>
-<p>Good prompt: <prompt> “I need to write a professional email to a client about a project delay. Here’s a similar email I’ve sent before:</prompt></p>
-<p>‘Dear [Client], I hope this email finds you well. I wanted to update you on the progress of [Project Name]. Unfortunately, we’ve encountered an unexpected issue that will delay our completion date by approximately two weeks. We’re working diligently to resolve this and will keep you updated on our progress. Please let me know if you have any questions or concerns. Best regards, [Your Name]’</p>
-<p>Help me draft a new email following a similar tone and structure, but for our current situation where we’re delayed by a month due to supply chain issues.” </p>
-<p>Why it’s better: The good prompt provides a concrete example of the desired style and tone, giving Claude a clear reference point for the new email.</p>
-</section>
-<section id="encourage-thinking" class="level3">
-<h3 class="anchored" data-anchor-id="encourage-thinking">3. Encourage thinking</h3>
-<ul>
-<li>For complex tasks, ask Claude to “think step-by-step” or “explain your reasoning.”</li>
-<li>This can lead to more accurate and detailed responses.</li>
-</ul>
-<p>Bad prompt: <prompt> “How can I improve team productivity?” </prompt></p>
-<p>Good prompt: <prompt> “I’m looking to improve my team’s productivity. Think through this step-by-step, considering the following factors: 1. Current productivity blockers (e.g., too many meetings, unclear priorities) 2. Potential solutions (e.g., time management techniques, project management tools) 3. Implementation challenges 4. Methods to measure improvement</prompt></p>
-<p>For each step, please provide a brief explanation of your reasoning. Then summarize your ideas at the end.” </p>
-<p>Why it’s better: The good prompt asks Claude to think through the problem systematically, providing a guided structure for the response and asking for explanations of the reasoning process. It also prompts Claude to create a summary at the end for easier reading.</p>
-</section>
-<section id="iterative-refinement" class="level3">
-<h3 class="anchored" data-anchor-id="iterative-refinement">4. Iterative refinement</h3>
-<ul>
-<li>If Claude’s first response isn’t quite right, ask for clarifications or modifications.</li>
-<li>You can always say “That’s close, but can you adjust X to be more like Y?”</li>
-</ul>
-<p>Bad prompt: <prompt> “Make it better.” </prompt></p>
-<p>Good prompt: <prompt> “That’s a good start, but please refine it further. Make the following adjustments: 1. Make the tone more casual and friendly 2. Add a specific example of how our product has helped a customer 3. Shorten the second paragraph to focus more on the benefits rather than the features” </prompt></p>
-<p>Why it’s better: The good prompt provides specific feedback and clear instructions for improvements, allowing Claude to make targeted adjustments instead of just relying on Claude’s innate sense of what “better” might be — which is likely different from the user’s definition!</p>
-</section>
-<section id="leverage-claudes-knowledge" class="level3">
-<h3 class="anchored" data-anchor-id="leverage-claudes-knowledge">5. Leverage Claude’s knowledge</h3>
-<ul>
-<li>Claude has broad knowledge across many fields. Don’t hesitate to ask for explanations or background information</li>
-<li>Be sure to include relevant context and details so that Claude’s response is maximally targeted to be helpful</li>
-</ul>
-<p>Bad prompt: <prompt> “What is marketing? How do I do it?” </prompt></p>
-<p>Good prompt: <prompt> “I’m developing a marketing strategy for a new eco-friendly cleaning product line. Can you provide an overview of current trends in green marketing? Please include: 1. Key messaging strategies that resonate with environmentally conscious consumers 2. Effective channels for reaching this audience 3. Examples of successful green marketing campaigns from the past year 4. Potential pitfalls to avoid (e.g., greenwashing accusations)</prompt></p>
-<p>This information will help me shape our marketing approach.” </p>
-<p>Why it’s better: The good prompt asks for specific, contextually relevant information that leverages Claude’s broad knowledge base. It provides context for how the information will be used, which helps Claude frame its answer in the most relevant way.</p>
-</section>
-<section id="use-role-playing" class="level3">
-<h3 class="anchored" data-anchor-id="use-role-playing">6. Use role-playing</h3>
-<ul>
-<li>Ask Claude to adopt a specific role or perspective when responding.</li>
-</ul>
-<p>Bad prompt: <prompt> “Help me prepare for a negotiation.” </prompt></p>
-<p>Good prompt: <prompt> “You are a fabric supplier for my backpack manufacturing company. I’m preparing for a negotiation with this supplier to reduce prices by 10%. As the supplier, please provide: 1. Three potential objections to our request for a price reduction 2. For each objection, suggest a counterargument from my perspective 3. Two alternative proposals the supplier might offer instead of a straight price cut</prompt></p>
-<p>Then, switch roles and provide advice on how I, as the buyer, can best approach this negotiation to achieve our goal.” </p>
-<p>Why it’s better: This prompt uses role-playing to explore multiple perspectives of the negotiation, providing a more comprehensive preparation. Role-playing also encourages Claude to more readily adopt the nuances of specific perspectives, increasing the intelligence and performance of Claude’s response.</p>
-</section>
-</section>
-<section id="task-specific-tips-and-examples" class="level2">
-<h2 class="anchored" data-anchor-id="task-specific-tips-and-examples">Task-specific tips and examples</h2>
-<section id="content-creation" class="level3">
-<h3 class="anchored" data-anchor-id="content-creation">Content Creation</h3>
-<ol type="1">
-<li><p><strong>Specify your audience</strong></p>
-<ul>
-<li>Tell Claude who the content is for.</li>
-</ul>
-<p>Bad prompt: <prompt> “Write something about cybersecurity.” </prompt></p>
-<p>Good prompt: <prompt> “I need to write a blog post about cybersecurity best practices for small business owners. The audience is not very tech-savvy, so the content should be:</prompt></p>
-<ol type="1">
-<li>Easy to understand, avoiding technical jargon where possible</li>
-<li>Practical, with actionable tips they can implement quickly</li>
-<li>Engaging and slightly humorous to keep their interest</li>
-</ol>
-<p>Please provide an outline for a 1000-word blog post that covers the top 5 cybersecurity practices these business owners should adopt.” </p>
-<p>Why it’s better: The good prompt specifies the audience, desired tone, and key characteristics of the content, giving Claude clear guidelines for creating appropriate and effective output.</p></li>
-<li><p><strong>Define the tone and style</strong></p>
-<ul>
-<li>Describe the desired tone.</li>
-<li>If you have a style guide, mention key points from it.</li>
-</ul>
-<p>Bad prompt: <prompt> “Write a product description.” </prompt></p>
-<p>Good prompt: <prompt> “Please help me write a product description for our new ergonomic office chair. Use a professional but engaging tone. Our brand voice is friendly, innovative, and health-conscious. The description should:</prompt></p>
-<ol type="1">
-<li>Highlight the chair’s key ergonomic features</li>
-<li>Explain how these features benefit the user’s health and productivity</li>
-<li>Include a brief mention of the sustainable materials used</li>
-<li>End with a call-to-action encouraging readers to try the chair</li>
-</ol>
-<p>Aim for about 200 words.” </p>
-<p>Why it’s better: This prompt provides clear guidance on the tone, style, and specific elements to include in the product description.</p></li>
-<li><p><strong>Define output structure</strong></p>
-<ul>
-<li>Provide a basic outline or list of points you want covered.</li>
-</ul>
-<p>Bad prompt: <prompt> “Create a presentation on our company results.” </prompt></p>
-<p>Good prompt: <prompt> “I need to create a presentation on our Q2 results. Structure this with the following sections:</prompt></p>
-<ol type="1">
-<li>Overview</li>
-<li>Sales Performance</li>
-<li>Customer Acquisition</li>
-<li>Challenges</li>
-<li>Q3 Outlook</li>
-</ol>
-<p>For each section, suggest 3-4 key points to cover, based on typical business presentations. Also, recommend one type of data visualization (e.g., graph, chart) that would be effective for each section.” </p>
-<p>Why it’s better: This prompt provides a clear structure and asks for specific elements (key points and data visualizations) for each section.</p></li>
-</ol>
-</section>
-<section id="document-summary-and-qa" class="level3">
-<h3 class="anchored" data-anchor-id="document-summary-and-qa">Document summary and Q&amp;A</h3>
-<ol type="1">
-<li><strong>Be specific about what you want</strong>
-<ul>
-<li>Ask for a summary of specific aspects or sections of the document.</li>
-<li>Frame your questions clearly and directly.</li>
-<li>Be sure to specify what kind of summary (output structure, content type) you want</li>
-</ul></li>
-<li><strong>Use the document names</strong>
-<ul>
-<li>Refer to attached documents by name.</li>
-</ul></li>
-<li><strong>Ask for citations</strong>
-<ul>
-<li>Request that Claude cites specific parts of the document in its answers.</li>
-</ul></li>
-</ol>
-<p>Here is an example that combines all three of the above techniques:</p>
-<p>Bad prompt: <prompt> “Summarize this report for me.” </prompt></p>
-<p>Good prompt: <prompt> “I’ve attached a 50-page market research report called ‘Tech Industry Trends 2023’. Can you provide a 2-paragraph summary focusing on AI and machine learning trends? Then, please answer these questions: 1. What are the top 3 AI applications in business for this year? 2. How is machine learning impacting job roles in the tech industry? 3. What potential risks or challenges does the report mention regarding AI adoption?</prompt></p>
-<p>Please cite specific sections or page numbers when answering these questions.” </p>
-<p>Why it’s better: This prompt specifies the exact focus of the summary, provides specific questions, and asks for citations, ensuring a more targeted and useful response. It also indicates the ideal summary output structure, such as limiting the response to 2 paragraphs.</p>
-</section>
-<section id="data-analysis-and-visualization" class="level3">
-<h3 class="anchored" data-anchor-id="data-analysis-and-visualization">Data analysis and visualization</h3>
-<ol type="1">
-<li><p><strong>Specify the desired format</strong></p>
-<ul>
-<li>Clearly describe the format you want the data in.</li>
-</ul>
-<p>Bad prompt: <prompt> “Analyze our sales data.” </prompt></p>
-<p>Good prompt: <prompt> “I’ve attached a spreadsheet called ‘Sales Data 2023’. Can you analyze this data and present the key findings in the following format:</prompt></p>
-<ol type="1">
-<li><p>Executive Summary (2-3 sentences)</p></li>
-<li><p>Key Metrics:</p>
-<ul>
-<li>Total sales for each quarter</li>
-<li>Top-performing product category</li>
-<li>Highest growth region</li>
-</ul></li>
-<li><p>Trends:</p>
-<ul>
-<li>List 3 notable trends, each with a brief explanation</li>
-</ul></li>
-<li><p>Recommendations:</p>
-<ul>
-<li>Provide 3 data-driven recommendations, each with a brief rationale</li>
-</ul></li>
-</ol>
-<p>After the analysis, suggest three types of data visualizations that would effectively communicate these findings.” </p>
-<p>Why it’s better: This prompt provides a clear structure for the analysis, specifies key metrics to focus on, and asks for recommendations and visualization suggestions for further formatting.</p></li>
-</ol>
-</section>
-<section id="brainstorming" class="level3">
-<h3 class="anchored" data-anchor-id="brainstorming">Brainstorming</h3>
-<ol type="1">
-<li>Use Claude to generate ideas by asking for a list of possibilities or alternatives.
-<ul>
-<li>Be specific about what topics you want Claude to cover in its brainstorming</li>
-</ul></li>
-</ol>
-<p>Bad prompt: <prompt> “Give me some team-building ideas.” </prompt></p>
-<p>Good prompt: <prompt> “We need to come up with team-building activities for our remote team of 20 people. Can you help me brainstorm by: 1. Suggesting 10 virtual team-building activities that promote collaboration 2. For each activity, briefly explain how it fosters teamwork 3. Indicate which activities are best for: a) Ice-breakers b) Improving communication c) Problem-solving skills 4. Suggest one low-cost option and one premium option.” </prompt></p>
-<p>Why it’s better: This prompt provides specific parameters for the brainstorming session, including the number of ideas, type of activities, and additional categorization, resulting in a more structured and useful output.</p>
-<ol start="2" type="1">
-<li><p>Request responses in specific formats like bullet points, numbered lists, or tables for easier reading.</p>
-<p>Bad Prompt: <prompt> “Compare project management software options.” </prompt></p>
-<p>Good Prompt: <prompt> “We’re considering three different project management software options: Asana, Trello, and Microsoft Project. Can you compare these in a table format using the following criteria:</prompt></p>
-<ol type="1">
-<li>Key Features</li>
-<li>Ease of Use</li>
-<li>Scalability</li>
-<li>Pricing (include specific plans if possible)</li>
-<li>Integration capabilities</li>
-<li>Best suited for (e.g., small teams, enterprise, specific industries)” </li>
-</ol>
-<p>Why it’s better: This prompt requests a specific structure (table) for the comparison, provides clear criteria, making the information easy to understand and apply.</p></li>
-</ol>
-</section>
-</section>
-<section id="troubleshooting-minimizing-hallucinations-and-maximizing-performance" class="level2">
-<h2 class="anchored" data-anchor-id="troubleshooting-minimizing-hallucinations-and-maximizing-performance">Troubleshooting, minimizing hallucinations, and maximizing performance</h2>
-<ol type="1">
-<li><strong>Allow Claude to acknowledge uncertainty</strong>
-<ul>
-<li>Tell Claude that it should say it doesn’t know if it doesn’t know. Ex. “If you’re unsure about something, it’s okay to admit it. Just say you don’t know.”</li>
-</ul></li>
-<li><strong>Break down complex tasks</strong>
-<ul>
-<li>If a task seems too large and Claude is missing steps or not performing certain steps well, break it into smaller steps and work through them with Claude one message at a time.</li>
-</ul></li>
-<li><strong>Include all contextual information for new requests</strong>
-<ul>
-<li>Claude doesn’t retain information from previous conversations, so include all necessary context in each new conversation.</li>
-</ul></li>
-</ol>
-</section>
-<section id="example-good-vs.-bad-prompt-examples" class="level2">
-<h2 class="anchored" data-anchor-id="example-good-vs.-bad-prompt-examples">Example good vs.&nbsp;bad prompt examples</h2>
-<p>These are more examples that combine multiple prompting techniques to showcase the stark difference between ineffective and highly effective prompts.</p>
-<section id="example-1-marketing-strategy-development" class="level3">
-<h3 class="anchored" data-anchor-id="example-1-marketing-strategy-development">Example 1: Marketing strategy development</h3>
-<p>Bad prompt: <prompt> “Help me create a marketing strategy.” </prompt></p>
-<p>Good prompt: <prompt> “As a senior marketing consultant, I need your help developing a comprehensive marketing strategy for our new eco-friendly smartphone accessory line. Our target audience is environmentally conscious millennials and Gen Z consumers. Please provide a detailed strategy that includes:</prompt></p>
-<ol type="1">
-<li>Market Analysis:
-<ul>
-<li>Current trends in eco-friendly tech accessories</li>
-<li>2-3 key competitors and their strategies</li>
-<li>Potential market size and growth projections</li>
-</ul></li>
-<li>Target Audience Persona:
-<ul>
-<li>Detailed description of our ideal customer</li>
-<li>Their pain points and how our products solve them</li>
-</ul></li>
-<li>Marketing Mix:
-<ul>
-<li>Product: Key features to highlight</li>
-<li>Price: Suggested pricing strategy with rationale</li>
-<li>Place: Recommended distribution channels</li>
-<li>Promotion:
-<ol type="a">
-<li>5 marketing channels to focus on, with pros and cons for each</li>
-<li>3 creative campaign ideas for launch</li>
-</ol></li>
-</ul></li>
-<li>Content Strategy:
-<ul>
-<li>5 content themes that would resonate with our audience</li>
-<li>Suggested content types (e.g., blog posts, videos, infographics)</li>
-</ul></li>
-<li>KPIs and Measurement:
-<ul>
-<li>5 key metrics to track</li>
-<li>Suggested tools for measuring these metrics</li>
-</ul></li>
-</ol>
-<p>Please present this information in a structured format with headings and bullet points. Where relevant, explain your reasoning or provide brief examples.</p>
-<p>After outlining the strategy, please identify any potential challenges or risks we should be aware of, and suggest mitigation strategies for each.” </p>
-<p>Why it’s better: This prompt combines multiple techniques including role assignment, specific task breakdown, structured output request, brainstorming (for campaign ideas and content themes), and asking for explanations. It provides clear guidelines while allowing room for Claude’s analysis and creativity.</p>
-</section>
-<section id="example-2-financial-report-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="example-2-financial-report-analysis">Example 2: Financial report analysis</h3>
-<p>Bad prompt: <prompt> “Analyze this financial report.” </prompt></p>
-<p>Good prompt: <prompt> “I’ve attached our company’s Q2 financial report titled ‘Q2_2023_Financial_Report.pdf’. Act as a seasoned CFO and analyze this report and prepare a briefing for our board of directors. Please structure your analysis as follows:</prompt></p>
-<ol type="1">
-<li><p>Executive Summary (3-4 sentences highlighting key points)</p></li>
-<li><p>Financial Performance Overview:</p>
-<ol type="a">
-<li>Revenue: Compare to previous quarter and same quarter last year</li>
-<li>Profit margins: Gross and Net, with explanations for any significant changes</li>
-<li>Cash flow: Highlight any concerns or positive developments</li>
-</ol></li>
-<li><p>Key Performance Indicators:</p>
-<ul>
-<li>List our top 5 KPIs and their current status (Use a table format)</li>
-<li>For each KPI, provide a brief explanation of its significance and any notable trends</li>
-</ul></li>
-<li><p>Segment Analysis:</p>
-<ul>
-<li>Break down performance by our three main business segments</li>
-<li>Identify the best and worst performing segments, with potential reasons for their performance</li>
-</ul></li>
-<li><p>Balance Sheet Review:</p>
-<ul>
-<li>Highlight any significant changes in assets, liabilities, or equity</li>
-<li>Calculate and interpret key ratios (e.g., current ratio, debt-to-equity)</li>
-</ul></li>
-<li><p>Forward-Looking Statements:</p>
-<ul>
-<li>Based on this data, provide 3 key predictions for Q3</li>
-<li>Suggest 2-3 strategic moves we should consider to improve our financial position</li>
-</ul></li>
-<li><p>Risk Assessment:</p>
-<ul>
-<li>Identify 3 potential financial risks based on this report</li>
-<li>Propose mitigation strategies for each risk</li>
-</ul></li>
-<li><p>Peer Comparison:</p>
-<ul>
-<li>Compare our performance to 2-3 key competitors (use publicly available data)</li>
-<li>Highlight areas where we’re outperforming and areas for improvement</li>
-</ul></li>
-</ol>
-<p>Please use charts or tables where appropriate to visualize data. For any assumptions or interpretations you make, please clearly state them and provide your reasoning.</p>
-<p>After completing the analysis, please generate 5 potential questions that board members might ask about this report, along with suggested responses.</p>
-<p>Finally, summarize this entire analysis into a single paragraph that I can use as an opening statement in the board meeting.” </p>
-<p>Why it’s better: This prompt combines role-playing (as CFO), structured output, specific data analysis requests, predictive analysis, risk assessment, comparative analysis, and even anticipates follow-up questions. It provides a clear framework while encouraging deep analysis and strategic thinking.</p>
-
-
-</section>
-</section>
-</section>
-
- ]]></description>
-  <category>ai</category>
-  <category>summary</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2024-07-26-dwarkesh-claude/</guid>
-  <pubDate>Fri, 26 Jul 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
