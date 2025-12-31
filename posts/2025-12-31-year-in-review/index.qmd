@@ -3,10 +3,11 @@ title: "Year in Review - 2025"
 author: Lawrence Wu
 date: '2025-12-31'
 categories: [personal]
-draft: true
 ---
 
 This is the first time I'm taking some time to do a year in review and posting it on my blog. Overall I've enjoyed the exercise of writing and sharing ideas and things I've learned across a variety of topics with others. The main categories I've written about thus far are about AI and personal finances. I wrote my first [book review](https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/) and would like to write more of those. I'd like to also continue blogging next year.
+
+In this review, I'll go through [blogging](#blogging), [books](#books) I read, reflections in [Biblical counseling](#biblical-counseling), review of [personal finances](#personal-finances) this year, [running](#running) and [AI](#ai) (mainly some thoughts on [agentic coding and Claude Code](#agentic-coding)).
 
 ## Blogging
 
@@ -26,6 +27,129 @@ The posts with the most engagement time:
 - [2025-12-19: Bunching Charitable Contributions in 2025](https://lawwu.github.io/posts/2025-12-19-bunching-strategy/){target="_blank"}
 - [2024-09-20: Introduction to LangGraph Tutorial](https://lawwu.github.io/posts/2024-09-20-langgraph-tutorial/){target="_blank"}
 
+## Books
+
+Still really enjoy reading. I love reading because the author of the book you are holding has spent countless hours going deep on a topic and taken the time to write a book on this topic. You are literally getting a person's best thoughts about a topic. Books are so information dense.
+
+[**David Mathis - A Little Theology of Exercise**](https://amzn.to/4pc5Pc9){target="_blank"}
+
+[![](../2025-11-24-little-theology-of-exercise/little_theology_of_exercise.jpg){width=200px}](https://amzn.to/4pc5Pc9){target="_blank"}
+
+Short read that changed my perspective on exercise from a merely physical activity that was good for my body (which it is) to something that instead is for my mind. Research shows exercise helps the brain and in turn I can use my mind to love God and love others (Matthew 22:37-38). I wrote a review of this book [here](https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/).
+
+[**Andy David Naselli - How to Understand and Apply the New Testament**](https://amzn.to/3LfW5zF){target="_blank"}
+
+[![](images/how-to-read-new-testament.jpg){width=200px}](https://amzn.to/3LfW5zF){target="_blank"}
+
+I read the companion book, [How to Understand and Apply the Old Testament](https://amzn.to/3LfW5zF){target="_blank"} last year with a friend. We decided to read the NT version. Andy Naselli has a sample of the book on his [blog](https://andynaselli.com/how-to-understand-and-apply-the-new-testament-twelve-steps-from-exegesis-to-theology){target="_blank"}. Reading these two books gave me a greater appreciation for the current Bible I hold. There are so many people who have dedicated their lives to studying the original languages (Hebrew and/or Greek), studying the original manuscripts and laboring to faithfully translate the Bible. Another idea that stood out is Biblical Theology aka tracing a theme or idea from the Old Testament to the New Testament. It's neat doing this with things like:
+
+- Law
+- Temple
+- Priest
+- Kingdom of God
+- people of God
+- Holiness
+
+[**Morgan Housel - The Art of Spending Money**](https://amzn.to/3YldZ7f){target="_blank"}
+
+[![](images/art-of-spending.jpg){width=200px}](https://amzn.to/3YldZ7f){target="_blank"}
+
+Morgan Housel is one of the best personal finance writers right now. He is such a clear and succinct writer with an ability to tell such great stories. He has such good pithy sayings too.
+
+I liked his list of money thoughts that guide his home:
+
+- spend less than you make
+- Quietly compound
+- Money serves you, not the other way around
+- No one is thinking about you as much as you are
+- Independence is wealth
+- Health is wealth
+- Aim to be a good ancestor
+- Love your family
+
+
+[**Sahil Bloom - The 5 Types of Wealth**](https://amzn.to/44TcdxL){target="_blank"}
+
+[![](images/5-types-of-wealth.jpg){width=200px}](https://amzn.to/44TcdxL){target="_blank"}
+
+The author talks about 5 types of wealth:
+
+- Time
+- Social
+- Mental
+- Physical
+- Financial
+
+I thought it was helpful thinking about wealth from the these other 4 perspectives since we usually think of wealth from a financial perspective. I would add a 6th type of wealth to this: "Spiritual." These are things that matter to God, have an eternal value, aka treasures in heaven (Matthew 6:19-21).
+
+[**Nick Maggiulli - The Wealth Ladder**](https://amzn.to/4piSMG8){target="_blank"}
+
+[![](images/wealth-ladder.jpg){width=200px}](https://amzn.to/4piSMG8){target="_blank"}
+
+I didn't think this had to be a book, I thought Nick's [blog post from 2019](https://ofdollarsanddata.com/climbing-the-wealth-ladder/){target="_blank"} already summarized this idea well. His framing for the mindset at each level was helpful (using a rule of thumb you can safely spend 0.1% of your net worth without it making a huge dent). He defines 6 levels of wealth with a different mindset and strategy to get to the next level:
+
+- Level 1: <$10K (lower class)
+    - Mindset: All prices matter
+    - Build marketable skills
+- Level 2: $10K–$100K (working class)
+    - Mindset: Grocery prices matter less
+    - Get education to unlock higher income
+- Level 3: $100K–$1M (middle class)
+    - Mindset: Restaurant prices matter less
+    - Invest in income producing assets
+- Level 4: $1M–$10M (upper middle class)
+    - Mindset: Vacation prices matter less
+    - Own a business
+- Level 5: $10M–$100M (upper class)
+    - Mindset: Home prices matter less
+    - Scale a business
+- Level 6: >$100M (the superrich)
+    - Mindset: What are prices?
+
+[**Corlette Sande - The Young Peacemaker**](https://amzn.to/4qyxw06){target="_blank"}
+
+[![](images/young-peacemaker.jpg){width=200px}](https://amzn.to/4qyxw06){target="_blank"}
+
+Similar material from Ken Sande's book the Peacemaker but designed to go through with your kids on how to respond to conflict in a Biblical manner.
+
+[**Michael and Melissa Kruger - 5 Things to Pray for Your Spouse**](https://amzn.to/4pi1qEM){target="_blank"}
+
+![](images/5-things-pray-kids.jpg){width=200px}
+
+Found this helpful to diversify my prayers for my wife. Gives you 5 different things to pray for your wife each day based on a verse.
+
+[**Melissa Kruger - 5 Things to Pray for Your Kids**](https://amzn.to/3N22AGY){target="_blank"}
+
+[![](images/5-things-pray-spouse.jpg){width=200px}](https://amzn.to/3N22AGY){target="_blank"}
+
+Same book as above but for kids, still helpful. For example
+
+[**Marty Machowski - Promises Made, Promises Kept**](https://amzn.to/4q4dxXg){target="_blank"}
+
+![](images/promises-made-kept.jpg){width=200px}
+
+I really like Marty Machowski's books. He's such a great writer, being able to explain theological concepts to children. For example The Ology was a great book. Promises Made, Promises Kept is an interesting book. There are two books in one. You start the Promises Made on December 18 which talk about all of the promises God made that were eventually fulfilled in Christ (through 7 stories). Then on Christmas, December 25, you start Promises Kept which unpacks how Christ's life, death and resurrection fulfills these promises (again through 7 stories).
+
+[**Paul David Tripp - Marriage: 6 Gospel Commitments Every Couple Needs to Make**](https://amzn.to/3YPwa51){target="_blank"}
+
+[![](images/marriage-tripp.jpg){width=200px}](https://amzn.to/3YPwa51){target="_blank"}
+
+I like how Tripp is faithful to the Bible in his books. I would describe most of his books I've read on a given topic are really books about the gospel. So you won't get a lot of practical advice on how to approach marriage but you will get reoriented on the foundation of marriage.
+
+[**Chip Huyen - AI Engineering**](https://amzn.to/48YFpWE){target="_blank"}
+
+[![](images/ai-engineering.jpg){width=200px}](https://amzn.to/48YFpWE){target="_blank"}
+
+This book came out December 2024. I like Chip Huyen's writing on her [blog](https://huyenchip.com/blog/){target="_blank"}. I found this book to be a pretty good overview of this emerging new field of AI Engineering where as an engineer, you build applications on top of AI APIs. It's a field where I've observed software engineering skills matter more than traditional AI/ML/DS skills. Bceause of the pace of AI development, some of the things in this book are likely dated now.
+
+## Biblical Counseling
+
+I started working toward a Biblical Counseling certificiation through ACBC in 2021. Phase 1 was relatively painless. Phase 2 has been much more of a slog. I finally finished my last essay. One of biggest motivations for pursuing this path was because I wanted to counsel myself and my family in a more Biblical manner. Through going through this process, some things I learned:
+
+- Everyone counsels - if you talk to people and give advice, you are "unoffiically counseling" people. As a Christian, if I believe the Bible is the greatest source of authority, literally the Word of God or God's words, then my advice/counsel should be based on the Bible.
+- The sufficiency of Scripture - this is a theological term that means the Bible contains all that we need to live out the Christian life. Wayne Grudem defines sufficiency as it *"means that Scripture contains all the words of God we need for salvation, for trusting him perfectly, and for obeying him perfectly. This definition emphasizes that it is in Scripture alone that we are to search for God’s words to us. It also reminds us that God considers what he has told us in the Bible to be enough for us and that we should rejoice in the great revelation he has given us and be content with it.”* (Systematic Theology, page 333-334) More than my experiences, traditions or worldly wisdom, Scripture is what I need to go back to find answers.
+- AI can write a pretty good ACBC essay. However, the value in writing these essays (and writing in general) is gives you the writer an opportunity to process what you've learned. [Writing is thinking](https://www.nature.com/articles/s44222-025-00323-4){target="_blank"}. As we enter the age of AI, I actually believe thinking is even more important. We cannot allow AI to think for us. Having to write essays on a variety of theological and counseling based situations gave me an opportunity to consume material on the topic, synthesize the material into an outline and then bring it all together by writing hopefully coherent paragraphs.
+
 ## Personal Finances
 
 ### Investments
@@ -44,22 +168,22 @@ The stock portion is:
 
 The funds I own are either US funds like a total stock VTI or an S&P 500 fund like FXAIX, international funds (VXUS, FTIHX, FSPSX), a world fund like VT or a Bitcoin ETF (FBTC).
 
-Here are the 70/30 US/International portfolio returns since 2016:
+Here are the VT (Vanguard Total World Stock ETF) returns since 2016:
 
-| Year | 70/30 Returns |
-|------|---------------|
-| 2016 | 10.4% |
-| 2017 | 23.1% |
-| 2018 | -8.0% |
-| 2019 | 28.0% |
-| 2020 | 17.9% |
-| 2021 | 20.5% |
-| 2022 | -18.3% |
-| 2023 | 22.4% |
-| 2024 | 18.6% |
-| 2025 | 22.4% |
+| Year | VT Returns |
+|------|------------|
+| 2016 | 8.5% |
+| 2017 | 24.5% |
+| 2018 | -9.8% |
+| 2019 | 26.8% |
+| 2020 | 16.6% |
+| 2021 | 18.3% |
+| 2022 | -18.0% |
+| 2023 | 22.0% |
+| 2024 | 16.5% |
+| 2025 | 23.6% |
 
-It's been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more. Only 2 down years.
+It's been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more with only 2 down years. If you invested $10,000 at the beginning of 2016, you will have tripled your investment.
 
 ```{python}
 #| echo: false
@@ -70,30 +194,83 @@ import pandas as pd
 # Investment returns data
 df = pd.DataFrame({
     'Year': [2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025],
-    '70/30 Returns': [10.4, 23.1, -8.0, 28.0, 17.9, 20.5, -18.3, 22.4, 18.6, 22.4]
+    'VT Returns': [8.5, 24.5, -9.8, 26.8, 16.6, 18.3, -18.0, 22.0, 16.5, 23.6]
 })
 
-# Create bar chart
-fig = go.Figure(data=[
-    go.Bar(
-        name='70/30 Benchmark',
-        x=df['Year'],
-        y=df['70/30 Returns'],
-        marker_color='#2563eb',
-        hovertemplate='<b>%{x}</b><br>70/30 Returns: %{y}%<extra></extra>'
-    )
-])
+# Calculate cumulative value starting with $10,000
+initial_investment = 10000
+df['Growth Factor'] = 1 + (df['VT Returns'] / 100)
+df['Cumulative Value'] = initial_investment * df['Growth Factor'].cumprod()
 
-# Update layout
+# Create figure with secondary y-axis
+fig = go.Figure()
+
+# Add annual returns bar chart (left y-axis)
+fig.add_trace(
+    go.Bar(
+        x=df['Year'],
+        y=df['VT Returns'],
+        name='Annual Return',
+        marker_color='#2563eb',
+        hovertemplate='<b>%{x}</b><br>Return: %{y}%<extra></extra>',
+        yaxis='y'
+    )
+)
+
+# Add cumulative value line chart (right y-axis)
+fig.add_trace(
+    go.Scatter(
+        x=df['Year'],
+        y=df['Cumulative Value'],
+        name='Growth of $10,000',
+        line=dict(color='#10b981', width=3),
+        mode='lines+markers',
+        marker=dict(size=8),
+        hovertemplate='<b>%{x}</b><br>Value: $%{y:,.0f}<extra></extra>',
+        yaxis='y2'
+    )
+)
+
+# Add zero line for annual returns
+fig.add_hline(y=0, line_dash="dash", line_color="#666", line_width=1)
+
+# Calculate aligned axis ranges
+# Left axis: ensure 0% is visible
+left_min, left_max = -20, 30
+# Right axis: align $10,000 (initial investment) with 0% on left axis
+# Position of 0% on left axis: 20/50 = 0.4 from bottom
+# We want $10,000 at same position on right axis
+right_max = df['Cumulative Value'].max() * 1.05  # Add 5% padding
+right_min = initial_investment - (right_max - initial_investment) * (20/30)
+
+# Update layout with dual y-axes
 fig.update_layout(
-    title='70/30 US/International Portfolio Returns (2016-2025)',
-    xaxis_title='Year',
-    yaxis_title='Annual Return (%)',
-    yaxis=dict(gridcolor='lightgray', zeroline=True, zerolinecolor='#666', zerolinewidth=1),
+    title='VT Returns (2016-2025)',
+    xaxis=dict(title='Year'),
+    yaxis=dict(
+        title='Annual Return (%)',
+        gridcolor='lightgray',
+        range=[left_min, left_max]
+    ),
+    yaxis2=dict(
+        title='Portfolio Value ($)',
+        overlaying='y',
+        side='right',
+        gridcolor='lightgray',
+        showgrid=False,
+        range=[right_min, right_max]
+    ),
     plot_bgcolor='white',
     width=800,
-    height=400,
-    showlegend=False
+    height=450,
+    legend=dict(
+        orientation='h',
+        yanchor='bottom',
+        y=1.02,
+        xanchor='right',
+        x=1
+    ),
+    hovermode='x unified'
 )
 
 fig.show()
@@ -101,11 +278,11 @@ fig.show()
 
 ### Cash / Emergency Fund
 
-I no longer own any I-Bonds. I sold my last ones in 2024. All of our cash / emergency funds is in a Fidelity CMA account that currently earns 3.42%. All of it is automatically invested in SPAXX, Fidelity's Government Money Market Fund. One of the great things about a CMA account is you can pay bills from it and Fidelity will sell your core cash position (SPAXX is the default) to pay the bill. The Frugal Professor has written a post on the Fidelity CMA [here](https://frugalprofessor.com/the-ultimate-guide-to-fidelitys-cash-management-account-cma/).
+I no longer own any I-Bonds. I sold my last ones in 2024. All of our cash / emergency funds is in a Fidelity CMA account that currently earns 3.42%. All of it is automatically invested in SPAXX, Fidelity's Government Money Market Fund. One of the great things about a CMA account is you can pay bills from it and Fidelity will sell your core cash position (SPAXX is the default) to pay the bill. The Frugal Professor has written a post on the Fidelity CMA [here](https://frugalprofessor.com/the-ultimate-guide-to-fidelitys-cash-management-account-cma/){target="_blank"}.
 
 ### Credit Cards
 
-The US Bank Smartly 4% cash back card came and went. It was a little too good to be true and I got the infamous [bad letter](https://www.doctorofcredit.com/u-s-bank-to-nerf-existing-smartly-cardholders-on-september-15/) in September. I moved all of our credit card spending to the [BofA Premium Rewards Elite](https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/) where I earn 3.5% on travel/dining and 2.625% on all other spend.
+The US Bank Smartly 4% cash back card came and went. It was a little too good to be true and I got the infamous [bad letter](https://www.doctorofcredit.com/u-s-bank-to-nerf-existing-smartly-cardholders-on-september-15/){target="_blank"} in September. I moved all of our credit card spending to the [BofA Premium Rewards Elite](https://www.bankofamerica.com/credit-cards/products/premium-rewards-elite-credit-card/){target="_blank"} where I earn 3.5% on travel/dining and 2.625% on all other spend.
 
 I got a couple credit card sign up bonuses this year:
 
@@ -114,35 +291,46 @@ I got a couple credit card sign up bonuses this year:
 
 The Amex Platinum takes a fair amount of work to maximize it's rewards. I don't really like the overhead and probably won't keep it.
 
-## Biblical Counseling
+## Running
 
-I started working toward a Biblical Counseling certificiation through ACBC in 2021. Phase 1 was relatively painless. Phase 2 has been much more of a slog. I finally finished my last essay. One of biggest motivations for pursuing this path was because I wanted to counsel myself and my family in a more Biblical manner. Through going through this process, some things I learned:
+Ran my [second half-marathon](https://lawwu.github.io/posts/2025-02-02-second-half-marathon/) and [first full-marathon](https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/) this year. Running continues to be my favorite form of cardio. God willing, hopefully I have many more years of running ahead of me.
 
-- Everyone counsels - if you talk to people and give advice, you are "unoffiically counseling" people. As a Christian, if I believe the Bible is the greatest source of authority, literally the Word of God or God's words, then my advice/counsel should be based on the Bible.
-- The sufficiency of Scripture - this is a theological term that means the Bible contains all that we need to live out the Christian life. Wayne Grudem defines sufficiency as it *"means that Scripture contains all the words of God we need for salvation, for trusting him perfectly, and for obeying him perfectly. This definition emphasizes that it is in Scripture alone that we are to search for God’s words to us. It also reminds us that God considers what he has told us in the Bible to be enough for us and that we should rejoice in the great revelation he has given us and be content with it.”* (Systematic Theology, page 333-334) More than my experiences, traditions or worldly wisdom, Scripture is what I need to go back to find answers.
-- AI can write a pretty good ACBC essay. However, the value in writing these essays (and writing in general) is gives you the writer an opportunity to process what you've learned. [Writing is thinking](https://www.nature.com/articles/s44222-025-00323-4). As we enter the age of AI, I actually believe thinking is even more important. We cannot allow AI to think for us. Having to write essays on a variety of theological and counseling based situations gave me an opportunity to consume material on the topic, synthesize the material into an outline and then bring it all together by writing hopefully coherent paragraphs.
+### Strava - Year in Sport
 
-## AI & Agentic Coding
+![](strava/stats.PNG){width=600px}
 
-One of the big changes this year was the rise of agentic coding tools like Claude Code. I started using it in [July 2025](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/) and have been using it almost daily since it came out. Anthropic has created an amazing tool. We've seen the underlying model improve. It's still hard to believe the intial release of Claude Code used Claude 3.7 Sonnet (I would've guessed this was last year)! We're now on Claude Opus 4.5. There has also been improvements in the Claude Code agentic harness too with todo lists, subagents, improvements to the system prompts, better tool calling, adding agent skills. Just look at the [CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md) to look at all these improvements over time. 
+![](strava/trophy_case.PNG){width=600px}
+
+![](strava/hours_active.PNG){width=600px}
+
+![](strava/days_active.PNG){width=600px}
+
+
+## AI 
+
+### Agentic Coding
+
+One of the big changes this year was the rise of agentic coding tools like Claude Code. I started using it in [July 2025](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/) and have been using it almost daily since it came out. Anthropic has created an amazing tool. We've seen the underlying model improve. It's still hard to believe the intial release of Claude Code used Claude 3.7 Sonnet (I would've guessed this was last year)! We're now on Claude Opus 4.5. There has also been improvements in the Claude Code agentic harness too with todo lists, subagents, improvements to the system prompts, better tool calling, adding agent skills. Just look at the [CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md){target="_blank"} to look at all these improvements over time.
 
 Some of the things I've used Claude Code for this year:
 
 - Agentic ML: using the `bq` cli to explore data source in Big Query, create ML features and create ML training scripts
-- Exploring and understanding new code using the `gh` cli - I find Claude Code is more effective at using CLI tools than an MCP Server. I prefer Claude Code using the Github CLI rather than the Github MCP
+- Exploring and understanding new code using the [gh cli](https://github.com/cli/cli){target="_blank"} - I find Claude Code is more effective at using CLI tools than an MCP Server. I prefer Claude Code using the Github CLI rather than the [Github MCP](https://github.com/github/github-mcp-server){target="_blank"}
 - Creating slides that are themed according to my company using Quarto and RevealJS
 - Troubleshooting Kubernetes pods
-- Writing documentation 
-- Writing Confluence documentation using the [mcp-atlassian](https://github.com/sooperset/mcp-atlassian) MCP Server
+- Writing documentation
+- Writing Confluence documentation using the [mcp-atlassian](https://github.com/sooperset/mcp-atlassian){target="_blank"} MCP Server
+- Creating MCP Servers using [FastMCP ](https://github.com/jlowin/fastmcp){target="_blank"}
 - Adding graphs / visuals to my blg posts
 - Creating Github Actions
 - Creating and maintaining Cookiecutter templates for Python libraries and services
+- Scraping Long Beach Marathon data to get the total finishers in the last 15 years for this [post](https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/#lesson-3-running-is-getting-popular)
 
 Claude Code really does amplify and leverage a developer's (or even non-developer's) ideas. Whatever ideas you have, you can bring them into reality so much faster.
 
 There are many world class software developers that now use tools like Claude Code:
 
-**Andrej Karpathy** - [Year in Review where he talks about Claude Code and Vibe Coding](https://x.com/karpathy/status/2002118205729562949)
+**Andrej Karpathy** - [Year in Review where he talks about Claude Code and Vibe Coding](https://x.com/karpathy/status/2002118205729562949){target="_blank"}
 
 <iframe src="https://platform.twitter.com/embed/Tweet.html?id=2004607146781278521" width="550" height="400" frameborder="0"></iframe>
 
@@ -153,77 +341,34 @@ There are many world class software developers that now use tools like Claude Co
 
 <iframe src="https://platform.twitter.com/embed/Tweet.html?id=2004887829252317325" width="550" height="400" frameborder="0"></iframe>
 
-**Armin Ronacher** - Summarized the year as a [Year of Vibes](https://lucumr.pocoo.org/2025/12/22/a-year-of-vibes/)
+**Armin Ronacher** - Summarized the year as a [Year of Vibes](https://lucumr.pocoo.org/2025/12/22/a-year-of-vibes/){target="_blank"}
 
-**Simon Willison** - prolific blogger and prolific user of LLMs, one of his posts he talked about [how Claude Opus 4.5 can create full datasette plugins now](https://simonwillison.net/2025/Oct/8/claude-datasette-plugins/).
+**Simon Willison** - prolific blogger and prolific user of LLMs, one of his posts he talked about [how Claude Opus 4.5 can create full datasette plugins now](https://simonwillison.net/2025/Oct/8/claude-datasette-plugins/){target="_blank"}.
 
 It's fun to see how things have evolved in the last year just looking at Anthropic's Claude and Claude Code releated announcements: 
 
-- [Feb 24, 2025 - Initial Claude Code Release alongside Claude 3.7 Sonnet](https://www.anthropic.com/news/claude-3-7-sonnet)
-- [April 3, 2025 - Anthropic announces their first developer conference](https://www.anthropic.com/news/Introducing-code-with-claude) - which I summarized the talks [here](https://lawwu.github.io/posts/2025-08-14-claude-code-conference-summary/).
-- [May 22, 2025 - Claude Sonnet and Opus 4 released](https://www.anthropic.com/news/claude-4)
-- [August 5, 2025 - Claude Opus 4.1 released](https://www.anthropic.com/news/claude-opus-4-1)
-- [August 26, 2025 - Claude Code Github Action 1.0 Release](https://github.com/anthropics/claude-code-action/)
-- [September 29, 2025 - Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5)
-- [September 29, 2025 - Claude Agents SDK](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk)
-- [October 9, 2025 - Claude Code Plugins](https://github.com/anthropics/claude-plugins-official/)
-- [October 15, 2025 - Claude Haiku 4.5](https://www.anthropic.com/news/claude-opus-4-5)
-- [October 16, 2025 - Claude Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
-- [November 24, 2025 - Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5)
-- [December 2, 2025 - Claude Code reaches $1B run-rate revenue](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone)
+- [Feb 24, 2025 - Initial Claude Code Release alongside Claude 3.7 Sonnet](https://www.anthropic.com/news/claude-3-7-sonnet){target="_blank"} - [repo](https://github.com/anthropics/claude-code){target="_blank"} though this doesn't have the source code
+- [April 3, 2025 - Anthropic announces their first developer conference](https://www.anthropic.com/news/Introducing-code-with-claude){target="_blank"} - which I summarized the talks [here](https://lawwu.github.io/posts/2025-08-14-claude-code-conference-summary/).
+- [May 22, 2025 - Claude Sonnet and Opus 4 released](https://www.anthropic.com/news/claude-4){target="_blank"}
+- [August 5, 2025 - Claude Opus 4.1 released](https://www.anthropic.com/news/claude-opus-4-1){target="_blank"}
+- [August 26, 2025 - Claude Code Github Action 1.0 Release](https://github.com/anthropics/claude-code-action/){target="_blank"}
+- [September 29, 2025 - Claude Sonnet 4.5](https://www.anthropic.com/news/claude-sonnet-4-5){target="_blank"}
+- [September 29, 2025 - Claude Agents SDK](https://www.anthropic.com/engineering/building-agents-with-the-claude-agent-sdk){target="_blank"}
+- [October 9, 2025 - Claude Code Plugins](https://github.com/anthropics/claude-plugins-official/){target="_blank"}
+- [October 15, 2025 - Claude Haiku 4.5](https://www.anthropic.com/news/claude-opus-4-5){target="_blank"}
+- [October 16, 2025 - Claude Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills){target="_blank"}
+- [November 24, 2025 - Claude Opus 4.5](https://www.anthropic.com/news/claude-opus-4-5){target="_blank"}
+- [December 2, 2025 - Claude Code reaches $1B run-rate revenue](https://www.anthropic.com/news/anthropic-acquires-bun-as-claude-code-reaches-usd1b-milestone){target="_blank"}
 
+### ChatGPT - Year in Review
 
-## Books
+ChatGPT created a year in review for me based on my chat history. Here are some highlights:
 
-**David Mathis - A Little Theology of Exercise**
+![Year in Poem](recap_chatgpt/year_in_poem.png){width=600px}
 
-![](images/little-theology-exercise.jpg){width=200px}
+![Chat Stats](recap_chatgpt/chat_stats.png){width=600px}
 
-**Andy David Naselli - How to Understand and Apply the New Testament**
+![3 Themes](recap_chatgpt/3_themes.png){width=600px}
 
-![](images/how-to-read-new-testament.jpg){width=200px}
+![Image Summary](recap_chatgpt/image_summary.png){width=600px}
 
-**Morgan Housel - The Art of Spending Money**
-
-![](images/art-of-spending.jpg){width=200px}
-
-**Sahil Bloom - The 5 Types of Wealth**
-
-![](images/5-types-of-wealth.jpg){width=200px}
-
-**Nick Maggiulli - The Wealth Ladder**
-
-![](images/wealth-ladder.jpg){width=200px}
-
-**Corlette Sande - The Young Peacemaker**
-
-![](images/young-peacemaker.jpg){width=200px}
-
-**Melissa B. Kruger - 5 Things to Pray for Your Kids**
-
-![](images/5-things-pray-kids.jpg){width=200px}
-
-**Melissa B. Kruger - 5 Things to Pray for Your Spouse**
-
-![](images/5-things-pray-spouse.jpg){width=200px}
-
-**Bob Hostetler - Promises Made, Promises Kept**
-
-![](images/promises-made-kept.jpg){width=200px}
-
-**Paul David Tripp - Marriage: 6 Gospel Commitments Every Couple Needs to Make**
-
-![](images/marriage-tripp.jpg){width=200px}
-
-**Chip Huyen - AI Engineering**
-
-![](images/ai-engineering.jpg){width=200px}
-
-This was good at the time though it's probably somewhat dated now.
-
-
-## Year in Reviews
-
-### ChatGPT
-
-### Strava
