@@ -3,6 +3,9 @@ project:
   output-dir: docs
   resources:
     - js/
+  render:
+    - "*"
+    - "!CLAUDE.md"
 
 execute:
   freeze: auto
