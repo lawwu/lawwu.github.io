@@ -1,0 +1,66 @@
+---
+title: "Amazon and Costco"
+author: Lawrence Wu
+date: '2026-01-16'
+categories: [personal]
+---
+
+I've had the chance to take my kids on various field trips this year as we've been homeschooling them. Two of the more interesting ones were to Costco and Amazon. I love Costco, it's probably [my favorite retailer](https://lawwu.github.io/posts/2024-02-28-ode-to-costco/index.html). My family looks forward to going every time we go. Anything I can't get at Costco is likely bought from Amazon. Amazon is the second largest retailer in the US while Costco is #3 (Walmart is #1).
+
+Before sharing some of the things I learned, it was clear both businesses seemed like well-oiled machines. Amazon certainly had a lot more automation and technology deployed in their warehouse which I was very impressed by.
+
+One of the points of contrast was working as a retail employee at Costco seemed much better than in an Amazon fulfillment center (FC). On a basic level, there was virtually no natural light in the FC I toured. It was also quite loud inside. This created a dungeon-like sort of feel. The work environment in the Amazon FC seemed challenging too where it seemed like you are largely isolated (stowing, picking or packing items) for most of your 10-hour shift. At least in the Costco retail location, there is natural sunlight. Overall the work environment at a Costco seems healthier. It was a little hard to find data on the average employment tenure of a worker in one of these FC but California counties with Amazon FC in them have [higher turnover rates on average](https://www.nelp.org/insights-research/amazons-disposable-workers-high-injury-turnover-rates-fulfillment-centers-california/#_edn6). Costco famously has on average high employee tenure where on average their employees are there [9 years](https://www.costco.com/f/-/sustainability-people).
+
+I learned a lot about both businesses. My goal in taking my kids was for them to understand and appreciate how some of the businesses we use frequently operate. I share some of the things we learned below.
+
+# Costco
+
+Probably my favorite field trip taken so far. They had Costco name tags printed for all the kids along with kid-sized red aprons. I was disappointed they didn't print name tags for the adults. And of course they gave all the kids a bag full of Kirkland signature items as a parting gift.
+
+Some things I learned:
+
+- 911 Costcos worldwide
+- $320k monthly rent payment at this one Costco
+- Busiest are in Tokyo and Taiwan
+- 312,000 total employees
+- 300 employees at this Costco
+- Costco is 3rd largest retailer: Walmart and Amazon are larger.
+- Sell more wine than anyone
+- Only 4,500 items sold 
+- 4 Pennies out of $1 is profit
+- $900,000 per month in bills
+- highest grossing item is Kirkland toilet paper, $44,000 sold per week. If the Costco sells gold then it typically is gold.
+- $17M in merchandise at the store at any given time
+- Bakery
+    - $55,000 of baked goods sold per per week
+    - Thanksgiving is double
+    - 8,000 pumpkin pies per year. For Thanksgiving they have to run 3 consecutive 8 hour shifts to make enough pumpkin pies.
+
+# Amazon
+
+We toured an Amazon fulfillment center (FC) in Eastvale, CA. I [booked the tour here](https://events.amazontours.com/na/onsite/LGB3). Really eye opening. 
+
+- We visited a FC named LGB3. Every FC is named after the closest airport. Ontario (ONT) is the closest but I think they already had ONT1-ONT9, so the one we visited was named after the next closest airport or Long Beach (LGB).
+- Our tour guide was fantastic. She was so patient in answering all of our questions!
+- They didn't allow any phones on the tour
+- 1,000 employees work at LGB3
+- 5,000 employees during peak holiday season
+- 600,000 packages per day
+- 1M+ packages per day during peak season (Thanksgiving to Christmas eve)
+- Only one day off, Christmas, otherwise the FC runs 24/7 with only two other days where it is closed for half a day to do maintenance
+- Amazon does have free tuition support for workers to pursue a degree. They actually do not need to pay this back if they leave which is a nice perk.
+- Amazon workers also get free Amazon prime as of 2025
+- This one in Eastvale handles packages smaller than a microwave.
+
+![](images/amazon-pod-2016.avif)
+
+- Stow: Amazon's inventory is kept in these shelves called pods like the one above. The [picture is from 2016](https://www.theguardian.com/technology/2016/aug/18/amazon-to-open-packing-centre-in-essex). It's interesting the pod hasn't changed all that much. They still are yellow and sit on top of these flat robots (Amazon bought a robotics company called Kiva and renamed it Amazon Robots). The process of stowing is a robot will bring a pod over to a worker. The worker then puts items into the cubbies in the pod. I was really surprised to learn Amazon randomly distributes items across shelves. They do this so there's a higher chance a pod with an item someone orders is close to a person who's job it is to pick the item. 
+- Pick: Pickers are workers who find the items that have been ordered from Amazon's inventory. They used to walk 15+ miles with a shopping cart up and down aisles grabbing things. Now these pickers are largely stationary because robots bring these large shelving units with inventory, there's a projector shining a light on the right cubicle with the item and the worker picks the item out and puts it into a yellow bin.
+- I do wonder if the technology for robotic arms gets good enough will the stow and picking roles be completely automated. These jobs are not the most desirable and the moment this becomes cheaper than hiring people, I imagine those jobs will be replaced.
+- Pack: this FC had two packing departments, pack-single and pack-multi. If you order one item it goes to pack-single, otherwise it is packed by a department that works on multiple items going into one package. The computer recommends the size of box. The computer also prints the right size tape. But it's still a manual process of the worker making the box, taping the ends, putting the item(s) in, packing it (Amazon doesn't use plastic for this anymore), taping it shut and sending it to the next department.
+- SLAM: Labeling. There is a barcode called the "spoo" that has a bunch of information about the order. Once a box get to this department, it's red by a high speed scanner, within a second, a label is generated and then put onto the box.
+- After this, the packed and labeled packages go down massive conveyer belts and are loaded onto trucks that go to sortation facilities. At these locations, the packages are sorted by zip code and then delivered.
+- While walking the floor, there is a "QB" or quarterback station. There were 4 large monitors, one for each floor of the warehouse. On each screen were thousands of dots, each one representing the robots moving shelves/pods around.
+- For same-day or overnight deliveries, some of the steps above are skipped.
+- Yesterday I placed an order at 4pm. It was shipped at 7pm. It arrived at my doorstep at 5am. Amazing stuff Amazon.
+
