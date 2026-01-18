@@ -4,6 +4,9 @@ project:
   resources:
     - js/
 
+execute:
+  freeze: auto
+
 website:
   title: "Lawrence Wu"
   site-url: https://lawwu.github.io/blog.html
