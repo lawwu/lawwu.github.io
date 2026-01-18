@@ -1,5 +1,5 @@
 ---
-title: "Amazon and Costco"
+title: "Field Trips to Amazon and Costco"
 author: Lawrence Wu
 date: '2026-01-16'
 categories: [personal]
