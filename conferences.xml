@@ -9,7 +9,7 @@
 <link>https://lawwu.github.io/blog.html/conferences.html</link>
 <atom:link href="https://lawwu.github.io/blog.html/conferences.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
-<generator>quarto-1.8.26</generator>
+<generator>quarto-1.8.27</generator>
 <lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>LangChain Interrupt Agent Conference 2025</title>
