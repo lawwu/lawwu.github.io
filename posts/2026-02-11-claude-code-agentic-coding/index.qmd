@@ -42,3 +42,29 @@ Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then loa
 In Claude Code, if you type /memory, you should see under Project Memory your AGENTS.md referenced.
 
 ![](./images/cc_day2_agents_md.png) 
+
+## Day 3 - Self-Improving `AGENTS.md`/`CLAUDE.md`
+
+[Posted on 2026-02-12](https://www.linkedin.com/posts/lawrencewu920_day-3-of-my-claude-code-daily-tips-series-activity-7427735749086752768-ASH5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+Claude Code, codex and other agents will load AGENTS.md or CLAUDE.md into it's context (really it's system prompt) with every message. I've recently started being better about updating this file anytime I want to steer the coding agent. For example if the coding agent makes a mistake, for example if it forgets to add the `region` into a GCP URL, I started manually adding an instruction to my AGENTS.md, "when returning VertexAI URLs, they need `location/{region}`, here's an example of one: {put your example url here}". This worked, Claude Code stopped writing wrong URLs.
+
+I then started creating sections in my AGENTS.md for different types of areas, e.g. data, machine learning, VertexAI, or Big Query to organize these conventions and gotchas.
+
+Then I realized I could just prompt Claude Code to update my AGENTS.md for me. "can you update my AGENTS.md in the relevant section to not do that again?" This worked well, I often had to move what Claude wrote into the right place though.
+
+Then I added a line to my AGENTS.md, "when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query," That way, Claude Code will periodically update my AGENTS.md
+
+I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too [here](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management).
+
+```
+/plugin install claude-md-management@claude-plugin-directory
+```
+
+Then you can trigger the single skill that is part of the plugin called `claude-md-improver`:
+
+```
+/claude-md-management:revise-claude-md
+```
+
+![](./images/cc_day3_auto_claude_md.jpeg) 
