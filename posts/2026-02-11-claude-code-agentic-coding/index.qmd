@@ -1,0 +1,44 @@
+---
+title: "Claude Code Daily Tips Series"
+author: Lawrence Wu
+date: '2026-02-10'
+categories: [ai]
+---
+
+As a daily Claude Code user for [the last 6 months](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/), I've learned a lot about Claude Code and agentic coding in general. Trying this thing where I share 1 thing per day. I'm posting on LinkedIn but I'll update this post with each tip.
+
+::: {.callout-note}
+## Subscribe to my newsletter
+
+Get these tips and more delivered to your inbox. Subscribe at [lawrencewu.substack.com](https://lawrencewu.substack.com/)
+
+<iframe src="https://lawrencewu.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+:::
+
+## Day 1 - `/insights` command
+
+[Posted on 2026-02-10](https://www.linkedin.com/posts/lawrencewu920_if-you-use-more-than-one-coding-agent-like-activity-7427504846313836544-Azs9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+I tried the new /insights command in Claude Code in one of my main projects. It analyzed the last 30 days of messages in my project, identified how I work, noted "impressive things" I did, where things went wrong, suggested existing Claude Code features to try which included recommendations to updates to my CLAUDE.md, and new Custom Skills and Hooks to try.
+
+Also neat to see all of the messages, tool calls and sessions labeled by type along with the distribution of my response time and how often I am "Multi-Clauding." Finally, all those days of micro'ing while playing Starcraft and Warcraft III are paying off.
+
+![](./images/cc_day1_insights.jpeg)
+
+## Day 2 - Standardize on `AGENTS.md`
+
+[Posted on 2026-02-11](https://www.linkedin.com/posts/lawrencewu920_if-you-use-more-than-one-coding-agent-like-activity-7427504846313836544-Azs9?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+If you use more than one coding agent like Claude Code and Codex, it's helpful to standardize on one AGENTS.md. This is a file that gets loaded into the model's system prompt and is great for steering the model. Claude Code hasn't chosen to standardize yet and still uses at CLAUDE.md
+
+Solution: Have CLAUDE.md with one line:
+```md
+@AGENTS.md
+```
+Then just keep your AGENTS.md updated. 
+
+Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then load AGENTS.md because it's referred to.
+
+In Claude Code, if you type /memory, you should see under Project Memory your AGENTS.md referenced.
+
+![](./images/cc_day2_agents_md.png) 
