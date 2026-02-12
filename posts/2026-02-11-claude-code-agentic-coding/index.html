@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-afa37c5c79185640b9c231024f4fe5ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -241,6 +241,7 @@ cookieconsent.run({
   <ul>
   <li><a href="#day-1---insights-command" id="toc-day-1---insights-command" class="nav-link active" data-scroll-target="#day-1---insights-command">Day 1 - <code>/insights</code> command</a></li>
   <li><a href="#day-2---standardize-on-agents.md" id="toc-day-2---standardize-on-agents.md" class="nav-link" data-scroll-target="#day-2---standardize-on-agents.md">Day 2 - Standardize on <code>AGENTS.md</code></a></li>
+  <li><a href="#day-3---self-improving-agents.mdclaude.md" id="toc-day-3---self-improving-agents.mdclaude.md" class="nav-link" data-scroll-target="#day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></a></li>
   </ul>
 </nav>
     </div>
@@ -314,6 +315,19 @@ cookieconsent.run({
 <p>Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then load AGENTS.md because it’s referred to.</p>
 <p>In Claude Code, if you type /memory, you should see under Project Memory your AGENTS.md referenced.</p>
 <p><img src="./images/cc_day2_agents_md.png" class="img-fluid"></p>
+</section>
+<section id="day-3---self-improving-agents.mdclaude.md" class="level2">
+<h2 class="anchored" data-anchor-id="day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_day-3-of-my-claude-code-daily-tips-series-activity-7427735749086752768-ASH5?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-12</a></p>
+<p>Claude Code, codex and other agents will load AGENTS.md or CLAUDE.md into it’s context (really it’s system prompt) with every message. I’ve recently started being better about updating this file anytime I want to steer the coding agent. For example if the coding agent makes a mistake, for example if it forgets to add the <code>region</code> into a GCP URL, I started manually adding an instruction to my AGENTS.md, “when returning VertexAI URLs, they need <code>location/{region}</code>, here’s an example of one: {put your example url here}”. This worked, Claude Code stopped writing wrong URLs.</p>
+<p>I then started creating sections in my AGENTS.md for different types of areas, e.g.&nbsp;data, machine learning, VertexAI, or Big Query to organize these conventions and gotchas.</p>
+<p>Then I realized I could just prompt Claude Code to update my AGENTS.md for me. “can you update my AGENTS.md in the relevant section to not do that again?” This worked well, I often had to move what Claude wrote into the right place though.</p>
+<p>Then I added a line to my AGENTS.md, “when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query,” That way, Claude Code will periodically update my AGENTS.md</p>
+<p>I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management">here</a>.</p>
+<pre><code>/plugin install claude-md-management@claude-plugin-directory</code></pre>
+<p>Then you can trigger the single skill that is part of the plugin called <code>claude-md-improver</code>:</p>
+<pre><code>/claude-md-management:revise-claude-md</code></pre>
+<p><img src="./images/cc_day3_auto_claude_md.jpeg" class="img-fluid"></p>
 
 
 </section>
