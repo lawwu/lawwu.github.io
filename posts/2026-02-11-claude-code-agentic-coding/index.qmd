@@ -55,7 +55,7 @@ Then I realized I could just prompt Claude Code to update my AGENTS.md for me. "
 
 Then I added a line to my AGENTS.md, "when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query," That way, Claude Code will periodically update my AGENTS.md
 
-I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too [here](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management).
+I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too [here](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management). Reading about their plugins is very inspirational on what is possible now: https://github.com/anthropics/claude-plugins-official.
 
 ```
 /plugin install claude-md-management@claude-plugin-directory
