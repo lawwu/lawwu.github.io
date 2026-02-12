@@ -323,7 +323,7 @@ cookieconsent.run({
 <p>I then started creating sections in my AGENTS.md for different types of areas, e.g.&nbsp;data, machine learning, VertexAI, or Big Query to organize these conventions and gotchas.</p>
 <p>Then I realized I could just prompt Claude Code to update my AGENTS.md for me. “can you update my AGENTS.md in the relevant section to not do that again?” This worked well, I often had to move what Claude wrote into the right place though.</p>
 <p>Then I added a line to my AGENTS.md, “when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query,” That way, Claude Code will periodically update my AGENTS.md</p>
-<p>I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management">here</a>.</p>
+<p>I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management">here</a>. Reading about their plugins is very inspirational on what is possible now: https://github.com/anthropics/claude-plugins-official.</p>
 <pre><code>/plugin install claude-md-management@claude-plugin-directory</code></pre>
 <p>Then you can trigger the single skill that is part of the plugin called <code>claude-md-improver</code>:</p>
 <pre><code>/claude-md-management:revise-claude-md</code></pre>
