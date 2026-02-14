@@ -242,6 +242,7 @@ cookieconsent.run({
   <li><a href="#day-1---insights-command" id="toc-day-1---insights-command" class="nav-link active" data-scroll-target="#day-1---insights-command">Day 1 - <code>/insights</code> command</a></li>
   <li><a href="#day-2---standardize-on-agents.md" id="toc-day-2---standardize-on-agents.md" class="nav-link" data-scroll-target="#day-2---standardize-on-agents.md">Day 2 - Standardize on <code>AGENTS.md</code></a></li>
   <li><a href="#day-3---self-improving-agents.mdclaude.md" id="toc-day-3---self-improving-agents.mdclaude.md" class="nav-link" data-scroll-target="#day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></a></li>
+  <li><a href="#day-4---auto-memory" id="toc-day-4---auto-memory" class="nav-link" data-scroll-target="#day-4---auto-memory">Day 4 - Auto Memory</a></li>
   </ul>
 </nav>
     </div>
@@ -328,6 +329,26 @@ cookieconsent.run({
 <p>Then you can trigger the single skill that is part of the plugin called <code>claude-md-improver</code>:</p>
 <pre><code>/claude-md-management:revise-claude-md</code></pre>
 <p><img src="./images/cc_day3_auto_claude_md.jpeg" class="img-fluid"></p>
+</section>
+<section id="day-4---auto-memory" class="level2">
+<h2 class="anchored" data-anchor-id="day-4---auto-memory">Day 4 - Auto Memory</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_day-4-of-my-claude-code-daily-tips-series-activity-7428098173602185216-EhKW?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-13</a></p>
+<p>Before talking about Claude Code’s auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code “can you search my previous claude messages for things i should add to my global CLAUDE.md?”</p>
+<p>Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code’s docs here: https://code.claude.com/docs/en/memory#manage-auto-memory</p>
+<p>If you ask Claude Code to remember something it’ll write to a project specific memory folder in a markdown file here: <code>~/.claude/projects/&lt;project&gt;/memory/</code>. These memories will be used across sessions in your current project. Though only the first 200 lines of the auto memories will be loaded.</p>
+<p>From the official docs: “The directory contains a <code>MEMORY.md</code> entrypoint and optional topic files:</p>
+<pre><code>~/.claude/projects/&lt;project&gt;/memory/
+├── MEMORY.md # Concise index, loaded into every session
+├── debugging.md # Detailed notes on debugging patterns
+├── api-conventions.md # API design decisions
+└── ...        # Any other topic files Claude creates</code></pre>
+<ul>
+<li>The first 200 lines of <code>MEMORY.md</code> are loaded into Claude’s system prompt at the start of every session. Content beyond 200 lines is not loaded automatically, and Claude is instructed to keep it concise by moving detailed notes into separate topic files.</li>
+<li>Topic files like <code>debugging.md</code> or <code>patterns.md</code> are not loaded at startup. Claude reads them on demand using its standard file tools when it needs the information.</li>
+<li>Claude reads and writes memory files during your session, so you’ll see memory updates happen as you work.”</li>
+</ul>
+<p>If you type <code>/memory</code> you can see if auto memory is being used. See below for what writing this memory looks like:</p>
+<p><img src="./images/cc_day4_auto_memory.jpeg" class="img-fluid"></p>
 
 
 </section>
