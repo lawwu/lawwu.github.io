@@ -68,3 +68,33 @@ Then you can trigger the single skill that is part of the plugin called `claude-
 ```
 
 ![](./images/cc_day3_auto_claude_md.jpeg) 
+
+## Day 4 - Auto Memory
+
+[Posted on 2026-02-13](https://www.linkedin.com/posts/lawrencewu920_day-4-of-my-claude-code-daily-tips-series-activity-7428098173602185216-EhKW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+
+Before talking about Claude Code's auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code "can you search my previous claude messages for things i should add to my global CLAUDE.md?" 
+
+Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code's docs here: https://code.claude.com/docs/en/memory#manage-auto-memory
+
+If you ask Claude Code to remember something it'll write to a project specific memory folder in a markdown file here: `~/.claude/projects/<project>/memory/`. These memories will be used across sessions in your current project. Though only the first 200 lines of the auto memories will be loaded.
+
+From the official docs: "The directory contains a `MEMORY.md` entrypoint and optional topic files:
+
+```
+~/.claude/projects/<project>/memory/
+├── MEMORY.md # Concise index, loaded into every session
+├── debugging.md # Detailed notes on debugging patterns
+├── api-conventions.md # API design decisions
+└── ...        # Any other topic files Claude creates
+```
+
+- The first 200 lines of `MEMORY.md` are loaded into Claude’s system prompt at the start of every session. Content beyond 200 lines is not loaded automatically, and Claude is instructed to keep it concise by moving detailed notes into separate topic files.
+- Topic files like `debugging.md` or `patterns.md` are not loaded at startup. Claude reads them on demand using its standard file tools when it needs the information.
+- Claude reads and writes memory files during your session, so you’ll see memory updates happen as you work."
+
+If you type `/memory` you can see if auto memory is being used. See below for what writing this memory looks like:
+
+![](./images/cc_day4_auto_memory.jpeg)
+
