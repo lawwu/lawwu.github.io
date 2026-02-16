@@ -10,7 +10,156 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Tue, 10 Feb 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Mon, 16 Feb 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Reflections on AI from 2022 to 2026 - Prompt Engineering (LangChain) to Context Engineering (LangGraph) to Harness Engineering (Claude Code)</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2026-02-16-reflections-on-ai-2022-2026/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>I wanted to take some time to write some reflections on my experiences using AI since the end of 2022 to today, Feb 2026.</p>
+<p>I’d like to observe how things have changed through these years across 3 areas:</p>
+<ul>
+<li>Agent Harnesses - LangChain, LangGraph (and other Agent Frameworks), Claude Code SDK</li>
+<li>Popular “X engineering” terms - Prompt Engineering, Context Engineering, Harness Engineering</li>
+<li>Coding Assistance - Github Copilot, Cursor, Claude Code</li>
+</ul>
+<section id="nov-2022---dec-2023---langchain-prompt-engineering-github-copilot" class="level2">
+<h2 class="anchored" data-anchor-id="nov-2022---dec-2023---langchain-prompt-engineering-github-copilot">Nov 2022 - Dec 2023 - LangChain, Prompt Engineering, Github Copilot</h2>
+<p>ChatGPT came out November 2022. It immediately showed the utility of large language models and providing a natural langauge interface to AI. Most people used and got familiar with the chat-based interface. Developers though wanted to call these models programmatically via an API. Libraries like <a href="https://github.com/langchain-ai/langchain">LangChain</a> grew in popularity as LLM wrappers. They provided common interfaces to all the model providers: OpenAI, Google, Anthropic, etc.</p>
+<p>Harrison Chase actually released LangChain on <a href="https://x.com/hwchase17/status/1584925380976091137">October 25, 2022</a> (before ChatGPT was released!). LangChain provided a TypeScript and Python interface to language model APIs. As a Python developer, I benefitted tremendously from this open source library. Just following the releases and keeping up with LangChain’s blog was so educational. I owe a lot of my learnings that first year to LangChain and the team there.</p>
+<ul>
+<li>I learned prompting best practices because the library had so many useful prompts. Prompt engineering became the popular phrase and some companies even started hiring prompt engineers.</li>
+<li>I learned about the idea of RAG (Retrieval Augmented Generation), basically doing Q&amp;A over a corpus of documents. I actually used LangChain to build a simple Q&amp;A assistant over my company’s Slack messages that proved valuable.</li>
+<li>I learned about the importance of LLM traces. They were early in establishing standards on what LLM observability looked like with products like LangSmith.</li>
+<li>I began to appreciate the importance of evals.</li>
+<li>It was difficult to get LLMs to return structured output so LangChain implemented things like a <a href="https://lagnchain.readthedocs.io/en/stable/modules/prompts/output_parsers/examples/pydantic.html">PydanticOutputParser</a> that worked well.</li>
+</ul>
+<p>The applications built during this time usually involved one LLM call doing some task.</p>
+<p>Github Copilot started getting popular during this time. It was probably the first useful application wrapping an LLM. It provided developers coding assistance by doing text completion. They pioneered ghost text and tab completion.</p>
+<p>The best OpenAI model at the end of the year was <a href="https://en.wikipedia.org/wiki/GPT-4">gpt-4-turbo</a></p>
+</section>
+<section id="langgraph-cursor" class="level2">
+<h2 class="anchored" data-anchor-id="langgraph-cursor">2024 - LangGraph, Cursor</h2>
+<p>2024 was the year of agent frameworks. It seemed like new agent frameworks were popping up every few weeks. <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> was the one I became most familiar with. It was <a href="https://changelog.langchain.com/announcements/week-of-1-22-24-langchain-release-notes">released January 22, 2024</a>.</p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-02-16-reflections-on-ai-2022-2026/images/langgraph_release.png" class="img-fluid"></p>
+<p>Language models gained the ability to call tools. These agent frameworks made it easy to create agents that would call tools in a loop (an extension of an idea first from the <a href="https://arxiv.org/abs/2210.03629">ReAct paper</a>). You would give an agent a query/task, it would attempt to answer your question or accomplish your task via tool calls. The series of tool calls would not be determnistic. Rather the agent would decide after the first tool call if it had enough info to finish the task OR it would make another tool call (could be a different tool). I remember I was blown away when I saw this in action. <a href="https://www.philschmid.de/langgraph-gemini-2-5-react-agent">Philipp Schmid has a good post</a> describing this agent architecture in more detail.</p>
+<p>LangChain continued to push the boundaries forward in agents in their LangGraph library:</p>
+<ul>
+<li>I learned about the structure of different types of messages sent to the LLM: <code>Human</code>, <code>AI</code>, <code>Tool</code></li>
+<li>I learned about short-term and long-term memory</li>
+<li>I learned about different multi-agent architectures</li>
+<li>During this time, I built this internal agent using LangGraph that allowed users to ask about internal incidents. The agent was basically a ReAct loop with different tools. Some of the tools executed BigQuery queries or called the Jira API.</li>
+<li>It seemed like everyone wanted to release an agent framework: LangGraph, ADK (Google), Agents SDK (OpenAI), PydanticAI, AI SDK (Vercel), CrewAI, etc.</li>
+</ul>
+<p>Newer coding IDEs also became popular during this time. <a href="https://cursor.com/">Cursor</a> was the first one, <a href="https://windsurf.com/">Windsurf</a> came along later. Besides providing code completion, these VS Code forks provided a sidebar where you could chat with your code, you could ask questions about your code and even ask the agent to do tasks that touched multiple files. I remember being very surprised this worked but it became such an unlock for developer productivity.</p>
+<p>The best OpenAI models at the end of the year were <a href="https://en.wikipedia.org/wiki/GPT-4o">gpt-4o</a> and <a href="https://en.wikipedia.org/wiki/OpenAI_o1">o1</a></p>
+</section>
+<section id="claude-code-context-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="claude-code-context-engineering">2025 - Claude Code, Context Engineering</h2>
+<p>2025 was the year of Claude Code and coding agents.</p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-02-16-reflections-on-ai-2022-2026/images/claude_code_release.webp" class="img-fluid"></p>
+<p>It’s hard to believe Claude Code was:</p>
+<ul>
+<li>released as somewhat of an after thought during Anthropic’s announcement of Claude 3.7 Sonnet</li>
+<li>the first model it used was Claude 3.7 Sonnet! We’ve had 3 versions of model released since that time: Sonnet/Opus 4, Sonnet/Opus 4.5 and Opus 4.6 releases since that time.</li>
+</ul>
+<p>Claude Code was the first coding agent to:</p>
+<ul>
+<li>live in a user’s machine, accessing the user’s file system and access</li>
+<li>be in a terminal UI</li>
+<li>make use of a <code>Bash</code> tool</li>
+</ul>
+<p>Using Claude Code was a tremendous unlock not only terms of accomplishing what I was supposed to do but it allowed me to do things I never would have done because I either didn’t have the technical ability or I didn’t have the time. I’ve also seen how using a tool like Claude Code is massively compounding.</p>
+<ul>
+<li>You can prompt Claude Code to configure itself. “Please set up a <code>/statusline</code> for me.”</li>
+<li>Anthropic released skills and then open sourced it. Now most coding agents support skills. These are markdown files that provide an agent with steps to accomplish a task or knowledge/reference materials. Claude Code can create it’s own skills too through prompting. There are even <a href="https://github.com/anthropics/knowledge-work-plugins/blob/main/data/skills/data-context-extractor/SKILL.md">“meta-skills”</a> that instruct Claude to create its own skills during certain situations. There are many examples of skills you can install that accomplish all kinds of knowledge work. Below are repos of plugins or collections of Claude Code functionality (including skills)
+<ul>
+<li><a href="https://github.com/anthropics/claude-plugins-official">Claude Official Plugins</a></li>
+<li><a href="https://github.com/anthropics/knowledge-work-plugins">Claude Knowledge Work Plugins</a></li>
+<li><a href="https://github.com/anthropics/claude-code/tree/main/plugins">Claude Code Plugins</a></li>
+</ul></li>
+</ul>
+<p>I realized the better I learn how to use this tool, Claude Code, the more effectively and efficiently I can do my job. So now I try and dedicate time to reading about developments in Claude Code, reading the CHANGELOG.md, reading about how others are using it like <a href="https://x.com/bcherny/status/2021699851499798911">Boris Cherny</a>, and <a href="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/">writing my own tips on how to use Claude Code</a>.</p>
+<p>Some pitfalls I’ve encountered and lessons I’ve learned along the way:</p>
+<ul>
+<li>Working with Claude Code is pretty intense at times. I could be running multiple Claudes in different terminals. I’m reading a lot of generated output (code, text). I’m thinking critical and making decisions on what to do next. 1 hour of intense pairing with Claude Code feels like 3 hours of working without. HBR had an <a href="https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it">article that shared similar sentiments</a>.</li>
+<li>Not allowing Claude Code do too much at once and surpass my understanding of a problem. You having an understanding of the system is important to effectively guide future changes and also validate the results.</li>
+<li>A tool like Claude Code has varying levels of effectiveness depending on the level of experience of the user. I’ve encouraged junior developers to try and understand the code Claude Code is generating, use a <a href="https://x.com/bcherny/status/2021701379409273093">learning output style</a> and make smaller PRs.</li>
+<li>Like any new technology or tool, not everyone is willing to adopt new tools and new ways of working at the same speed</li>
+</ul>
+<p>What I found also surprising was coding agents like Claude Code became agent frameworks (see <a href="https://platform.claude.com/docs/en/agent-sdk/overview">Claude Agent SDK</a>. People at Anthropic realized Claude Code was actually a valuable generic agent harness and could have broad usefulness. They released Claude Cowork, which basically wraps Claude Code in a nicer UI.</p>
+<p><a href="https://x.com/tobi/status/1935533422589399127">Context engineering</a> was the popular term this year. It was no longer about effectively prompting your agents or LLMs. It was about making sure the right context made it into your agents.</p>
+<p>The best OpenAI models at the end of the year were <a href="https://en.wikipedia.org/wiki/GPT-5.2">GPT-5.2</a></p>
+</section>
+<section id="openclaw-harness-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="openclaw-harness-engineering">2026 - OpenClaw, Harness Engineering</h2>
+<p>We’re just beginning 2026. <a href="https://github.com/openclaw/openclaw">OpenClaw</a> is the biggest development in agents and agent harnesses. OpenClaw shows the promise of agents that are:</p>
+<ul>
+<li>Always on<br>
+</li>
+<li>You can connect to them via multiple channels (WhatsApp, Telegram, iMessage)</li>
+<li><a href="https://docs.openclaw.ai/gateway/heartbeat">HEARTBEAT.md</a> - Heartbeat runs periodic agent turns in the main session so the model can surface anything that needs attention without spamming you. The default prompt has:
+<ul>
+<li>Background tasks: “Consider outstanding tasks” nudges the agent to review follow-ups (inbox, calendar, reminders, queued work) and surface anything urgent.</li>
+<li>Human check-in: “Checkup sometimes on your human during day time” nudges an occasional lightweight “anything you need?” message, but avoids night-time spam by using your configured local timezone (see /concepts/timezone).</li>
+</ul></li>
+<li>I see this becoming at the very least like a true AI executive assistant and eventually a super assistant</li>
+</ul>
+<p>What I found surprising is, OpenClaw didn’t innovate in the model layer, it was a step-forward in the agent harness and the interface into the model. OpenClaw under the hood is also using a simple agent harness called <a href="https://github.com/badlogic/pi-mono/">Pi</a> which I learned from <a href="https://lucumr.pocoo.org/2026/1/31/pi/">Armin Ronacher</a>.</p>
+<p>I’ve since setup an OpenClaw named Sage on an old Macbook and it has proven useful:</p>
+<ul>
+<li>reminding me about different calendar events</li>
+<li>organizing it’s own information using the PARA method in Obsidian</li>
+<li>doing research each day for me on different topics</li>
+<li>it can update itself</li>
+</ul>
+<p>Harness Engineering was a new term that popped up in a post where an <a href="https://openai.com/index/harness-engineering/">OpenAI team used Codex</a> to create a new software product where they intentionally didn’t write any lines of code over a period of 5 months. Agents produced:</p>
+<ul>
+<li>Product code and tests</li>
+<li>CI configuration and release tooling</li>
+<li>Internal developer tools</li>
+<li>Documentation and design history</li>
+<li>Evaluation harnesses</li>
+<li>Review comments and responses</li>
+<li>Scripts that manage the repository itself</li>
+<li>Production dashboard definition files</li>
+</ul>
+<blockquote class="blockquote">
+<p>Humans always remain in the loop, but work at a different layer of abstraction than we used to. We prioritize work, translate user feedback into acceptance criteria, and validate outcomes. When the agent struggles, we treat it as a signal: identify what is missing—tools, guardrails, documentation—and feed it back into the repository, always by having Codex itself write the fix.</p>
+</blockquote>
+<p>I’ve experienced similar things on a recent machine learning project. Claude Code was writing 95% of the code, tests, CI configuration, documentation, and ML training and pipeline code. I found myself more as an orchestrator of agents accomplishing meaningful work. I did spent time thinking about how to optimize the repository to be more useful to the agent. I landed on a similar structure that the above Codex article talks about in a “In-repository knowledge store.” I created a machine learning experiment log that started out as a single markdown file <code>RESEARCH_LOG.md</code> that quickly grew too unweidly. To a <code>RESEARCH_LOG.md</code> that points to sub-folders for each ML experiment.</p>
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-02-16-reflections-on-ai-2022-2026/images/in_repository_knowledge_store.png" class="img-fluid"></p>
+</section>
+<section id="reflections" class="level2">
+<h2 class="anchored" data-anchor-id="reflections">Reflections</h2>
+<p>As I think back on these 3-4 years, one of the most important traits is a curiosity and a desire to keep learning. The pace of change in AI has been so fast. I realize you have to be willing to try new things, new ways of working and adopt new tooling otherwise you run the risk of being made somewhat obsolete.</p>
+<p>I don’t know what the next 3-4 years will look like. But I think it’s now more important than ever to understand how AI/LLMs work, have some intuition around what agent harnesses are (the difference between Claude Code and Claude Sonnet), and practically how to use these tools like Claude Code.</p>
+</section>
+<section id="p.s." class="level2">
+<h2 class="anchored" data-anchor-id="p.s.">P.S.</h2>
+<p>Things I didn’t get to talk about. The developments in model capability, non-reasoning to reasoning models.</p>
+<p>Also protocols like:</p>
+<ul>
+<li>OpenAI Chat Completions API</li>
+<li><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">MCP</a></li>
+<li>LLM Proxies like <a href="https://github.com/BerriAI/litellm">LiteLLM</a></li>
+<li><a href="https://github.com/a2aproject/A2A">A2A</a></li>
+<li><a href="https://github.com/ag-ui-protocol/ag-ui">ag-ui</a></li>
+<li><a href="https://github.com/google/A2UI/">A2UI</a></li>
+</ul>
+
+
+</section>
+
+ ]]></description>
+  <category>ai</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2026-02-16-reflections-on-ai-2022-2026/</guid>
+  <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Claude Code Daily Tips Series</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -394,12 +543,12 @@
 </tbody>
 </table>
 <p>It’s been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more with only 2 down years. If you invested $10,000 at the beginning of 2016, you will have tripled your investment.</p>
-<div id="688c34bf" class="cell" data-execution_count="1">
+<div id="965891bb" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="5a7d3d0b-1458-4862-b82d-39b6fe687c21" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("5a7d3d0b-1458-4862-b82d-39b6fe687c21")) {                    Plotly.newPlot(                        "5a7d3d0b-1458-4862-b82d-39b6fe687c21",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="bde71edf-957d-4733-a919-4bf35de4b3f2" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("bde71edf-957d-4733-a919-4bf35de4b3f2")) {                    Plotly.newPlot(                        "bde71edf-957d-4733-a919-4bf35de4b3f2",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('5a7d3d0b-1458-4862-b82d-39b6fe687c21');
+var gd = document.getElementById('bde71edf-957d-4733-a919-4bf35de4b3f2');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -6928,263 +7077,6 @@ font-style: inherit;">"user_preferences"</span>, result.preferences)</span></cod
   <category>running</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-02-02-second-half-marathon/</guid>
   <pubDate>Sun, 02 Feb 2025 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>Running Lessons</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I never considered myself a runner. I actually never enjoyed the activity of running. I usually didn’t look forward to it. I would occassionally still do it because I knew it was good for me. I also usually did enjoy how I felt afterwards, feeling like I put in some work, got my heart pumping and it was generally healthy. Over the past 5 months though, I’ve come to really enjoy running. I’ll share some of the things I’ve learned along the way about running and life.</p>
-<section id="why-i-started-running" class="level2">
-<h2 class="anchored" data-anchor-id="why-i-started-running">Why I Started Running</h2>
-<p>On May 4th, I went for a 2 mile run. Little did I know that be the first run of many more runs over the next 5 months.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/first_run.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>First Run in May 2024</figcaption>
-</figure>
-</div>
-<p>As noted in the image above, I was motivated to run after reading the book <a href="https://amzn.to/3zVzvqC">Outlive by Peter Attia</a>. In his chapter on exercise, he talks about cardiovascular health and strength training as two key necessary things you need to do to stay healthy. That’s not anything I haven’t heard before. But what triggered something in me was this graph in the book. The metric plotted is VO2 max which measures how much oxygen your body can use during intense exercise.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/vo2_max.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>VO2 Max Declines with Age</figcaption>
-</figure>
-</div>
-<p>One of the main arguments he makes in the book is if you want to do normal activities in your 60s, 70s, and 80s+, you need to train for that. Everyone’s VO2 max will decline over as they get older. However, the average person starts with a lower VO2 max than someone with above average fitness. And you need a certain amount of VO2 max (aka fitness) to do basic things like walk up hill, lift/carry heavy objects or run. I do want to do normal activities when God-willing my kids get older and I have grandchildren. I do want to be able to lift and carry my grandchildren and run after them. Imagining that future really did flip a switch in me where I became very motivated to take my health more seriously and so I went on that 2 mile run.</p>
-<p>I chose running as my exercise of choice because I found it to be the best-bang-for-your-buck form of exercise. I could go out for a couple mile run and be done in 20-30 minutes. A 20-30 bike ride didn’t really feel like much exercise. I didn’t enjoy swimming. I also had to give up basketball because of injuries. Praise God I could still run so I wanted to take advantage of that.</p>
-</section>
-<section id="consistently-running" class="level2">
-<h2 class="anchored" data-anchor-id="consistently-running">Consistently Running</h2>
-<p>I slowly built up mileage over the coming weeks, 5 miles that first week to eventually 10 per week and then 15. You can see how infrequently I ran in the proceeding months. There are some sparse weeks there!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/weekly_miles_first_month.png" class="img-fluid figure-img" width="450"></p>
-<figcaption>Weekly Miles - First Month</figcaption>
-</figure>
-</div>
-<p>In late June, I decided to sign up for a 10k race because a friend told me about one. A couple friends and I signed up for it (thanks for running with me Andy &amp; Shannon!). I thought running a race would be a good experience. And it was! There was a lot of adrenaline from the crowd and my kids even got to run the 1 mile “race” which they were excited about. I set a PR of 58:00 at this 10k (9:20 mins/mile).</p>
-<p>During this time, I knew some of my friends were already planning on doing the Long Beach Half-Marathon in October. When they were talking about a few months back, my thought was “No way.” But after running more consistently, I was on the fence in June. I said I was 50/50 in our group chat. The day after running the 10k, I went for it and signed up for the half.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/signed_up.png" class="img-fluid figure-img" width="450"></p>
-<figcaption>Signed Up!</figcaption>
-</figure>
-</div>
-<p>I started Nike Run Club’s 14 week half-marathon plan since the timing was perfect and I had heard good things about their Guided Runs. Well, fast forward 5 months and on Oct 6, I ran the Long Beach Half-Marathon in 1:49:15 (8:20 mins/mile). It was a joy doing this with some brothers and sisters from church and seeing a bunch of friends trying to get healthier and make fitness a regular part of their lives.</p>
-<p>People had recommended setting 3 goals: a bare minimum goal, a reachable goal and a stretch goal. So I did.</p>
-<ul>
-<li><p>Bare Minimum Goal: Don’t get hurt</p></li>
-<li><p>Reachable Goal: Finish the race</p></li>
-<li><p>Stretch Goal: Sub 2 hours</p></li>
-</ul>
-<p>After training for something for 3+ months and meeting my stretch goal, it’s hard to explain how happy I was crossing this finish line.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/lb_hm_finish_line.JPG" class="img-fluid figure-img"></p>
-<figcaption>Long Beach Half-Marathon finish line</figcaption>
-</figure>
-</div>
-<p>Seeing my wife and kids at the finish line cheering me on was so awesome!</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/lb_hm_finish.jpg" class="img-fluid figure-img" width="2000"></p>
-<figcaption>Long Beach Half-Marathon finish</figcaption>
-</figure>
-</div>
-<p>I also downloaded some of the GPX data from Strava for some of my friends and I and animated it using <a href="https://gpx-animator.app/">GPX Animator</a>.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/_Ntj5AeAQSk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="things-ive-learned-about-running" class="level2">
-<h2 class="anchored" data-anchor-id="things-ive-learned-about-running">Things I’ve Learned about Running</h2>
-<section id="types-of-runs" class="level3">
-<h3 class="anchored" data-anchor-id="types-of-runs">Types of Runs</h3>
-<p>Easy Running: Most runs should be “easy.” And by most, this is 80% of your total miles! Coming from basketball I was used to running fast, quick bursts. So when I would go for “runs” I would be going at a moderate to fast pace. I would quickly tire because my aerobic fitness was not very good and it just wouldn’t be pleasant. Reading a little about running and other endurance spots, you quickly learn a common recommendation “run easy” and “run at a conversational pace” and “run in Zone 2” to build your “aerobic base.” I didn’t fully understand what all of this meant yet but I just took their advice and started running easy. It did feel abnormally slow because I wasn’t used it. One of the main benefits is you can run for longer at this slower pace, it’s more enjoyable and it’s scientifically proven to train your mitochondria (<a href="https://chatgpt.com/share/670cae86-c538-8011-b200-5a292ae6ca52">I think?</a>). Stephen Seiler has a <a href="https://www.youtube.com/watch?v=MALsI0mJ09I&amp;ab_channel=TEDxTalks">TED talk</a> where he explains the above idea in about 15 minutes. One of the slides shows the percentage of time spent in different training zones. You can see even for professional athletes, they spend 80% of their time in this “Low/Easy Intensity” area.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/stephen_seiler_training_sessions.png" class="img-fluid figure-img" width="700"></p>
-<figcaption>% of training sessions</figcaption>
-</figure>
-</div>
-<p>The other 20% of the running should be speed work. I used the Nike Run Club (NRC) app’s <a href="https://www.nike.com/running/half-marathon-training-plan">half-marathon training plan</a>. Every week there were two recovery runs (1 15 minute run basically introducing the runs that week, another longer recovery run), two speed runs and 1 long run. The speed runs varied from intervals, tempo, to fartleks. I got to learn what all of these different runs were. The NRC app was particularly helpful for these runs because it guides you - when to start and stop a given interval and what type of effort to give at each interval (4-5 easy warmup, 6 for a 10k pace, 7-8 for a 5k pace, 8-9 for a mile pace and 10 for all out of ‘celebration’ pace).</p>
-<p>You run out of energy at around 90 minutes. I remember one of my first long runs (Strava link) where I went past 60 minutes, I didn’t have any water or nutrition on me. It felt really terrible at around 80 minutes. I think my heart rate even peaked.</p>
-</section>
-<section id="gear" class="level3">
-<h3 class="anchored" data-anchor-id="gear">Gear</h3>
-<ul>
-<li><p>Shoes:</p>
-<ul>
-<li>First pair with <a href="https://amzn.to/3A0BIkz">Brooks Ghost</a>. I got Ghost 15s but only Ghost 16s are available now. My friend sent me this comic that was pretty accurate why I picked them:</li>
-</ul></li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/brooks_ghost_comic.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>Brooks Ghost Comic</figcaption>
-</figure>
-</div>
-<ul>
-<li><p>Second pair was a <a href="https://amzn.to/4eU2LwU">Asics Novablast 4</a>.</p></li>
-<li><p>I also started a 6 month membership to <a href="https://www.roadrunnersports.com/vip/rewards">Road Runner Sports</a> for $1.99. This allows you to buy shoes, run with them and return them if you do not like them. I wound up doing this a couple times for shoes that felt okay in store but for various reasons I didn’t like when going on an actual run. Not sure I’ll keep this membership after the trial though.</p></li>
-<li><p>Shorts:</p>
-<ul>
-<li><p><a href="https://amzn.to/3zNfwdJ">Northyard 5-inch shorts</a> - Bought a few of the cheapest / well-reviewed shorts on Amazon.</p></li>
-<li><p><a href="https://amzn.to/3BFeHEm">BALEAF Running Shirt</a> - Similar search, bought a few.</p></li>
-</ul></li>
-<li><p>Running Belt:</p>
-<ul>
-<li><a href="https://amzn.to/4f05swK">Spibelt</a> - Running belt to hold phone, keys.</li>
-</ul></li>
-<li><p>Hydration Vest:</p>
-<ul>
-<li><a href="https://amzn.to/4h0NiNd">Salomon ADV Skin 12</a> - For longer runs, this vest was very useful to carry water, gels, phone. I got a medium.</li>
-</ul></li>
-<li><p>Nutrition:</p>
-<ul>
-<li><p><a href="https://amzn.to/4h0NiNd">Huma Chia Energy Gels</a> - For longer runs, I ate these. I haven’t tried other gels yet but I liked how these tasted and just stuck with them.</p></li>
-<li><p><a href="https://amzn.to/4dFv0hC">BODYARMOR Flash IV Electrolyte</a> - Also for longer runs. This is a 6 pack from Amazon ($1/pack) which is honestly a little egregious for salt. In theory you can make your own. I bought this <a href="https://www.costco.com/BODYARMOR-Flash-I.V.-Hydration-Booster,-30-Individual-Serving-Stick-Packs,-Variety-Pack.product.1838221.html">30 pack</a> from Costco that was a little cheaper.</p></li>
-</ul></li>
-<li><p>GPS Watch: Apple Watch - I already had an Apple Watch so I just used it to track my runs using the native Fitness App.</p>
-<ul>
-<li>When starting an activity, there’s usually a count down, you can double tap to start it immediately</li>
-<li>When running, you can double tap the screen to start a new segment. This is useful when you are doing interval runs.</li>
-</ul></li>
-<li><p>iOS Apps:</p>
-<ul>
-<li>Fitness: Apple’s native fitness app. Can see detailed information on your workout. This gets really granular because GPS watches these days measure cadence, stride length and vertical oscillation.</li>
-<li>Health: Seeing heart health data like Cardio Fitness (VO2 Max) and resting heart rate trend in better directions was so motivating!</li>
-<li>HealthFit: I used this to import all of my previous Apple Fitness data into Strava</li>
-<li>WorkOutDoors: More customizable fitness app. For example you can configure interval runs, total times for each interval, target paces for each interval and the app will warn you when you are outside of your target pace (too fast and too slow). This app makes your Apple Watch behave more like a Garmin.</li>
-<li>Strava: Fun and somewhat motivating to see how friends are staying active. Being a sucker for data, I enjoy seeing Strava’s global heatmaps by activity type and also the user created segments and receiving random rewards like “You set your best 2nd mile time!” Side note: I find it pretty amazing that Strava has built a business on monetizing fitness data that users are giving them.</li>
-</ul></li>
-</ul>
-<p>These are the Strava weekly heatmaps. It’s cool thinking about all the people that went running and/or biking the last week to make this heatmap.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/heatmap_ride.png" class="img-fluid figure-img" width="700"></p>
-<figcaption>Heatmap - Ride</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/heatmap_run.png" class="img-fluid figure-img" width="700"></p>
-<figcaption>Heatmap - Run</figcaption>
-</figure>
-</div>
-</section>
-<section id="racing" class="level3">
-<h3 class="anchored" data-anchor-id="racing">Racing</h3>
-<ul>
-<li>Race strategy: Treat the first 75% of the race like a “warmup” for the last 25% of the race. Once you get to the last quarter, you can see how much you have left in the tank.</li>
-<li>It’s must harder to go from the beginning of a training block to the starting line of a race than going from the starting line of a race to the finish line. So many things can go wrong over a 14-16 week training block, you can get sick, injured, or your kids can get sick. All kinds of things can come up.</li>
-</ul>
-</section>
-</section>
-<section id="things-ive-learned-in-general-and-about-myself" class="level2">
-<h2 class="anchored" data-anchor-id="things-ive-learned-in-general-and-about-myself">Things I’ve Learned in General and about Myself</h2>
-<ul>
-<li>People Can Change: Running a marathon (or half) was never on my bucket list. I never thought I could even run this distance let alone do it and enjoy it and enjoy the whole training process. I grew up playing basketball which requires a totally different set of muscles. You need short bursts and fast twitch muscles. I still have yet to meet a basketball player who likes long distance running.</li>
-<li>The human body has an amazing ability to be trained</li>
-<li>Running regularly has given more time to think, pray and listen to audiobooks. It’s also given me more energy throughout the day.</li>
-<li>The running community is generally positive. Nowadays it’s pretty easy to form groups around a share interest. I’ve found the running communities to be quite encouraging. It doesn’t matter what pace you are running.</li>
-</ul>
-</section>
-<section id="things-ive-learned-about-christian-life" class="level2">
-<h2 class="anchored" data-anchor-id="things-ive-learned-about-christian-life">Things I’ve Learned about Christian Life</h2>
-<p>The Bible uses many running illustrations that have become more vivid as I’ve started running more consistently:</p>
-<ul>
-<li><strong>Do you not know that in a race all the runners run, but only one receives the prize? So run that you may obtain it.</strong> Every athlete exercises self-control in all things. They do it to receive a perishable wreath, but we an imperishable. <strong>So I do not run aimlessly</strong>; I do not box as one beating the air. But I discipline my body and keep it under control, lest after preaching to others I myself should be disqualified. (1 Corinthians 9:24-27)</li>
-<li>I have fought the good fight, <strong>I have finished the race</strong>, I have kept the faith. (2 Timothy 4:7)</li>
-<li>Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and <strong>let us run with endurance the race that is set before us, looking to Jesus</strong>, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame, and is seated at the right hand of the throne of God. (Hebrews 12:1-2)</li>
-</ul>
-<p>From 1 Corinthians 9:24-27, we draw some parallels between physical running and spiritual running (basically Christian life):</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 25%">
-<col style="width: 37%">
-<col style="width: 37%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Aspect</th>
-<th>Physical Running</th>
-<th>Spiritual Running</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Purpose</td>
-<td>To win a perishable prize (e.g., a medal, wreath)</td>
-<td>To receive an imperishable prize (eternal life, spiritual reward, crown of glory, commendation from God)</td>
-</tr>
-<tr class="even">
-<td>Training</td>
-<td>Requires self-control and discipline in physical training</td>
-<td>Requires self-control and discipline in spiritual growth and character</td>
-</tr>
-<tr class="odd">
-<td>Goal</td>
-<td>To finish the race and win, physical fitness and health</td>
-<td>To live life of praise and glorifying God, aiming for eternal rewards</td>
-</tr>
-<tr class="even">
-<td>Focus</td>
-<td>Winning the race, obtaining a temporary prize</td>
-<td>Living with purpose, avoiding aimlessness, and striving for spiritual growth</td>
-</tr>
-<tr class="odd">
-<td>Effort</td>
-<td>Demands physical discipline and perseverance</td>
-<td>Demands spiritual discipline, avoiding complacency, and personal holiness</td>
-</tr>
-<tr class="even">
-<td>Motivation</td>
-<td>Earthly recognition and achievement</td>
-<td>Eternal recognition and spiritual fulfillment</td>
-</tr>
-<tr class="odd">
-<td>Outcome</td>
-<td>A perishable, temporary reward</td>
-<td>An imperishable, everlasting reward</td>
-</tr>
-<tr class="even">
-<td>Consequence of Failure</td>
-<td>Losing the race, disqualification</td>
-<td>Spiritual disqualification, falling short of spiritual goals</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>Don’t compare yourself to others</strong>: I’ve also seen how easy it is to compare yourself to others in running and in Christian life. It’s easy to compare your pace or weekly mileage to others and say, “I wish I ran that fast.” But everyone is different. Everyone has had differing amounts of training up to that point. Everyone’s body is different. People have different goals. I’ve found it’s better to just be inspired by what others are able to do. Then if you want to compare, compare with your previous self. How long was I able to run at a conversational pace 1 month ago? 3 months ago? In Christian life it’s also easy to compare how fast/well one is running and compare yourself to others. But similarly, everyone is on a different spiritual journey with differing spiritual backgrounds. If you want to compare, compare with your previous self. How much have I grown in things like the fruit of the Spirit since I became a Christian? How much have I grown in love of God and people?</li>
-<li><strong>Self-control is so important</strong>: 1 Cor 9:25 says, “Every athlete exercises self-control in all things.” Athletes exercise self-control because it’s necessary to have good performance. Even in building a simple habit of running for 30 minutes a day, this requires self-control and discipline to find the time to do so, sleeping early to wake up early to do this (if you want to do it in the morning before your kids wake up), committing to a running plan, actually running the runs on those plans, etc. In Christian life, growing in self-control over my desires means I can better fight temptation and sinful desires and ultimately be a better instrument for noble purposes, useful to God for any good work (2 Tim 2:21).</li>
-<li><strong>Don’t run aimlessly</strong>: It’s been helpful to have goals while running. Following the NRC running plan was helpful. Knowing what runs I was going to do on each day was helpful. Knowing the purpose of each run and what it was doing to my body was motivating as well. There were times I didn’t have a good idea of how far I was going to run that day. Sometimes on those days I wound up cutting my runs short because of the lack of motivation. In Christian life, it’s important to have spiritual direction. Where is God leading you? And if you have a family and especially if you are a husband, how and where are you leading your family?</li>
-<li><strong>Disciplining the body</strong>: Running has helped me discipline my body. Starting off the day with something physically demanding helps set the tone for the rest of the day. Another example is running provides an outlet for me to think and pray. This helps to get my mind settled for the day ahead as well.</li>
-</ul>
-<p>1 Tim 4:8 says, “for while bodily training is of some value, godliness is of value in every way, as it holds promise for the present life and also for the life to come.” The Bible says bodily training is of some value! This should provide some motivation to a Christian to take exercise seriously. However the passage goes onto say that godliness is more important because it holds promise for this life and the life to come. I take this to mean our spiritual fitness and our relationship with Christ is more important to God than our physical fitness. There were times on this running journey I took running too seriously and prioritized it above the things God wanted me to prioritize like my family. So one big takeaway has been to not allow good things (like running) to supercede the best things (honoring and glorifying God).</p>
-</section>
-<section id="why-i-plan-to-continue-to-run" class="level2">
-<h2 class="anchored" data-anchor-id="why-i-plan-to-continue-to-run">Why I plan to continue to run</h2>
-<p>I started out on this running journey because I wanted to reach my 70s and 80s healthy enough to be able to do normal activities that I take for granted like walk up hill or God-willing hold my grandkids. It started with a simple 2 mile run. It’s turned into a habit now that I really enjoy where I try to run 20-30 miles a week.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/last_6_months_450_miles.jpg" class="img-fluid figure-img" width="400"></p>
-<figcaption>Last 6 months of running</figcaption>
-</figure>
-</div>
-<p>Along the way I’ve learned so much about running, myself and even Christian life. Given I’ve also had 3 major leg injuries, I thank God he’s allowed me to run these hundreds of miles these last 5 months. I’m excited to see where running takes me next.</p>
-
-
-</section>
-
- ]]></description>
-  <category>running</category>
-  <category>faith</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2024-10-13-running-6-months/</guid>
-  <pubDate>Sun, 13 Oct 2024 00:00:00 GMT</pubDate>
 </item>
 </channel>
 </rss>
