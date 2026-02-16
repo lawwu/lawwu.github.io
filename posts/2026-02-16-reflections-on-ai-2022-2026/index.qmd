@@ -132,6 +132,12 @@ I've experienced similar things on a recent machine learning project. Claude Cod
 
 As I think back on these 3-4 years, one of the most important traits is a curiosity and a desire to keep learning. The pace of change in AI has been so fast. I realize you have to be willing to try new things, new ways of working and adopt new tooling otherwise you run the risk of being made somewhat obsolete.
 
+Knowledge work is changing. But expertise, taste and what is valuable to work on matters a ton still. It's amazing living through and experiencing my day-to-day work changing. I no longer hand-write code for data analysis and machine learning. Agents like Claude Code do it faster and more effectively than I can. But the expertise I've gained over the years helps me prompt the agents well and more importantly validate the work they do. Agents are also not able to tell you what is important to work on, this is where understanding your business, products and even company dynamics becomes vital.
+
+Knowing how to use tools is leverage. Knowing how to use a computer and search on Google in general will make you a better knowledge worker. Knowing how to code is leverage too because you can automate so much work with code. AI is the latest tool that has come around. It happens to be one of the most generalizable and broadly useful tools though. Knowing how to use AI will give you leverage in your personal and professional life.
+
+You can think of AI also as a meta-skill, a skill that lets you learn other skills better. Because with AI you can teach yourself things that would've been too difficult to learn before. You now create personalized, custom tutors for almost any subject, catered to your level and ability. Other important skills in this age of AI are reading, writing, being curious, understanding what is valuable to work on and continuing to improve your ability to use these new AI tools.
+
 I don't know what the next 3-4 years will look like. But I think it's now more important than ever to understand how AI/LLMs work, have some intuition around what agent harnesses are (the difference between Claude Code and Claude Sonnet), and practically how to use these tools like Claude Code.
 
 ## P.S.
