@@ -81,7 +81,7 @@ I realized the better I learn how to use this tool, Claude Code, the more effect
 Some pitfalls I've encountered and lessons I've learned along the way:
 
 - Working with Claude Code is pretty intense at times. I could be running multiple Claudes in different terminals. I'm reading a lot of generated output (code, text). I'm thinking critical and making decisions on what to do next. 1 hour of intense pairing with Claude Code feels like 3 hours of working without. HBR had an [article that shared similar sentiments](https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it).
-- Not allowing Claude Code do too much at once and surpass my understanding of a problem. You having an understanding of the system is important to effectively guide future changes and also validate the results.
+- Not allowing Claude Code do too much at once and surpass my understanding of a problem. You having an understanding of the system is important to effectively guide future changes and also validate the results. The term for this is [cognitive debt](https://simonwillison.net/2026/Feb/15/cognitive-debt/).
 - A tool like Claude Code has varying levels of effectiveness depending on the level of experience of the user. I've encouraged junior developers to try and understand the code Claude Code is generating, use a [learning output style](https://x.com/bcherny/status/2021701379409273093) and make smaller PRs. 
 - Like any new technology or tool, not everyone is willing to adopt new tools and new ways of working at the same speed
 
