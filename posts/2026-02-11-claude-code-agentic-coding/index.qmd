@@ -98,3 +98,36 @@ If you type `/memory` you can see if auto memory is being used. See below for wh
 
 ![](./images/cc_day4_auto_memory.jpeg)
 
+
+# Day 5 - Save Your Data
+
+[Posted on 2026-02-16](https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429185326138531840-bepC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+- Claude Code stores logs at: `~/.claude/projects/`
+- Only keeps 30 days by default
+- Tip: Add `"cleanupPeriodDays": 99999` to `~/.claude/settings.json` to preserve this valuable data
+
+Remember you can also ask Claude Code to do these things too.
+
+
+# Day 6 - Use Plan Mode
+
+[Posted on 2026-02-17](https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429551565948166147-ypB0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see "plan mode on" in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan. 
+
+Some of the more complicated tasks I like to use plan mode for are: 
+
+- Large refactoring
+- Creating machine learning pipelines
+- Brainstorming with Claude
+
+The official docs recommend you use plan mode when are you: 
+
+- Multi-step implementation: When your feature requires making edits to many files
+- Code exploration: When you want to research the codebase thoroughly before changing anything
+- Interactive development: When you want to iterate on the direction with Claude
+
+The plans get written into your home directory: `~/.claude/plans/random-words.md` 
+
+https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis
