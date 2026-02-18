@@ -243,6 +243,8 @@ cookieconsent.run({
   <li><a href="#day-2---standardize-on-agents.md" id="toc-day-2---standardize-on-agents.md" class="nav-link" data-scroll-target="#day-2---standardize-on-agents.md">Day 2 - Standardize on <code>AGENTS.md</code></a></li>
   <li><a href="#day-3---self-improving-agents.mdclaude.md" id="toc-day-3---self-improving-agents.mdclaude.md" class="nav-link" data-scroll-target="#day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></a></li>
   <li><a href="#day-4---auto-memory" id="toc-day-4---auto-memory" class="nav-link" data-scroll-target="#day-4---auto-memory">Day 4 - Auto Memory</a></li>
+  <li><a href="#day-5---save-your-data" id="toc-day-5---save-your-data" class="nav-link" data-scroll-target="#day-5---save-your-data">Day 5 - Save Your Data</a></li>
+  <li><a href="#day-6---use-plan-mode" id="toc-day-6---use-plan-mode" class="nav-link" data-scroll-target="#day-6---use-plan-mode">Day 6 - Use Plan Mode</a></li>
   </ul>
 </nav>
     </div>
@@ -349,6 +351,36 @@ cookieconsent.run({
 </ul>
 <p>If you type <code>/memory</code> you can see if auto memory is being used. See below for what writing this memory looks like:</p>
 <p><img src="./images/cc_day4_auto_memory.jpeg" class="img-fluid"></p>
+</section>
+<section id="day-5---save-your-data" class="level1">
+<h1>Day 5 - Save Your Data</h1>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429185326138531840-bepC?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-16</a></p>
+<ul>
+<li>Claude Code stores logs at: <code>~/.claude/projects/</code></li>
+<li>Only keeps 30 days by default</li>
+<li>Tip: Add <code>"cleanupPeriodDays": 99999</code> to <code>~/.claude/settings.json</code> to preserve this valuable data</li>
+</ul>
+<p>Remember you can also ask Claude Code to do these things too.</p>
+</section>
+<section id="day-6---use-plan-mode" class="level1">
+<h1>Day 6 - Use Plan Mode</h1>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429551565948166147-ypB0?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-17</a></p>
+<p><img src="./images/cc_day6_plan_mode.png" class="img-fluid"></p>
+<p>I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see “plan mode on” in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan.</p>
+<p>Some of the more complicated tasks I like to use plan mode for are:</p>
+<ul>
+<li>Large refactoring</li>
+<li>Creating machine learning pipelines</li>
+<li>Brainstorming with Claude</li>
+</ul>
+<p>The official docs recommend you use plan mode when are you:</p>
+<ul>
+<li>Multi-step implementation: When your feature requires making edits to many files</li>
+<li>Code exploration: When you want to research the codebase thoroughly before changing anything</li>
+<li>Interactive development: When you want to iterate on the direction with Claude</li>
+</ul>
+<p>The plans get written into your home directory: <code>~/.claude/plans/random-words.md</code></p>
+<p>https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis</p>
 
 
 </section>
