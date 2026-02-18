@@ -114,6 +114,8 @@ Remember you can also ask Claude Code to do these things too.
 
 [Posted on 2026-02-17](https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429551565948166147-ypB0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
+![](./images/cc_day6_plan_mode.png)
+
 I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see "plan mode on" in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan. 
 
 Some of the more complicated tasks I like to use plan mode for are: 
