@@ -820,7 +820,10 @@ cookieconsent.run({
 <span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="st">- PRESERVE all existing information not directly contradicted</span></span>
 <span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="st">- Output the complete updated profile as a string</span></span>
 <span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Update Memory function, notably - this uses structured output to do the updating</p>
+<p>Update Memory function, notably</p>
+<ul>
+<li>this uses structured output to do the updating</li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> UserPreferences(BaseModel):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""User preferences."""</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    preferences: <span class="bu">str</span></span>

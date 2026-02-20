@@ -321,9 +321,9 @@ cookieconsent.run({
 </figure>
 </div>
 <p>My prompt was:</p>
-<pre><code>Create a prompt for getting the questions and answers from a youtube transcript of a Q&amp;A talk</code></pre>
+<pre class="text"><code>Create a prompt for getting the questions and answers from a youtube transcript of a Q&amp;A talk</code></pre>
 <p>The generated Claude artifact was:</p>
-<pre><code>Your task is to analyze a transcript from a YouTube Q&amp;A session and extract the questions and their corresponding answers. Follow these steps:
+<pre class="text"><code>Your task is to analyze a transcript from a YouTube Q&amp;A session and extract the questions and their corresponding answers. Follow these steps:
 
 Read through the entire transcript carefully.
 Identify each distinct question asked during the Q&amp;A session. Look for:
@@ -349,9 +349,13 @@ If there are any ambiguities or unclear sections in the transcript, note these i
 After extracting all Q&amp;A pairs, provide a brief overview of the main themes or topics discussed in the session.
 
 Remember to focus on the substantive content of the Q&amp;A, avoiding any unnecessary filler or off-topic conversation. Your goal is to create a clear, concise summary of the key questions and answers from the session.</code></pre>
-<p>Some notes: - I added a line “Also if there are any verses cited, write those verses and quote the verse in the ESV translation.” because I wanted verses to be extracted. - I also generated a different version of this prompt to work on the non-Q&amp;A sections.</p>
+<p>Some notes:</p>
+<ul>
+<li>I added a line “Also if there are any verses cited, write those verses and quote the verse in the ESV translation.” because I wanted verses to be extracted.</li>
+<li>I also generated a different version of this prompt to work on the non-Q&amp;A sections.</li>
+</ul>
 <p>This is the non Q&amp;A version:</p>
-<pre><code>Your task is to analyze the transcript of a marriage seminar taught by John Street at a church. The transcript includes timestamps. Follow these steps to summarize the main points, arguments, verses, and applications:
+<pre class="text"><code>Your task is to analyze the transcript of a marriage seminar taught by John Street at a church. The transcript includes timestamps. Follow these steps to summarize the main points, arguments, verses, and applications:
 
 Read through the entire transcript carefully.
 Identify and categorize the following elements:

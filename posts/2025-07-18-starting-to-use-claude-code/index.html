@@ -285,17 +285,23 @@ cookieconsent.run({
 <p>I had tried Claude Code briefly when it first came out <a href="https://www.youtube.com/watch?v=AJpK3YTTKZ4&amp;ab_channel=Anthropic">4 months ago</a>. However I wasn’t that impressed. Lately though, I’ve seen more and more people turn to Claude Code. The step change was the <a href="https://www.anthropic.com/news/claude-4">release of Claude 4 Sonnet and Opus</a> on May 22, 2025. I think something was unlocked where given a powerful enough reasoning model (Claude 4) and access to generic tools, Claude Code is an amazing tool.</p>
 <p>Some of the things I read/watched that motivated me to try it again:</p>
 <ul>
-<li>Watching Claude Code creator’s, Boris Chemy’s talk about the <a href="https://www.youtube.com/watch?v=Lue8K2jqfKk&amp;ab_channel=AIEngineer">evolution of agentic coding</a> <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Lue8K2jqfKk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
-<li>seeing Eric J Ma’s post about it where it created a receipt scanner in <a href="https://ericmjl.github.io/blog/2025/7/1/one-hour-and-eight-minutes-building-a-receipt-scanner-with-the-weirdest-tech-stack-imaginable/">1 hour and 8 minutes</a></li>
-<li><a href="https://www.youtube.com/@ArminRonacher">Armin Ronacher’s</a> YouTube Tutorials: <a href="https://www.youtube.com/watch?v=nfOVgz_omlU&amp;ab_channel=ArminRonacher">here</a> and <a href="https://www.youtube.com/watch?v=Y4_YYrIKLac&amp;t=2184s&amp;ab_channel=ArminRonacher">here</a>. The second one I only watched the first 30 minutes. <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nfOVgz_omlU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y4_YYrIKLac" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+<li>Watching Claude Code creator’s, Boris Chemy’s talk about the <a href="https://www.youtube.com/watch?v=Lue8K2jqfKk&amp;ab_channel=AIEngineer">evolution of agentic coding</a></li>
 </ul>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Lue8K2jqfKk" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
+<ul>
+<li>seeing Eric J Ma’s post about it where it created a receipt scanner in <a href="https://ericmjl.github.io/blog/2025/7/1/one-hour-and-eight-minutes-building-a-receipt-scanner-with-the-weirdest-tech-stack-imaginable/">1 hour and 8 minutes</a></li>
+<li><a href="https://www.youtube.com/@ArminRonacher">Armin Ronacher’s</a> YouTube Tutorials: <a href="https://www.youtube.com/watch?v=nfOVgz_omlU&amp;ab_channel=ArminRonacher">here</a> and <a href="https://www.youtube.com/watch?v=Y4_YYrIKLac&amp;t=2184s&amp;ab_channel=ArminRonacher">here</a>. The second one I only watched the first 30 minutes.</li>
+</ul>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/nfOVgz_omlU" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --> <!-- markdownlint-disable MD034 --> <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Y4_YYrIKLac" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
 <section id="set-up" class="level2">
 <h2 class="anchored" data-anchor-id="set-up">Set Up</h2>
 <p>At work, we use VertexAI. Google has signed an agreement with Anthropic to license Claude models that you can then call via VertexAI. The <a href="https://docs.anthropic.com/en/docs/claude-code/google-vertex-ai">instructions</a> are easy to follow. In my <code>~/.zshrc</code>, I just have:</p>
-<pre><code>export CLAUDE_CODE_USE_VERTEX=1
-export CLOUD_ML_REGION=YOUR_GCP_REGION
-export ANTHROPIC_VERTEX_PROJECT_ID=YOUR_GCP_PROJECT_ID
-export ANTHROPIC_MODEL='claude-sonnet-4@20250514'</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CLAUDE_CODE_USE_VERTEX</span><span class="op">=</span>1</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">CLOUD_ML_REGION</span><span class="op">=</span>YOUR_GCP_REGION</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ANTHROPIC_VERTEX_PROJECT_ID</span><span class="op">=</span>YOUR_GCP_PROJECT_ID</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">ANTHROPIC_MODEL</span><span class="op">=</span><span class="st">'claude-sonnet-4@20250514'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You then authenticate with Google Cloud:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gcloud</span> auth login</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Install Claude Code:</p>
@@ -337,7 +343,13 @@ export ANTHROPIC_MODEL='claude-sonnet-4@20250514'</code></pre>
 <li><a href="https://www.anthropic.com/engineering/claude-code-best-practices" class="uri">https://www.anthropic.com/engineering/claude-code-best-practices</a></li>
 <li><a href="https://github.com/hesreallyhim/awesome-claude-code" class="uri">https://github.com/hesreallyhim/awesome-claude-code</a></li>
 <li><a href="https://www.pulsemcp.com/posts/how-to-use-claude-code-to-wield-coding-agent-clusters" class="uri">https://www.pulsemcp.com/posts/how-to-use-claude-code-to-wield-coding-agent-clusters</a></li>
+</ul>
+<!-- markdownlint-disable MD034 -->
+<ul>
 <li><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Lh_X32t9_po" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div></li>
+</ul>
+<!-- markdownlint-enable MD034 -->
+<ul>
 <li>Someone pointed me to this person’s tutorials which look decent but haven’t had a chance to watch: <a href="https://www.youtube.com/@indydevdan" class="uri">https://www.youtube.com/@indydevdan</a></li>
 <li>2025-07-18 - Anthropic cuts usage limits on max plans: Anthropic tightens usage limits for Claude Code — without telling users | TechCrunch - <a href="https://techcrunch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/" class="uri">https://techcrunch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/</a></li>
 </ul>

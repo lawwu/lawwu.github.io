@@ -336,7 +336,12 @@ cookieconsent.run({
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a>write_jsonl(first_100_rows, output_file_path)</span>
 <span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"First 100 rows have been written to </span><span class="sc">{</span>output_file_path<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This is the Axolotl config file I wound up with below. Some changes I made: - updated the base model to <code>mistralai/Mistral-7B-v0.3</code> - used a smaller dataset <code>data/output_first_100.jsonl</code> - updated <code>hub_model_id</code> and <code>wandb_project</code> and <code>wandb_entity</code></p>
+<p>This is the Axolotl config file I wound up with below. Some changes I made:</p>
+<ul>
+<li>updated the base model to <code>mistralai/Mistral-7B-v0.3</code></li>
+<li>used a smaller dataset <code>data/output_first_100.jsonl</code></li>
+<li>updated <code>hub_model_id</code> and <code>wandb_project</code> and <code>wandb_entity</code></li>
+</ul>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">base_model</span><span class="kw">:</span><span class="at"> mistralai/Mistral-7B-v0.3</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">model_type</span><span class="kw">:</span><span class="at"> MistralForCausalLM</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tokenizer_type</span><span class="kw">:</span><span class="at"> LlamaTokenizer</span></span>

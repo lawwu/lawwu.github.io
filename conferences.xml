@@ -2663,9 +2663,10 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
 <li>Don’t mention competitors: Refrain from making direct comparisons with competing services unless explicitly asked.</li>
 <li>Ensure each sentence is from a verified source and is accurate: Fact-check information and, where possible, provide sources.</li>
 <li>No profanity is mentioned in text: Maintain a professional tone and avoid using profane language.</li>
-<li><h2 id="prompt-injection-protection-safeguard-against-potential-vulnerabilities-by-not-executing-or-asking-to-execute-unsafe-code-snippets." class="anchored">Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.</h2></li>
+<li>Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.</li>
 </ul></li>
 </ul>
+<hr>
 </section>
 <section id="open-questions-for-ai-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="open-questions-for-ai-engineering">Open Questions for AI Engineering</h2>
@@ -2985,7 +2986,7 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
 <ul>
 <li>ViT-VQGAN as image tokenizer
 <ul>
-<li>What’s an image tokenizer? See: https://keras.io/examples/vision/token_learner/</li>
+<li>What’s an image tokenizer? See: <a href="https://keras.io/examples/vision/token_learner/" class="uri">https://keras.io/examples/vision/token_learner/</a></li>
 </ul></li>
 <li>Autoregressively generate images in a similar way that LLMs generate text</li>
 <li>Can generate text reliably - spell words out unlike other models</li>
@@ -3076,7 +3077,7 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
 </section>
 <section id="nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="nlp-research-in-the-era-of-llms---unleashing-the-potential-of-llms-through-task-and-data-engineering">NLP Research in the Era of LLMs - Unleashing the Potential of LLMs through Task and Data Engineering</h2>
-<p>Shafiq Joty gave this talk: https://raihanjoty.github.io/</p>
+<p>Shafiq Joty gave this talk: <a href="https://raihanjoty.github.io/" class="uri">https://raihanjoty.github.io/</a></p>
 <section id="background-data-engineering" class="level3">
 <h3 class="anchored" data-anchor-id="background-data-engineering">Background: Data Engineering</h3>
 <ul>
@@ -3168,7 +3169,7 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
 </section>
 <section id="causal-inference-workshop-causal-inference-and-machine-learning-in-practice" class="level1">
 <h1>Causal Inference Workshop: Causal Inference and Machine Learning in Practice</h1>
-<p>The website for this workshop is here: https://causal-machine-learning.github.io/kdd2023-workshop/</p>
+<p>The website for this workshop is here: <a href="https://causal-machine-learning.github.io/kdd2023-workshop/" class="uri">https://causal-machine-learning.github.io/kdd2023-workshop/</a></p>
 <section id="cog-creative-optimality-gap-for-video-advertising" class="level2">
 <h2 class="anchored" data-anchor-id="cog-creative-optimality-gap-for-video-advertising">COG: Creative Optimality Gap for Video Advertising</h2>
 <p>Raif Rustamov from Amazon gave this invited talk.</p>

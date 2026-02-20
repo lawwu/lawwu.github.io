@@ -328,20 +328,20 @@ cookieconsent.run({
 <p>I then started creating sections in my AGENTS.md for different types of areas, e.g.&nbsp;data, machine learning, VertexAI, or Big Query to organize these conventions and gotchas.</p>
 <p>Then I realized I could just prompt Claude Code to update my AGENTS.md for me. “can you update my AGENTS.md in the relevant section to not do that again?” This worked well, I often had to move what Claude wrote into the right place though.</p>
 <p>Then I added a line to my AGENTS.md, “when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query,” That way, Claude Code will periodically update my AGENTS.md</p>
-<p>I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management">here</a>. Reading about their plugins is very inspirational on what is possible now: https://github.com/anthropics/claude-plugins-official.</p>
-<pre><code>/plugin install claude-md-management@claude-plugin-directory</code></pre>
+<p>I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management">here</a>. Reading about their plugins is very inspirational on what is possible now: <a href="https://github.com/anthropics/claude-plugins-official" class="uri">https://github.com/anthropics/claude-plugins-official</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/plugin</span> install claude-md-management@claude-plugin-directory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then you can trigger the single skill that is part of the plugin called <code>claude-md-improver</code>:</p>
-<pre><code>/claude-md-management:revise-claude-md</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/claude-md-management:revise-claude-md</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><img src="./images/cc_day3_auto_claude_md.jpeg" class="img-fluid"></p>
 </section>
 <section id="day-4---auto-memory" class="level2">
 <h2 class="anchored" data-anchor-id="day-4---auto-memory">Day 4 - Auto Memory</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_day-4-of-my-claude-code-daily-tips-series-activity-7428098173602185216-EhKW?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-13</a></p>
 <p>Before talking about Claude Code’s auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code “can you search my previous claude messages for things i should add to my global CLAUDE.md?”</p>
-<p>Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code’s docs here: https://code.claude.com/docs/en/memory#manage-auto-memory</p>
+<p>Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code’s docs here: <a href="https://code.claude.com/docs/en/memory#manage-auto-memory" class="uri">https://code.claude.com/docs/en/memory#manage-auto-memory</a></p>
 <p>If you ask Claude Code to remember something it’ll write to a project specific memory folder in a markdown file here: <code>~/.claude/projects/&lt;project&gt;/memory/</code>. These memories will be used across sessions in your current project. Though only the first 200 lines of the auto memories will be loaded.</p>
 <p>From the official docs: “The directory contains a <code>MEMORY.md</code> entrypoint and optional topic files:</p>
-<pre><code>~/.claude/projects/&lt;project&gt;/memory/
+<pre class="text"><code>~/.claude/projects/&lt;project&gt;/memory/
 ├── MEMORY.md # Concise index, loaded into every session
 ├── debugging.md # Detailed notes on debugging patterns
 ├── api-conventions.md # API design decisions
@@ -382,7 +382,7 @@ cookieconsent.run({
 <li>Interactive development: When you want to iterate on the direction with Claude</li>
 </ul>
 <p>The plans get written into your home directory: <code>~/.claude/plans/random-words.md</code></p>
-<p>https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis</p>
+<p><a href="https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis" class="uri">https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis</a></p>
 </section>
 <section id="day-7---prefer-clis-to-mcps" class="level1">
 <h1>Day 7 - Prefer CLIs to MCPs</h1>
@@ -391,15 +391,20 @@ cookieconsent.run({
 <p>MCPs had a lot of promise when they first came out. They still have a place. By implementing an MCP Server, you provide a common interface to any MCP Client. But the downside of MCP is you quickly fill up the context window of the underlying LLM you are using. The more MCPs you have configured, the worse this gets.</p>
 <p>With CLIs, Claude Code can directly use them because the underlying model, Claude, has been “seen” so many instances of CLIs being used in the training data. So Claude Code already knows how to use the <code>gh</code> (Github) CLI, <code>bq</code> (BigQuery) CLI, ffmpeg, etc.</p>
 <p>I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP.</p>
-<p>I’ve also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (https://github.com/atlassian-api/atlassian-python-api ).</p>
-<p>One MCP Server I still like and have configured globally in Claude Code is DeepWiki: https://cognition.ai/blog/deepwiki-mcp-server</p>
-<p>Armin Ronacher shares similar thoughts in his post: https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/ - Largely moved away from MCP, redone everything as skills - Agents are better at writing their own tools — they customize and debug them - MCP servers: you’re at mercy of their changes</p>
+<p>I’ve also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (<a href="https://github.com/atlassian-api/atlassian-python-api" class="uri">https://github.com/atlassian-api/atlassian-python-api</a>).</p>
+<p>One MCP Server I still like and have configured globally in Claude Code is DeepWiki: <a href="https://cognition.ai/blog/deepwiki-mcp-server" class="uri">https://cognition.ai/blog/deepwiki-mcp-server</a></p>
+<p>Armin Ronacher shares similar thoughts in his post: <a href="https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/" class="uri">https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/</a></p>
+<ul>
+<li>Largely moved away from MCP, redone everything as skills</li>
+<li>Agents are better at writing their own tools — they customize and debug them</li>
+<li>MCP servers: you’re at mercy of their changes</li>
+</ul>
 </section>
 <section id="day-8---customize-a-statusline" class="level1">
 <h1>Day 8 - Customize a statusline</h1>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_customize-your-status-line-claude-code-activity-7430272648762413056-QELx?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-19</a></p>
 <p>You can configure the bottom two lines in the Claude Code terminal UI. Run the <code>/statusline</code> command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.</p>
-<p>Official docs: https://code.claude.com/docs/en/statusline</p>
+<p>Official docs: <a href="https://code.claude.com/docs/en/statusline" class="uri">https://code.claude.com/docs/en/statusline</a></p>
 
 
 </section>

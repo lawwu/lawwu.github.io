@@ -242,7 +242,7 @@ cookieconsent.run({
 <p>Guidance for coding agents (Claude Code, Codex, etc.) working in this repository.</p>
 <section id="project" class="level2">
 <h2 class="anchored" data-anchor-id="project">Project</h2>
-<p>Lawrence Wu’s personal blog at https://lawwu.github.io/blog.html, built with <a href="https://quarto.org/">Quarto</a>.</p>
+<p>Lawrence Wu’s personal blog at <a href="https://lawwu.github.io/blog.html" class="uri">https://lawwu.github.io/blog.html</a>, built with <a href="https://quarto.org/">Quarto</a>.</p>
 </section>
 <section id="key-commands" class="level2">
 <h2 class="anchored" data-anchor-id="key-commands">Key Commands</h2>
@@ -277,6 +277,7 @@ _freeze/                            # Computational cache (commit this)</code></
 <ul>
 <li><strong>Branches:</strong> <code>main</code> (production), <code>feature/description</code> or <code>claude/description-xxxxx</code></li>
 <li><strong>Commit:</strong> include <code>docs/</code> and <code>_freeze/</code>; exclude <code>.quarto/</code>, <code>_site/</code></li>
+<li><strong>Links:</strong> never use bare URLs — always wrap in <code>&lt;url&gt;</code> or <code>[text](url)</code> form</li>
 <li><strong>Images:</strong> place in post directory, compress PNGs with <code>pngquant --quality 60-80</code></li>
 <li><strong>Code blocks:</strong> executable Python runs via Jupyter during render; use <code>freeze: false</code> to force re-execution</li>
 </ul>

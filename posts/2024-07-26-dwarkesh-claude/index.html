@@ -284,7 +284,8 @@ cookieconsent.run({
 
 
 <p>Dwarkesh Patel is becoming the new Lex Fridman of podcasting. Lex got his start a podcaster interviewing AI experts. Since then Lex has branched out and most of his guests are non AI-experts. Dwarkesh has filled this gap. In this interview, Dan Shipper interviews him:</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Vm49oIPtyRE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/Vm49oIPtyRE" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
 <p>I listened to 15 minutes but didn’t want to listen to the rest of it. But I was still curious how Dwarkesh uses AI in his day-to-day. So I grabbed the transcript (which is available via Youtube’s API). You can use a Python library <a href="https://pypi.org/project/youtube-transcript-api/">youtube-transcript-api</a> or <a href="https://youtubetranscript.com/?v=Vm49oIPtyRE">web services</a> that do the same thing from a web interface.</p>
 <p>I copied the whole transcript into ChatGPT and Claude with the following prompt:</p>
 <blockquote class="blockquote">
@@ -373,7 +374,13 @@ cookieconsent.run({
 <li>This can lead to more accurate and detailed responses.</li>
 </ul>
 <p>Bad prompt: <prompt> “How can I improve team productivity?” </prompt></p>
-<p>Good prompt: <prompt> “I’m looking to improve my team’s productivity. Think through this step-by-step, considering the following factors: 1. Current productivity blockers (e.g., too many meetings, unclear priorities) 2. Potential solutions (e.g., time management techniques, project management tools) 3. Implementation challenges 4. Methods to measure improvement</prompt></p>
+<p>Good prompt: <prompt> “I’m looking to improve my team’s productivity. Think through this step-by-step, considering the following factors:</prompt></p>
+<ol type="1">
+<li>Current productivity blockers (e.g., too many meetings, unclear priorities)</li>
+<li>Potential solutions (e.g., time management techniques, project management tools)</li>
+<li>Implementation challenges</li>
+<li>Methods to measure improvement</li>
+</ol>
 <p>For each step, please provide a brief explanation of your reasoning. Then summarize your ideas at the end.” </p>
 <p>Why it’s better: The good prompt asks Claude to think through the problem systematically, providing a guided structure for the response and asking for explanations of the reasoning process. It also prompts Claude to create a summary at the end for easier reading.</p>
 </section>
@@ -384,7 +391,12 @@ cookieconsent.run({
 <li>You can always say “That’s close, but can you adjust X to be more like Y?”</li>
 </ul>
 <p>Bad prompt: <prompt> “Make it better.” </prompt></p>
-<p>Good prompt: <prompt> “That’s a good start, but please refine it further. Make the following adjustments: 1. Make the tone more casual and friendly 2. Add a specific example of how our product has helped a customer 3. Shorten the second paragraph to focus more on the benefits rather than the features” </prompt></p>
+<p>Good prompt: <prompt> “That’s a good start, but please refine it further. Make the following adjustments:</prompt></p>
+<ol type="1">
+<li>Make the tone more casual and friendly</li>
+<li>Add a specific example of how our product has helped a customer</li>
+<li>Shorten the second paragraph to focus more on the benefits rather than the features” </li>
+</ol>
 <p>Why it’s better: The good prompt provides specific feedback and clear instructions for improvements, allowing Claude to make targeted adjustments instead of just relying on Claude’s innate sense of what “better” might be — which is likely different from the user’s definition!</p>
 </section>
 <section id="leverage-claudes-knowledge" class="level3">
@@ -394,7 +406,13 @@ cookieconsent.run({
 <li>Be sure to include relevant context and details so that Claude’s response is maximally targeted to be helpful</li>
 </ul>
 <p>Bad prompt: <prompt> “What is marketing? How do I do it?” </prompt></p>
-<p>Good prompt: <prompt> “I’m developing a marketing strategy for a new eco-friendly cleaning product line. Can you provide an overview of current trends in green marketing? Please include: 1. Key messaging strategies that resonate with environmentally conscious consumers 2. Effective channels for reaching this audience 3. Examples of successful green marketing campaigns from the past year 4. Potential pitfalls to avoid (e.g., greenwashing accusations)</prompt></p>
+<p>Good prompt: <prompt> “I’m developing a marketing strategy for a new eco-friendly cleaning product line. Can you provide an overview of current trends in green marketing? Please include:</prompt></p>
+<ol type="1">
+<li>Key messaging strategies that resonate with environmentally conscious consumers</li>
+<li>Effective channels for reaching this audience</li>
+<li>Examples of successful green marketing campaigns from the past year</li>
+<li>Potential pitfalls to avoid (e.g., greenwashing accusations)</li>
+</ol>
 <p>This information will help me shape our marketing approach.” </p>
 <p>Why it’s better: The good prompt asks for specific, contextually relevant information that leverages Claude’s broad knowledge base. It provides context for how the information will be used, which helps Claude frame its answer in the most relevant way.</p>
 </section>
@@ -404,7 +422,12 @@ cookieconsent.run({
 <li>Ask Claude to adopt a specific role or perspective when responding.</li>
 </ul>
 <p>Bad prompt: <prompt> “Help me prepare for a negotiation.” </prompt></p>
-<p>Good prompt: <prompt> “You are a fabric supplier for my backpack manufacturing company. I’m preparing for a negotiation with this supplier to reduce prices by 10%. As the supplier, please provide: 1. Three potential objections to our request for a price reduction 2. For each objection, suggest a counterargument from my perspective 3. Two alternative proposals the supplier might offer instead of a straight price cut</prompt></p>
+<p>Good prompt: <prompt> “You are a fabric supplier for my backpack manufacturing company. I’m preparing for a negotiation with this supplier to reduce prices by 10%. As the supplier, please provide:</prompt></p>
+<ol type="1">
+<li>Three potential objections to our request for a price reduction</li>
+<li>For each objection, suggest a counterargument from my perspective</li>
+<li>Two alternative proposals the supplier might offer instead of a straight price cut</li>
+</ol>
 <p>Then, switch roles and provide advice on how I, as the buyer, can best approach this negotiation to achieve our goal.” </p>
 <p>Why it’s better: This prompt uses role-playing to explore multiple perspectives of the negotiation, providing a more comprehensive preparation. Role-playing also encourages Claude to more readily adopt the nuances of specific perspectives, increasing the intelligence and performance of Claude’s response.</p>
 </section>
@@ -479,7 +502,12 @@ cookieconsent.run({
 </ol>
 <p>Here is an example that combines all three of the above techniques:</p>
 <p>Bad prompt: <prompt> “Summarize this report for me.” </prompt></p>
-<p>Good prompt: <prompt> “I’ve attached a 50-page market research report called ‘Tech Industry Trends 2023’. Can you provide a 2-paragraph summary focusing on AI and machine learning trends? Then, please answer these questions: 1. What are the top 3 AI applications in business for this year? 2. How is machine learning impacting job roles in the tech industry? 3. What potential risks or challenges does the report mention regarding AI adoption?</prompt></p>
+<p>Good prompt: <prompt> “I’ve attached a 50-page market research report called ‘Tech Industry Trends 2023’. Can you provide a 2-paragraph summary focusing on AI and machine learning trends? Then, please answer these questions:</prompt></p>
+<ol type="1">
+<li>What are the top 3 AI applications in business for this year?</li>
+<li>How is machine learning impacting job roles in the tech industry?</li>
+<li>What potential risks or challenges does the report mention regarding AI adoption?</li>
+</ol>
 <p>Please cite specific sections or page numbers when answering these questions.” </p>
 <p>Why it’s better: This prompt specifies the exact focus of the summary, provides specific questions, and asks for citations, ensuring a more targeted and useful response. It also indicates the ideal summary output structure, such as limiting the response to 2 paragraphs.</p>
 </section>
@@ -522,7 +550,18 @@ cookieconsent.run({
 </ul></li>
 </ol>
 <p>Bad prompt: <prompt> “Give me some team-building ideas.” </prompt></p>
-<p>Good prompt: <prompt> “We need to come up with team-building activities for our remote team of 20 people. Can you help me brainstorm by: 1. Suggesting 10 virtual team-building activities that promote collaboration 2. For each activity, briefly explain how it fosters teamwork 3. Indicate which activities are best for: a) Ice-breakers b) Improving communication c) Problem-solving skills 4. Suggest one low-cost option and one premium option.” </prompt></p>
+<p>Good prompt: <prompt> “We need to come up with team-building activities for our remote team of 20 people. Can you help me brainstorm by:</prompt></p>
+<ol type="1">
+<li>Suggesting 10 virtual team-building activities that promote collaboration</li>
+<li>For each activity, briefly explain how it fosters teamwork</li>
+<li>Indicate which activities are best for:
+<ol type="a">
+<li>Ice-breakers</li>
+<li>Improving communication</li>
+<li>Problem-solving skills</li>
+</ol></li>
+<li>Suggest one low-cost option and one premium option.” </li>
+</ol>
 <p>Why it’s better: This prompt provides specific parameters for the brainstorming session, including the number of ideas, type of activities, and additional categorization, resulting in a more structured and useful output.</p>
 <ol start="2" type="1">
 <li><p>Request responses in specific formats like bullet points, numbered lists, or tables for easier reading.</p>
