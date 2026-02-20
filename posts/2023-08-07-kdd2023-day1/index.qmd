@@ -43,34 +43,41 @@ The website for this workshop is here: [https://llm-ai.github.io/llmai/](https:/
 | 12:00PM-12:10PM, 2023/08/07 (PDT) | Zhen Guo, Yanwei Wang, Peiqi Wang and Shangdi Yu                                                     | Paper-8: Dr. LLaMA: Improving Small Language Models on PubMedQA via Generative Data Augmentation                              |
 | 12:10-12:20PM, 2023/08/07 (PDT) | Haopeng Zhang, Xiao Liu and Jiawei Zhang                                                              | Paper-9 : Extractive Summarization via ChatGPT for Faithful Summary Generation                                                |
 | 12:20-12:30PM, 2023/08/07 (PDT) | Closing Remarks                                                                                      |                                                                                                                               |
+
 ## LLM Revolution: Implications from Chatbots and Tool-Use to Reasoning - Ed Chi
 
 Ed Chi from Google gave this great talk.
 
 ### 2016 - Functions that Deep Neural Network Can Learn
+
 - Pixels --> Lion
 - Audio --> Audio to text
 - Text --> Text (translation)
 - Pixels --> Caption
 
 ### Chatbots
+
 - Not just transactional
 - We want chatbots to be contextual
 - Personalized assistants for everyone
 
 ### Lambda --> Bard (Brought to You by Ed's Team)
+
 - They wanted to publish Lambda in the form of Bard, but there were difficulties
 
 ### Large Language Models (LLM)
+
 - Large knowledge base
 - What is a plan to read 20 books a year? Reaches into the LLM to come up with a real plan
 - Genesis of captions --> not too far to be able to generate text
 
 ### Programming
+
 - Coding is less about coding, more about data
 - Data Science (DS) is going to be a bigger part of software development
 
 ### Retrieval Augmentation: Leveraging External Knowledge
+
 - Factuality trigger
 - Open-book Generative QA
 - RETRO: Retrieval-augmented generative model
@@ -80,21 +87,25 @@ Ed Chi from Google gave this great talk.
   - Fruitful Line of Research
 
 ### Multi-modality output (not just text, could be images)
+
 - Image retrieval
 - Image input --> Generate captions
 
 ### Humans and LLMs with Tools
+
 - Humans + Search --> Superhuman
 - LLMS + Tools --> Super LLMS
 - Humans + Super LLM --> Super super humans??
 
 ### Future Challenges
+
 - Responsibility and Safety
 - Factuality, Grounding, and Attribution
 - Human <-> AI Content Loop and Ecosystem
 - Personalization and User Memory
 
 ### Keynote
+
 - Ed is going to give the keynote tomorrow
 - You can interrogate a model for why it made a decision or prediction
 - Area: Self-critique, self-reflection (next year or so)
@@ -107,40 +118,48 @@ Ed Chi from Google gave this great talk.
 Tania Bedrax-Weiss from Google gave this talk.
 
 ### Mixture of Experts Models
+
 - How to route the question to the right expert, right experts
 
 ### Conditional Computation
+
 - COLT5 Transformer layer
 - Scales to longer context
 - Early exit
 - Per step confidence thresholds
 
 ### Multi-modal Work
+
 - Imagen - diffusion model
   - [Imagen Research Google](https://imagen.research.google/)
 - Parti - autoregressive model
   - [Parti Research Google](https://sites.research.google/parti/)
 
 ### Imagen: Technical Details
+
 - ViT-VQGAN as image tokenizer
-  - What's an image tokenizer? See: https://keras.io/examples/vision/token_learner/
+  - What's an image tokenizer? See: <https://keras.io/examples/vision/token_learner/>
 - Autoregressively generate images in a similar way that LLMs generate text
 - Can generate text reliably - spell words out unlike other models
 
 ### Pali
+
 - Image to text
 - State of the art text captioning model
 
 ### Spotlight
+
 - Screenshots / user interfaces - understand what are the actions that a user can perform
 - Execute commands in the user interface
 
 ### PLay: Parametrically Condition Layout Generation Using Guidelines
+
 - Fine-tuning
 - Prompt Tuning
   - Look at this more
 
 ### How do you handle ambiguity in an answer?
+
   - LLMs are very eager to give an answer
   - Types
     - Use multiple prompts to get different types of answers. This is my answer. Can you generate other answers?
@@ -192,26 +211,33 @@ Graph neural networks are widely used tools for graph prediction tasks. Motivate
 
 ## NLP Research in the Era of LLMs - Unleashing the Potential of LLMs through Task and Data Engineering
 
-Shafiq Joty gave this talk: https://raihanjoty.github.io/
+Shafiq Joty gave this talk: <https://raihanjoty.github.io/>
 
 ### Background: Data Engineering
+
 - Hold the code fixed and invite research to improve the data (Andrew Ng)
 
 ### Background: Rise of Task Engineering
+
 - Multi-task models with task prompts
 - Trained with many different instructions
 - Mentions prompt tuning again (soft tokens) ???
 
 ### Background: Task Engineering
+
 ### LLM Lifecycle
+
 ### **XGen LLM**: June 2023
+
 - [GitHub Link](https://github.com/salesforce/xgen)
 - Goal is to outperform LLaMA1
 
 ### Instructed tuned
+
 - Instructional data: WizardLM. [Paper Link](https://arxiv.org/abs/2304.12244)
 
 ### What does WizardLM do exactly in advancing the SoTA?
+
 - [Details on WizardLM](https://arxiv.org/abs/2304.12244)
 - Training large language models (LLMs) with open-domain instruction following data brings colossal success. However, manually creating such instruction data is very time-consuming and labor-intensive. Moreover, humans may struggle to produce high-complexity instructions. In this paper, we show an avenue for creating large amounts of instruction data with varying levels of complexity using LLM instead of humans. Starting with an initial set of instructions, we use our proposed Evol-Instruct to rewrite them step by step into more complex instructions. Then, we mix all generated instruction data to fine-tune LLaMA. We call the resulting model WizardLM. Human evaluations on a complexity-balanced test bed and Vicuna's testset show that instructions from Evol-Instruct are superior to human-created ones. By analyzing the human evaluation results of the high complexity part, we demonstrate that outputs from our WizardLM are preferred to outputs from OpenAI ChatGPT. In GPT-4 automatic evaluation, WizardLM achieves more than 90\% capacity of ChatGPT on 17 out of 29 skills. Even though WizardLM still lags behind ChatGPT in some aspects, our findings suggest that fine-tuning with AI-evolved instructions is a promising direction for enhancing LLMs. Our code and data are public at this https URL
 
@@ -227,18 +253,22 @@ Yikang Shen from IBM gave this talk.
 ### Foundation model types
 
 #### Challenges of LLM
+
 - **Efficiency**
 - **Extendability**
 - **Flexibility**
 
 ### ModuleFormer - Learning Modular LLM from Uncurated Data
+
 - Previous modular models were based on already labeled data
 
 ### Mod-Squad - designing a mixture of experts as modular multi-task learners
+
 - Can select the right experts for a task
 - Experts can share knowledge!?
 
 ### Dromedary - efficiently teach AI to follow a given set of principles
+
 - [GitHub Link for Dromedary](https://github.com/IBM/Dromedary)
 - **Principle Engraving** -
 - **Verbose Cloning** - refining the model to produce in-depth and detailed response
@@ -253,23 +283,27 @@ This paper presents AutoHint, a novel framework for automatic prompt engineering
 
 # Causal Inference Workshop: Causal Inference and Machine Learning in Practice
 
-The website for this workshop is here: https://causal-machine-learning.github.io/kdd2023-workshop/
+The website for this workshop is here: <https://causal-machine-learning.github.io/kdd2023-workshop/>
 
 ## COG: Creative Optimality Gap for Video Advertising
 
 Raif Rustamov from Amazon gave this invited talk.
 
 ### Video ads motivation
+
 - How does a particular video affect shopper experience?
 
 ### Goal
+
 - Driven by explicit hypotheses tied to quantifying value of the video
 
 ### Approach - Creative Optimality Gap (COG)
+
 - If we were to replace the video of class 0 to video of class 1, what would be the improvement in the outcome for the ad?
 - **Uplift or Heterogenous Treatment Effect modeling**
 
 ### Benefits
+
 - Differentiated at the level of video features vs. global ATE
   - **ATE** - average treatment effect - videos are good
   - **ITE** - individual treatment effect - noisy
@@ -277,6 +311,7 @@ Raif Rustamov from Amazon gave this invited talk.
 - Handle cold start ads
 
 ### Preliminaries
+
 - **Treatment indicator (T)**
 - **Video features**
   - Computed using e.g. video embeddings
@@ -287,13 +322,16 @@ Raif Rustamov from Amazon gave this invited talk.
 - **Outcome = Y**
 
 ### COG Modeling
+
 - **Step 1**
 - **Step 2**
 - **Step 3** -
   - Used interpretable models in this step, why?
 
 ### COG Modeling: Guardrails
+
 #### Bias
+
 - Bias comes from G model, comes from regularization or not enough capacity in the model
 - Bias is not constant but varies in the Z space
 - Double ML?
@@ -301,6 +339,7 @@ Raif Rustamov from Amazon gave this invited talk.
 #### Uncertainty/Variance
 
 ### Solution
+
 - Conservative COG = lower bound of confidence interval
 
 
@@ -309,19 +348,23 @@ Raif Rustamov from Amazon gave this invited talk.
 Ruomeng Cui from Emory gave this talk.
 
 ### Cainiao - Chinese Company
+
 - Alibaba's logistics platform
 - Largest logistics platform in China
 - If there are differences in preferences, there is an opportunity for optimization
 
 ### Use Causal ML: Estimating ITE
+
 - **Data:** Post-treatment data Q4 2021
 
 ### Models
+
 - Partial Linear DML
 - First-difference DML
 - Others
 
 ### Account for Knapsnack
+
 - Tau does not capture economic efficiency
 - Need to account for how much capacity a customer is using. A customer going from 0 to 1 unit sales is much more valuable than a customer going from 19 to 20 units sold because the latter is not using much capacity.
 
@@ -349,7 +392,7 @@ This was an invited talk by Ang Li about this paper: [https://ftp.cs.ucla.edu/pu
 My main takeaway was dividing a population into a typical A/B test where one group receives a treatment and the other group is the control is too simplistic. There are actually 4 groups we should be concerned about:
 
 - Complier: Individuals who would respond positively if treated and negatively if not treated.
--  Always-taker: Individuals who always respond positively no matter whether they are treated or not.
+- Always-taker: Individuals who always respond positively no matter whether they are treated or not.
 - Never-taker: Individuals who always respond negatively no matter whether they are treated or not.
 - Defier: Individuals who would respond negatively if treated and positively if not treated.
 

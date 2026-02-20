@@ -8,6 +8,7 @@ categories: [ai]
 As a daily Claude Code user for [the last 6 months](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/), I've learned a lot about Claude Code and agentic coding in general. Trying this thing where I share 1 thing per day. I'm posting on LinkedIn but I'll update this post with each tip.
 
 ::: {.callout-note}
+
 ## Subscribe to my newsletter
 
 Get these tips and more delivered to your inbox. Subscribe at [lawrencewu.substack.com](https://lawrencewu.substack.com/)
@@ -32,9 +33,11 @@ Also neat to see all of the messages, tool calls and sessions labeled by type al
 If you use more than one coding agent like Claude Code and Codex, it's helpful to standardize on one AGENTS.md. This is a file that gets loaded into the model's system prompt and is great for steering the model. Claude Code hasn't chosen to standardize yet and still uses at CLAUDE.md
 
 Solution: Have CLAUDE.md with one line:
+
 ```md
 @AGENTS.md
 ```
+
 Then just keep your AGENTS.md updated.
 
 Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then load AGENTS.md because it's referred to.
@@ -55,15 +58,15 @@ Then I realized I could just prompt Claude Code to update my AGENTS.md for me. "
 
 Then I added a line to my AGENTS.md, "when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query," That way, Claude Code will periodically update my AGENTS.md
 
-I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too [here](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management). Reading about their plugins is very inspirational on what is possible now: https://github.com/anthropics/claude-plugins-official.
+I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too [here](https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management). Reading about their plugins is very inspirational on what is possible now: <https://github.com/anthropics/claude-plugins-official>.
 
-```
+```bash
 /plugin install claude-md-management@claude-plugin-directory
 ```
 
 Then you can trigger the single skill that is part of the plugin called `claude-md-improver`:
 
-```
+```bash
 /claude-md-management:revise-claude-md
 ```
 
@@ -76,13 +79,13 @@ Then you can trigger the single skill that is part of the plugin called `claude-
 
 Before talking about Claude Code's auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code "can you search my previous claude messages for things i should add to my global CLAUDE.md?"
 
-Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code's docs here: https://code.claude.com/docs/en/memory#manage-auto-memory
+Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code's docs here: <https://code.claude.com/docs/en/memory#manage-auto-memory>
 
 If you ask Claude Code to remember something it'll write to a project specific memory folder in a markdown file here: `~/.claude/projects/<project>/memory/`. These memories will be used across sessions in your current project. Though only the first 200 lines of the auto memories will be loaded.
 
 From the official docs: "The directory contains a `MEMORY.md` entrypoint and optional topic files:
 
-```
+```text
 ~/.claude/projects/<project>/memory/
 ├── MEMORY.md # Concise index, loaded into every session
 ├── debugging.md # Detailed notes on debugging patterns
@@ -132,7 +135,7 @@ The official docs recommend you use plan mode when are you:
 
 The plans get written into your home directory: `~/.claude/plans/random-words.md`
 
-https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis
+<https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis>
 
 # Day 7 - Prefer CLIs to MCPs
 
@@ -140,21 +143,18 @@ https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-ana
 
 One of the main breakthroughs Claude Code and other agentic coding terminals made was the Bash tool. Because Claude has been trained to use Bash so effectively and there are thousands of CLIs that run in Bash, Claude Code + CLIs pairs so well together.
 
-
 MCPs had a lot of promise when they first came out. They still have a place. By implementing an MCP Server, you provide a common interface to any MCP Client. But the downside of MCP is you quickly fill up the context window of the underlying LLM you are using. The more MCPs you have configured, the worse this gets.
-
 
 With CLIs, Claude Code can directly use them because the underlying model, Claude, has been "seen" so many instances of CLIs being used in the training data. So Claude Code already knows how to use the `gh` (Github) CLI, `bq` (BigQuery) CLI, ffmpeg, etc.
 
-
 I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP.
 
+I've also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (<https://github.com/atlassian-api/atlassian-python-api>).
 
-I've also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (https://github.com/atlassian-api/atlassian-python-api ).
+One MCP Server I still like and have configured globally in Claude Code is DeepWiki: <https://cognition.ai/blog/deepwiki-mcp-server>
 
-One MCP Server I still like and have configured globally in Claude Code is DeepWiki: https://cognition.ai/blog/deepwiki-mcp-server
+Armin Ronacher shares similar thoughts in his post: <https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/>
 
-Armin Ronacher shares similar thoughts in his post: https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/
   - Largely moved away from MCP, redone everything as skills
   - Agents are better at writing their own tools — they customize and debug them
   - MCP servers: you're at mercy of their changes
@@ -166,4 +166,4 @@ Armin Ronacher shares similar thoughts in his post: https://lucumr.pocoo.org/202
 
 You can configure the bottom two lines in the Claude Code terminal UI. Run the `/statusline` command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.
 
-Official docs: https://code.claude.com/docs/en/statusline
+Official docs: <https://code.claude.com/docs/en/statusline>

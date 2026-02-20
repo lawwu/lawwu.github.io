@@ -17,10 +17,12 @@ Large Language Models (LLMs) like ChatGPT are already transforming the way we wo
 - In PyTorch what does `batch_first=False` do?
 - Help writing a MLOps Python wrapper package that wraps Vertex AI Pipelines
 - Copy and pasted
-```
+
+```text
 187 packages can be updated.
 27 updates are security updates.
 ```
+
 And it responded with commands for how to update package lists, upgrade packages and do a distribution upgrade too
 
 - Reformat JSON dictionaries

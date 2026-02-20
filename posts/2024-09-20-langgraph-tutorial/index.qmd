@@ -70,12 +70,14 @@ new_state = add_messages(existing_messages, new_message)
 ```
 
 Messages can be overwritten by using the same ID:
+
 ```python
 new_message = HumanMessage(content="New content", name="User", id="existing_id")
 updated_state = add_messages(existing_messages, new_message)
 ```
 
 Messages can be removed using `RemoveMessage`:
+
 ```python
 from langchain_core.messages import RemoveMessage
 
@@ -184,6 +186,7 @@ builder.add_edge("filter", "chat_model")
 ```
 
 Trimming messages based on token count:
+
 ```python
 from langchain_core.messages import trim_messages
 
@@ -235,6 +238,7 @@ def call_model(state: State):
 ```
 
 Note, here we'll use `RemoveMessage` to filter our state after we've produced the summary.
+
 ```python
 def summarize_conversation(state: State):
 

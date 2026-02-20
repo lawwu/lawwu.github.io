@@ -81,6 +81,7 @@ weather_function
 ```
 
 then you can pass the weather function to the LLM
+
 ```python
 from langchain.chat_models import ChatOpenAI
 model = ChatOpenAI()
@@ -89,11 +90,13 @@ model.invoke("What is the weather in San Francisco right now?",
 ```
 
 You can also bind the function to the model:
+
 ```python
 model_with_function = model.bind(functions=[weather_function])
 ```
 
 You can force OpenAI to use a function, but you can only pass one function here.
+
 ```python
 model_forced_function = model.bind(functions=[weather_function], function_call={"name":"WeatherSearch"})
 ```
@@ -119,6 +122,7 @@ extraction_model.invoke("Joe is 30. Joe's mom is Martha")
 ```
 
 - You can create your own tools using the @tool decorator and pass these tools to OpenAI
+
 ```python
 from langchain.agents import tool
 from langchain.chat_models import ChatOpenAI
@@ -649,6 +653,7 @@ We'll explore patterns that help us apply generative AI in production systems an
 
 
 ## Keynote: The AI Evolution
+
 **Mario Rodriguez**,  *VP of Product, GitHub*
 
 How AI is transforming how the world builds software together
@@ -677,6 +682,7 @@ How AI is transforming how the world builds software together
 
 
 ## Move Fast, Break Nothing
+
 **Dedy Kredo**
 CPO, CodiumAI
 Why we need Agents writing Tests faster than Humans writing Code.
@@ -693,6 +699,7 @@ Why we need Agents writing Tests faster than Humans writing Code.
 ---
 
 ## Building Reactive AI Apps
+
 **Matt Welsh**
 Co-Founder, Fixie.ai
 AI.JSX is like React for LLMs -- it lets you build powerful, conversational AI apps using the power of TypeScript and JSX.
@@ -704,6 +711,7 @@ AI.JSX is like React for LLMs -- it lets you build powerful, conversational AI a
 ---
 
 ## Climbing the Ladder of Abstraction
+
 **Amelia Wattenberger**
 Design, <https://www.adept.ai/>
 
@@ -733,6 +741,7 @@ How might we use AI to build products focused not just on working faster, but on
 
 
 ## The Intelligent Interface
+
 **Samantha Whitmore / Jason Yuan**
 CEO / CTO, New Computer / CDO, New Computer
 On building AI Products From First Principles.
@@ -746,6 +755,7 @@ On building AI Products From First Principles.
 ---
 
 ## The Weekend AI Engineer
+
 **Hassan El Mghari**
 AI Engineer, Vercel
 How *YOU* can - and should - build great multimodal AI apps that go viral and scale to millions in a weekend.
@@ -774,6 +784,7 @@ How *YOU* can - and should - build great multimodal AI apps that go viral and sc
 ---
 
 ## 120k players in a week: Lessons from the first viral CLIP app
+
 **Joseph Nelson**
 CEO, Roboflow
 On the many trials and successes of building with multimodal apps with vision foundation models!
@@ -790,6 +801,7 @@ On the many trials and successes of building with multimodal apps with vision fo
 ---
 
 ## Supabase Vector: The Postgres Vector database
+
 **Paul Copplestone**
 CEO, Supabase
 Every month, thousands of new AI applications are launched on Supabase, powered by pgvector. We'll take a brief look into the role of pgvector in the Vector database space, some of the use cases it enables, and some of the future of embeddings in the database space.
@@ -802,6 +814,7 @@ Every month, thousands of new AI applications are launched on Supabase, powered 
 ---
 
 ## Pragmatic AI With TypeChat
+
 **Daniel Rosenwasser**
 PM TypeScript, Microsoft
 TypeChat is an experimental library to bridge the unstructured output of language models to the structured world of our code.
@@ -816,6 +829,7 @@ TypeChat is an experimental library to bridge the unstructured output of languag
 ---
 
 ## Domain adaptation and fine-tuning for domain-specific LLMs
+
 **Abi Aryan**
 ML Engineer & O'Reilly Author
 Learn the different fine-tuning methods depending on the dataset, operational best practices for fine-tuning, how to evaluate them for specific business use-cases, and more.
@@ -823,6 +837,7 @@ Learn the different fine-tuning methods depending on the dataset, operational be
 ---
 
 ## Retrieval Augmented Generation in the Wild
+
 **Anton Troynikov**
 CTO, Chroma
 In the last few months, we've seen an explosion of the use of retrieval in the context of AI. Document question answering, autonomous agents, and more use embeddings-based retrieval systems in a variety of ways. This talk will cover what we've learned building for these applications, the challenges developers face, and the future of retrieval in the context of AI.
@@ -852,6 +867,7 @@ In the last few months, we've seen an explosion of the use of retrieval in the c
 ---
 
 ## Building Production-Ready RAG Applications
+
 **Jerry Liu**
 CEO, LlamaIndex
 In this talk, we talk about core techniques for evaluating and improving your retrieval systems for better performing RAG.
@@ -890,6 +906,7 @@ In this talk, we talk about core techniques for evaluating and improving your re
 ---
 
 ## Harnessing the Power of LLMs Locally
+
 **Mithun Hunsur**
 Senior Engineer, Ambient
 Discover llm, a revolutionary Rust library that enables developers to harness the potential of LLMs locally. By seamlessly integrating with the Rust ecosystem, llm empowers developers to leverage LLMs on standard hardware, reducing the need for cloud-based APIs and services.
@@ -908,6 +925,7 @@ Discover llm, a revolutionary Rust library that enables developers to harness th
 ---
 
 ## Trust, but Verify
+
 **Shreya Rajpal**
 Founder, Guardrails AI
 Making Large Language Models Production-Ready with Guardrails.
@@ -915,6 +933,7 @@ Making Large Language Models Production-Ready with Guardrails.
 - Guardrails AI is an open source library that allows you to define rules to verify the output of LLMs
 - <https://github.com/ShreyaR/guardrails>
   - Kind of cool this README.md has a zoomable/copyable flow chart. The code for it is:
+
   ```mermaid
   graph LR
     A[Create `RAIL` spec] --> B["Initialize `guard` from spec"];
@@ -938,9 +957,11 @@ Making Large Language Models Production-Ready with Guardrails.
   - Ensure each sentence is from a verified source and is accurate: Fact-check information and, where possible, provide sources.
   - No profanity is mentioned in text: Maintain a professional tone and avoid using profane language.
   - Prompt injection protection: Safeguard against potential vulnerabilities by not executing or asking to execute unsafe code snippets.
+
 ---
 
 ## Open Questions for AI Engineering
+
 **Simon Willison**
 Creator, Datasette; Co-creator, Django
 Recapping the past year in AI, and what open questions are *worth pursuing* in the next year!

@@ -17,5 +17,5 @@ repos:
     hooks:
       - id: markdownlint
         args: ["--config", ".markdownlint.yaml"]
-        types_or: [markdown]
+        types: [file]
         files: \.(md|qmd)$

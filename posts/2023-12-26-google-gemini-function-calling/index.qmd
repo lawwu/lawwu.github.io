@@ -20,6 +20,7 @@ Google's latest LLM called Gemini was released in December. Google trained three
 # How to Run Gemini Pro with langchain
 
 You'll need two Python libraries:
+
 ```bash
 google-cloud-aiplatform>=1.38.0
 langchain>=0.0.350
@@ -83,6 +84,7 @@ llm_gemini_pro.invoke("What's the difference between data science and data engin
 # Function Calling Basic Usage
 
 To use function calling with Gemini, you can first define a function:
+
 ```python
 from vertexai.preview import generative_models
 from vertexai.preview.generative_models import GenerativeModel
@@ -114,6 +116,7 @@ get_current_weather_func = generative_models.FunctionDeclaration(
 ```
 
 Then you create a tool with that function
+
 ```python
 weather_tool = generative_models.Tool(
   function_declarations=[get_current_weather_func]
@@ -121,6 +124,7 @@ weather_tool = generative_models.Tool(
 ```
 
 Then when you call the LLM, you pass the tool to the call:
+
 ```python
 model_response = model.generate_content(
     "What is the weather like in Boston?",
@@ -132,6 +136,7 @@ print("model_response\n", model_response)
 ```
 
 The model will output something like this:
+
 ```python
 candidates {
   content {
@@ -187,9 +192,11 @@ The reason I say function calling supports **robust** semantic data extraction i
 # Data Extraction Example
 
 ## Extracting Person Metadata
+
 I modified [langchain's Function Calling Extraction use case](https://python.langchain.com/docs/use_cases/extraction) which uses OpenAI to work with Gemini Pro.
 
 First do the necessary imports:
+
 ```python
 from vertexai.preview.generative_models import (
     FunctionDeclaration,
@@ -199,6 +206,7 @@ from vertexai.preview.generative_models import (
 ```
 
 Then define your function and tool:
+
 ```python
 func_person_extractor = FunctionDeclaration(
     name="person_extractor",
@@ -229,6 +237,7 @@ tool_person_extractor = Tool(
 ```
 
 Instantiate the gemini-pro model, pass the tool to the model and call the model with a prompt:
+
 ```python
 # have to use the model directly from vertexai since function calling not available through langchain
 model = GenerativeModel("gemini-pro")
@@ -277,6 +286,7 @@ candidates {
 What's also powerful about function calling based data extraction like the langchain example documents, "we can ask for things that are not for explicitly enumerated in the schema." In the following example, we are asking for metadata about a person and a dog. And then by leveraging the LLM's reasoning capability, we can ask for unspecified additional information about the dogs.
 
 First define another function and wrap it in a tool:
+
 ```python
 func_person_and_dog_extractor = FunctionDeclaration(
     name="person_extractor",
@@ -319,6 +329,7 @@ tool_person_and_dog_extractor = Tool(
 ```
 
 Then call the LLM:
+
 ```python
 inp = """Alex is 5 feet tall. Claudia is 1 feet taller Alex and jumps higher than him. Claudia is a brunette and Alex is blonde.
 Willow is a German Shepherd that likes to play with other dogs and can always be found playing with Milo, a border collie that lives close by."""
@@ -411,6 +422,7 @@ Gemini does not do as good of a job extracting data from free text. For example,
 
 
 gpt-3-5-turbo does a better job of extracting all the relevant information and not hallucinating:
+
 ```bash
 [{'person_name': 'Alex', 'person_height': 5, 'person_hair_color': 'blonde'},
  {'person_name': 'Claudia',

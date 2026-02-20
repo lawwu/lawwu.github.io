@@ -41,7 +41,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Claude Plays Pokemon: Tool Use and Agent Improvements
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=0XUzn-DEoY8 >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** David (Creator of Claude Plays Pokemon, Anthropic's PodAI team)
 
@@ -64,7 +66,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Mastering Claude Code in 30 Minutes
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=6eBSHbLKuN0 >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Boris (Member of Technical Staff at Anthropic, Creator of Claude Code)
 
@@ -87,7 +91,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Spotlight on Databricks: Enterprise AI Implementation
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=67a5yrKH-nI >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Craig (Product Management Leader at Databricks, former Google Vertex AI/AWS SageMaker)
 
@@ -110,7 +116,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Building AI Agents with Claude in Amazon Bedrock
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=8gTpgWru0Wg >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speakers:** Dewan Lightfoot, Banjo Abiyami, Suman Devanath (AWS Developer Advocates)
 
@@ -133,7 +141,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Startups Building New Products with Claude
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=91Haz1CRoxY >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speakers:** Multiple startup founders (Tempo Labs, Zen, Gamma, Bitto, Refusion, Create)
 
@@ -156,7 +166,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Spotlight on Canva: Democratizing Interactive Prototyping
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=Ac4LiuoJT20 >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Danny Wu (Head of AI Products at Canva)
 
@@ -178,7 +190,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Building Headless Automation with Claude Code
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=dRsjO-88nBs >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Sirbit Asaria (Engineer on Claude Code team)
 
@@ -200,7 +214,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Vibe Coding in Production
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=fHWFF_pnqDk >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Eric (Researcher at Anthropic focused on coding agents)
 
@@ -222,7 +238,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Claude Code Best Practices
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=gv0WHhKelSE >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Cal (Applied AI team at Anthropic, core Claude Code contributor)
 
@@ -244,7 +262,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## MCP 201: Advanced Model Context Protocol
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=HNzH5Us1Rvg >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** David (Member of Technical Staff at Anthropic, co-creator of MCP)
 
@@ -267,7 +287,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## MCP at Sourcegraph: Building Enterprise Coding Agents
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=j8NlbEWAsmc >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Biong (CTO and co-founder of Sourcegraph)
 
@@ -290,7 +312,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Taking Claude to the Next Level: Claude 4 Features
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=nZCy8E5jlok >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Lisa Crowfoot (Research Product Manager at Anthropic)
 
@@ -313,7 +337,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Building Blocks for Tomorrow's AI Agents
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=oDks2gVHu4k >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Brad Abrams (Product Manager at Anthropic)
 
@@ -336,7 +362,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## How Students Build with Claude
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=PHuXXeadV_g >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speakers:** Greg (Student Outreach Lead), Isabel (Stanford), Mason (UC Berkeley), Rohil (UC Berkeley), Daniel (USC)
 
@@ -359,7 +387,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Building AI Agents with Claude in Google Cloud's Vertex AI
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=TUysIAtxyrQ >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Ivan Nardini, Developer Advocate at Google Cloud
 
@@ -381,7 +411,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Spotlight on Manus: Building Hands for AI Models
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=UjboGsztHd8 >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Tao (HighCloud), Co-founder and CPO of Manus AI
 
@@ -403,7 +435,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Spotlight on Shopify: Structured Workflow Orchestration with Roast
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=xlEQ6Y3WNNI >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speaker:** Obi Fernandez, Principal Engineer, Shopify's Augmented Engineering Group
 
@@ -425,7 +459,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Prompting for Agents
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=XSZP9GhhuAc >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speakers:** Hannah and Jeremy from Anthropic's Applied AI team
 
@@ -448,7 +484,9 @@ Key themes included the introduction of Claude 4's extended thinking capabilitie
 
 ## Prompting 101: Fundamentals of Effective AI Communication
 
+<!-- markdownlint-disable MD034 -->
 **Watch:** {{< video https://www.youtube.com/watch?v=ysPbXH0LpIE >}}
+<!-- markdownlint-enable MD034 -->
 
 **Speakers:** Hannah and Christian from Anthropic's Applied AI team
 

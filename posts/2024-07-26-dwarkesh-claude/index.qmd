@@ -8,7 +8,9 @@ categories: [ai, summary]
 
 Dwarkesh Patel is becoming the new Lex Fridman of podcasting. Lex got his start a podcaster interviewing AI experts. Since then Lex has branched out and most of his guests are non AI-experts. Dwarkesh has filled this gap. In this interview, Dan Shipper interviews him:
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=Vm49oIPtyRE&ab_channel=Every >}}
+<!-- markdownlint-enable MD034 -->
 
 I listened to 15 minutes but didn't want to listen to the rest of it. But I was still curious how Dwarkesh uses AI in his day-to-day. So I grabbed the transcript (which is available via Youtube's API). You can use a Python library [youtube-transcript-api](https://pypi.org/project/youtube-transcript-api/) or [web services](https://youtubetranscript.com/?v=Vm49oIPtyRE) that do the same thing from a web interface.
 
@@ -21,28 +23,34 @@ with the full transcript below. ChatGPT actually was unable to process that amou
 # Dhwarkesh's AI Workflow
 
 ## 1. Research Assistance
+
 - Uses Claude to help understand complex topics and ideas when preparing for interviews
 - Uploads books/papers to Claude projects and asks questions to gain deeper understanding
 - Uses Claude to explain concepts he doesn't fully grasp from his reading
 
 ## 2. Space Repetition Flashcards
+
 - Uses an AI tool (likely Claude) to generate question-answer pairs from content he's studying
 - Adds these to a spaced repetition app called Mochi to reinforce learning over time
 
 ## 3. Interview Preparation
+
 - Experiments with using Claude to analyze patterns in his past interview questions
 - Tries to use this to generate potential questions for upcoming interviews, though with limited success so far
 
 ## 4. Post-production Assistance
+
 - Uses AI speech-to-text (Assembly AI) to generate initial podcast transcripts
 - Experiments with using GPT-4 to clean up and improve readability of transcripts
 - Working on workflows to use AI to generate title ideas, clip suggestions, and highlights from transcripts
 
 ## 5. Writing Assistance
+
 - Uses Claude projects to organize notes, quotes, and ideas for long-form writing
 - Asks Claude for help analyzing themes and creating outlines from his scattered notes
 
 ## 6. General Learning Companion
+
 - Frequently turns to Claude as a "first thing" when trying to understand new concepts or get context on topics
 
 I have been wanting to try Claude more so I signed up for a paid service. They've introduced a notion of [Projects](https://www.anthropic.com/news/projects) which are areas where you can group chats and upload data to chat over.
@@ -54,6 +62,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
 ## General tips for effective prompting
 
 ### 1. Be clear and specific
+
    - Clearly state your task or question at the beginning of your message.
    - Provide context and details to help Claude understand your needs.
    - Break complex tasks into smaller, manageable steps.
@@ -71,6 +80,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Why it's better: The good prompt provides specific details about the task, including the number of slides, the purpose of the presentation, and the key topics to be covered.
 
 ### 2. Use examples
+
    - Provide examples of the kind of output you're looking for.
    - If you want a specific format or style, show Claude an example.
 
@@ -95,6 +105,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Why it's better: The good prompt provides a concrete example of the desired style and tone, giving Claude a clear reference point for the new email.
 
 ### 3. Encourage thinking
+
    - For complex tasks, ask Claude to "think step-by-step" or "explain your reasoning."
    - This can lead to more accurate and detailed responses.
 
@@ -106,6 +117,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "I'm looking to improve my team's productivity. Think through this step-by-step, considering the following factors:
+
    1. Current productivity blockers (e.g., too many meetings, unclear priorities)
    2. Potential solutions (e.g., time management techniques, project management tools)
    3. Implementation challenges
@@ -117,6 +129,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Why it's better: The good prompt asks Claude to think through the problem systematically, providing a guided structure for the response and asking for explanations of the reasoning process. It also prompts Claude to create a summary at the end for easier reading.
 
 ### 4. Iterative refinement
+
    - If Claude's first response isn't quite right, ask for clarifications or modifications.
    - You can always say "That's close, but can you adjust X to be more like Y?"
 
@@ -128,6 +141,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "That’s a good start, but please refine it further. Make the following adjustments:
+
    1. Make the tone more casual and friendly
    2. Add a specific example of how our product has helped a customer
    3. Shorten the second paragraph to focus more on the benefits rather than the features"
@@ -136,6 +150,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Why it's better: The good prompt provides specific feedback and clear instructions for improvements, allowing Claude to make targeted adjustments instead of just relying on Claude’s innate sense of what “better” might be — which is likely different from the user’s definition!
 
 ### 5. Leverage Claude's knowledge
+
    - Claude has broad knowledge across many fields. Don't hesitate to ask for explanations or background information
    - Be sure to include relevant context and details so that Claude’s response is maximally targeted to be helpful
 
@@ -147,6 +162,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "I'm developing a marketing strategy for a new eco-friendly cleaning product line. Can you provide an overview of current trends in green marketing? Please include:
+
    1. Key messaging strategies that resonate with environmentally conscious consumers
    2. Effective channels for reaching this audience
    3. Examples of successful green marketing campaigns from the past year
@@ -158,6 +174,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Why it's better: The good prompt asks for specific, contextually relevant  information that leverages Claude's broad knowledge base. It provides context for how the information will be used, which helps Claude frame its answer in the most relevant way.
 
 ### 6. Use role-playing
+
    - Ask Claude to adopt a specific role or perspective when responding.
 
    Bad prompt:
@@ -168,6 +185,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "You are a fabric supplier for my backpack manufacturing company. I'm preparing for a negotiation with this supplier to reduce prices by 10%. As the supplier, please provide:
+
    1. Three potential objections to our request for a price reduction
    2. For each objection, suggest a counterargument from my perspective
    3. Two alternative proposals the supplier might offer instead of a straight price cut
@@ -193,6 +211,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "I need to write a blog post about cybersecurity best practices for small business owners. The audience is not very tech-savvy, so the content should be:
+
    1. Easy to understand, avoiding technical jargon where possible
    2. Practical, with actionable tips they can implement quickly
    3. Engaging and slightly humorous to keep their interest
@@ -214,6 +233,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "Please help me write a product description for our new ergonomic office chair. Use a professional but engaging tone. Our brand voice is friendly, innovative, and health-conscious. The description should:
+
    1. Highlight the chair's key ergonomic features
    2. Explain how these features benefit the user's health and productivity
    3. Include a brief mention of the sustainable materials used
@@ -235,6 +255,7 @@ In the "How to Use Claude" example project, one of the files is a Claude Prompti
    Good prompt:
    <prompt>
    "I need to create a presentation on our Q2 results. Structure this with the following sections:
+
    1. Overview
    2. Sales Performance
    3. Customer Acquisition
@@ -269,6 +290,7 @@ Here is an example that combines all three of the above techniques:
    Good prompt:
    <prompt>
    "I've attached a 50-page market research report called 'Tech Industry Trends 2023'. Can you provide a 2-paragraph summary focusing on AI and machine learning trends? Then, please answer these questions:
+
    1. What are the top 3 AI applications in business for this year?
    2. How is machine learning impacting job roles in the tech industry?
    3. What potential risks or challenges does the report mention regarding AI adoption?
@@ -311,6 +333,7 @@ Here is an example that combines all three of the above techniques:
    Why it's better: This prompt provides a clear structure for the analysis, specifies key metrics to focus on, and asks for recommendations and visualization suggestions for further formatting.
 
 ### Brainstorming
+
  1. Use Claude to generate ideas by asking for a list of possibilities or alternatives.
      - Be specific about what topics you want Claude to cover in its brainstorming
 
@@ -322,6 +345,7 @@ Here is an example that combines all three of the above techniques:
    Good prompt:
    <prompt>
    "We need to come up with team-building activities for our remote team of 20 people. Can you help me brainstorm by:
+
    1. Suggesting 10 virtual team-building activities that promote collaboration
    2. For each activity, briefly explain how it fosters teamwork
    3. Indicate which activities are best for:
@@ -343,6 +367,7 @@ Here is an example that combines all three of the above techniques:
    Good Prompt:
    <prompt>
    "We're considering three different project management software options: Asana, Trello, and Microsoft Project. Can you compare these in a table format using the following criteria:
+
    1. Key Features
    2. Ease of Use
    3. Scalability

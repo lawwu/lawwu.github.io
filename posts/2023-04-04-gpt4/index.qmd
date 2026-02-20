@@ -8,6 +8,7 @@ categories: [ai]
 There's seemingly a firehose of development in the last month or so. I've been trying to keep up with the latest developments in GPT and related models. Here's a list of papers, code, and news that I've found interesting. This is mainly for myself to have a reference, but I hope it's useful to others as well. I was largely inspired by [@osanseviero](https://twitter.com/osanseviero) who created [ml_timeline](https://github.com/osanseviero/ml_timeline).
 
 # Papers
+
 - 2022-08-21 - Emergent Abilities of Large Language Models ([paper](https://openreview.net/forum?id=yzkSU5zdwD), [blog](https://ai.googleblog.com/2022/11/characterizing-emergent-phenomena-in.html))
 - 2023-03-13 - [Alpaca](https://crfm.stanford.edu/2023/03/13/alpaca.html) – Stanford’s CRFM group released a 1.5B parameter GPT-3 like model. They were the first to demonstrate you can get GPT-like performance using only 52k instruction-following data points. On the self-instruct evaluation set, Alpaca shows many behaviors similar to OpenAI’s text-davinci-003, but is also surprisingly small and easy/cheap to reproduce. I think one reason OpenAI dropped their pricing by 90% with GPT-4 is because they wanted to achieve wide distribution of their model.
 - 2023-03-15 - GPT-4 Technical Paper ([paper](https://arxiv.org/abs/2303.08774)) - highlights some of the amazing improvements GPT-4 has made over GPT-3

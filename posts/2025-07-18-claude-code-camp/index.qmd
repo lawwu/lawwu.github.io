@@ -73,6 +73,7 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 2. Key Learnings (Top 5–10)
+
 - Claude Code enables shipping features in unfamiliar codebases far faster than traditional onboarding.
 - Productivity follows a repeatable loop: **Plan → Delegate → Assess → Codify**.
 - Strong up‑front plans let agents “just build” while poor plans create rework.
@@ -87,6 +88,7 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 3. Actionable Advice
+
 - Start with one simple planning command; iterate after each run.
 - Auto‑generate a GitHub issue from the plan; use `/work <issue>` to delegate.
 - Use multi‑persona reviews (strict bot + human style) on each PR.
@@ -101,6 +103,7 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 4. Memorable Quotes
+
 > “Claude Code has radically altered the way we work—processes, parameters, mental models—everything.” — Dan
 
 > “I shipped two features this week in codebases I’d never touched; that shouldn’t be possible.” — Dan
@@ -132,6 +135,7 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 5. Important Data / Stats / Frameworks
+
 - **Compounding Engineering Loop:** Plan → Delegate → Assess → Codify.
 - **Time‑Savings Example:** Two unfamiliar‑codebase features shipped in a week vs. ~2‑3 weeks ramp‑up each.
 - **Continuous Work Duration:** 45‑minute single Claude session noted.
@@ -145,6 +149,7 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 6. Suggested Follow‑up Resources
+
 - **Claude Code** terminal agent (Anthropic)
 - **Claude.md / folder context files** (`/init`)
 - **Custom `/issues`, `/work`, `/review` commands**
@@ -159,4 +164,5 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 7. One‑Sentence Summary (25 words)
+
 Every’s team demonstrates how Claude Code enables “compounding engineering”—plan, delegate, assess, codify—to ship multi‑codebase features rapidly by capturing and recycling best‑practice knowledge.

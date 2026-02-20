@@ -34,6 +34,7 @@ I think companies should do both. Here’s how.
 ## Recommended Next Steps
 
 ### 1. Identify Endpoints and Workflows to Expose as MCP Tools
+
 Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on **common workflows** that agents will use.
 
 - Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required *three* separate API calls (normalize_title, map normalized title to a Lightcast Specialized Occupation and get related skills to that Lightcast Specialized Occupation). Instead, I created a **dedicated tool/API** that bundled those calls together—much more natural for an agent.
@@ -46,6 +47,7 @@ You should design with the agent in mind. That might mean rethinking data format
 ---
 
 ### 2. Build the API Client, MCP Server, and Tools
+
 The typical stack looks like this:
 
 - **API Client**: Handles authentication and connectivity to your company’s APIs.
@@ -61,6 +63,7 @@ You can use agentic coding tools like Claude Code to quickly spin these up.
 ---
 
 ### 3. Deploy the MCP Server Publicly
+
 There are more options than ever for running lightweight public services:
 
 - [Google Cloud Run](https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes)
@@ -71,6 +74,7 @@ Each of these can make your MCP server accessible with minimal operational overh
 ---
 
 ### 4. Provide Example Clients and Agents
+
 To encourage adoption, publish sample implementations that connect to the server. These could be:
 
 - VS Code extensions
@@ -82,6 +86,7 @@ This lowers the barrier for customers to experiment quickly.
 ---
 
 ### 5. Open Source the MCP Server
+
 Some of the most popular MCP servers today aren't even official. For example, the **[mcp-atlassian](https://github.com/sooperset/mcp-atlassian)** project is developed by an open-source developer [Hyeonsoo Lee](https://github.com/sooperset) and not by Atlassian. That's a missed opportunity.
 
 If companies open source their MCP servers, the benefits are significant:
@@ -105,6 +110,7 @@ Several companies are already providing remote MCP servers that you can connect 
 You can easily add these servers to Claude Code using the CLI. Note some of these are not remote MCP servers. Here are the exact commands:
 
 #### Development & Testing Tools
+
 ```bash
 claude mcp add --transport http sentry https://mcp.sentry.dev/mcp
 claude mcp add --transport http socket https://mcp.socket.dev/
@@ -113,6 +119,7 @@ claude mcp add --transport http jam https://mcp.jam.dev/mcp
 ```
 
 #### Project Management
+
 ```bash
 claude mcp add --transport sse asana https://mcp.asana.com/sse
 claude mcp add --transport sse atlassian https://mcp.atlassian.com/v1/sse
@@ -126,6 +133,7 @@ claude mcp add --transport sse monday https://mcp.monday.com/sse
 ```
 
 #### Databases
+
 ```bash
 claude mcp add airtable --env AIRTABLE_API_KEY=YOUR_KEY -- npx -y airtable-mcp-server
 claude mcp add --transport http daloopa https://mcp.daloopa.com/server/mcp
@@ -133,6 +141,7 @@ claude mcp add --transport http hubspot https://mcp.hubspot.com/anthropic
 ```
 
 #### Payments & Commerce
+
 ```bash
 claude mcp add --transport http paypal https://mcp.paypal.com/mcp
 claude mcp add --transport sse plaid https://api.dashboard.plaid.com/mcp/sse
@@ -141,6 +150,7 @@ claude mcp add --transport http stripe https://mcp.stripe.com
 ```
 
 #### Design
+
 ```bash
 claude mcp add --transport http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp
 claude mcp add --transport sse invideo https://mcp.invideo.io/sse
@@ -148,6 +158,7 @@ claude mcp add --transport http canva https://mcp.canva.com/mcp
 ```
 
 #### Infrastructure / DevOps
+
 ```bash
 claude mcp add --transport http netlify https://netlify-mcp.netlify.app/mcp
 claude mcp add --transport http stytch http://mcp.stytch.dev/mcp

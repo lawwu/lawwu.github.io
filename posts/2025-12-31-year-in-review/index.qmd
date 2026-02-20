@@ -322,7 +322,7 @@ Some of the things I've used Claude Code for this year:
 - Troubleshooting Kubernetes pods
 - Writing documentation
 - Writing Confluence documentation using the [mcp-atlassian](https://github.com/sooperset/mcp-atlassian){target="_blank"} MCP Server
-- Creating MCP Servers using [FastMCP ](https://github.com/jlowin/fastmcp){target="_blank"}
+- Creating MCP Servers using [FastMCP](https://github.com/jlowin/fastmcp){target="_blank"}
 - Adding graphs / visuals to my blg posts
 - Creating Github Actions
 - Creating and maintaining Cookiecutter templates for Python libraries and services

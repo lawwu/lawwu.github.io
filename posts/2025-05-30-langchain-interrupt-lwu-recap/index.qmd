@@ -7,7 +7,9 @@ categories: [ai, events]
 
 I tried my best to condense the ~16 hours of content from the LangChain Interrupt Conference to less than an hour.
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=YBlFn8R5T9o&ab_channel=LawrenceWu >}}
+<!-- markdownlint-enable MD034 -->
 
 - [Slides](https://docs.google.com/presentation/d/1RMGq3dCbmQ-JZPeHYLD9XKTRXk9IKHTFUnHbVXAjqHU/edit)
 - [Conference Talks](https://www.youtube.com/playlist?list=PLnbEdh6BRkSjXMPmvxkmOz0VM3p4jtQ7d)

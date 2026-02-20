@@ -91,6 +91,7 @@ chmod +x install_apps.sh
 ```
 
 Finally, run the script using:
+
 ```bash
 ./install_apps.sh
 ```

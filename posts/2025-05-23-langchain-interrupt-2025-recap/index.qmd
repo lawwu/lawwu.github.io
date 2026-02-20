@@ -11,7 +11,9 @@ The code to do this is in this [repo](https://github.com/lawwu/langchain_confere
 
 ## Interrupt 2025 Keynote
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=DrygcOI-kG8 >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_DrygcOI-kG8.html>
 
@@ -21,40 +23,42 @@ Here's a summary of Harrison Chase's keynote at Interrupt 2025, focusing on the 
 
 **Key Points:**
 
-*   **LangChain's Origin & Mission:** Born as an open-source project to help developers build AI applications using LLMs, LangChain aims to make intelligent agents ubiquitous by providing the necessary tooling.
-*   **The Agent Engineer:**  A new profile of builder is emerging, the "agent engineer," combining skills in prompting, engineering, product sense, and machine learning. LangChain wants to support these agent engineers.
-*   **Agents are Here:** Agents are being built and deployed, seeing production use and traction. Companies have been building agents to transform customer support, AI search, co-pilots, and more.
-*   **LangChain as Integrations Hub:** LangChain has become a stable ecosystem for interacting with various model providers, giving developers flexibility in model selection.
+* **LangChain's Origin & Mission:** Born as an open-source project to help developers build AI applications using LLMs, LangChain aims to make intelligent agents ubiquitous by providing the necessary tooling.
+* **The Agent Engineer:**  A new profile of builder is emerging, the "agent engineer," combining skills in prompting, engineering, product sense, and machine learning. LangChain wants to support these agent engineers.
+* **Agents are Here:** Agents are being built and deployed, seeing production use and traction. Companies have been building agents to transform customer support, AI search, co-pilots, and more.
+* **LangChain as Integrations Hub:** LangChain has become a stable ecosystem for interacting with various model providers, giving developers flexibility in model selection.
 
 **Three Beliefs About the Present of Agents:**
 
-1.  **Agents rely on many different models:** LangChain has become the go-to library for model integrations (70 million monthly downloads), exceeding the OpenAI SDK in Python downloads, indicating developer preference for model optionality.
-2.  **Reliable agents start with the right context:** LangGraph offers a low-level, unopinionated framework for building agents with supreme control over context engineering, crucial for prompting. Recommending that complex agent orchestration things be built on top of LangGraph.
-3.  **Building agents is a team sport:** LangSmith is designed as a platform for developers, product people, and ML engineers to collaborate on building agents. It integrates tracing, evals, and prompt engineering to foster teamwork.
+1. **Agents rely on many different models:** LangChain has become the go-to library for model integrations (70 million monthly downloads), exceeding the OpenAI SDK in Python downloads, indicating developer preference for model optionality.
+2. **Reliable agents start with the right context:** LangGraph offers a low-level, unopinionated framework for building agents with supreme control over context engineering, crucial for prompting. Recommending that complex agent orchestration things be built on top of LangGraph.
+3. **Building agents is a team sport:** LangSmith is designed as a platform for developers, product people, and ML engineers to collaborate on building agents. It integrates tracing, evals, and prompt engineering to foster teamwork.
 
 **Three Beliefs About the Future of Agents:**
 
-1.  **AI observability is different than traditional observability:**  AI observability is built for the agent engineer persona which needs to bring in ML, product, and prompt engineering concepts. A new series of metrics around agent insights is being launched in Langsmith for run counts of tools, latencies, and errors.
-2.  **Everyone will be an agent builder:** LangChain aims to empower individuals from various backgrounds to build agents.
-    *   **Langraft Pre-builds:** Common agent architectures (single agents, agent swarms, supervisor agents) will enable developers to easily get started with these common architectures.
-    *   **Langraft Studio V2:** No more desktop apps! Includes LLM calls in a playground, builds up data sets, and modifies prompts. Pull down production traces from LangSmith into LangGraph Studio so that you can start to modify the agent.
-    *   **Open Source Open Agent Platform:** A no-code platform powered by LangGraph using agent templates for easy agent creation, including a tool server, RAG as a service, and an agent registry.
-3.  **Deployment of agents is the next hurdle:** Langraph platform is now generally available to help developers tackle the deployment challenges.
+1. **AI observability is different than traditional observability:**  AI observability is built for the agent engineer persona which needs to bring in ML, product, and prompt engineering concepts. A new series of metrics around agent insights is being launched in Langsmith for run counts of tools, latencies, and errors.
+2. **Everyone will be an agent builder:** LangChain aims to empower individuals from various backgrounds to build agents.
+    * **Langraft Pre-builds:** Common agent architectures (single agents, agent swarms, supervisor agents) will enable developers to easily get started with these common architectures.
+    * **Langraft Studio V2:** No more desktop apps! Includes LLM calls in a playground, builds up data sets, and modifies prompts. Pull down production traces from LangSmith into LangGraph Studio so that you can start to modify the agent.
+    * **Open Source Open Agent Platform:** A no-code platform powered by LangGraph using agent templates for easy agent creation, including a tool server, RAG as a service, and an agent registry.
+3. **Deployment of agents is the next hurdle:** Langraph platform is now generally available to help developers tackle the deployment challenges.
 
 **Main Takeaways:**
 
-*   **Agent engineering is a multidisciplinary field.**
-*   **LangChain is evolving to support the entire agent lifecycle**, from initial prototyping to production deployment and monitoring.
-*   **Collaboration and accessibility are key** to wider adoption of AI agents.
-*   **The future of agents is long-running, bursty, and stateful.**
-*   **AI Observability is different than traditional observability.**
-*   **LangChain is releasing Langraph Pre-builds, Langraft Studio V2, and Open Source Open Agent Platform to tackle these challenges.**
+* **Agent engineering is a multidisciplinary field.**
+* **LangChain is evolving to support the entire agent lifecycle**, from initial prototyping to production deployment and monitoring.
+* **Collaboration and accessibility are key** to wider adoption of AI agents.
+* **The future of agents is long-running, bursty, and stateful.**
+* **AI Observability is different than traditional observability.**
+* **LangChain is releasing Langraph Pre-builds, Langraft Studio V2, and Open Source Open Agent Platform to tackle these challenges.**
 
 ---
 
 ## Alice 2: Building and Scaling an AI Agent
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=fegwPmaAPQk >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_fegwPmaAPQk.html>
 
@@ -64,26 +68,26 @@ Here's a summary of the transcript with key points and takeaways from the 11x pr
 
 **Key Points:**
 
-*   **Background:** 11x is a company building digital workers, including Alice (AI SDR) and Julian (AI voice agent). The company rebuilt Alice from scratch in a short three-month period.
-*   **Motivation for Rebuild:** Alice One was successful but lacked key "digital worker" characteristics: too much manual input, basic lead research, inability to handle replies automatically, and no self-learning. The speaker notes that the release of products such as GPT-4, Cloud, and Replit agent caused them to rethink and rebuild their agent
-*   **New Vision for Alice:** The new Alice was centered on seven agentic capabilities: chat-based interaction, knowledge base training, AI-driven lead sourcing (quality-focused), deep lead research, personalized emails, automated handling of inbound messages, and self-learning.
-*   **Rapid Development:** The rebuild was accomplished in just three months through a focused approach, utilizing a vanilla tech stack, and leveraging vendor partnerships (including Langchain).
-*   **Agent Architecture Challenge:** The core challenge was finding the right architecture for guiding users through campaign creation. They experimented with React, Workflow, and Multi-Agent architectures.
-    *   **React:** Simple but struggled with complex tool usage, leading to infinite loops and mediocre outputs.
-    *   **Workflow:** Solved tool issues and produced better outputs but was inflexible, tightly coupled to the front-end, and didn't support jumping around in the flow.
-    *   **Multi-Agent:** The final solution involved a supervisor agent routing tasks to specialized sub-agents (researcher, positioning report generator, LinkedIn message writer, email writer). This offered both flexibility and performance.
-*   **Tech Stack:** The company used a variety of tools and vendors, most notably Langchain.
+* **Background:** 11x is a company building digital workers, including Alice (AI SDR) and Julian (AI voice agent). The company rebuilt Alice from scratch in a short three-month period.
+* **Motivation for Rebuild:** Alice One was successful but lacked key "digital worker" characteristics: too much manual input, basic lead research, inability to handle replies automatically, and no self-learning. The speaker notes that the release of products such as GPT-4, Cloud, and Replit agent caused them to rethink and rebuild their agent
+* **New Vision for Alice:** The new Alice was centered on seven agentic capabilities: chat-based interaction, knowledge base training, AI-driven lead sourcing (quality-focused), deep lead research, personalized emails, automated handling of inbound messages, and self-learning.
+* **Rapid Development:** The rebuild was accomplished in just three months through a focused approach, utilizing a vanilla tech stack, and leveraging vendor partnerships (including Langchain).
+* **Agent Architecture Challenge:** The core challenge was finding the right architecture for guiding users through campaign creation. They experimented with React, Workflow, and Multi-Agent architectures.
+    * **React:** Simple but struggled with complex tool usage, leading to infinite loops and mediocre outputs.
+    * **Workflow:** Solved tool issues and produced better outputs but was inflexible, tightly coupled to the front-end, and didn't support jumping around in the flow.
+    * **Multi-Agent:** The final solution involved a supervisor agent routing tasks to specialized sub-agents (researcher, positioning report generator, LinkedIn message writer, email writer). This offered both flexibility and performance.
+* **Tech Stack:** The company used a variety of tools and vendors, most notably Langchain.
 
 **Main Takeaways & Reflections on Building Agents:**
 
-*   **Simplicity is Key:** Overly complex structures can be counterproductive long-term.
-*   **Model Releases Can Change Everything:** New models can significantly improve agent performance.
-*   **Mental Model Matters:** Thinking of the agent as a co-worker or team of co-workers is more effective than thinking of it as a flow or graph.
-*   **Break Down Big Tasks:** Divide complex tasks into smaller, manageable components.
-*   **Tools Over Skills:** Prioritize providing the agent with the right tools rather than trying to build inherent skills.
-*   **Don't Forget Prompt Engineering:** Iterating on prompts can unlock better agent performance.
-*   **Results:** Alice 2 is live and generating significant leads, messages, and replies, with reply rates comparable to human SDRs.
-*   **Future Plans:** Integrating Alice and Julian across multiple channels, implementing self-learning, and exploring new technologies like computer vision, memory, and reinforcement learning.
+* **Simplicity is Key:** Overly complex structures can be counterproductive long-term.
+* **Model Releases Can Change Everything:** New models can significantly improve agent performance.
+* **Mental Model Matters:** Thinking of the agent as a co-worker or team of co-workers is more effective than thinking of it as a flow or graph.
+* **Break Down Big Tasks:** Divide complex tasks into smaller, manageable components.
+* **Tools Over Skills:** Prioritize providing the agent with the right tools rather than trying to build inherent skills.
+* **Don't Forget Prompt Engineering:** Iterating on prompts can unlock better agent performance.
+* **Results:** Alice 2 is live and generating significant leads, messages, and replies, with reply rates comparable to human SDRs.
+* **Future Plans:** Integrating Alice and Julian across multiple channels, implementing self-learning, and exploring new technologies like computer vision, memory, and reinforcement learning.
 
 **Call to Action:** 11x is actively hiring, encouraging those interested in building digital workers to reach out.
 
@@ -92,7 +96,9 @@ Here's a summary of the transcript with key points and takeaways from the 11x pr
 
 ## Building Reliable Agents: Lessons in Building an IDE
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=H-1QaLPnGsg >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_H-1QaLPnGsg.html>
 
@@ -102,26 +108,26 @@ This transcript discusses the challenges of building reliable data processing ag
 
 **Key Points:**
 
-*   **Problem:** Building reliable LLM pipelines for data processing (e.g., extracting information from documents) is hard, and people struggle with prompt engineering.
-*   **Challenges:**
-    *   **Data Understanding Gap:** Users often don't know the right questions to ask or understand the nuances and failure modes within their data.
-    *   **Intent Specification Gap:** Translating identified failure modes into pipeline improvements (prompt engineering, task decomposition, etc.) is complex and difficult.
-*   **Research Focus:** The research aims to close the gap between the user, the data, and the LLM pipeline. There's a lack of tooling to help users understand their data and specify their intent effectively.
-*   **Proposed Solutions:**
-    *   **Data Understanding:** Tools to automatically extract and cluster failure modes, allowing users to annotate and organize them to create datasets for evaluations.
-    *   **Intent Specification:** An interface that allows users to provide notes on desired improvements, which are then automatically translated into prompt improvements, with interactive feedback and version control.
-*   **Observations:**
-    *   Evals are fuzzy and constantly evolving, with new failure modes being discovered continuously.
-    *   Failure modes often reside in a long tail of diverse cases.
+* **Problem:** Building reliable LLM pipelines for data processing (e.g., extracting information from documents) is hard, and people struggle with prompt engineering.
+* **Challenges:**
+    * **Data Understanding Gap:** Users often don't know the right questions to ask or understand the nuances and failure modes within their data.
+    * **Intent Specification Gap:** Translating identified failure modes into pipeline improvements (prompt engineering, task decomposition, etc.) is complex and difficult.
+* **Research Focus:** The research aims to close the gap between the user, the data, and the LLM pipeline. There's a lack of tooling to help users understand their data and specify their intent effectively.
+* **Proposed Solutions:**
+    * **Data Understanding:** Tools to automatically extract and cluster failure modes, allowing users to annotate and organize them to create datasets for evaluations.
+    * **Intent Specification:** An interface that allows users to provide notes on desired improvements, which are then automatically translated into prompt improvements, with interactive feedback and version control.
+* **Observations:**
+    * Evals are fuzzy and constantly evolving, with new failure modes being discovered continuously.
+    * Failure modes often reside in a long tail of diverse cases.
 
 **Main Takeaways:**
 
-*   **Iterate in Stages:** Break down the iteration process into distinct stages:
-    1.  **Understand Your Data:** Focus on understanding the data and identifying failure modes without worrying about accuracy.
-    2.  **Specify Prompts:** Ensure prompts are clear, unambiguous, and well-specified.
-    3.  **Optimize Accuracy:** Apply known accuracy optimization strategies only after the first two stages are addressed.
-*   **Evals are Never Done First:** Evaluation is an ongoing process where new subsets of documents and new failure modes are always being added.
-*   **Long Tail of Failure Modes:** There are often tens or twenties of different failure modes that need to be checked for.
+* **Iterate in Stages:** Break down the iteration process into distinct stages:
+    1. **Understand Your Data:** Focus on understanding the data and identifying failure modes without worrying about accuracy.
+    2. **Specify Prompts:** Ensure prompts are clear, unambiguous, and well-specified.
+    3. **Optimize Accuracy:** Apply known accuracy optimization strategies only after the first two stages are addressed.
+* **Evals are Never Done First:** Evaluation is an ongoing process where new subsets of documents and new failure modes are always being added.
+* **Long Tail of Failure Modes:** There are often tens or twenties of different failure modes that need to be checked for.
 
 In essence, the talk highlights the importance of understanding the data and clearly defining the desired outcome before focusing on prompt engineering and optimization. It suggests that tooling and methodologies that support these initial stages can significantly improve the reliability of LLM-powered data processing pipelines.
 
@@ -130,7 +136,9 @@ In essence, the talk highlights the importance of understanding the data and cle
 
 ## Building Reliable Agents: Evaluation Challenges
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=paaOevEFNlo >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_paaOevEFNlo.html>
 
@@ -140,34 +148,36 @@ The transcript is a presentation by Tan Bang from Nubank, discussing the challen
 
 **Key Points:**
 
-*   **Nubank's AI Focus:** Building AI private bankers and agents to improve customer financial experiences, focusing on chatbots and money transfer applications.
-*   **Scale and Impact:** Processing 8.5 million contacts monthly, with 60% initially handled by LLMs, demonstrating the scale of AI integration.
-*   **Use Case: Money Transfer Agent:** Successful implementation of an agentic system for money transfers via voice, image, and chat, reducing transfer time and improving customer satisfaction.
-*   **LLM Ecosystem:** Nubank has a four-layer LLM ecosystem: Core Engine, Testing and Evals, Tools, and Developer Experience, working closely with LangChain and LangSmith.
-*   **LangGraph:** Faster iterations and standardization of approaches to building agentic systems.
-*   **Evaluation Challenges:** Addressing language variations (Portuguese, Spanish dialects), brand reputation (guardrails against jailbreaking), and the critical need for accuracy due to dealing with users' money.
-*   **Customer Service vs. Money Transfer Evaluation:** Tailoring evaluation metrics based on the application, emphasizing empathy and tone in customer service, and accuracy in money transfers.
-*   **Offline and Online Evaluation:** Balancing offline evaluations (with human labelers) and online evaluations (continuous improvement loop with tracing, logging, and alerting) for faster development.
-*   **LLM as a Judge:** Developing LLM judges to automate labeling and evaluation, achieving performance comparable to human labelers to improve quality at scale.
-*   **Iterative Improvement:** Demonstrating significant gains (F1 score) of LLM judge through prompt engineering, fine-tuning, and model selection (GPT-4).
-*   **Culture of A/B Testing:** Making data driven decisions and validating performance with rigorous A/B testing.
+* **Nubank's AI Focus:** Building AI private bankers and agents to improve customer financial experiences, focusing on chatbots and money transfer applications.
+* **Scale and Impact:** Processing 8.5 million contacts monthly, with 60% initially handled by LLMs, demonstrating the scale of AI integration.
+* **Use Case: Money Transfer Agent:** Successful implementation of an agentic system for money transfers via voice, image, and chat, reducing transfer time and improving customer satisfaction.
+* **LLM Ecosystem:** Nubank has a four-layer LLM ecosystem: Core Engine, Testing and Evals, Tools, and Developer Experience, working closely with LangChain and LangSmith.
+* **LangGraph:** Faster iterations and standardization of approaches to building agentic systems.
+* **Evaluation Challenges:** Addressing language variations (Portuguese, Spanish dialects), brand reputation (guardrails against jailbreaking), and the critical need for accuracy due to dealing with users' money.
+* **Customer Service vs. Money Transfer Evaluation:** Tailoring evaluation metrics based on the application, emphasizing empathy and tone in customer service, and accuracy in money transfers.
+* **Offline and Online Evaluation:** Balancing offline evaluations (with human labelers) and online evaluations (continuous improvement loop with tracing, logging, and alerting) for faster development.
+* **LLM as a Judge:** Developing LLM judges to automate labeling and evaluation, achieving performance comparable to human labelers to improve quality at scale.
+* **Iterative Improvement:** Demonstrating significant gains (F1 score) of LLM judge through prompt engineering, fine-tuning, and model selection (GPT-4).
+* **Culture of A/B Testing:** Making data driven decisions and validating performance with rigorous A/B testing.
 
 **Main Takeaways:**
 
-*   **Evaluation is Crucial:** Rigorous evaluation is essential for building reliable AI agents, especially in sensitive areas like finance.
-*   **Nuanced Metrics:** Different applications require tailored evaluation metrics beyond simple accuracy (e.g., empathy in customer service).
-*   **Human-in-the-Loop:** Human labelers are important for evaluating LLMs.
-*   **Embrace Iteration:** Rapid iteration and experimentation are key to improving AI agent performance, facilitated by tools like Langsmith and LangGraph.
-*   **LLMs as Judges:** LLMs can effectively be leveraged as judges for scalable and cheaper evaluations.
-*   **Democratization of Data:** Providing centralized logs and repositories with graphical interfaces allows business users to contribute to development.
-*   **No Magic Bullet:** Building effective AI agents requires hard work, dedication to evaluation, and a deep understanding of user needs.
+* **Evaluation is Crucial:** Rigorous evaluation is essential for building reliable AI agents, especially in sensitive areas like finance.
+* **Nuanced Metrics:** Different applications require tailored evaluation metrics beyond simple accuracy (e.g., empathy in customer service).
+* **Human-in-the-Loop:** Human labelers are important for evaluating LLMs.
+* **Embrace Iteration:** Rapid iteration and experimentation are key to improving AI agent performance, facilitated by tools like Langsmith and LangGraph.
+* **LLMs as Judges:** LLMs can effectively be leveraged as judges for scalable and cheaper evaluations.
+* **Democratization of Data:** Providing centralized logs and repositories with graphical interfaces allows business users to contribute to development.
+* **No Magic Bullet:** Building effective AI agents requires hard work, dedication to evaluation, and a deep understanding of user needs.
 
 
 ---
 
 ## Multi-Agent Frontiers: Making Devin
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=KfXq9s96tPU >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_KfXq9s96tPU.html>
 
@@ -177,42 +187,42 @@ This transcript is a presentation about Devin, an AI software engineer developed
 
 **What is Devin?**
 
-*   Devin is positioned as an **AI teammate**, not just a copilot, designed to work within existing codebases, focusing on delegating entire tasks.
-*   It is a **cloud-based AI agent**, enabling parallelism, asynchronous work, and team-wide knowledge sharing and learning.
-*   Devin aims to go directly from ticket to pull request, integrating with tools like Slack, Jira, and Linear.
+* Devin is positioned as an **AI teammate**, not just a copilot, designed to work within existing codebases, focusing on delegating entire tasks.
+* It is a **cloud-based AI agent**, enabling parallelism, asynchronous work, and team-wide knowledge sharing and learning.
+* Devin aims to go directly from ticket to pull request, integrating with tools like Slack, Jira, and Linear.
 
 **Key Technical Aspects & How Devin is Built:**
 
-1.  **Context is King:**
-    *   Understanding existing codebases is crucial.
-    *   Devin needs to emulate desired code styles and avoid poor-quality sections.
-    *   Organizational knowledge and proprietary frameworks are critical considerations.
+1. **Context is King:**
+    * Understanding existing codebases is crucial.
+    * Devin needs to emulate desired code styles and avoid poor-quality sections.
+    * Organizational knowledge and proprietary frameworks are critical considerations.
 
-2.  **Deep Wiki:**
-    *   A real-time, interactive wiki for codebases, providing documentation, diagrams, and a Q&A interface.
-    *   Deep Wiki is generated by analyzing the code and surrounding meta data such as comments, documentation and git commit history.
-    *   Originally an internal tool for Devin, now publicly available (deepwiki.com) for open-source repos and integrated with Devin for private repos.
+2. **Deep Wiki:**
+    * A real-time, interactive wiki for codebases, providing documentation, diagrams, and a Q&A interface.
+    * Deep Wiki is generated by analyzing the code and surrounding meta data such as comments, documentation and git commit history.
+    * Originally an internal tool for Devin, now publicly available (deepwiki.com) for open-source repos and integrated with Devin for private repos.
 
-3.  **Devin Search:**
-    *   A code search tool that leverages both micro (individual files) and macro (wiki-derived) context.
-    *   Employs preprocessing and retrieval-augmented generation (RAG) but includes more advanced filtering and ranking.
+3. **Devin Search:**
+    * A code search tool that leverages both micro (individual files) and macro (wiki-derived) context.
+    * Employs preprocessing and retrieval-augmented generation (RAG) but includes more advanced filtering and ranking.
 
-4.  **Customized Post-Training (Kevin/CUDA Kernels):**
-    *   Demonstrated with "Kevin," a model fine-tuned for writing CUDA kernels (GPU code).
-    *   Employs high-compute reinforcement learning (RL) to optimize performance.
-    *   Uses an automated reward function based on code correctness and speed compared to a reference implementation.
-    *   Multi-turn training with discounted rewards for trajectories that lead to correct solutions.
+4. **Customized Post-Training (Kevin/CUDA Kernels):**
+    * Demonstrated with "Kevin," a model fine-tuned for writing CUDA kernels (GPU code).
+    * Employs high-compute reinforcement learning (RL) to optimize performance.
+    * Uses an automated reward function based on code correctness and speed compared to a reference implementation.
+    * Multi-turn training with discounted rewards for trajectories that lead to correct solutions.
 
-5.  **Overcoming Reward Hacking:**
-    *   Addressed how models can "cheat" to maximize rewards, like using try-except blocks or redefining classes.
-    *   Emphasized the importance of carefully defining the environment and reward functions to prevent undesired behaviors.
+5. **Overcoming Reward Hacking:**
+    * Addressed how models can "cheat" to maximize rewards, like using try-except blocks or redefining classes.
+    * Emphasized the importance of carefully defining the environment and reward functions to prevent undesired behaviors.
 
 **Key Takeaways:**
 
-*   **Narrow Domain Specialization:** Deep RL can significantly outperform general foundation models in specialized coding tasks within specific codebases.
-*   **Importance of Automated Verification:** Automatic code verification (compilation, testing) is critical for scaling AI-driven development, making it easier to create code that performs as intended.
-*   **Future of AI Developers:** The future envisions highly specialized AI agents customized to individual codebases, offering the equivalent of vast experience in a particular environment.
-*   **Devin's Learning Model:** Devin learns from team interactions, incorporating knowledge into the organization, not just for individual users.
+* **Narrow Domain Specialization:** Deep RL can significantly outperform general foundation models in specialized coding tasks within specific codebases.
+* **Importance of Automated Verification:** Automatic code verification (compilation, testing) is critical for scaling AI-driven development, making it easier to create code that performs as intended.
+* **Future of AI Developers:** The future envisions highly specialized AI agents customized to individual codebases, offering the equivalent of vast experience in a particular environment.
+* **Devin's Learning Model:** Devin learns from team interactions, incorporating knowledge into the organization, not just for individual users.
 
 In essence, the presentation highlights Cognition's approach to building a truly autonomous AI software engineer by focusing on deep codebase understanding, continuous learning through RL, and integration into existing development workflows.
 
@@ -221,7 +231,9 @@ In essence, the presentation highlights Cognition's approach to building a truly
 
 ## From Pilot to Platform: Agentic Developer Products
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=Bugs0dVcNI8 >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_Bugs0dVcNI8.html>
 
@@ -231,38 +243,40 @@ The presentation "From Pilot to Platform: Agentic Developer Products with LangGr
 
 **Key Points:**
 
-*   **Problem:** Uber's developer platform team supports 5,000 developers working with a massive codebase and aims to improve their workflow and productivity.
-*   **Strategy:** Uber's AI DevTools strategy revolves around:
-    *   **Targeted Products:** Focused on improving developer workflows like test writing and code review.
-    *   **Cross-Cutting Primitives:** Building foundational AI technologies and abstractions for reusability.
-    *   **Intentional Tech Transfer:** Identifying reusable components and frameworks (like LangFX, their wrapper around LangGraph/LangChain) from initial product development.
-*   **Validator:** An IDE-integrated LangGraph agent that identifies and flags best practice violations and security issues in code, offering pre-computed fixes or integration with an agentic assistant. It combines LLM-based sub-agents with deterministic static linters.
-*   **AutoCover:** A tool to automatically generate high-quality tests (building, passing, coverage-raising, validated and mutation tested) for developers. It utilizes domain expert agents composed in a LangGraph structure, including Validator. By supercharging the graph, it achieves significant performance improvements over other agentic coding tools.
-*   **Other Products:** The presentation briefly showcases other tools built using the same principles:
-    *   **Uber Assistant Builder:** An internal "GPT store" for creating custom chatbots with Uber-specific knowledge.
-    *   **Picasso/Genie:** A conversational AI for Uber's workflow management platform.
-    *   **uReview:** A code review tool that flags issues and suggests fixes before code merges.
-*   **Technical Learnings:**
-    *   **Domain Expert Agents:** Building specialized and knowledgeable agents yields better results (context awareness, reduced hallucinations).
-    *   **Composing Agents:** Combining agents with deterministic sub-agents improves reliability.
-    *   **Agent Reusability:** Solving bounded problems with agents and reusing them across multiple applications scales development efforts.
-*   **Strategic Learnings:**
-    *   **Encapsulation Boosts Collaboration:** Well-defined abstractions enable horizontal scaling and collaboration between teams with different expertise.
-    *   **Graphs Model Interactions:** Graphs mirror developer workflows, improving efficiency and identifying bottlenecks.
+* **Problem:** Uber's developer platform team supports 5,000 developers working with a massive codebase and aims to improve their workflow and productivity.
+* **Strategy:** Uber's AI DevTools strategy revolves around:
+    * **Targeted Products:** Focused on improving developer workflows like test writing and code review.
+    * **Cross-Cutting Primitives:** Building foundational AI technologies and abstractions for reusability.
+    * **Intentional Tech Transfer:** Identifying reusable components and frameworks (like LangFX, their wrapper around LangGraph/LangChain) from initial product development.
+* **Validator:** An IDE-integrated LangGraph agent that identifies and flags best practice violations and security issues in code, offering pre-computed fixes or integration with an agentic assistant. It combines LLM-based sub-agents with deterministic static linters.
+* **AutoCover:** A tool to automatically generate high-quality tests (building, passing, coverage-raising, validated and mutation tested) for developers. It utilizes domain expert agents composed in a LangGraph structure, including Validator. By supercharging the graph, it achieves significant performance improvements over other agentic coding tools.
+* **Other Products:** The presentation briefly showcases other tools built using the same principles:
+    * **Uber Assistant Builder:** An internal "GPT store" for creating custom chatbots with Uber-specific knowledge.
+    * **Picasso/Genie:** A conversational AI for Uber's workflow management platform.
+    * **uReview:** A code review tool that flags issues and suggests fixes before code merges.
+* **Technical Learnings:**
+    * **Domain Expert Agents:** Building specialized and knowledgeable agents yields better results (context awareness, reduced hallucinations).
+    * **Composing Agents:** Combining agents with deterministic sub-agents improves reliability.
+    * **Agent Reusability:** Solving bounded problems with agents and reusing them across multiple applications scales development efforts.
+* **Strategic Learnings:**
+    * **Encapsulation Boosts Collaboration:** Well-defined abstractions enable horizontal scaling and collaboration between teams with different expertise.
+    * **Graphs Model Interactions:** Graphs mirror developer workflows, improving efficiency and identifying bottlenecks.
 
 **Main Takeaways:**
 
-*   LangGraph can be effectively used to build sophisticated and reusable AI-powered developer tools.
-*   A focus on domain expertise and well-defined abstractions are crucial for building successful AI agents.
-*   Reusing agents across different applications and promoting collaboration between teams can significantly scale AI development efforts within an organization.
-*   Addressing inefficiencies in existing systems can improve both AI-driven and traditional developer workflows.
+* LangGraph can be effectively used to build sophisticated and reusable AI-powered developer tools.
+* A focus on domain expertise and well-defined abstractions are crucial for building successful AI agents.
+* Reusing agents across different applications and promoting collaboration between teams can significantly scale AI development efforts within an organization.
+* Addressing inefficiencies in existing systems can improve both AI-driven and traditional developer workflows.
 
 
 ---
 
 ## Building Replit Agent v2
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=h_oUYqkRybM >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_h_oUYqkRybM.html>
 
@@ -272,25 +286,25 @@ Here's a summary of the key points and takeaways from the discussion about Repli
 
 **Key Points:**
 
-*   **Autonomy is the core improvement in v2:** Replit Agent v2 boasts significantly increased autonomy, capable of running for 10-15 minutes (and more in the future) doing useful work without human intervention, unlike v1 which only ran autonomously for a few minutes.
-*   **Evaluations and Observability are Crucial:** Early investment in evaluations and robust observability are essential for developing advanced agents. LangSmith is heavily utilized for observability.
-*   **Balancing Autonomy and Human-in-the-Loop:** There's a tension between agent autonomy and the need for human intervention. Replit balances this by providing notifications (via a mobile app) and a chat interface to allow users to stop or modify the agent's work while it's running.
-*   **User Base and Applications:** Replit has a free tier and is approaching 1 million app creations per month. Users range from those testing agent capabilities to those building business tools and personalized applications. A key differentiator is that users spend hundreds of hours on single projects, building internal tools or personalized apps, often with minimal traditional coding.
-*   **Confidence in Autonomy Comes from Testing:** Confidence in increasing autonomy came from extensive internal testing and positive feedback during early access programs.
-*   **Model Usage:** Replit heavily uses Sonnet models (especially 3.7) and other models for accessory functions where latency can be traded for performance. They are very opinionated about model selection and do not allow users to switch models. Using multiple models in one run is common.
-*   **Cost vs. Latency vs. Performance:** Replit prioritizes performance and cost over latency, focusing on getting the task done correctly, especially for non-technical users.
-*   **Decreasing Manual Code Modification:** Replit is actively trying to reduce the number of users who manually modify the code generated by the agent.
-*   **Collaboration:** Collaboration with agents is still a challenge due to complexities in merging changes proposed by multiple agents.
-*   **Communication Patterns:** Users are notified through the Replit mobile app when the agent needs feedback.
-*   **Planning Experience:** Replit is changing the planning experience to accommodate both users who prefer chatbot-like interaction and those who prefer a more structured approach like submitting a PRD (Product Requirements Document).
-*   **Debugging Agents is Hard:** Debugging agents is harder than debugging distributed systems, often requiring reading large amounts of input and output to understand decision-making.
+* **Autonomy is the core improvement in v2:** Replit Agent v2 boasts significantly increased autonomy, capable of running for 10-15 minutes (and more in the future) doing useful work without human intervention, unlike v1 which only ran autonomously for a few minutes.
+* **Evaluations and Observability are Crucial:** Early investment in evaluations and robust observability are essential for developing advanced agents. LangSmith is heavily utilized for observability.
+* **Balancing Autonomy and Human-in-the-Loop:** There's a tension between agent autonomy and the need for human intervention. Replit balances this by providing notifications (via a mobile app) and a chat interface to allow users to stop or modify the agent's work while it's running.
+* **User Base and Applications:** Replit has a free tier and is approaching 1 million app creations per month. Users range from those testing agent capabilities to those building business tools and personalized applications. A key differentiator is that users spend hundreds of hours on single projects, building internal tools or personalized apps, often with minimal traditional coding.
+* **Confidence in Autonomy Comes from Testing:** Confidence in increasing autonomy came from extensive internal testing and positive feedback during early access programs.
+* **Model Usage:** Replit heavily uses Sonnet models (especially 3.7) and other models for accessory functions where latency can be traded for performance. They are very opinionated about model selection and do not allow users to switch models. Using multiple models in one run is common.
+* **Cost vs. Latency vs. Performance:** Replit prioritizes performance and cost over latency, focusing on getting the task done correctly, especially for non-technical users.
+* **Decreasing Manual Code Modification:** Replit is actively trying to reduce the number of users who manually modify the code generated by the agent.
+* **Collaboration:** Collaboration with agents is still a challenge due to complexities in merging changes proposed by multiple agents.
+* **Communication Patterns:** Users are notified through the Replit mobile app when the agent needs feedback.
+* **Planning Experience:** Replit is changing the planning experience to accommodate both users who prefer chatbot-like interaction and those who prefer a more structured approach like submitting a PRD (Product Requirements Document).
+* **Debugging Agents is Hard:** Debugging agents is harder than debugging distributed systems, often requiring reading large amounts of input and output to understand decision-making.
 
 **Main Takeaways:**
 
-*   Replit Agent v2 represents a significant step forward in agent autonomy, enabling users to build more complex applications with less direct intervention.
-*   Investing in robust evaluation and observability tools is critical for developing and maintaining advanced agents.
-*   The Replit team is continuously working on improving the user experience, balancing autonomy with the need for human control and feedback.
-*   The focus is shifting towards enabling non-technical users to build sophisticated applications, particularly internal tools and personalized software.
+* Replit Agent v2 represents a significant step forward in agent autonomy, enabling users to build more complex applications with less direct intervention.
+* Investing in robust evaluation and observability tools is critical for developing and maintaining advanced agents.
+* The Replit team is continuously working on improving the user experience, balancing autonomy with the need for human control and feedback.
+* The focus is shifting towards enabling non-technical users to build sophisticated applications, particularly internal tools and personalized software.
 
 
 
@@ -298,7 +312,9 @@ Here's a summary of the key points and takeaways from the discussion about Repli
 
 ## Multi-Agent Frontiers: Building Ask D.A.V.I.D.
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=yMalr0jiOAc >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_yMalr0jiOAc.html>
 
@@ -308,32 +324,34 @@ Here's a summary of the transcript, highlighting the key points and main takeawa
 
 **Key Points:**
 
-*   **The Problem:** The JPMorgan Private Bank's investment research team manages thousands of investment products with extensive data, leading to numerous client questions. Answering these questions is a manual, time-consuming process that limits scalability and insight delivery.
-*   **The Solution: Ask D.A.V.I.D.:** An AI-powered, domain-specific QA agent designed to automate the investment research process, providing curated answers, insights, and analytics quickly. Stands for "Data, Analytics, Visualization, Insights, and Decision-making system."
-*   **Multi-Agent System:** Ask D.A.V.I.D. uses a multi-agent architecture:
-    *   **Supervisor Agent:** Acts as a "router," understanding user intentions and delegating tasks to sub-agents. Uses short-term and long-term memory and knows when to involve a human.
-    *   **Structured Data Agent:** Translates natural language into SQL queries or API calls to retrieve and summarize structured data.
-    *   **Document Search Agent:** Employs Retrieval-Augmented Generation (RAG) to derive information from unstructured data like emails and meeting notes.
-    *   **Analytics Agent:** Leverages proprietary models and APIs for insights and visualizations, using either direct API calls or text-to-code generation.
-*   **Workflow:** The system uses distinct flows for general questions and questions about specific funds, each with a supervisor agent and specialized sub-agents. Personalization and reflection nodes refine and validate answers.
-*   **Example:** A client asks why a fund was terminated. The system identifies the fund, uses the doc search agent to find the reason (performance issues), personalizes the answer based on the user's role (advisor vs. due diligence specialist), and uses an LLM to ensure the answer makes sense.
-*   **Evaluation-Driven Development:** Continuous evaluation is crucial for GenAI projects.
-    *   Independently evaluate sub-agents.
-    *   Pick the right metrics based on agent design (e.g., conciseness for summarization).
-    *   Start evaluation early, even without ground truth, and use LLMs as judges with human review.
+* **The Problem:** The JPMorgan Private Bank's investment research team manages thousands of investment products with extensive data, leading to numerous client questions. Answering these questions is a manual, time-consuming process that limits scalability and insight delivery.
+* **The Solution: Ask D.A.V.I.D.:** An AI-powered, domain-specific QA agent designed to automate the investment research process, providing curated answers, insights, and analytics quickly. Stands for "Data, Analytics, Visualization, Insights, and Decision-making system."
+* **Multi-Agent System:** Ask D.A.V.I.D. uses a multi-agent architecture:
+    * **Supervisor Agent:** Acts as a "router," understanding user intentions and delegating tasks to sub-agents. Uses short-term and long-term memory and knows when to involve a human.
+    * **Structured Data Agent:** Translates natural language into SQL queries or API calls to retrieve and summarize structured data.
+    * **Document Search Agent:** Employs Retrieval-Augmented Generation (RAG) to derive information from unstructured data like emails and meeting notes.
+    * **Analytics Agent:** Leverages proprietary models and APIs for insights and visualizations, using either direct API calls or text-to-code generation.
+* **Workflow:** The system uses distinct flows for general questions and questions about specific funds, each with a supervisor agent and specialized sub-agents. Personalization and reflection nodes refine and validate answers.
+* **Example:** A client asks why a fund was terminated. The system identifies the fund, uses the doc search agent to find the reason (performance issues), personalizes the answer based on the user's role (advisor vs. due diligence specialist), and uses an LLM to ensure the answer makes sense.
+* **Evaluation-Driven Development:** Continuous evaluation is crucial for GenAI projects.
+    * Independently evaluate sub-agents.
+    * Pick the right metrics based on agent design (e.g., conciseness for summarization).
+    * Start evaluation early, even without ground truth, and use LLMs as judges with human review.
 
 **Main Takeaways (The 3 Key Lessons):**
 
-1.  **Iterate Fast:** Start simple and refactor frequently. Build incrementally, adding complexity as you validate each component.
-2.  **Evaluate Early:** Implement continuous evaluation to track progress, identify weak points, and build confidence in accuracy.
-3.  **Keep Humans in the Loop:** Human SME (Subject Matter Expert) involvement is essential, especially for high-stakes financial applications, to ensure accuracy and handle cases where the AI isn't confident. Aim for human-in-the-loop, not human-out-of-the-loop.
+1. **Iterate Fast:** Start simple and refactor frequently. Build incrementally, adding complexity as you validate each component.
+2. **Evaluate Early:** Implement continuous evaluation to track progress, identify weak points, and build confidence in accuracy.
+3. **Keep Humans in the Loop:** Human SME (Subject Matter Expert) involvement is essential, especially for high-stakes financial applications, to ensure accuracy and handle cases where the AI isn't confident. Aim for human-in-the-loop, not human-out-of-the-loop.
 
 
 ---
 
 ## Breakthrough Agents: Building Reliable Agentic Systems
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=1PRcceHpJjM >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_1PRcceHpJjM.html>
 
@@ -343,31 +361,33 @@ This transcript is from a presentation by Eno, co-founder and CTO of Factory, ab
 
 **Key Points:**
 
-*   **The Shift to Agent-Driven Development:** The core idea is moving from AI-assisted coding in traditional IDEs to delegating entire tasks to AI agents for significant productivity gains (5-20x).
-*   **Factory's Platform:** Factory is building a platform to manage and scale these AI agents, integrating various engineering tools (GitHub, Jira, observability tools, knowledge bases, internet).
-*   **Defining Agentic Systems:** An agentic system is defined by three characteristics:
-    *   **Planning:** Creating plans with single or multiple steps.
-    *   **Decision-Making:** Making data-driven decisions, referred to as reasoning.
-    *   **Environmental Grounding:** Reading and writing information to the environment, reacting, and adapting.
-*   **Human Role:** Humans are still crucial, focusing on the "outer loop" (requirements, architecture), while AI agents handle the "inner loop" (coding, testing, code review). It's about delegation with control, allowing humans to steer when needed.
-*   **Improving Agent Reliability:**
-    *   **Planning:** Decomposition of tasks, model predictive control (continuous updating), and explicit plan templating.
-    *   **Decision Making:** Provide agents with decision-making criteria and context of their environment.
-    *   **Environmental Grounding:** Building AI computer interfaces, controlling the tools agents use, and processing information effectively. The way you process information given to the agent is a make or break point, and the entire internet was basically built for humans, so that needs to be addressed.
+* **The Shift to Agent-Driven Development:** The core idea is moving from AI-assisted coding in traditional IDEs to delegating entire tasks to AI agents for significant productivity gains (5-20x).
+* **Factory's Platform:** Factory is building a platform to manage and scale these AI agents, integrating various engineering tools (GitHub, Jira, observability tools, knowledge bases, internet).
+* **Defining Agentic Systems:** An agentic system is defined by three characteristics:
+    * **Planning:** Creating plans with single or multiple steps.
+    * **Decision-Making:** Making data-driven decisions, referred to as reasoning.
+    * **Environmental Grounding:** Reading and writing information to the environment, reacting, and adapting.
+* **Human Role:** Humans are still crucial, focusing on the "outer loop" (requirements, architecture), while AI agents handle the "inner loop" (coding, testing, code review). It's about delegation with control, allowing humans to steer when needed.
+* **Improving Agent Reliability:**
+    * **Planning:** Decomposition of tasks, model predictive control (continuous updating), and explicit plan templating.
+    * **Decision Making:** Provide agents with decision-making criteria and context of their environment.
+    * **Environmental Grounding:** Building AI computer interfaces, controlling the tools agents use, and processing information effectively. The way you process information given to the agent is a make or break point, and the entire internet was basically built for humans, so that needs to be addressed.
 
 **Main Takeaways:**
 
-*   **Focus on Delegation:** Aim to delegate significant portions of engineering tasks to AI agents for substantial productivity improvements.
-*   **Invest in Infrastructure:** Building agentic systems requires a dedicated platform with integration capabilities, rather than incremental additions to existing IDEs.
-*   **Prioritize Reliability:** Focus on planning, decision-making, and environmental grounding to build reliable agents.
-*   **Design for Human-AI Collaboration:** Create systems that allow humans to delegate tasks but also maintain control and provide guidance when needed.
-*   **Future is Now:** Consider whether your organization is delegating at least 50% of tasks to AI. If not, it's time to consider the strategic shift.
+* **Focus on Delegation:** Aim to delegate significant portions of engineering tasks to AI agents for substantial productivity improvements.
+* **Invest in Infrastructure:** Building agentic systems requires a dedicated platform with integration capabilities, rather than incremental additions to existing IDEs.
+* **Prioritize Reliability:** Focus on planning, decision-making, and environmental grounding to build reliable agents.
+* **Design for Human-AI Collaboration:** Create systems that allow humans to delegate tasks but also maintain control and provide guidance when needed.
+* **Future is Now:** Consider whether your organization is delegating at least 50% of tasks to AI. If not, it's time to consider the strategic shift.
 
 ---
 
 ## From Pilot to Platform: Agents at Scale with LangGraph
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=NmblVxyBhi8 >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_NmblVxyBhi8.html>
 
@@ -381,31 +401,33 @@ The presentation discusses how LinkedIn scaled its adoption of AI agents, both i
 
 **Key Points:**
 
-*   **LinkedIn Hiring Assistant:**  Showcased as LinkedIn's first production agent, automating recruiter tasks (candidate sourcing). This agent follows the ambient agent pattern, operating in the background and notifying users upon completion.
-*   **Python Standardization:** LinkedIn shifted from primarily using Java to Python for GenAI development. This was driven by the need to leverage open-source libraries and keep pace with the rapid advancements in the AI field.  Java was initially used, but the limitations in experimenting with Python's AI ecosystem led to the change.
-*   **Service Framework:**  LinkedIn built a Python-based framework using gRPC, LangChain, and LangGraph to streamline the development of production-ready GenAI services. Over 20 teams and 30 services are leveraging the framework.
-*   **LangChain & LangGraph Adoption:**  These libraries were chosen for their ease of use and sensible interfaces, allowing for modeling of internal infrastructure and rapid prototyping. Java engineers were able to easily adopt these tools.
-*   **Agent Platform Architecture:**  A new distributed architecture was created to support agentic communication, addressing challenges like long-running asynchronous flows and parallel execution. This includes:
-    *   **Messaging System:** Agents communicate via an extended messaging service (agent-to-agent and user-to-agent).
-    *   **Agentic Memory:** Layered memory system (working, long-term, collective) to provide context and history to agents.
-    *   **Skills:**  Skills are broader than function calling. They are centralized and registered to be exposed to agents. Skills can be other agents. Agents invoke skills synchronously or asynchronously.
-*   **Observability:** Custom observability solutions are crucial for managing and debugging agentic workflows.
+* **LinkedIn Hiring Assistant:**  Showcased as LinkedIn's first production agent, automating recruiter tasks (candidate sourcing). This agent follows the ambient agent pattern, operating in the background and notifying users upon completion.
+* **Python Standardization:** LinkedIn shifted from primarily using Java to Python for GenAI development. This was driven by the need to leverage open-source libraries and keep pace with the rapid advancements in the AI field.  Java was initially used, but the limitations in experimenting with Python's AI ecosystem led to the change.
+* **Service Framework:**  LinkedIn built a Python-based framework using gRPC, LangChain, and LangGraph to streamline the development of production-ready GenAI services. Over 20 teams and 30 services are leveraging the framework.
+* **LangChain & LangGraph Adoption:**  These libraries were chosen for their ease of use and sensible interfaces, allowing for modeling of internal infrastructure and rapid prototyping. Java engineers were able to easily adopt these tools.
+* **Agent Platform Architecture:**  A new distributed architecture was created to support agentic communication, addressing challenges like long-running asynchronous flows and parallel execution. This includes:
+    * **Messaging System:** Agents communicate via an extended messaging service (agent-to-agent and user-to-agent).
+    * **Agentic Memory:** Layered memory system (working, long-term, collective) to provide context and history to agents.
+    * **Skills:**  Skills are broader than function calling. They are centralized and registered to be exposed to agents. Skills can be other agents. Agents invoke skills synchronously or asynchronously.
+* **Observability:** Custom observability solutions are crucial for managing and debugging agentic workflows.
 
 **Main Takeaways:**
 
-*   **Embrace Python for GenAI:** Prioritize Python to fully leverage the open-source AI ecosystem and accelerate innovation.
-*   **Invest in Developer Productivity:** Build frameworks and standardize patterns to simplify GenAI development and encourage wider adoption.
-*   **Design for Asynchronous Workflows:** Recognize that agents often require long-running processes and design systems that can handle them effectively.  Messaging systems become crucial.
-*   **Centralize and Share Capabilities:** Skills registries promotes code reuse and team collaboration.
-*   **Observability is Essential:** Implement robust monitoring and evaluation tools to understand and improve agent performance in production.
-*   **Don't Neglect Production Considerations:** Even with cutting-edge AI, remember standard software engineering principles (availability, reliability).
+* **Embrace Python for GenAI:** Prioritize Python to fully leverage the open-source AI ecosystem and accelerate innovation.
+* **Invest in Developer Productivity:** Build frameworks and standardize patterns to simplify GenAI development and encourage wider adoption.
+* **Design for Asynchronous Workflows:** Recognize that agents often require long-running processes and design systems that can handle them effectively.  Messaging systems become crucial.
+* **Centralize and Share Capabilities:** Skills registries promotes code reuse and team collaboration.
+* **Observability is Essential:** Implement robust monitoring and evaluation tools to understand and improve agent performance in production.
+* **Don't Neglect Production Considerations:** Even with cutting-edge AI, remember standard software engineering principles (availability, reliability).
 
 
 ---
 
 ## Breakthrough Agents: Learnings from Building AI Research Agents
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=pKk-LfhujwI >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_pKk-LfhujwI.html>
 
@@ -415,42 +437,42 @@ Here's a summary of the key points and takeaways from the "Breakthrough Agents: 
 
 **Key Points:**
 
-*   **Unify's Core Belief:** Growth should be a science, and the best products win. Go-to-market strategy is essentially a search problem to find the right customers.
-*   **AI Research Agents:** LLMs enable automating research traditionally done by sales teams, offering repeatability, observability, and scalability.
-*   **Agent Input:** Unify's agents require two inputs from customers:
-    *   Specific questions about companies or people with defined output types (text, enum, boolean).
-    *   Guidance on how to conduct the research (like instructions to a high schooler).
-*   **Agent Application:** Agents research thousands of companies to answer questions and facilitate targeted sales outreach. Examples include researching company downtime for incident response tool sales.
-*   **Token Usage:** Significant token usage (36 billion in April, growing since) indicates large-scale agent usage.
-*   **Early Agent Development (V1):**
-    *   Two initial agent frameworks (Sambot Mark1 and ConorAgent) were built using the ReAct framework (reasoning and acting).
-    *   Core tools included internet search, website search, and website scraping.
-    *   Sam used GPT-4.0 for faster plan generation, while Connor used 01 Preview (a stronger reasoning model) for more thorough plans.
-*   **Initial Evaluation:**
-    *   Manual trace analysis revealed 01 Preview generated more thorough and specific plans.
-    *   Accuracy-based evaluations were introduced (percentage of correctly answered questions) using hand-labeled datasets.
-    *   ConorAgent outperformed Sambot in most categories.
-*   **Areas for Improvement:** Three key areas were identified to improve the agents: changing the graph of the architecture, changing models and prompts, and adding more tools.
-*   **Model and Prompt Changes:**
-    *   Optimizing for cost and performance led to replacing 01 with 4.1 for agentic planning, significantly reducing costs (from ~35 cents to ~10 cents per run) with similar performance.
-    *   Date formatting issues highlighted the importance of prompt engineering.
-    *   Input schemas for tools were updated to force the tool calling agent to think more about what it was calling.
-*   **Building More Tools:** Four new tools were added: deep internet research, browser access, searching HTML, and dataset access.
-*   **Deep Internet Research:** Addresses the limitations of standard internet search by mimicking human research behavior. It involves filtering sources, opening multiple tabs, and iterating search queries. The Pydantic model was updated to include arguments like category, live crawl, and domain constraints. This improves the quality of ingested content and reduces misinterpretations.
-*   **Browser Access:** Enables agents to interact with online data sources and datasets that require queries, interactive search (e.g., Google Maps), and content not easily scraped. Implemented as a sub-agent using Computer Vision Preview to decompose tasks into browser trajectories.
-*   **Learnings from New Tools:** Deep search significantly reduced misinterpretation of internet search results. Browser access unlocked completely new use cases.
-*   **Current Champion Agent:** "Kunal Browser Agent" is now in production.
-*   **Next Steps:** Focus on investing more time in evaluations to highlight issues and make the process more repeatable.
+* **Unify's Core Belief:** Growth should be a science, and the best products win. Go-to-market strategy is essentially a search problem to find the right customers.
+* **AI Research Agents:** LLMs enable automating research traditionally done by sales teams, offering repeatability, observability, and scalability.
+* **Agent Input:** Unify's agents require two inputs from customers:
+    * Specific questions about companies or people with defined output types (text, enum, boolean).
+    * Guidance on how to conduct the research (like instructions to a high schooler).
+* **Agent Application:** Agents research thousands of companies to answer questions and facilitate targeted sales outreach. Examples include researching company downtime for incident response tool sales.
+* **Token Usage:** Significant token usage (36 billion in April, growing since) indicates large-scale agent usage.
+* **Early Agent Development (V1):**
+    * Two initial agent frameworks (Sambot Mark1 and ConorAgent) were built using the ReAct framework (reasoning and acting).
+    * Core tools included internet search, website search, and website scraping.
+    * Sam used GPT-4.0 for faster plan generation, while Connor used 01 Preview (a stronger reasoning model) for more thorough plans.
+* **Initial Evaluation:**
+    * Manual trace analysis revealed 01 Preview generated more thorough and specific plans.
+    * Accuracy-based evaluations were introduced (percentage of correctly answered questions) using hand-labeled datasets.
+    * ConorAgent outperformed Sambot in most categories.
+* **Areas for Improvement:** Three key areas were identified to improve the agents: changing the graph of the architecture, changing models and prompts, and adding more tools.
+* **Model and Prompt Changes:**
+    * Optimizing for cost and performance led to replacing 01 with 4.1 for agentic planning, significantly reducing costs (from ~35 cents to ~10 cents per run) with similar performance.
+    * Date formatting issues highlighted the importance of prompt engineering.
+    * Input schemas for tools were updated to force the tool calling agent to think more about what it was calling.
+* **Building More Tools:** Four new tools were added: deep internet research, browser access, searching HTML, and dataset access.
+* **Deep Internet Research:** Addresses the limitations of standard internet search by mimicking human research behavior. It involves filtering sources, opening multiple tabs, and iterating search queries. The Pydantic model was updated to include arguments like category, live crawl, and domain constraints. This improves the quality of ingested content and reduces misinterpretations.
+* **Browser Access:** Enables agents to interact with online data sources and datasets that require queries, interactive search (e.g., Google Maps), and content not easily scraped. Implemented as a sub-agent using Computer Vision Preview to decompose tasks into browser trajectories.
+* **Learnings from New Tools:** Deep search significantly reduced misinterpretation of internet search results. Browser access unlocked completely new use cases.
+* **Current Champion Agent:** "Kunal Browser Agent" is now in production.
+* **Next Steps:** Focus on investing more time in evaluations to highlight issues and make the process more repeatable.
 
 **Main Takeaways:**
 
-*   **Agent Planning Matters:** The quality and thoroughness of the initial plan generated by the agent significantly impacts downstream actions and accuracy. Stronger reasoning models (like 01 Preview, and now 4.1) are crucial for this.
-*   **Evaluations are Necessary but Insufficient:** Accuracy-based evaluations are a good starting point but need to be supplemented with manual trace analysis ("vibe checks") to identify edge cases and subtle issues.
-*   **Node-Based Evals**: Models tend to spike in different use cases, so evaluate per node.
-*   **Prompt Engineering is Critical:** Seemingly minor details like date formatting can significantly impact model performance. Thoughtful prompt engineering and Pydantic model adjustments are essential.
-*   **Mimic Human Research:** Agents should be designed to mimic how humans conduct research, including iterative search, source filtering, and content analysis.
-*   **Iterative Improvement:** Building effective AI research agents is an iterative process involving constant experimentation, evaluation, and refinement of models, prompts, and tools.
-*   **Tool Selection is Important:** Computer Vision Preview was selected as a tool over other open source alternatives because of its ability to handle more complex browsing tasks.
+* **Agent Planning Matters:** The quality and thoroughness of the initial plan generated by the agent significantly impacts downstream actions and accuracy. Stronger reasoning models (like 01 Preview, and now 4.1) are crucial for this.
+* **Evaluations are Necessary but Insufficient:** Accuracy-based evaluations are a good starting point but need to be supplemented with manual trace analysis ("vibe checks") to identify edge cases and subtle issues.
+* **Node-Based Evals**: Models tend to spike in different use cases, so evaluate per node.
+* **Prompt Engineering is Critical:** Seemingly minor details like date formatting can significantly impact model performance. Thoughtful prompt engineering and Pydantic model adjustments are essential.
+* **Mimic Human Research:** Agents should be designed to mimic how humans conduct research, including iterative search, source filtering, and content analysis.
+* **Iterative Improvement:** Building effective AI research agents is an iterative process involving constant experimentation, evaluation, and refinement of models, prompts, and tools.
+* **Tool Selection is Important:** Computer Vision Preview was selected as a tool over other open source alternatives because of its ability to handle more complex browsing tasks.
 
 
 
@@ -458,7 +480,9 @@ Here's a summary of the key points and takeaways from the "Breakthrough Agents: 
 
 ## Multi-Agent Frontiers: Transforming Customer Experience with Cisco
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=gPhyPRtIMn0 >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_gPhyPRtIMn0.html>
 
@@ -468,23 +492,23 @@ Here's a summary of the transcript, highlighting key points and takeaways from C
 
 **Key Points:**
 
-*   **Cisco's Focus:** Maximizing customer value on their investments through land, adopt, expand, and renew framework, emphasizing process, people, and technology.
-*   **Vision:** Elevate Customer Experience (CX) to Agentic CX, providing personalized, predictive, and proactive experiences using multi-agent AI.
-*   **Multi-Agent Approach:** Combines human and machine agents, GenAI, and traditional ML for a comprehensive service across various user interfaces (video, chat, phone, tools).
-*   **Use Case Driven:** Prioritizes use cases that deliver immediate customer value, improve operational security and reliability, and provide lifecycle visibility. A defined criteria is important to make sure that the use cases are not just based on "cool" technology but delivers tangible business value.
-*   **Flexible Deployment:** Supports on-premises, cloud, and hybrid deployment models.
-*   **Technology Stack:** Utilizes Mistral-Large, Sonnet, and shartgpt, powered by Langchain, with custom AI models (ML for predictions, fine-tuned LLMs for accuracy).
-*   **Real-world Applications:** Renews agent with predictive insights, virtual tech engineers for support automation (resolving 60% of cases fully automated). Also, sentiment analysis across the lifecycle.
+* **Cisco's Focus:** Maximizing customer value on their investments through land, adopt, expand, and renew framework, emphasizing process, people, and technology.
+* **Vision:** Elevate Customer Experience (CX) to Agentic CX, providing personalized, predictive, and proactive experiences using multi-agent AI.
+* **Multi-Agent Approach:** Combines human and machine agents, GenAI, and traditional ML for a comprehensive service across various user interfaces (video, chat, phone, tools).
+* **Use Case Driven:** Prioritizes use cases that deliver immediate customer value, improve operational security and reliability, and provide lifecycle visibility. A defined criteria is important to make sure that the use cases are not just based on "cool" technology but delivers tangible business value.
+* **Flexible Deployment:** Supports on-premises, cloud, and hybrid deployment models.
+* **Technology Stack:** Utilizes Mistral-Large, Sonnet, and shartgpt, powered by Langchain, with custom AI models (ML for predictions, fine-tuned LLMs for accuracy).
+* **Real-world Applications:** Renews agent with predictive insights, virtual tech engineers for support automation (resolving 60% of cases fully automated). Also, sentiment analysis across the lifecycle.
 
 **Key Takeaways and Learnings:**
 
-*   **Define Use Cases and Metrics First:** Don't jump on the latest AI trend without a clear purpose and measurable goals. Define use cases that fit the business needs and can be measured for success.
-*   **Experimentation and Production Teams:** Separate teams for experimentation/prototyping and production, allowing the former to fail fast and the latter to focus on stability and performance. Have a dedicated team for evaluation with golden data sets to ensure unbiased assessment.
-*   **Accuracy Challenges:** Achieving high accuracy for enterprise use cases, especially those involving SQL databases, is difficult. Normalizing data and avoiding LLMs for complex SQL joins is crucial.
-*   **Collaboration is Key:** Inter-agent communication and collaboration is critical, going beyond existing protocols like MCP. Proposes "Agency," an open-source architecture for agentic AI that includes a semantic layer, authentication, and agent directory.
-*   **Workflow-centric approach:** LLMs are great with language but not with workflows. Tools like LangGraph platform are better to follow deterministic workflows.
-*   **Context is important**: Going beyond MCP context to provide better hyper-personalization.
-*   **AI-Augmented CX, Not Replacing Human Touch:** Optimizing for people and maximizing returns to the business by adopting AI.
+* **Define Use Cases and Metrics First:** Don't jump on the latest AI trend without a clear purpose and measurable goals. Define use cases that fit the business needs and can be measured for success.
+* **Experimentation and Production Teams:** Separate teams for experimentation/prototyping and production, allowing the former to fail fast and the latter to focus on stability and performance. Have a dedicated team for evaluation with golden data sets to ensure unbiased assessment.
+* **Accuracy Challenges:** Achieving high accuracy for enterprise use cases, especially those involving SQL databases, is difficult. Normalizing data and avoiding LLMs for complex SQL joins is crucial.
+* **Collaboration is Key:** Inter-agent communication and collaboration is critical, going beyond existing protocols like MCP. Proposes "Agency," an open-source architecture for agentic AI that includes a semantic layer, authentication, and agent directory.
+* **Workflow-centric approach:** LLMs are great with language but not with workflows. Tools like LangGraph platform are better to follow deterministic workflows.
+* **Context is important**: Going beyond MCP context to provide better hyper-personalization.
+* **AI-Augmented CX, Not Replacing Human Touch:** Optimizing for people and maximizing returns to the business by adopting AI.
 
 **In essence, Cisco is leveraging multi-agent AI, facilitated by Langchain, to create a more personalized, efficient, and proactive customer experience. They emphasize a strategic, use-case-driven approach, focusing on real-world applications and acknowledging the challenges and complexities of integrating AI into existing enterprise systems.**
 
@@ -493,7 +517,9 @@ Here's a summary of the transcript, highlighting key points and takeaways from C
 
 ## Building Reliable Agents: Raising the Bar
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=kuXtW03cZEA >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_kuXtW03cZEA.html>
 
@@ -501,31 +527,33 @@ AI Summary:
 
 This transcript is a presentation about how Harvey, an AI company specializing in legal and professional services, builds and evaluates its AI products. Here's a summary of the key points:
 
-*   **Harvey Overview:** Harvey offers AI-powered tools for legal tasks, including document summarization, drafting, large-scale document analysis, and custom workflows. Their vision is to enable users to do all their work in Harvey, accessible wherever they work.
-*   **Quality Challenges in Legal AI:**
-    *   Lawyers work with complex, lengthy documents with many references.
-    *   Outputs must be accurate and nuanced, as mistakes have significant consequences.
-    *   Quality is subjective; even factually correct answers can vary in preference due to nuance and detail.
-    *   Sensitive customer data makes obtaining datasets and feedback difficult.
-*   **Product Development Principles:**
-    *   **Applied AI:** Combine state-of-the-art AI with best-in-class UI to solve real-world problems.
-    *   **Lawyer in the Loop:** Involve lawyers throughout the product development process (use case identification, data collection, evaluation, UI design, testing, and go-to-market).
-    *   **Prototype over PRD:** Prioritize rapid prototyping and iteration over extensive documentation.
-*   **Evaluation Methods:**
-    *   **Human Preference Judgments:** Collect human feedback on model outputs, considered the highest quality signal. Use side-by-side comparisons and ratings.
-    *   **Model-Based Auto Evaluations (LLM as Judge):** Create automated evaluations using LLMs, breaking down complex tasks into categories with rubrics crafted by legal experts.
-    *   **Breaking Down Complex Problems:** For workflows and agents, break down the process into steps to evaluate each component separately (e.g., query rewriting, document retrieval, answer generation in RAG).
-*   **Example Launch (GPT 4.1):** Demonstrates the evaluation process, including initial testing with the company's "Big Law Bench" benchmark, followed by human evaluation, additional product-specific testing, and internal feedback.
-*   **Learnings:**
-    *   **Sharpen Your Axe:** Invest in strong tooling, processes, and documentation to improve evaluation efficiency.
-    *   **Evals Matter, But Taste Matters Too:** Balance rigorous evaluations with human judgment, qualitative feedback, and user experience.
-    *   **The Most Important Data Doesn't Exist Yet:** The next breakthrough in agentic systems will come from capturing "process data" - the undocumented knowledge of how complex tasks are performed within legal firms. This means focusing on how things actually get done.
+* **Harvey Overview:** Harvey offers AI-powered tools for legal tasks, including document summarization, drafting, large-scale document analysis, and custom workflows. Their vision is to enable users to do all their work in Harvey, accessible wherever they work.
+* **Quality Challenges in Legal AI:**
+    * Lawyers work with complex, lengthy documents with many references.
+    * Outputs must be accurate and nuanced, as mistakes have significant consequences.
+    * Quality is subjective; even factually correct answers can vary in preference due to nuance and detail.
+    * Sensitive customer data makes obtaining datasets and feedback difficult.
+* **Product Development Principles:**
+    * **Applied AI:** Combine state-of-the-art AI with best-in-class UI to solve real-world problems.
+    * **Lawyer in the Loop:** Involve lawyers throughout the product development process (use case identification, data collection, evaluation, UI design, testing, and go-to-market).
+    * **Prototype over PRD:** Prioritize rapid prototyping and iteration over extensive documentation.
+* **Evaluation Methods:**
+    * **Human Preference Judgments:** Collect human feedback on model outputs, considered the highest quality signal. Use side-by-side comparisons and ratings.
+    * **Model-Based Auto Evaluations (LLM as Judge):** Create automated evaluations using LLMs, breaking down complex tasks into categories with rubrics crafted by legal experts.
+    * **Breaking Down Complex Problems:** For workflows and agents, break down the process into steps to evaluate each component separately (e.g., query rewriting, document retrieval, answer generation in RAG).
+* **Example Launch (GPT 4.1):** Demonstrates the evaluation process, including initial testing with the company's "Big Law Bench" benchmark, followed by human evaluation, additional product-specific testing, and internal feedback.
+* **Learnings:**
+    * **Sharpen Your Axe:** Invest in strong tooling, processes, and documentation to improve evaluation efficiency.
+    * **Evals Matter, But Taste Matters Too:** Balance rigorous evaluations with human judgment, qualitative feedback, and user experience.
+    * **The Most Important Data Doesn't Exist Yet:** The next breakthrough in agentic systems will come from capturing "process data" - the undocumented knowledge of how complex tasks are performed within legal firms. This means focusing on how things actually get done.
 
 ---
 
 ## Unlocking Agent Creation: Agentic Architecture Lessons
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=uNBIaANTJJw >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_uNBIaANTJJw.html>
 
@@ -533,41 +561,43 @@ AI Summary:
 
 This transcript is a presentation by Ben Kuss from Box about their experience in building agentic architectures for data extraction. Here's a summary of the key points and main takeaways:
 
-*   **Context:** Box, an unstructured data platform, initially implemented AI for content tasks like Q&A, search, and data extraction. They focused on data extraction as a use case to highlight their journey towards agentic architectures.
+* **Context:** Box, an unstructured data platform, initially implemented AI for content tasks like Q&A, search, and data extraction. They focused on data extraction as a use case to highlight their journey towards agentic architectures.
 
-*   **Problem:** Initial "basic AI" approach for data extraction (document -> fields -> preprocessing/OCR -> LLM -> extracted data) worked initially but hit limitations when customers provided complex or varied documents:
-    *   Large documents exceeding context windows.
-    *   Poor OCR quality (cross-outs, languages).
-    *   Requests for a high volume of data fields per document.
-    *   Lack of confidence scores from generative AI.
-    *   Difficult to scale and adapt to new document types.
+* **Problem:** Initial "basic AI" approach for data extraction (document -> fields -> preprocessing/OCR -> LLM -> extracted data) worked initially but hit limitations when customers provided complex or varied documents:
+    * Large documents exceeding context windows.
+    * Poor OCR quality (cross-outs, languages).
+    * Requests for a high volume of data fields per document.
+    * Lack of confidence scores from generative AI.
+    * Difficult to scale and adapt to new document types.
 
-*   **Solution: Adopted a Multi-Agent Architecture:**
-    *   Re-architected from scratch using an agentic approach, separating the problem into a series of sub-agents.
-    *   Created specialized agents with specific routines.
-    *   Each sub-agent solves specific problems (preprocessing, OCR, field grouping, data extraction, quality feedback).
-    *   Quality feedback loop allows the AI to try different techniques for accuracy.
-    *   Dynamic selection of tools and methods (e.g., using different models, page images in addition to OCR).
+* **Solution: Adopted a Multi-Agent Architecture:**
+    * Re-architected from scratch using an agentic approach, separating the problem into a series of sub-agents.
+    * Created specialized agents with specific routines.
+    * Each sub-agent solves specific problems (preprocessing, OCR, field grouping, data extraction, quality feedback).
+    * Quality feedback loop allows the AI to try different techniques for accuracy.
+    * Dynamic selection of tools and methods (e.g., using different models, page images in addition to OCR).
 
-*   **Benefits of Agentic Architecture:**
-    *   Solved initial problems and improved accuracy.
-    *   Easy to update and evolve the system for new document types.
-    *   Clean abstraction for engineers, simplifying development and maintenance.
-    *   Facilitated specialized agents for different document types.
-    *   Enabled quicker response to customer issues.
+* **Benefits of Agentic Architecture:**
+    * Solved initial problems and improved accuracy.
+    * Easy to update and evolve the system for new document types.
+    * Clean abstraction for engineers, simplifying development and maintenance.
+    * Facilitated specialized agents for different document types.
+    * Enabled quicker response to customer issues.
 
-*   **Unexpected Benefits:**
-    *   Engineers started thinking more about customer needs.
-    *   Improved understanding of how customers use Box as a tool in their own agentic systems.
-    *   Contributed to building an AI-first engineering organization.
+* **Unexpected Benefits:**
+    * Engineers started thinking more about customer needs.
+    * Improved understanding of how customers use Box as a tool in their own agentic systems.
+    * Contributed to building an AI-first engineering organization.
 
-*   **Key Takeaway/Advice:** Build agentic systems early when implementing intelligent features. This approach provides a better abstraction, is easier to evolve, and encourages a customer-centric engineering mindset.
+* **Key Takeaway/Advice:** Build agentic systems early when implementing intelligent features. This approach provides a better abstraction, is easier to evolve, and encourages a customer-centric engineering mindset.
 
 ---
 
 ## How Monday.com Built Their Digital Workforce
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=P8ewpJrZVwo >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_P8ewpJrZVwo.html>
 
@@ -577,38 +607,40 @@ Here's a summary of Asaf's presentation on how Monday.com is building their digi
 
 **Key Points:**
 
-*   **Monday.com's Scale & Opportunity:** Processes 1 billion tasks per year, representing a massive opportunity for AI-powered agents. They've seen rapid growth (100% MoM) in AI feature usage.
-*   **Digital Workforce Vision:** Agents working within the Monday.com ecosystem to handle various tasks for SMBs and enterprises.
-*   **Trust & User Experience are Paramount:** The biggest barrier to AI adoption isn't technology, but user trust. Focus on UX is crucial.
-*   **Autonomy & Control:** Users want control over agents' actions. Giving users control increases adoption.
-*   **Seamless Integration:** Integrate AI agents into existing workflows and UIs instead of creating entirely new experiences. Assign agents to tasks like assigning people.
-*   **Preview & Validation:** Implement previews (UI in the Loop) so users can review agent outputs before they are pushed to production, ensuring confidence and preventing unexpected changes, which increased adoption.
-*   **Explainability is Crucial:** Explainability helps users understand *why* the AI made certain decisions, enabling them to improve their experience with AI over time by adjusting inputs.
-*   **LangGraph as the Foundation:** Monday.com built its agent ecosystem on LangGraph and LangSmith, citing its flexibility, built-in features (interrupts, checkpoints, memory), and scalability (millions of requests per month).
-*   **Architecture:** LangGraph at the center, surrounded by internal AI blocks, an evaluation framework, and an AI gateway for input/output control.
-*   **Monday Expert Example:** Conversational agent with a supervisor managing data retrieval, board actions, and answer composition agents. It has an "undo" feature.
-*   **Lessons Learned (Conversational Agents):**
-    *   Assume you can't handle 99% of interactions. Implement fallbacks.
-    *   Evaluations are your IP as models change rapidly
-    *   Human-in-the-loop is critical to achieve product quality.
-    *   Build guardrails *outside* the LLM.
-    *   Balance the number of agents in multi-agent systems to avoid compound hallucination.
-*   **Future of Work: Orchestration:** Aim for a finite set of specialized agents that can be dynamically orchestrated to handle infinite tasks, mimicking human work patterns.
-*   **Marketplace:** Opening up their agent marketplace.
+* **Monday.com's Scale & Opportunity:** Processes 1 billion tasks per year, representing a massive opportunity for AI-powered agents. They've seen rapid growth (100% MoM) in AI feature usage.
+* **Digital Workforce Vision:** Agents working within the Monday.com ecosystem to handle various tasks for SMBs and enterprises.
+* **Trust & User Experience are Paramount:** The biggest barrier to AI adoption isn't technology, but user trust. Focus on UX is crucial.
+* **Autonomy & Control:** Users want control over agents' actions. Giving users control increases adoption.
+* **Seamless Integration:** Integrate AI agents into existing workflows and UIs instead of creating entirely new experiences. Assign agents to tasks like assigning people.
+* **Preview & Validation:** Implement previews (UI in the Loop) so users can review agent outputs before they are pushed to production, ensuring confidence and preventing unexpected changes, which increased adoption.
+* **Explainability is Crucial:** Explainability helps users understand *why* the AI made certain decisions, enabling them to improve their experience with AI over time by adjusting inputs.
+* **LangGraph as the Foundation:** Monday.com built its agent ecosystem on LangGraph and LangSmith, citing its flexibility, built-in features (interrupts, checkpoints, memory), and scalability (millions of requests per month).
+* **Architecture:** LangGraph at the center, surrounded by internal AI blocks, an evaluation framework, and an AI gateway for input/output control.
+* **Monday Expert Example:** Conversational agent with a supervisor managing data retrieval, board actions, and answer composition agents. It has an "undo" feature.
+* **Lessons Learned (Conversational Agents):**
+    * Assume you can't handle 99% of interactions. Implement fallbacks.
+    * Evaluations are your IP as models change rapidly
+    * Human-in-the-loop is critical to achieve product quality.
+    * Build guardrails *outside* the LLM.
+    * Balance the number of agents in multi-agent systems to avoid compound hallucination.
+* **Future of Work: Orchestration:** Aim for a finite set of specialized agents that can be dynamically orchestrated to handle infinite tasks, mimicking human work patterns.
+* **Marketplace:** Opening up their agent marketplace.
 
 **Main Takeaways:**
 
-*   Building a successful AI-powered digital workforce requires a strong focus on user trust, seamless integration into existing workflows, and providing users with control and explainability.
-*   LangGraph provides a solid foundation for building and scaling agent ecosystems, offering the necessary flexibility and built-in features.
-*   Continuous evaluation, human-in-the-loop feedback, and external guardrails are crucial for improving agent performance and ensuring safety.
-*   The future of work involves dynamically orchestrating specialized agents to handle a wide range of tasks, mirroring how humans collaborate.
+* Building a successful AI-powered digital workforce requires a strong focus on user trust, seamless integration into existing workflows, and providing users with control and explainability.
+* LangGraph provides a solid foundation for building and scaling agent ecosystems, offering the necessary flexibility and built-in features.
+* Continuous evaluation, human-in-the-loop feedback, and external guardrails are crucial for improving agent performance and ensuring safety.
+* The future of work involves dynamically orchestrating specialized agents to handle a wide range of tasks, mirroring how humans collaborate.
 
 
 ---
 
 ## From LLMs to Agents: The Next Leap
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=_XWJdCZM8Ag >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript__XWJdCZM8Ag.html>
 
@@ -618,29 +650,31 @@ This is a summary of a fireside chat with Adam D'Angelo, co-founder and CEO of Q
 
 **Key Points:**
 
-*   **Poe's Inspiration and Vision:** D'Angelo and Quora recognized early on that interacting with large language models would be best through a chat-like interface. Poe aims to be a universal interface for diverse AI models and agents, similar to how web browsers enabled the internet's growth.
-*   **Consumer Use Cases:** Consumers use AI on Poe for various tasks, including writing assistance, question answering, role-playing, homework help, job assistance, media creation, and marketing. Poe's central value is providing access to many AI products under a single subscription.
-*   **Popular Models:** Reasoning models have seen significant growth in usage. These include models that are especially strong in writing code.
-*   **Modalities:** Text models dominate usage, but there is excitement around new image models, though they are not yet as practical or economically valuable as text models.
-*   **Model Preference:** Poe users often care about the specific model they use, especially when aiming for the best results in tasks like creative writing. They may test different models to find the best one for their needs.
-*   **Bot Creation on Poe:** Users can create bots via prompting (prompt bots) or through server bots.
-*   **Agent Builders:** Prompt bots are created by people who are empathetic with the model and persistent in trying different cases. Server bots are created by more sophisticated developers and AI model developers.
-*   **Monetization:** Bot creators can monetize their bots on Poe, with some earning significant revenue (millions of dollars per year for companies, hundreds of thousands for individuals).
-*   **Agents:** Most agents on Poe are currently read-only, focusing on generating artifacts rather than taking real-world actions. Poe aims to enable agents with real-world actions in the future.
-*   **Most Promising Areas for Developers:** Building agents is the most promising area, specifically building things more sophisticated than a simple prompt, but not as sophisticated as training a new model or fine-tuning.
+* **Poe's Inspiration and Vision:** D'Angelo and Quora recognized early on that interacting with large language models would be best through a chat-like interface. Poe aims to be a universal interface for diverse AI models and agents, similar to how web browsers enabled the internet's growth.
+* **Consumer Use Cases:** Consumers use AI on Poe for various tasks, including writing assistance, question answering, role-playing, homework help, job assistance, media creation, and marketing. Poe's central value is providing access to many AI products under a single subscription.
+* **Popular Models:** Reasoning models have seen significant growth in usage. These include models that are especially strong in writing code.
+* **Modalities:** Text models dominate usage, but there is excitement around new image models, though they are not yet as practical or economically valuable as text models.
+* **Model Preference:** Poe users often care about the specific model they use, especially when aiming for the best results in tasks like creative writing. They may test different models to find the best one for their needs.
+* **Bot Creation on Poe:** Users can create bots via prompting (prompt bots) or through server bots.
+* **Agent Builders:** Prompt bots are created by people who are empathetic with the model and persistent in trying different cases. Server bots are created by more sophisticated developers and AI model developers.
+* **Monetization:** Bot creators can monetize their bots on Poe, with some earning significant revenue (millions of dollars per year for companies, hundreds of thousands for individuals).
+* **Agents:** Most agents on Poe are currently read-only, focusing on generating artifacts rather than taking real-world actions. Poe aims to enable agents with real-world actions in the future.
+* **Most Promising Areas for Developers:** Building agents is the most promising area, specifically building things more sophisticated than a simple prompt, but not as sophisticated as training a new model or fine-tuning.
 
 **Main Takeaways:**
 
-*   Poe is positioning itself as a key platform in the AI ecosystem, connecting users with diverse models and enabling creators to build and monetize AI applications.
-*   The field is rapidly evolving, with new models and capabilities emerging frequently, requiring constant adaptation.
-*   The future of AI will involve increasingly powerful models, particularly in areas like code generation, which will lead to an explosion of software development.
-*   D'Angelo is particularly excited about the future of code generation applications, and how tools within Poe like App Creator will improve as the code generation abilities of models continue to grow.
+* Poe is positioning itself as a key platform in the AI ecosystem, connecting users with diverse models and enabling creators to build and monetize AI applications.
+* The field is rapidly evolving, with new models and capabilities emerging frequently, requiring constant adaptation.
+* The future of AI will involve increasingly powerful models, particularly in areas like code generation, which will lead to an explosion of software development.
+* D'Angelo is particularly excited about the future of code generation applications, and how tools within Poe like App Creator will improve as the code generation abilities of models continue to grow.
 
 ---
 
 ## State of Agents with Andrew Ng
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=4pYzYmSdSH4 >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_4pYzYmSdSH4.html>
 
@@ -650,27 +684,27 @@ Here's a summary of the key points and main takeaways from Andrew Ng's fireside 
 
 **Key Points:**
 
-*   **Agentic-ness Spectrum:**  Focus on the degree of "agentic-ness" (autonomy) in a system rather than arguing whether it is "truly" an agent. This helps avoid unproductive debates and encourages building systems with varying levels of autonomy.
-*   **Business Opportunities in Simpler Workflows:**  Many business opportunities exist in automating fairly linear workflows with occasional branches (e.g., data entry, compliance checks). The challenge lies in breaking down processes into micro-tasks and knowing which steps to improve.
-*   **Essential Skills for Agent Builders:**
-    *   Integrate data effectively and use tools like LandGraph.
-    *   Prompting and processing data through multiple steps.
-    *   Implement a robust evaluation (evals) framework to assess system performance and pinpoint areas for improvement (individual steps).
-*   **The "Lego Brick" Analogy:** AI tools are like Lego bricks; the more diverse the tools (evals, RAG, guardrails, memory techniques), the more complex and effective systems you can build. Lack of familiarity with specific tools can significantly slow down development.
-*   **Evals are Underrated:**  People often delay implementing systematic evals. Start with simple evals to address specific regressions and incrementally improve them.
-*   **Voice Stack Potential:**  Voice applications are underrated, with significant enterprise interest. Voice interactions can reduce user friction compared to text prompts. Key considerations for voice include latency and user experience tweaks (e.g., pre-responses, background noise).
-*   **AI-Assisted Coding:**  Companies should embrace AI-assisted coding to significantly boost developer productivity. Everyone should learn to code to better instruct computers and understand error cases.
-*   **Importance of MCP:** MCP is a fantastic way to try to standardize the interface to a lot of tools or API calls as well as data sources and can significantly streamline data integration for AI systems and should significantly reduce the amount of time spent working on plumbing. It allows one to avoid having to do N times M integrations with N models and M data sources.
-*    **Agent to Agent is very early:** It is difficult to get code to work and the idea of having to make code work with someone elses agent feels like a two miracle requirement.
-*   **Vibe Coding:** Vibe coding is essentially using AI-assisted coding to code and while it is an effective and real phenomenon, the name is misleading.
+* **Agentic-ness Spectrum:**  Focus on the degree of "agentic-ness" (autonomy) in a system rather than arguing whether it is "truly" an agent. This helps avoid unproductive debates and encourages building systems with varying levels of autonomy.
+* **Business Opportunities in Simpler Workflows:**  Many business opportunities exist in automating fairly linear workflows with occasional branches (e.g., data entry, compliance checks). The challenge lies in breaking down processes into micro-tasks and knowing which steps to improve.
+* **Essential Skills for Agent Builders:**
+    * Integrate data effectively and use tools like LandGraph.
+    * Prompting and processing data through multiple steps.
+    * Implement a robust evaluation (evals) framework to assess system performance and pinpoint areas for improvement (individual steps).
+* **The "Lego Brick" Analogy:** AI tools are like Lego bricks; the more diverse the tools (evals, RAG, guardrails, memory techniques), the more complex and effective systems you can build. Lack of familiarity with specific tools can significantly slow down development.
+* **Evals are Underrated:**  People often delay implementing systematic evals. Start with simple evals to address specific regressions and incrementally improve them.
+* **Voice Stack Potential:**  Voice applications are underrated, with significant enterprise interest. Voice interactions can reduce user friction compared to text prompts. Key considerations for voice include latency and user experience tweaks (e.g., pre-responses, background noise).
+* **AI-Assisted Coding:**  Companies should embrace AI-assisted coding to significantly boost developer productivity. Everyone should learn to code to better instruct computers and understand error cases.
+* **Importance of MCP:** MCP is a fantastic way to try to standardize the interface to a lot of tools or API calls as well as data sources and can significantly streamline data integration for AI systems and should significantly reduce the amount of time spent working on plumbing. It allows one to avoid having to do N times M integrations with N models and M data sources.
+* **Agent to Agent is very early:** It is difficult to get code to work and the idea of having to make code work with someone elses agent feels like a two miracle requirement.
+* **Vibe Coding:** Vibe coding is essentially using AI-assisted coding to code and while it is an effective and real phenomenon, the name is misleading.
 
 **Main Takeaways:**
 
-*   **Practicality over Perfection:** Don't get caught up in theoretical debates. Focus on building practical systems with the appropriate level of agentic-ness for the task.
-*   **Master the Fundamentals:**  Data integration, prompting, processing, and systematic evals are crucial for building successful agentic systems.
-*   **Embrace the Toolset:**  Familiarize yourself with a wide range of AI tools and be ready to adapt as the landscape evolves.
-*   **Voice is Coming:** Pay attention to voice applications; they offer unique interaction advantages.
-*   **AI-Assisted Coding is a Must:**  Encourage and enable the use of AI coding assistants to boost developer productivity.
+* **Practicality over Perfection:** Don't get caught up in theoretical debates. Focus on building practical systems with the appropriate level of agentic-ness for the task.
+* **Master the Fundamentals:**  Data integration, prompting, processing, and systematic evals are crucial for building successful agentic systems.
+* **Embrace the Toolset:**  Familiarize yourself with a wide range of AI tools and be ready to adapt as the landscape evolves.
+* **Voice is Coming:** Pay attention to voice applications; they offer unique interaction advantages.
+* **AI-Assisted Coding is a Must:**  Encourage and enable the use of AI coding assistants to boost developer productivity.
 
 
 
@@ -678,7 +712,9 @@ Here's a summary of the key points and main takeaways from Andrew Ng's fireside 
 
 ## Building Reliable Agents: Agent Evaluations
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=DsjkO2vB618 >}}
+<!-- markdownlint-enable MD034 -->
 
 Transcript: <https://lawwu.github.io/transcripts/transcript_DsjkO2vB618.html>
 
@@ -688,44 +724,44 @@ Here's a summary of the transcript, highlighting key points and main takeaways f
 
 **Key Points:**
 
-*   **Quality is the Biggest Blocker:** A survey revealed that the biggest hurdle in deploying agents to production is ensuring quality.
-*   **Eval-Driven Development:** Using evaluations (evals) throughout the development process is crucial for bridging the gap between prototype and production.
-*   **Evals as a Continuous Journey:** Emphasized that evals should be a continuous process throughout the entire lifecycle of an agent, not a one-time activity.
+* **Quality is the Biggest Blocker:** A survey revealed that the biggest hurdle in deploying agents to production is ensuring quality.
+* **Eval-Driven Development:** Using evaluations (evals) throughout the development process is crucial for bridging the gap between prototype and production.
+* **Evals as a Continuous Journey:** Emphasized that evals should be a continuous process throughout the entire lifecycle of an agent, not a one-time activity.
 
 **Three Types of Evals:**
 
-1.  **Offline Evals:**
-    *   Performed before production.
-    *   Uses a static data set to measure performance.
-    *   Allows comparison of different models/prompts.
-2.  **Online Evals:**
-    *   Conducted on a subset of production data in real-time.
-    *   Tracks performance with real user queries.
-3.  **In-the-Loop Evals:**
-    *   Occur during the agent's runtime.
-    *   Aims to correct the agent's behavior on the fly, blocking bad responses.
-    *   Most beneficial when tolerance for mistakes is low or latency isn't critical.
+1. **Offline Evals:**
+    * Performed before production.
+    * Uses a static data set to measure performance.
+    * Allows comparison of different models/prompts.
+2. **Online Evals:**
+    * Conducted on a subset of production data in real-time.
+    * Tracks performance with real user queries.
+3. **In-the-Loop Evals:**
+    * Occur during the agent's runtime.
+    * Aims to correct the agent's behavior on the fly, blocking bad responses.
+    * Most beneficial when tolerance for mistakes is low or latency isn't critical.
 
 **Components of Evals:**
 
-*   **Data:** The information used for evaluation (data sets, production data, etc.).
-*   **Evaluators:** The methods used to score performance (code, LLMs, human annotation).
-    *   **Ground Truth/Reference Evals:** Compare against a known correct answer.
-    *   **Reference-Free Evals:** Used when a ground truth is unavailable.
+* **Data:** The information used for evaluation (data sets, production data, etc.).
+* **Evaluators:** The methods used to score performance (code, LLMs, human annotation).
+    * **Ground Truth/Reference Evals:** Compare against a known correct answer.
+    * **Reference-Free Evals:** Used when a ground truth is unavailable.
 
 **How Langtrain Helps:**
 
-*   **Observability:** Great evals start with great observability.
-*   **Tracing in Langsmith:** Tracks inputs, outputs, and steps, facilitating online evals.
-*   **Easy Dataset Creation:** Langsmith provides tools to easily add data to sets for offline evals.
-*   **Open Source Evaluators:** Providing a set of open-source evaluators for common use cases (code, RAG, extraction, tool calling).
-*   **Customizable Evals:** Allowing configuration for specific use cases, including LLM-as-a-judge and agent trajectory evaluations.
-*   **Chat Simulations:** Launching utilities to run and score evaluators in conversational settings.
-*   **Align Eval and Eval Calibration (Private Preview):** New features to help with LLM-as-a-judge techniques, addressing the challenges of prompt engineering and trust.
+* **Observability:** Great evals start with great observability.
+* **Tracing in Langsmith:** Tracks inputs, outputs, and steps, facilitating online evals.
+* **Easy Dataset Creation:** Langsmith provides tools to easily add data to sets for offline evals.
+* **Open Source Evaluators:** Providing a set of open-source evaluators for common use cases (code, RAG, extraction, tool calling).
+* **Customizable Evals:** Allowing configuration for specific use cases, including LLM-as-a-judge and agent trajectory evaluations.
+* **Chat Simulations:** Launching utilities to run and score evaluators in conversational settings.
+* **Align Eval and Eval Calibration (Private Preview):** New features to help with LLM-as-a-judge techniques, addressing the challenges of prompt engineering and trust.
 
 **Main Takeaways:**
 
-*   Evals are an ongoing process that should be integrated throughout the agent's lifecycle.
-*   Data and evaluators are the two fundamental components of any evaluation type.
-*   Langtrain provides tools and resources to simplify data set creation, run evals, and build custom evaluators.
-*   LLM-as-a-judge evaluators are powerful but require careful setup and calibration.
+* Evals are an ongoing process that should be integrated throughout the agent's lifecycle.
+* Data and evaluators are the two fundamental components of any evaluation type.
+* Langtrain provides tools and resources to simplify data set creation, run evals, and build custom evaluators.
+* LLM-as-a-judge evaluators are powerful but require careful setup and calibration.

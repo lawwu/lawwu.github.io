@@ -15,17 +15,23 @@ My recommendations are different if you are someone who writes code vs. someone 
 
 ## 3Blue1Brown - Large Language Models Explained Briefly
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=LPZh9BOjkQs&t=1s&ab_channel=3Blue1Brown >}}
+<!-- markdownlint-enable MD034 -->
 
 ### Karpathy - Intro to LLMs
 
 For everyone I recommend this 1-hour talk by Andrej Karpathy as an introduction to Large Language Models. He is a fantastic educator who can explain complicated topics quite simply.
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=zjkBMFhNj_g&ab_channel=AndrejKarpathy >}}
+<!-- markdownlint-enable MD034 -->
 
 ## Karpathy - How I Use LLMs
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=EWvNQjAaOHw&ab_channel=AndrejKarpathy >}}
+<!-- markdownlint-enable MD034 -->
 
 ## Curate some trusted learning sources
 
@@ -64,13 +70,17 @@ Companies are now creating AI-powered products. Your domain likely has one or wi
 
 ### Karpathy - Software engineering is changing again
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=LCEmiRjPEtQ&ab_channel=YCombinator >}}
+<!-- markdownlint-enable MD034 -->
 
 ### Karpathy - Deep Dive into LLMs
 
 Long but pretty good
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=7xTGNNLPyMI&ab_channel=AndrejKarpathy >}}
+<!-- markdownlint-enable MD034 -->
 
 
 ## Use an AI Assistant in an IDE

@@ -16,6 +16,7 @@ I had the privilege of attending LangChain's first conference. The first day was
 ![Email Assistant Diagram](./email_assistant_diagram.png)
 
 ## Code
+
 - Python: [https://github.com/langchain-ai/agents-from-scratch](https://github.com/langchain-ai/agents-from-scratch)
 - Typescript: [https://github.com/langchain-ai/agents-from-scratch-ts](https://github.com/langchain-ai/agents-from-scratch-ts) (this is the first time I've seen Typescript Jupyter notebooks)
 
@@ -26,6 +27,7 @@ Notebook: [langgraph_101.ipynb](https://github.com/langchain-ai/agents-from-scra
 Lance Martin gave an overview of LangGraph that was largely review. It was a good reminder that "tool calling is just structured output."
 
 LangGraph code to create the agent:
+
 ```python
 from typing import Literal
 from langgraph.graph import MessagesState
@@ -255,6 +257,7 @@ Actually thinking through all of the different use cases and how it affects the 
 
 
 Interrupt handler, define the config for each node
+
 ```python
 def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
     """Creates an interrupt for human review of tool calls"""
@@ -490,6 +493,7 @@ Notebook: [memory.ipynb](https://github.com/langchain-ai/agents-from-scratch/blo
 
 
 Update memory instructions - some of this was taken from the gpt-4.1 prompting guide
+
 ```python
 MEMORY_UPDATE_INSTRUCTIONS = """
 # Role and Objective
@@ -560,6 +564,7 @@ Remember:
 ```
 
 Update Memory function, notably
+
 - this uses structured output to do the updating
 
 ```python
