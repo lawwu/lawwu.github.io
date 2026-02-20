@@ -133,3 +133,37 @@ The official docs recommend you use plan mode when are you:
 The plans get written into your home directory: `~/.claude/plans/random-words.md` 
 
 https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis
+
+# Day 7 - Prefer CLIs to MCPs
+
+[Posted on 2026-02-18](https://www.linkedin.com/posts/lawrencewu920_skills-vs-dynamic-mcp-loadouts-activity-7429910264294084608-TZkO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+One of the main breakthroughs Claude Code and other agentic coding terminals made was the Bash tool. Because Claude has been trained to use Bash so effectively and there are thousands of CLIs that run in Bash, Claude Code + CLIs pairs so well together.
+
+
+MCPs had a lot of promise when they first came out. They still have a place. By implementing an MCP Server, you provide a common interface to any MCP Client. But the downside of MCP is you quickly fill up the context window of the underlying LLM you are using. The more MCPs you have configured, the worse this gets.
+
+
+With CLIs, Claude Code can directly use them because the underlying model, Claude, has been "seen" so many instances of CLIs being used in the training data. So Claude Code already knows how to use the `gh` (Github) CLI, `bq` (BigQuery) CLI, ffmpeg, etc.
+
+
+I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP. 
+
+
+I've also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (https://github.com/atlassian-api/atlassian-python-api ). 
+
+One MCP Server I still like and have configured globally in Claude Code is DeepWiki: https://cognition.ai/blog/deepwiki-mcp-server 
+
+Armin Ronacher shares similar thoughts in his post: https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/
+  - Largely moved away from MCP, redone everything as skills
+  - Agents are better at writing their own tools — they customize and debug them
+  - MCP servers: you're at mercy of their changes
+
+
+# Day 8 - Customize a statusline
+
+[Posted on 2026-02-19](https://www.linkedin.com/posts/lawrencewu920_customize-your-status-line-claude-code-activity-7430272648762413056-QELx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+You can configure the bottom two lines in the Claude Code terminal UI. Run the `/statusline` command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.
+
+Official docs: https://code.claude.com/docs/en/statusline
