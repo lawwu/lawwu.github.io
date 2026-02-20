@@ -102,7 +102,7 @@ cookieconsent.run({
 <script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
-  
+
   // Simple script loading for main website
   const scriptTag = document.createElement('script');
   scriptTag.src = '/js/github-stars.js';
@@ -110,7 +110,7 @@ cookieconsent.run({
   scriptTag.defer = true;
   scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
   scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-  
+
   // Append to document head
   document.head.appendChild(scriptTag);
 </script>
@@ -258,75 +258,52 @@ cookieconsent.run({
 <hr>
 <section id="q1-what-is-agenticness-and-has-your-thinking-changed" class="level2">
 <h2 class="anchored" data-anchor-id="q1-what-is-agenticness-and-has-your-thinking-changed">Q1: What is “agenticness,” and has your thinking changed?</h2>
-<p><strong>Andrew Ng:</strong><br>
-The debate over whether something “is an agent” is less productive than discussing <em>degrees of autonomy</em>. It’s more useful to see systems on a spectrum—from simple automation to full autonomy—rather than binary classification. Many business workflows are linear and agentic to a low degree but still valuable.</p>
+<p><strong>Andrew Ng:</strong> The debate over whether something “is an agent” is less productive than discussing <em>degrees of autonomy</em>. It’s more useful to see systems on a spectrum—from simple automation to full autonomy—rather than binary classification. Many business workflows are linear and agentic to a low degree but still valuable.</p>
 <hr>
 </section>
 <section id="q2-what-skills-are-most-important-for-building-agent-systems" class="level2">
 <h2 class="anchored" data-anchor-id="q2-what-skills-are-most-important-for-building-agent-systems">Q2: What skills are most important for building agent systems?</h2>
-<p><strong>Andrew Ng:</strong><br>
-- Break down complex tasks into modular steps<br>
-- Define the right KPIs (including evals)<br>
-- Interpret traces, debug step-by-step<br>
-- Develop “tactile knowledge” by building, testing, and iterating<br>
-- Use many tools to strengthen decision-making intuition</p>
+<p><strong>Andrew Ng:</strong> - Break down complex tasks into modular steps - Define the right KPIs (including evals) - Interpret traces, debug step-by-step - Develop “tactile knowledge” by building, testing, and iterating - Use many tools to strengthen decision-making intuition</p>
 <hr>
 </section>
 <section id="q3-is-that-tactile-knowledge-mostly-about-llms" class="level2">
 <h2 class="anchored" data-anchor-id="q3-is-that-tactile-knowledge-mostly-about-llms">Q3: Is that tactile knowledge mostly about LLMs?</h2>
-<p><strong>Andrew Ng:</strong><br>
-It extends beyond LLMs. Think of tools like Lego bricks—the more diverse your pieces, the more flexible your build. You need squiggly, odd-shaped blocks sometimes, not just standard ones. Practicing with a wide toolset helps build strong product instincts.</p>
+<p><strong>Andrew Ng:</strong> It extends beyond LLMs. Think of tools like Lego bricks—the more diverse your pieces, the more flexible your build. You need squiggly, odd-shaped blocks sometimes, not just standard ones. Practicing with a wide toolset helps build strong product instincts.</p>
 <hr>
 </section>
 <section id="q4-what-lego-bricks-are-underrated" class="level2">
 <h2 class="anchored" data-anchor-id="q4-what-lego-bricks-are-underrated">Q4: What “Lego bricks” are underrated?</h2>
-<p><strong>Andrew Ng:</strong><br>
-<strong>Evals.</strong><br>
-People think they need to be comprehensive and perfect. Start with something fast and imperfect—5 examples and a simple check. Use it to catch regressions. You’ll naturally improve it over time.</p>
+<p><strong>Andrew Ng:</strong> <strong>Evals.</strong> People think they need to be comprehensive and perfect. Start with something fast and imperfect—5 examples and a simple check. Use it to catch regressions. You’ll naturally improve it over time.</p>
 <hr>
 </section>
 <section id="q5-any-underrated-application-areas" class="level2">
 <h2 class="anchored" data-anchor-id="q5-any-underrated-application-areas">Q5: Any underrated application areas?</h2>
-<p><strong>Andrew Ng:</strong><br>
-<strong>Voice stack applications.</strong><br>
-They’re low-friction for users but underexplored. Latency expectations make them hard (users expect 1–2s responses), but agents + voice stack pipelines are more controllable than end-to-end speech models.</p>
+<p><strong>Andrew Ng:</strong> <strong>Voice stack applications.</strong> They’re low-friction for users but underexplored. Latency expectations make them hard (users expect 1–2s responses), but agents + voice stack pipelines are more controllable than end-to-end speech models.</p>
 <hr>
 </section>
 <section id="q6-is-building-voice-agents-similar-to-text-based-ones" class="level2">
 <h2 class="anchored" data-anchor-id="q6-is-building-voice-agents-similar-to-text-based-ones">Q6: Is building voice agents similar to text-based ones?</h2>
-<p><strong>Andrew Ng:</strong><br>
-Skills are transferable, but differences matter: - Voice has tighter latency constraints - Pre-response fillers (“Hmm…”) help mask lag - Background noise helps users tolerate delays - Voice interactions are more forgiving and expressive than typed ones</p>
+<p><strong>Andrew Ng:</strong> Skills are transferable, but differences matter: - Voice has tighter latency constraints - Pre-response fillers (“Hmm…”) help mask lag - Background noise helps users tolerate delays - Voice interactions are more forgiving and expressive than typed ones</p>
 <hr>
 </section>
 <section id="q7-thoughts-on-mcp-model-component-protocol" class="level2">
 <h2 class="anchored" data-anchor-id="q7-thoughts-on-mcp-model-component-protocol">Q7: Thoughts on MCP (Model Component Protocol)?</h2>
-<p><strong>Andrew Ng:</strong><br>
-MCP is a promising step toward standardized tool calling and integration.<br>
-Today’s structure is flat, but future versions need hierarchy and composition.<br>
-MCP could help unify models, tools, and data across ecosystems.</p>
+<p><strong>Andrew Ng:</strong> MCP is a promising step toward standardized tool calling and integration. Today’s structure is flat, but future versions need hierarchy and composition. MCP could help unify models, tools, and data across ecosystems.</p>
 <hr>
 </section>
 <section id="q8-what-about-agent-to-agent-protocols" class="level2">
 <h2 class="anchored" data-anchor-id="q8-what-about-agent-to-agent-protocols">Q8: What about agent-to-agent protocols?</h2>
-<p><strong>Andrew Ng:</strong><br>
-Still early. Multi-agent systems work within single teams, but cross-team agent collaboration isn’t there yet. We’re a few steps away from successful real-world examples.</p>
+<p><strong>Andrew Ng:</strong> Still early. Multi-agent systems work within single teams, but cross-team agent collaboration isn’t there yet. We’re a few steps away from successful real-world examples.</p>
 <hr>
 </section>
 <section id="q9-do-you-like-the-term-vibe-coding" class="level2">
 <h2 class="anchored" data-anchor-id="q9-do-you-like-the-term-vibe-coding">Q9: Do you like the term “vibe coding”?</h2>
-<p><strong>Andrew Ng:</strong><br>
-Not really.<br>
-The name is misleading—it sounds effortless, but it’s cognitively intense.<br>
-Coding is becoming more accessible, not obsolete.<br>
-Understanding how code works is still essential for prompting and debugging.</p>
+<p><strong>Andrew Ng:</strong> Not really. The name is misleading—it sounds effortless, but it’s cognitively intense. Coding is becoming more accessible, not obsolete. Understanding how code works is still essential for prompting and debugging.</p>
 <hr>
 </section>
 <section id="q10-advice-for-ai-startup-founders" class="level2">
 <h2 class="anchored" data-anchor-id="q10-advice-for-ai-startup-founders">Q10: Advice for AI startup founders?</h2>
-<p><strong>Andrew Ng:</strong><br>
-- <strong>#1 predictor of success: SPEED</strong><br>
-- <strong>#2: Technical depth</strong><br>
-Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.</p>
+<p><strong>Andrew Ng:</strong> - <strong>#1 predictor of success: SPEED</strong> - <strong>#2: Technical depth</strong> Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.</p>
 <hr>
 </section>
 <section id="full-transcript" class="level2">

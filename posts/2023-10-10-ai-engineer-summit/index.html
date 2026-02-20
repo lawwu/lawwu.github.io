@@ -137,7 +137,7 @@ cookieconsent.run({
 <script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
-  
+
   // Simple script loading for main website
   const scriptTag = document.createElement('script');
   scriptTag.src = '/js/github-stars.js';
@@ -145,7 +145,7 @@ cookieconsent.run({
   scriptTag.defer = true;
   scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
   scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-  
+
   // Append to document head
   document.head.appendChild(scriptTag);
 </script>
@@ -385,7 +385,7 @@ cookieconsent.run({
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> langchain.chat_models <span class="im">import</span> ChatOpenAI</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>model <span class="op">=</span> ChatOpenAI()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>model.invoke(<span class="st">"What is the weather in San Francisco right now?"</span>,</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>             functions<span class="op">=</span>[weather_function])  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>             functions<span class="op">=</span>[weather_function])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can also bind the function to the model:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>model_with_function <span class="op">=</span> model.bind(functions<span class="op">=</span>[weather_function])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You can force OpenAI to use a function, but you can only pass one function here.</p>
@@ -396,7 +396,7 @@ cookieconsent.run({
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Information about a person."""</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    name: <span class="bu">str</span> <span class="op">=</span> Field(description<span class="op">=</span><span class="st">"person's name"</span>)</span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    age: Optional[<span class="bu">int</span>] <span class="op">=</span> Field(description<span class="op">=</span><span class="st">"person's age"</span>)</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Information(BaseModel):</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Information to extract."""</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    people: List[Person] <span class="op">=</span> Field(description<span class="op">=</span><span class="st">"List of info about people"</span>)</span>
@@ -423,9 +423,9 @@ cookieconsent.run({
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="at">@tool</span>(args_schema<span class="op">=</span>OpenMeteoInput)</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_current_temperature(latitude: <span class="bu">float</span>, longitude: <span class="bu">float</span>) <span class="op">-&gt;</span> <span class="bu">dict</span>:</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Fetch current temperature for given coordinates."""</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    BASE_URL <span class="op">=</span> <span class="st">"https://api.open-meteo.com/v1/forecast"</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Parameters for the request</span></span>
 <span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>    params <span class="op">=</span> {</span>
 <span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">'latitude'</span>: latitude,</span>
@@ -436,7 +436,7 @@ cookieconsent.run({
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Make the request</span></span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>    response <span class="op">=</span> requests.get(BASE_URL, params<span class="op">=</span>params)</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> response.status_code <span class="op">==</span> <span class="dv">200</span>:</span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>        results <span class="op">=</span> response.json()</span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
@@ -445,13 +445,13 @@ cookieconsent.run({
 <span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>    current_utc_time <span class="op">=</span> datetime.datetime.utcnow()</span>
 <span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>    time_list <span class="op">=</span> [datetime.datetime.fromisoformat(time_str.replace(<span class="st">'Z'</span>, <span class="st">'+00:00'</span>)) <span class="cf">for</span> time_str <span class="kw">in</span> results[<span class="st">'hourly'</span>][<span class="st">'time'</span>]]</span>
 <span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>    temperature_list <span class="op">=</span> results[<span class="st">'hourly'</span>][<span class="st">'temperature_2m'</span>]</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>    closest_time_index <span class="op">=</span> <span class="bu">min</span>(<span class="bu">range</span>(<span class="bu">len</span>(time_list)), key<span class="op">=</span><span class="kw">lambda</span> i: <span class="bu">abs</span>(time_list[i] <span class="op">-</span> current_utc_time))</span>
 <span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a>    current_temperature <span class="op">=</span> temperature_list[closest_time_index]</span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="ss">f'The current temperature is </span><span class="sc">{</span>current_temperature<span class="sc">}</span><span class="ss">°C'</span></span>
 <span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>format_tool_to_openai_function(get_current_temperature)    </span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>format_tool_to_openai_function(get_current_temperature)</span>
 <span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a><span class="co"># {'name': 'get_current_temperature',</span></span>
 <span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a><span class="co">#  'description': 'get_current_temperature(latitude: float, longitude: float) -&gt; dict - Fetch current temperature for given coordinates.',</span></span>
@@ -685,7 +685,7 @@ cookieconsent.run({
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> result.return_values[<span class="st">'output'</span>]</span>
 <span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>        tools <span class="op">=</span> {</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"search_wikipedia"</span>: search_wikipedia, </span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>            <span class="st">"search_wikipedia"</span>: search_wikipedia,</span>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>            <span class="st">"get_current_temperature"</span>: get_current_temperature,</span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>        }</span>
 <span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> tools[result.tool].run(result.tool_input)</span>
@@ -722,8 +722,8 @@ cookieconsent.run({
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Page: Sentence embedding</span></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. </span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. </span></span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset.</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT.</span></span>
 <span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="co"># An alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.</span></span>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
@@ -994,9 +994,7 @@ cookieconsent.run({
 </section>
 <section id="move-fast-break-nothing" class="level2">
 <h2 class="anchored" data-anchor-id="move-fast-break-nothing">Move Fast, Break Nothing</h2>
-<p><strong>Dedy Kredo</strong><br>
-CPO, CodiumAI<br>
-Why we need Agents writing Tests faster than Humans writing Code.</p>
+<p><strong>Dedy Kredo</strong> CPO, CodiumAI Why we need Agents writing Tests faster than Humans writing Code.</p>
 <ul>
 <li>high integrity code gen, GANs are conceptually back in 2024. Have two different components: code generation and code integrity to ensure code works as intended</li>
 <li>Behavior coverage is more useful than Code Coverage</li>
@@ -1013,9 +1011,7 @@ Why we need Agents writing Tests faster than Humans writing Code.</p>
 </section>
 <section id="building-reactive-ai-apps" class="level2">
 <h2 class="anchored" data-anchor-id="building-reactive-ai-apps">Building Reactive AI Apps</h2>
-<p><strong>Matt Welsh</strong><br>
-Co-Founder, Fixie.ai<br>
-AI.JSX is like React for LLMs – it lets you build powerful, conversational AI apps using the power of TypeScript and JSX.</p>
+<p><strong>Matt Welsh</strong> Co-Founder, Fixie.ai AI.JSX is like React for LLMs – it lets you build powerful, conversational AI apps using the power of TypeScript and JSX.</p>
 <ul>
 <li><a href="https://github.com/fixie-ai/ai-jsx">AI.JSX</a> open source framework for developing LLM apps, kind of like langchain but for TypeScript</li>
 <li>AI.JSX supports real-time voice (bi-directional). Try it out on <a href="https://voice.fixie.ai/agent" class="uri">https://voice.fixie.ai/agent</a>. This was an amazing demo.</li>
@@ -1065,9 +1061,7 @@ AI.JSX is like React for LLMs – it lets you build powerful, conversational AI 
 </section>
 <section id="the-intelligent-interface" class="level2">
 <h2 class="anchored" data-anchor-id="the-intelligent-interface">The Intelligent Interface</h2>
-<p><strong>Samantha Whitmore / Jason Yuan</strong><br>
-CEO / CTO, New Computer / CDO, New Computer<br>
-On building AI Products From First Principles.</p>
+<p><strong>Samantha Whitmore / Jason Yuan</strong> CEO / CTO, New Computer / CDO, New Computer On building AI Products From First Principles.</p>
 <ul>
 <li>Demo 1: Adapative Interface
 <ul>
@@ -1081,9 +1075,7 @@ On building AI Products From First Principles.</p>
 </section>
 <section id="the-weekend-ai-engineer" class="level2">
 <h2 class="anchored" data-anchor-id="the-weekend-ai-engineer">The Weekend AI Engineer</h2>
-<p><strong>Hassan El Mghari</strong><br>
-AI Engineer, Vercel<br>
-How <em>YOU</em> can - and should - build great multimodal AI apps that go viral and scale to millions in a weekend.</p>
+<p><strong>Hassan El Mghari</strong> AI Engineer, Vercel How <em>YOU</em> can - and should - build great multimodal AI apps that go viral and scale to millions in a weekend.</p>
 <ul>
 <li>Side projects!</li>
 <li><a href="https://github.com/Nutlope" class="uri">https://github.com/Nutlope</a></li>
@@ -1116,9 +1108,7 @@ How <em>YOU</em> can - and should - build great multimodal AI apps that go viral
 </section>
 <section id="k-players-in-a-week-lessons-from-the-first-viral-clip-app" class="level2">
 <h2 class="anchored" data-anchor-id="k-players-in-a-week-lessons-from-the-first-viral-clip-app">120k players in a week: Lessons from the first viral CLIP app</h2>
-<p><strong>Joseph Nelson</strong><br>
-CEO, Roboflow<br>
-On the many trials and successes of building with multimodal apps with vision foundation models!</p>
+<p><strong>Joseph Nelson</strong> CEO, Roboflow On the many trials and successes of building with multimodal apps with vision foundation models!</p>
 <ul>
 <li><a href="https://paint.wtf/leaderboard" class="uri">https://paint.wtf/leaderboard</a></li>
 <li><a href="https://pypi.org/project/inference/" class="uri">https://pypi.org/project/inference/</a></li>
@@ -1137,9 +1127,7 @@ On the many trials and successes of building with multimodal apps with vision fo
 </section>
 <section id="supabase-vector-the-postgres-vector-database" class="level2">
 <h2 class="anchored" data-anchor-id="supabase-vector-the-postgres-vector-database">Supabase Vector: The Postgres Vector database</h2>
-<p><strong>Paul Copplestone</strong><br>
-CEO, Supabase<br>
-Every month, thousands of new AI applications are launched on Supabase, powered by pgvector. We’ll take a brief look into the role of pgvector in the Vector database space, some of the use cases it enables, and some of the future of embeddings in the database space.</p>
+<p><strong>Paul Copplestone</strong> CEO, Supabase Every month, thousands of new AI applications are launched on Supabase, powered by pgvector. We’ll take a brief look into the role of pgvector in the Vector database space, some of the use cases it enables, and some of the future of embeddings in the database space.</p>
 <ul>
 <li>Supabase - full backend as a service</li>
 <li><a href="https://github.com/pgvector/pgvector" class="uri">https://github.com/pgvector/pgvector</a></li>
@@ -1150,9 +1138,7 @@ Every month, thousands of new AI applications are launched on Supabase, powered 
 </section>
 <section id="pragmatic-ai-with-typechat" class="level2">
 <h2 class="anchored" data-anchor-id="pragmatic-ai-with-typechat">Pragmatic AI With TypeChat</h2>
-<p><strong>Daniel Rosenwasser</strong><br>
-PM TypeScript, Microsoft<br>
-TypeChat is an experimental library to bridge the unstructured output of language models to the structured world of our code.</p>
+<p><strong>Daniel Rosenwasser</strong> PM TypeScript, Microsoft TypeChat is an experimental library to bridge the unstructured output of language models to the structured world of our code.</p>
 <ul>
 <li><a href="https://microsoft.github.io/TypeChat/" class="uri">https://microsoft.github.io/TypeChat/</a></li>
 <li>doing something similar that Jason Liu is doing with instructor with Python/Pydantic but with types and TypeScript</li>
@@ -1165,16 +1151,12 @@ TypeChat is an experimental library to bridge the unstructured output of languag
 </section>
 <section id="domain-adaptation-and-fine-tuning-for-domain-specific-llms" class="level2">
 <h2 class="anchored" data-anchor-id="domain-adaptation-and-fine-tuning-for-domain-specific-llms">Domain adaptation and fine-tuning for domain-specific LLMs</h2>
-<p><strong>Abi Aryan</strong><br>
-ML Engineer &amp; O’Reilly Author<br>
-Learn the different fine-tuning methods depending on the dataset, operational best practices for fine-tuning, how to evaluate them for specific business use-cases, and more.</p>
+<p><strong>Abi Aryan</strong> ML Engineer &amp; O’Reilly Author Learn the different fine-tuning methods depending on the dataset, operational best practices for fine-tuning, how to evaluate them for specific business use-cases, and more.</p>
 <hr>
 </section>
 <section id="retrieval-augmented-generation-in-the-wild" class="level2">
 <h2 class="anchored" data-anchor-id="retrieval-augmented-generation-in-the-wild">Retrieval Augmented Generation in the Wild</h2>
-<p><strong>Anton Troynikov</strong><br>
-CTO, Chroma<br>
-In the last few months, we’ve seen an explosion of the use of retrieval in the context of AI. Document question answering, autonomous agents, and more use embeddings-based retrieval systems in a variety of ways. This talk will cover what we’ve learned building for these applications, the challenges developers face, and the future of retrieval in the context of AI.</p>
+<p><strong>Anton Troynikov</strong> CTO, Chroma In the last few months, we’ve seen an explosion of the use of retrieval in the context of AI. Document question answering, autonomous agents, and more use embeddings-based retrieval systems in a variety of ways. This talk will cover what we’ve learned building for these applications, the challenges developers face, and the future of retrieval in the context of AI.</p>
 <ul>
 <li>Ways to improve RAG applications in the wild
 <ul>
@@ -1214,9 +1196,7 @@ In the last few months, we’ve seen an explosion of the use of retrieval in the
 </section>
 <section id="building-production-ready-rag-applications" class="level2">
 <h2 class="anchored" data-anchor-id="building-production-ready-rag-applications">Building Production-Ready RAG Applications</h2>
-<p><strong>Jerry Liu</strong><br>
-CEO, LlamaIndex<br>
-In this talk, we talk about core techniques for evaluating and improving your retrieval systems for better performing RAG.</p>
+<p><strong>Jerry Liu</strong> CEO, LlamaIndex In this talk, we talk about core techniques for evaluating and improving your retrieval systems for better performing RAG.</p>
 <ul>
 <li>Paradigms for inserting knowledge into LLMs
 <ul>
@@ -1271,9 +1251,7 @@ In this talk, we talk about core techniques for evaluating and improving your re
 </section>
 <section id="harnessing-the-power-of-llms-locally" class="level2">
 <h2 class="anchored" data-anchor-id="harnessing-the-power-of-llms-locally">Harnessing the Power of LLMs Locally</h2>
-<p><strong>Mithun Hunsur</strong><br>
-Senior Engineer, Ambient<br>
-Discover llm, a revolutionary Rust library that enables developers to harness the potential of LLMs locally. By seamlessly integrating with the Rust ecosystem, llm empowers developers to leverage LLMs on standard hardware, reducing the need for cloud-based APIs and services.</p>
+<p><strong>Mithun Hunsur</strong> Senior Engineer, Ambient Discover llm, a revolutionary Rust library that enables developers to harness the potential of LLMs locally. By seamlessly integrating with the Rust ecosystem, llm empowers developers to leverage LLMs on standard hardware, reducing the need for cloud-based APIs and services.</p>
 <ul>
 <li>Possibilities
 <ul>
@@ -1296,9 +1274,7 @@ Discover llm, a revolutionary Rust library that enables developers to harness th
 </section>
 <section id="trust-but-verify" class="level2">
 <h2 class="anchored" data-anchor-id="trust-but-verify">Trust, but Verify</h2>
-<p><strong>Shreya Rajpal</strong><br>
-Founder, Guardrails AI<br>
-Making Large Language Models Production-Ready with Guardrails.</p>
+<p><strong>Shreya Rajpal</strong> Founder, Guardrails AI Making Large Language Models Production-Ready with Guardrails.</p>
 <ul>
 <li>Guardrails AI is an open source library that allows you to define rules to verify the output of LLMs</li>
 <li><a href="https://github.com/ShreyaR/guardrails" class="uri">https://github.com/ShreyaR/guardrails</a>
@@ -1339,9 +1315,7 @@ Making Large Language Models Production-Ready with Guardrails.</p>
 </section>
 <section id="open-questions-for-ai-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="open-questions-for-ai-engineering">Open Questions for AI Engineering</h2>
-<p><strong>Simon Willison</strong><br>
-Creator, Datasette; Co-creator, Django<br>
-Recapping the past year in AI, and what open questions are <em>worth pursuing</em> in the next year!</p>
+<p><strong>Simon Willison</strong> Creator, Datasette; Co-creator, Django Recapping the past year in AI, and what open questions are <em>worth pursuing</em> in the next year!</p>
 <ul>
 <li>Highlights of the past 12 months</li>
 <li>Ask about technology:

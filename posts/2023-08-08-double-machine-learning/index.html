@@ -137,7 +137,7 @@ cookieconsent.run({
 <script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
-  
+
   // Simple script loading for main website
   const scriptTag = document.createElement('script');
   scriptTag.src = '/js/github-stars.js';
@@ -145,7 +145,7 @@ cookieconsent.run({
   scriptTag.defer = true;
   scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
   scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-  
+
   // Append to document head
   document.head.appendChild(scriptTag);
 </script>
@@ -511,7 +511,7 @@ cookieconsent.run({
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>treatment <span class="op">=</span> np.random.binomial(<span class="dv">1</span>, <span class="fl">0.5</span>, n)</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Outcome: productivity influenced by treatment, age, experience and some noise</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>productivity <span class="op">=</span> (<span class="dv">3</span> <span class="op">*</span> treatment <span class="op">+</span> <span class="fl">0.05</span> <span class="op">*</span> age <span class="op">+</span> <span class="fl">0.3</span> <span class="op">*</span> years_of_experience <span class="op">+</span> </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>productivity <span class="op">=</span> (<span class="dv">3</span> <span class="op">*</span> treatment <span class="op">+</span> <span class="fl">0.05</span> <span class="op">*</span> age <span class="op">+</span> <span class="fl">0.3</span> <span class="op">*</span> years_of_experience <span class="op">+</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>                <span class="fl">0.5</span> <span class="op">*</span> prior_productivity <span class="op">+</span> np.random.normal(<span class="dv">0</span>, <span class="dv">5</span>, n))</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({</span>

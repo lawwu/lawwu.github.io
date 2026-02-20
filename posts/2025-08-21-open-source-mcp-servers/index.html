@@ -137,7 +137,7 @@ cookieconsent.run({
 <script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
-  
+
   // Simple script loading for main website
   const scriptTag = document.createElement('script');
   scriptTag.src = '/js/github-stars.js';
@@ -145,7 +145,7 @@ cookieconsent.run({
   scriptTag.defer = true;
   scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
   scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-  
+
   // Append to document head
   document.head.appendChild(scriptTag);
 </script>
@@ -305,8 +305,7 @@ cookieconsent.run({
 </ul>
 <p>Right now, very few companies are both:</p>
 <ul>
-<li><strong>Open sourcing their MCP Server code</strong>, and<br>
-</li>
+<li><strong>Open sourcing their MCP Server code</strong>, and</li>
 <li><strong>Hosting public remote MCP servers</strong>.</li>
 </ul>
 <p>I think companies should do both. Here’s how.</p>
@@ -319,8 +318,7 @@ cookieconsent.run({
 <p>Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on <strong>common workflows</strong> that agents will use.</p>
 <ul>
 <li><p>Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required <em>three</em> separate API calls (normalize_title, map normalized title to a Lightcast Specialized Occupation and get related skills to that Lightcast Specialized Occupation). Instead, I created a <strong>dedicated tool/API</strong> that bundled those calls together—much more natural for an agent.</p></li>
-<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>:<br>
-&gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
+<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>: &gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
 </ul>
 <p>You should design with the agent in mind. That might mean rethinking data formats (YAML is often better than JSON) or collapsing multi-step operations into a single MCP tool.</p>
 <hr>
@@ -329,14 +327,12 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</h3>
 <p>The typical stack looks like this:</p>
 <ul>
-<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.<br>
-</li>
+<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.</li>
 <li><strong>MCP Server</strong>: Implements the MCP protocol on top of that client.</li>
 </ul>
 <p>All of the MCP servers I’ve written so far are in Python, using <a href="https://github.com/jlowin/fastmcp">FastMCP</a> as the framework. The pattern is straightforward:</p>
 <ol type="1">
-<li>Write an API Client.<br>
-</li>
+<li>Write an API Client.</li>
 <li>Layer the MCP protocol logic on top.</li>
 </ol>
 <p>You can use agentic coding tools like Claude Code to quickly spin these up.</p>
@@ -346,8 +342,7 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</h3>
 <p>There are more options than ever for running lightweight public services:</p>
 <ul>
-<li><a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a><br>
-</li>
+<li><a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a></li>
 <li><a href="https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/">Cloudflare Workers</a></li>
 </ul>
 <p>Each of these can make your MCP server accessible with minimal operational overhead.</p>
@@ -357,10 +352,8 @@ cookieconsent.run({
 <h3 class="anchored" data-anchor-id="provide-example-clients-and-agents">4. Provide Example Clients and Agents</h3>
 <p>To encourage adoption, publish sample implementations that connect to the server. These could be:</p>
 <ul>
-<li>VS Code extensions<br>
-</li>
-<li>LangGraph or ADK agents<br>
-</li>
+<li>VS Code extensions</li>
+<li>LangGraph or ADK agents</li>
 <li>Example workflows in ChatGPT or Claude</li>
 </ul>
 <p>This lowers the barrier for customers to experiment quickly.</p>
@@ -371,10 +364,8 @@ cookieconsent.run({
 <p>Some of the most popular MCP servers today aren’t even official. For example, the <strong><a href="https://github.com/sooperset/mcp-atlassian">mcp-atlassian</a></strong> project is developed by an open-source developer <a href="https://github.com/sooperset">Hyeonsoo Lee</a> and not by Atlassian. That’s a missed opportunity.</p>
 <p>If companies open source their MCP servers, the benefits are significant:</p>
 <ul>
-<li>Community contributions and bug fixes<br>
-</li>
-<li>Customer self-hosting when desired<br>
-</li>
+<li>Community contributions and bug fixes</li>
+<li>Customer self-hosting when desired</li>
 <li>Stronger trust and transparency</li>
 </ul>
 <hr>

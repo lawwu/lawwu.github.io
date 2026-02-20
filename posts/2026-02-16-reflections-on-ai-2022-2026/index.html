@@ -102,7 +102,7 @@ cookieconsent.run({
 <script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
-  
+
   // Simple script loading for main website
   const scriptTag = document.createElement('script');
   scriptTag.src = '/js/github-stars.js';
@@ -110,7 +110,7 @@ cookieconsent.run({
   scriptTag.defer = true;
   scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
   scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-  
+
   // Append to document head
   document.head.appendChild(scriptTag);
 </script>
@@ -333,8 +333,7 @@ cookieconsent.run({
 <h2 class="anchored" data-anchor-id="openclaw-harness-engineering">2026 - OpenClaw, Harness Engineering</h2>
 <p>We’re just beginning 2026. <a href="https://github.com/openclaw/openclaw">OpenClaw</a> is the biggest development in agents and agent harnesses. OpenClaw shows the promise of agents that are:</p>
 <ul>
-<li>Always on<br>
-</li>
+<li>Always on</li>
 <li>You can connect to them via multiple channels (WhatsApp, Telegram, iMessage)</li>
 <li><a href="https://docs.openclaw.ai/gateway/heartbeat">HEARTBEAT.md</a> - Heartbeat runs periodic agent turns in the main session so the model can surface anything that needs attention without spamming you. The default prompt has:
 <ul>

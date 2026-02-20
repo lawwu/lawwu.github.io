@@ -867,7 +867,7 @@ background-color: null;
 font-style: inherit;">"What is the weather in San Francisco right now?"</span>,</span>
 <span id="cb3-4">             functions<span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span>[weather_function])  </span></code></pre></div></div>
+font-style: inherit;">=</span>[weather_function])</span></code></pre></div></div>
 <p>You can also bind the function to the model:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">model_with_function <span class="op" style="color: #5E5E5E;
 background-color: null;
@@ -917,7 +917,7 @@ background-color: null;
 font-style: inherit;">=</span><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"person's age"</span>)</span>
-<span id="cb6-6">  </span>
+<span id="cb6-6"></span>
 <span id="cb6-7"><span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -1025,13 +1025,13 @@ font-style: inherit;">dict</span>:</span>
 <span id="cb7-14">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Fetch current temperature for given coordinates."""</span></span>
-<span id="cb7-15">    </span>
+<span id="cb7-15"></span>
 <span id="cb7-16">    BASE_URL <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"https://api.open-meteo.com/v1/forecast"</span></span>
-<span id="cb7-17">    </span>
+<span id="cb7-17"></span>
 <span id="cb7-18">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Parameters for the request</span></span>
@@ -1064,7 +1064,7 @@ background-color: null;
 font-style: inherit;">=</span> requests.get(BASE_URL, params<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span>params)</span>
-<span id="cb7-28">    </span>
+<span id="cb7-28"></span>
 <span id="cb7-29">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -1124,7 +1124,7 @@ background-color: null;
 font-style: inherit;">'hourly'</span>][<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'temperature_2m'</span>]</span>
-<span id="cb7-37">    </span>
+<span id="cb7-37"></span>
 <span id="cb7-38">    closest_time_index <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> <span class="bu" style="color: null;
@@ -1146,7 +1146,7 @@ font-style: inherit;">-</span> current_utc_time))</span>
 <span id="cb7-39">    current_temperature <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> temperature_list[closest_time_index]</span>
-<span id="cb7-40">    </span>
+<span id="cb7-40"></span>
 <span id="cb7-41">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -1160,7 +1160,7 @@ font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">°C'</span></span>
 <span id="cb7-42"></span>
-<span id="cb7-43">format_tool_to_openai_function(get_current_temperature)    </span>
+<span id="cb7-43">format_tool_to_openai_function(get_current_temperature)</span>
 <span id="cb7-44"></span>
 <span id="cb7-45"><span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -1876,7 +1876,7 @@ background-color: null;
 font-style: inherit;">=</span> {</span>
 <span id="cb9-7">            <span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">"search_wikipedia"</span>: search_wikipedia, </span>
+font-style: inherit;">"search_wikipedia"</span>: search_wikipedia,</span>
 <span id="cb9-8">            <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"get_current_temperature"</span>: get_current_temperature,</span>
@@ -1987,10 +1987,10 @@ background-color: null;
 font-style: inherit;"># Page: Sentence embedding</span></span>
 <span id="cb10-23"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset. </span></span>
+font-style: inherit;"># Summary: In natural language processing, a sentence embedding refers to a numeric representation of a sentence in the form of a vector of real numbers which encodes meaningful semantic information.State of the art embeddings are based on the learned hidden layer representation of dedicated sentence transformer models. BERT pioneered an approach involving the use of a dedicated [CLS] token preprended to the beginning of each sentence inputted into the model; the final hidden state vector of this token encodes information about the sentence and can be fine-tuned for use in sentence classification tasks. In practice however, BERT's sentence embedding with the [CLS] token achieves poor performance, often worse than simply averaging non-contextual word embeddings. SBERT later achieved superior sentence embedding performance by fine tuning BERT's [CLS] token embeddings through the usage of a siamese neural network architecture on the SNLI dataset.</span></span>
 <span id="cb10-24"><span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT. </span></span>
+font-style: inherit;"># Other approaches are loosely based on the idea of distributional semantics applied to sentences. Skip-Thought trains an encoder-decoder structure for the task of neighboring sentences predictions. Though this has been shown to achieve worse performance than approaches such as InferSent or SBERT.</span></span>
 <span id="cb10-25"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># An alternative direction is to aggregate word embeddings, such as those returned by Word2vec, into sentence embeddings. The most straightforward approach is to simply compute the average of word vectors, known as continuous bag-of-words (CBOW). However, more elaborate solutions based on word vector quantization have also been proposed. One such approach is the vector of locally aggregated word embeddings (VLAWE), which demonstrated performance improvements in downstream text classification tasks.</span></span>
@@ -2348,9 +2348,7 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
 </section>
 <section id="move-fast-break-nothing" class="level2">
 <h2 class="anchored" data-anchor-id="move-fast-break-nothing">Move Fast, Break Nothing</h2>
-<p><strong>Dedy Kredo</strong><br>
-CPO, CodiumAI<br>
-Why we need Agents writing Tests faster than Humans writing Code.</p>
+<p><strong>Dedy Kredo</strong> CPO, CodiumAI Why we need Agents writing Tests faster than Humans writing Code.</p>
 <ul>
 <li>high integrity code gen, GANs are conceptually back in 2024. Have two different components: code generation and code integrity to ensure code works as intended</li>
 <li>Behavior coverage is more useful than Code Coverage</li>
@@ -2367,9 +2365,7 @@ Why we need Agents writing Tests faster than Humans writing Code.</p>
 </section>
 <section id="building-reactive-ai-apps" class="level2">
 <h2 class="anchored" data-anchor-id="building-reactive-ai-apps">Building Reactive AI Apps</h2>
-<p><strong>Matt Welsh</strong><br>
-Co-Founder, Fixie.ai<br>
-AI.JSX is like React for LLMs – it lets you build powerful, conversational AI apps using the power of TypeScript and JSX.</p>
+<p><strong>Matt Welsh</strong> Co-Founder, Fixie.ai AI.JSX is like React for LLMs – it lets you build powerful, conversational AI apps using the power of TypeScript and JSX.</p>
 <ul>
 <li><a href="https://github.com/fixie-ai/ai-jsx">AI.JSX</a> open source framework for developing LLM apps, kind of like langchain but for TypeScript</li>
 <li>AI.JSX supports real-time voice (bi-directional). Try it out on <a href="https://voice.fixie.ai/agent" class="uri">https://voice.fixie.ai/agent</a>. This was an amazing demo.</li>
@@ -2419,9 +2415,7 @@ AI.JSX is like React for LLMs – it lets you build powerful, conversational AI 
 </section>
 <section id="the-intelligent-interface" class="level2">
 <h2 class="anchored" data-anchor-id="the-intelligent-interface">The Intelligent Interface</h2>
-<p><strong>Samantha Whitmore / Jason Yuan</strong><br>
-CEO / CTO, New Computer / CDO, New Computer<br>
-On building AI Products From First Principles.</p>
+<p><strong>Samantha Whitmore / Jason Yuan</strong> CEO / CTO, New Computer / CDO, New Computer On building AI Products From First Principles.</p>
 <ul>
 <li>Demo 1: Adapative Interface
 <ul>
@@ -2435,9 +2429,7 @@ On building AI Products From First Principles.</p>
 </section>
 <section id="the-weekend-ai-engineer" class="level2">
 <h2 class="anchored" data-anchor-id="the-weekend-ai-engineer">The Weekend AI Engineer</h2>
-<p><strong>Hassan El Mghari</strong><br>
-AI Engineer, Vercel<br>
-How <em>YOU</em> can - and should - build great multimodal AI apps that go viral and scale to millions in a weekend.</p>
+<p><strong>Hassan El Mghari</strong> AI Engineer, Vercel How <em>YOU</em> can - and should - build great multimodal AI apps that go viral and scale to millions in a weekend.</p>
 <ul>
 <li>Side projects!</li>
 <li><a href="https://github.com/Nutlope" class="uri">https://github.com/Nutlope</a></li>
@@ -2470,9 +2462,7 @@ How <em>YOU</em> can - and should - build great multimodal AI apps that go viral
 </section>
 <section id="k-players-in-a-week-lessons-from-the-first-viral-clip-app" class="level2">
 <h2 class="anchored" data-anchor-id="k-players-in-a-week-lessons-from-the-first-viral-clip-app">120k players in a week: Lessons from the first viral CLIP app</h2>
-<p><strong>Joseph Nelson</strong><br>
-CEO, Roboflow<br>
-On the many trials and successes of building with multimodal apps with vision foundation models!</p>
+<p><strong>Joseph Nelson</strong> CEO, Roboflow On the many trials and successes of building with multimodal apps with vision foundation models!</p>
 <ul>
 <li><a href="https://paint.wtf/leaderboard" class="uri">https://paint.wtf/leaderboard</a></li>
 <li><a href="https://pypi.org/project/inference/" class="uri">https://pypi.org/project/inference/</a></li>
@@ -2491,9 +2481,7 @@ On the many trials and successes of building with multimodal apps with vision fo
 </section>
 <section id="supabase-vector-the-postgres-vector-database" class="level2">
 <h2 class="anchored" data-anchor-id="supabase-vector-the-postgres-vector-database">Supabase Vector: The Postgres Vector database</h2>
-<p><strong>Paul Copplestone</strong><br>
-CEO, Supabase<br>
-Every month, thousands of new AI applications are launched on Supabase, powered by pgvector. We’ll take a brief look into the role of pgvector in the Vector database space, some of the use cases it enables, and some of the future of embeddings in the database space.</p>
+<p><strong>Paul Copplestone</strong> CEO, Supabase Every month, thousands of new AI applications are launched on Supabase, powered by pgvector. We’ll take a brief look into the role of pgvector in the Vector database space, some of the use cases it enables, and some of the future of embeddings in the database space.</p>
 <ul>
 <li>Supabase - full backend as a service</li>
 <li><a href="https://github.com/pgvector/pgvector" class="uri">https://github.com/pgvector/pgvector</a></li>
@@ -2504,9 +2492,7 @@ Every month, thousands of new AI applications are launched on Supabase, powered 
 </section>
 <section id="pragmatic-ai-with-typechat" class="level2">
 <h2 class="anchored" data-anchor-id="pragmatic-ai-with-typechat">Pragmatic AI With TypeChat</h2>
-<p><strong>Daniel Rosenwasser</strong><br>
-PM TypeScript, Microsoft<br>
-TypeChat is an experimental library to bridge the unstructured output of language models to the structured world of our code.</p>
+<p><strong>Daniel Rosenwasser</strong> PM TypeScript, Microsoft TypeChat is an experimental library to bridge the unstructured output of language models to the structured world of our code.</p>
 <ul>
 <li><a href="https://microsoft.github.io/TypeChat/" class="uri">https://microsoft.github.io/TypeChat/</a></li>
 <li>doing something similar that Jason Liu is doing with instructor with Python/Pydantic but with types and TypeScript</li>
@@ -2519,16 +2505,12 @@ TypeChat is an experimental library to bridge the unstructured output of languag
 </section>
 <section id="domain-adaptation-and-fine-tuning-for-domain-specific-llms" class="level2">
 <h2 class="anchored" data-anchor-id="domain-adaptation-and-fine-tuning-for-domain-specific-llms">Domain adaptation and fine-tuning for domain-specific LLMs</h2>
-<p><strong>Abi Aryan</strong><br>
-ML Engineer &amp; O’Reilly Author<br>
-Learn the different fine-tuning methods depending on the dataset, operational best practices for fine-tuning, how to evaluate them for specific business use-cases, and more.</p>
+<p><strong>Abi Aryan</strong> ML Engineer &amp; O’Reilly Author Learn the different fine-tuning methods depending on the dataset, operational best practices for fine-tuning, how to evaluate them for specific business use-cases, and more.</p>
 <hr>
 </section>
 <section id="retrieval-augmented-generation-in-the-wild" class="level2">
 <h2 class="anchored" data-anchor-id="retrieval-augmented-generation-in-the-wild">Retrieval Augmented Generation in the Wild</h2>
-<p><strong>Anton Troynikov</strong><br>
-CTO, Chroma<br>
-In the last few months, we’ve seen an explosion of the use of retrieval in the context of AI. Document question answering, autonomous agents, and more use embeddings-based retrieval systems in a variety of ways. This talk will cover what we’ve learned building for these applications, the challenges developers face, and the future of retrieval in the context of AI.</p>
+<p><strong>Anton Troynikov</strong> CTO, Chroma In the last few months, we’ve seen an explosion of the use of retrieval in the context of AI. Document question answering, autonomous agents, and more use embeddings-based retrieval systems in a variety of ways. This talk will cover what we’ve learned building for these applications, the challenges developers face, and the future of retrieval in the context of AI.</p>
 <ul>
 <li>Ways to improve RAG applications in the wild
 <ul>
@@ -2568,9 +2550,7 @@ In the last few months, we’ve seen an explosion of the use of retrieval in the
 </section>
 <section id="building-production-ready-rag-applications" class="level2">
 <h2 class="anchored" data-anchor-id="building-production-ready-rag-applications">Building Production-Ready RAG Applications</h2>
-<p><strong>Jerry Liu</strong><br>
-CEO, LlamaIndex<br>
-In this talk, we talk about core techniques for evaluating and improving your retrieval systems for better performing RAG.</p>
+<p><strong>Jerry Liu</strong> CEO, LlamaIndex In this talk, we talk about core techniques for evaluating and improving your retrieval systems for better performing RAG.</p>
 <ul>
 <li>Paradigms for inserting knowledge into LLMs
 <ul>
@@ -2625,9 +2605,7 @@ In this talk, we talk about core techniques for evaluating and improving your re
 </section>
 <section id="harnessing-the-power-of-llms-locally" class="level2">
 <h2 class="anchored" data-anchor-id="harnessing-the-power-of-llms-locally">Harnessing the Power of LLMs Locally</h2>
-<p><strong>Mithun Hunsur</strong><br>
-Senior Engineer, Ambient<br>
-Discover llm, a revolutionary Rust library that enables developers to harness the potential of LLMs locally. By seamlessly integrating with the Rust ecosystem, llm empowers developers to leverage LLMs on standard hardware, reducing the need for cloud-based APIs and services.</p>
+<p><strong>Mithun Hunsur</strong> Senior Engineer, Ambient Discover llm, a revolutionary Rust library that enables developers to harness the potential of LLMs locally. By seamlessly integrating with the Rust ecosystem, llm empowers developers to leverage LLMs on standard hardware, reducing the need for cloud-based APIs and services.</p>
 <ul>
 <li>Possibilities
 <ul>
@@ -2650,9 +2628,7 @@ Discover llm, a revolutionary Rust library that enables developers to harness th
 </section>
 <section id="trust-but-verify" class="level2">
 <h2 class="anchored" data-anchor-id="trust-but-verify">Trust, but Verify</h2>
-<p><strong>Shreya Rajpal</strong><br>
-Founder, Guardrails AI<br>
-Making Large Language Models Production-Ready with Guardrails.</p>
+<p><strong>Shreya Rajpal</strong> Founder, Guardrails AI Making Large Language Models Production-Ready with Guardrails.</p>
 <ul>
 <li>Guardrails AI is an open source library that allows you to define rules to verify the output of LLMs</li>
 <li><a href="https://github.com/ShreyaR/guardrails" class="uri">https://github.com/ShreyaR/guardrails</a>
@@ -2693,9 +2669,7 @@ Making Large Language Models Production-Ready with Guardrails.</p>
 </section>
 <section id="open-questions-for-ai-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="open-questions-for-ai-engineering">Open Questions for AI Engineering</h2>
-<p><strong>Simon Willison</strong><br>
-Creator, Datasette; Co-creator, Django<br>
-Recapping the past year in AI, and what open questions are <em>worth pursuing</em> in the next year!</p>
+<p><strong>Simon Willison</strong> Creator, Datasette; Co-creator, Django Recapping the past year in AI, and what open questions are <em>worth pursuing</em> in the next year!</p>
 <ul>
 <li>Highlights of the past 12 months</li>
 <li>Ask about technology:

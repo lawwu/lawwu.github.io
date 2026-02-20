@@ -99,8 +99,7 @@
 <h2 class="anchored" data-anchor-id="openclaw-harness-engineering">2026 - OpenClaw, Harness Engineering</h2>
 <p>We’re just beginning 2026. <a href="https://github.com/openclaw/openclaw">OpenClaw</a> is the biggest development in agents and agent harnesses. OpenClaw shows the promise of agents that are:</p>
 <ul>
-<li>Always on<br>
-</li>
+<li>Always on</li>
 <li>You can connect to them via multiple channels (WhatsApp, Telegram, iMessage)</li>
 <li><a href="https://docs.openclaw.ai/gateway/heartbeat">HEARTBEAT.md</a> - Heartbeat runs periodic agent turns in the main session so the model can surface anything that needs attention without spamming you. The default prompt has:
 <ul>
@@ -608,12 +607,12 @@
 </tbody>
 </table>
 <p>It’s been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more with only 2 down years. If you invested $10,000 at the beginning of 2016, you will have tripled your investment.</p>
-<div id="e9c8f895" class="cell" data-execution_count="1">
+<div id="1f322c83" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="3ad686b7-2462-40a4-bdfb-5f6c151a89fe" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3ad686b7-2462-40a4-bdfb-5f6c151a89fe")) {                    Plotly.newPlot(                        "3ad686b7-2462-40a4-bdfb-5f6c151a89fe",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="62fcce5a-e69a-4cb5-b778-06d1faf3b301" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("62fcce5a-e69a-4cb5-b778-06d1faf3b301")) {                    Plotly.newPlot(                        "62fcce5a-e69a-4cb5-b778-06d1faf3b301",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('3ad686b7-2462-40a4-bdfb-5f6c151a89fe');
+var gd = document.getElementById('62fcce5a-e69a-4cb5-b778-06d1faf3b301');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -2309,7 +2308,7 @@ font-style: inherit;">`</span></span></code></pre></div></div>
 <p>Yet such pain and shame didn’t send Jesus retreating. Rather, he looked through the obstacle, horrific as it was, and saw the reward on the other side of the shame. Even as such barriers were set immediately before his face, he looked to the joy on the far side: being seated at the right hand of his Father. And so he leaned into the hill. (p.75-76)</p>
 </blockquote>
 <p>Overall, I found this book quite helpful in framing the proper heart I should whenever I exercise. It’s not to get faster and set PRs. It’s not to run races and experience the temporary high of race day. It’s not to be merely physically healthy so I can wrestle with my grandkids one day. Rather exercise is for training the body and mind, disciplining both so that I can love God and his people better. May I continue to exercise and run for his glory. “So, whether you eat or drink, or whatever you do, do all to the glory of God.” (1 Corinthians 10:31)</p>
-<!-- 
+<!--
 He also reminds us of the definition of Christian Hedonism: "as one persuaded that God is most glorified in us when are most satisfied in him—I have a serious interest in how the human body serves not only natural joy but also spiritual joy."
 -->
 
@@ -2721,8 +2720,7 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 </ul>
 <p>Right now, very few companies are both:</p>
 <ul>
-<li><strong>Open sourcing their MCP Server code</strong>, and<br>
-</li>
+<li><strong>Open sourcing their MCP Server code</strong>, and</li>
 <li><strong>Hosting public remote MCP servers</strong>.</li>
 </ul>
 <p>I think companies should do both. Here’s how.</p>
@@ -2735,8 +2733,7 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 <p>Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on <strong>common workflows</strong> that agents will use.</p>
 <ul>
 <li><p>Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required <em>three</em> separate API calls (normalize_title, map normalized title to a Lightcast Specialized Occupation and get related skills to that Lightcast Specialized Occupation). Instead, I created a <strong>dedicated tool/API</strong> that bundled those calls together—much more natural for an agent.</p></li>
-<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>:<br>
-&gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
+<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>: &gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
 </ul>
 <p>You should design with the agent in mind. That might mean rethinking data formats (YAML is often better than JSON) or collapsing multi-step operations into a single MCP tool.</p>
 <hr>
@@ -2745,14 +2742,12 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 <h3 class="anchored" data-anchor-id="build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</h3>
 <p>The typical stack looks like this:</p>
 <ul>
-<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.<br>
-</li>
+<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.</li>
 <li><strong>MCP Server</strong>: Implements the MCP protocol on top of that client.</li>
 </ul>
 <p>All of the MCP servers I’ve written so far are in Python, using <a href="https://github.com/jlowin/fastmcp">FastMCP</a> as the framework. The pattern is straightforward:</p>
 <ol type="1">
-<li>Write an API Client.<br>
-</li>
+<li>Write an API Client.</li>
 <li>Layer the MCP protocol logic on top.</li>
 </ol>
 <p>You can use agentic coding tools like Claude Code to quickly spin these up.</p>
@@ -2762,8 +2757,7 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 <h3 class="anchored" data-anchor-id="deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</h3>
 <p>There are more options than ever for running lightweight public services:</p>
 <ul>
-<li><a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a><br>
-</li>
+<li><a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a></li>
 <li><a href="https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/">Cloudflare Workers</a></li>
 </ul>
 <p>Each of these can make your MCP server accessible with minimal operational overhead.</p>
@@ -2773,10 +2767,8 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 <h3 class="anchored" data-anchor-id="provide-example-clients-and-agents">4. Provide Example Clients and Agents</h3>
 <p>To encourage adoption, publish sample implementations that connect to the server. These could be:</p>
 <ul>
-<li>VS Code extensions<br>
-</li>
-<li>LangGraph or ADK agents<br>
-</li>
+<li>VS Code extensions</li>
+<li>LangGraph or ADK agents</li>
 <li>Example workflows in ChatGPT or Claude</li>
 </ul>
 <p>This lowers the barrier for customers to experiment quickly.</p>
@@ -2787,10 +2779,8 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
 <p>Some of the most popular MCP servers today aren’t even official. For example, the <strong><a href="https://github.com/sooperset/mcp-atlassian">mcp-atlassian</a></strong> project is developed by an open-source developer <a href="https://github.com/sooperset">Hyeonsoo Lee</a> and not by Atlassian. That’s a missed opportunity.</p>
 <p>If companies open source their MCP servers, the benefits are significant:</p>
 <ul>
-<li>Community contributions and bug fixes<br>
-</li>
-<li>Customer self-hosting when desired<br>
-</li>
+<li>Community contributions and bug fixes</li>
+<li>Customer self-hosting when desired</li>
 <li>Stronger trust and transparency</li>
 </ul>
 <hr>
@@ -3764,24 +3754,15 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 <section id="suggested-followup-resources" class="level2">
 <h2 class="anchored" data-anchor-id="suggested-followup-resources">6. Suggested Follow‑up Resources</h2>
 <ul>
-<li><strong>Claude Code</strong> terminal agent (Anthropic)<br>
-</li>
-<li><strong>Claude.md / folder context files</strong> (<code>/init</code>)<br>
-</li>
-<li><strong>Custom <code>/issues</code>, <code>/work</code>, <code>/review</code> commands</strong><br>
-</li>
-<li><strong>Monologue</strong> dictation app<br>
-</li>
-<li><strong>Cora</strong> email chief‑of‑staff; <strong>Spiral</strong> copywriter; <strong>Sparkle</strong> desktop organizer<br>
-</li>
-<li><strong>AI Diplomacy</strong> game (Alex)<br>
-</li>
-<li><strong>Warp Terminal</strong>; <strong>Vibe Tunnel</strong> (remote terminal)<br>
-</li>
-<li><strong>World Prune</strong> (<code>npx world prune</code>) chat‑trim tool<br>
-</li>
-<li><strong>Conductor</strong> git‑worktree UI<br>
-</li>
+<li><strong>Claude Code</strong> terminal agent (Anthropic)</li>
+<li><strong>Claude.md / folder context files</strong> (<code>/init</code>)</li>
+<li><strong>Custom <code>/issues</code>, <code>/work</code>, <code>/review</code> commands</strong></li>
+<li><strong>Monologue</strong> dictation app</li>
+<li><strong>Cora</strong> email chief‑of‑staff; <strong>Spiral</strong> copywriter; <strong>Sparkle</strong> desktop organizer</li>
+<li><strong>AI Diplomacy</strong> game (Alex)</li>
+<li><strong>Warp Terminal</strong>; <strong>Vibe Tunnel</strong> (remote terminal)</li>
+<li><strong>World Prune</strong> (<code>npx world prune</code>) chat‑trim tool</li>
+<li><strong>Conductor</strong> git‑worktree UI</li>
 <li><strong>Every Newsletter, Discord, Consulting</strong> for ongoing training &amp; content.</li>
 </ul>
 <hr>
@@ -4745,75 +4726,52 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 <hr>
 <section id="q1-what-is-agenticness-and-has-your-thinking-changed" class="level2">
 <h2 class="anchored" data-anchor-id="q1-what-is-agenticness-and-has-your-thinking-changed">Q1: What is “agenticness,” and has your thinking changed?</h2>
-<p><strong>Andrew Ng:</strong><br>
-The debate over whether something “is an agent” is less productive than discussing <em>degrees of autonomy</em>. It’s more useful to see systems on a spectrum—from simple automation to full autonomy—rather than binary classification. Many business workflows are linear and agentic to a low degree but still valuable.</p>
+<p><strong>Andrew Ng:</strong> The debate over whether something “is an agent” is less productive than discussing <em>degrees of autonomy</em>. It’s more useful to see systems on a spectrum—from simple automation to full autonomy—rather than binary classification. Many business workflows are linear and agentic to a low degree but still valuable.</p>
 <hr>
 </section>
 <section id="q2-what-skills-are-most-important-for-building-agent-systems" class="level2">
 <h2 class="anchored" data-anchor-id="q2-what-skills-are-most-important-for-building-agent-systems">Q2: What skills are most important for building agent systems?</h2>
-<p><strong>Andrew Ng:</strong><br>
-- Break down complex tasks into modular steps<br>
-- Define the right KPIs (including evals)<br>
-- Interpret traces, debug step-by-step<br>
-- Develop “tactile knowledge” by building, testing, and iterating<br>
-- Use many tools to strengthen decision-making intuition</p>
+<p><strong>Andrew Ng:</strong> - Break down complex tasks into modular steps - Define the right KPIs (including evals) - Interpret traces, debug step-by-step - Develop “tactile knowledge” by building, testing, and iterating - Use many tools to strengthen decision-making intuition</p>
 <hr>
 </section>
 <section id="q3-is-that-tactile-knowledge-mostly-about-llms" class="level2">
 <h2 class="anchored" data-anchor-id="q3-is-that-tactile-knowledge-mostly-about-llms">Q3: Is that tactile knowledge mostly about LLMs?</h2>
-<p><strong>Andrew Ng:</strong><br>
-It extends beyond LLMs. Think of tools like Lego bricks—the more diverse your pieces, the more flexible your build. You need squiggly, odd-shaped blocks sometimes, not just standard ones. Practicing with a wide toolset helps build strong product instincts.</p>
+<p><strong>Andrew Ng:</strong> It extends beyond LLMs. Think of tools like Lego bricks—the more diverse your pieces, the more flexible your build. You need squiggly, odd-shaped blocks sometimes, not just standard ones. Practicing with a wide toolset helps build strong product instincts.</p>
 <hr>
 </section>
 <section id="q4-what-lego-bricks-are-underrated" class="level2">
 <h2 class="anchored" data-anchor-id="q4-what-lego-bricks-are-underrated">Q4: What “Lego bricks” are underrated?</h2>
-<p><strong>Andrew Ng:</strong><br>
-<strong>Evals.</strong><br>
-People think they need to be comprehensive and perfect. Start with something fast and imperfect—5 examples and a simple check. Use it to catch regressions. You’ll naturally improve it over time.</p>
+<p><strong>Andrew Ng:</strong> <strong>Evals.</strong> People think they need to be comprehensive and perfect. Start with something fast and imperfect—5 examples and a simple check. Use it to catch regressions. You’ll naturally improve it over time.</p>
 <hr>
 </section>
 <section id="q5-any-underrated-application-areas" class="level2">
 <h2 class="anchored" data-anchor-id="q5-any-underrated-application-areas">Q5: Any underrated application areas?</h2>
-<p><strong>Andrew Ng:</strong><br>
-<strong>Voice stack applications.</strong><br>
-They’re low-friction for users but underexplored. Latency expectations make them hard (users expect 1–2s responses), but agents + voice stack pipelines are more controllable than end-to-end speech models.</p>
+<p><strong>Andrew Ng:</strong> <strong>Voice stack applications.</strong> They’re low-friction for users but underexplored. Latency expectations make them hard (users expect 1–2s responses), but agents + voice stack pipelines are more controllable than end-to-end speech models.</p>
 <hr>
 </section>
 <section id="q6-is-building-voice-agents-similar-to-text-based-ones" class="level2">
 <h2 class="anchored" data-anchor-id="q6-is-building-voice-agents-similar-to-text-based-ones">Q6: Is building voice agents similar to text-based ones?</h2>
-<p><strong>Andrew Ng:</strong><br>
-Skills are transferable, but differences matter: - Voice has tighter latency constraints - Pre-response fillers (“Hmm…”) help mask lag - Background noise helps users tolerate delays - Voice interactions are more forgiving and expressive than typed ones</p>
+<p><strong>Andrew Ng:</strong> Skills are transferable, but differences matter: - Voice has tighter latency constraints - Pre-response fillers (“Hmm…”) help mask lag - Background noise helps users tolerate delays - Voice interactions are more forgiving and expressive than typed ones</p>
 <hr>
 </section>
 <section id="q7-thoughts-on-mcp-model-component-protocol" class="level2">
 <h2 class="anchored" data-anchor-id="q7-thoughts-on-mcp-model-component-protocol">Q7: Thoughts on MCP (Model Component Protocol)?</h2>
-<p><strong>Andrew Ng:</strong><br>
-MCP is a promising step toward standardized tool calling and integration.<br>
-Today’s structure is flat, but future versions need hierarchy and composition.<br>
-MCP could help unify models, tools, and data across ecosystems.</p>
+<p><strong>Andrew Ng:</strong> MCP is a promising step toward standardized tool calling and integration. Today’s structure is flat, but future versions need hierarchy and composition. MCP could help unify models, tools, and data across ecosystems.</p>
 <hr>
 </section>
 <section id="q8-what-about-agent-to-agent-protocols" class="level2">
 <h2 class="anchored" data-anchor-id="q8-what-about-agent-to-agent-protocols">Q8: What about agent-to-agent protocols?</h2>
-<p><strong>Andrew Ng:</strong><br>
-Still early. Multi-agent systems work within single teams, but cross-team agent collaboration isn’t there yet. We’re a few steps away from successful real-world examples.</p>
+<p><strong>Andrew Ng:</strong> Still early. Multi-agent systems work within single teams, but cross-team agent collaboration isn’t there yet. We’re a few steps away from successful real-world examples.</p>
 <hr>
 </section>
 <section id="q9-do-you-like-the-term-vibe-coding" class="level2">
 <h2 class="anchored" data-anchor-id="q9-do-you-like-the-term-vibe-coding">Q9: Do you like the term “vibe coding”?</h2>
-<p><strong>Andrew Ng:</strong><br>
-Not really.<br>
-The name is misleading—it sounds effortless, but it’s cognitively intense.<br>
-Coding is becoming more accessible, not obsolete.<br>
-Understanding how code works is still essential for prompting and debugging.</p>
+<p><strong>Andrew Ng:</strong> Not really. The name is misleading—it sounds effortless, but it’s cognitively intense. Coding is becoming more accessible, not obsolete. Understanding how code works is still essential for prompting and debugging.</p>
 <hr>
 </section>
 <section id="q10-advice-for-ai-startup-founders" class="level2">
 <h2 class="anchored" data-anchor-id="q10-advice-for-ai-startup-founders">Q10: Advice for AI startup founders?</h2>
-<p><strong>Andrew Ng:</strong><br>
-- <strong>#1 predictor of success: SPEED</strong><br>
-- <strong>#2: Technical depth</strong><br>
-Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.</p>
+<p><strong>Andrew Ng:</strong> - <strong>#1 predictor of success: SPEED</strong> - <strong>#2: Technical depth</strong> Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.</p>
 <hr>
 </section>
 <section id="full-transcript" class="level2">
@@ -4964,7 +4922,7 @@ font-style: inherit;">"run_tool"</span>, END]:</span>
 <span id="cb1-22">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Route to tool handler, or end if Done tool called"""</span></span>
-<span id="cb1-23">    </span>
+<span id="cb1-23"></span>
 <span id="cb1-24">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Get the last message</span></span>
@@ -4980,7 +4938,7 @@ background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>]</span>
-<span id="cb1-27">    </span>
+<span id="cb1-27"></span>
 <span id="cb1-28">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># If the last message is a tool call, check if it's a Done tool call</span></span>
@@ -5097,7 +5055,7 @@ background-color: null;
 font-style: inherit;">0.0</span>)</span>
 <span id="cb2-15">llm_router <span class="op" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;">=</span> llm.with_structured_output(RouterSchema) </span>
+font-style: inherit;">=</span> llm.with_structured_output(RouterSchema)</span>
 <span id="cb2-16"></span>
 <span id="cb2-17"><span class="kw" style="color: #003B4F;
 background-color: null;
@@ -5110,7 +5068,7 @@ font-style: inherit;">"response_agent"</span>, END]]:</span>
 <span id="cb2-18">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Analyze email content to decide if we should respond, notify, or ignore."""</span></span>
-<span id="cb2-19">    </span>
+<span id="cb2-19"></span>
 <span id="cb2-20">    author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> parse_email(state[<span class="st" style="color: #20794D;
@@ -5165,7 +5123,7 @@ background-color: null;
 font-style: inherit;">"content"</span>: user_prompt},</span>
 <span id="cb2-34">        ]</span>
 <span id="cb2-35">    )</span>
-<span id="cb2-36">    </span>
+<span id="cb2-36"></span>
 <span id="cb2-37">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -5370,14 +5328,14 @@ background-color: null;
 font-style: inherit;">'write_email'</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">'done'</span>]</span>
-<span id="cb3-6">Response Criteria: </span>
+<span id="cb3-6">Response Criteria:</span>
 <span id="cb3-7">• Send email <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
 font-style: inherit;">with</span> write_email tool call to acknowledge the question <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">and</span> confirm it will be investigated  </span></code></pre></div></div>
+font-style: inherit;">and</span> confirm it will be investigated</span></code></pre></div></div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">all_messages_str <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> format_messages_string(response[<span class="st" style="color: #20794D;
@@ -5448,7 +5406,7 @@ font-style: inherit;">"__end__"</span>]]:</span>
 <span id="cb5-2">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Handles interrupts from the triage step."""</span></span>
-<span id="cb5-3">    </span>
+<span id="cb5-3"></span>
 <span id="cb5-4">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Parse the email input</span></span>
@@ -5460,7 +5418,7 @@ font-style: inherit;">"email_input"</span>])</span>
 <span id="cb5-6"></span>
 <span id="cb5-7">    <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Create email markdown for Agent Inbox in case of notification  </span></span>
+font-style: inherit;"># Create email markdown for Agent Inbox in case of notification</span></span>
 <span id="cb5-8">    email_markdown <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> format_email_markdown(subject, author, to, email_thread)</span>
@@ -5525,22 +5483,22 @@ font-style: inherit;">"config"</span>: {</span>
 background-color: null;
 font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">True</span>,  </span>
+font-style: inherit;">True</span>,</span>
 <span id="cb5-25">            <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">True</span>, </span>
+font-style: inherit;">True</span>,</span>
 <span id="cb5-26">            <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">False</span>, </span>
+font-style: inherit;">False</span>,</span>
 <span id="cb5-27">            <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
 background-color: null;
-font-style: inherit;">False</span>,  </span>
+font-style: inherit;">False</span>,</span>
 <span id="cb5-28">        },</span>
 <span id="cb5-29">        <span class="co" style="color: #5E5E5E;
 background-color: null;
@@ -5552,7 +5510,7 @@ font-style: inherit;">"description"</span>: email_markdown,</span>
 <span id="cb5-32"></span>
 <span id="cb5-33">    <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Agent Inbox responds with a list of dicts with a single key `type` that can be `accept`, `edit`, `ignore`, or `response`.  </span></span>
+font-style: inherit;"># Agent Inbox responds with a list of dicts with a single key `type` that can be `accept`, `edit`, `ignore`, or `response`.</span></span>
 <span id="cb5-34">    response <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> interrupt([request])[<span class="dv" style="color: #AD0000;
@@ -5561,7 +5519,7 @@ font-style: inherit;">0</span>]</span>
 <span id="cb5-35"></span>
 <span id="cb5-36">    <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># If user provides feedback, go to response agent and use feedback to respond to email   </span></span>
+font-style: inherit;"># If user provides feedback, go to response agent and use feedback to respond to email</span></span>
 <span id="cb5-37">    <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -5574,7 +5532,7 @@ background-color: null;
 font-style: inherit;">"response"</span>:</span>
 <span id="cb5-38">        <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Add feedback to messages </span></span>
+font-style: inherit;"># Add feedback to messages</span></span>
 <span id="cb5-39">        user_input <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
@@ -5650,7 +5608,7 @@ font-style: inherit;">"</span>)</span>
 <span id="cb5-54"></span>
 <span id="cb5-55">    <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Update the state </span></span>
+font-style: inherit;"># Update the state</span></span>
 <span id="cb5-56">    update <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
@@ -5688,7 +5646,7 @@ font-style: inherit;">"__end__"</span>]]:</span>
 <span id="cb6-2">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Creates an interrupt for human review of tool calls"""</span></span>
-<span id="cb6-3">    </span>
+<span id="cb6-3"></span>
 <span id="cb6-4">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Store messages</span></span>
@@ -5721,7 +5679,7 @@ background-color: null;
 font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span>].tool_calls:</span>
-<span id="cb6-12">        </span>
+<span id="cb6-12"></span>
 <span id="cb6-13">        <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Allowed tools for HITL</span></span>
@@ -5734,7 +5692,7 @@ background-color: null;
 font-style: inherit;">"schedule_meeting"</span>, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"Question"</span>]</span>
-<span id="cb6-15">        </span>
+<span id="cb6-15"></span>
 <span id="cb6-16">        <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># If tool is not in our HITL list, execute it directly without interruption</span></span>
@@ -5779,7 +5737,7 @@ font-style: inherit;">"id"</span>]})</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">continue</span></span>
-<span id="cb6-24">            </span>
+<span id="cb6-24"></span>
 <span id="cb6-25">        <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Get original email from email_input in state</span></span>
@@ -5794,7 +5752,7 @@ font-style: inherit;">=</span> parse_email(email_input)</span>
 <span id="cb6-28">        original_email_markdown <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> format_email_markdown(subject, author, to, email_thread)</span>
-<span id="cb6-29">        </span>
+<span id="cb6-29"></span>
 <span id="cb6-30">        <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Format tool call for display and prepend the original email</span></span>
@@ -5972,7 +5930,7 @@ font-style: inherit;">0</span>]</span>
 <span id="cb6-71"></span>
 <span id="cb6-72">        <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Handle the responses </span></span>
+font-style: inherit;"># Handle the responses</span></span>
 <span id="cb6-73">        <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -6008,7 +5966,7 @@ background-color: null;
 font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-79">                        </span>
+<span id="cb6-79"></span>
 <span id="cb6-80">        <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -6022,13 +5980,13 @@ font-style: inherit;">"edit"</span>:</span>
 <span id="cb6-81"></span>
 <span id="cb6-82">            <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Tool selection </span></span>
+font-style: inherit;"># Tool selection</span></span>
 <span id="cb6-83">            tool <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"name"</span>]]</span>
-<span id="cb6-84">            </span>
+<span id="cb6-84"></span>
 <span id="cb6-85">            <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Get edited args from Agent Inbox</span></span>
@@ -6061,7 +6019,7 @@ background-color: null;
 font-style: inherit;">"id"</span>] <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Store the ID of the tool call being edited</span></span>
-<span id="cb6-91">            </span>
+<span id="cb6-91"></span>
 <span id="cb6-92">            <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Create a new list of tool calls by filtering out the one being edited and adding the updated version</span></span>
@@ -6126,14 +6084,14 @@ background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"write_email"</span>:</span>
-<span id="cb6-104">                </span>
+<span id="cb6-104"></span>
 <span id="cb6-105">                <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Execute the tool with edited args</span></span>
 <span id="cb6-106">                observation <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> tool.invoke(edited_args)</span>
-<span id="cb6-107">                </span>
+<span id="cb6-107"></span>
 <span id="cb6-108">                <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Add only the tool response message</span></span>
@@ -6146,7 +6104,7 @@ background-color: null;
 font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"tool_call_id"</span>: current_id})</span>
-<span id="cb6-110">            </span>
+<span id="cb6-110"></span>
 <span id="cb6-111">            <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Update the schedule_meeting tool call with the edited content from Agent Inbox</span></span>
@@ -6160,15 +6118,15 @@ background-color: null;
 font-style: inherit;">==</span> <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"schedule_meeting"</span>:</span>
-<span id="cb6-113">                </span>
-<span id="cb6-114">                </span>
+<span id="cb6-113"></span>
+<span id="cb6-114"></span>
 <span id="cb6-115">                <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Execute the tool with edited args</span></span>
 <span id="cb6-116">                observation <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> tool.invoke(edited_args)</span>
-<span id="cb6-117">                </span>
+<span id="cb6-117"></span>
 <span id="cb6-118">                <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Add only the tool response message</span></span>
@@ -6181,7 +6139,7 @@ background-color: null;
 font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"tool_call_id"</span>: current_id})</span>
-<span id="cb6-120">            </span>
+<span id="cb6-120"></span>
 <span id="cb6-121">            <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Catch all other tool calls</span></span>
@@ -6332,7 +6290,7 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span>)</span>
-<span id="cb6-143">            </span>
+<span id="cb6-143"></span>
 <span id="cb6-144">        <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -6489,10 +6447,10 @@ background-color: null;
 font-style: inherit;">}</span><span class="ss" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"</span>)</span>
-<span id="cb6-162">            </span>
+<span id="cb6-162"></span>
 <span id="cb6-163">    <span class="co" style="color: #5E5E5E;
 background-color: null;
-font-style: inherit;"># Update the state </span></span>
+font-style: inherit;"># Update the state</span></span>
 <span id="cb6-164">    update <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> {</span>
@@ -6552,7 +6510,7 @@ font-weight: bold;
 font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
-font-style: inherit;">in</span> last_message.tool_calls: </span>
+font-style: inherit;">in</span> last_message.tool_calls:</span>
 <span id="cb7-10">            <span class="cf" style="color: #003B4F;
 background-color: null;
 font-weight: bold;
@@ -6644,7 +6602,7 @@ font-style: inherit;">"response_agent"</span>, response_agent)</span>
 <span id="cb7-42">    .add_edge(START, <span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"triage_router"</span>)</span>
-<span id="cb7-43">    </span>
+<span id="cb7-43"></span>
 <span id="cb7-44">)</span>
 <span id="cb7-45"></span>
 <span id="cb7-46">email_assistant <span class="op" style="color: #5E5E5E;
@@ -6746,7 +6704,7 @@ background-color: null;
 font-style: inherit;">- system admin notifications</span></span>
 <span id="cb8-28"><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">NOTIFY: </span></span>
+font-style: inherit;">NOTIFY:</span></span>
 <span id="cb8-29"><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">- meeting invites</span></span>
@@ -6790,7 +6748,7 @@ background-color: null;
 font-style: inherit;">- specific questions</span></span>
 <span id="cb8-44"><span class="st" style="color: #20794D;
 background-color: null;
-font-style: inherit;">NOTIFY: </span></span>
+font-style: inherit;">NOTIFY:</span></span>
 <span id="cb8-45"><span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">- meeting invites</span></span>
@@ -6877,9 +6835,7 @@ font-style: inherit;">def</span> update_memory(store, namespace, messages):</spa
 <span id="cb9-7">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">"""Update memory profile in the store.</span></span>
-<span id="cb9-8"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">    </span></span>
+<span id="cb9-8"></span>
 <span id="cb9-9"><span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">    Args:</span></span>
@@ -6947,7 +6903,7 @@ font-style: inherit;">f"Think carefully and update the memory profile based upon
 background-color: null;
 font-style: inherit;">+</span> messages</span>
 <span id="cb9-25">    )</span>
-<span id="cb9-26">    </span>
+<span id="cb9-26"></span>
 <span id="cb9-27">    <span class="co" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;"># Save the updated memory to the store</span></span>

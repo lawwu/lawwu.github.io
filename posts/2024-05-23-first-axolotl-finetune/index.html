@@ -137,7 +137,7 @@ cookieconsent.run({
 <script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
-  
+
   // Simple script loading for main website
   const scriptTag = document.createElement('script');
   scriptTag.src = '/js/github-stars.js';
@@ -145,7 +145,7 @@ cookieconsent.run({
   scriptTag.defer = true;
   scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
   scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-  
+
   // Append to document head
   document.head.appendChild(scriptTag);
 </script>
@@ -427,7 +427,7 @@ cookieconsent.run({
 <span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">unk_token</span><span class="kw">:</span><span class="at"> </span><span class="st">"&lt;unk&gt;"</span></span>
 <span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a><span class="fu">save_safetensors</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>I launched the training script:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">accelerate</span> launch <span class="at">-m</span> axolotl.cli.train hc-first-100.yml </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">accelerate</span> launch <span class="at">-m</span> axolotl.cli.train hc-first-100.yml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Weighs and biases provides a nice summary of the run too:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> / 0.123 MB of 0.123 MB uploaded</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Run history:</span>
@@ -440,7 +440,7 @@ cookieconsent.run({
 <span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>         train/grad_norm ██▁</span>
 <span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>     train/learning_rate ▁▅█</span>
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>              train/loss █▁▅</span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> </span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span></span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Run summary:</span>
 <span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>                eval/loss 1.08833</span>
 <span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>             eval/runtime 1.0702</span>
@@ -456,7 +456,7 @@ cookieconsent.run({
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>            train_runtime 70.8206</span>
 <span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> train_samples_per_second 3.812</span>
 <span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span>   train_steps_per_second 0.042</span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> </span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span></span>
 <span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> 🚀 View run scarlet-lake-4 at: https://wandb.ai/law/hc-axolotl-mistral/runs/wrnox7vk</span>
 <span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral</span>
 <span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a><span class="ex">wandb:</span> Synced 6 W<span class="kw">&amp;</span><span class="ex">B</span> file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span><span class="ex">,</span> 0 media file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span><span class="ex">,</span> 1 artifact file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span> <span class="ex">and</span> 1 other file<span class="er">(</span><span class="ex">s</span><span class="kw">)</span></span>
@@ -642,23 +642,23 @@ cookieconsent.run({
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a><span class="ex">/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132:</span> FutureWarning: <span class="kw">`</span><span class="ex">resume_download</span><span class="kw">`</span> is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use <span class="kw">`</span><span class="va">force_download</span><span class="op">=</span>True<span class="kw">`</span><span class="bu">.</span></span>
 <span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="ex">warnings.warn</span><span class="er">(</span></span>
 <span id="cb12-23"><a href="#cb12-23" aria-hidden="true" tabindex="-1"></a><span class="ex">[2024-05-24</span> 00:04:04,037] <span class="pp">[</span><span class="ss">INFO</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">axolotl.normalize_config:182</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">PID:4902</span><span class="pp">]</span> <span class="pp">[</span><span class="ss">RANK:0</span><span class="pp">]</span> GPU memory usage baseline: 0.000GB <span class="er">(</span><span class="ex">+0.627GB</span> misc<span class="kw">)</span></span>
-<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>                                 <span class="ex">dP</span>            dP   dP </span>
-<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>                                 <span class="ex">88</span>            88   88 </span>
-<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      <span class="ex">.d8888b.</span> dP.  .dP .d8888b. 88 .d8888b. d8888P 88 </span>
-<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>      <span class="ex">88</span><span class="st">'  `88  `8bd8'</span>  88<span class="st">'  `88 88 88'</span>  <span class="kw">`</span><span class="ex">88</span>   88   88 </span>
-<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>      <span class="ex">88.</span>  .88  .d88b.  88.  .88 88 88.  .88   88   88 </span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>      <span class="kw">`</span>88888P8 dP<span class="st">'  `dP `88888P'</span> dP <span class="kw">`</span><span class="ex">88888P</span><span class="st">'   dP   dP </span></span>
-<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       </span></span>
-<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       </span></span>
+<span id="cb12-24"><a href="#cb12-24" aria-hidden="true" tabindex="-1"></a>                                 <span class="ex">dP</span>            dP   dP</span>
+<span id="cb12-25"><a href="#cb12-25" aria-hidden="true" tabindex="-1"></a>                                 <span class="ex">88</span>            88   88</span>
+<span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>      <span class="ex">.d8888b.</span> dP.  .dP .d8888b. 88 .d8888b. d8888P 88</span>
+<span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>      <span class="ex">88</span><span class="st">'  `88  `8bd8'</span>  88<span class="st">'  `88 88 88'</span>  <span class="kw">`</span><span class="ex">88</span>   88   88</span>
+<span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>      <span class="ex">88.</span>  .88  .d88b.  88.  .88 88 88.  .88   88   88</span>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>      <span class="kw">`</span>88888P8 dP<span class="st">'  `dP `88888P'</span> dP <span class="kw">`</span><span class="ex">88888P</span><span class="st">'   dP   dP</span></span>
+<span id="cb12-30"><a href="#cb12-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-31"><a href="#cb12-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-32"><a href="#cb12-32" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-33"><a href="#cb12-33" aria-hidden="true" tabindex="-1"></a><span class="st">****************************************</span></span>
 <span id="cb12-34"><a href="#cb12-34" aria-hidden="true" tabindex="-1"></a><span class="st">**** Axolotl Dependency Versions *****</span></span>
-<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="st">  accelerate: 0.30.1         </span></span>
-<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="st">        peft: 0.10.0         </span></span>
-<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="st">transformers: 4.40.2         </span></span>
-<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="st">         trl: 0.8.5          </span></span>
-<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="st">       torch: 2.1.2+cu118    </span></span>
-<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="st">bitsandbytes: 0.43.1         </span></span>
+<span id="cb12-35"><a href="#cb12-35" aria-hidden="true" tabindex="-1"></a><span class="st">  accelerate: 0.30.1</span></span>
+<span id="cb12-36"><a href="#cb12-36" aria-hidden="true" tabindex="-1"></a><span class="st">        peft: 0.10.0</span></span>
+<span id="cb12-37"><a href="#cb12-37" aria-hidden="true" tabindex="-1"></a><span class="st">transformers: 4.40.2</span></span>
+<span id="cb12-38"><a href="#cb12-38" aria-hidden="true" tabindex="-1"></a><span class="st">         trl: 0.8.5</span></span>
+<span id="cb12-39"><a href="#cb12-39" aria-hidden="true" tabindex="-1"></a><span class="st">       torch: 2.1.2+cu118</span></span>
+<span id="cb12-40"><a href="#cb12-40" aria-hidden="true" tabindex="-1"></a><span class="st">bitsandbytes: 0.43.1</span></span>
 <span id="cb12-41"><a href="#cb12-41" aria-hidden="true" tabindex="-1"></a><span class="st">****************************************</span></span>
 <span id="cb12-42"><a href="#cb12-42" aria-hidden="true" tabindex="-1"></a><span class="st">/root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.</span></span>
 <span id="cb12-43"><a href="#cb12-43" aria-hidden="true" tabindex="-1"></a><span class="st">  warnings.warn(</span></span>
@@ -705,11 +705,11 @@ cookieconsent.run({
 <span id="cb12-84"><a href="#cb12-84" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: 🚀 View run at https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2</span></span>
 <span id="cb12-85"><a href="#cb12-85" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: WARNING Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")</span></span>
 <span id="cb12-86"><a href="#cb12-86" aria-hidden="true" tabindex="-1"></a><span class="st">[2024-05-24 00:05:58,369] [INFO] [axolotl.callbacks.on_train_begin:771] [PID:4902] [RANK:0] The Axolotl config has been saved to the WandB run under files.</span></span>
-<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 1.154, '</span><span class="ex">grad_norm</span><span class="st">': 2.078125, '</span><span class="ex">learning_rate</span><span class="st">': 1e-05, '</span><span class="ex">epoch</span><span class="st">': 0.0}                                                       </span></span>
+<span id="cb12-87"><a href="#cb12-87" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 1.154, '</span><span class="ex">grad_norm</span><span class="st">': 2.078125, '</span><span class="ex">learning_rate</span><span class="st">': 1e-05, '</span><span class="ex">epoch</span><span class="st">': 0.0}</span></span>
 <span id="cb12-88"><a href="#cb12-88" aria-hidden="true" tabindex="-1"></a><span class="st">  0%|                                                                                          | 1/5400 [00:21&lt;32:33:13, 21.71s</span></span>
-<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a><span class="st"> 49%|█████████████████████████████████████████████▍                      </span></span>
-<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="st"> 50%|███████████████████████████████████████████▌                        </span></span>
-<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="st">                                                                         {'</span><span class="ex">eval_loss</span><span class="st">': 1.1900806427001953, '</span><span class="ex">eval_runtime</span><span class="st">': 1342.7584, '</span><span class="ex">eval_samples_per_second</span><span class="st">': 9.533, '</span><span class="ex">eval_steps_per_second</span><span class="st">': 0.596, '</span><span class="ex">epoch</span><span class="st">': 0.0}      </span></span>
+<span id="cb12-89"><a href="#cb12-89" aria-hidden="true" tabindex="-1"></a><span class="st"> 49%|█████████████████████████████████████████████▍</span></span>
+<span id="cb12-90"><a href="#cb12-90" aria-hidden="true" tabindex="-1"></a><span class="st"> 50%|███████████████████████████████████████████▌</span></span>
+<span id="cb12-91"><a href="#cb12-91" aria-hidden="true" tabindex="-1"></a><span class="st">                                                                         {'</span><span class="ex">eval_loss</span><span class="st">': 1.1900806427001953, '</span><span class="ex">eval_runtime</span><span class="st">': 1342.7584, '</span><span class="ex">eval_samples_per_second</span><span class="st">': 9.533, '</span><span class="ex">eval_steps_per_second</span><span class="st">': 0.596, '</span><span class="ex">epoch</span><span class="st">': 0.0}</span></span>
 <span id="cb12-92"><a href="#cb12-92" aria-hidden="true" tabindex="-1"></a><span class="st">  0%|                                | 1/5400 [22:44&lt;32:33:13, 21.71s/it[2024-05-24 00:29:04,813] [INFO] [axolotl.callbacks.on_step_end:126] [PID:4902] [RANK:0] GPU memory usage while training: 4.684GB (+12.633GB cache, +1.136GB misc)</span></span>
 <span id="cb12-93"><a href="#cb12-93" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 1.1821, '</span><span class="ex">grad_norm</span><span class="st">': 2.125, '</span><span class="ex">learning_rate</span><span class="st">': 2e-05, '</span><span class="ex">epoch</span><span class="st">': 0.0}</span></span>
 <span id="cb12-94"><a href="#cb12-94" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 1.1561, '</span><span class="ex">grad_norm</span><span class="st">': 1.9609375, '</span><span class="ex">learning_rate</span><span class="st">': 3e-05, '</span><span class="ex">epoch</span><span class="st">': 0.0}</span></span>
@@ -995,8 +995,8 @@ cookieconsent.run({
 <span id="cb12-374"><a href="#cb12-374" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0924, '</span><span class="ex">grad_norm</span><span class="st">': 0.201171875, '</span><span class="ex">learning_rate</span><span class="st">': 0.00019882303665726828, '</span><span class="ex">epoch</span><span class="st">': 0.16}</span></span>
 <span id="cb12-375"><a href="#cb12-375" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0593, '</span><span class="ex">grad_norm</span><span class="st">': 0.1669921875, '</span><span class="ex">learning_rate</span><span class="st">': 0.0001988140871160223, '</span><span class="ex">epoch</span><span class="st">': 0.16}</span></span>
 <span id="cb12-376"><a href="#cb12-376" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0666, '</span><span class="ex">grad_norm</span><span class="st">': 0.1650390625, '</span><span class="ex">learning_rate</span><span class="st">': 0.0001988051038806621, '</span><span class="ex">epoch</span><span class="st">': 0.16}</span></span>
-<span id="cb12-377"><a href="#cb12-377" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0799, '</span><span class="ex">grad_norm</span><span class="st">': 0.177734375, '</span><span class="ex">learning_rate</span><span class="st">': 0.0001987960869542508, '</span><span class="ex">epoch</span><span class="st">': 0.16}                </span></span>
-<span id="cb12-378"><a href="#cb12-378" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0625, '</span><span class="ex">grad_norm</span><span class="st">': 0.19921875, '</span><span class="ex">learning_rate</span><span class="st">': 0.00019878703633986294, '</span><span class="ex">epoch</span><span class="st">': 0.16}                </span></span>
+<span id="cb12-377"><a href="#cb12-377" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0799, '</span><span class="ex">grad_norm</span><span class="st">': 0.177734375, '</span><span class="ex">learning_rate</span><span class="st">': 0.0001987960869542508, '</span><span class="ex">epoch</span><span class="st">': 0.16}</span></span>
+<span id="cb12-378"><a href="#cb12-378" aria-hidden="true" tabindex="-1"></a><span class="st">{'</span><span class="ex">loss</span><span class="st">': 0.0625, '</span><span class="ex">grad_norm</span><span class="st">': 0.19921875, '</span><span class="ex">learning_rate</span><span class="st">': 0.00019878703633986294, '</span><span class="ex">epoch</span><span class="st">': 0.16}</span></span>
 <span id="cb12-379"><a href="#cb12-379" aria-hidden="true" tabindex="-1"></a><span class="st">  5%|███▌                                                                | 287/5400 [2:07:55&lt;31:19:58, 22.06s/it]^CTraceback (most recent call last):</span></span>
 <span id="cb12-380"><a href="#cb12-380" aria-hidden="true" tabindex="-1"></a><span class="st">  File "/root/miniconda3/envs/py3.10/bin/accelerate", line 8, in &lt;module&gt;</span></span>
 <span id="cb12-381"><a href="#cb12-381" aria-hidden="true" tabindex="-1"></a><span class="st">    sys.exit(main())</span></span>
@@ -1029,7 +1029,7 @@ cookieconsent.run({
 <span id="cb12-408"><a href="#cb12-408" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:         train/grad_norm █▆▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁</span></span>
 <span id="cb12-409"><a href="#cb12-409" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:     train/learning_rate ▁▃▆█████████████████████████████████████</span></span>
 <span id="cb12-410"><a href="#cb12-410" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:              train/loss █▅▂▂▂▂▂▂▂▂▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁</span></span>
-<span id="cb12-411"><a href="#cb12-411" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: </span></span>
+<span id="cb12-411"><a href="#cb12-411" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:</span></span>
 <span id="cb12-412"><a href="#cb12-412" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: Run summary:</span></span>
 <span id="cb12-413"><a href="#cb12-413" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:               eval/loss 1.19008</span></span>
 <span id="cb12-414"><a href="#cb12-414" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:            eval/runtime 1342.7584</span></span>
@@ -1040,7 +1040,7 @@ cookieconsent.run({
 <span id="cb12-419"><a href="#cb12-419" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:         train/grad_norm 0.19922</span></span>
 <span id="cb12-420"><a href="#cb12-420" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:     train/learning_rate 0.0002</span></span>
 <span id="cb12-421"><a href="#cb12-421" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:              train/loss 0.0625</span></span>
-<span id="cb12-422"><a href="#cb12-422" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: </span></span>
+<span id="cb12-422"><a href="#cb12-422" aria-hidden="true" tabindex="-1"></a><span class="st">wandb:</span></span>
 <span id="cb12-423"><a href="#cb12-423" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: 🚀 View run lyric-wildflower-5 at: https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2</span></span>
 <span id="cb12-424"><a href="#cb12-424" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral</span></span>
 <span id="cb12-425"><a href="#cb12-425" aria-hidden="true" tabindex="-1"></a><span class="st">wandb: Synced 6 W&amp;B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)</span></span>
