@@ -11,7 +11,7 @@ Llama2 was released by Meta on 2023-07-18. My first exposure to the model was [r
 
 Note this write up isn't the only game in town:
 
-- Nathan Lambert has a [nice writeup](https://www.interconnects.ai/p/llama-2-from-meta?sd=pf) of his thoughts on the model. 
+- Nathan Lambert has a [nice writeup](https://www.interconnects.ai/p/llama-2-from-meta?sd=pf) of his thoughts on the model.
 - AI Explained has a nice [video breakdown](https://www.youtube.com/watch?v=zJBpRn2zTco&ab_channel=AIExplained).
 - James Briggs also has built a [conversational agent that runs locally using Llama 2](https://www.youtube.com/watch?v=6iHVJyX2e50&ab_channel=JamesBriggs).
 
@@ -63,14 +63,14 @@ The training data for the RLHF models is actually their newly collected preferen
 
 > We combine our newly collected data with existing open-source preference datasets to form a larger training dataset. Initially, open-source datasets were used to bootstrap our reward models while we were in the process of collecting preference annotation data. We note that in the context of RLHF in this study, the role of reward signals is to learn human preference for Llama 2-Chat outputs rather than any model outputs. However, in our experiments, we do not observe negative transfer from the open-source preference datasets. Thus, we have decided to keep them in our data mixture, as they could enable better generalization for the reward model and prevent reward hacking, i.e. Llama 2-Chat taking advantage of some weaknesses of our reward, and so artificially inflating the score despite performing less well.
 
-- Helpfulness reward model is eventually trained on all Meta Helpfulness data, combined with an equal parts of the remaining data uniformly sampled from Meta Safety and from the open-source datasets. 
+- Helpfulness reward model is eventually trained on all Meta Helpfulness data, combined with an equal parts of the remaining data uniformly sampled from Meta Safety and from the open-source datasets.
 - Safety reward model is trained on all Meta Safety and Anthropic Harmless data, mixed with Meta Helpfulness and open-source helpfulness data in a 90/10 proportion. We found that the setting with 10% helpfulness data is especially beneficial for the accuracy on samples where both the chosen and rejected responses were deemed safe.
 
 ## Rejection Sampling for RL
 
 The authors also describe a method of RHLF that they tried called "Rejection Sampling fine-tuning" that was new to me. It is defined as
 
-> We sample K outputs from the model and select the best candidate with our reward, consistent with Bai et al. (2022b). The same re-ranking strategy for LLMs was also proposed in Deng et al. (2019), where the reward is seen as an energy function. Here, we go one step further, and use the selected outputs for a gradient update. For each prompt, the sample obtaining the highest reward score is considered the new gold standard. Similar to Scialom et al. (2020a), we then fine-tune our model on the new set of ranked samples, reinforcing the reward. 
+> We sample K outputs from the model and select the best candidate with our reward, consistent with Bai et al. (2022b). The same re-ranking strategy for LLMs was also proposed in Deng et al. (2019), where the reward is seen as an energy function. Here, we go one step further, and use the selected outputs for a gradient update. For each prompt, the sample obtaining the highest reward score is considered the new gold standard. Similar to Scialom et al. (2020a), we then fine-tune our model on the new set of ranked samples, reinforcing the reward.
 
 The two RL algorithms differ in:
 
@@ -97,11 +97,11 @@ The GAtt method leads to the model being able to follow instructions across 20+ 
 
 ![Evolution of Llama2-Chat](./figure11_evolution_of_results.png)
 
-I found the above two plots fascinating as a way to show models evaluating models. Each plot shows the win-rate% of Llama2-Chat versus ChatGPT on both safety (y-axis) and helpfulenss (x-axis) over different iterations of fine-tuning (SFT-v1) and RHLF (RHLF-v1 all the way up to RHLF-v5 with PPO). There were two judges, the Meta's reward model used to train Llama2-Chat and GPT-4. 
+I found the above two plots fascinating as a way to show models evaluating models. Each plot shows the win-rate% of Llama2-Chat versus ChatGPT on both safety (y-axis) and helpfulenss (x-axis) over different iterations of fine-tuning (SFT-v1) and RHLF (RHLF-v1 all the way up to RHLF-v5 with PPO). There were two judges, the Meta's reward model used to train Llama2-Chat and GPT-4.
 
 ## Human Evaluation
 
-> To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety. We compare the Llama 2-Chat models to open-source models (Falcon, MPT MosaicML NLP Team et al. (2023), Vicuna Chiang et al. (2023), as well as closed-source models (Chat- GPT (OpenAI, 2023) and PaLM Anil et al. (2023)) on over 4,000 single and multi-turn prompts. For ChatGPT, we use gpt-3.5-turbo-0301 model in all generations. For PaLM, we use the chat-bison-001 model in all generations. 
+> To evaluate the quality of major model versions, we asked human evaluators to rate them on helpfulness and safety. We compare the Llama 2-Chat models to open-source models (Falcon, MPT MosaicML NLP Team et al. (2023), Vicuna Chiang et al. (2023), as well as closed-source models (Chat- GPT (OpenAI, 2023) and PaLM Anil et al. (2023)) on over 4,000 single and multi-turn prompts. For ChatGPT, we use gpt-3.5-turbo-0301 model in all generations. For PaLM, we use the chat-bison-001 model in all generations.
 
 ![Human Evaluation Results for Llama2-Chat](./figure12_human_eval_all.png)
 

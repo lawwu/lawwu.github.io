@@ -22,6 +22,7 @@ The rendered site is then served via GitHub Pages from the `gh-pages` branch.
 ### Manual Deployment
 
 To manually trigger deployment:
+
 1. Go to the "Actions" tab in the repository
 2. Select the "Quarto Publish" workflow
 3. Click "Run workflow" and select the branch to deploy from
@@ -29,6 +30,7 @@ To manually trigger deployment:
 ### Local Preview
 
 To preview the blog locally, run:
+
 ```bash
 quarto preview
 ```
@@ -43,7 +45,8 @@ for file in *.png; do pngquant --force --output "$file" --quality 60-80 "$file";
 ```
 
 It's possible to embed Streamlit apps directly into a Quarto page using an iframe:
-```
+
+```html
 <iframe
   src="https://llm-impact-on-jobs.streamlit.app/?embed=true"
   height="1200"

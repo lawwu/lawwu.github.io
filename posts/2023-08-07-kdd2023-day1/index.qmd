@@ -173,9 +173,9 @@ Paper: [https://research.ibm.com/publications/challenges-in-post-training-quanti
 
 Vision Transformers recently showed outstanding performance in computer vision tasks. However, those models are compute and memory intensive that require accelerators with a large amount of memory like NVIDIA A100 graphic processing unit for training and even for inference. Post-training quantization is an appealing compression method, as it does not require retraining the models and labels to tune the model. In this paper, we look in depth at multiple models in terms of size, architecture, and training procedure and provide guidelines on how to quantize the model to an 8-bit integer, both weights and activations. We perform a well-rounded study on the effects of quantization and sensitivity to the quantization error. Moreover, we show that applying mixed-data precision quantization works well for most vision transformer models achieving up to 90% compression ratio within a 2% top-1 accuracy drop. This kind of quantization offers a trade-off between memory, compute, and performance of the models that are deployable with the current software and hardware stack.
 
-- There's a difference between Static vs Dynamic Quantization 
+- There's a difference between Static vs Dynamic Quantization
 - Larger models are supposed to be easier to quantize, but not the case here
-- Signal to noise quantization ratio - SNQR 
+- Signal to noise quantization ratio - SNQR
 - Partial Quantization: Some models that lost accuracy during dynamic quant, regained during 90% quant
 
 ## Generalization in Graph Neural Networks: Improved PAC-Bayesian Bounds on Graph Diffusion
@@ -304,7 +304,7 @@ Raif Rustamov from Amazon gave this invited talk.
 - Conservative COG = lower bound of confidence interval
 
 
-## The Value of Last-Mile Delivery in Online Retail	
+## The Value of Last-Mile Delivery in Online Retail
 
 Ruomeng Cui from Emory gave this talk.
 
@@ -321,7 +321,7 @@ Ruomeng Cui from Emory gave this talk.
 - First-difference DML
 - Others
 
-### Account for Knapsnack 
+### Account for Knapsnack
 - Tau does not capture economic efficiency
 - Need to account for how much capacity a customer is using. A customer going from 0 to 1 unit sales is much more valuable than a customer going from 19 to 20 units sold because the latter is not using much capacity.
 
@@ -342,11 +342,11 @@ Dmitri Goldenberg from Booking.com gave this talk. It was a very good talk with 
 
 In two-sided markets like job-matching or dating-apps, need to use an unbiased ranking metric which they propose in their paper.
 
-## Unit Selection Based on Counterfactual Logic	
+## Unit Selection Based on Counterfactual Logic
 
 This was an invited talk by Ang Li about this paper: [https://ftp.cs.ucla.edu/pub/stat_ser/r488.pdf](https://ftp.cs.ucla.edu/pub/stat_ser/r488.pdf).
 
-My main takeaway was dividing a population into a typical A/B test where one group receives a treatment and the other group is the control is too simplistic. There are actually 4 groups we should be concerned about: 
+My main takeaway was dividing a population into a typical A/B test where one group receives a treatment and the other group is the control is too simplistic. There are actually 4 groups we should be concerned about:
 
 - Complier: Individuals who would respond positively if treated and negatively if not treated.
 -  Always-taker: Individuals who always respond positively no matter whether they are treated or not.

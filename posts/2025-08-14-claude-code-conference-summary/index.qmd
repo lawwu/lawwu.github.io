@@ -7,7 +7,7 @@ categories: [ai, events, summary]
 
 # Code with Claude Conference 2025: Key Insights & Summaries
 
-Claude had a [conference](https://www.anthropic.com/events/code-with-claude-2025) recently all about Claude Code. I transcribed all of the talks using [transcripts](https://github.com/lawwu/transcripts) and hosted it [here](https://lawwu.github.io/transcripts/index_claude_code_conference.html). The YouTube playlist is [here](https://www.youtube.com/playlist?list=PLf2m23nhTg1P5BsOHUOXyQz5RhfUSSVUi). Below are summaries of the talks. 
+Claude had a [conference](https://www.anthropic.com/events/code-with-claude-2025) recently all about Claude Code. I transcribed all of the talks using [transcripts](https://github.com/lawwu/transcripts) and hosted it [here](https://lawwu.github.io/transcripts/index_claude_code_conference.html). The YouTube playlist is [here](https://www.youtube.com/playlist?list=PLf2m23nhTg1P5BsOHUOXyQz5RhfUSSVUi). Below are summaries of the talks.
 
 ## Overall Summary
 

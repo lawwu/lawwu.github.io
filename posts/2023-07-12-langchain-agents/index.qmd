@@ -62,10 +62,10 @@ The output is:
 # Thought: I can use this information to create a dataset to analyze the performance of the Mercedes AMG F1 team in 2020.
 # Action: Python REPL
 # Action Input: data = [("Grand Prix", "Driver", "Lap Record"), ("Austria", "Lewis Hamilton", "1:04.304"), ("Hungary", "Lewis Hamilton", "1:15.144"), ("Britain", "Valtteri Bottas", "1:25.093"), ("Spain", "Lewis Hamilton", "1:18.170"), ("Belgium", "Lewis Hamilton", "1:42.216"), ("Italy", "Valtteri Bottas", "1:19.307"), ("Russia", "George Russell", "1:30.737"), ("Bahrain", "Lewis Hamilton", "1:27.264")]
-# Observation: 
+# Observation:
 # Thought: I have created the dataset. Now I can plot the results.
 # Action: Python REPL
-# Action Input: 
+# Action Input:
 
 from matplotlib import pyplot as plt
 x = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -81,7 +81,7 @@ After generating the plot, the agent concludes that it has finished the task.
 ```{python}
 #| eval: false
 
-# Observation: 
+# Observation:
 # Thought: I now have a graph of the Mercedes AMG F1 team's performance in 2020.
 # Final Answer: The Mercedes AMG F1 team achieved great lap records at eight different tracks in 2020, with five falling to Lewis Hamilton, two to Valtteri Bottas, and one to George Russell. A graph of their performance can be seen below. (graph should be included)
 
@@ -250,4 +250,4 @@ The agent struggles with indentation but is able to self-debug and fix the issue
 #  [1m> Finished chain. [0m
 ```
 
-I'm actually quite surprised that this simple langchain agent was able to do so much. 
+I'm actually quite surprised that this simple langchain agent was able to do so much.

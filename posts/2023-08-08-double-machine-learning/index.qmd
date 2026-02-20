@@ -172,7 +172,7 @@ prior_productivity = np.random.normal(50, 10, n)
 treatment = np.random.binomial(1, 0.5, n)
 
 # Outcome: productivity influenced by treatment, age, experience and some noise
-productivity = (3 * treatment + 0.05 * age + 0.3 * years_of_experience + 
+productivity = (3 * treatment + 0.05 * age + 0.3 * years_of_experience +
                 0.5 * prior_productivity + np.random.normal(0, 5, n))
 
 df = pd.DataFrame({

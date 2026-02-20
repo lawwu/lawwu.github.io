@@ -1,6 +1,6 @@
 ---
 title: "John Street - God's Design for Wives"
-author: "Lawrence Wu"    
+author: "Lawrence Wu"
 date: "2024-08-14"
 categories: ["Conference", "Marriage", "God", "John Street", "Wives"]
 ---

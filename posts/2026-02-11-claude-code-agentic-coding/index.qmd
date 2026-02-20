@@ -35,13 +35,13 @@ Solution: Have CLAUDE.md with one line:
 ```md
 @AGENTS.md
 ```
-Then just keep your AGENTS.md updated. 
+Then just keep your AGENTS.md updated.
 
 Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then load AGENTS.md because it's referred to.
 
 In Claude Code, if you type /memory, you should see under Project Memory your AGENTS.md referenced.
 
-![](./images/cc_day2_agents_md.png) 
+![](./images/cc_day2_agents_md.png)
 
 ## Day 3 - Self-Improving `AGENTS.md`/`CLAUDE.md`
 
@@ -67,14 +67,14 @@ Then you can trigger the single skill that is part of the plugin called `claude-
 /claude-md-management:revise-claude-md
 ```
 
-![](./images/cc_day3_auto_claude_md.jpeg) 
+![](./images/cc_day3_auto_claude_md.jpeg)
 
 ## Day 4 - Auto Memory
 
 [Posted on 2026-02-13](https://www.linkedin.com/posts/lawrencewu920_day-4-of-my-claude-code-daily-tips-series-activity-7428098173602185216-EhKW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
 
-Before talking about Claude Code's auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code "can you search my previous claude messages for things i should add to my global CLAUDE.md?" 
+Before talking about Claude Code's auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code "can you search my previous claude messages for things i should add to my global CLAUDE.md?"
 
 Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code's docs here: https://code.claude.com/docs/en/memory#manage-auto-memory
 
@@ -116,21 +116,21 @@ Remember you can also ask Claude Code to do these things too.
 
 ![](./images/cc_day6_plan_mode.png)
 
-I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see "plan mode on" in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan. 
+I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see "plan mode on" in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan.
 
-Some of the more complicated tasks I like to use plan mode for are: 
+Some of the more complicated tasks I like to use plan mode for are:
 
 - Large refactoring
 - Creating machine learning pipelines
 - Brainstorming with Claude
 
-The official docs recommend you use plan mode when are you: 
+The official docs recommend you use plan mode when are you:
 
 - Multi-step implementation: When your feature requires making edits to many files
 - Code exploration: When you want to research the codebase thoroughly before changing anything
 - Interactive development: When you want to iterate on the direction with Claude
 
-The plans get written into your home directory: `~/.claude/plans/random-words.md` 
+The plans get written into your home directory: `~/.claude/plans/random-words.md`
 
 https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis
 
@@ -147,12 +147,12 @@ MCPs had a lot of promise when they first came out. They still have a place. By 
 With CLIs, Claude Code can directly use them because the underlying model, Claude, has been "seen" so many instances of CLIs being used in the training data. So Claude Code already knows how to use the `gh` (Github) CLI, `bq` (BigQuery) CLI, ffmpeg, etc.
 
 
-I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP. 
+I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP.
 
 
-I've also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (https://github.com/atlassian-api/atlassian-python-api ). 
+I've also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (https://github.com/atlassian-api/atlassian-python-api ).
 
-One MCP Server I still like and have configured globally in Claude Code is DeepWiki: https://cognition.ai/blog/deepwiki-mcp-server 
+One MCP Server I still like and have configured globally in Claude Code is DeepWiki: https://cognition.ai/blog/deepwiki-mcp-server
 
 Armin Ronacher shares similar thoughts in his post: https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/
   - Largely moved away from MCP, redone everything as skills

@@ -1,0 +1,22 @@
+# Markdownlint configuration for Quarto blog
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+default: true
+
+# MD013: Line length - disabled for blog posts with long text
+MD013: false
+
+# MD033: Inline HTML - Quarto uses HTML embeds (iframes, videos)
+MD033: false
+
+# MD034: Bare URLs - allow bare URLs in content
+MD034: false
+
+# MD041: First line should be top-level heading - YAML frontmatter comes first
+MD041: false
+
+# MD028: Blank line inside blockquote - too strict for blog writing
+MD028: false
+
+# MD024: Multiple headings with the same content - allow in blog posts
+MD024: false

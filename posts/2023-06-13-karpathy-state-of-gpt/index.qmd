@@ -11,7 +11,7 @@ Here are some things I learned:
 
 ![GPT Assistant Pipeline](./gpt_assistant_pipeline.jpeg)
 
-It was helpful to see the different stages that training a RLHF-tuned LLM goes through from 1) pretraining, 2) supervised fine-tuning, 3) reward modeling and 4) reinforcement learning. 
+It was helpful to see the different stages that training a RLHF-tuned LLM goes through from 1) pretraining, 2) supervised fine-tuning, 3) reward modeling and 4) reinforcement learning.
 
 ![Base Models can be Prompted](./base_models_prompted.jpeg)
 

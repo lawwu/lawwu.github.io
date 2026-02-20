@@ -19,13 +19,13 @@ I was mistaken. The increase in SALT from $10,000 to $40,000 actually makes bunc
 
 The idea is simple:
 
-- **Year 1:** Donate 2 years worth of charity in one year → Itemize deductions 
+- **Year 1:** Donate 2 years worth of charity in one year → Itemize deductions
     - When I've done this, I give next year's amount (2026) in the last month of the prior year (Dec 2025).
     - You could also put two years of charitable contributions into a Donor Advised Fund, take the itemized deduction in that year and then spread the donations out over two years.
 - **Year 2:** Make no charitable donations → Take standard deduction
 - **Result:** More total deductions over 2 years than taking the standard deduction both years
 
-You can also prepay property tax payments. Property tax is deductible in the year you *pay* it, not when it's due. In [Orange County, CA, property tax](https://taxbill.octreasurer.gov/) comes in two installments (December and April). In your bunching year, you can pay three installments: April, December and the next April (early). 
+You can also prepay property tax payments. Property tax is deductible in the year you *pay* it, not when it's due. In [Orange County, CA, property tax](https://taxbill.octreasurer.gov/) comes in two installments (December and April). In your bunching year, you can pay three installments: April, December and the next April (early).
 
 It's kind of interesting if you search "california prepay property taxes", many of the articles (like [this one](https://www.sfchronicle.com/business/networth/article/Should-you-prepay-your-state-income-and-property-12448762.php) and this [Bogleheads post](https://www.bogleheads.org/forum/viewtopic.php?t=235950)) are from 2017 because the TCJA capped SALT deductions (including property tax) at $10,000 so it didn't make a lot of sense to prepay property tax like this.
 
