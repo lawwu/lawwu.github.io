@@ -22,6 +22,7 @@ Here are the levels:
 ---
 
 ## **Level 0 – No Use**
+
 > "I don't use AI at all."
 
 - **Developers**: Write and ship code without AI assistance. May be unaware of AI tools or skeptical about their value. Write most code in an IDE or text editor, relying on traditional resources (documentation, Google, Stack Overflow) for help.
@@ -30,6 +31,7 @@ Here are the levels:
 ---
 
 ## **Level 1 – Occasional Use**
+
 > "I use AI once in a while when I’m stuck or curious."
 
 - **Developers**: Use AI code completion like GitHub Copilot or ChatGPT to get unstuck occasionally. Paste errors or ask for code snippets.
@@ -38,6 +40,7 @@ Here are the levels:
 ---
 
 ## **Level 2 – Regular Use**
+
 > "AI is part of my daily toolkit."
 
 - **Developers**: AI helps with writing boilerplate, generating tests, or exploring APIs. Copilot is turned on. They still edit heavily.
@@ -48,6 +51,7 @@ Example: My wife falls into this camp. ChatGPT has largely replaced her Google s
 ---
 
 ## **Level 3 – Workflow Integration**
+
 > "AI changes *how* I work."
 
 - **Developers**: AI tools are deeply integrated into IDEs and workflows. Prompts are crafted with intent. Created RAG systems. Using AI-native IDEs like Cursor or Windsurf.
@@ -56,6 +60,7 @@ Example: My wife falls into this camp. ChatGPT has largely replaced her Google s
 ---
 
 ## **Level 4 – AI-Native Thinking**
+
 > "AI is a co-worker. I design around it."
 
 - **Developers**: Design software and infrastructure assuming AI is part of the team—building AI agents, integrating LLMs, evaluating agents and other AI applications as well as fine-tuning models. Very familiar with LLM capabilities like structured output, reasoning models and multi-modality. Experimented with various agent frameworks, agent architectures and MCP.
@@ -66,6 +71,7 @@ Example: Spotify's CEO Tobias Lutke has changed how his company hires because of
 ---
 
 ## **Level 5 – AI-First Innovation**
+
 > "AI isn’t just part of the work—it changes *what’s possible*."
 
 - **Developers**: Build entirely new paradigms of software with AI at the center. Move beyond LLM wrappers into agent-based systems, multi-agent systems, AI-native architectures, and emergent behavior. Actively experimenting with not just Foundation LLM APIs but real-time audio APIs (audio in and out).

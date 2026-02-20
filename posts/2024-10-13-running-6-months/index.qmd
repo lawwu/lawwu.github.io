@@ -37,11 +37,11 @@ I started Nike Run Club's 14 week half-marathon plan since the timing was perfec
 
 People had recommended setting 3 goals: a bare minimum goal, a reachable goal and a stretch goal. So I did.
 
--   Bare Minimum Goal: Don't get hurt
+- Bare Minimum Goal: Don't get hurt
 
--   Reachable Goal: Finish the race
+- Reachable Goal: Finish the race
 
--   Stretch Goal: Sub 2 hours
+- Stretch Goal: Sub 2 hours
 
 After training for something for 3+ months and meeting my stretch goal, it's hard to explain how happy I was crossing this finish line.
 
@@ -53,7 +53,9 @@ Seeing my wife and kids at the finish line cheering me on was so awesome!
 
 I also downloaded some of the GPX data from Strava for some of my friends and I and animated it using [GPX Animator](https://gpx-animator.app/).
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=_Ntj5AeAQSk&ab_channel=LawrenceWu >}}
+<!-- markdownlint-enable MD034 -->
 
 ## Things I've Learned about Running
 
@@ -69,48 +71,48 @@ You run out of energy at around 90 minutes. I remember one of my first long runs
 
 ### Gear
 
--   Shoes:
+- Shoes:
 
-    -   First pair with [Brooks Ghost](https://amzn.to/3A0BIkz). I got Ghost 15s but only Ghost 16s are available now. My friend sent me this comic that was pretty accurate why I picked them:
+    - First pair with [Brooks Ghost](https://amzn.to/3A0BIkz). I got Ghost 15s but only Ghost 16s are available now. My friend sent me this comic that was pretty accurate why I picked them:
 
 ![Brooks Ghost Comic](./brooks_ghost_comic.png){width="500"}
 
--   Second pair was a [Asics Novablast 4](https://amzn.to/4eU2LwU).
+- Second pair was a [Asics Novablast 4](https://amzn.to/4eU2LwU).
 
--   I also started a 6 month membership to [Road Runner Sports](https://www.roadrunnersports.com/vip/rewards) for \$1.99. This allows you to buy shoes, run with them and return them if you do not like them. I wound up doing this a couple times for shoes that felt okay in store but for various reasons I didn't like when going on an actual run. Not sure I'll keep this membership after the trial though.
+- I also started a 6 month membership to [Road Runner Sports](https://www.roadrunnersports.com/vip/rewards) for \$1.99. This allows you to buy shoes, run with them and return them if you do not like them. I wound up doing this a couple times for shoes that felt okay in store but for various reasons I didn't like when going on an actual run. Not sure I'll keep this membership after the trial though.
 
--   Shorts:
+- Shorts:
 
-    -   [Northyard 5-inch shorts](https://amzn.to/3zNfwdJ) - Bought a few of the cheapest / well-reviewed shorts on Amazon.
+    - [Northyard 5-inch shorts](https://amzn.to/3zNfwdJ) - Bought a few of the cheapest / well-reviewed shorts on Amazon.
 
-    -   [BALEAF Running Shirt](https://amzn.to/3BFeHEm) - Similar search, bought a few.
+    - [BALEAF Running Shirt](https://amzn.to/3BFeHEm) - Similar search, bought a few.
 
--   Running Belt:
+- Running Belt:
 
-    -   [Spibelt](https://amzn.to/4f05swK) - Running belt to hold phone, keys.
+    - [Spibelt](https://amzn.to/4f05swK) - Running belt to hold phone, keys.
 
--   Hydration Vest:
+- Hydration Vest:
 
-    -   [Salomon ADV Skin 12](https://amzn.to/4h0NiNd) - For longer runs, this vest was very useful to carry water, gels, phone. I got a medium.
+    - [Salomon ADV Skin 12](https://amzn.to/4h0NiNd) - For longer runs, this vest was very useful to carry water, gels, phone. I got a medium.
 
--   Nutrition:
+- Nutrition:
 
-    -   [Huma Chia Energy Gels](https://amzn.to/4h0NiNd) - For longer runs, I ate these. I haven't tried other gels yet but I liked how these tasted and just stuck with them.
+    - [Huma Chia Energy Gels](https://amzn.to/4h0NiNd) - For longer runs, I ate these. I haven't tried other gels yet but I liked how these tasted and just stuck with them.
 
-    -   [BODYARMOR Flash IV Electrolyte](https://amzn.to/4dFv0hC) - Also for longer runs. This is a 6 pack from Amazon (\$1/pack) which is honestly a little egregious for salt. In theory you can make your own. I bought this [30 pack](https://www.costco.com/BODYARMOR-Flash-I.V.-Hydration-Booster,-30-Individual-Serving-Stick-Packs,-Variety-Pack.product.1838221.html) from Costco that was a little cheaper.
+    - [BODYARMOR Flash IV Electrolyte](https://amzn.to/4dFv0hC) - Also for longer runs. This is a 6 pack from Amazon (\$1/pack) which is honestly a little egregious for salt. In theory you can make your own. I bought this [30 pack](https://www.costco.com/BODYARMOR-Flash-I.V.-Hydration-Booster,-30-Individual-Serving-Stick-Packs,-Variety-Pack.product.1838221.html) from Costco that was a little cheaper.
 
--   GPS Watch: Apple Watch - I already had an Apple Watch so I just used it to track my runs using the native Fitness App.
+- GPS Watch: Apple Watch - I already had an Apple Watch so I just used it to track my runs using the native Fitness App.
 
-    -   When starting an activity, there's usually a count down, you can double tap to start it immediately
-    -   When running, you can double tap the screen to start a new segment. This is useful when you are doing interval runs.
+    - When starting an activity, there's usually a count down, you can double tap to start it immediately
+    - When running, you can double tap the screen to start a new segment. This is useful when you are doing interval runs.
 
--   iOS Apps:
+- iOS Apps:
 
-    -   Fitness: Apple's native fitness app. Can see detailed information on your workout. This gets really granular because GPS watches these days measure cadence, stride length and vertical oscillation.
-    -   Health: Seeing heart health data like Cardio Fitness (VO2 Max) and resting heart rate trend in better directions was so motivating!
-    -   HealthFit: I used this to import all of my previous Apple Fitness data into Strava
-    -   WorkOutDoors: More customizable fitness app. For example you can configure interval runs, total times for each interval, target paces for each interval and the app will warn you when you are outside of your target pace (too fast and too slow). This app makes your Apple Watch behave more like a Garmin.
-    -   Strava: Fun and somewhat motivating to see how friends are staying active. Being a sucker for data, I enjoy seeing Strava's global heatmaps by activity type and also the user created segments and receiving random rewards like "You set your best 2nd mile time!" Side note: I find it pretty amazing that Strava has built a business on monetizing fitness data that users are giving them.
+    - Fitness: Apple's native fitness app. Can see detailed information on your workout. This gets really granular because GPS watches these days measure cadence, stride length and vertical oscillation.
+    - Health: Seeing heart health data like Cardio Fitness (VO2 Max) and resting heart rate trend in better directions was so motivating!
+    - HealthFit: I used this to import all of my previous Apple Fitness data into Strava
+    - WorkOutDoors: More customizable fitness app. For example you can configure interval runs, total times for each interval, target paces for each interval and the app will warn you when you are outside of your target pace (too fast and too slow). This app makes your Apple Watch behave more like a Garmin.
+    - Strava: Fun and somewhat motivating to see how friends are staying active. Being a sucker for data, I enjoy seeing Strava's global heatmaps by activity type and also the user created segments and receiving random rewards like "You set your best 2nd mile time!" Side note: I find it pretty amazing that Strava has built a business on monetizing fitness data that users are giving them.
 
 These are the Strava weekly heatmaps. It's cool thinking about all the people that went running and/or biking the last week to make this heatmap.
 
@@ -120,23 +122,23 @@ These are the Strava weekly heatmaps. It's cool thinking about all the people th
 
 ### Racing
 
--   Race strategy: Treat the first 75% of the race like a "warmup" for the last 25% of the race. Once you get to the last quarter, you can see how much you have left in the tank.
--   It's must harder to go from the beginning of a training block to the starting line of a race than going from the starting line of a race to the finish line. So many things can go wrong over a 14-16 week training block, you can get sick, injured, or your kids can get sick. All kinds of things can come up.
+- Race strategy: Treat the first 75% of the race like a "warmup" for the last 25% of the race. Once you get to the last quarter, you can see how much you have left in the tank.
+- It's must harder to go from the beginning of a training block to the starting line of a race than going from the starting line of a race to the finish line. So many things can go wrong over a 14-16 week training block, you can get sick, injured, or your kids can get sick. All kinds of things can come up.
 
 ## Things I've Learned in General and about Myself
 
--   People Can Change: Running a marathon (or half) was never on my bucket list. I never thought I could even run this distance let alone do it and enjoy it and enjoy the whole training process. I grew up playing basketball which requires a totally different set of muscles. You need short bursts and fast twitch muscles. I still have yet to meet a basketball player who likes long distance running.
--   The human body has an amazing ability to be trained
--   Running regularly has given more time to think, pray and listen to audiobooks. It's also given me more energy throughout the day.
--   The running community is generally positive. Nowadays it's pretty easy to form groups around a share interest. I've found the running communities to be quite encouraging. It doesn't matter what pace you are running.
+- People Can Change: Running a marathon (or half) was never on my bucket list. I never thought I could even run this distance let alone do it and enjoy it and enjoy the whole training process. I grew up playing basketball which requires a totally different set of muscles. You need short bursts and fast twitch muscles. I still have yet to meet a basketball player who likes long distance running.
+- The human body has an amazing ability to be trained
+- Running regularly has given more time to think, pray and listen to audiobooks. It's also given me more energy throughout the day.
+- The running community is generally positive. Nowadays it's pretty easy to form groups around a share interest. I've found the running communities to be quite encouraging. It doesn't matter what pace you are running.
 
 ## Things I've Learned about Christian Life
 
 The Bible uses many running illustrations that have become more vivid as I've started running more consistently:
 
--   **Do you not know that in a race all the runners run, but only one receives the prize? So run that you may obtain it.** Every athlete exercises self-control in all things. They do it to receive a perishable wreath, but we an imperishable. **So I do not run aimlessly**; I do not box as one beating the air. But I discipline my body and keep it under control, lest after preaching to others I myself should be disqualified. (1 Corinthians 9:24-27)
--   I have fought the good fight, **I have finished the race**, I have kept the faith. (2 Timothy 4:7)
--   Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and **let us run with endurance the race that is set before us, looking to Jesus**, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame, and is seated at the right hand of the throne of God. (Hebrews 12:1-2)
+- **Do you not know that in a race all the runners run, but only one receives the prize? So run that you may obtain it.** Every athlete exercises self-control in all things. They do it to receive a perishable wreath, but we an imperishable. **So I do not run aimlessly**; I do not box as one beating the air. But I discipline my body and keep it under control, lest after preaching to others I myself should be disqualified. (1 Corinthians 9:24-27)
+- I have fought the good fight, **I have finished the race**, I have kept the faith. (2 Timothy 4:7)
+- Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and **let us run with endurance the race that is set before us, looking to Jesus**, the founder and perfecter of our faith, who for the joy that was set before him endured the cross, despising the shame, and is seated at the right hand of the throne of God. (Hebrews 12:1-2)
 
 From 1 Corinthians 9:24-27, we draw some parallels between physical running and spiritual running (basically Christian life):
 
@@ -151,10 +153,10 @@ From 1 Corinthians 9:24-27, we draw some parallels between physical running and 
 | Outcome                | A perishable, temporary reward                            | An imperishable, everlasting reward                                                                      |
 | Consequence of Failure | Losing the race, disqualification                         | Spiritual disqualification, falling short of spiritual goals                                             |
 
--   **Don't compare yourself to others**: I've also seen how easy it is to compare yourself to others in running and in Christian life. It's easy to compare your pace or weekly mileage to others and say, "I wish I ran that fast." But everyone is different. Everyone has had differing amounts of training up to that point. Everyone's body is different. People have different goals. I've found it's better to just be inspired by what others are able to do. Then if you want to compare, compare with your previous self. How long was I able to run at a conversational pace 1 month ago? 3 months ago? In Christian life it's also easy to compare how fast/well one is running and compare yourself to others. But similarly, everyone is on a different spiritual journey with differing spiritual backgrounds. If you want to compare, compare with your previous self. How much have I grown in things like the fruit of the Spirit since I became a Christian? How much have I grown in love of God and people?
--   **Self-control is so important**: 1 Cor 9:25 says, "Every athlete exercises self-control in all things." Athletes exercise self-control because it's necessary to have good performance. Even in building a simple habit of running for 30 minutes a day, this requires self-control and discipline to find the time to do so, sleeping early to wake up early to do this (if you want to do it in the morning before your kids wake up), committing to a running plan, actually running the runs on those plans, etc. In Christian life, growing in self-control over my desires means I can better fight temptation and sinful desires and ultimately be a better instrument for noble purposes, useful to God for any good work (2 Tim 2:21).
--   **Don't run aimlessly**: It's been helpful to have goals while running. Following the NRC running plan was helpful. Knowing what runs I was going to do on each day was helpful. Knowing the purpose of each run and what it was doing to my body was motivating as well. There were times I didn't have a good idea of how far I was going to run that day. Sometimes on those days I wound up cutting my runs short because of the lack of motivation. In Christian life, it's important to have spiritual direction. Where is God leading you? And if you have a family and especially if you are a husband, how and where are you leading your family?
--   **Disciplining the body**: Running has helped me discipline my body. Starting off the day with something physically demanding helps set the tone for the rest of the day. Another example is running provides an outlet for me to think and pray. This helps to get my mind settled for the day ahead as well.
+- **Don't compare yourself to others**: I've also seen how easy it is to compare yourself to others in running and in Christian life. It's easy to compare your pace or weekly mileage to others and say, "I wish I ran that fast." But everyone is different. Everyone has had differing amounts of training up to that point. Everyone's body is different. People have different goals. I've found it's better to just be inspired by what others are able to do. Then if you want to compare, compare with your previous self. How long was I able to run at a conversational pace 1 month ago? 3 months ago? In Christian life it's also easy to compare how fast/well one is running and compare yourself to others. But similarly, everyone is on a different spiritual journey with differing spiritual backgrounds. If you want to compare, compare with your previous self. How much have I grown in things like the fruit of the Spirit since I became a Christian? How much have I grown in love of God and people?
+- **Self-control is so important**: 1 Cor 9:25 says, "Every athlete exercises self-control in all things." Athletes exercise self-control because it's necessary to have good performance. Even in building a simple habit of running for 30 minutes a day, this requires self-control and discipline to find the time to do so, sleeping early to wake up early to do this (if you want to do it in the morning before your kids wake up), committing to a running plan, actually running the runs on those plans, etc. In Christian life, growing in self-control over my desires means I can better fight temptation and sinful desires and ultimately be a better instrument for noble purposes, useful to God for any good work (2 Tim 2:21).
+- **Don't run aimlessly**: It's been helpful to have goals while running. Following the NRC running plan was helpful. Knowing what runs I was going to do on each day was helpful. Knowing the purpose of each run and what it was doing to my body was motivating as well. There were times I didn't have a good idea of how far I was going to run that day. Sometimes on those days I wound up cutting my runs short because of the lack of motivation. In Christian life, it's important to have spiritual direction. Where is God leading you? And if you have a family and especially if you are a husband, how and where are you leading your family?
+- **Disciplining the body**: Running has helped me discipline my body. Starting off the day with something physically demanding helps set the tone for the rest of the day. Another example is running provides an outlet for me to think and pray. This helps to get my mind settled for the day ahead as well.
 
 1 Tim 4:8 says, "for while bodily training is of some value, godliness is of value in every way, as it holds promise for the present life and also for the life to come." The Bible says bodily training is of some value! This should provide some motivation to a Christian to take exercise seriously. However the passage goes onto say that godliness is more important because it holds promise for this life and the life to come. I take this to mean our spiritual fitness and our relationship with Christ is more important to God than our physical fitness. There were times on this running journey I took running too seriously and prioritized it above the things God wanted me to prioritize like my family. So one big takeaway has been to not allow good things (like running) to supercede the best things (honoring and glorifying God).
 

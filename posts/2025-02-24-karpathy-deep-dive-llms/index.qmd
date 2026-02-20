@@ -9,7 +9,9 @@ I've been experimeting with writing CLI utilities to fetch and summarize YouTube
 
 # Deep Dive into LLMs like ChatGPT
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://youtube.com/watch?v=7xTGNNLPyMI >}}
+<!-- markdownlint-enable MD034 -->
 
 ## Summary
 

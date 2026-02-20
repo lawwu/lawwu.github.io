@@ -5,7 +5,9 @@ author: Lawrence Wu
 categories: [ai, summary]
 ---
 
+<!-- markdownlint-disable MD034 -->
 [Andrej Karpathy](https://twitter.com/karpathy) gave a talk at a Microsoft conference in late May about the State of GPT: {{< video https://www.youtube.com/embed/bZQun8Y4L2A >}}
+<!-- markdownlint-enable MD034 -->
 
 Here are some things I learned:
 
@@ -45,7 +47,7 @@ One downside of fine-tuned models I didn't realize was they lose entropy, in oth
 
 ![Assistant Leaderboard](./assistant_leaderboard.jpg)
 
-A team at Berkeley has assembled Elo ratings from some assistant LLMs. The first 3 are RLHF models, the rest of SFT models. GPT-4 is winning. A link to a more up-to-date version of the leaderboard with Google's PaLM2: https://lmsys.org/blog/2023-05-25-leaderboard/ which is still pretty far between GPT3.5 and GPT-4.
+A team at Berkeley has assembled Elo ratings from some assistant LLMs. The first 3 are RLHF models, the rest of SFT models. GPT-4 is winning. A link to a more up-to-date version of the leaderboard with Google's PaLM2: <https://lmsys.org/blog/2023-05-25-leaderboard/> which is still pretty far between GPT3.5 and GPT-4.
 
 ![Human text generation](./human_vs_llm1.jpeg)
 ![Human text generation vs. LLM text generation](./human_vs_llm2.jpeg)

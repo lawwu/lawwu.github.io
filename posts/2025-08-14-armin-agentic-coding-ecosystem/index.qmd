@@ -16,7 +16,9 @@ I've learned a lot about Claude Code and agentic coding tools from Armin Ronache
 
 Below is a talk and a summary by Claude Code.
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=xfm99Tb7CNo >}}
+<!-- markdownlint-enable MD034 -->
 
 ## Key Points and Insights
 

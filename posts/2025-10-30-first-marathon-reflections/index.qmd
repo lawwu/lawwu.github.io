@@ -10,6 +10,7 @@ I did it. I ran a marathon. Long Beach 2025 Marathon is finished. What an amazin
 ![Post marathon joy](./long_beach_2025_marathon.jpg){width=400px style="border-radius: 50%; margin-bottom: 20px;"}
 
 # Race Report
+
 The race didn’t start out great. Parking was a pain. It felt way more crowded than last year.The spot I booked turned out to be not open. But the weather was good at the start. I started out in the 3:45-4:15 corral and I found myself with the 3:50 pacers and stuck with them for probably the first half of the race. The first half of the marathon was relatively easy since it was the same as [last year’s HM course](https://lawwu.github.io/posts/2024-10-13-running-6-months/). When the course split and then rounded CSULB, it got tough around mile 18 because of the hills, the unfamiliar course and some pain in my left foot. I tried my best to dig deep at that point and just push through. Thankfully the pain was tolerable and didn’t get much worse. I then had some more pain in my right leg at mile 22 but mentally the end felt pretty close. Seeing people cramp up left and right didn’t help my confidence. The course narrowed a lot at mile 23-25 so it was hard to maintain a sub 9 pace but I don’t think I could’ve physically managed that so it was God’s mercy on me. I imagine if I pushed hard the last 6 miles I could’ve tried for sub 3:50 but didn’t want to get greedy and also didn’t want to get hurt. I ended up finishing with a time of 3:52:12 which is about a 8:51 min per mile pace. I was and am so happy with this result.
 
 ![Mile splits](./long_beach_2025_marathon_splits.png){width=400px style="border-radius: 50%; margin-bottom: 20px;"}
@@ -117,4 +118,6 @@ This verse says that physical training is of some value. I have certainly seen t
 
 The verse goes on to say that "godliness has value for all things" because it holds "promise for both the present life and the life to come." Growing in godliness and Christ-likeness is what I hope to learn to value more than physical training and grow in more in the coming months and years. I am interested in reading this book [A Little Theology of Exercise: Enjoying Christ in Body and Soul](https://amzn.to/3JEccGu) by David Mathis. I heard about this book through this video:
 
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=7diw2lK1aZ0 >}}
+<!-- markdownlint-enable MD034 -->

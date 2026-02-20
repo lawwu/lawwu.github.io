@@ -3,20 +3,56 @@
 
 default: true
 
+# MD004: Unordered list style - allow both dash and asterisk
+MD004: false
+
+# MD005: List indent consistency - allow flexible indentation
+MD005: false
+
+# MD007: List indentation - allow flexible indentation in blog prose
+MD007: false
+
+# MD010: Hard tabs - allow tabs (some posts use tab indentation)
+MD010: false
+
+# MD012: Multiple consecutive blank lines - allow in blog posts
+MD012: false
+
 # MD013: Line length - disabled for blog posts with long text
 MD013: false
 
-# MD033: Inline HTML - Quarto uses HTML embeds (iframes, videos)
-MD033: false
+# MD024: Multiple headings with the same content - allow in blog posts
+MD024: false
 
-# MD034: Bare URLs - allow bare URLs in content
-MD034: false
-
-# MD041: First line should be top-level heading - YAML frontmatter comes first
-MD041: false
+# MD025: Single top-level heading - blog posts often have multiple H1 sections
+MD025: false
 
 # MD028: Blank line inside blockquote - too strict for blog writing
 MD028: false
 
-# MD024: Multiple headings with the same content - allow in blog posts
-MD024: false
+# MD033: Inline HTML - Quarto uses HTML embeds (iframes, videos)
+MD033: false
+
+# MD034: Bare URLs - must use <url> or [text](url) form
+MD034: true
+
+# MD041: First line should be top-level heading - YAML frontmatter comes first
+MD041: false
+
+# MD045: Image alt text - omitted for blog post screenshots
+MD045: false
+
+# MD026: Trailing punctuation in headings - blog headings often end with ":" or "!"
+MD026: false
+
+# MD029: Ordered list item prefix - allow natural numbering (1. 2. 3.)
+MD029: false
+
+# MD060: Table column style - pipe alignment is impractical to maintain manually
+MD060: false
+
+# MD036: Emphasis as heading - allow bold/italic used as informal headings
+MD036: false
+
+# MD059: Descriptive link text - too strict for blog writing ("[here]", "[this]")
+MD059: false

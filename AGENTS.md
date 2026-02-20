@@ -4,7 +4,7 @@ Guidance for coding agents (Claude Code, Codex, etc.) working in this repository
 
 ## Project
 
-Lawrence Wu's personal blog at https://lawwu.github.io/blog.html, built with [Quarto](https://quarto.org/).
+Lawrence Wu's personal blog at <https://lawwu.github.io/blog.html>, built with [Quarto](https://quarto.org/).
 
 ## Key Commands
 
@@ -47,6 +47,7 @@ Use `.qmd` files (not `.md`) for all blog posts and conference summaries.
 
 - **Branches:** `main` (production), `feature/description` or `claude/description-xxxxx`
 - **Commit:** include `docs/` and `_freeze/`; exclude `.quarto/`, `_site/`
+- **Links:** never use bare URLs — always wrap in `<url>` or `[text](url)` form
 - **Images:** place in post directory, compress PNGs with `pngquant --quality 60-80`
 - **Code blocks:** executable Python runs via Jupyter during render; use `freeze: false` to force re-execution
 

@@ -19,6 +19,7 @@ I'm currently working my way through the [Databricks LLM101x Course on EdX](http
 ## Setting Up the Agent
 
 First to define the agent using `langchain`, `OpenAI` and then giving it some tools.
+
 ```{python}
 #| eval: false
 
@@ -42,6 +43,7 @@ dascie = initialize_agent(
 ## Simple Example
 
 To run the agent, you just pass an instruction:
+
 ```{python}
 #| eval: false
 
@@ -51,6 +53,7 @@ dascie.run(
 ```
 
 The output is:
+
 ```{python}
 #| eval: false
 
@@ -78,6 +81,7 @@ plt.show()
 ```
 
 After generating the plot, the agent concludes that it has finished the task.
+
 ```{python}
 #| eval: false
 
@@ -92,6 +96,7 @@ After generating the plot, the agent concludes that it has finished the task.
 ## Passing Data to the Agent
 
 You can actually pass data to `langchain` agents using `create_pandas_dataframe_agent`
+
 ```{python}
 #| eval: false
 
@@ -106,6 +111,7 @@ dascie = create_pandas_dataframe_agent(
 ```
 
 Now we can run the agent again:
+
 ```{python}
 #| eval: false
 

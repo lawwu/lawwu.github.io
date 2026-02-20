@@ -275,12 +275,15 @@ No, the machine learning models used to partial out the effects of the confounde
 ## Here's why you might choose different models:
 
 ### Different Natures of Relationships
+
 The relationship between the confounders and the treatment might be different from the relationship between the confounders and the outcome. For instance, a non-linear model like a decision tree or random forest might capture the relationship between the confounders and the treatment best, while a linear model might be most appropriate for the relationship between the confounders and the outcome.
 
 ### Model Performance Considerations
+
 In some settings, certain machine learning models might perform better (in terms of predictive accuracy) for the treatment assignment, while others might be better suited for modeling the outcome.
 
 ### Computational Considerations
+
 In some scenarios, especially with large datasets, computational efficiency might dictate the choice of models. Training a complex model might be computationally prohibitive for one task but feasible for another, depending on the data's dimensionality and the relationships present.
 
 While DML allows for such flexibility, it's important to remember the foundational assumption: both models (for \( T \) and \( Y \)) should be sufficiently rich to capture the true relationships in the data. If the models are misspecified or too simplistic, it can introduce bias in the estimated treatment effects.
@@ -294,6 +297,7 @@ Handling training and test data splits in Double Machine Learning (DML) is cruci
 ## Here's how you can handle training and test data splits in DML:
 
 ### 1. Cross-Fitting:
+
 Cross-fitting involves splitting the dataset into \( K \) folds (similar to \( K \)-fold cross-validation in standard machine learning). For each fold, the following steps are taken:
 
 - **Training on \( K-1 \) folds:** Train the ML models for the treatment and outcome on \( K-1 \) folds.
@@ -302,6 +306,7 @@ Cross-fitting involves splitting the dataset into \( K \) folds (similar to \( K
 - **Finally, with the residuals produced from all the folds, you can estimate the treatment effect.**
 
 ### 2. Train-Test Split:
+
 A simpler approach involves just splitting the data into a training set and a test set.
 
 - **Training on the training set:** Train the ML models for the treatment and outcome on the training set.
@@ -311,6 +316,7 @@ A simpler approach involves just splitting the data into a training set and a te
 This method is less robust than cross-fitting but can be computationally less intensive.
 
 ## Notes:
+
 - **Overfitting Concerns:** Without proper cross-fitting or a train-test split, DML can overfit. This is because the ML models for treatment and outcome might fit the noise in the data, leading to biased nuisance estimates and, subsequently, biased treatment effect estimates.
 - **Cross-Fitting is Preferred:** Cross-fitting is typically preferred in DML because it helps ensure that the estimated causal effects are not driven by overfitting to the idiosyncrasies in the data. It also provides a more robust estimate of the treatment effect across different subsets of the data.
 - **Final Model Assessment:** After obtaining the causal effect estimates using DML, it's a good practice to assess the performance of the final model on a completely separate validation set, if available. This ensures that the DML procedure generalizes well to unseen data.

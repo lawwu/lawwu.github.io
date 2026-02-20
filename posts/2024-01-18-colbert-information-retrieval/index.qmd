@@ -27,8 +27,8 @@ Figure 2 also nicely summarizes pre-BERT retrieval methods.
 
 ## Pre-BERT Methods
 
--   2a: Representation-based similarity - Here you have a bi-encoder where you create representations that are dense embeddings of the query and document separately and interact them somehow (cosine similarity)
--   2b: Query-Document interaction - Compute similarity pairs of all documents and queries and then do some aggregation of these
+- 2a: Representation-based similarity - Here you have a bi-encoder where you create representations that are dense embeddings of the query and document separately and interact them somehow (cosine similarity)
+- 2b: Query-Document interaction - Compute similarity pairs of all documents and queries and then do some aggregation of these
 
 ## BERT Methods
 
@@ -38,11 +38,11 @@ This has been the state of the art of the it is computationally very expensive. 
 
 ![Cross Encoders](./cross_encoders.png)
 
--   Bi-Encoders produce an embedding for each input sentence. So for two sentences, two embeddings are produced and these can be compared using cosine similarity.
--   With Cross-Encoders, both input sentences are passed at the same time to the Transformer, it produces not an embedding but a value between 0 and 1 that represents the similarity between the two sentences.
--   Cross-Encoders achieve better performance than Bi-Encoders but for many large scale information retrieval applications they are not practical because since embeddings are not produced, there is no way to index the data and retrieve it efficiently.
--   From the above post: "Bi-Encoders are used whenever you need a sentence embedding in a vector space for efficient comparison. Applications are for example Information Retrieval / Semantic Search or Clustering. Cross-Encoders would be the wrong choice for these application: Clustering 10,000 sentence with CrossEncoders would require computing similarity scores for about 50 Million sentence combinations, which takes about 65 hours. With a Bi-Encoder, you compute the embedding for each sentence, which takes only 5 seconds. You can then perform the clustering."
--   You can combine Bi-Encoders and Cross-Encoders. Use Bi-Encoders to retrieve the top-k documents and then use Cross-Encoders to re-rank the top-k documents. An example for this common retrieve and re-rank strategy is [here](https://www.sbert.net/examples/applications/retrieve_rerank/README.html).
+- Bi-Encoders produce an embedding for each input sentence. So for two sentences, two embeddings are produced and these can be compared using cosine similarity.
+- With Cross-Encoders, both input sentences are passed at the same time to the Transformer, it produces not an embedding but a value between 0 and 1 that represents the similarity between the two sentences.
+- Cross-Encoders achieve better performance than Bi-Encoders but for many large scale information retrieval applications they are not practical because since embeddings are not produced, there is no way to index the data and retrieve it efficiently.
+- From the above post: "Bi-Encoders are used whenever you need a sentence embedding in a vector space for efficient comparison. Applications are for example Information Retrieval / Semantic Search or Clustering. Cross-Encoders would be the wrong choice for these application: Clustering 10,000 sentence with CrossEncoders would require computing similarity scores for about 50 Million sentence combinations, which takes about 65 hours. With a Bi-Encoder, you compute the embedding for each sentence, which takes only 5 seconds. You can then perform the clustering."
+- You can combine Bi-Encoders and Cross-Encoders. Use Bi-Encoders to retrieve the top-k documents and then use Cross-Encoders to re-rank the top-k documents. An example for this common retrieve and re-rank strategy is [here](https://www.sbert.net/examples/applications/retrieve_rerank/README.html).
 
 # ColBERT
 
@@ -52,9 +52,9 @@ With BERT or even sentence-transformers, you need to embed the entire text into 
 
 Shout out to the author of the [RAGatouille](https://github.com/bclavie/RAGatouille) library who also wrote a fantastic [post](https://ben.clavie.eu/ragatouille/) making the case for these late interaction retrievers like ColBERT. He has a [section](https://ben.clavie.eu/ragatouille/#longer-might-read) comparing the pros and cons of:
 
--   BM25/Keyword Sparse Retrieval
--   Cross-Encoders
--   Dense Retrieval/Embeddings
+- BM25/Keyword Sparse Retrieval
+- Cross-Encoders
+- Dense Retrieval/Embeddings
 
 The main downside of dense retrieval methods is they often generalize poorly whereas ColBERT has shown strong generalization capabilities.
 
@@ -162,9 +162,9 @@ See this [langchain tutorial page](https://python.langchain.com/docs/integration
 
 # Links
 
--   [ColBERT paper](https://arxiv.org/pdf/2004.12832.pdf)
--   [ColBERTv2 paper](https://arxiv.org/pdf/2112.01488.pdf)
--   [ColBERT Github Repo](https://github.com/stanford-futuredata/ColBERT)
--   I've used ColBERT through the [RAGatouille](https://github.com/bclavie/RAGatouille) library which makes it really easy to get started and converted it to a langchain retriever using this [tutorial](https://python.langchain.com/docs/integrations/retrievers/ragatouille).
--   Cool [webapp](https://colbert.aiserv.cloud/) to visualize ColBERT embeddings via a browser
--   Simon Willison also wrote a [short post](https://til.simonwillison.net/llms/colbert-ragatouille) about his learnings about ColBERT
+- [ColBERT paper](https://arxiv.org/pdf/2004.12832.pdf)
+- [ColBERTv2 paper](https://arxiv.org/pdf/2112.01488.pdf)
+- [ColBERT Github Repo](https://github.com/stanford-futuredata/ColBERT)
+- I've used ColBERT through the [RAGatouille](https://github.com/bclavie/RAGatouille) library which makes it really easy to get started and converted it to a langchain retriever using this [tutorial](https://python.langchain.com/docs/integrations/retrievers/ragatouille).
+- Cool [webapp](https://colbert.aiserv.cloud/) to visualize ColBERT embeddings via a browser
+- Simon Willison also wrote a [short post](https://til.simonwillison.net/llms/colbert-ragatouille) about his learnings about ColBERT

@@ -141,6 +141,7 @@ You can think of AI also as a meta-skill, a skill that lets you learn other skil
 I don't know what the next 3-4 years will look like. But I think it's now more important than ever to understand how AI/LLMs work, have some intuition around what agent harnesses are (the difference between Claude Code and Claude Sonnet), and practically how to use these tools like Claude Code.
 
 ::: {.callout-note}
+
 ## Subscribe to my newsletter
 
 Get more of this type writing, subscribe at [lawrencewu.substack.com](https://lawrencewu.substack.com/)

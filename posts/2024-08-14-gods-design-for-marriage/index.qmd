@@ -29,12 +29,13 @@ First I prompted Claude 3.5 Sonnet to create a prompt (I know this is kind of me
 
 My prompt was:
 
-```
+```text
 Create a prompt for getting the questions and answers from a youtube transcript of a Q&A talk
 ```
 
 The generated Claude artifact was:
-```
+
+```text
 Your task is to analyze a transcript from a YouTube Q&A session and extract the questions and their corresponding answers. Follow these steps:
 
 Read through the entire transcript carefully.
@@ -64,11 +65,13 @@ Remember to focus on the substantive content of the Q&A, avoiding any unnecessar
 ```
 
 Some notes:
+
 - I added a line "Also if there are any verses cited, write those verses and quote the verse in the ESV translation." because I wanted verses to be extracted.
 - I also generated a different version of this prompt to work on the non-Q&A sections.
 
 This is the non Q&A version:
-```
+
+```text
 Your task is to analyze the transcript of a marriage seminar taught by John Street at a church. The transcript includes timestamps. Follow these steps to summarize the main points, arguments, verses, and applications:
 
 Read through the entire transcript carefully.

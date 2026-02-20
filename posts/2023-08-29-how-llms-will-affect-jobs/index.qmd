@@ -38,16 +38,19 @@ The idea and the prompt I used was partially inspired by the paper [GPTs are GPT
 
 - **Direct exposure (E1)** if using the described LLM via ChatGPT or the OpenAI playground can decrease the time required to complete the DWA or task by at least half (50%).
 - **LLM+ Exposed (E2)** if access to the described LLM alone would not reduce the time required to complete the activity/task by at least half, but additional software could be developed on top of the LLM that could reduce the time it takes to complete the specific activity/task with quality by at least half. Among these
+
 systems, we count access to image generation systems.
 
 So the prompt I used was:
-```
+
+```text
 "As an {TITLE}, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?"
 ```
 
 ## Code
 
 The code to do this:
+
 ```{python}
 #| eval: false
 from langchain.llms import LlamaCpp
@@ -76,6 +79,7 @@ llm = LlamaCpp(
 ## A Couple Examples
 
 Running this for an entry-level data scientist:
+
 ```{python}
 #| eval: false
 llm("As an entry-level Data Scientist, what are 10 areas of your work that you think will get disrupted by the widespread usage of LLMs or tools built on LLMs?")
@@ -95,6 +99,7 @@ llm("As an entry-level Data Scientist, what are 10 areas of your work that you t
 ```
 
 Repeating this for a Pediatric Pharmacist:
+
 ```{python}
 #| eval: false
 prompt="""

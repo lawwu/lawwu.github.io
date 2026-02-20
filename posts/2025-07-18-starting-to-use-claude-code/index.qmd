@@ -10,17 +10,26 @@ I had tried Claude Code briefly when it first came out [4 months ago](https://ww
 Some of the things I read/watched that motivated me to try it again:
 
 - Watching Claude Code creator's, Boris Chemy's talk about the [evolution of agentic coding](https://www.youtube.com/watch?v=Lue8K2jqfKk&ab_channel=AIEngineer)
+
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=Lue8K2jqfKk&ab_channel=AIEngineer >}}
+<!-- markdownlint-enable MD034 -->
+
 - seeing Eric J Ma's post about it where it created a receipt scanner in [1 hour and 8 minutes](https://ericmjl.github.io/blog/2025/7/1/one-hour-and-eight-minutes-building-a-receipt-scanner-with-the-weirdest-tech-stack-imaginable/)
 - [Armin Ronacher's](https://www.youtube.com/@ArminRonacher) YouTube Tutorials: [here](https://www.youtube.com/watch?v=nfOVgz_omlU&ab_channel=ArminRonacher) and [here](https://www.youtube.com/watch?v=Y4_YYrIKLac&t=2184s&ab_channel=ArminRonacher). The second one I only watched the first 30 minutes.
+
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=nfOVgz_omlU&ab_channel=ArminRonacher >}}
+<!-- markdownlint-enable MD034 -->
+<!-- markdownlint-disable MD034 -->
 {{< video https://www.youtube.com/watch?v=Y4_YYrIKLac&t=2184s&ab_channel=ArminRonacher >}}
+<!-- markdownlint-enable MD034 -->
 
 ## Set Up
 
 At work, we use VertexAI. Google has signed an agreement with Anthropic to license Claude models that you can then call via VertexAI. The [instructions](https://docs.anthropic.com/en/docs/claude-code/google-vertex-ai) are easy to follow. In my `~/.zshrc`, I just have:
 
-```
+```bash
 export CLAUDE_CODE_USE_VERTEX=1
 export CLOUD_ML_REGION=YOUR_GCP_REGION
 export ANTHROPIC_VERTEX_PROJECT_ID=YOUR_GCP_PROJECT_ID
@@ -28,21 +37,25 @@ export ANTHROPIC_MODEL='claude-sonnet-4@20250514'
 ```
 
 You then authenticate with Google Cloud:
+
 ```bash
 gcloud auth login
 ```
 
 Install Claude Code:
+
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
 Then in your project directory or a new directory, start Claude Code:
+
 ```bash
 claude
 ```
 
 I eventually started running:
+
 ```bash
 claude --dangerously-skip-permissions
 ```
@@ -56,6 +69,7 @@ The second thing I built was an MCP Server using [FastMCP](https://github.com/jl
 Both of the above tasks I estimate would've taken me 2-3 days to do but it take Claude Code <2 hours with ~5 prompts to implement.
 
 ## Some best practices I've arrived at
+
 - Right now I just run Claude Code in a terminal. Sometimes I run it in an IDE (VS Code, Windsurf) where the UI is a little different.
 - `claude --dangerously-skip-permissions` so Claude doesn't have to ask for permissions.
 - Run the slash command `/init` to create CLAUDE.md
@@ -71,9 +85,16 @@ Both of the above tasks I estimate would've taken me 2-3 days to do but it take 
 - [Vibe Kanban](https://www.vibekanban.com/) - tried it but didn't really like it
 
 ## Other Links
+
 - <https://www.anthropic.com/engineering/claude-code-best-practices>
 - <https://github.com/hesreallyhim/awesome-claude-code>
 - <https://www.pulsemcp.com/posts/how-to-use-claude-code-to-wield-coding-agent-clusters>
+
+<!-- markdownlint-disable MD034 -->
+
 - {{< video https://www.youtube.com/watch?v=Lh_X32t9_po&ab_channel=Every> >}}
+
+<!-- markdownlint-enable MD034 -->
+
 - Someone pointed me to this person's tutorials which look decent but haven't had a chance to watch: <https://www.youtube.com/@indydevdan>
 - 2025-07-18 - Anthropic cuts usage limits on max plans: Anthropic tightens usage limits for Claude Code — without telling users | TechCrunch - <https://techcrunch.com/2025/07/17/anthropic-tightens-usage-limits-for-claude-code-without-telling-users/>

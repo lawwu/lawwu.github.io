@@ -19,6 +19,7 @@ The debate over whether something "is an agent" is less productive than discussi
 ## Q2: What skills are most important for building agent systems?
 
 **Andrew Ng:**
+
 - Break down complex tasks into modular steps
 - Define the right KPIs (including evals)
 - Interpret traces, debug step-by-step
@@ -54,6 +55,7 @@ They’re low-friction for users but underexplored. Latency expectations make th
 
 **Andrew Ng:**
 Skills are transferable, but differences matter:
+
 - Voice has tighter latency constraints
 - Pre-response fillers (“Hmm…”) help mask lag
 - Background noise helps users tolerate delays
@@ -90,8 +92,10 @@ Understanding how code works is still essential for prompting and debugging.
 ## Q10: Advice for AI startup founders?
 
 **Andrew Ng:**
+
 - **#1 predictor of success: SPEED**
 - **#2: Technical depth**
+
 Business knowledge is widespread, but deep tech knowledge and instincts are rare and differentiating.
 
 ---

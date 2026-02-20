@@ -20,6 +20,7 @@ git clone https://huggingface.co/parlance-labs/hc-mistral-alpaca
 ```
 
 I logged into Weights and Biases:
+
 ```bash
 pip install wandb
 wandb login
@@ -27,6 +28,7 @@ wandb login
 ```
 
 I logged into Huggingface. Make sure your token has `WRITE` access:
+
 ```bash
 pip install -U "huggingface_hub[cli]"
 huggingface-cli login
@@ -70,6 +72,7 @@ print(f"First 100 rows have been written to {output_file_path}")
 ```
 
 This is the Axolotl config file I wound up with below. Some changes I made:
+
 - updated the base model to `mistralai/Mistral-7B-v0.3`
 - used a smaller dataset `data/output_first_100.jsonl`
 - updated `hub_model_id` and `wandb_project` and `wandb_entity`
@@ -167,6 +170,7 @@ save_safetensors: true
 ```
 
 I launched the training script:
+
 ```bash
 accelerate launch -m axolotl.cli.train hc-first-100.yml
 ```
@@ -255,6 +259,7 @@ Setting the parameter `bf16: false` resolved this issue. Although switching from
 ## Running out of GPU memory
 
 I had a run where the GPU ran out of memory.
+
 ```bash
 torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 784.00 MiB. GPU 0 has a total capacty of 15.74 GiB of which 58.62 MiB is free. Process 1065967 has 15.67 GiB memory in use. Of the allocated memory 13.22 GiB is allocated by PyTorch, and 2.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
 wandb: 🚀 View run crimson-aardvark-1 at: https://wandb.ai/law/hc-axolotl-mistral/runs/itak6glk
