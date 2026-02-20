@@ -17,9 +17,9 @@ website:
   open-graph: true
   google-analytics: "G-LN4GM4FVCJ"
   cookie-consent: true
-  twitter-card: 
+  twitter-card:
     card-style: summary_large_image
-    creator: "@law_wu"  
+    creator: "@law_wu"
   navbar:
     right:
       - text: Blog
@@ -33,11 +33,11 @@ website:
         href: https://github.com/lawwu
       - icon: twitter
         text: Twitter
-        href: https://twitter.com/law_wu   
+        href: https://twitter.com/law_wu
       - icon: envelope
         href: mailto:lawrencewu1+blog@gmail.com
       - icon: rss
-        href: blog.xml  
+        href: blog.xml
 format:
   html:
     theme: cosmo
@@ -47,7 +47,7 @@ format:
           <script>
             // Log script loading attempt
             console.log('Loading GitHub stars script');
-            
+
             // Simple script loading for main website
             const scriptTag = document.createElement('script');
             scriptTag.src = '/js/github-stars.js';
@@ -55,7 +55,7 @@ format:
             scriptTag.defer = true;
             scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
             scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
-            
+
             // Append to document head
             document.head.appendChild(scriptTag);
           </script>

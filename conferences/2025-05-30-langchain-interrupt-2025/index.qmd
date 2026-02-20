@@ -1,6 +1,6 @@
 ---
 title: "LangChain Interrupt Agent Conference 2025"
-author: "Lawrence Wu"    
+author: "Lawrence Wu"
 date: "2025-05-30"
 categories: ["Conference", "LangChain"]
 ---

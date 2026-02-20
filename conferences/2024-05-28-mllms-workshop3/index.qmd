@@ -1,6 +1,6 @@
 ---
 title: "Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting & Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)"
-author: "Lawrence Wu"    
+author: "Lawrence Wu"
 date: "2024-05-28"
 categories: ["Conference", "AI", "LLMs", "Mastering LLMs", "Evaluation"]
 ---

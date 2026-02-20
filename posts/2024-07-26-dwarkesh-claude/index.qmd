@@ -12,7 +12,7 @@ Dwarkesh Patel is becoming the new Lex Fridman of podcasting. Lex got his start 
 
 I listened to 15 minutes but didn't want to listen to the rest of it. But I was still curious how Dwarkesh uses AI in his day-to-day. So I grabbed the transcript (which is available via Youtube's API). You can use a Python library [youtube-transcript-api](https://pypi.org/project/youtube-transcript-api/) or [web services](https://youtubetranscript.com/?v=Vm49oIPtyRE) that do the same thing from a web interface.
 
-I copied the whole transcript into ChatGPT and Claude with the following prompt: 
+I copied the whole transcript into ChatGPT and Claude with the following prompt:
 
 > What are the main ways that Dhwarkesh uses AI in his workflow based on this transcript summary below? Output the thing and more detail about it.
 
@@ -25,7 +25,7 @@ with the full transcript below. ChatGPT actually was unable to process that amou
 - Uploads books/papers to Claude projects and asks questions to gain deeper understanding
 - Uses Claude to explain concepts he doesn't fully grasp from his reading
 
-## 2. Space Repetition Flashcards  
+## 2. Space Repetition Flashcards
 - Uses an AI tool (likely Claude) to generate question-answer pairs from content he's studying
 - Adds these to a spaced repetition app called Mochi to reinforce learning over time
 
@@ -34,7 +34,7 @@ with the full transcript below. ChatGPT actually was unable to process that amou
 - Tries to use this to generate potential questions for upcoming interviews, though with limited success so far
 
 ## 4. Post-production Assistance
-- Uses AI speech-to-text (Assembly AI) to generate initial podcast transcripts 
+- Uses AI speech-to-text (Assembly AI) to generate initial podcast transcripts
 - Experiments with using GPT-4 to clean up and improve readability of transcripts
 - Working on workflows to use AI to generate title ideas, clip suggestions, and highlights from transcripts
 
@@ -352,7 +352,7 @@ Here is an example that combines all three of the above techniques:
    </prompt>
 
    Why it's better: This prompt requests a specific structure (table) for the comparison, provides clear criteria, making the information easy to understand and apply.
-  
+
 ## Troubleshooting, minimizing hallucinations, and maximizing performance
 
 1. **Allow Claude to acknowledge uncertainty**
@@ -392,7 +392,7 @@ Good prompt:
    - Product: Key features to highlight
    - Price: Suggested pricing strategy with rationale
    - Place: Recommended distribution channels
-   - Promotion: 
+   - Promotion:
      a) 5 marketing channels to focus on, with pros and cons for each
      b) 3 creative campaign ideas for launch
 

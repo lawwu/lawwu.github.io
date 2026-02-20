@@ -9,12 +9,12 @@ format:
     code-overflow: wrap
 execute:
   freeze: true
-  eval: false  
+  eval: false
 ---
 
 I have been interested in how language models will affect the future of work. Having worked with LLMs the last ~6 months, I've seen their impact on my work as a data scientist. Jason Wei gave a talk at KDD 2023 called [Scaling, Emergence and Reasoning in Large Language Models](https://docs.google.com/presentation/d/1hQF8EXNdePFPpws_jxwqHWi5ohV_TeGL17WIjvUvG6E/edit?resourcekey=0-xA6WdGyYp1EexLgoXgjOjg#slide=id.g16197112905_0_0) that was great. He works at the intersection of LLMs and AI Research and has a good view into how LLMs will change the field of AI Research. We need this same sort of thinking applied in other fields to get a sense for how to answer the question "How will LLMs change the future of work?” It's important for more people to be aware the potential for LLMs to disrupt jobs and to get ahead of any changes.
 
-## How will LLMs affect data science work? 
+## How will LLMs affect data science work?
 
 In terms of how I've seen LLMs affect data science work are:
 
@@ -102,21 +102,21 @@ As an entry-level Pediatric Pharmacist, what are 10 areas of your work that you 
 """
 llm(prompt)
 # Although I am an early career pharmacist, and I lack industry expertise as a seasoned professional in the field of pediatrics or AI technology I can imagine several ways that LLMs could disrupt various aspects of my work:
-# 1. Medication dosing: One potential area of disruption is medication dosing. LLMs may be able to quickly and accurately determine appropriate drug dosages for children based on their weight, age, and other factors, potentially reducing the need for human intervention and improving medication safety. 
-# 2.Drug interactions: Another possible area of disruption is the identification of potential drug interactions. LLMs may be able to analyze large amounts of data and identify potential drug interaction that a human pharmacist might miss, helping to prevent adverse events and improve patient outcomes. 
+# 1. Medication dosing: One potential area of disruption is medication dosing. LLMs may be able to quickly and accurately determine appropriate drug dosages for children based on their weight, age, and other factors, potentially reducing the need for human intervention and improving medication safety.
+# 2.Drug interactions: Another possible area of disruption is the identification of potential drug interactions. LLMs may be able to analyze large amounts of data and identify potential drug interaction that a human pharmacist might miss, helping to prevent adverse events and improve patient outcomes.
 # 3. Allergic reactions: With their ability to analyze large amounts of data, LLMs may also be useful in identifying patterns related to allergic reactions, allowing healthcare providers to take proactive steps to prevent these reactions or quickly respond to them if they occur.
 # 4. Developmental delays: The use of LLMs could help identify children at risk for developmental delays and provide early interventions that can improve outcomes for those children.
-# 5. Pediatric clinical decision support: With the ability to process vast amounts of data, LLMs may be able provide real-time clinical decision support to healthcare providers, improving diagnostic accuracy and reducing errors in patient care.  
-# 6. Medical coding and billing: The use of LLMs could improve the accuracy of medical coding and billing, potentially reducing errors and improving reimbursement for healthcare providers. 
+# 5. Pediatric clinical decision support: With the ability to process vast amounts of data, LLMs may be able provide real-time clinical decision support to healthcare providers, improving diagnostic accuracy and reducing errors in patient care.
+# 6. Medical coding and billing: The use of LLMs could improve the accuracy of medical coding and billing, potentially reducing errors and improving reimbursement for healthcare providers.
 # 7. Pharmacovigilance: With their ability to analyze large amounts of data, LLMs may also be useful in pharmacovigilance by identifying potential safety issues related to pediatric medication use and allowing healthcare providers to take proactive steps to mitigate these risks.
-# 8 Patient education: The use of LLMs could improve patient education, allowing healthcare providers to provide tailored information that addresses the unique needs of each child based on their medical history, allergies, and other factors. 
-# 9. Referrals and consultations: With the ability to diagnose and treat a wide range of pediatric conditions, LLMs could help identify children who require specialist care or consultation with other healthcare providers, potentially reducing unnecessary referrals and improving patient outcomes.  
-# 10. Public health surveillance: Finally, the use of LLMs could improve public health surveillance by analyzing large amounts of data related to pediatric health issues, allowing healthcare providers to identify trends and patterns that can inform population-based interventions and policies. 
-# As an early career pharmacist, I recognize that the widespread adoption of LLMs or tools built on these technologies will require significant investment in training and infrastructure, as well as careful consideration of ethical and legal issues related to health data privacy and security.  
+# 8 Patient education: The use of LLMs could improve patient education, allowing healthcare providers to provide tailored information that addresses the unique needs of each child based on their medical history, allergies, and other factors.
+# 9. Referrals and consultations: With the ability to diagnose and treat a wide range of pediatric conditions, LLMs could help identify children who require specialist care or consultation with other healthcare providers, potentially reducing unnecessary referrals and improving patient outcomes.
+# 10. Public health surveillance: Finally, the use of LLMs could improve public health surveillance by analyzing large amounts of data related to pediatric health issues, allowing healthcare providers to identify trends and patterns that can inform population-based interventions and policies.
+# As an early career pharmacist, I recognize that the widespread adoption of LLMs or tools built on these technologies will require significant investment in training and infrastructure, as well as careful consideration of ethical and legal issues related to health data privacy and security.
 # However, if properly implemented, these technologies have the potential to transform the field of pediatric pharmacology, improving patient outcomes and reducing healthcare costs over time. Despite the challenges ahead, I remain excited about the potential applications of LLMs in pediatric pharmacology practice and look forward to seeing how these developments shape the future of our profession.
 ```
 
-## Conclusion 
+## Conclusion
 
 Hopefully this inspires some food for thought on how LLMs will affect the future of work. I think it would benefit most people to think about how a general purpose technology like LLMs ([Andrew Ng calls AI like electricity in their broad applicability](https://youtu.be/5p248yoa3oE?si=oh6SAP5kPkGLsVor&t=81)) will affect the specific things they are working and how they can use this technology to make themselves more productive. A similar analogy is those who have gotten good at searching with Google are that much more productive than those who haven't. LLMs are a much more powerful tool than a search engine (after all [you can give an LLM a search tool](https://python.langchain.com/docs/integrations/tools/search_tools)) and it's important more people understand how to use this new tool.
 

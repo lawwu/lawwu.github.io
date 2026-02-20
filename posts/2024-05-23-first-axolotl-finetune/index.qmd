@@ -168,7 +168,7 @@ save_safetensors: true
 
 I launched the training script:
 ```bash
-accelerate launch -m axolotl.cli.train hc-first-100.yml 
+accelerate launch -m axolotl.cli.train hc-first-100.yml
 ```
 
 Weighs and biases provides a nice summary of the run too:
@@ -185,7 +185,7 @@ wandb:       train/global_step ▁▁▅▅███
 wandb:         train/grad_norm ██▁
 wandb:     train/learning_rate ▁▅█
 wandb:              train/loss █▁▅
-wandb: 
+wandb:
 wandb: Run summary:
 wandb:                eval/loss 1.08833
 wandb:             eval/runtime 1.0702
@@ -201,7 +201,7 @@ wandb:               train_loss 1.22012
 wandb:            train_runtime 70.8206
 wandb: train_samples_per_second 3.812
 wandb:   train_steps_per_second 0.042
-wandb: 
+wandb:
 wandb: 🚀 View run scarlet-lake-4 at: https://wandb.ai/law/hc-axolotl-mistral/runs/wrnox7vk
 wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral
 wandb: Synced 6 W&B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)
@@ -254,7 +254,7 @@ Setting the parameter `bf16: false` resolved this issue. Although switching from
 
 ## Running out of GPU memory
 
-I had a run where the GPU ran out of memory. 
+I had a run where the GPU ran out of memory.
 ```bash
 torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 784.00 MiB. GPU 0 has a total capacty of 15.74 GiB of which 58.62 MiB is free. Process 1065967 has 15.67 GiB memory in use. Of the allocated memory 13.22 GiB is allocated by PyTorch, and 2.31 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
 wandb: 🚀 View run crimson-aardvark-1 at: https://wandb.ai/law/hc-axolotl-mistral/runs/itak6glk
@@ -405,23 +405,23 @@ For example by adding the following to your .bashrc: export LD_LIBRARY_PATH=$LD_
 /root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
 [2024-05-24 00:04:04,037] [INFO] [axolotl.normalize_config:182] [PID:4902] [RANK:0] GPU memory usage baseline: 0.000GB (+0.627GB misc)
-                                 dP            dP   dP 
-                                 88            88   88 
-      .d8888b. dP.  .dP .d8888b. 88 .d8888b. d8888P 88 
-      88'  `88  `8bd8'  88'  `88 88 88'  `88   88   88 
-      88.  .88  .d88b.  88.  .88 88 88.  .88   88   88 
-      `88888P8 dP'  `dP `88888P' dP `88888P'   dP   dP 
-                                                       
-                                                       
+                                 dP            dP   dP
+                                 88            88   88
+      .d8888b. dP.  .dP .d8888b. 88 .d8888b. d8888P 88
+      88'  `88  `8bd8'  88'  `88 88 88'  `88   88   88
+      88.  .88  .d88b.  88.  .88 88 88.  .88   88   88
+      `88888P8 dP'  `dP `88888P' dP `88888P'   dP   dP
+
+
 
 ****************************************
 **** Axolotl Dependency Versions *****
-  accelerate: 0.30.1         
-        peft: 0.10.0         
-transformers: 4.40.2         
-         trl: 0.8.5          
-       torch: 2.1.2+cu118    
-bitsandbytes: 0.43.1         
+  accelerate: 0.30.1
+        peft: 0.10.0
+transformers: 4.40.2
+         trl: 0.8.5
+       torch: 2.1.2+cu118
+bitsandbytes: 0.43.1
 ****************************************
 /root/miniconda3/envs/py3.10/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
   warnings.warn(
@@ -468,11 +468,11 @@ wandb: ⭐️ View project at https://wandb.ai/law/hc-axolotl-mistral
 wandb: 🚀 View run at https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2
 wandb: WARNING Saving files without folders. If you want to preserve subdirectories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
 [2024-05-24 00:05:58,369] [INFO] [axolotl.callbacks.on_train_begin:771] [PID:4902] [RANK:0] The Axolotl config has been saved to the WandB run under files.
-{'loss': 1.154, 'grad_norm': 2.078125, 'learning_rate': 1e-05, 'epoch': 0.0}                                                       
+{'loss': 1.154, 'grad_norm': 2.078125, 'learning_rate': 1e-05, 'epoch': 0.0}
   0%|                                                                                          | 1/5400 [00:21<32:33:13, 21.71s
- 49%|█████████████████████████████████████████████▍                      
- 50%|███████████████████████████████████████████▌                        
-                                                                         {'eval_loss': 1.1900806427001953, 'eval_runtime': 1342.7584, 'eval_samples_per_second': 9.533, 'eval_steps_per_second': 0.596, 'epoch': 0.0}      
+ 49%|█████████████████████████████████████████████▍
+ 50%|███████████████████████████████████████████▌
+                                                                         {'eval_loss': 1.1900806427001953, 'eval_runtime': 1342.7584, 'eval_samples_per_second': 9.533, 'eval_steps_per_second': 0.596, 'epoch': 0.0}
   0%|                                | 1/5400 [22:44<32:33:13, 21.71s/it[2024-05-24 00:29:04,813] [INFO] [axolotl.callbacks.on_step_end:126] [PID:4902] [RANK:0] GPU memory usage while training: 4.684GB (+12.633GB cache, +1.136GB misc)
 {'loss': 1.1821, 'grad_norm': 2.125, 'learning_rate': 2e-05, 'epoch': 0.0}
 {'loss': 1.1561, 'grad_norm': 1.9609375, 'learning_rate': 3e-05, 'epoch': 0.0}
@@ -758,8 +758,8 @@ wandb: WARNING Saving files without folders. If you want to preserve subdirector
 {'loss': 0.0924, 'grad_norm': 0.201171875, 'learning_rate': 0.00019882303665726828, 'epoch': 0.16}
 {'loss': 0.0593, 'grad_norm': 0.1669921875, 'learning_rate': 0.0001988140871160223, 'epoch': 0.16}
 {'loss': 0.0666, 'grad_norm': 0.1650390625, 'learning_rate': 0.0001988051038806621, 'epoch': 0.16}
-{'loss': 0.0799, 'grad_norm': 0.177734375, 'learning_rate': 0.0001987960869542508, 'epoch': 0.16}                
-{'loss': 0.0625, 'grad_norm': 0.19921875, 'learning_rate': 0.00019878703633986294, 'epoch': 0.16}                
+{'loss': 0.0799, 'grad_norm': 0.177734375, 'learning_rate': 0.0001987960869542508, 'epoch': 0.16}
+{'loss': 0.0625, 'grad_norm': 0.19921875, 'learning_rate': 0.00019878703633986294, 'epoch': 0.16}
   5%|███▌                                                                | 287/5400 [2:07:55<31:19:58, 22.06s/it]^CTraceback (most recent call last):
   File "/root/miniconda3/envs/py3.10/bin/accelerate", line 8, in <module>
     sys.exit(main())
@@ -792,7 +792,7 @@ wandb:       train/global_step ▁▁▁▁▂▂▂▂▂▃▃▃▃▃▃▄�
 wandb:         train/grad_norm █▆▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▂▁▁▁▁▁▁▁
 wandb:     train/learning_rate ▁▃▆█████████████████████████████████████
 wandb:              train/loss █▅▂▂▂▂▂▂▂▂▁▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
-wandb: 
+wandb:
 wandb: Run summary:
 wandb:               eval/loss 1.19008
 wandb:            eval/runtime 1342.7584
@@ -803,7 +803,7 @@ wandb:       train/global_step 287
 wandb:         train/grad_norm 0.19922
 wandb:     train/learning_rate 0.0002
 wandb:              train/loss 0.0625
-wandb: 
+wandb:
 wandb: 🚀 View run lyric-wildflower-5 at: https://wandb.ai/law/hc-axolotl-mistral/runs/iewv47f2
 wandb: ⭐️ View project at: https://wandb.ai/law/hc-axolotl-mistral
 wandb: Synced 6 W&B file(s), 0 media file(s), 1 artifact file(s) and 1 other file(s)

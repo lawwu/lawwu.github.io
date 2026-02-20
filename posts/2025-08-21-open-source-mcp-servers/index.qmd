@@ -7,25 +7,25 @@ categories: [ai]
 
 [**Model Context Protocol (MCP)**](https://github.com/modelcontextprotocol/modelcontextprotocol) has quickly become a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting **public-facing MCP servers** with authorization. For example, Atlassian provides one here: [Getting Started with the Atlassian Remote MCP Server](https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/). Their MCP server lives at: [https://mcp.atlassian.com/v1/sse](https://mcp.atlassian.com/v1/sse).
 
-This means customers can simply plug in that URL, add their authentication credentials, and instantly connect **any MCP client**—whether that’s VS Code, Windsurf, ChatGPT ([directly now in their Responses API](https://platform.openai.com/docs/guides/tools-remote-mcp), [Claude Code](https://docs.anthropic.com/en/docs/claude-code/mcp)), or agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) and [ADK](https://github.com/google/adk-python). Users don't have to worry about deploying or managing their own MCP instance. Users also do not need to rely on companies to build agents or AI applications for their services. Users can go ahead and use their LLM or AI tool of choice and plug in these remote MCP servers to build their own agents and AI applications. 
+This means customers can simply plug in that URL, add their authentication credentials, and instantly connect **any MCP client**—whether that’s VS Code, Windsurf, ChatGPT ([directly now in their Responses API](https://platform.openai.com/docs/guides/tools-remote-mcp), [Claude Code](https://docs.anthropic.com/en/docs/claude-code/mcp)), or agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) and [ADK](https://github.com/google/adk-python). Users don't have to worry about deploying or managing their own MCP instance. Users also do not need to rely on companies to build agents or AI applications for their services. Users can go ahead and use their LLM or AI tool of choice and plug in these remote MCP servers to build their own agents and AI applications.
 
-That’s a powerful model—and one that more companies should follow.  
+That’s a powerful model—and one that more companies should follow.
 
 ---
 
 ## Why This Matters for Companies
 
-Each company has an opportunity to be forward-leaning and recognized as an **AI-first company** in how they adopt and expose MCP internally and externally. By exposing MCPs, they will allow their customers the flexibility to build custom agents and AI applications on top of the company's APIs and their data in the vendor. 
+Each company has an opportunity to be forward-leaning and recognized as an **AI-first company** in how they adopt and expose MCP internally and externally. By exposing MCPs, they will allow their customers the flexibility to build custom agents and AI applications on top of the company's APIs and their data in the vendor.
 
 For example, now that there is an Atlassian MCP Server that is compatible with JIRA and Confluence, anyone can build a:
 
-- JIRA Agent that uses JIRA tools in the Atlassian MCP Server in any AI tool: ChatGPT, Claude, Claude Code, LangGraph, you name it. 
+- JIRA Agent that uses JIRA tools in the Atlassian MCP Server in any AI tool: ChatGPT, Claude, Claude Code, LangGraph, you name it.
 - Confluence Deep Research Agent that uses Confluence tools in the Atlassian MCP Server in any AI tool with any reasoning model like [o3-deep-research](https://platform.openai.com/docs/models/o3-deep-research) or [gemini-2.5-pro](https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro) or any open source model of your choice.
 
 Right now, very few companies are both:
 
-- **Open sourcing their MCP Server code**, and  
-- **Hosting public remote MCP servers**.  
+- **Open sourcing their MCP Server code**, and
+- **Hosting public remote MCP servers**.
 
 I think companies should do both. Here’s how.
 
@@ -33,61 +33,61 @@ I think companies should do both. Here’s how.
 
 ## Recommended Next Steps
 
-### 1. Identify Endpoints and Workflows to Expose as MCP Tools  
-Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on **common workflows** that agents will use.  
+### 1. Identify Endpoints and Workflows to Expose as MCP Tools
+Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on **common workflows** that agents will use.
 
 - Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required *three* separate API calls (normalize_title, map normalized title to a Lightcast Specialized Occupation and get related skills to that Lightcast Specialized Occupation). Instead, I created a **dedicated tool/API** that bundled those calls together—much more natural for an agent.
 
-- Jeremiah Lowin (creator of FastMCP) describes this well in [Stop Converting REST APIs to MCP](https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp):  
-  > *“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”*  
+- Jeremiah Lowin (creator of FastMCP) describes this well in [Stop Converting REST APIs to MCP](https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp):
+  > *“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”*
 
 You should design with the agent in mind. That might mean rethinking data formats (YAML is often better than JSON) or collapsing multi-step operations into a single MCP tool.
 
 ---
 
-### 2. Build the API Client, MCP Server, and Tools  
-The typical stack looks like this:  
+### 2. Build the API Client, MCP Server, and Tools
+The typical stack looks like this:
 
-- **API Client**: Handles authentication and connectivity to your company’s APIs.  
-- **MCP Server**: Implements the MCP protocol on top of that client.  
+- **API Client**: Handles authentication and connectivity to your company’s APIs.
+- **MCP Server**: Implements the MCP protocol on top of that client.
 
 All of the MCP servers I’ve written so far are in Python, using [FastMCP](https://github.com/jlowin/fastmcp) as the framework. The pattern is straightforward:
 
-1. Write an API Client.  
-2. Layer the MCP protocol logic on top.  
+1. Write an API Client.
+2. Layer the MCP protocol logic on top.
 
 You can use agentic coding tools like Claude Code to quickly spin these up.
 
 ---
 
-### 3. Deploy the MCP Server Publicly  
+### 3. Deploy the MCP Server Publicly
 There are more options than ever for running lightweight public services:
 
-- [Google Cloud Run](https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes)  
-- [Cloudflare Workers](https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/)   
+- [Google Cloud Run](https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes)
+- [Cloudflare Workers](https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/)
 
 Each of these can make your MCP server accessible with minimal operational overhead.
 
 ---
 
-### 4. Provide Example Clients and Agents  
-To encourage adoption, publish sample implementations that connect to the server. These could be: 
+### 4. Provide Example Clients and Agents
+To encourage adoption, publish sample implementations that connect to the server. These could be:
 
-- VS Code extensions  
-- LangGraph or ADK agents  
-- Example workflows in ChatGPT or Claude  
+- VS Code extensions
+- LangGraph or ADK agents
+- Example workflows in ChatGPT or Claude
 
 This lowers the barrier for customers to experiment quickly.
 
 ---
 
-### 5. Open Source the MCP Server  
-Some of the most popular MCP servers today aren't even official. For example, the **[mcp-atlassian](https://github.com/sooperset/mcp-atlassian)** project is developed by an open-source developer [Hyeonsoo Lee](https://github.com/sooperset) and not by Atlassian. That's a missed opportunity.  
+### 5. Open Source the MCP Server
+Some of the most popular MCP servers today aren't even official. For example, the **[mcp-atlassian](https://github.com/sooperset/mcp-atlassian)** project is developed by an open-source developer [Hyeonsoo Lee](https://github.com/sooperset) and not by Atlassian. That's a missed opportunity.
 
-If companies open source their MCP servers, the benefits are significant:  
+If companies open source their MCP servers, the benefits are significant:
 
-- Community contributions and bug fixes  
-- Customer self-hosting when desired  
+- Community contributions and bug fixes
+- Customer self-hosting when desired
 - Stronger trust and transparency
 
 ---

@@ -29,7 +29,7 @@ categories: [ai, events]
         - LOT OF PROMPTS HERE!
         - slash commands
         - issues.md
-        - /work 309 
+        - /work 309
             - implements Github issue 309
         - Pull Request review
             - /review - default in claude code
@@ -44,7 +44,7 @@ categories: [ai, events]
     - This step is easy when your plan is good
 - Assess
 	- Other notes
-		- Kieran had Claude Code assess itself to understand how to push it 
+		- Kieran had Claude Code assess itself to understand how to push it
 		- Consider alternative methods
 		- Make Claude think outside the box
 - Codify
@@ -63,7 +63,7 @@ categories: [ai, events]
         - <https://x.com/DannyAziz97/status/1945958948227461329>
 		- <https://github.com/DannyAziz/claude-prune>
 	- Claude Conductor: <https://github.com/superbasicstudio/claude-conductor>
-- Quotes: 
+- Quotes:
 	- Someone asked a question around you guys all have different ways of approaching plans
 		- Alex Duffy: "AI is a leverage for your subject matter expertise"
 		- Kieran: Be inspired by what others do
@@ -101,33 +101,33 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 4. Memorable Quotes
-> “Claude Code has radically altered the way we work—processes, parameters, mental models—everything.” — Dan  
+> “Claude Code has radically altered the way we work—processes, parameters, mental models—everything.” — Dan
 
-> “I shipped two features this week in codebases I’d never touched; that shouldn’t be possible.” — Dan  
+> “I shipped two features this week in codebases I’d never touched; that shouldn’t be possible.” — Dan
 
-> “Each unit of engineering should make the next one easier—that’s compounding engineering.” — Dan  
+> “Each unit of engineering should make the next one easier—that’s compounding engineering.” — Dan
 
-> “If your plan is amazing, the feature basically builds itself.” — Dan  
+> “If your plan is amazing, the feature basically builds itself.” — Dan
 
-> “CC is my alias that starts Claude Code bypassing permissions—so it just works.” — Kieran  
+> “CC is my alias that starts Claude Code bypassing permissions—so it just works.” — Kieran
 
-> “Forty‑five minutes of uninterrupted Claude work is my personal record.” — Kieran  
+> “Forty‑five minutes of uninterrupted Claude work is my personal record.” — Kieran
 
-> “Make your own system; be inspired, but tailor it to your workflow.” — Kieran  
+> “Make your own system; be inspired, but tailor it to your workflow.” — Kieran
 
-> “Voice prompts give fuller context; I get better results than typing.” — Naveen  
+> “Voice prompts give fuller context; I get better results than typing.” — Naveen
 
-> “AI is leverage for your subject‑matter expertise.” — Alex  
+> “AI is leverage for your subject‑matter expertise.” — Alex
 
-> “Let it run, move on, come back when it’s done—that’s the mindset shift.” — Kieran  
+> “Let it run, move on, come back when it’s done—that’s the mindset shift.” — Kieran
 
-> “Don’t juggle mega‑prompts; lean into agents and their tools.” — Kieran  
+> “Don’t juggle mega‑prompts; lean into agents and their tools.” — Kieran
 
-> “Experiment logs keep the model honest across context resets.” — Alex  
+> “Experiment logs keep the model honest across context resets.” — Alex
 
-> “Reviewing with strict TypeScript bot against Ruby creates constructive tension.” — Kieran  
+> “Reviewing with strict TypeScript bot against Ruby creates constructive tension.” — Kieran
 
-> “Prune old chat instead of trusting weak auto‑summaries.” — Danny  
+> “Prune old chat instead of trusting weak auto‑summaries.” — Danny
 
 ---
 
@@ -145,18 +145,18 @@ Below are some learnings extracted by o3 from the transcribed transcript.
 ---
 
 ## 6. Suggested Follow‑up Resources
-- **Claude Code** terminal agent (Anthropic)  
-- **Claude.md / folder context files** (`/init`)  
-- **Custom `/issues`, `/work`, `/review` commands**  
-- **Monologue** dictation app  
-- **Cora** email chief‑of‑staff; **Spiral** copywriter; **Sparkle** desktop organizer  
-- **AI Diplomacy** game (Alex)  
-- **Warp Terminal**; **Vibe Tunnel** (remote terminal)  
-- **World Prune** (`npx world prune`) chat‑trim tool  
-- **Conductor** git‑worktree UI  
+- **Claude Code** terminal agent (Anthropic)
+- **Claude.md / folder context files** (`/init`)
+- **Custom `/issues`, `/work`, `/review` commands**
+- **Monologue** dictation app
+- **Cora** email chief‑of‑staff; **Spiral** copywriter; **Sparkle** desktop organizer
+- **AI Diplomacy** game (Alex)
+- **Warp Terminal**; **Vibe Tunnel** (remote terminal)
+- **World Prune** (`npx world prune`) chat‑trim tool
+- **Conductor** git‑worktree UI
 - **Every Newsletter, Discord, Consulting** for ongoing training & content.
 
 ---
 
 ## 7. One‑Sentence Summary (25 words)
-Every’s team demonstrates how Claude Code enables “compounding engineering”—plan, delegate, assess, codify—to ship multi‑codebase features rapidly by capturing and recycling best‑practice knowledge. 
+Every’s team demonstrates how Claude Code enables “compounding engineering”—plan, delegate, assess, codify—to ship multi‑codebase features rapidly by capturing and recycling best‑practice knowledge.

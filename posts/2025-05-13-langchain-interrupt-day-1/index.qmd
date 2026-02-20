@@ -49,11 +49,11 @@ def run_tool(state: MessagesState):
 
 def should_continue(state: MessagesState) -> Literal["run_tool", END]:
     """Route to tool handler, or end if Done tool called"""
-    
+
     # Get the last message
     messages = state["messages"]
     last_message = messages[-1]
-    
+
     # If the last message is a tool call, check if it's a Done tool call
     if last_message.tool_calls:
         return "run_tool"
@@ -96,11 +96,11 @@ class RouterSchema(BaseModel):
 
 # Initialize the LLM for use with router / structured output
 llm = init_chat_model("openai:gpt-4.1", temperature=0.0)
-llm_router = llm.with_structured_output(RouterSchema) 
+llm_router = llm.with_structured_output(RouterSchema)
 
 def triage_router(state: State) -> Command[Literal["response_agent", END]]:
     """Analyze email content to decide if we should respond, notify, or ignore."""
-    
+
     author, to, subject, email_thread = parse_email(state["email_input"])
     system_prompt = triage_system_prompt.format(
         background=default_background,
@@ -117,7 +117,7 @@ def triage_router(state: State) -> Command[Literal["response_agent", END]]:
             {"role": "user", "content": user_prompt},
         ]
     )
-    
+
     if result.classification == "respond":
         print("📧 Classification: RESPOND - This email requires a response")
         goto = "response_agent"
@@ -167,8 +167,8 @@ Notebook: [evaluation](https://github.com/langchain-ai/agents-from-scratch/blob/
 Email Input: {'author': 'Alice Smith <alice.smith@company.com>', 'to': 'Lance Martin <lance@company.com>', 'subject': 'Quick question about API documentation', 'email_thread': "Hi Lance,\n\nI was reviewing the API documentation for the new authentication service and noticed a few endpoints seem to be missing from the specs. Could you help clarify if this was intentional or if we should update the docs?\n\nSpecifically, I'm looking at:\n- /auth/refresh\n- /auth/validate\n\nThanks!\nAlice"}
 Expected Triage Output: respond
 Expected Tool Calls: ['write_email', 'done']
-Response Criteria: 
-• Send email with write_email tool call to acknowledge the question and confirm it will be investigated  
+Response Criteria:
+• Send email with write_email tool call to acknowledge the question and confirm it will be investigated
 
 ```
 
@@ -189,11 +189,11 @@ new interrupt node
 ```python
 def triage_interrupt_handler(state: State) -> Command[Literal["response_agent", "__end__"]]:
     """Handles interrupts from the triage step."""
-    
+
     # Parse the email input
     author, to, subject, email_thread = parse_email(state["email_input"])
 
-    # Create email markdown for Agent Inbox in case of notification  
+    # Create email markdown for Agent Inbox in case of notification
     email_markdown = format_email_markdown(subject, author, to, email_thread)
 
     # Create messages
@@ -210,21 +210,21 @@ def triage_interrupt_handler(state: State) -> Command[Literal["response_agent", 
             "args": {}
         },
         "config": {
-            "allow_ignore": True,  
-            "allow_respond": True, 
-            "allow_edit": False, 
-            "allow_accept": False,  
+            "allow_ignore": True,
+            "allow_respond": True,
+            "allow_edit": False,
+            "allow_accept": False,
         },
         # Email to show in Agent Inbox
         "description": email_markdown,
     }
 
-    # Agent Inbox responds with a list of dicts with a single key `type` that can be `accept`, `edit`, `ignore`, or `response`.  
+    # Agent Inbox responds with a list of dicts with a single key `type` that can be `accept`, `edit`, `ignore`, or `response`.
     response = interrupt([request])[0]
 
-    # If user provides feedback, go to response agent and use feedback to respond to email   
+    # If user provides feedback, go to response agent and use feedback to respond to email
     if response["type"] == "response":
-        # Add feedback to messages 
+        # Add feedback to messages
         user_input = response["args"]
         # Used by the response agent
         messages.append({"role": "user",
@@ -241,7 +241,7 @@ def triage_interrupt_handler(state: State) -> Command[Literal["response_agent", 
     else:
         raise ValueError(f"Invalid response: {response}")
 
-    # Update the state 
+    # Update the state
     update = {
         "messages": messages,
     }
@@ -258,7 +258,7 @@ Interrupt handler, define the config for each node
 ```python
 def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
     """Creates an interrupt for human review of tool calls"""
-    
+
     # Store messages
     result = []
 
@@ -267,10 +267,10 @@ def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
 
     # Iterate over the tool calls in the last message
     for tool_call in state["messages"][-1].tool_calls:
-        
+
         # Allowed tools for HITL
         hitl_tools = ["write_email", "schedule_meeting", "Question"]
-        
+
         # If tool is not in our HITL list, execute it directly without interruption
         if tool_call["name"] not in hitl_tools:
 
@@ -279,12 +279,12 @@ def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
             observation = tool.invoke(tool_call["args"])
             result.append({"role": "tool", "content": observation, "tool_call_id": tool_call["id"]})
             continue
-            
+
         # Get original email from email_input in state
         email_input = state["email_input"]
         author, to, subject, email_thread = parse_email(email_input)
         original_email_markdown = format_email_markdown(subject, author, to, email_thread)
-        
+
         # Format tool call for display and prepend the original email
         tool_display = format_for_display(state, tool_call)
         description = original_email_markdown + tool_display
@@ -327,26 +327,26 @@ def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
         # Send to Agent Inbox and wait for response
         response = interrupt([request])[0]
 
-        # Handle the responses 
+        # Handle the responses
         if response["type"] == "accept":
 
             # Execute the tool with original args
             tool = tools_by_name[tool_call["name"]]
             observation = tool.invoke(tool_call["args"])
             result.append({"role": "tool", "content": observation, "tool_call_id": tool_call["id"]})
-                        
+
         elif response["type"] == "edit":
 
-            # Tool selection 
+            # Tool selection
             tool = tools_by_name[tool_call["name"]]
-            
+
             # Get edited args from Agent Inbox
             edited_args = response["args"]["args"]
 
             # Update the AI message's tool call with edited content (reference to the message in the state)
             ai_message = state["messages"][-1] # Get the most recent message from the state
             current_id = tool_call["id"] # Store the ID of the tool call being edited
-            
+
             # Create a new list of tool calls by filtering out the one being edited and adding the updated version
             # This avoids modifying the original list directly (immutable approach)
             updated_tool_calls = [tc for tc in ai_message.tool_calls if tc["id"] != current_id] + [
@@ -359,23 +359,23 @@ def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
 
             # Update the write_email tool call with the edited content from Agent Inbox
             if tool_call["name"] == "write_email":
-                
+
                 # Execute the tool with edited args
                 observation = tool.invoke(edited_args)
-                
+
                 # Add only the tool response message
                 result.append({"role": "tool", "content": observation, "tool_call_id": current_id})
-            
+
             # Update the schedule_meeting tool call with the edited content from Agent Inbox
             elif tool_call["name"] == "schedule_meeting":
-                
-                
+
+
                 # Execute the tool with edited args
                 observation = tool.invoke(edited_args)
-                
+
                 # Add only the tool response message
                 result.append({"role": "tool", "content": observation, "tool_call_id": current_id})
-            
+
             # Catch all other tool calls
             else:
                 raise ValueError(f"Invalid tool call: {tool_call['name']}")
@@ -398,7 +398,7 @@ def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
                 goto = END
             else:
                 raise ValueError(f"Invalid tool call: {tool_call['name']}")
-            
+
         elif response["type"] == "response":
             # User provided feedback
             user_feedback = response["args"]
@@ -417,8 +417,8 @@ def interrupt_handler(state: State) -> Command[Literal["llm_call", "__end__"]]:
         # Catch all other responses
         else:
             raise ValueError(f"Invalid response: {response}")
-            
-    # Update the state 
+
+    # Update the state
     update = {
         "messages": result,
     }
@@ -437,7 +437,7 @@ def should_continue(state: State) -> Literal["interrupt_handler", END]:
     messages = state["messages"]
     last_message = messages[-1]
     if last_message.tool_calls:
-        for tool_call in last_message.tool_calls: 
+        for tool_call in last_message.tool_calls:
             if tool_call["name"] == "Done":
                 return END
             else:
@@ -471,7 +471,7 @@ overall_workflow = (
     .add_node(triage_interrupt_handler)
     .add_node("response_agent", response_agent)
     .add_edge(START, "triage_router")
-    
+
 )
 
 email_assistant = overall_workflow.compile()
@@ -518,7 +518,7 @@ RESPOND:
 - wife
 - specific questions
 - system admin notifications
-NOTIFY: 
+NOTIFY:
 - meeting invites
 IGNORE:
 - marketing emails
@@ -534,7 +534,7 @@ IGNORE:
 RESPOND:
 - wife
 - specific questions
-NOTIFY: 
+NOTIFY:
 - meeting invites
 - system admin notifications
 IGNORE:
@@ -570,7 +570,7 @@ class UserPreferences(BaseModel):
 
 def update_memory(store, namespace, messages):
     """Update memory profile in the store.
-    
+
     Args:
         store: LangGraph BaseStore instance to update memory
         namespace: Tuple defining the memory namespace, e.g. ("email_assistant", "triage_preferences")
@@ -588,7 +588,7 @@ def update_memory(store, namespace, messages):
             {"role": "user", "content": f"Think carefully and update the memory profile based upon these user messages:"}
         ] + messages
     )
-    
+
     # Save the updated memory to the store
     store.put(namespace, "user_preferences", result.preferences)
 ```

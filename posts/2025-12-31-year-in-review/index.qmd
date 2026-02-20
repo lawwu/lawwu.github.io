@@ -308,7 +308,7 @@ Ran my [second half-marathon](https://lawwu.github.io/posts/2025-02-02-second-ha
 ![](strava/days_active.PNG){width=600px}
 
 
-## AI 
+## AI
 
 ### Agentic Coding
 
@@ -347,7 +347,7 @@ There are many world class software developers that now use tools like Claude Co
 
 **Simon Willison** - prolific blogger and prolific user of LLMs, one of his posts he talked about [how Claude Opus 4.5 can create full datasette plugins now](https://simonwillison.net/2025/Oct/8/claude-datasette-plugins/){target="_blank"}.
 
-It's fun to see how things have evolved in the last year just looking at Anthropic's Claude and Claude Code releated announcements: 
+It's fun to see how things have evolved in the last year just looking at Anthropic's Claude and Claude Code releated announcements:
 
 - [Feb 24, 2025 - Initial Claude Code Release alongside Claude 3.7 Sonnet](https://www.anthropic.com/news/claude-3-7-sonnet){target="_blank"} - [repo](https://github.com/anthropics/claude-code){target="_blank"} though this doesn't have the source code
 - [April 3, 2025 - Anthropic announces their first developer conference](https://www.anthropic.com/news/Introducing-code-with-claude){target="_blank"} - which I summarized the talks [here](https://lawwu.github.io/posts/2025-08-14-claude-code-conference-summary/).
@@ -373,4 +373,3 @@ ChatGPT created a year in review for me based on my chat history. Here are some 
 ![3 Themes](recap_chatgpt/3_themes.png){width=600px}
 
 ![Image Summary](recap_chatgpt/image_summary.png){width=600px}
-

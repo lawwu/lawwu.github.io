@@ -30,6 +30,6 @@ This build started 10/17/24 and ended 2/2/2024 at Surf City:
 - 1 race, 13 long, 26 workouts, 58 easy
 - Conversational pace improvement - 9:42/mi to 9:09/mi
 
-## Thoughts on Runna 
+## Thoughts on Runna
 
 I used Runna for the 16 week training plan and I really liked it. It pushed me pretty hard. There were many workouts I didn't think I'd be able to do. Runna also adapted the paces according to how I performed during the speed work. I thought their estimates fluctuated too quickly. The VDOT estimated paces were more in-line. For example the 5k time-trial I did in December gave a VDOT estimated HM time of 1:44 which was really close. The training plan had a variety of runs (for easy, workouts and long) that kept things interesting. Although now that I've gone through this full plan once, I likely can use ChatGPT to create plans for myself now. Runna recently allowed syncing workouts using the native Apple Workouts app which was really nice.

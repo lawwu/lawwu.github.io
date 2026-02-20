@@ -14,7 +14,7 @@ execute:
   freeze: true
 ---
 
-In this post I'll go over some observations I've had while using OpenAI's Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month). 
+In this post I'll go over some observations I've had while using OpenAI's Code Interpreter for the first time. It is not available as an API, rather only through the ChatGPT web interface for ChatGPT Plus subscribers ($20/month).
 
 ![Code Interpreter](./code_interpreter.png)
 
@@ -68,18 +68,18 @@ df = pd.read_csv('/mnt/data/nba-data-historical.csv')
 df.head()
 
 #    player_id      name_common  year_id type  age team_id pos  tmRtg franch_id  \
-# 0  youngtr01       Trae Young     2020   RS   21     ATL  PG    NaN       ATL   
-# 1  huntede01  De'Andre Hunter     2020   RS   22     ATL  SF    NaN       ATL   
-# 2  huertke01    Kevin Huerter     2020   RS   21     ATL  SG    NaN       ATL   
-# 3  reddica01      Cam Reddish     2020   RS   20     ATL  SF    NaN       ATL   
-# 4  collijo01     John Collins     2020   RS   22     ATL  PF    NaN       ATL   
+# 0  youngtr01       Trae Young     2020   RS   21     ATL  PG    NaN       ATL
+# 1  huntede01  De'Andre Hunter     2020   RS   22     ATL  SF    NaN       ATL
+# 2  huertke01    Kevin Huerter     2020   RS   21     ATL  SG    NaN       ATL
+# 3  reddica01      Cam Reddish     2020   RS   20     ATL  SF    NaN       ATL
+# 4  collijo01     John Collins     2020   RS   22     ATL  PF    NaN       ATL
 
-#     G  ...  BLK%  ORtg  %Pos  DRtg  2P%  3P%  FT%  3PAr  FTAr  Pace +/-  
-# 0  60  ...   0.3   NaN   NaN   NaN  NaN  NaN  NaN  45.5  44.8       2.9  
-# 1  63  ...   0.7   NaN   NaN   NaN  NaN  NaN  NaN  44.5  21.1       0.0  
-# 2  56  ...   1.3   NaN   NaN   NaN  NaN  NaN  NaN  54.8  10.5       0.1  
-# 3  58  ...   1.5   NaN   NaN   NaN  NaN  NaN  NaN  45.1  22.7       0.9  
-# 4  41  ...   4.1   NaN   NaN   NaN  NaN  NaN  NaN  24.3  24.8       0.1  
+#     G  ...  BLK%  ORtg  %Pos  DRtg  2P%  3P%  FT%  3PAr  FTAr  Pace +/-
+# 0  60  ...   0.3   NaN   NaN   NaN  NaN  NaN  NaN  45.5  44.8       2.9
+# 1  63  ...   0.7   NaN   NaN   NaN  NaN  NaN  NaN  44.5  21.1       0.0
+# 2  56  ...   1.3   NaN   NaN   NaN  NaN  NaN  NaN  54.8  10.5       0.1
+# 3  58  ...   1.5   NaN   NaN   NaN  NaN  NaN  NaN  45.1  22.7       0.9
+# 4  41  ...   4.1   NaN   NaN   NaN  NaN  NaN  NaN  24.3  24.8       0.1
 
 # [5 rows x 42 columns]
 ```
@@ -152,7 +152,7 @@ plt.show()
 
 ## 4. Comparison of teams based on average player statistics.
 
-This plot is not very good as it's a side-by-side bar chat which makes it difficult to compare teams. 
+This plot is not very good as it's a side-by-side bar chat which makes it difficult to compare teams.
 
 ![Comparison of teams based on aveage player stats](./nba-use-case-4.png)
 
@@ -198,8 +198,8 @@ I was surprised the LLM was able to join the two datasets because it was not a t
 df['season'] = (df['year_id'] - 1).astype(str) + '-' + df['year_id'].astype(str).str[-2:]
 
 # Merge the two datasets
-df_merged = pd.merge(df_new, df[['name_common', 'season', 'Raptor WAR']], 
-                     left_on=['player_name', 'season'], 
+df_merged = pd.merge(df_new, df[['name_common', 'season', 'Raptor WAR']],
+                     left_on=['player_name', 'season'],
                      right_on=['name_common', 'season'],
                      how='left')
 
@@ -418,10 +418,10 @@ fig, axes = plt.subplots(3, 1, figsize=(20, 18))
 for i, stat in enumerate(stats):
     # Filter the data for the current statistic
     team_stat = team_stats_avg[['team_id', stat]]
-    
+
     # Sort the values
     team_stat = team_stat.sort_values(by=stat, ascending=False)
-    
+
     # Create the bar plot
     sns.barplot(x='team_id', y=stat, data=team_stat, ax=axes[i], color='b')
     axes[i].set_title(f'Comparison of Teams Based on Average {titles[i]} per 36 minutes')
@@ -446,32 +446,32 @@ df_new = pd.read_csv('/mnt/data/all_seasons.csv')
 # df_new.head()
 
 #    Unnamed: 0        player_name team_abbreviation   age  player_height  \
-# 0           0      Dennis Rodman               CHI  36.0         198.12   
-# 1           1  Dwayne Schintzius               LAC  28.0         215.90   
-# 2           2       Earl Cureton               TOR  39.0         205.74   
-# 3           3        Ed O'Bannon               DAL  24.0         203.20   
-# 4           4        Ed Pinckney               MIA  34.0         205.74   
+# 0           0      Dennis Rodman               CHI  36.0         198.12
+# 1           1  Dwayne Schintzius               LAC  28.0         215.90
+# 2           2       Earl Cureton               TOR  39.0         205.74
+# 3           3        Ed O'Bannon               DAL  24.0         203.20
+# 4           4        Ed Pinckney               MIA  34.0         205.74
 
 #    player_weight                      college country draft_year draft_round  \
-# 0      99.790240  Southeastern Oklahoma State     USA       1986           2   
-# 1     117.933920                      Florida     USA       1990           1   
-# 2      95.254320                Detroit Mercy     USA       1979           3   
-# 3     100.697424                         UCLA     USA       1995           1   
-# 4     108.862080                    Villanova     USA       1985           1   
+# 0      99.790240  Southeastern Oklahoma State     USA       1986           2
+# 1     117.933920                      Florida     USA       1990           1
+# 2      95.254320                Detroit Mercy     USA       1979           3
+# 3     100.697424                         UCLA     USA       1995           1
+# 4     108.862080                    Villanova     USA       1985           1
 
 #    ...  pts   reb  ast  net_rating  oreb_pct  dreb_pct  usg_pct  ts_pct  \
-# 0  ...  5.7  16.1  3.1        16.1     0.186     0.323    0.100   0.479   
-# 1  ...  2.3   1.5  0.3        12.3     0.078     0.151    0.175   0.430   
-# 2  ...  0.8   1.0  0.4        -2.1     0.105     0.102    0.103   0.376   
-# 3  ...  3.7   2.3  0.6        -8.7     0.060     0.149    0.167   0.399   
-# 4  ...  2.4   2.4  0.2       -11.2     0.109     0.179    0.127   0.611   
+# 0  ...  5.7  16.1  3.1        16.1     0.186     0.323    0.100   0.479
+# 1  ...  2.3   1.5  0.3        12.3     0.078     0.151    0.175   0.430
+# 2  ...  0.8   1.0  0.4        -2.1     0.105     0.102    0.103   0.376
+# 3  ...  3.7   2.3  0.6        -8.7     0.060     0.149    0.167   0.399
+# 4  ...  2.4   2.4  0.2       -11.2     0.109     0.179    0.127   0.611
 
-#    ast_pct   season  
-# 0    0.113  1996-97  
-# 1    0.048  1996-97  
-# 2    0.148  1996-97  
-# 3    0.077  1996-97  
-# 4    0.040  1996-97  
+#    ast_pct   season
+# 0    0.113  1996-97
+# 1    0.048  1996-97
+# 2    0.148  1996-97
+# 3    0.077  1996-97
+# 4    0.040  1996-97
 
 # [5 rows x 22 columns]
 
@@ -482,8 +482,8 @@ df_new = pd.read_csv('/mnt/data/all_seasons.csv')
 df['season'] = (df['year_id'] - 1).astype(str) + '-' + df['year_id'].astype(str).str[-2:]
 
 # Merge the two datasets
-df_merged = pd.merge(df_new, df[['name_common', 'season', 'Raptor WAR']], 
-                     left_on=['player_name', 'season'], 
+df_merged = pd.merge(df_new, df[['name_common', 'season', 'Raptor WAR']],
+                     left_on=['player_name', 'season'],
                      right_on=['name_common', 'season'],
                      how='left')
 

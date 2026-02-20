@@ -77,7 +77,7 @@ The results are generally pretty good. My qualitative assessment is Gemini Pro 1
 
 **Answer:** We aim to create AI models that act as co-workers, integrating with enterprise systems and data. We also strive to lead in responsible AI development and industry collaboration to address challenges and ensure the technology benefits everyone.
 
-# GPT-4 
+# GPT-4
 
 ![GPT4](./gpt4.png)
 

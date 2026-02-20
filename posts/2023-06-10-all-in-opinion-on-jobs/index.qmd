@@ -17,7 +17,7 @@ Chamath:
 
 > You know, if I had to choose something for my kids, I would probably, I would probably tell them to do something mathematical or biological.
 
-Jason: 
+Jason:
 
 > I've been thinking about this a lot too. I think teaching them to be entrepreneurial, resilient, worldly, ability to communicate, ability to lead other people in teams, that stuff's not going to go away, communication skill, etc. I'm encouraging everybody who I work with to just use chat GPT-4 and Bard every day for every single thing that they do. My base thesis right now is that the job freezes, the hiring freezes out of all these companies is indefinite. I'm assuming it's indefinite because the amount of work it takes to write a job requisition is more work in some cases than actually automating with AI or ready the job function. And so I think 20 person companies might double in size in the next two or three years, but still have 20 people. This is going to be a big challenge for society. And if that does come to pass, there's just going to be large swaths of people who are not going to be able to get job interviews for anything other than service jobs. We need a lot more plumbers, electricians, waiters, et cetera. Those probably jobs won't go away, especially if we don't let people immigrate. I am super enthusiastic about that efficiency, but I think it also means you have to be entrepreneurial because if you can't get a job and you can't get mentored, you better create your own opportunity. You better create your own company. And that's what I'm seeing. That's the game on the field right now. Two or three people who don't have job offers from Uber and Airbnb and Google and Facebook just saying, let's start a company because there's nothing else for us to do. And those are highly skilled people right now doing that.
 
@@ -27,7 +27,7 @@ Sacks:
 
 My observations:
 
-- I found it surprising Sacks thought lawyers and accountants were "sufficiently" general that he doesn't think they'll be eliminated. 
-- Sacks' point that some super specialized jobs will be eliminated is a good one, e.g. radiologists. But I also think some lawyers and accounting jobs will go this route too. 
+- I found it surprising Sacks thought lawyers and accountants were "sufficiently" general that he doesn't think they'll be eliminated.
+- Sacks' point that some super specialized jobs will be eliminated is a good one, e.g. radiologists. But I also think some lawyers and accounting jobs will go this route too.
 - Jason is telling his employees to use GPT-4 or Bard for every task at work. I agree this is a good idea to get familiar with how LLMs work and to essentially have a super-assistant at your disposal. GPT-4 is particularly good.
 - Overall I think it's still too early to make any definitive statements about what jobs will be eliminated. I think it's safe to say that most jobs will be affected in some way, but it's hard to say how. This is something I'm fascinated by though, how as a society we will adjust as these language models permeate through organizations, companies and products.

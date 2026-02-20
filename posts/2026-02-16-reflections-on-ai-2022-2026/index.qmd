@@ -15,7 +15,7 @@ I'd like to observe how things have changed through these years across 3 areas:
 
 ## Nov 2022 - Dec 2023 - LangChain, Prompt Engineering, Github Copilot
 
-ChatGPT came out November 2022. It immediately showed the utility of large language models and providing a natural langauge interface to AI. Most people used and got familiar with the chat-based interface. Developers though wanted to call these models programmatically via an API. Libraries like [LangChain](https://github.com/langchain-ai/langchain) grew in popularity as LLM wrappers. They provided common interfaces to all the model providers: OpenAI, Google, Anthropic, etc. 
+ChatGPT came out November 2022. It immediately showed the utility of large language models and providing a natural langauge interface to AI. Most people used and got familiar with the chat-based interface. Developers though wanted to call these models programmatically via an API. Libraries like [LangChain](https://github.com/langchain-ai/langchain) grew in popularity as LLM wrappers. They provided common interfaces to all the model providers: OpenAI, Google, Anthropic, etc.
 
 Harrison Chase actually released LangChain on [October 25, 2022](https://x.com/hwchase17/status/1584925380976091137) (before ChatGPT was released!). LangChain provided a TypeScript and Python interface to language model APIs. As a Python developer, I benefitted tremendously from this open source library. Just following the releases and keeping up with LangChain's blog was so educational. I owe a lot of my learnings that first year to LangChain and the team there.
 
@@ -47,13 +47,13 @@ LangChain continued to push the boundaries forward in agents in their LangGraph 
 - During this time, I built this internal agent using LangGraph that allowed users to ask about internal incidents. The agent was basically a ReAct loop with different tools. Some of the tools executed BigQuery queries or called the Jira API.
 - It seemed like everyone wanted to release an agent framework: LangGraph, ADK (Google), Agents SDK (OpenAI), PydanticAI, AI SDK (Vercel), CrewAI, etc.
 
-Newer coding IDEs also became popular during this time. [Cursor](https://cursor.com/) was the first one, [Windsurf](https://windsurf.com/) came along later. Besides providing code completion, these VS Code forks provided a sidebar where you could chat with your code, you could ask questions about your code and even ask the agent to do tasks that touched multiple files. I remember being very surprised this worked but it became such an unlock for developer productivity. 
+Newer coding IDEs also became popular during this time. [Cursor](https://cursor.com/) was the first one, [Windsurf](https://windsurf.com/) came along later. Besides providing code completion, these VS Code forks provided a sidebar where you could chat with your code, you could ask questions about your code and even ask the agent to do tasks that touched multiple files. I remember being very surprised this worked but it became such an unlock for developer productivity.
 
 The best OpenAI models at the end of the year were [gpt-4o](https://en.wikipedia.org/wiki/GPT-4o) and [o1](https://en.wikipedia.org/wiki/OpenAI_o1)
 
 ## 2025 - Claude Code, Context Engineering
 
-2025 was the year of Claude Code and coding agents. 
+2025 was the year of Claude Code and coding agents.
 
 ![](./images/claude_code_release.webp)
 
@@ -70,7 +70,7 @@ Claude Code was the first coding agent to:
 
 Using Claude Code was a tremendous unlock not only terms of accomplishing what I was supposed to do but it allowed me to do things I never would have done because I either didn't have the technical ability or I didn't have the time. I've also seen how using a tool like Claude Code is massively compounding.
 
-- You can prompt Claude Code to configure itself. "Please set up a `/statusline` for me." 
+- You can prompt Claude Code to configure itself. "Please set up a `/statusline` for me."
 - Anthropic released skills and then open sourced it. Now most coding agents support skills. These are markdown files that provide an agent with steps to accomplish a task or knowledge/reference materials. Claude Code can create it's own skills too through prompting. There are even ["meta-skills"](https://github.com/anthropics/knowledge-work-plugins/blob/main/data/skills/data-context-extractor/SKILL.md) that instruct Claude to create its own skills during certain situations. There are many examples of skills you can install that accomplish all kinds of knowledge work. Below are repos of plugins or collections of Claude Code functionality (including skills)
     - [Claude Official Plugins](https://github.com/anthropics/claude-plugins-official)
     - [Claude Knowledge Work Plugins](https://github.com/anthropics/knowledge-work-plugins)
@@ -82,7 +82,7 @@ Some pitfalls I've encountered and lessons I've learned along the way:
 
 - Working with Claude Code is pretty intense at times. I could be running multiple Claudes in different terminals. I'm reading a lot of generated output (code, text). I'm thinking critical and making decisions on what to do next. 1 hour of intense pairing with Claude Code feels like 3 hours of working without. HBR had an [article that shared similar sentiments](https://hbr.org/2026/02/ai-doesnt-reduce-work-it-intensifies-it).
 - Not allowing Claude Code do too much at once and surpass my understanding of a problem. You having an understanding of the system is important to effectively guide future changes and also validate the results. The term for this is [cognitive debt](https://simonwillison.net/2026/Feb/15/cognitive-debt/).
-- A tool like Claude Code has varying levels of effectiveness depending on the level of experience of the user. I've encouraged junior developers to try and understand the code Claude Code is generating, use a [learning output style](https://x.com/bcherny/status/2021701379409273093) and make smaller PRs. 
+- A tool like Claude Code has varying levels of effectiveness depending on the level of experience of the user. I've encouraged junior developers to try and understand the code Claude Code is generating, use a [learning output style](https://x.com/bcherny/status/2021701379409273093) and make smaller PRs.
 - Like any new technology or tool, not everyone is willing to adopt new tools and new ways of working at the same speed
 
 What I found also surprising was coding agents like Claude Code became agent frameworks (see [Claude Agent SDK](https://platform.claude.com/docs/en/agent-sdk/overview). People at Anthropic realized Claude Code was actually a valuable generic agent harness and could have broad usefulness. They released Claude Cowork, which basically wraps Claude Code in a nicer UI.
@@ -95,7 +95,7 @@ The best OpenAI models at the end of the year were [GPT-5.2](https://en.wikipedi
 
 We're just beginning 2026. [OpenClaw](https://github.com/openclaw/openclaw) is the biggest development in agents and agent harnesses. OpenClaw shows the promise of agents that are:
 
-- Always on        
+- Always on
 - You can connect to them via multiple channels (WhatsApp, Telegram, iMessage)
 - [HEARTBEAT.md](https://docs.openclaw.ai/gateway/heartbeat) - Heartbeat runs periodic agent turns in the main session so the model can surface anything that needs attention without spamming you. The default prompt has:
     - Background tasks: “Consider outstanding tasks” nudges the agent to review follow-ups (inbox, calendar, reminders, queued work) and surface anything urgent.
@@ -109,7 +109,7 @@ I've since setup an OpenClaw named Sage on an old Macbook and it has proven usef
 - reminding me about different calendar events
 - organizing it's own information using the PARA method in Obsidian
 - doing research each day for me on different topics
-- it can update itself 
+- it can update itself
 
 Harness Engineering was a new term that popped up in a post where an [OpenAI team used Codex](https://openai.com/index/harness-engineering/) to create a new software product where they intentionally didn't write any lines of code over a period of 5 months. Agents produced:
 
@@ -127,7 +127,7 @@ Harness Engineering was a new term that popped up in a post where an [OpenAI tea
 I've experienced similar things on a recent machine learning project. Claude Code was writing 95% of the code, tests, CI configuration, documentation, and ML training and pipeline code. I found myself more as an orchestrator of agents accomplishing meaningful work. I did spent time thinking about how to optimize the repository to be more useful to the agent. I landed on a similar structure that the above Codex article talks about in a "In-repository knowledge store." I created a machine learning experiment log that started out as a single markdown file `RESEARCH_LOG.md` that quickly grew too unweidly. To a `RESEARCH_LOG.md` that points to sub-folders for each ML experiment.
 
 ![](./images/in_repository_knowledge_store.png)
-    
+
 ## Reflections
 
 As I think back on these 3-4 years, one of the most important traits is a curiosity and a desire to keep learning. The pace of change in AI has been so fast. I realize you have to be willing to try new things, new ways of working and adopt new tooling otherwise you run the risk of being made somewhat obsolete.

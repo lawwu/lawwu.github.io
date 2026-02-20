@@ -27,7 +27,7 @@ First I prompted Claude 3.5 Sonnet to create a prompt (I know this is kind of me
 
 ![Prompt to get a Prompt](./prompt_to_get_prompt.png)
 
-My prompt was: 
+My prompt was:
 
 ```
 Create a prompt for getting the questions and answers from a youtube transcript of a Q&A talk
@@ -119,7 +119,7 @@ Remember to focus on the substantive content of the seminar, capturing the essen
 
 Return your output in pastable markdown.
 
-Use this Youtube URL to generate links to the timestamps: 
+Use this Youtube URL to generate links to the timestamps:
 ```
 
 ## Step 2: Summarize

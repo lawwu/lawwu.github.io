@@ -729,4 +729,3 @@ Here's a summary of the transcript, highlighting key points and main takeaways f
 *   Data and evaluators are the two fundamental components of any evaluation type.
 *   Langtrain provides tools and resources to simplify data set creation, run evals, and build custom evaluators.
 *   LLM-as-a-judge evaluators are powerful but require careful setup and calibration.
-

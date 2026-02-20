@@ -26,7 +26,7 @@ Some things I learned:
 - 300 employees at this Costco
 - Costco is 3rd largest retailer: Walmart and Amazon are larger.
 - Sell more wine than anyone
-- Only 4,500 items sold 
+- Only 4,500 items sold
 - 4 Pennies out of $1 is profit
 - $900,000 per month in bills
 - highest grossing item is Kirkland toilet paper, $44,000 sold per week. If the Costco sells gold then it typically is gold.
@@ -38,7 +38,7 @@ Some things I learned:
 
 # Amazon
 
-We toured an Amazon fulfillment center (FC) in Eastvale, CA. I [booked the tour here](https://events.amazontours.com/na/onsite/LGB3). Really eye opening. 
+We toured an Amazon fulfillment center (FC) in Eastvale, CA. I [booked the tour here](https://events.amazontours.com/na/onsite/LGB3). Really eye opening.
 
 - We visited a FC named LGB3. Every FC is named after the closest airport. Ontario (ONT) is the closest but I think they already had ONT1-ONT9, so the one we visited was named after the next closest airport or Long Beach (LGB).
 - Our tour guide was fantastic. She was so patient in answering all of our questions!
@@ -54,7 +54,7 @@ We toured an Amazon fulfillment center (FC) in Eastvale, CA. I [booked the tour 
 
 ![](images/amazon-pod-2016.avif)
 
-- Stow: Amazon's inventory is kept in these shelves called pods like the one above. The [picture is from 2016](https://www.theguardian.com/technology/2016/aug/18/amazon-to-open-packing-centre-in-essex). It's interesting the pod hasn't changed all that much. They still are yellow and sit on top of these flat robots (Amazon bought a robotics company called Kiva and renamed it Amazon Robots). The process of stowing is a robot will bring a pod over to a worker. The worker then puts items into the cubbies in the pod. I was really surprised to learn Amazon randomly distributes items across shelves. They do this so there's a higher chance a pod with an item someone orders is close to a person who's job it is to pick the item. 
+- Stow: Amazon's inventory is kept in these shelves called pods like the one above. The [picture is from 2016](https://www.theguardian.com/technology/2016/aug/18/amazon-to-open-packing-centre-in-essex). It's interesting the pod hasn't changed all that much. They still are yellow and sit on top of these flat robots (Amazon bought a robotics company called Kiva and renamed it Amazon Robots). The process of stowing is a robot will bring a pod over to a worker. The worker then puts items into the cubbies in the pod. I was really surprised to learn Amazon randomly distributes items across shelves. They do this so there's a higher chance a pod with an item someone orders is close to a person who's job it is to pick the item.
 - Pick: Pickers are workers who find the items that have been ordered from Amazon's inventory. They used to walk 15+ miles with a shopping cart up and down aisles grabbing things. Now these pickers are largely stationary because robots bring these large shelving units with inventory, there's a projector shining a light on the right cubicle with the item and the worker picks the item out and puts it into a yellow bin.
 - I do wonder if the technology for robotic arms gets good enough will the stow and picking roles be completely automated. These jobs are not the most desirable and the moment this becomes cheaper than hiring people, I imagine those jobs will be replaced.
 - Pack: this FC had two packing departments, pack-single and pack-multi. If you order one item it goes to pack-single, otherwise it is packed by a department that works on multiple items going into one package. The computer recommends the size of box. The computer also prints the right size tape. But it's still a manual process of the worker making the box, taping the ends, putting the item(s) in, packing it (Amazon doesn't use plastic for this anymore), taping it shut and sending it to the next department.
@@ -63,4 +63,3 @@ We toured an Amazon fulfillment center (FC) in Eastvale, CA. I [booked the tour 
 - While walking the floor, there is a "QB" or quarterback station. There were 4 large monitors, one for each floor of the warehouse. On each screen were thousands of dots, each one representing the robots moving shelves/pods around.
 - For same-day or overnight deliveries, some of the steps above are skipped.
 - Yesterday I placed an order at 4pm. It was shipped at 7pm. It arrived at my doorstep at 5am. Amazing stuff Amazon.
-

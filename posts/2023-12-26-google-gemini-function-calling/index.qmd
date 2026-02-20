@@ -29,13 +29,13 @@ With those installed, you can run:
 
 ```python
 from langchain.llms import VertexAI
- 
+
 llm_gemini_pro = VertexAI(
     model_name="gemini-pro",
     temperature=0.7,
     max_output_tokens=1024,
 )
- 
+
 llm_gemini_pro.invoke("What's the difference between data science and data engineering?")
 
 # the answer is pretty good
@@ -74,9 +74,9 @@ llm_gemini_pro.invoke("What's the difference between data science and data engin
 # Gemini Pro and Function Calling
 
 - My learnings are only from text based use cases as I haven't really tried the multi-modal capabilities yet (e.g. vision)
-- My "vibe check" of Gemini Pro is it is a much improved model compared to `text-bison` and `text-unicorn`. It is able to follow instructions much more reliably than the previous models that were based on PaLM2. 
+- My "vibe check" of Gemini Pro is it is a much improved model compared to `text-bison` and `text-unicorn`. It is able to follow instructions much more reliably than the previous models that were based on PaLM2.
 - One feature that I was particularly excited to see Google add is [function calling](https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling).
-- Here are some [function calling examples](https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling#function-calling-sdk-samples) from Google's documentation. 
+- Here are some [function calling examples](https://cloud.google.com/vertex-ai/docs/generative-ai/multimodal/function-calling#function-calling-sdk-samples) from Google's documentation.
 - This [intro to function calling Jupyter notebook](https://github.com/GoogleCloudPlatform/generative-ai/blob/main/gemini/function-calling/intro_function_calling.ipynb) was very helpful to get started with function calling.
 - As of this writing (2023-12-26), langchain doesn't support Google Gemini's function calling. I opened an [issue](https://github.com/langchain-ai/langchain/issues/15073) and it looks like there's already a [PR](https://github.com/langchain-ai/langchain/pull/15146) to add this feature.
 
@@ -221,7 +221,7 @@ func_person_extractor = FunctionDeclaration(
         },
         "required": ["name", "height"]
     },
-    
+
 )
 tool_person_extractor = Tool(
     function_declarations=[func_person_extractor],
@@ -311,7 +311,7 @@ func_person_and_dog_extractor = FunctionDeclaration(
         },
         "required": ["name", "height", "hair_color", "dog_name", "dog_breed", "dog_extra_info"]
     },
-    
+
 )
 tool_person_and_dog_extractor = Tool(
     function_declarations=[func_person_and_dog_extractor],

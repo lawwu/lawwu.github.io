@@ -16,7 +16,7 @@ There's seemingly a firehose of development in the last month or so. I've been t
 - 2023-03-20 – Reflexion: an autonomous agent with dynamic memory and self-reflection ([paper](https://arxiv.org/abs/2303.11366)). A related [post](https://nanothoughts.substack.com/p/reflecting-on-reflexion).
 - 2023-03-23 - AI Explained – GPT4 can improve itself ([video](https://www.youtube.com/watch?v=5SgJKZLBrmg&ab_channel=AIExplained)) - Intro to Reflexion and HuggingGPT
 - 2023-03-30 - HuggingGPT: Solving AI Tasks with ChatGPT and its Friends in HuggingFace ([paper](https://arxiv.org/abs/2303.17580), [code](https://github.com/microsoft/JARVIS)) - Using a LLM as brain, HuggingGPT identifies what HuggingFace models to use to solve tasks. Notably Microsoft is calling this `JARVIS`.
- 
+
 # Libraries / Tools
 
 - [Github Copilot](https://github.com/features/copilot) - I use Copilot in my IDE, VS Code and it's dramatically improved my producitivity (10-20%?). More than that it makes coding less tedious and lowers the activiation energy for coding tasks. For example generating docstrings is trivial (and happens much more frequently!). And because the recommendations are inline, the developer's 'flow' is not broken. I also moved from Jupyter Notebooks in a browser to using Jupyter in VS Code. Radek Omulski has a [blog post](https://radekosmulski.com/an-ide-for-the-era-of-ai/) for how to set this up. ~~I do plan to try [GenAI](https://github.com/noteable-io/genai) as well.~~ I tried GenAI and it basically automatically sends all errors to ChatGPT and provides suggested corrected syntax to try in line in your Jupyter notebook. It actually can be a nice complement to Copilot.
@@ -26,7 +26,7 @@ There's seemingly a firehose of development in the last month or so. I've been t
 - [marvin](https://github.com/PrefectHQ/marvin) - Meet Marvin: a batteries-included library for building AI-powered software. Marvin's job is to integrate AI directly into your codebase by making it look and feel like any other function.
 
 
-# Prompt Engineering 
+# Prompt Engineering
 
 Prompt engineering is the process of creating prompts for LLMs. Essentially optimizing the input into LLMs.
 
@@ -34,9 +34,9 @@ Prompt engineering is the process of creating prompts for LLMs. Essentially opti
 - [awesome-chatgpt-prompts](https://github.com/f/awesome-chatgpt-prompts) - A curated list of awesome ChatGPT prompts. I like "Act as a Linux Terminal" prompt.
 - [Prompt Engineering Guide](https://www.promptingguide.ai/) - "Motivated by the high interest in developing with LLMs, we have created this new prompt engineering guide that contains all the latest papers, learning guides, lectures, references, and tools related to prompt engineering." Code: [repo](https://github.com/dair-ai/Prompt-Engineering-Guide).
 
-# Output Parsers 
+# Output Parsers
 
-Where prompt engineering works on the input to LLMs, output parsers work on the output. 
+Where prompt engineering works on the input to LLMs, output parsers work on the output.
 
 - [Output Parsers](https://python.langchain.com/en/latest/modules/prompts/output_parsers.html) - LangChain calls this "Output Parsers". LangChain can return a list, JSON, any Python type (using Pydantic) and two other ways of handling outputs: `OutputFixingParser` and `RetryOutputParser`
 - [Enforcing AI Format](https://www.askmarvin.ai/guide/use_cases/enforcing_format/) - Marvin calls this "Enforcing AI format". Marvin can return a string, list of dicts, JSON or really any Python type (using Pydantic)
@@ -44,4 +44,3 @@ Where prompt engineering works on the input to LLMs, output parsers work on the 
 # Predictions
 
 - 2023-04-01 - [@AllenDowney](https://mobile.twitter.com/AllenDowney) predicts "The great majority of coding will be LLM-assisted, starting now." ([tweet](https://mobile.twitter.com/AllenDowney/status/1642292405201190915), [blog](https://www.allendowney.com/blog/2023/04/02/llm-assisted-programming/))
-
