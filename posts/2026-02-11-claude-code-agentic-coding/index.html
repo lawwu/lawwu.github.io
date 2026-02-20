@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-afa37c5c79185640b9c231024f4fe5ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -245,6 +245,8 @@ cookieconsent.run({
   <li><a href="#day-4---auto-memory" id="toc-day-4---auto-memory" class="nav-link" data-scroll-target="#day-4---auto-memory">Day 4 - Auto Memory</a></li>
   <li><a href="#day-5---save-your-data" id="toc-day-5---save-your-data" class="nav-link" data-scroll-target="#day-5---save-your-data">Day 5 - Save Your Data</a></li>
   <li><a href="#day-6---use-plan-mode" id="toc-day-6---use-plan-mode" class="nav-link" data-scroll-target="#day-6---use-plan-mode">Day 6 - Use Plan Mode</a></li>
+  <li><a href="#day-7---prefer-clis-to-mcps" id="toc-day-7---prefer-clis-to-mcps" class="nav-link" data-scroll-target="#day-7---prefer-clis-to-mcps">Day 7 - Prefer CLIs to MCPs</a></li>
+  <li><a href="#day-8---customize-a-statusline" id="toc-day-8---customize-a-statusline" class="nav-link" data-scroll-target="#day-8---customize-a-statusline">Day 8 - Customize a statusline</a></li>
   </ul>
 </nav>
     </div>
@@ -381,6 +383,23 @@ cookieconsent.run({
 </ul>
 <p>The plans get written into your home directory: <code>~/.claude/plans/random-words.md</code></p>
 <p>https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis</p>
+</section>
+<section id="day-7---prefer-clis-to-mcps" class="level1">
+<h1>Day 7 - Prefer CLIs to MCPs</h1>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_skills-vs-dynamic-mcp-loadouts-activity-7429910264294084608-TZkO?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-18</a></p>
+<p>One of the main breakthroughs Claude Code and other agentic coding terminals made was the Bash tool. Because Claude has been trained to use Bash so effectively and there are thousands of CLIs that run in Bash, Claude Code + CLIs pairs so well together.</p>
+<p>MCPs had a lot of promise when they first came out. They still have a place. By implementing an MCP Server, you provide a common interface to any MCP Client. But the downside of MCP is you quickly fill up the context window of the underlying LLM you are using. The more MCPs you have configured, the worse this gets.</p>
+<p>With CLIs, Claude Code can directly use them because the underlying model, Claude, has been “seen” so many instances of CLIs being used in the training data. So Claude Code already knows how to use the <code>gh</code> (Github) CLI, <code>bq</code> (BigQuery) CLI, ffmpeg, etc.</p>
+<p>I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP.</p>
+<p>I’ve also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (https://github.com/atlassian-api/atlassian-python-api ).</p>
+<p>One MCP Server I still like and have configured globally in Claude Code is DeepWiki: https://cognition.ai/blog/deepwiki-mcp-server</p>
+<p>Armin Ronacher shares similar thoughts in his post: https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/ - Largely moved away from MCP, redone everything as skills - Agents are better at writing their own tools — they customize and debug them - MCP servers: you’re at mercy of their changes</p>
+</section>
+<section id="day-8---customize-a-statusline" class="level1">
+<h1>Day 8 - Customize a statusline</h1>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_customize-your-status-line-claude-code-activity-7430272648762413056-QELx?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-19</a></p>
+<p>You can configure the bottom two lines in the Claude Code terminal UI. Run the <code>/statusline</code> command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.</p>
+<p>Official docs: https://code.claude.com/docs/en/statusline</p>
 
 
 </section>
