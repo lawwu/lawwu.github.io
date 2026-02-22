@@ -247,6 +247,7 @@ cookieconsent.run({
   <li><a href="#day-6---use-plan-mode" id="toc-day-6---use-plan-mode" class="nav-link" data-scroll-target="#day-6---use-plan-mode">Day 6 - Use Plan Mode</a></li>
   <li><a href="#day-7---prefer-clis-to-mcps" id="toc-day-7---prefer-clis-to-mcps" class="nav-link" data-scroll-target="#day-7---prefer-clis-to-mcps">Day 7 - Prefer CLIs to MCPs</a></li>
   <li><a href="#day-8---customize-a-statusline" id="toc-day-8---customize-a-statusline" class="nav-link" data-scroll-target="#day-8---customize-a-statusline">Day 8 - Customize a statusline</a></li>
+  <li><a href="#day-9---benefits-of-an-llm-gateway" id="toc-day-9---benefits-of-an-llm-gateway" class="nav-link" data-scroll-target="#day-9---benefits-of-an-llm-gateway">Day 9 - Benefits of an LLM Gateway</a></li>
   </ul>
 </nav>
     </div>
@@ -405,6 +406,19 @@ cookieconsent.run({
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_customize-your-status-line-claude-code-activity-7430272648762413056-QELx?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-19</a></p>
 <p>You can configure the bottom two lines in the Claude Code terminal UI. Run the <code>/statusline</code> command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.</p>
 <p>Official docs: <a href="https://code.claude.com/docs/en/statusline" class="uri">https://code.claude.com/docs/en/statusline</a></p>
+</section>
+<section id="day-9---benefits-of-an-llm-gateway" class="level1">
+<h1>Day 9 - Benefits of an LLM Gateway</h1>
+<p><a href="hhttps://www.linkedin.com/posts/lawrencewu920_benefits-of-an-llm-gateway-i-think-one-of-activity-7430635093079007232-3IIN?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-20</a></p>
+<p>I think one of the reasons Claude Code exploded in popularity was because Anthropic did a good job establishing partnerships with all of the hyperscalers. You can use Claude Code with Claude models directly with Anthropic or through Amazon (Bedrock), GCP (VertexAI), or Azure (Foundry). Many companies have also established internal LLM Gateways like LiteLLM that have a lot of benefits. Some of the benefits I’ve seen:</p>
+<ul>
+<li>You can configure multiple provider’s models. Anthropic, OpenAI, Google models all exposed through a common interface. Open Source models can also be configured.</li>
+<li>You can log all of the LLM requests/responses.</li>
+<li>You can control costs and set budgets per user/team.</li>
+<li>You can swap models between different agentic harnesses. Claude Code with gpt-5.3-codex. Codex with Opus 4.6. Or you can use an open source harness like OpenCode with any model.</li>
+</ul>
+<p>One downside of these internal LLM Gateways is they become a central place of failure. And if it goes down, your internal users’ productivity will plummet.</p>
+<p><img src="./images/cc_day9_llm_gateway.png" class="img-fluid"></p>
 
 
 </section>
