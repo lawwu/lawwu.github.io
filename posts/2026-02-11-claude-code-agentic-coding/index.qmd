@@ -167,3 +167,18 @@ Armin Ronacher shares similar thoughts in his post: <https://lucumr.pocoo.org/20
 You can configure the bottom two lines in the Claude Code terminal UI. Run the `/statusline` command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.
 
 Official docs: <https://code.claude.com/docs/en/statusline>
+
+# Day 9 - Benefits of an LLM Gateway
+
+[Posted on 2026-02-20](hhttps://www.linkedin.com/posts/lawrencewu920_benefits-of-an-llm-gateway-i-think-one-of-activity-7430635093079007232-3IIN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+I think one of the reasons Claude Code exploded in popularity was because Anthropic did a good job establishing partnerships with all of the hyperscalers. You can use Claude Code with Claude models directly with Anthropic or through Amazon (Bedrock), GCP (VertexAI), or Azure (Foundry). Many companies have also established internal LLM Gateways like LiteLLM that have a lot of benefits. Some of the benefits I've seen:
+
+- You can configure multiple provider's models. Anthropic, OpenAI, Google models all exposed through a common interface. Open Source models can also be configured.
+- You can log all of the LLM requests/responses.
+- You can control costs and set budgets per user/team.
+- You can swap models between different agentic harnesses. Claude Code with gpt-5.3-codex. Codex with Opus 4.6. Or you can use an open source harness like OpenCode with any model.
+
+One downside of these internal LLM Gateways is they become a central place of failure. And if it goes down, your internal users' productivity will plummet.
+
+![](./images/cc_day9_llm_gateway.png)
