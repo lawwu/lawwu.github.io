@@ -102,7 +102,7 @@ If you type `/memory` you can see if auto memory is being used. See below for wh
 ![](./images/cc_day4_auto_memory.jpeg)
 
 
-# Day 5 - Save Your Data
+## Day 5 - Save Your Data
 
 [Posted on 2026-02-16](https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429185326138531840-bepC?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
@@ -113,7 +113,7 @@ If you type `/memory` you can see if auto memory is being used. See below for wh
 Remember you can also ask Claude Code to do these things too.
 
 
-# Day 6 - Use Plan Mode
+## Day 6 - Use Plan Mode
 
 [Posted on 2026-02-17](https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429551565948166147-ypB0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
@@ -137,7 +137,7 @@ The plans get written into your home directory: `~/.claude/plans/random-words.md
 
 <https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis>
 
-# Day 7 - Prefer CLIs to MCPs
+## Day 7 - Prefer CLIs to MCPs
 
 [Posted on 2026-02-18](https://www.linkedin.com/posts/lawrencewu920_skills-vs-dynamic-mcp-loadouts-activity-7429910264294084608-TZkO?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
@@ -160,7 +160,7 @@ Armin Ronacher shares similar thoughts in his post: <https://lucumr.pocoo.org/20
   - MCP servers: you're at mercy of their changes
 
 
-# Day 8 - Customize a statusline
+## Day 8 - Customize a statusline
 
 [Posted on 2026-02-19](https://www.linkedin.com/posts/lawrencewu920_customize-your-status-line-claude-code-activity-7430272648762413056-QELx?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
@@ -168,7 +168,7 @@ You can configure the bottom two lines in the Claude Code terminal UI. Run the `
 
 Official docs: <https://code.claude.com/docs/en/statusline>
 
-# Day 9 - Benefits of an LLM Gateway
+## Day 9 - Benefits of an LLM Gateway
 
 [Posted on 2026-02-20](https://www.linkedin.com/posts/lawrencewu920_benefits-of-an-llm-gateway-i-think-one-of-activity-7430635093079007232-3IIN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
@@ -183,7 +183,7 @@ One downside of these internal LLM Gateways is they become a central place of fa
 
 ![](./images/cc_day9_llm_gateway.png)
 
-# Day 10 — LLM vs Agentic Harness
+## Day 10 — LLM vs Agentic Harness
 
 [Posted on 2026-02-22](https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
