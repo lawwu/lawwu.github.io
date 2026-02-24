@@ -170,7 +170,7 @@ Official docs: <https://code.claude.com/docs/en/statusline>
 
 # Day 9 - Benefits of an LLM Gateway
 
-[Posted on 2026-02-20](hhttps://www.linkedin.com/posts/lawrencewu920_benefits-of-an-llm-gateway-i-think-one-of-activity-7430635093079007232-3IIN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+[Posted on 2026-02-20](https://www.linkedin.com/posts/lawrencewu920_benefits-of-an-llm-gateway-i-think-one-of-activity-7430635093079007232-3IIN?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
 I think one of the reasons Claude Code exploded in popularity was because Anthropic did a good job establishing partnerships with all of the hyperscalers. You can use Claude Code with Claude models directly with Anthropic or through Amazon (Bedrock), GCP (VertexAI), or Azure (Foundry). Many companies have also established internal LLM Gateways like LiteLLM that have a lot of benefits. Some of the benefits I've seen:
 
@@ -182,3 +182,29 @@ I think one of the reasons Claude Code exploded in popularity was because Anthro
 One downside of these internal LLM Gateways is they become a central place of failure. And if it goes down, your internal users' productivity will plummet.
 
 ![](./images/cc_day9_llm_gateway.png)
+
+# Day 10 — LLM vs Agentic Harness
+
+[Posted on 2026-02-22](https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+![](./images/cc_day10_agentic_harness.png)
+
+Remember, there is a difference between Claude Code and Claude the underlying model. Claude Code itself is just a CLI, I like to think of it as an agentic harness. It wraps a language model (Opus, Sonnet, Haiku or if you use LiteLLM, you can point it at any model). There are so many different agentic harnesses for coding agents now: Codex, gemini-cli, Claude Code and OpenCode.
+
+The Claude Code CLI changes rapidly — see the [CHANGELOG](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Each version bumps the harness, not the underlying model. The harness handles: tool orchestration, context management, permissions, memory, prompt caching. There are system prompts embedded in the harness too.
+
+Why does this matter? When Claude Code "gets better" it could be either the model OR the harness improving.
+
+Boris Cherny in this [interview](https://www.youtube.com/watch?v=We7BZVKbCVw) talked about how he stuck with the terminal UI because he wanted to make as thin of a harness as possible so that improvements in model capability could be passed to the user. Claude Code recently turned 1 year old. It has gotten more feature rich. There has been an interesting project called Pi that I heard about because it's the agent framework powering OpenClaw. Armin Ronacher writes about it [here](https://lucumr.pocoo.org/2026/1/31/pi/).
+
+## Day 11 — Terminal vs VS Code Extension
+
+[Posted on 2026-02-23](https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+![](./images/cc_day11_agentic_harness.png)
+
+Claude Code started with a TUI (terminal UI). Since that time they've added a VS Code Extension and even a full-fledged UI in Claude Cowork which just wraps Claude Code. Yesterday I talked about how Claude Code is a type of agentic harness around the model. You can also think of the VS Code Extension and Claude Cowork as different harness around the same model. As you can see in the picture, I think of the VS Code Extension as a "thicker" harness in that it adds behavior that the underlying framework doesn't do.
+
+Different harnesses have different behaviors. The VS Code Extension automatically adds opened file / selected lines as part of your prompt. This silently increases token usage and may send unintended context to the LLM. I've never had the TUI add files I didn't expect.
+
+The VS Code extension does add a nice UI to visualize tool outputs that I like.
