@@ -209,7 +209,7 @@ Different harnesses have different behaviors. The VS Code Extension automaticall
 
 The VS Code extension does add a nice UI to visualize tool outputs that I like.
 
-### Day 12 — Setup PeonPing
+## Day 12 — Setup PeonPing
 
 [Posted on 2026-02-25](https://www.linkedin.com/posts/lawrencewu920_github-peonpingpeon-ping-warcraft-iii-activity-7432447018251374592-RH87?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
@@ -219,8 +219,7 @@ I've really enjoyed using [Peon Ping](https://github.com/PeonPing/peon-ping) for
 
 It initially was for Claude Code but they've recently added support for most coding agents now.
 
-
-### Day 13 — Claude Code GitHub Actions
+## Day 13 — Claude Code GitHub Actions
 
 [Posted on 2026-02-26](https://www.linkedin.com/posts/lawrencewu920_you-can-run-claude-code-in-your-github-actions-activity-7432809363100061697-VpWz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
