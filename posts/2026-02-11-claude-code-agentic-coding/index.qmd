@@ -185,7 +185,7 @@ One downside of these internal LLM Gateways is they become a central place of fa
 
 ## Day 10 — LLM vs Agentic Harness
 
-[Posted on 2026-02-22](https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+[Posted on 2026-02-23](https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
 ![](./images/cc_day10_agentic_harness.png)
 
@@ -199,7 +199,7 @@ Boris Cherny in this [interview](https://www.youtube.com/watch?v=We7BZVKbCVw) ta
 
 ## Day 11 — Terminal vs VS Code Extension
 
-[Posted on 2026-02-23](https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+[Posted on 2026-02-24](https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
 
 ![](./images/cc_day11_agentic_harness.png)
 
@@ -208,3 +208,28 @@ Claude Code started with a TUI (terminal UI). Since that time they've added a VS
 Different harnesses have different behaviors. The VS Code Extension automatically adds opened file / selected lines as part of your prompt. This silently increases token usage and may send unintended context to the LLM. I've never had the TUI add files I didn't expect.
 
 The VS Code extension does add a nice UI to visualize tool outputs that I like.
+
+### Day 12 — Setup PeonPing
+
+[Posted on 2026-02-25](https://www.linkedin.com/posts/lawrencewu920_github-peonpingpeon-ping-warcraft-iii-activity-7432447018251374592-RH87?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+![](./images/cc_day12_peonping.png)
+
+I've really enjoyed using [Peon Ping](https://github.com/PeonPing/peon-ping) for the last few weeks. It adds a Claude Code hook at the beginning and end of each session. It notifies you with a system notification and a custom sound. The default is a Warcraft III peon. There's also sounds from Starcaft and Age of Empires and a bunch of other goodies. The sounds are fun but it's genuinly useful knowing when the agent finishes it's task.
+
+It initially was for Claude Code but they've recently added support for most coding agents now.
+
+
+### Day 13 — Claude Code GitHub Actions
+
+[Posted on 2026-02-26](https://www.linkedin.com/posts/lawrencewu920_you-can-run-claude-code-in-your-github-actions-activity-7432809363100061697-VpWz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+![](./images/cc_day13_claude_code_action.png)
+
+You can run Claude Code in your Github Actions. Anthropic has an official action here: <https://github.com/anthropics/claude-code-action>.
+
+I've used this Github Action to mainly review PRs but also generate commits and PRs. I was inspired to set this up when I saw the Anthropic team close [an issue I opened](https://github.com/anthropics/claude-code-action/issues/756) by just tagging "@claude can you fix it" and passing a link. Amazing.
+
+The Claude Code Github Action is another agentic harness. It actually uses the Claude Agent SDK under the hood with a custom prompt specifically for Github. For example it largely communicates through Github Issues. But it's amazing just to see the checklist update in realtime and also a link to create a PR from the branch Claude made.
+
+It's pretty easy to setup. You can even use Claude Code to set this up for you in your Github repo.
