@@ -79,7 +79,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0b37c64f34216b628666a8dac638b53b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-afa37c5c79185640b9c231024f4fe5ea.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -250,6 +250,8 @@ cookieconsent.run({
   <li><a href="#day-9---benefits-of-an-llm-gateway" id="toc-day-9---benefits-of-an-llm-gateway" class="nav-link" data-scroll-target="#day-9---benefits-of-an-llm-gateway">Day 9 - Benefits of an LLM Gateway</a></li>
   <li><a href="#day-10-llm-vs-agentic-harness" id="toc-day-10-llm-vs-agentic-harness" class="nav-link" data-scroll-target="#day-10-llm-vs-agentic-harness">Day 10 — LLM vs Agentic Harness</a></li>
   <li><a href="#day-11-terminal-vs-vs-code-extension" id="toc-day-11-terminal-vs-vs-code-extension" class="nav-link" data-scroll-target="#day-11-terminal-vs-vs-code-extension">Day 11 — Terminal vs VS Code Extension</a></li>
+  <li><a href="#day-12-setup-peonping" id="toc-day-12-setup-peonping" class="nav-link" data-scroll-target="#day-12-setup-peonping">Day 12 — Setup PeonPing</a></li>
+  <li><a href="#day-13-claude-code-github-actions" id="toc-day-13-claude-code-github-actions" class="nav-link" data-scroll-target="#day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</a></li>
   </ul>
 </nav>
     </div>
@@ -424,7 +426,7 @@ cookieconsent.run({
 </section>
 <section id="day-10-llm-vs-agentic-harness" class="level2">
 <h2 class="anchored" data-anchor-id="day-10-llm-vs-agentic-harness">Day 10 — LLM vs Agentic Harness</h2>
-<p><a href="https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-22</a></p>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-23</a></p>
 <p><img src="./images/cc_day10_agentic_harness.png" class="img-fluid"></p>
 <p>Remember, there is a difference between Claude Code and Claude the underlying model. Claude Code itself is just a CLI, I like to think of it as an agentic harness. It wraps a language model (Opus, Sonnet, Haiku or if you use LiteLLM, you can point it at any model). There are so many different agentic harnesses for coding agents now: Codex, gemini-cli, Claude Code and OpenCode.</p>
 <p>The Claude Code CLI changes rapidly — see the <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a>. Each version bumps the harness, not the underlying model. The harness handles: tool orchestration, context management, permissions, memory, prompt caching. There are system prompts embedded in the harness too.</p>
@@ -433,11 +435,27 @@ cookieconsent.run({
 </section>
 <section id="day-11-terminal-vs-vs-code-extension" class="level2">
 <h2 class="anchored" data-anchor-id="day-11-terminal-vs-vs-code-extension">Day 11 — Terminal vs VS Code Extension</h2>
-<p><a href="https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-23</a></p>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-24</a></p>
 <p><img src="./images/cc_day11_agentic_harness.png" class="img-fluid"></p>
 <p>Claude Code started with a TUI (terminal UI). Since that time they’ve added a VS Code Extension and even a full-fledged UI in Claude Cowork which just wraps Claude Code. Yesterday I talked about how Claude Code is a type of agentic harness around the model. You can also think of the VS Code Extension and Claude Cowork as different harness around the same model. As you can see in the picture, I think of the VS Code Extension as a “thicker” harness in that it adds behavior that the underlying framework doesn’t do.</p>
 <p>Different harnesses have different behaviors. The VS Code Extension automatically adds opened file / selected lines as part of your prompt. This silently increases token usage and may send unintended context to the LLM. I’ve never had the TUI add files I didn’t expect.</p>
 <p>The VS Code extension does add a nice UI to visualize tool outputs that I like.</p>
+</section>
+<section id="day-12-setup-peonping" class="level2">
+<h2 class="anchored" data-anchor-id="day-12-setup-peonping">Day 12 — Setup PeonPing</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_github-peonpingpeon-ping-warcraft-iii-activity-7432447018251374592-RH87?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-25</a></p>
+<p><img src="./images/cc_day12_peonping.png" class="img-fluid"></p>
+<p>I’ve really enjoyed using <a href="https://github.com/PeonPing/peon-ping">Peon Ping</a> for the last few weeks. It adds a Claude Code hook at the beginning and end of each session. It notifies you with a system notification and a custom sound. The default is a Warcraft III peon. There’s also sounds from Starcaft and Age of Empires and a bunch of other goodies. The sounds are fun but it’s genuinly useful knowing when the agent finishes it’s task.</p>
+<p>It initially was for Claude Code but they’ve recently added support for most coding agents now.</p>
+</section>
+<section id="day-13-claude-code-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_you-can-run-claude-code-in-your-github-actions-activity-7432809363100061697-VpWz?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-26</a></p>
+<p><img src="./images/cc_day13_claude_code_action.png" class="img-fluid"></p>
+<p>You can run Claude Code in your Github Actions. Anthropic has an official action here: <a href="https://github.com/anthropics/claude-code-action" class="uri">https://github.com/anthropics/claude-code-action</a>.</p>
+<p>I’ve used this Github Action to mainly review PRs but also generate commits and PRs. I was inspired to set this up when I saw the Anthropic team close <a href="https://github.com/anthropics/claude-code-action/issues/756">an issue I opened</a> by just tagging “<span class="citation" data-cites="claude">@claude</span> can you fix it” and passing a link. Amazing.</p>
+<p>The Claude Code Github Action is another agentic harness. It actually uses the Claude Agent SDK under the hood with a custom prompt specifically for Github. For example it largely communicates through Github Issues. But it’s amazing just to see the checklist update in realtime and also a link to create a PR from the branch Claude made.</p>
+<p>It’s pretty easy to setup. You can even use Claude Code to set this up for you in your Github repo.</p>
 
 
 </section>
