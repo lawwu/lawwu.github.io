@@ -232,3 +232,19 @@ I've used this Github Action to mainly review PRs but also generate commits and 
 The Claude Code Github Action is another agentic harness. It actually uses the Claude Agent SDK under the hood with a custom prompt specifically for Github. For example it largely communicates through Github Issues. But it's amazing just to see the checklist update in realtime and also a link to create a PR from the branch Claude made.
 
 It's pretty easy to setup. You can even use Claude Code to set this up for you in your Github repo.
+
+## Day 14 — Don't Outpace Your Understanding
+
+[Posted on 2026-02-27](https://www.linkedin.com/posts/lawrencewu920_dont-allow-the-agent-to-outpace-your-understanding-activity-7433171647173640192-mlk0?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+Don't allow the agent to outpace your understanding of whatever you are building. The models can still make mistakes. You need to have some understanding of the system in order to validate what the agent is doing. Your understanding of the system is also critical to guide future changes and validate correctness
+
+Practical tips:
+
+- Use plan mode (Day 6) for complex tasks — review the plan before executing
+- Read the code/diffs, don't just approve them
+- Ask Claude to explain its changes: "why did you do it this way?"
+- Keep AGENTS.md updated so future sessions have context on architectural decisions
+- When Claude writes code you don't understand, stop and learn before moving on
+
+This is even more important when using multiple agents (Codex + Claude Code) — you're the one who has to maintain the codebase (at least for now?)
