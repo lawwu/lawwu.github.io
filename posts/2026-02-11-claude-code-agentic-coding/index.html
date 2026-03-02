@@ -252,6 +252,7 @@ cookieconsent.run({
   <li><a href="#day-11-terminal-vs-vs-code-extension" id="toc-day-11-terminal-vs-vs-code-extension" class="nav-link" data-scroll-target="#day-11-terminal-vs-vs-code-extension">Day 11 — Terminal vs VS Code Extension</a></li>
   <li><a href="#day-12-setup-peonping" id="toc-day-12-setup-peonping" class="nav-link" data-scroll-target="#day-12-setup-peonping">Day 12 — Setup PeonPing</a></li>
   <li><a href="#day-13-claude-code-github-actions" id="toc-day-13-claude-code-github-actions" class="nav-link" data-scroll-target="#day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</a></li>
+  <li><a href="#day-14-dont-outpace-your-understanding" id="toc-day-14-dont-outpace-your-understanding" class="nav-link" data-scroll-target="#day-14-dont-outpace-your-understanding">Day 14 — Don’t Outpace Your Understanding</a></li>
   </ul>
 </nav>
     </div>
@@ -456,6 +457,20 @@ cookieconsent.run({
 <p>I’ve used this Github Action to mainly review PRs but also generate commits and PRs. I was inspired to set this up when I saw the Anthropic team close <a href="https://github.com/anthropics/claude-code-action/issues/756">an issue I opened</a> by just tagging “<span class="citation" data-cites="claude">@claude</span> can you fix it” and passing a link. Amazing.</p>
 <p>The Claude Code Github Action is another agentic harness. It actually uses the Claude Agent SDK under the hood with a custom prompt specifically for Github. For example it largely communicates through Github Issues. But it’s amazing just to see the checklist update in realtime and also a link to create a PR from the branch Claude made.</p>
 <p>It’s pretty easy to setup. You can even use Claude Code to set this up for you in your Github repo.</p>
+</section>
+<section id="day-14-dont-outpace-your-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="day-14-dont-outpace-your-understanding">Day 14 — Don’t Outpace Your Understanding</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_dont-allow-the-agent-to-outpace-your-understanding-activity-7433171647173640192-mlk0?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-27</a></p>
+<p>Don’t allow the agent to outpace your understanding of whatever you are building. The models can still make mistakes. You need to have some understanding of the system in order to validate what the agent is doing. Your understanding of the system is also critical to guide future changes and validate correctness</p>
+<p>Practical tips:</p>
+<ul>
+<li>Use plan mode (Day 6) for complex tasks — review the plan before executing</li>
+<li>Read the code/diffs, don’t just approve them</li>
+<li>Ask Claude to explain its changes: “why did you do it this way?”</li>
+<li>Keep AGENTS.md updated so future sessions have context on architectural decisions</li>
+<li>When Claude writes code you don’t understand, stop and learn before moving on</li>
+</ul>
+<p>This is even more important when using multiple agents (Codex + Claude Code) — you’re the one who has to maintain the codebase (at least for now?)</p>
 
 
 </section>
