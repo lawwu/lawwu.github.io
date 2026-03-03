@@ -29,7 +29,7 @@ about:
 
 ## Hello! 👋
 
-I am a Principal level data scientist and ML/AI engineer who codes daily and ships reliable systems. I enjoy deriving business value out of data, training ML models and building AI systems using common protocols like [MCP](https://github.com/jlowin/fastmcp), [LiteLLM](https://github.com/BerriAI/litellm) and agent frameworks like [LangGraph](https://github.com/langchain-ai/langgraph) along with robust evals (that run in CI/CD like GitHub Actions). [Claude Code](https://github.com/anthropics/claude-code) is my agentic coding agent of [choice](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/). I’m a curious learner who is fascinated with AI and its impact on work and society at large.
+I am a Data Scientist & AI Harness Engineer developing Foundation Models and Agentic ML at UKG. I have 10+ years of experiencing building machine learning systems. In recent years I have developed expertise in LLMs, Agentic Harnesses and adapting to new ways of working with coding agents like Claude Code and Codex. I'm a lifelong learner and enjoy sharing what I've learned with others through writing. I believe writing is thinking.
 
 ### Professional Experience
 
