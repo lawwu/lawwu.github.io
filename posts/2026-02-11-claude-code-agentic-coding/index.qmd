@@ -248,3 +248,26 @@ Practical tips:
 - When Claude writes code you don't understand, stop and learn before moving on
 
 This is even more important when using multiple agents (Codex + Claude Code) — you're the one who has to maintain the codebase (at least for now?)
+
+## Day 15 - Prompt Caching
+
+[Posted On 2026-03-02](https://www.linkedin.com/posts/lawrencewu920_we-build-our-entire-harness-around-prompt-activity-7434258928865157120-Ohmh?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g)
+
+![](./images/cc_day15_prompt_caching.png)
+
+"We build our entire harness around prompt caching" - Thariq (Claude Code dev)
+
+I've really liked Chip Huyen's sniffly project to visualize Claude Code stats. One of the graphs shows you the daily cost of your tokens by input tokens, output tokens and cache operations. I always thought this graph was wrong because it looked like 99% of the cost was cache operations. But I realized it wasn't wrong.
+
+I underestimated the importance of prompt caching. Cached tokens are 10% the cost of regular tokens (!). This means Claude Code structures static content first and dynamic content later in the prompt:
+
+1. System Prompt & Tools (global cache)
+2. CLAUDE.md (cached within a porject)
+3. Session context (cached within a session)
+4. Conversation messages
+
+I didn't appreciate how much engineering and effort goes into making the user experience in Claude Code what it is AND keeping the costs maintainable.
+
+If you are building your own AI systems on top of LLM APIs that support prompt caching, you need to design your system with prompt caching at the forefront of your mind. Looking at the Claude Code CHANGELOG, you can see there are dedicated releases for fixing things that led to reduced cache hit rates, e.g. 2.1.62.
+
+Thariq has a good post on the importance of prompt caching that was so illuminating: <https://x.com/trq212/status/2024574133011673516?s=46&t=Ze-VKnGNxPI5bjU_St2Wbg>
