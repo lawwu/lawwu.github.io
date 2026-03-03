@@ -253,6 +253,7 @@ cookieconsent.run({
   <li><a href="#day-12-setup-peonping" id="toc-day-12-setup-peonping" class="nav-link" data-scroll-target="#day-12-setup-peonping">Day 12 — Setup PeonPing</a></li>
   <li><a href="#day-13-claude-code-github-actions" id="toc-day-13-claude-code-github-actions" class="nav-link" data-scroll-target="#day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</a></li>
   <li><a href="#day-14-dont-outpace-your-understanding" id="toc-day-14-dont-outpace-your-understanding" class="nav-link" data-scroll-target="#day-14-dont-outpace-your-understanding">Day 14 — Don’t Outpace Your Understanding</a></li>
+  <li><a href="#day-15---prompt-caching" id="toc-day-15---prompt-caching" class="nav-link" data-scroll-target="#day-15---prompt-caching">Day 15 - Prompt Caching</a></li>
   </ul>
 </nav>
     </div>
@@ -471,6 +472,23 @@ cookieconsent.run({
 <li>When Claude writes code you don’t understand, stop and learn before moving on</li>
 </ul>
 <p>This is even more important when using multiple agents (Codex + Claude Code) — you’re the one who has to maintain the codebase (at least for now?)</p>
+</section>
+<section id="day-15---prompt-caching" class="level2">
+<h2 class="anchored" data-anchor-id="day-15---prompt-caching">Day 15 - Prompt Caching</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_we-build-our-entire-harness-around-prompt-activity-7434258928865157120-Ohmh?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted On 2026-03-02</a></p>
+<p><img src="./images/cc_day15_prompt_caching.png" class="img-fluid"></p>
+<p>“We build our entire harness around prompt caching” - Thariq (Claude Code dev)</p>
+<p>I’ve really liked Chip Huyen’s sniffly project to visualize Claude Code stats. One of the graphs shows you the daily cost of your tokens by input tokens, output tokens and cache operations. I always thought this graph was wrong because it looked like 99% of the cost was cache operations. But I realized it wasn’t wrong.</p>
+<p>I underestimated the importance of prompt caching. Cached tokens are 10% the cost of regular tokens (!). This means Claude Code structures static content first and dynamic content later in the prompt:</p>
+<ol type="1">
+<li>System Prompt &amp; Tools (global cache)</li>
+<li>CLAUDE.md (cached within a porject)</li>
+<li>Session context (cached within a session)</li>
+<li>Conversation messages</li>
+</ol>
+<p>I didn’t appreciate how much engineering and effort goes into making the user experience in Claude Code what it is AND keeping the costs maintainable.</p>
+<p>If you are building your own AI systems on top of LLM APIs that support prompt caching, you need to design your system with prompt caching at the forefront of your mind. Looking at the Claude Code CHANGELOG, you can see there are dedicated releases for fixing things that led to reduced cache hit rates, e.g.&nbsp;2.1.62.</p>
+<p>Thariq has a good post on the importance of prompt caching that was so illuminating: <a href="https://x.com/trq212/status/2024574133011673516?s=46&amp;t=Ze-VKnGNxPI5bjU_St2Wbg" class="uri">https://x.com/trq212/status/2024574133011673516?s=46&amp;t=Ze-VKnGNxPI5bjU_St2Wbg</a></p>
 
 
 </section>
