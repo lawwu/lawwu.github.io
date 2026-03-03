@@ -1,0 +1,11 @@
+---
+title: On Reading
+author: Lawrence Wu
+date: 2025-11-24
+categories: [books]
+draft: true
+---
+
+::: {.callout-note}
+**Note:** David Mathis is a writer for Desiring God. Though he doesn't make his book available and like all of Desiring God's books, which of course includes John Piper's books, they are all available for free on [desiringgod.org/books/all](https://www.desiringgod.org/books/all). Writing is an incredible labor. It's even more incredible these writers give away all their books for free. I don't know of any other writer, Christian or otherwise that does this.
+:::

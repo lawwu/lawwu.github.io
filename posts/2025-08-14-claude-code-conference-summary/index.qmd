@@ -2,7 +2,7 @@
 title: Summaries of Talks from Code with Claude Conference 2025
 author: Lawrence Wu
 date: '2025-08-15'
-categories: [ai, events, summary]
+categories: [ai, events, summary, "claude code"]
 ---
 
 # Code with Claude Conference 2025: Key Insights & Summaries

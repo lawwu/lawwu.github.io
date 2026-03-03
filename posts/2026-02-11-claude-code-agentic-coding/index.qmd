@@ -2,7 +2,7 @@
 title: "Claude Code Daily Tips Series"
 author: Lawrence Wu
 date: '2026-02-10'
-categories: [ai]
+categories: [ai, "claude code"]
 ---
 
 As a daily Claude Code user for [the last 6 months](https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/), I've learned a lot about Claude Code and agentic coding in general. Trying this thing where I share 1 thing per day. I'm posting on LinkedIn but I'll update this post with each tip.
