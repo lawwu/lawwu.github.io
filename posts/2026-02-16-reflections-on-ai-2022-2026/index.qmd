@@ -2,7 +2,7 @@
 title: "Reflections on AI from 2022 to 2026 - Prompt Engineering (LangChain) to Context Engineering (LangGraph) to Harness Engineering (Claude Code)"
 author: Lawrence Wu
 date: '2026-02-16'
-categories: [ai]
+categories: [ai, "claude code"]
 ---
 
 I wanted to take some time to write some reflections on my experiences using AI since the end of 2022 to today, Feb 2026.
