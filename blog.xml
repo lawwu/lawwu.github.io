@@ -10,7 +10,285 @@
 <atom:link href="https://lawwu.github.io/blog.html/blog.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Sun, 08 Mar 2026 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Tue, 10 Mar 2026 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>AI Tutorial - Claude Code &amp; Agent Frameworks</title>
+  <dc:creator>Lawrence Wu</dc:creator>
+  <link>https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>Below is an AI Tutorial I did for some friends. Unfortunately my OBS resolution was set too high so not every frame was captured in the video.</p>
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/9jRCnYYqbJI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-disable-line MD034 --><p></p>
+<p>Below are the notes used.</p>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<ul>
+<li>Why I’m doing this</li>
+</ul>
+</section>
+<section id="foundational-material" class="level1">
+<h1>Foundational Material</h1>
+<section id="language-models" class="level2">
+<h2 class="anchored" data-anchor-id="language-models">Language Models</h2>
+<p>Large Language Models Explained Briefly <a href="https://www.youtube.com/watch?v=LPZh9BOjkQs&amp;t=1s" class="uri">https://www.youtube.com/watch?v=LPZh9BOjkQs&amp;t=1s</a></p>
+<p>Deep Dive into LLMs like ChatGPT (Karpathy) <a href="https://www.youtube.com/watch?v=7xTGNNLPyMI&amp;t=8425s" class="uri">https://www.youtube.com/watch?v=7xTGNNLPyMI&amp;t=8425s</a></p>
+<p><strong>Step 1: Pretraining</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/pretraining.png" class="img-fluid figure-img"></p>
+<figcaption>Pretraining</figcaption>
+</figure>
+</div>
+<p><strong>Step 2: Tokenization</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/tokenization.png" class="img-fluid figure-img"></p>
+<figcaption>Tokenization</figcaption>
+</figure>
+</div>
+<p><a href="https://tiktokenizer.vercel.app/" class="uri">https://tiktokenizer.vercel.app/</a></p>
+<p><strong>Step 3: Neural network I/O</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/neural-network-io.png" class="img-fluid figure-img"></p>
+<figcaption>Neural network I/O</figcaption>
+</figure>
+</div>
+<p><strong>Neural network internals</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/neural-network-internals.png" class="img-fluid figure-img"></p>
+<figcaption>Neural network internals</figcaption>
+</figure>
+</div>
+<p>Show <a href="https://bbycroft.net/llm" class="uri">https://bbycroft.net/llm</a></p>
+<ul>
+<li>Artificial Intelligence
+<ul>
+<li>Machine Learning
+<ul>
+<li>Supervised Learning - I have labeled data, emails of spam and not spam.
+<ul>
+<li>Label or not</li>
+<li>Neural Networks</li>
+</ul></li>
+<li>Unsupervised Learning - Clustering - customer data, I want to cluster my customer segments</li>
+</ul></li>
+<li>Generative AI
+<ul>
+<li>Pretraining - thousands of terabytes of data</li>
+<li>Post-training</li>
+</ul></li>
+<li>2023-2024</li>
+</ul></li>
+</ul>
+<p><strong>Inference</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/inference.png" class="img-fluid figure-img"></p>
+<figcaption>Inference</figcaption>
+</figure>
+</div>
+<p><strong>“Psychology” of a base model</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/base-model-psychology.png" class="img-fluid figure-img"></p>
+<figcaption>“Psychology” of a base model</figcaption>
+</figure>
+</div>
+<p><strong>Post-training</strong></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/post-training.png" class="img-fluid figure-img"></p>
+<figcaption>Post-training</figcaption>
+</figure>
+</div>
+</section>
+<section id="agent-frameworks" class="level2">
+<h2 class="anchored" data-anchor-id="agent-frameworks">Agent Frameworks</h2>
+<p><a href="https://lawwu.github.io/posts/2026-03-04-agentic-knowledge-work/" class="uri">https://lawwu.github.io/posts/2026-03-04-agentic-knowledge-work/</a></p>
+<ul>
+<li>No LLM - pre 2023</li>
+<li>LLM, Code Completion - 2023-2024
+<ul>
+<li>Simple LLM Chains</li>
+</ul></li>
+<li>Coding IDEs - Cursor, Windsurf - 2024</li>
+<li>Coding Agents - 2025</li>
+</ul>
+<p><a href="https://x.com/mntruell/status/2026736314272591924">Third Era of Software Development</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/third-era-software.png" class="img-fluid figure-img"></p>
+<figcaption>Third Era of Software Development</figcaption>
+</figure>
+</div>
+<p>Thirty-five percent of the PRs we merge internally at Cursor are now created by agents operating autonomously in cloud VMs. We see the developers adopting this new way of working as characterized by three traits:</p>
+<ol type="1">
+<li>Agents write almost 100% of their code.</li>
+<li>They spend their time breaking down problems, reviewing artifacts / code, and giving feedback.</li>
+<li>They spin up multiple agents simultaneously instead of handholding one to completion.</li>
+</ol>
+<p><strong>V1.0 Agent Frameworks</strong></p>
+<p>LLM + a library like LangGraph</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/agent-frameworks-v1.png" class="img-fluid figure-img"></p>
+<figcaption>V1.0 Agent Frameworks</figcaption>
+</figure>
+</div>
+<p><strong>V2.0 Agent Frameworks</strong></p>
+<p>LLM + a CLI like Claude Code</p>
+<ul>
+<li>the underlying models have improved dramatically and now have reasoning capabilities
+<ul>
+<li>Chain of Thought - My prompt here - think step by step</li>
+</ul></li>
+<li>the base tools that Claude Code has access to are very generic. For example with the Bash tool, the agent literally has access to thousands of battle-tested programs (CLIs).</li>
+<li>The biggest change though has been code generation and the ability to create tools on the fly that the agent needs to solve a task.</li>
+<li>You can run these agents in parallel</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/agent-frameworks-v2.png" class="img-fluid figure-img"></p>
+<figcaption>V2.0 Agent Frameworks</figcaption>
+</figure>
+</div>
+<p>This will continue to improve as</p>
+<ul>
+<li>models improve
+<ul>
+<li>there will be different types of models too - world models</li>
+</ul></li>
+<li>harnesses improve</li>
+</ul>
+</section>
+</section>
+<section id="claude-code" class="level1">
+<h1>Claude Code</h1>
+</section>
+<section id="bash-basics" class="level1">
+<h1>Bash Basics</h1>
+<ul>
+<li>Terminal
+<ul>
+<li>ghostty, iTerm2</li>
+<li>Install zsh</li>
+<li>What <code>~/.zshrc</code> does</li>
+<li>Common commands
+<ul>
+<li><code>cd</code></li>
+<li><code>ls</code></li>
+<li>up/down</li>
+<li>Ctrl+A, Ctrl+E - hop to beginning or end of line</li>
+<li>Ctrl+L - clear</li>
+<li><a href="https://chatgpt.com/c/69af57dc-ca34-8325-bd74-40028bfeee5b" class="uri">https://chatgpt.com/c/69af57dc-ca34-8325-bd74-40028bfeee5b</a></li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="basics" class="level2">
+<h2 class="anchored" data-anchor-id="basics">Basics</h2>
+<ul>
+<li>Go through <a href="https://code.claude.com/docs/en/how-claude-code-works" class="uri">https://code.claude.com/docs/en/how-claude-code-works</a></li>
+<li>Then go through <a href="https://github.com/lawwu/claude-code-field-guide" class="uri">https://github.com/lawwu/claude-code-field-guide</a></li>
+</ul>
+<p><strong>Try it out (10 mins)</strong></p>
+<p>On a problem you want to solve.</p>
+<p>In <code>ai-tutorial</code> VS Code terminal:</p>
+<pre class="text"><code>i have downloaded cross-references from openbible, can you build a visualization of this data for me?</code></pre>
+<p>Can show the process:</p>
+<ul>
+<li>don’t need to specify the path of the data
+<ul>
+<li>agentically finds the data</li>
+</ul></li>
+<li>does some data verification without me asking
+<ul>
+<li>verifies all 66 books are present</li>
+</ul></li>
+<li>decides what visualization to build “interactive chord diagram”</li>
+</ul>
+<pre class="text"><code>❯ i have downloaded cross-references from openbible, can you build a visualization of this data for me?
+
+⏺ Let me first look at the data to understand its structure.
+
+⏺ Read 3 files (ctrl+o to expand)
+
+⏺ 344,800 cross-reference rows. Let me examine the data more and then build a visualization.
+
+⏺ Read 2 files (ctrl+o to expand)
+
+⏺ Good — all 66 books present. Let me build an interactive chord diagram visualization.</code></pre>
+</section>
+<section id="skills-and-plugins" class="level2">
+<h2 class="anchored" data-anchor-id="skills-and-plugins">Skills and Plugins</h2>
+<ul>
+<li>What are skills: <a href="https://code.claude.com/docs/en/skills" class="uri">https://code.claude.com/docs/en/skills</a></li>
+<li>Open standard now: <a href="https://agentskills.io/home" class="uri">https://agentskills.io/home</a></li>
+<li>Meta-skills - skills to create skills</li>
+</ul>
+<p>Plugins - groups of skills</p>
+<ul>
+<li><a href="https://github.com/EveryInc/compound-engineering-plugin" class="uri">https://github.com/EveryInc/compound-engineering-plugin</a></li>
+<li><a href="https://github.com/anthropics/knowledge-work-plugins" class="uri">https://github.com/anthropics/knowledge-work-plugins</a></li>
+</ul>
+<p><strong>Try it out (10 mins)</strong></p>
+<p>Install a plugin and use a skill from a third-party.</p>
+</section>
+</section>
+<section id="harness-engineering" class="level1">
+<h1>Harness Engineering</h1>
+<p>Chaining together skills</p>
+<ul>
+<li><a href="https://openai.com/index/harness-engineering/" class="uri">https://openai.com/index/harness-engineering/</a></li>
+<li><a href="https://github.com/lawwu/agentic-ml-plugin" class="uri">https://github.com/lawwu/agentic-ml-plugin</a></li>
+</ul>
+<p>In <code>agentic-ml-plugin</code> VS Code terminal:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
+background-color: null;
+font-style: inherit;">claude</span> <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--plugin-dir</span> ./plugins/agentic-ml <span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre></div></div>
+</section>
+<section id="agentic-knowledge-work" class="level1">
+<h1>Agentic Knowledge Work</h1>
+<p>Some action items:</p>
+<ul>
+<li>meta-work - ask, is there a better way to be doing this? an agent-first way?</li>
+<li>learn the tools
+<ul>
+<li>it takes time to learn how to use a new tool. Claude Code and Codex both have different functionality. The underlying models are slightly different. 80% of it is the same though.</li>
+<li>AGENTS.md / CLAUDE.md</li>
+<li>Have your agent use CLIs. Create CLIs.</li>
+<li>meta
+<ul>
+<li>Claude Code can teach you about itself</li>
+<li>Claude Code can configure itself - “configure a statusline that shows total token cost for the session”</li>
+</ul></li>
+</ul></li>
+<li>be constantly learning</li>
+<li><strong>Don’t outpace your understanding</strong>: Review plans, read diffs, and make sure you understand the system well enough to validate what the agent changed</li>
+<li>Still think for yourself</li>
+</ul>
+</section>
+<section id="openclaw" class="level1">
+<h1>OpenClaw</h1>
+<p>Always-on agents</p>
+
+
+</section>
+
+ ]]></description>
+  <category>ai</category>
+  <category>claude code</category>
+  <guid>https://lawwu.github.io/blog.html/posts/2026-03-10-ai-tutorial/</guid>
+  <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Agentic Knowledge Work &amp; Agentic Machine Learning</title>
   <dc:creator>Lawrence Wu</dc:creator>
@@ -849,12 +1127,12 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 </tbody>
 </table>
 <p>It’s been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more with only 2 down years. If you invested $10,000 at the beginning of 2016, you will have tripled your investment.</p>
-<div id="dafc02f4" class="cell" data-execution_count="1">
+<div id="e057bb6b" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="3fa42d43-886e-4993-a270-d1eae1285952" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3fa42d43-886e-4993-a270-d1eae1285952")) {                    Plotly.newPlot(                        "3fa42d43-886e-4993-a270-d1eae1285952",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="0d30d867-9d78-44b6-930a-54386b64aa7a" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("0d30d867-9d78-44b6-930a-54386b64aa7a")) {                    Plotly.newPlot(                        "0d30d867-9d78-44b6-930a-54386b64aa7a",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('3fa42d43-886e-4993-a270-d1eae1285952');
+var gd = document.getElementById('0d30d867-9d78-44b6-930a-54386b64aa7a');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -5136,2147 +5414,6 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
   <category>ai</category>
   <category>events</category>
   <guid>https://lawwu.github.io/blog.html/posts/2025-05-13-andrew-ng-harrison-chase-fireside-chat/</guid>
-  <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
-</item>
-<item>
-  <title>LangChain Interrupt Conference - Day 1</title>
-  <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/</link>
-  <description><![CDATA[ 
-
-
-
-
-<p>I had the privilege of attending LangChain’s first conference. The first day was a hands-on workshop going through the creation of an agent (an email assistant) from scratch. It went through many of the components of building an agent:</p>
-<ul>
-<li>Overview of LangGraph</li>
-<li>Writing the Agent</li>
-<li>Evaluation / Testing</li>
-<li>Human Feedback</li>
-<li>Memory</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/email_assistant_diagram.png" class="img-fluid figure-img"></p>
-<figcaption>Email Assistant Diagram</figcaption>
-</figure>
-</div>
-<section id="code" class="level2">
-<h2 class="anchored" data-anchor-id="code">Code</h2>
-<ul>
-<li>Python: <a href="https://github.com/langchain-ai/agents-from-scratch">https://github.com/langchain-ai/agents-from-scratch</a></li>
-<li>Typescript: <a href="https://github.com/langchain-ai/agents-from-scratch-ts">https://github.com/langchain-ai/agents-from-scratch-ts</a> (this is the first time I’ve seen Typescript Jupyter notebooks)</li>
-</ul>
-</section>
-<section id="notebook-1-langgraph-101" class="level2">
-<h2 class="anchored" data-anchor-id="notebook-1-langgraph-101">Notebook 1: LangGraph 101</h2>
-<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/langgraph_101.ipynb">langgraph_101.ipynb</a></p>
-<p>Lance Martin gave an overview of LangGraph that was largely review. It was a good reminder that “tool calling is just structured output.”</p>
-<p>LangGraph code to create the agent:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> typing <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> Literal</span>
-<span id="cb1-2"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> langgraph.graph <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> MessagesState</span>
-<span id="cb1-3"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> email_assistant.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> show_graph</span>
-<span id="cb1-4"></span>
-<span id="cb1-5"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> call_llm(state: MessagesState) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> MessagesState:</span>
-<span id="cb1-6">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Run LLM"""</span></span>
-<span id="cb1-7"></span>
-<span id="cb1-8">    output <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> model_with_tools.invoke(state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>])</span>
-<span id="cb1-9">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>: [output]}</span>
-<span id="cb1-10"></span>
-<span id="cb1-11"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># actually what happens when a tool call is made</span></span>
-<span id="cb1-12"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> run_tool(state: MessagesState):</span>
-<span id="cb1-13">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Performs the tool call"""</span></span>
-<span id="cb1-14"></span>
-<span id="cb1-15">    result <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> []</span>
-<span id="cb1-16">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>][<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>].tool_calls:</span>
-<span id="cb1-17">        observation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> write_email.invoke(tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>])</span>
-<span id="cb1-18">        result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb1-19">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>: result}</span>
-<span id="cb1-20"></span>
-<span id="cb1-21"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> should_continue(state: MessagesState) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> Literal[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"run_tool"</span>, END]:</span>
-<span id="cb1-22">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Route to tool handler, or end if Done tool called"""</span></span>
-<span id="cb1-23"></span>
-<span id="cb1-24">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Get the last message</span></span>
-<span id="cb1-25">    messages <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>]</span>
-<span id="cb1-26">    last_message <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> messages[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>]</span>
-<span id="cb1-27"></span>
-<span id="cb1-28">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># If the last message is a tool call, check if it's a Done tool call</span></span>
-<span id="cb1-29">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> last_message.tool_calls:</span>
-<span id="cb1-30">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"run_tool"</span></span>
-<span id="cb1-31">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Otherwise, we stop (reply to the user)</span></span>
-<span id="cb1-32">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> END</span>
-<span id="cb1-33"></span>
-<span id="cb1-34">workflow <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> StateGraph(MessagesState)</span>
-<span id="cb1-35">workflow.add_node(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"call_llm"</span>, call_llm)</span>
-<span id="cb1-36">workflow.add_node(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"run_tool"</span>, run_tool)</span>
-<span id="cb1-37">workflow.add_edge(START, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"call_llm"</span>)</span>
-<span id="cb1-38">workflow.add_conditional_edges(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"call_llm"</span>, should_continue, {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"run_tool"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"run_tool"</span>, END: END})</span>
-<span id="cb1-39">workflow.add_edge(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"run_tool"</span>, END)</span>
-<span id="cb1-40"></span>
-<span id="cb1-41"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Run the workflow</span></span>
-<span id="cb1-42">app <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> workflow.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">compile</span>()</span></code></pre></div></div>
-</section>
-<section id="notebook-2-building-the-agent" class="level2">
-<h2 class="anchored" data-anchor-id="notebook-2-building-the-agent">Notebook 2: Building the Agent</h2>
-<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/agent.ipynb">agent.ipynb</a></p>
-<p>Example Code for the Router in LangGraph</p>
-<ul>
-<li><code>Command</code> does control flow AND state up dates in one</li>
-<li>In the example below: <code>return Command(goto=goto, update=update)</code></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">class</span> RouterSchema(BaseModel):</span>
-<span id="cb2-2">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Analyze the unread email and route it according to its content."""</span></span>
-<span id="cb2-3"></span>
-<span id="cb2-4">    reasoning: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span> <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(</span>
-<span id="cb2-5">        description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Step-by-step reasoning behind the classification."</span></span>
-<span id="cb2-6">    )</span>
-<span id="cb2-7">    classification: Literal[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"ignore"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"respond"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"notify"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> Field(</span>
-<span id="cb2-8">        description<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"The classification of an email: 'ignore' for irrelevant emails, "</span></span>
-<span id="cb2-9">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"'notify' for important information that doesn't need a response, "</span></span>
-<span id="cb2-10">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"'respond' for emails that need a reply"</span>,</span>
-<span id="cb2-11">    )</span>
-<span id="cb2-12"></span>
-<span id="cb2-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Initialize the LLM for use with router / structured output</span></span>
-<span id="cb2-14">llm <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> init_chat_model(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"openai:gpt-4.1"</span>, temperature<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.0</span>)</span>
-<span id="cb2-15">llm_router <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> llm.with_structured_output(RouterSchema)</span>
-<span id="cb2-16"></span>
-<span id="cb2-17"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> triage_router(state: State) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> Command[Literal[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response_agent"</span>, END]]:</span>
-<span id="cb2-18">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Analyze email content to decide if we should respond, notify, or ignore."""</span></span>
-<span id="cb2-19"></span>
-<span id="cb2-20">    author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> parse_email(state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"email_input"</span>])</span>
-<span id="cb2-21">    system_prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> triage_system_prompt.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">format</span>(</span>
-<span id="cb2-22">        background<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>default_background,</span>
-<span id="cb2-23">        triage_instructions<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>default_triage_instructions</span>
-<span id="cb2-24">    )</span>
-<span id="cb2-25"></span>
-<span id="cb2-26">    user_prompt <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> triage_user_prompt.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">format</span>(</span>
-<span id="cb2-27">        author<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>author, to<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>to, subject<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>subject, email_thread<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>email_thread</span>
-<span id="cb2-28">    )</span>
-<span id="cb2-29"></span>
-<span id="cb2-30">    result <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> llm_router.invoke(</span>
-<span id="cb2-31">        [</span>
-<span id="cb2-32">            {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"system"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: system_prompt},</span>
-<span id="cb2-33">            {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: user_prompt},</span>
-<span id="cb2-34">        ]</span>
-<span id="cb2-35">    )</span>
-<span id="cb2-36"></span>
-<span id="cb2-37">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> result.classification <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"respond"</span>:</span>
-<span id="cb2-38">        <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"📧 Classification: RESPOND - This email requires a response"</span>)</span>
-<span id="cb2-39">        goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response_agent"</span></span>
-<span id="cb2-40">        update <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb2-41">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>: [</span>
-<span id="cb2-42">                {</span>
-<span id="cb2-43">                    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>,</span>
-<span id="cb2-44">                    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Respond to the email: </span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>format_email_markdown(subject, author, to, email_thread)<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>,</span>
-<span id="cb2-45">                }</span>
-<span id="cb2-46">            ],</span>
-<span id="cb2-47">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"classification_decision"</span>: result.classification,</span>
-<span id="cb2-48">        }</span>
-<span id="cb2-49">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> result.classification <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"ignore"</span>:</span>
-<span id="cb2-50">        <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"🚫 Classification: IGNORE - This email can be safely ignored"</span>)</span>
-<span id="cb2-51">        goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> END</span>
-<span id="cb2-52">        update <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>  {</span>
-<span id="cb2-53">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"classification_decision"</span>: result.classification,</span>
-<span id="cb2-54">        }</span>
-<span id="cb2-55">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> result.classification <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"notify"</span>:</span>
-<span id="cb2-56">        <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">print</span>(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"🔔 Classification: NOTIFY - This email contains important information"</span>)</span>
-<span id="cb2-57">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># For now, we go to </span><span class="re">END</span><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">. But we will add to this later!</span></span>
-<span id="cb2-58">        goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> END</span>
-<span id="cb2-59">        update <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb2-60">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"classification_decision"</span>: result.classification,</span>
-<span id="cb2-61">        }</span>
-<span id="cb2-62">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb2-63">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid classification: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>result<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">.</span>classification<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb2-64">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> Command(goto<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>goto, update<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>update)</span></code></pre></div></div>
-<p>You can add agents in nodes in LangGraph:</p>
-<ul>
-<li>xray show true shows it</li>
-<li>If a LangGraph agent is deployed in LangGraph platform, I think I can also use this as a Remote Graph</li>
-</ul>
-</section>
-<section id="notebook-3-evaluating-the-agent" class="level2">
-<h2 class="anchored" data-anchor-id="notebook-3-evaluating-the-agent">Notebook 3: Evaluating the Agent</h2>
-<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/evaluation.ipynb">evaluation</a></p>
-<ul>
-<li>When thinking of evaluations, if an expected input does not have a static expected output, you can define “Response Criteria” which a LLM as Judge could take in.</li>
-<li>Below is an example with “Response Criteria”</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>Users<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>lawrence.wu<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>github<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">/</span>agents<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span>scratch</span>
-<span id="cb3-2"></span>
-<span id="cb3-3">Email Input: {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'author'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Alice Smith &lt;alice.smith@company.com&gt;'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'to'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Lance Martin &lt;lance@company.com&gt;'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'subject'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'Quick question about API documentation'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'email_thread'</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Hi Lance,</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">I was reviewing the API documentation for the new authentication service and noticed a few endpoints seem to be missing from the specs. Could you help clarify if this was intentional or if we should update the docs?</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Specifically, I'm looking at:</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- /auth/refresh</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- /auth/validate</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Thanks!</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n</span><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Alice"</span>}</span>
-<span id="cb3-4">Expected Triage Output: respond</span>
-<span id="cb3-5">Expected Tool Calls: [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'write_email'</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'done'</span>]</span>
-<span id="cb3-6">Response Criteria:</span>
-<span id="cb3-7">• Send email <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">with</span> write_email tool call to acknowledge the question <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">and</span> confirm it will be investigated</span></code></pre></div></div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">all_messages_str <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> format_messages_string(response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'messages'</span>])</span>
-<span id="cb4-2">eval_result <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> criteria_eval_structured_llm.invoke([</span>
-<span id="cb4-3">        {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"system"</span>,</span>
-<span id="cb4-4">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: RESPONSE_CRITERIA_SYSTEM_PROMPT},</span>
-<span id="cb4-5">        {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>,</span>
-<span id="cb4-6">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"""</span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> Response criteria: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>success_criteria<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> </span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> Assistant's response: </span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>all_messages_str<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> </span><span class="ch" style="color: #20794D;
-background-color: null;
-font-style: inherit;">\n\n</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;"> Evaluate whether the assistant's response meets the criteria and provide justification for your evaluation."""</span>}</span>
-<span id="cb4-7">    ])</span>
-<span id="cb4-8">eval_result</span></code></pre></div></div>
-<p>new interrupt node</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> triage_interrupt_handler(state: State) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> Command[Literal[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response_agent"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"__end__"</span>]]:</span>
-<span id="cb5-2">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Handles interrupts from the triage step."""</span></span>
-<span id="cb5-3"></span>
-<span id="cb5-4">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Parse the email input</span></span>
-<span id="cb5-5">    author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> parse_email(state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"email_input"</span>])</span>
-<span id="cb5-6"></span>
-<span id="cb5-7">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create email markdown for Agent Inbox in case of notification</span></span>
-<span id="cb5-8">    email_markdown <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> format_email_markdown(subject, author, to, email_thread)</span>
-<span id="cb5-9"></span>
-<span id="cb5-10">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create messages</span></span>
-<span id="cb5-11">    messages <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>,</span>
-<span id="cb5-12">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Email to notify user about: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>email_markdown<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span></span>
-<span id="cb5-13">                }]</span>
-<span id="cb5-14"></span>
-<span id="cb5-15"></span>
-<span id="cb5-16">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create interrupt that is shown to the user</span></span>
-<span id="cb5-17">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># This request schema is what Agent Inbox expects</span></span>
-<span id="cb5-18">    request <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb5-19">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"action_request"</span>: {</span>
-<span id="cb5-20">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"action"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Email Assistant: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'classification_decision'</span>]<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>,</span>
-<span id="cb5-21">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>: {}</span>
-<span id="cb5-22">        },</span>
-<span id="cb5-23">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"config"</span>: {</span>
-<span id="cb5-24">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb5-25">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb5-26">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>,</span>
-<span id="cb5-27">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>,</span>
-<span id="cb5-28">        },</span>
-<span id="cb5-29">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Email to show in Agent Inbox</span></span>
-<span id="cb5-30">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"description"</span>: email_markdown,</span>
-<span id="cb5-31">    }</span>
-<span id="cb5-32"></span>
-<span id="cb5-33">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Agent Inbox responds with a list of dicts with a single key `type` that can be `accept`, `edit`, `ignore`, or `response`.</span></span>
-<span id="cb5-34">    response <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> interrupt([request])[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>]</span>
-<span id="cb5-35"></span>
-<span id="cb5-36">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># If user provides feedback, go to response agent and use feedback to respond to email</span></span>
-<span id="cb5-37">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response"</span>:</span>
-<span id="cb5-38">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add feedback to messages</span></span>
-<span id="cb5-39">        user_input <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>]</span>
-<span id="cb5-40">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Used by the response agent</span></span>
-<span id="cb5-41">        messages.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>,</span>
-<span id="cb5-42">                        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"User wants to reply to the email. Use this feedback to respond: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>user_input<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span></span>
-<span id="cb5-43">                        })</span>
-<span id="cb5-44">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Go to response agent</span></span>
-<span id="cb5-45">        goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response_agent"</span></span>
-<span id="cb5-46"></span>
-<span id="cb5-47">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># If user ignores email, go to </span><span class="re">END</span></span>
-<span id="cb5-48">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"ignore"</span>:</span>
-<span id="cb5-49">        goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> END</span>
-<span id="cb5-50"></span>
-<span id="cb5-51">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Catch all other responses</span></span>
-<span id="cb5-52">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb5-53">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid response: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>response<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb5-54"></span>
-<span id="cb5-55">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Update the state</span></span>
-<span id="cb5-56">    update <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb5-57">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>: messages,</span>
-<span id="cb5-58">    }</span>
-<span id="cb5-59"></span>
-<span id="cb5-60">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> Command(goto<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>goto, update<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>update)</span></code></pre></div></div>
-<p>Actually thinking through all of the different use cases and how it affects the workflow of the agent is important. Pretty complicated even just for a simple email assistant.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/response_agent_outcomes.png" class="img-fluid figure-img"></p>
-<figcaption>Response Agent Outcomes</figcaption>
-</figure>
-</div>
-<p>Interrupt handler, define the config for each node</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> interrupt_handler(state: State) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> Command[Literal[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"llm_call"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"__end__"</span>]]:</span>
-<span id="cb6-2">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Creates an interrupt for human review of tool calls"""</span></span>
-<span id="cb6-3"></span>
-<span id="cb6-4">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Store messages</span></span>
-<span id="cb6-5">    result <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> []</span>
-<span id="cb6-6"></span>
-<span id="cb6-7">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Go to the LLM call node next</span></span>
-<span id="cb6-8">    goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"llm_call"</span></span>
-<span id="cb6-9"></span>
-<span id="cb6-10">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Iterate over the tool calls in the last message</span></span>
-<span id="cb6-11">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>][<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>].tool_calls:</span>
-<span id="cb6-12"></span>
-<span id="cb6-13">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Allowed tools for HITL</span></span>
-<span id="cb6-14">        hitl_tools <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"write_email"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"schedule_meeting"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Question"</span>]</span>
-<span id="cb6-15"></span>
-<span id="cb6-16">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># If tool is not in our HITL list, execute it directly without interruption</span></span>
-<span id="cb6-17">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">not</span> <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> hitl_tools:</span>
-<span id="cb6-18"></span>
-<span id="cb6-19">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Execute search_memory and other tools without interruption</span></span>
-<span id="cb6-20">            tool <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>]]</span>
-<span id="cb6-21">            observation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tool.invoke(tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>])</span>
-<span id="cb6-22">            result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-23">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">continue</span></span>
-<span id="cb6-24"></span>
-<span id="cb6-25">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Get original email from email_input in state</span></span>
-<span id="cb6-26">        email_input <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"email_input"</span>]</span>
-<span id="cb6-27">        author, to, subject, email_thread <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> parse_email(email_input)</span>
-<span id="cb6-28">        original_email_markdown <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> format_email_markdown(subject, author, to, email_thread)</span>
-<span id="cb6-29"></span>
-<span id="cb6-30">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Format tool call for display and prepend the original email</span></span>
-<span id="cb6-31">        tool_display <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> format_for_display(state, tool_call)</span>
-<span id="cb6-32">        description <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> original_email_markdown <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> tool_display</span>
-<span id="cb6-33"></span>
-<span id="cb6-34">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Configure what actions are allowed in Agent Inbox</span></span>
-<span id="cb6-35">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"write_email"</span>:</span>
-<span id="cb6-36">            config <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb6-37">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-38">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-39">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-40">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-41">            }</span>
-<span id="cb6-42">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"schedule_meeting"</span>:</span>
-<span id="cb6-43">            config <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb6-44">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-45">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-46">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-47">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-48">            }</span>
-<span id="cb6-49">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Question"</span>:</span>
-<span id="cb6-50">            config <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb6-51">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_ignore"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-52">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_respond"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>,</span>
-<span id="cb6-53">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_edit"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>,</span>
-<span id="cb6-54">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"allow_accept"</span>: <span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">False</span>,</span>
-<span id="cb6-55">            }</span>
-<span id="cb6-56">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb6-57">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb6-58"></span>
-<span id="cb6-59">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create the interrupt request</span></span>
-<span id="cb6-60">        request <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb6-61">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"action_request"</span>: {</span>
-<span id="cb6-62">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"action"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>],</span>
-<span id="cb6-63">                <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>]</span>
-<span id="cb6-64">            },</span>
-<span id="cb6-65">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"config"</span>: config,</span>
-<span id="cb6-66">            <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"description"</span>: description,</span>
-<span id="cb6-67">        }</span>
-<span id="cb6-68"></span>
-<span id="cb6-69">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Send to Agent Inbox and wait for response</span></span>
-<span id="cb6-70">        response <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> interrupt([request])[<span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0</span>]</span>
-<span id="cb6-71"></span>
-<span id="cb6-72">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Handle the responses</span></span>
-<span id="cb6-73">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"accept"</span>:</span>
-<span id="cb6-74"></span>
-<span id="cb6-75">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Execute the tool with original args</span></span>
-<span id="cb6-76">            tool <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>]]</span>
-<span id="cb6-77">            observation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tool.invoke(tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>])</span>
-<span id="cb6-78">            result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-79"></span>
-<span id="cb6-80">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"edit"</span>:</span>
-<span id="cb6-81"></span>
-<span id="cb6-82">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Tool selection</span></span>
-<span id="cb6-83">            tool <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tools_by_name[tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>]]</span>
-<span id="cb6-84"></span>
-<span id="cb6-85">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Get edited args from Agent Inbox</span></span>
-<span id="cb6-86">            edited_args <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>][<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>]</span>
-<span id="cb6-87"></span>
-<span id="cb6-88">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Update the AI message's tool call with edited content (reference to the message in the state)</span></span>
-<span id="cb6-89">            ai_message <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>][<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>] <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Get the most recent message from the state</span></span>
-<span id="cb6-90">            current_id <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>] <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Store the ID of the tool call being edited</span></span>
-<span id="cb6-91"></span>
-<span id="cb6-92">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create a new list of tool calls by filtering out the one being edited and adding the updated version</span></span>
-<span id="cb6-93">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># This avoids modifying the original list directly (immutable approach)</span></span>
-<span id="cb6-94">            updated_tool_calls <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> [tc <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> tc <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> ai_message.tool_calls <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tc[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">!=</span> current_id] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> [</span>
-<span id="cb6-95">                {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>], <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>: edited_args, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>: current_id}</span>
-<span id="cb6-96">            ]</span>
-<span id="cb6-97"></span>
-<span id="cb6-98">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Create a new copy of the message with updated tool calls rather than modifying the original</span></span>
-<span id="cb6-99">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># This ensures state immutability and prevents side effects in other parts of the code</span></span>
-<span id="cb6-100">            result.append(ai_message.model_copy(update<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>{<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_calls"</span>: updated_tool_calls}))</span>
-<span id="cb6-101"></span>
-<span id="cb6-102">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Update the write_email tool call with the edited content from Agent Inbox</span></span>
-<span id="cb6-103">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"write_email"</span>:</span>
-<span id="cb6-104"></span>
-<span id="cb6-105">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Execute the tool with edited args</span></span>
-<span id="cb6-106">                observation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tool.invoke(edited_args)</span>
-<span id="cb6-107"></span>
-<span id="cb6-108">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add only the tool response message</span></span>
-<span id="cb6-109">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: current_id})</span>
-<span id="cb6-110"></span>
-<span id="cb6-111">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Update the schedule_meeting tool call with the edited content from Agent Inbox</span></span>
-<span id="cb6-112">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"schedule_meeting"</span>:</span>
-<span id="cb6-113"></span>
-<span id="cb6-114"></span>
-<span id="cb6-115">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Execute the tool with edited args</span></span>
-<span id="cb6-116">                observation <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> tool.invoke(edited_args)</span>
-<span id="cb6-117"></span>
-<span id="cb6-118">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add only the tool response message</span></span>
-<span id="cb6-119">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: observation, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: current_id})</span>
-<span id="cb6-120"></span>
-<span id="cb6-121">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Catch all other tool calls</span></span>
-<span id="cb6-122">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb6-123">                <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb6-124"></span>
-<span id="cb6-125">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"ignore"</span>:</span>
-<span id="cb6-126">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"write_email"</span>:</span>
-<span id="cb6-127">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Don't execute the tool, and tell the agent how to proceed</span></span>
-<span id="cb6-128">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"User ignored this email draft. Ignore this email and end the workflow."</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-129">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Go to </span><span class="re">END</span></span>
-<span id="cb6-130">                goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> END</span>
-<span id="cb6-131">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"schedule_meeting"</span>:</span>
-<span id="cb6-132">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Don't execute the tool, and tell the agent how to proceed</span></span>
-<span id="cb6-133">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"User ignored this calendar meeting draft. Ignore this email and end the workflow."</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-134">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Go to </span><span class="re">END</span></span>
-<span id="cb6-135">                goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> END</span>
-<span id="cb6-136">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Question"</span>:</span>
-<span id="cb6-137">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Don't execute the tool, and tell the agent how to proceed</span></span>
-<span id="cb6-138">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"User ignored this question. Ignore this email and end the workflow."</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-139">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Go to </span><span class="re">END</span></span>
-<span id="cb6-140">                goto <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> END</span>
-<span id="cb6-141">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb6-142">                <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb6-143"></span>
-<span id="cb6-144">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"type"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response"</span>:</span>
-<span id="cb6-145">            <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># User provided feedback</span></span>
-<span id="cb6-146">            user_feedback <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> response[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"args"</span>]</span>
-<span id="cb6-147">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"write_email"</span>:</span>
-<span id="cb6-148">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Don't execute the tool, and add a message with the user feedback to incorporate into the email</span></span>
-<span id="cb6-149">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"User gave feedback, which can we incorporate into the email. Feedback: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>user_feedback<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-150">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"schedule_meeting"</span>:</span>
-<span id="cb6-151">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Don't execute the tool, and add a message with the user feedback to incorporate into the email</span></span>
-<span id="cb6-152">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"User gave feedback, which can we incorporate into the meeting request. Feedback: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>user_feedback<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-153">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">elif</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Question"</span>:</span>
-<span id="cb6-154">                <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Don't execute the tool, and add a message with the user feedback to incorporate into the email</span></span>
-<span id="cb6-155">                result.append({<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"User answered the question, which can we can use for any follow up actions. Feedback: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>user_feedback<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"tool_call_id"</span>: tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"id"</span>]})</span>
-<span id="cb6-156">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb6-157">                <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid tool call: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">'name'</span>]<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb6-158"></span>
-<span id="cb6-159">        <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Catch all other responses</span></span>
-<span id="cb6-160">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb6-161">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">raise</span> <span class="pp" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">ValueError</span>(<span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Invalid response: </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{</span>response<span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">}</span><span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"</span>)</span>
-<span id="cb6-162"></span>
-<span id="cb6-163">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Update the state</span></span>
-<span id="cb6-164">    update <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> {</span>
-<span id="cb6-165">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>: result,</span>
-<span id="cb6-166">    }</span>
-<span id="cb6-167"></span>
-<span id="cb6-168">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> Command(goto<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>goto, update<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>update)</span></code></pre></div></div>
-<p>Then the graph looks like this now:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">from</span> email_assistant.utils <span class="im" style="color: #00769E;
-background-color: null;
-font-style: inherit;">import</span> show_graph</span>
-<span id="cb7-2"></span>
-<span id="cb7-3"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Conditional edge function</span></span>
-<span id="cb7-4"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> should_continue(state: State) <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-&gt;</span> Literal[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"interrupt_handler"</span>, END]:</span>
-<span id="cb7-5">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Route to tool handler, or end if Done tool called"""</span></span>
-<span id="cb7-6">    messages <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> state[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"messages"</span>]</span>
-<span id="cb7-7">    last_message <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> messages[<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">-</span><span class="dv" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">1</span>]</span>
-<span id="cb7-8">    <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> last_message.tool_calls:</span>
-<span id="cb7-9">        <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">for</span> tool_call <span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">in</span> last_message.tool_calls:</span>
-<span id="cb7-10">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">if</span> tool_call[<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"name"</span>] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">==</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"Done"</span>:</span>
-<span id="cb7-11">                <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> END</span>
-<span id="cb7-12">            <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">else</span>:</span>
-<span id="cb7-13">                <span class="cf" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">return</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"interrupt_handler"</span></span>
-<span id="cb7-14"></span>
-<span id="cb7-15"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Build workflow</span></span>
-<span id="cb7-16">agent_builder <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> StateGraph(State)</span>
-<span id="cb7-17"></span>
-<span id="cb7-18"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add nodes</span></span>
-<span id="cb7-19">agent_builder.add_node(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"llm_call"</span>, llm_call)</span>
-<span id="cb7-20">agent_builder.add_node(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"interrupt_handler"</span>, interrupt_handler)</span>
-<span id="cb7-21"></span>
-<span id="cb7-22"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Add edges</span></span>
-<span id="cb7-23">agent_builder.add_edge(START, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"llm_call"</span>)</span>
-<span id="cb7-24">agent_builder.add_conditional_edges(</span>
-<span id="cb7-25">    <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"llm_call"</span>,</span>
-<span id="cb7-26">    should_continue,</span>
-<span id="cb7-27">    {</span>
-<span id="cb7-28">        <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"interrupt_handler"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"interrupt_handler"</span>,</span>
-<span id="cb7-29">        END: END,</span>
-<span id="cb7-30">    },</span>
-<span id="cb7-31">)</span>
-<span id="cb7-32"></span>
-<span id="cb7-33"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Compile the agent</span></span>
-<span id="cb7-34">response_agent <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> agent_builder.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">compile</span>()</span>
-<span id="cb7-35"></span>
-<span id="cb7-36"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Build overall workflow</span></span>
-<span id="cb7-37">overall_workflow <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> (</span>
-<span id="cb7-38">    StateGraph(State, <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">input</span><span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>StateInput)</span>
-<span id="cb7-39">    .add_node(triage_router)</span>
-<span id="cb7-40">    .add_node(triage_interrupt_handler)</span>
-<span id="cb7-41">    .add_node(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"response_agent"</span>, response_agent)</span>
-<span id="cb7-42">    .add_edge(START, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"triage_router"</span>)</span>
-<span id="cb7-43"></span>
-<span id="cb7-44">)</span>
-<span id="cb7-45"></span>
-<span id="cb7-46">email_assistant <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> overall_workflow.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">compile</span>()</span>
-<span id="cb7-47">show_graph(email_assistant, xray<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="va" style="color: #111111;
-background-color: null;
-font-style: inherit;">True</span>)</span></code></pre></div></div>
-</section>
-<section id="notebook-4-human-in-the-loop" class="level2">
-<h2 class="anchored" data-anchor-id="notebook-4-human-in-the-loop">Notebook 4: Human-in-the-loop</h2>
-<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/hitl.ipynb">hitl.ipynb</a></p>
-<p>This was a very interesting demo showcasing how a LangGraph agent that has an interrupt, can send that interrupt to a UI, in this case <a href="https://github.com/langchain-ai/agent-inbox">Agent Inbox</a>. A human can give that feedback in the Agent Inbox UI and the LangGraph graph will take that feedback and continue processing.</p>
-</section>
-<section id="notebook-5-memory" class="level2">
-<h2 class="anchored" data-anchor-id="notebook-5-memory">Notebook 5: Memory</h2>
-<p>Notebook: <a href="https://github.com/langchain-ai/agents-from-scratch/blob/main/notebooks/memory.ipynb">memory.ipynb</a></p>
-<p>Update memory instructions - some of this was taken from the gpt-4.1 prompting guide</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">MEMORY_UPDATE_INSTRUCTIONS <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""</span></span>
-<span id="cb8-2"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;"># Role and Objective</span></span>
-<span id="cb8-3"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">You are a memory profile manager for an email assistant agent that selectively updates user preferences based on feedback messages from human-in-the-loop interactions with the email assistant.</span></span>
-<span id="cb8-4"></span>
-<span id="cb8-5"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;"># Instructions</span></span>
-<span id="cb8-6"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- NEVER overwrite the entire memory profile</span></span>
-<span id="cb8-7"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- ONLY make targeted additions of new information</span></span>
-<span id="cb8-8"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- ONLY update specific facts that are directly contradicted by feedback messages</span></span>
-<span id="cb8-9"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- PRESERVE all other existing information in the profile</span></span>
-<span id="cb8-10"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- Format the profile consistently with the original style</span></span>
-<span id="cb8-11"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- Generate the profile as a string</span></span>
-<span id="cb8-12"></span>
-<span id="cb8-13"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;"># Reasoning Steps</span></span>
-<span id="cb8-14"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">1. Analyze the current memory profile structure and content</span></span>
-<span id="cb8-15"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">2. Review feedback messages from human-in-the-loop interactions</span></span>
-<span id="cb8-16"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">3. Extract relevant user preferences from these feedback messages (such as edits to emails/calendar invites, explicit feedback on assistant performance, user decisions to ignore certain emails)</span></span>
-<span id="cb8-17"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">4. Compare new information against existing profile</span></span>
-<span id="cb8-18"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">5. Identify only specific facts to add or update</span></span>
-<span id="cb8-19"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">6. Preserve all other existing information</span></span>
-<span id="cb8-20"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">7. Output the complete updated profile</span></span>
-<span id="cb8-21"></span>
-<span id="cb8-22"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;"># Example</span></span>
-<span id="cb8-23"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;memory_profile&gt;</span></span>
-<span id="cb8-24"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">RESPOND:</span></span>
-<span id="cb8-25"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- wife</span></span>
-<span id="cb8-26"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- specific questions</span></span>
-<span id="cb8-27"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- system admin notifications</span></span>
-<span id="cb8-28"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">NOTIFY:</span></span>
-<span id="cb8-29"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- meeting invites</span></span>
-<span id="cb8-30"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">IGNORE:</span></span>
-<span id="cb8-31"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- marketing emails</span></span>
-<span id="cb8-32"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- company-wide announcements</span></span>
-<span id="cb8-33"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- messages meant for other teams</span></span>
-<span id="cb8-34"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;/memory_profile&gt;</span></span>
-<span id="cb8-35"></span>
-<span id="cb8-36"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;user_messages&gt;</span></span>
-<span id="cb8-37"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"The assistant shouldn't have responded to that system admin notification."</span></span>
-<span id="cb8-38"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;/user_messages&gt;</span></span>
-<span id="cb8-39"></span>
-<span id="cb8-40"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;updated_profile&gt;</span></span>
-<span id="cb8-41"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">RESPOND:</span></span>
-<span id="cb8-42"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- wife</span></span>
-<span id="cb8-43"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- specific questions</span></span>
-<span id="cb8-44"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">NOTIFY:</span></span>
-<span id="cb8-45"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- meeting invites</span></span>
-<span id="cb8-46"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- system admin notifications</span></span>
-<span id="cb8-47"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">IGNORE:</span></span>
-<span id="cb8-48"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- marketing emails</span></span>
-<span id="cb8-49"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- company-wide announcements</span></span>
-<span id="cb8-50"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- messages meant for other teams</span></span>
-<span id="cb8-51"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;/updated_profile&gt;</span></span>
-<span id="cb8-52"></span>
-<span id="cb8-53"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;"># Process current profile for </span><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{namespace}</span></span>
-<span id="cb8-54"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;memory_profile&gt;</span></span>
-<span id="cb8-55"><span class="sc" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">{current_profile}</span></span>
-<span id="cb8-56"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">&lt;/memory_profile&gt;</span></span>
-<span id="cb8-57"></span>
-<span id="cb8-58"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Think step by step about what specific feedback is being provided and what specific information should be added or updated in the profile while preserving everything else."""</span></span>
-<span id="cb8-59"></span>
-<span id="cb8-60">MEMORY_UPDATE_INSTRUCTIONS_REINFORCEMENT <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""</span></span>
-<span id="cb8-61"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">Remember:</span></span>
-<span id="cb8-62"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- NEVER overwrite the entire profile</span></span>
-<span id="cb8-63"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- ONLY make targeted additions or changes based on explicit feedback</span></span>
-<span id="cb8-64"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- PRESERVE all existing information not directly contradicted</span></span>
-<span id="cb8-65"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">- Output the complete updated profile as a string</span></span>
-<span id="cb8-66"><span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"""</span></span></code></pre></div></div>
-<p>Update Memory function, notably</p>
-<ul>
-<li>this uses structured output to do the updating</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">class</span> UserPreferences(BaseModel):</span>
-<span id="cb9-2">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""User preferences."""</span></span>
-<span id="cb9-3">    preferences: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span></span>
-<span id="cb9-4">    justification: <span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">str</span></span>
-<span id="cb9-5"></span>
-<span id="cb9-6"><span class="kw" style="color: #003B4F;
-background-color: null;
-font-weight: bold;
-font-style: inherit;">def</span> update_memory(store, namespace, messages):</span>
-<span id="cb9-7">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">"""Update memory profile in the store.</span></span>
-<span id="cb9-8"></span>
-<span id="cb9-9"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">    Args:</span></span>
-<span id="cb9-10"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">        store: LangGraph BaseStore instance to update memory</span></span>
-<span id="cb9-11"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">        namespace: Tuple defining the memory namespace, e.g. ("email_assistant", "triage_preferences")</span></span>
-<span id="cb9-12"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">        messages: List of messages to update the memory with</span></span>
-<span id="cb9-13"><span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">    """</span></span>
-<span id="cb9-14"></span>
-<span id="cb9-15">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Get the existing memory</span></span>
-<span id="cb9-16">    user_preferences <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> store.get(namespace, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user_preferences"</span>)</span>
-<span id="cb9-17"></span>
-<span id="cb9-18">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Update the memory</span></span>
-<span id="cb9-19">    llm <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> init_chat_model(<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"openai:gpt-4.1"</span>, temperature<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span><span class="fl" style="color: #AD0000;
-background-color: null;
-font-style: inherit;">0.0</span>).with_structured_output(UserPreferences)</span>
-<span id="cb9-20">    result <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span> llm.invoke(</span>
-<span id="cb9-21">        [</span>
-<span id="cb9-22">            {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"system"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: MEMORY_UPDATE_INSTRUCTIONS.<span class="bu" style="color: null;
-background-color: null;
-font-style: inherit;">format</span>(current_profile<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>user_preferences.value, namespace<span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">=</span>namespace)},</span>
-<span id="cb9-23">            {<span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"role"</span>: <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user"</span>, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"content"</span>: <span class="ss" style="color: #20794D;
-background-color: null;
-font-style: inherit;">f"Think carefully and update the memory profile based upon these user messages:"</span>}</span>
-<span id="cb9-24">        ] <span class="op" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;">+</span> messages</span>
-<span id="cb9-25">    )</span>
-<span id="cb9-26"></span>
-<span id="cb9-27">    <span class="co" style="color: #5E5E5E;
-background-color: null;
-font-style: inherit;"># Save the updated memory to the store</span></span>
-<span id="cb9-28">    store.put(namespace, <span class="st" style="color: #20794D;
-background-color: null;
-font-style: inherit;">"user_preferences"</span>, result.preferences)</span></code></pre></div></div>
-<p>The triage function needs to be updated according to WHEN to update the user preferences</p>
-<ul>
-<li>Gave feedback to reply to this email –&gt; update the preferences accordingly</li>
-<li>Ignore email even when it was classified as notify –&gt; update the preferences accordingly</li>
-<li>If the user edits the email written by the AI –&gt; update the writing email preferences</li>
-</ul>
-
-
-</section>
-
- ]]></description>
-  <category>ai</category>
-  <category>events</category>
-  <guid>https://lawwu.github.io/blog.html/posts/2025-05-13-langchain-interrupt-day-1/</guid>
   <pubDate>Wed, 14 May 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>
