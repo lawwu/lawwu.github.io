@@ -3,6 +3,7 @@ title: "AI Tutorial - Claude Code & Agent Frameworks"
 author: Lawrence Wu
 date: '2026-03-10'
 categories: [ai, "claude code"]
+image: ai_tutorial_lwu.png
 ---
 
 Below is an AI Tutorial I did for some friends. Unfortunately my OBS resolution was set too high so not every frame was captured in the video.
