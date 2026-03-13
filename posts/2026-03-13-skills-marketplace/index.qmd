@@ -15,7 +15,7 @@ I've enjoyed learning about agent skills over the past few months. I've learned 
 - [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin)
 - <https://skills.sh/>
 
-It's now possible to easily setup a skills marketplace for your own organization. That way your employees have a central place to contribute new skills and install and use exisiting skills. I've tried to make this easier by creating a skills marketplace template here: <https://github.com/lawwu/skills-marketplace>. It is a Cookiecutter Template for an Agent Skills Marketplace. I tried to consolidate some of the best practices I've seen across skills marketplaces. Some things it has:
+It's now possible to easily setup a skills marketplace for your own organization. That way your employees have a central place to contribute new skills and install and use existing skills. I've tried to make this easier by creating a skills marketplace template here: <https://github.com/lawwu/skills-marketplace>. It is a Cookiecutter Template for an Agent Skills Marketplace. I tried to consolidate some of the best practices I've seen across skills marketplaces. Some things it has:
 
 - Symbolic links
   - CLAUDE.md -> AGENTS.md
