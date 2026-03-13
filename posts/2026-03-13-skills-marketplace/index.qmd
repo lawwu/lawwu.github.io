@@ -1,0 +1,44 @@
+---
+title: "Skills Marketplaces"
+author: Lawrence Wu
+date: '2026-03-13'
+categories: [ai, "claude code"]
+---
+
+I've enjoyed learning about agent skills over the past few months. I've learned a lot browsing some skills marketplaces and plugins. Some of my favorite have been:
+
+- Anthropic
+  - <https://github.com/anthropics/knowledge-work-plugins>
+  - <https://github.com/anthropics/claude-plugins-official>
+- OpenAI: <https://github.com/openai/skills>
+- Sentry's marketplace: <https://github.com/getsentry/skills>
+- [Compound Engineering Plugin](https://github.com/EveryInc/compound-engineering-plugin)
+- <https://skills.sh/>
+
+It's now possible to easily setup a skills marketplace for your own organization. That way your employees have a central place to contribute new skills and install and use exisiting skills. I've tried to make this easier by creating a skills marketplace template here: <https://github.com/lawwu/skills-marketplace>. It is a Cookiecutter Template for an Agent Skills Marketplace. I tried to consolidate some of the best practices I've seen across skills marketplaces. Some things it has:
+
+- Symbolic links
+  - CLAUDE.md -> AGENTS.md
+  - .agents/skills -> ../plugins/my-skills/skills
+- Github Actions
+  - Claude Review
+  - Skill Review
+  - Validate-Frontmatter
+
+The skills marketplace that I'm hosting [here](https://github.com/lawwu/skills) shows what this template looks like "in the wild."
+
+To create a version of the skills marketplace yourself for your organization, you can use a skill to set it up:
+
+```shell
+# install this marketplace
+claude plugin marketplace add lawwu/skills
+claude plugin install lawwu-skills@lawwu-skills
+```
+
+Then in `claude`:
+
+```bash
+/create-skills-marketplace
+```
+
+Or you can directly use `cookiecutter` to go through the flow but you will need to do some manual steps like add your `ANTHROPIC_API_KEY` for the automated Claude and Skill-Review Github Actions. The above skill [/create-skills-marketplace](https://github.com/lawwu/skills/blob/main/plugins/lawwu-skills/skills/create-skills-marketplace/SKILL.md) automates all of this.
