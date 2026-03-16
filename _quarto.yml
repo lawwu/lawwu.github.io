@@ -24,8 +24,8 @@ website:
     right:
       - text: Blog
         href: blog.qmd
-      - text: Projects
-        href: projects.qmd
+      - text: Subscribe
+        href: index.qmd#subscribe
       - text: TIL
         href: https://lawwu.github.io/til/
       - icon: github
@@ -40,8 +40,18 @@ website:
         href: blog.xml
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, custom.scss]
     css: styles.css
+    mainfont: "Source Serif 4"
+    monofont: "JetBrains Mono"
+    fontsize: 1.05em
+    linestretch: 1.75
+    light-dark: true
+    include-after-body:
+      - text: |
+          <script src="/js/copy-markdown.js"></script>
+          <script src="/js/reading-progress.js"></script>
+          <script src="/js/toc-highlight.js"></script>
     include-in-header:
       - text: |
           <script>

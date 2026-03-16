@@ -1,0 +1,334 @@
+/*-- scss:defaults --*/
+
+// Typography
+$font-family-sans-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+$headings-font-family:   'Cormorant Garamond', Georgia, serif;
+$headings-font-weight:   400;
+$headings-line-height:   1.15;
+$font-size-base:         1.05rem;
+$line-height-base:       1.75;
+$code-font-size:         0.875em;
+
+// Colors — light mode
+$body-bg:                #FAFAF7;
+$body-color:             #1A1A18;
+$headings-color:         #1A1A18;
+$link-color:             #B5621E;
+$link-hover-color:       #8a4515;
+$navbar-bg:              #FAFAF7;
+$navbar-fg:              #1A1A18;
+$navbar-hl:              #B5621E;
+$footer-bg:              #F3F3EE;
+$code-bg:                #F0F0EB;
+$code-color:             #2D4A7A;
+
+// Borders / shadows
+$border-radius:          6px;
+
+/*-- scss:rules --*/
+
+// Google Fonts import
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+// ─── Navbar ───────────────────────────────────────
+.navbar {
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  background: rgba(250, 250, 247, 0.88) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  transition: background 0.2s ease;
+}
+
+.navbar-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.navbar-nav .nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6B6B62;
+  transition: color 0.2s ease;
+
+  &:hover, &.active {
+    color: #B5621E;
+  }
+}
+
+// ─── Headings ─────────────────────────────────────
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  color: #1A1A18;
+}
+
+h1 { font-size: 2.8rem; line-height: 1.08; }
+h2 { font-size: 2.0rem; line-height: 1.15; }
+h3 { font-size: 1.55rem; line-height: 1.2; }
+
+// ─── Code ─────────────────────────────────────────
+code, kbd, pre, samp {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+code:not(pre code) {
+  background: #EEF0F5;
+  color: #2D4A7A;
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+// ─── Blockquote ───────────────────────────────────
+blockquote {
+  border-left: 3px solid #B5621E;
+  background: rgba(181, 98, 30, 0.04);
+  padding: 16px 20px;
+  margin: 24px 0;
+  border-radius: 0 6px 6px 0;
+  color: #6B6B62;
+  font-style: italic;
+}
+
+// ─── Links ────────────────────────────────────────
+a {
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+// ─── Tables ───────────────────────────────────────
+.table {
+  font-size: 0.9rem;
+}
+
+.table thead th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6B6B62;
+  border-bottom-color: #CDCDC5;
+}
+
+// ─── Blog listing cards ───────────────────────────
+.quarto-post {
+  border: 1px solid #E5E5DF;
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              box-shadow 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.22s ease;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #B5621E, #2D4A7A);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.22s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-color: #CDCDC5;
+
+    &::before {
+      transform: scaleX(1);
+    }
+  }
+
+  // Inner padding for text content
+  .metadata, .listing-description, .listing-title {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .listing-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.45rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+    padding-top: 16px;
+  }
+
+  .listing-description {
+    font-size: 0.88rem;
+    color: #6B6B62;
+    line-height: 1.6;
+    padding-bottom: 4px;
+  }
+
+  .metadata {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    color: #9B9B8E;
+    padding-bottom: 16px;
+  }
+}
+
+// Category pills in listing
+.quarto-category {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: lowercase;
+  padding: 3px 9px;
+  border-radius: 3px;
+  border: 1px solid rgba(45, 74, 122, 0.2);
+  background: rgba(45, 74, 122, 0.08);
+  color: #2D4A7A;
+  transition: all 0.18s ease;
+
+  &:hover {
+    background: rgba(181, 98, 30, 0.1);
+    border-color: rgba(181, 98, 30, 0.25);
+    color: #B5621E;
+  }
+}
+
+// ─── TOC ──────────────────────────────────────────
+#TOC {
+  font-size: 0.82rem;
+  border-left: 2px solid #E5E5DF;
+  padding-left: 20px;
+
+  .toc-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #9B9B8E;
+    margin-bottom: 10px;
+  }
+
+  // All TOC links
+  a {
+    color: #6B6B62;
+    text-decoration: none;
+    transition: color 0.18s ease;
+    display: block;
+    padding: 2px 0;
+    line-height: 1.45;
+
+    &:hover { color: #B5621E; }
+
+    &.active, &[aria-current] {
+      color: #1A1A18;
+      font-weight: 500;
+    }
+  }
+
+  // Second-level (H3) entries — Quarto renders these as ul.collapse
+  // Use !important to beat Bootstrap's ul padding reset
+  ul.collapse,
+  ul ul {
+    padding-left: 14px !important;
+    margin-top: 2px;
+    margin-bottom: 2px;
+
+    a {
+      font-size: 0.78rem;
+      color: #9B9B8E;
+      padding: 1px 0;
+    }
+  }
+}
+
+// Active TOC item indicator
+.toc-active-indicator {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #B5621E;
+  }
+}
+
+// ─── Reading progress bar ─────────────────────────
+#reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #B5621E, #2D4A7A);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+// ─── Dark mode overrides ──────────────────────────
+.quarto-dark {
+  --body-bg:    #13130F;
+  --body-color: #EDEDE5;
+
+  .navbar {
+    background: rgba(19, 19, 15, 0.88) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+  }
+
+  code:not(pre code) {
+    background: #1C2A3A;
+    color: #7EB3F0;
+  }
+
+  blockquote {
+    background: rgba(212, 129, 58, 0.06);
+    color: #9B9B8E;
+  }
+
+  .quarto-post {
+    border-color: #2E2E26;
+
+    &:hover {
+      border-color: #3D3D33;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+
+    .listing-description { color: #9B9B8E; }
+    .metadata { color: #6B6B62; }
+  }
+
+  .quarto-category {
+    border-color: rgba(91, 138, 199, 0.25);
+    background: rgba(91, 138, 199, 0.1);
+    color: #5B8AC7;
+  }
+
+  #TOC {
+    border-left-color: #2E2E26;
+
+    a { color: #9B9B8E; }
+    a:hover { color: #D4813A; }
+    a.active { color: #EDEDE5; }
+
+    ul.collapse a,
+    ul ul a { color: #6B6B62; }
+  }
+
+  .toc-active-indicator::before { background: #D4813A; }
+}
