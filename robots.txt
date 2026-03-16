@@ -1,1 +1,1 @@
-Sitemap: https://lawwu.github.io/blog.html/sitemap.xml
+Sitemap: https://lawwu.github.io/sitemap.xml
