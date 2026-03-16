@@ -11,8 +11,8 @@ execute:
   freeze: auto
 
 website:
-  title: "Lawrence Wu"
-  site-url: https://lawwu.github.io/blog.html
+  title: "Lawrence Wu's Blog"
+  site-url: https://lawwu.github.io/
   description: "This is Lawrence Wu's personal website"
   open-graph: true
   google-analytics: "G-LN4GM4FVCJ"
@@ -23,11 +23,11 @@ website:
   navbar:
     right:
       - text: Blog
-        href: blog.qmd
-      - text: Projects
-        href: projects.qmd
-      - text: TIL
-        href: https://lawwu.github.io/til/
+        href: index.qmd
+      - text: About
+        href: about.qmd
+      - text: Subscribe
+        href: about.qmd#subscribe
       - icon: github
         text: GitHub
         href: https://github.com/lawwu
@@ -40,8 +40,18 @@ website:
         href: blog.xml
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, custom.scss]
     css: styles.css
+    mainfont: "Source Serif 4"
+    monofont: "JetBrains Mono"
+    fontsize: 1.05em
+    linestretch: 1.75
+    light-dark: true
+    include-after-body:
+      - text: |
+          <script src="/js/copy-markdown.js"></script>
+          <script src="/js/reading-progress.js"></script>
+          <script src="/js/toc-highlight.js"></script>
     include-in-header:
       - text: |
           <script>
