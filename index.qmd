@@ -41,12 +41,16 @@ Currently, I'm a Principal Data Scientist at [UKG](https://www.ukg.com/){target=
 - [Today I Learned (TIL)](https://lawwu.github.io/til/) - Quick notes on things I learn daily
 - Personal interests including [running](https://lawwu.github.io/blog.html#category=Running){target="_blank"} and [personal finance](https://lawwu.github.io/modest-money-guide/){target="_blank"}
 
+### Subscribe
+
+You can subscribe to my blog via [email newsletter](https://lawrencewu.substack.com/) or using the [RSS feed](https://lawwu.github.io/blog.xml).
+
+I try to send out a weekly newsletter with things I've written on this blog as well as other things I've been reading:
+
+<iframe src="https://lawrencewu.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+
 ### Let's Connect
 
 I'm open to new consulting opportunities and collaborations. If you'd like to work together, please check out [Doxa Solutions](https://doxasolutions.ai){target="_blank"} or reach out via any of the links above.
-
-You can also [subscribe](https://lawrencewu.substack.com/subscribe) to my newsletter:
-
-<iframe src="https://lawrencewu.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
 
 :::
