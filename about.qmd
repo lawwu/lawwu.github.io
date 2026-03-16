@@ -1,0 +1,80 @@
+---
+title: "Lawrence Wu"
+image: images/lawrence.jpg
+comments: false
+about:
+  template: trestles
+  image-width: 10em
+  links:
+    - icon: envelope
+      text: Email
+      href: mailto:lawrencewu1+blog@gmail.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/lawrencewu920/
+    - icon: github
+      text: GitHub
+      href: https://github.com/lawwu
+      target: _blank
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/law_wu
+      target: _blank
+---
+
+::: {#hero-heading}
+
+```{=html}
+<p class="hero-role">Principal Data Scientist &amp; AI Harness Engineer</p>
+<div class="hero-stats-row">
+  <div class="hero-stat-item">
+    <span class="hero-stat-num">10+</span>
+    <span class="hero-stat-label">years ML</span>
+  </div>
+  <div class="hero-stat-divider"></div>
+  <div class="hero-stat-item">
+    <span class="hero-stat-num">60+</span>
+    <span class="hero-stat-label">posts</span>
+  </div>
+  <div class="hero-stat-divider"></div>
+  <div class="hero-stat-item">
+    <span class="hero-stat-num">UKG</span>
+    <span class="hero-stat-label">current</span>
+  </div>
+</div>
+<div class="hero-tags-row">
+  <span class="hero-tag hero-tag-accent">Claude Code</span>
+  <span class="hero-tag hero-tag-accent">AI Agents</span>
+  <span class="hero-tag">LLMs</span>
+  <span class="hero-tag">Machine Learning</span>
+  <span class="hero-tag">Python</span>
+</div>
+```
+
+I am a Data Scientist & AI Harness Engineer developing Foundation Models and Agentic ML at UKG. I have 10+ years of experiencing building machine learning systems. In recent years I have developed expertise in LLMs, Agentic Harnesses and adapting to new ways of working with coding agents like Claude Code and Codex. I'm a lifelong learner and enjoy sharing what I've learned with others through writing. I believe writing is thinking.
+
+## Subscribe {#subscribe}
+
+You can subscribe to my blog via [email newsletter](https://lawrencewu.substack.com/) or using the [RSS feed](https://lawwu.github.io/blog.xml).
+
+I try to send out a weekly newsletter with things I've written on this blog as well as other things I've been reading:
+
+```{=html}
+<div class="newsletter-callout">
+  <div class="newsletter-callout-icon">✉</div>
+  <div class="newsletter-callout-body">
+    <div class="newsletter-callout-title">Weekly newsletter</div>
+    <p class="newsletter-callout-desc">Things I've written, papers I've read, and tools worth knowing about — delivered weekly.</p>
+    <div class="newsletter-callout-actions">
+      <a href="https://lawrencewu.substack.com/subscribe" target="_blank" class="newsletter-btn-primary">Subscribe on Substack →</a>
+      <a href="https://lawwu.github.io/blog.xml" class="newsletter-btn-secondary">RSS feed</a>
+    </div>
+  </div>
+</div>
+```
+
+## Let's Connect
+
+I'm open to consulting opportunities and collaborations. Check out [Doxa Solutions](https://doxasolutions.ai){target="_blank"} or reach out via any of the links above.
+
+:::

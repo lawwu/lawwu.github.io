@@ -11,8 +11,8 @@ execute:
   freeze: auto
 
 website:
-  title: "Lawrence Wu"
-  site-url: https://lawwu.github.io/blog.html
+  title: "Lawrence Wu's Blog"
+  site-url: https://lawwu.github.io/
   description: "This is Lawrence Wu's personal website"
   open-graph: true
   google-analytics: "G-LN4GM4FVCJ"
@@ -23,11 +23,11 @@ website:
   navbar:
     right:
       - text: Blog
-        href: blog.qmd
+        href: index.qmd
+      - text: About
+        href: about.qmd
       - text: Subscribe
-        href: index.qmd#subscribe
-      - text: TIL
-        href: https://lawwu.github.io/til/
+        href: about.qmd#subscribe
       - icon: github
         text: GitHub
         href: https://github.com/lawwu

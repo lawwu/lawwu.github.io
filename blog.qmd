@@ -1,14 +1,9 @@
 ---
-listing:
-  contents: posts/**/*.qmd
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-  fields: [image, date, title, reading-time, description, categories]
-  feed: true
-  image-align: right
-page-layout: full
-title-block-banner: true
+title: "Redirecting…"
 ---
+
+```{=html}
+<meta http-equiv="refresh" content="0; url=/">
+<script>window.location.replace("/");</script>
+<p>Redirecting to <a href="/">lawwu.github.io</a>…</p>
+```
