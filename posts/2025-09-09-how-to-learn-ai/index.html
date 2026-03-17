@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2025-09-09">
+
+<title>How to Learn AI – Lawrence Wu’s Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fc144a232052f6959280d4dadb28b3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  BLB.Tagger.Translation = 'ESV';
+  BLB.Tagger.HyperLinks = 'all';
+  BLB.Tagger.HideTanslationAbbrev = false;
+  BLB.Tagger.TargetNewWindow = true;
+  BLB.Tagger.DarkTheme = false;
+  BLB.Tagger.Style = 'par';
+  BLB.Tagger.NoSearchTagNames = '';
+  BLB.Tagger.NoSearchClassNames = 'noTag doNotTag';
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="How to Learn AI – Lawrence Wu’s Blog">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:site_name" content="Lawrence Wu's Blog">
+<meta name="twitter:title" content="How to Learn AI – Lawrence Wu’s Blog">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html#subscribe"> 
+<span class="menu-text">Subscribe</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#coders-and-non-coders" id="toc-coders-and-non-coders" class="nav-link active" data-scroll-target="#coders-and-non-coders">Coders and Non-Coders</a>
+  <ul class="collapse">
+  <li><a href="#watch-some-helpful-videos" id="toc-watch-some-helpful-videos" class="nav-link" data-scroll-target="#watch-some-helpful-videos">Watch some helpful videos</a></li>
+  <li><a href="#blue1brown---large-language-models-explained-briefly" id="toc-blue1brown---large-language-models-explained-briefly" class="nav-link" data-scroll-target="#blue1brown---large-language-models-explained-briefly">3Blue1Brown - Large Language Models Explained Briefly</a>
+  <ul class="collapse">
+  <li><a href="#karpathy---intro-to-llms" id="toc-karpathy---intro-to-llms" class="nav-link" data-scroll-target="#karpathy---intro-to-llms">Karpathy - Intro to LLMs</a></li>
+  </ul></li>
+  <li><a href="#karpathy---how-i-use-llms" id="toc-karpathy---how-i-use-llms" class="nav-link" data-scroll-target="#karpathy---how-i-use-llms">Karpathy - How I Use LLMs</a></li>
+  <li><a href="#curate-some-trusted-learning-sources" id="toc-curate-some-trusted-learning-sources" class="nav-link" data-scroll-target="#curate-some-trusted-learning-sources">Curate some trusted learning sources</a></li>
+  <li><a href="#take-a-course" id="toc-take-a-course" class="nav-link" data-scroll-target="#take-a-course">Take a course</a></li>
+  </ul></li>
+  <li><a href="#non-coders" id="toc-non-coders" class="nav-link" data-scroll-target="#non-coders">Non-Coders</a>
+  <ul class="collapse">
+  <li><a href="#start-using-ai" id="toc-start-using-ai" class="nav-link" data-scroll-target="#start-using-ai">Start using AI</a></li>
+  <li><a href="#learn-to-code" id="toc-learn-to-code" class="nav-link" data-scroll-target="#learn-to-code">Learn to Code</a></li>
+  <li><a href="#understand-ai-tools-in-your-domain" id="toc-understand-ai-tools-in-your-domain" class="nav-link" data-scroll-target="#understand-ai-tools-in-your-domain">Understand AI-tools in your domain</a></li>
+  </ul></li>
+  <li><a href="#coders" id="toc-coders" class="nav-link" data-scroll-target="#coders">Coders</a>
+  <ul class="collapse">
+  <li><a href="#watch-some-of-karpathys-talks" id="toc-watch-some-of-karpathys-talks" class="nav-link" data-scroll-target="#watch-some-of-karpathys-talks">Watch some of Karpathy’s talks</a>
+  <ul class="collapse">
+  <li><a href="#karpathy---software-engineering-is-changing-again" id="toc-karpathy---software-engineering-is-changing-again" class="nav-link" data-scroll-target="#karpathy---software-engineering-is-changing-again">Karpathy - Software engineering is changing again</a></li>
+  <li><a href="#karpathy---deep-dive-into-llms" id="toc-karpathy---deep-dive-into-llms" class="nav-link" data-scroll-target="#karpathy---deep-dive-into-llms">Karpathy - Deep Dive into LLMs</a></li>
+  </ul></li>
+  <li><a href="#use-an-ai-assistant-in-an-ide" id="toc-use-an-ai-assistant-in-an-ide" class="nav-link" data-scroll-target="#use-an-ai-assistant-in-an-ide">Use an AI Assistant in an IDE</a></li>
+  <li><a href="#use-agentic-coding" id="toc-use-agentic-coding" class="nav-link" data-scroll-target="#use-agentic-coding">Use Agentic Coding</a></li>
+  <li><a href="#understand-standard-interfaces-to-ai" id="toc-understand-standard-interfaces-to-ai" class="nav-link" data-scroll-target="#understand-standard-interfaces-to-ai">Understand Standard Interfaces to AI</a></li>
+  <li><a href="#understand-what-foundation-models-are-capable-of" id="toc-understand-what-foundation-models-are-capable-of" class="nav-link" data-scroll-target="#understand-what-foundation-models-are-capable-of">Understand What Foundation Models are Capable of</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">How to Learn AI</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai</div>
+    <div class="quarto-category">claude code</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 9, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>I was recently asked how you can learn AI. This is a pretty difficult question to answer because 1) AI’s development is so rapid and 2) everyone is coming from a different starting place and 3) people have different use cases. Il’l try my best here.</p>
+<p>My recommendations are different if you are someone who writes code vs.&nbsp;someone who doesn’t. There are many forms of AI but in this article I’ll mainly talk about how one can learn about Generative AI as opposed to more traditional forms of AI like machine learning. First some resources for both groups:</p>
+<section id="coders-and-non-coders" class="level1">
+<h1>Coders and Non-Coders</h1>
+<section id="watch-some-helpful-videos" class="level2">
+<h2 class="anchored" data-anchor-id="watch-some-helpful-videos">Watch some helpful videos</h2>
+</section>
+<section id="blue1brown---large-language-models-explained-briefly" class="level2">
+<h2 class="anchored" data-anchor-id="blue1brown---large-language-models-explained-briefly">3Blue1Brown - Large Language Models Explained Briefly</h2>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/LPZh9BOjkQs" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
+<section id="karpathy---intro-to-llms" class="level3">
+<h3 class="anchored" data-anchor-id="karpathy---intro-to-llms">Karpathy - Intro to LLMs</h3>
+<p>For everyone I recommend this 1-hour talk by Andrej Karpathy as an introduction to Large Language Models. He is a fantastic educator who can explain complicated topics quite simply.</p>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/zjkBMFhNj_g" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
+</section>
+</section>
+<section id="karpathy---how-i-use-llms" class="level2">
+<h2 class="anchored" data-anchor-id="karpathy---how-i-use-llms">Karpathy - How I Use LLMs</h2>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/EWvNQjAaOHw" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
+</section>
+<section id="curate-some-trusted-learning-sources" class="level2">
+<h2 class="anchored" data-anchor-id="curate-some-trusted-learning-sources">Curate some trusted learning sources</h2>
+<p>There is a ton of AI-related content. You’ll need to curate a set of trusted sources that is appropriate to your level. I’ve compiled some of my favorite resources <a href="https://lawwu.github.io/ai_resources.html">here</a>.</p>
+</section>
+<section id="take-a-course" class="level2">
+<h2 class="anchored" data-anchor-id="take-a-course">Take a course</h2>
+<p>I’ve taken a few of the short courses from <a href="https://www.deeplearning.ai/courses/">DeepLearning.ai</a> and found them helpful.</p>
+</section>
+</section>
+<section id="non-coders" class="level1">
+<h1>Non-Coders</h1>
+<section id="start-using-ai" class="level2">
+<h2 class="anchored" data-anchor-id="start-using-ai">Start using AI</h2>
+<p>I recommend starting with ChatGPT. ChatGPT is the de-facto chat-based interface to a large language model. You can access their flagship model <code>gpt-5</code> for free. You can use it for things you would normally search for. You will develop intuition for things it is good for and not good for. You’ll get a sense for when the model will use more reasoning or some of it’s built in tools like Search or Coding. Some of the things I use ChatGPT for are:</p>
+<ul>
+<li>Creating summaries of long-form content like sermons or <a href="https://lawwu.github.io/transcripts/">YouTube videos</a>. I record talks I listen to with my iPhone and generate transcripts on device. These transcripts can be fed into AI to generate summaries, extract quotes, etc.</li>
+<li>Acting as a running coach: giving me feedback on completed runs, recommended nutrition for an upcoming race, random questions I have about different types of runs</li>
+<li>Helping me learn new tools like <a href="https://obsidian.md/">Obsidian</a>, how to use templates to organize notes from reading books</li>
+<li>Taking pictures of things to identify them, figure out what is wrong (e.g.&nbsp;plants in our garden or something broken)</li>
+<li>Taking pictures of documents to extract text. For example a handout at church or seminar, you can take a picture and extract the text</li>
+<li>asking how to explain a certain word or concept to an 8-year old</li>
+<li>using voice mode to explain things to myself and the kids or do live translation</li>
+</ul>
+</section>
+<section id="learn-to-code" class="level2">
+<h2 class="anchored" data-anchor-id="learn-to-code">Learn to Code</h2>
+<p>I would actually recommend you learn how to code. Even though I think AI will write the majority of code in the future, if you know how to code and what is possible with code, you will 1) be better able to prompt AI and 2) be able to take AI generated code and modify it for your purposes. Now is actually the best time to learn because AI can help you learn.. This course <a href="https://www.deeplearning.ai/short-courses/ai-python-for-beginners/">AI Python for Beginners</a> would be a good place to start.</p>
+</section>
+<section id="understand-ai-tools-in-your-domain" class="level2">
+<h2 class="anchored" data-anchor-id="understand-ai-tools-in-your-domain">Understand AI-tools in your domain</h2>
+<p>Companies are now creating AI-powered products. Your domain likely has one or will have one soon. For example lawyers have <a href="https://www.harvey.ai/">Harvey</a>. Product Managers have Replit or Lovable to quickly create functional prototypes of software or a new feature.</p>
+</section>
+</section>
+<section id="coders" class="level1">
+<h1>Coders</h1>
+<section id="watch-some-of-karpathys-talks" class="level2">
+<h2 class="anchored" data-anchor-id="watch-some-of-karpathys-talks">Watch some of Karpathy’s talks</h2>
+<section id="karpathy---software-engineering-is-changing-again" class="level3">
+<h3 class="anchored" data-anchor-id="karpathy---software-engineering-is-changing-again">Karpathy - Software engineering is changing again</h3>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/LCEmiRjPEtQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
+</section>
+<section id="karpathy---deep-dive-into-llms" class="level3">
+<h3 class="anchored" data-anchor-id="karpathy---deep-dive-into-llms">Karpathy - Deep Dive into LLMs</h3>
+<p>Long but pretty good</p>
+<!-- markdownlint-disable MD034 -->
+<p></p><div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/7xTGNNLPyMI" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div> <!-- markdownlint-enable MD034 --><p></p>
+</section>
+</section>
+<section id="use-an-ai-assistant-in-an-ide" class="level2">
+<h2 class="anchored" data-anchor-id="use-an-ai-assistant-in-an-ide">Use an AI Assistant in an IDE</h2>
+<p>AI Code Assistants have come a long way from Github Copilot in early 2023 which provided code completion. We now have agents that now live in our IDEs like VS Code, Cursor and Windsurf. It’s hard to recommend one but you can’t really go wrong with one of these.</p>
+</section>
+<section id="use-agentic-coding" class="level2">
+<h2 class="anchored" data-anchor-id="use-agentic-coding">Use Agentic Coding</h2>
+<p>Claude Code was the first truly useful agentic coding tool. I started using it in <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">mid July</a> and wrote about it <a href="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/">here</a> and again <a href="https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/">here</a>. I use it daily now during work. It has largely replaced the AI Assistants in an IDE. The power of coding agents lies in the fact it lives on your machine in a terminal. They are given very generic tools like a <code>Bash</code> and <code>Edit</code> file tool. Paired with a powerful foundational LLM that has reasoning capabilities, you now have an agent that can create plans, choose which tools it will use, run those tools, see the output and debug anything that goes wrong. The amount of things you can do in <code>Bash</code> is mind-boggling given how many built in tools there are AND how many command line utilities there are. Some of the recent things I’ve done with Claude Code are:</p>
+<ul>
+<li>created a presentation Quarto (basically creating powerpoint slides in Markdown) that I can convert to RevealJS or Powerpoint</li>
+<li>explored data in Big Query (I actually didn’t know there was a <code>bq</code> command line tool until Claude Code started using it to explore some Big Query tables)</li>
+<li>wrote and executed Kubeflow machine learning pipelines in VertexAI</li>
+<li>implemented ideas from a research paper</li>
+<li>created an MCP server for Lightcast called <a href="https://github.com/lawwu/mcp-lightcast">mcp-lightcast</a></li>
+</ul>
+</section>
+<section id="understand-standard-interfaces-to-ai" class="level2">
+<h2 class="anchored" data-anchor-id="understand-standard-interfaces-to-ai">Understand Standard Interfaces to AI</h2>
+<p>This may deserve a longer post but you should be aware of the common interfaces to AI. Every company has an API you will call to gain access to their models. OpenAI, Google and Anthropic are the 3 largest providers. There are libraries like <a href="https://github.com/langchain-ai/langchain">langchain</a> that provide a common interface to call these models if you use a supported language (in this case it’s Python or Typescript). However at the API level there are common interfaces. OpenAI’s Chat Completions schema is one of those standard interfaces. The docs are <a href="https://platform.openai.com/docs/api-reference/chat/create">here</a> and the endpoint is a <code>POST</code> to <code>https://api.openai.com/v1/chat/completions</code>. If you use <a href="https://github.com/openai/openai-python">OpenAI’s Python SDK</a>, you can call the LLM using this code below:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> openai <span class="im">import</span> OpenAI</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> OpenAI()</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>completion <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  model<span class="op">=</span><span class="st">"gpt-5"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  messages<span class="op">=</span>[</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"developer"</span>, <span class="st">"content"</span>: <span class="st">"You are a helpful assistant."</span>},</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    {<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"Hello!"</span>}</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(completion.choices[<span class="dv">0</span>].message)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>What is powerful about this interface is, other companies have adopted it. For example, <a href="https://github.com/ollama/ollama">ollama</a> <a href="https://ollama.com/blog/openai-compatibility">started supporting the OpenAI Chat Completions API in 2024</a>. There are LLM proxies like <a href="https://github.com/BerriAI/litellm/">LiteLLM</a> that expose a Chat Completions API interface to EVERY model provider. So you can call Google, Anthropic or any vendor’s model through the same API. For example if you have a deployed LiteLLM proxy server and you’ve authenticated to Google’s models, you can call them with the same OpenAI Python SDK, just swapping in your LiteLLM <code>base_url</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> openai</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>client <span class="op">=</span> openai.OpenAI(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    api_key<span class="op">=</span><span class="st">"sk-1234"</span>,             <span class="co"># pass litellm proxy key, if you're using virtual keys</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    base_url<span class="op">=</span><span class="st">"http://0.0.0.0:4000"</span> <span class="co"># litellm-proxy-base url</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>response <span class="op">=</span> client.chat.completions.create(</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    model<span class="op">=</span><span class="st">"team1-gemini-pro"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    messages <span class="op">=</span> [</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>        {</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>            <span class="st">"role"</span>: <span class="st">"user"</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>            <span class="st">"content"</span>: <span class="st">"what llm are you"</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>        }</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    ],</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(response)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Some other common interfaces you should learn and be aware of:</p>
+<ul>
+<li>OpenAI Responses API</li>
+<li><a href="https://github.com/modelcontextprotocol/modelcontextprotocol">MCP</a> - Model Context Protocol is a protocol original from Anthropic to standarize the interface between AI and tools. Well adopted by many companies and has become a standard. Though in many cases, especially in the case of coding agents, I’ve had more success giving the agent the ability to just use a command line tool. For example, using the <code>gh cli</code> instead of the <a href="https://github.com/github/github-mcp-server">Github MCP Server</a>.</li>
+<li><a href="https://github.com/a2aproject/A2A">A2A</a> - a protocol from Google that is to standardize the interface between AI Agents</li>
+<li><a href="https://github.com/ag-ui-protocol/ag-ui">AG-UI</a> - Agent-User Interaction protocol from copilotkit. This is a newer framework that is supposed to standardize the interface between a user (frontend) and the agent/AI backend.</li>
+<li><a href="https://github.com/BerriAI/litellm/">LiteLLM</a> - LLM Proxies like LiteLLM are very powerful and useful in large organizations to give developers a common interface to AI. <a href="https://www.youtube.com/watch?v=u-3IILWQPRM&amp;t=1306s&amp;ab_channel=ThePragmaticEngineer">Shopify uses LiteLLM internally</a>. You can also read about their usage <a href="https://newsletter.pragmaticengineer.com/p/how-ai-is-changing-software-engineering">here</a>.</li>
+<li>Agent Frameworks like LangGraph, Google’s ADK. There are dozens of these now.</li>
+</ul>
+</section>
+<section id="understand-what-foundation-models-are-capable-of" class="level2">
+<h2 class="anchored" data-anchor-id="understand-what-foundation-models-are-capable-of">Understand What Foundation Models are Capable of</h2>
+<p>ChatGPT was first released in 2022. Since that time there has been so many capabilities added to these model APIs that is difficult to keep up. A non-complete list is:</p>
+<ul>
+<li>Structured Output - you can define schemas and pass these schemas to the LLM to force it to generate valid JSON, useful for tasks like data extraction</li>
+<li>Longer Context Windows</li>
+<li>Tool Calling</li>
+<li>Search tools</li>
+<li>Code Execution</li>
+<li>Computer Use</li>
+<li>Memory</li>
+<li>Deep Research</li>
+<li>Reasoning - these models have thinking/reasoning budgets</li>
+<li>Audio Understanding / Generation</li>
+<li>Image Understanding / Generation</li>
+<li>Video Understanding / Generation</li>
+<li>Realtime audio capabilities</li>
+</ul>
+<p>No matter your background, the best way to learn AI is by using it, experimenting, and staying curious. The landscape changes constantly, but the principles of exploration and practice remain the same.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawrencewu\.net");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="../../js/copy-markdown.js"></script>
+<script src="../../js/reading-progress.js"></script>
+<script src="../../js/toc-highlight.js"></script>
+
+
+
+
+</body></html>

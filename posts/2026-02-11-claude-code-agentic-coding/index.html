@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2026-02-10">
+
+<title>Claude Code Daily Tips Series – Lawrence Wu’s Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fc144a232052f6959280d4dadb28b3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  BLB.Tagger.Translation = 'ESV';
+  BLB.Tagger.HyperLinks = 'all';
+  BLB.Tagger.HideTanslationAbbrev = false;
+  BLB.Tagger.TargetNewWindow = true;
+  BLB.Tagger.DarkTheme = false;
+  BLB.Tagger.Style = 'par';
+  BLB.Tagger.NoSearchTagNames = '';
+  BLB.Tagger.NoSearchClassNames = 'noTag doNotTag';
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Claude Code Daily Tips Series – Lawrence Wu’s Blog">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:image" content="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day1_insights.jpeg">
+<meta property="og:site_name" content="Lawrence Wu's Blog">
+<meta name="twitter:title" content="Claude Code Daily Tips Series – Lawrence Wu’s Blog">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:image" content="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day1_insights.jpeg">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html#subscribe"> 
+<span class="menu-text">Subscribe</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#day-1---insights-command" id="toc-day-1---insights-command" class="nav-link active" data-scroll-target="#day-1---insights-command">Day 1 - <code>/insights</code> command</a></li>
+  <li><a href="#day-2---standardize-on-agents.md" id="toc-day-2---standardize-on-agents.md" class="nav-link" data-scroll-target="#day-2---standardize-on-agents.md">Day 2 - Standardize on <code>AGENTS.md</code></a></li>
+  <li><a href="#day-3---self-improving-agents.mdclaude.md" id="toc-day-3---self-improving-agents.mdclaude.md" class="nav-link" data-scroll-target="#day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></a></li>
+  <li><a href="#day-4---auto-memory" id="toc-day-4---auto-memory" class="nav-link" data-scroll-target="#day-4---auto-memory">Day 4 - Auto Memory</a></li>
+  <li><a href="#day-5---save-your-data" id="toc-day-5---save-your-data" class="nav-link" data-scroll-target="#day-5---save-your-data">Day 5 - Save Your Data</a></li>
+  <li><a href="#day-6---use-plan-mode" id="toc-day-6---use-plan-mode" class="nav-link" data-scroll-target="#day-6---use-plan-mode">Day 6 - Use Plan Mode</a></li>
+  <li><a href="#day-7---prefer-clis-to-mcps" id="toc-day-7---prefer-clis-to-mcps" class="nav-link" data-scroll-target="#day-7---prefer-clis-to-mcps">Day 7 - Prefer CLIs to MCPs</a></li>
+  <li><a href="#day-8---customize-a-statusline" id="toc-day-8---customize-a-statusline" class="nav-link" data-scroll-target="#day-8---customize-a-statusline">Day 8 - Customize a statusline</a></li>
+  <li><a href="#day-9---benefits-of-an-llm-gateway" id="toc-day-9---benefits-of-an-llm-gateway" class="nav-link" data-scroll-target="#day-9---benefits-of-an-llm-gateway">Day 9 - Benefits of an LLM Gateway</a></li>
+  <li><a href="#day-10-llm-vs-agentic-harness" id="toc-day-10-llm-vs-agentic-harness" class="nav-link" data-scroll-target="#day-10-llm-vs-agentic-harness">Day 10 — LLM vs Agentic Harness</a></li>
+  <li><a href="#day-11-terminal-vs-vs-code-extension" id="toc-day-11-terminal-vs-vs-code-extension" class="nav-link" data-scroll-target="#day-11-terminal-vs-vs-code-extension">Day 11 — Terminal vs VS Code Extension</a></li>
+  <li><a href="#day-12-setup-peonping" id="toc-day-12-setup-peonping" class="nav-link" data-scroll-target="#day-12-setup-peonping">Day 12 — Setup PeonPing</a></li>
+  <li><a href="#day-13-claude-code-github-actions" id="toc-day-13-claude-code-github-actions" class="nav-link" data-scroll-target="#day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</a></li>
+  <li><a href="#day-14-dont-outpace-your-understanding" id="toc-day-14-dont-outpace-your-understanding" class="nav-link" data-scroll-target="#day-14-dont-outpace-your-understanding">Day 14 — Don’t Outpace Your Understanding</a></li>
+  <li><a href="#day-15---prompt-caching" id="toc-day-15---prompt-caching" class="nav-link" data-scroll-target="#day-15---prompt-caching">Day 15 - Prompt Caching</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Claude Code Daily Tips Series</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai</div>
+    <div class="quarto-category">claude code</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">February 10, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>As a daily Claude Code user for <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">the last 6 months</a>, I’ve learned a lot about Claude Code and agentic coding in general. Trying this thing where I share 1 thing per day. I’m posting on LinkedIn but I’ll update this post with each tip.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Subscribe to my newsletter
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Get these tips and more delivered to your inbox. Subscribe at <a href="https://lawrencewu.substack.com/">lawrencewu.substack.com</a></p>
+<iframe src="https://lawrencewu.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no">
+</iframe>
+</div>
+</div>
+<section id="day-1---insights-command" class="level2">
+<h2 class="anchored" data-anchor-id="day-1---insights-command">Day 1 - <code>/insights</code> command</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_if-you-use-more-than-one-coding-agent-like-activity-7427504846313836544-Azs9?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-10</a></p>
+<p>I tried the new /insights command in Claude Code in one of my main projects. It analyzed the last 30 days of messages in my project, identified how I work, noted “impressive things” I did, where things went wrong, suggested existing Claude Code features to try which included recommendations to updates to my CLAUDE.md, and new Custom Skills and Hooks to try.</p>
+<p>Also neat to see all of the messages, tool calls and sessions labeled by type along with the distribution of my response time and how often I am “Multi-Clauding.” Finally, all those days of micro’ing while playing Starcraft and Warcraft III are paying off.</p>
+<p><img src="./images/cc_day1_insights.jpeg" class="img-fluid"></p>
+</section>
+<section id="day-2---standardize-on-agents.md" class="level2">
+<h2 class="anchored" data-anchor-id="day-2---standardize-on-agents.md">Day 2 - Standardize on <code>AGENTS.md</code></h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_if-you-use-more-than-one-coding-agent-like-activity-7427504846313836544-Azs9?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-11</a></p>
+<p>If you use more than one coding agent like Claude Code and Codex, it’s helpful to standardize on one AGENTS.md. This is a file that gets loaded into the model’s system prompt and is great for steering the model. Claude Code hasn’t chosen to standardize yet and still uses at CLAUDE.md</p>
+<p>Solution: Have CLAUDE.md with one line:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>@AGENTS.md</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then just keep your AGENTS.md updated.</p>
+<p>Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then load AGENTS.md because it’s referred to.</p>
+<p>In Claude Code, if you type /memory, you should see under Project Memory your AGENTS.md referenced.</p>
+<p><img src="./images/cc_day2_agents_md.png" class="img-fluid"></p>
+</section>
+<section id="day-3---self-improving-agents.mdclaude.md" class="level2">
+<h2 class="anchored" data-anchor-id="day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_day-3-of-my-claude-code-daily-tips-series-activity-7427735749086752768-ASH5?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-12</a></p>
+<p>Claude Code, codex and other agents will load AGENTS.md or CLAUDE.md into it’s context (really it’s system prompt) with every message. I’ve recently started being better about updating this file anytime I want to steer the coding agent. For example if the coding agent makes a mistake, for example if it forgets to add the <code>region</code> into a GCP URL, I started manually adding an instruction to my AGENTS.md, “when returning VertexAI URLs, they need <code>location/{region}</code>, here’s an example of one: {put your example url here}”. This worked, Claude Code stopped writing wrong URLs.</p>
+<p>I then started creating sections in my AGENTS.md for different types of areas, e.g.&nbsp;data, machine learning, VertexAI, or Big Query to organize these conventions and gotchas.</p>
+<p>Then I realized I could just prompt Claude Code to update my AGENTS.md for me. “can you update my AGENTS.md in the relevant section to not do that again?” This worked well, I often had to move what Claude wrote into the right place though.</p>
+<p>Then I added a line to my AGENTS.md, “when you have debugged an issue, please update this file in the relevant section with the solution. This could be related to data, machine learning, VertexAI, or Big Query,” That way, Claude Code will periodically update my AGENTS.md</p>
+<p>I also saw Anthropic has an official CLAUDE.md management plugin that has a skill for automating this too <a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management">here</a>. Reading about their plugins is very inspirational on what is possible now: <a href="https://github.com/anthropics/claude-plugins-official" class="uri">https://github.com/anthropics/claude-plugins-official</a>.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/plugin</span> install claude-md-management@claude-plugin-directory</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then you can trigger the single skill that is part of the plugin called <code>claude-md-improver</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/claude-md-management:revise-claude-md</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="./images/cc_day3_auto_claude_md.jpeg" class="img-fluid"></p>
+</section>
+<section id="day-4---auto-memory" class="level2">
+<h2 class="anchored" data-anchor-id="day-4---auto-memory">Day 4 - Auto Memory</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_day-4-of-my-claude-code-daily-tips-series-activity-7428098173602185216-EhKW?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-13</a></p>
+<p>Before talking about Claude Code’s auto memory feature, one thing to remember is you can use Claude Code itself to do a lot of its own configuration. This is rather meta like a 3-D printer printing pieces for itself. One example is you can ask Claude Code “can you search my previous claude messages for things i should add to my global CLAUDE.md?”</p>
+<p>Another memory related feature that was added as of version 2.1.32 of Claude Code is Auto Memory. See Claude Code’s docs here: <a href="https://code.claude.com/docs/en/memory#manage-auto-memory" class="uri">https://code.claude.com/docs/en/memory#manage-auto-memory</a></p>
+<p>If you ask Claude Code to remember something it’ll write to a project specific memory folder in a markdown file here: <code>~/.claude/projects/&lt;project&gt;/memory/</code>. These memories will be used across sessions in your current project. Though only the first 200 lines of the auto memories will be loaded.</p>
+<p>From the official docs: “The directory contains a <code>MEMORY.md</code> entrypoint and optional topic files:</p>
+<pre class="text"><code>~/.claude/projects/&lt;project&gt;/memory/
+├── MEMORY.md # Concise index, loaded into every session
+├── debugging.md # Detailed notes on debugging patterns
+├── api-conventions.md # API design decisions
+└── ...        # Any other topic files Claude creates</code></pre>
+<ul>
+<li>The first 200 lines of <code>MEMORY.md</code> are loaded into Claude’s system prompt at the start of every session. Content beyond 200 lines is not loaded automatically, and Claude is instructed to keep it concise by moving detailed notes into separate topic files.</li>
+<li>Topic files like <code>debugging.md</code> or <code>patterns.md</code> are not loaded at startup. Claude reads them on demand using its standard file tools when it needs the information.</li>
+<li>Claude reads and writes memory files during your session, so you’ll see memory updates happen as you work.”</li>
+</ul>
+<p>If you type <code>/memory</code> you can see if auto memory is being used. See below for what writing this memory looks like:</p>
+<p><img src="./images/cc_day4_auto_memory.jpeg" class="img-fluid"></p>
+</section>
+<section id="day-5---save-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="day-5---save-your-data">Day 5 - Save Your Data</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429185326138531840-bepC?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-16</a></p>
+<ul>
+<li>Claude Code stores logs at: <code>~/.claude/projects/</code></li>
+<li>Only keeps 30 days by default</li>
+<li>Tip: Add <code>"cleanupPeriodDays": 99999</code> to <code>~/.claude/settings.json</code> to preserve this valuable data</li>
+</ul>
+<p>Remember you can also ask Claude Code to do these things too.</p>
+</section>
+<section id="day-6---use-plan-mode" class="level2">
+<h2 class="anchored" data-anchor-id="day-6---use-plan-mode">Day 6 - Use Plan Mode</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429551565948166147-ypB0?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-17</a></p>
+<p><img src="./images/cc_day6_plan_mode.png" class="img-fluid"></p>
+<p>I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see “plan mode on” in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan.</p>
+<p>Some of the more complicated tasks I like to use plan mode for are:</p>
+<ul>
+<li>Large refactoring</li>
+<li>Creating machine learning pipelines</li>
+<li>Brainstorming with Claude</li>
+</ul>
+<p>The official docs recommend you use plan mode when are you:</p>
+<ul>
+<li>Multi-step implementation: When your feature requires making edits to many files</li>
+<li>Code exploration: When you want to research the codebase thoroughly before changing anything</li>
+<li>Interactive development: When you want to iterate on the direction with Claude</li>
+</ul>
+<p>The plans get written into your home directory: <code>~/.claude/plans/random-words.md</code></p>
+<p><a href="https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis" class="uri">https://code.claude.com/docs/en/common-workflows#use-plan-mode-for-safe-code-analysis</a></p>
+</section>
+<section id="day-7---prefer-clis-to-mcps" class="level2">
+<h2 class="anchored" data-anchor-id="day-7---prefer-clis-to-mcps">Day 7 - Prefer CLIs to MCPs</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_skills-vs-dynamic-mcp-loadouts-activity-7429910264294084608-TZkO?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-18</a></p>
+<p>One of the main breakthroughs Claude Code and other agentic coding terminals made was the Bash tool. Because Claude has been trained to use Bash so effectively and there are thousands of CLIs that run in Bash, Claude Code + CLIs pairs so well together.</p>
+<p>MCPs had a lot of promise when they first came out. They still have a place. By implementing an MCP Server, you provide a common interface to any MCP Client. But the downside of MCP is you quickly fill up the context window of the underlying LLM you are using. The more MCPs you have configured, the worse this gets.</p>
+<p>With CLIs, Claude Code can directly use them because the underlying model, Claude, has been “seen” so many instances of CLIs being used in the training data. So Claude Code already knows how to use the <code>gh</code> (Github) CLI, <code>bq</code> (BigQuery) CLI, ffmpeg, etc.</p>
+<p>I much prefer the gh CLI to the Github MCP. I much prefer the bq CLI than the BigQuery MCP.</p>
+<p>I’ve also experienced this with the Jira MCP which can be quite token expensive. Claude Code is more efficient calling the Jira API directly using a Python SDK (<a href="https://github.com/atlassian-api/atlassian-python-api" class="uri">https://github.com/atlassian-api/atlassian-python-api</a>).</p>
+<p>One MCP Server I still like and have configured globally in Claude Code is DeepWiki: <a href="https://cognition.ai/blog/deepwiki-mcp-server" class="uri">https://cognition.ai/blog/deepwiki-mcp-server</a></p>
+<p>Armin Ronacher shares similar thoughts in his post: <a href="https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/" class="uri">https://lucumr.pocoo.org/2025/12/13/skills-vs-mcp/</a></p>
+<ul>
+<li>Largely moved away from MCP, redone everything as skills</li>
+<li>Agents are better at writing their own tools — they customize and debug them</li>
+<li>MCP servers: you’re at mercy of their changes</li>
+</ul>
+</section>
+<section id="day-8---customize-a-statusline" class="level2">
+<h2 class="anchored" data-anchor-id="day-8---customize-a-statusline">Day 8 - Customize a statusline</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_customize-your-status-line-claude-code-activity-7430272648762413056-QELx?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-19</a></p>
+<p>You can configure the bottom two lines in the Claude Code terminal UI. Run the <code>/statusline</code> command to have Claude Code customize your statusline. You can customize it to show the percentage of your context window you are using, a running total of API costs, how long the session has been running, etc.</p>
+<p>Official docs: <a href="https://code.claude.com/docs/en/statusline" class="uri">https://code.claude.com/docs/en/statusline</a></p>
+</section>
+<section id="day-9---benefits-of-an-llm-gateway" class="level2">
+<h2 class="anchored" data-anchor-id="day-9---benefits-of-an-llm-gateway">Day 9 - Benefits of an LLM Gateway</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_benefits-of-an-llm-gateway-i-think-one-of-activity-7430635093079007232-3IIN?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-20</a></p>
+<p>I think one of the reasons Claude Code exploded in popularity was because Anthropic did a good job establishing partnerships with all of the hyperscalers. You can use Claude Code with Claude models directly with Anthropic or through Amazon (Bedrock), GCP (VertexAI), or Azure (Foundry). Many companies have also established internal LLM Gateways like LiteLLM that have a lot of benefits. Some of the benefits I’ve seen:</p>
+<ul>
+<li>You can configure multiple provider’s models. Anthropic, OpenAI, Google models all exposed through a common interface. Open Source models can also be configured.</li>
+<li>You can log all of the LLM requests/responses.</li>
+<li>You can control costs and set budgets per user/team.</li>
+<li>You can swap models between different agentic harnesses. Claude Code with gpt-5.3-codex. Codex with Opus 4.6. Or you can use an open source harness like OpenCode with any model.</li>
+</ul>
+<p>One downside of these internal LLM Gateways is they become a central place of failure. And if it goes down, your internal users’ productivity will plummet.</p>
+<p><img src="./images/cc_day9_llm_gateway.png" class="img-fluid"></p>
+</section>
+<section id="day-10-llm-vs-agentic-harness" class="level2">
+<h2 class="anchored" data-anchor-id="day-10-llm-vs-agentic-harness">Day 10 — LLM vs Agentic Harness</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-23</a></p>
+<p><img src="./images/cc_day10_agentic_harness.png" class="img-fluid"></p>
+<p>Remember, there is a difference between Claude Code and Claude the underlying model. Claude Code itself is just a CLI, I like to think of it as an agentic harness. It wraps a language model (Opus, Sonnet, Haiku or if you use LiteLLM, you can point it at any model). There are so many different agentic harnesses for coding agents now: Codex, gemini-cli, Claude Code and OpenCode.</p>
+<p>The Claude Code CLI changes rapidly — see the <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a>. Each version bumps the harness, not the underlying model. The harness handles: tool orchestration, context management, permissions, memory, prompt caching. There are system prompts embedded in the harness too.</p>
+<p>Why does this matter? When Claude Code “gets better” it could be either the model OR the harness improving.</p>
+<p>Boris Cherny in this <a href="https://www.youtube.com/watch?v=We7BZVKbCVw">interview</a> talked about how he stuck with the terminal UI because he wanted to make as thin of a harness as possible so that improvements in model capability could be passed to the user. Claude Code recently turned 1 year old. It has gotten more feature rich. There has been an interesting project called Pi that I heard about because it’s the agent framework powering OpenClaw. Armin Ronacher writes about it <a href="https://lucumr.pocoo.org/2026/1/31/pi/">here</a>.</p>
+</section>
+<section id="day-11-terminal-vs-vs-code-extension" class="level2">
+<h2 class="anchored" data-anchor-id="day-11-terminal-vs-vs-code-extension">Day 11 — Terminal vs VS Code Extension</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-24</a></p>
+<p><img src="./images/cc_day11_agentic_harness.png" class="img-fluid"></p>
+<p>Claude Code started with a TUI (terminal UI). Since that time they’ve added a VS Code Extension and even a full-fledged UI in Claude Cowork which just wraps Claude Code. Yesterday I talked about how Claude Code is a type of agentic harness around the model. You can also think of the VS Code Extension and Claude Cowork as different harness around the same model. As you can see in the picture, I think of the VS Code Extension as a “thicker” harness in that it adds behavior that the underlying framework doesn’t do.</p>
+<p>Different harnesses have different behaviors. The VS Code Extension automatically adds opened file / selected lines as part of your prompt. This silently increases token usage and may send unintended context to the LLM. I’ve never had the TUI add files I didn’t expect.</p>
+<p>The VS Code extension does add a nice UI to visualize tool outputs that I like.</p>
+</section>
+<section id="day-12-setup-peonping" class="level2">
+<h2 class="anchored" data-anchor-id="day-12-setup-peonping">Day 12 — Setup PeonPing</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_github-peonpingpeon-ping-warcraft-iii-activity-7432447018251374592-RH87?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-25</a></p>
+<p><img src="./images/cc_day12_peonping.png" class="img-fluid"></p>
+<p>I’ve really enjoyed using <a href="https://github.com/PeonPing/peon-ping">Peon Ping</a> for the last few weeks. It adds a Claude Code hook at the beginning and end of each session. It notifies you with a system notification and a custom sound. The default is a Warcraft III peon. There’s also sounds from Starcaft and Age of Empires and a bunch of other goodies. The sounds are fun but it’s genuinly useful knowing when the agent finishes it’s task.</p>
+<p>It initially was for Claude Code but they’ve recently added support for most coding agents now.</p>
+</section>
+<section id="day-13-claude-code-github-actions" class="level2">
+<h2 class="anchored" data-anchor-id="day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_you-can-run-claude-code-in-your-github-actions-activity-7432809363100061697-VpWz?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-26</a></p>
+<p><img src="./images/cc_day13_claude_code_action.png" class="img-fluid"></p>
+<p>You can run Claude Code in your Github Actions. Anthropic has an official action here: <a href="https://github.com/anthropics/claude-code-action" class="uri">https://github.com/anthropics/claude-code-action</a>.</p>
+<p>I’ve used this Github Action to mainly review PRs but also generate commits and PRs. I was inspired to set this up when I saw the Anthropic team close <a href="https://github.com/anthropics/claude-code-action/issues/756">an issue I opened</a> by just tagging “<span class="citation" data-cites="claude">@claude</span> can you fix it” and passing a link. Amazing.</p>
+<p>The Claude Code Github Action is another agentic harness. It actually uses the Claude Agent SDK under the hood with a custom prompt specifically for Github. For example it largely communicates through Github Issues. But it’s amazing just to see the checklist update in realtime and also a link to create a PR from the branch Claude made.</p>
+<p>It’s pretty easy to setup. You can even use Claude Code to set this up for you in your Github repo.</p>
+</section>
+<section id="day-14-dont-outpace-your-understanding" class="level2">
+<h2 class="anchored" data-anchor-id="day-14-dont-outpace-your-understanding">Day 14 — Don’t Outpace Your Understanding</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_dont-allow-the-agent-to-outpace-your-understanding-activity-7433171647173640192-mlk0?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-27</a></p>
+<p>Don’t allow the agent to outpace your understanding of whatever you are building. The models can still make mistakes. You need to have some understanding of the system in order to validate what the agent is doing. Your understanding of the system is also critical to guide future changes and validate correctness</p>
+<p>Practical tips:</p>
+<ul>
+<li>Use plan mode (Day 6) for complex tasks — review the plan before executing</li>
+<li>Read the code/diffs, don’t just approve them</li>
+<li>Ask Claude to explain its changes: “why did you do it this way?”</li>
+<li>Keep AGENTS.md updated so future sessions have context on architectural decisions</li>
+<li>When Claude writes code you don’t understand, stop and learn before moving on</li>
+</ul>
+<p>This is even more important when using multiple agents (Codex + Claude Code) — you’re the one who has to maintain the codebase (at least for now?)</p>
+</section>
+<section id="day-15---prompt-caching" class="level2">
+<h2 class="anchored" data-anchor-id="day-15---prompt-caching">Day 15 - Prompt Caching</h2>
+<p><a href="https://www.linkedin.com/posts/lawrencewu920_we-build-our-entire-harness-around-prompt-activity-7434258928865157120-Ohmh?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted On 2026-03-02</a></p>
+<p><img src="./images/cc_day15_prompt_caching.png" class="img-fluid"></p>
+<p>“We build our entire harness around prompt caching” - Thariq (Claude Code dev)</p>
+<p>I’ve really liked Chip Huyen’s sniffly project to visualize Claude Code stats. One of the graphs shows you the daily cost of your tokens by input tokens, output tokens and cache operations. I always thought this graph was wrong because it looked like 99% of the cost was cache operations. But I realized it wasn’t wrong.</p>
+<p>I underestimated the importance of prompt caching. Cached tokens are 10% the cost of regular tokens (!). This means Claude Code structures static content first and dynamic content later in the prompt:</p>
+<ol type="1">
+<li>System Prompt &amp; Tools (global cache)</li>
+<li>CLAUDE.md (cached within a porject)</li>
+<li>Session context (cached within a session)</li>
+<li>Conversation messages</li>
+</ol>
+<p>I didn’t appreciate how much engineering and effort goes into making the user experience in Claude Code what it is AND keeping the costs maintainable.</p>
+<p>If you are building your own AI systems on top of LLM APIs that support prompt caching, you need to design your system with prompt caching at the forefront of your mind. Looking at the Claude Code CHANGELOG, you can see there are dedicated releases for fixing things that led to reduced cache hit rates, e.g.&nbsp;2.1.62.</p>
+<p>Thariq has a good post on the importance of prompt caching that was so illuminating: <a href="https://x.com/trq212/status/2024574133011673516?s=46&amp;t=Ze-VKnGNxPI5bjU_St2Wbg" class="uri">https://x.com/trq212/status/2024574133011673516?s=46&amp;t=Ze-VKnGNxPI5bjU_St2Wbg</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawrencewu\.net");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="../../js/copy-markdown.js"></script>
+<script src="../../js/reading-progress.js"></script>
+<script src="../../js/toc-highlight.js"></script>
+
+
+
+
+</body></html>

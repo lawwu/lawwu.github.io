@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2025-05-27">
+
+<title>Levels of AI Use – Lawrence Wu’s Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fc144a232052f6959280d4dadb28b3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  BLB.Tagger.Translation = 'ESV';
+  BLB.Tagger.HyperLinks = 'all';
+  BLB.Tagger.HideTanslationAbbrev = false;
+  BLB.Tagger.TargetNewWindow = true;
+  BLB.Tagger.DarkTheme = false;
+  BLB.Tagger.Style = 'par';
+  BLB.Tagger.NoSearchTagNames = '';
+  BLB.Tagger.NoSearchClassNames = 'noTag doNotTag';
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Levels of AI Use – Lawrence Wu’s Blog">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:site_name" content="Lawrence Wu's Blog">
+<meta name="twitter:title" content="Levels of AI Use – Lawrence Wu’s Blog">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html#subscribe"> 
+<span class="menu-text">Subscribe</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#level-0-no-use" id="toc-level-0-no-use" class="nav-link active" data-scroll-target="#level-0-no-use"><strong>Level 0 – No Use</strong></a></li>
+  <li><a href="#level-1-occasional-use" id="toc-level-1-occasional-use" class="nav-link" data-scroll-target="#level-1-occasional-use"><strong>Level 1 – Occasional Use</strong></a></li>
+  <li><a href="#level-2-regular-use" id="toc-level-2-regular-use" class="nav-link" data-scroll-target="#level-2-regular-use"><strong>Level 2 – Regular Use</strong></a></li>
+  <li><a href="#level-3-workflow-integration" id="toc-level-3-workflow-integration" class="nav-link" data-scroll-target="#level-3-workflow-integration"><strong>Level 3 – Workflow Integration</strong></a></li>
+  <li><a href="#level-4-ai-native-thinking" id="toc-level-4-ai-native-thinking" class="nav-link" data-scroll-target="#level-4-ai-native-thinking"><strong>Level 4 – AI-Native Thinking</strong></a></li>
+  <li><a href="#level-5-ai-first-innovation" id="toc-level-5-ai-first-innovation" class="nav-link" data-scroll-target="#level-5-ai-first-innovation"><strong>Level 5 – AI-First Innovation</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Levels of AI Use</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 27, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>As I’ve talked to different people at work and amongst friends, there is a growing gap between those that use AI (mostly ChatGPT) and those that do not. It got me thinking there are levels to this for both developers (or anyone who writes code as part of their job) and non-developers (those that do not write code).</p>
+<p>Whether you use AI frequently or infrequently, there are some important things to consider.</p>
+<ol type="1">
+<li>AI used well has the potential to accelerate and augment people’s capabilities. I’ve experienced this the last few years. Co-workers who have learned to prompt language models well have generally become more capable and productive employees. And prompting language models is just one skill needed now in this age of AI.</li>
+<li>AI usage can lead to increase mental strain though. As your productivity increases (documents written, code written, applications deployed), there are more things to manage. AI is not quite at the point where it can be a true orchestrator of work in the software/tools that people use. Humans are still required here and it can become cognitively taxing switching between contexts.</li>
+<li>If you aren’t using AI now, it is a great time to start.
+<ul>
+<li>A simple thing you can do is try using ChatGPT for half of your Google searches and see what the results are. (Though with Google testing <a href="https://blog.google/products/search/ai-mode-search/">AI Mode</a>, which is similar to ChatGPT’s chat interface, this may eventually be the default for <a href="https://www.google.com/">www.google.com</a>)</li>
+<li>Learn to code - Some people have started saying humans do not need to write code anymore because AI can write better code. But I think it is still important to learn this skill. Writing code will help you understand what AI is doing. For example, some of the models in ChatGPT are reasoning models that also have access to a native code generation and execution tool. So if you ask a query where the model thinks it makes sense to write code to answer your question, it will do that. I recently asked a question about <a href="https://chatgpt.com/share/683697b2-5da4-8011-8d43-445172d7876e">how fast I would have run a half-marathon in a pair of supershoes</a>. The model thought for 1 minute 11 seconds. If you expand the reasoning trace, you’ll see it actually wrote code to do some math.</li>
+</ul></li>
+<li>Using AI can make you mentally lazy. As humans rely more on technology, this leads to <a href="https://www.ie.edu/center-for-health-and-well-being/blog/ais-cognitive-implications-the-decline-of-our-thinking-skills/">cognitive offloading</a> where “where individuals shift memory and problem-solving tasks to technology.” It happened when people started using calculators. It happened when people first starting using GPS. People’s spatial awareness decreased. AI is a much much more general tool than a calculator or a GPS. AI can now write code better than most (?) developers, it has super-human knowledge of the world, it can generate audio, images and video, the capabilities and possibilities are growing each day. As a daily user of AI tools, I sometimes have to remind myself to not off-loading everything to AI otherwise I’m not exercising certain critical thinking or creative areas of my brain.</li>
+<li>AI’s voice mode has gotten quite good. You can use your voice to chat with AI now and it will respond in real-time.</li>
+</ol>
+<p>Here are the levels:</p>
+<hr>
+<section id="level-0-no-use" class="level2">
+<h2 class="anchored" data-anchor-id="level-0-no-use"><strong>Level 0 – No Use</strong></h2>
+<blockquote class="blockquote">
+<p>“I don’t use AI at all.”</p>
+</blockquote>
+<ul>
+<li><strong>Developers</strong>: Write and ship code without AI assistance. May be unaware of AI tools or skeptical about their value. Write most code in an IDE or text editor, relying on traditional resources (documentation, Google, Stack Overflow) for help.</li>
+<li><strong>Non-developers</strong>: Haven’t tried ChatGPT yet. Or maybe have used it once. Do not use other AI tools (e.g., ChatGPT, Copilot, Notion AI). AI feels distant, abstract, or risky.</li>
+</ul>
+<hr>
+</section>
+<section id="level-1-occasional-use" class="level2">
+<h2 class="anchored" data-anchor-id="level-1-occasional-use"><strong>Level 1 – Occasional Use</strong></h2>
+<blockquote class="blockquote">
+<p>“I use AI once in a while when I’m stuck or curious.”</p>
+</blockquote>
+<ul>
+<li><strong>Developers</strong>: Use AI code completion like GitHub Copilot or ChatGPT to get unstuck occasionally. Paste errors or ask for code snippets.</li>
+<li><strong>Non-developers</strong>: Use AI for one-off tasks like drafting emails, summarizing notes, or brainstorming ideas.</li>
+</ul>
+<hr>
+</section>
+<section id="level-2-regular-use" class="level2">
+<h2 class="anchored" data-anchor-id="level-2-regular-use"><strong>Level 2 – Regular Use</strong></h2>
+<blockquote class="blockquote">
+<p>“AI is part of my daily toolkit.”</p>
+</blockquote>
+<ul>
+<li><strong>Developers</strong>: AI helps with writing boilerplate, generating tests, or exploring APIs. Copilot is turned on. They still edit heavily.</li>
+<li><strong>Non-developers</strong>: AI helps draft documents, rewrite content, or explore new ideas. May use AI across 2–3 tools. ChatGPT has replaced most of my Google searches.</li>
+</ul>
+<p>Example: My wife falls into this camp. ChatGPT has largely replaced her Google searches. She uses ChatGPT daily for idea generation for homeschooling, cooking, defining terms (esp.&nbsp;for kids).</p>
+<hr>
+</section>
+<section id="level-3-workflow-integration" class="level2">
+<h2 class="anchored" data-anchor-id="level-3-workflow-integration"><strong>Level 3 – Workflow Integration</strong></h2>
+<blockquote class="blockquote">
+<p>“AI changes <em>how</em> I work.”</p>
+</blockquote>
+<ul>
+<li><strong>Developers</strong>: AI tools are deeply integrated into IDEs and workflows. Prompts are crafted with intent. Created RAG systems. Using AI-native IDEs like Cursor or Windsurf.</li>
+<li><strong>Non-developers</strong>: Automate repeated tasks (e.g., meeting summaries → action items), combine tools (e.g., ChatGPT + Zapier), and create custom GPTs or workflows.</li>
+</ul>
+<hr>
+</section>
+<section id="level-4-ai-native-thinking" class="level2">
+<h2 class="anchored" data-anchor-id="level-4-ai-native-thinking"><strong>Level 4 – AI-Native Thinking</strong></h2>
+<blockquote class="blockquote">
+<p>“AI is a co-worker. I design around it.”</p>
+</blockquote>
+<ul>
+<li><strong>Developers</strong>: Design software and infrastructure assuming AI is part of the team—building AI agents, integrating LLMs, evaluating agents and other AI applications as well as fine-tuning models. Very familiar with LLM capabilities like structured output, reasoning models and multi-modality. Experimented with various agent frameworks, agent architectures and MCP.</li>
+<li><strong>Non-developers</strong>: Reimagine job roles around what AI can do: delegate, refine, and accelerate work with agents, workflows, and bespoke GPTs. Created scripts to automate some of their work or small applications using coding agents in an IDE or Replit.</li>
+</ul>
+<p>Example: Spotify’s CEO Tobias Lutke has changed how his company hires because of AI. He wrote in a <a href="https://x.com/tobi/status/1909231499448401946">memo</a> that employees have to prove they “cannot get what they watn done using AI” before asking for more headcount and resources.</p>
+<hr>
+</section>
+<section id="level-5-ai-first-innovation" class="level2">
+<h2 class="anchored" data-anchor-id="level-5-ai-first-innovation"><strong>Level 5 – AI-First Innovation</strong></h2>
+<blockquote class="blockquote">
+<p>“AI isn’t just part of the work—it changes <em>what’s possible</em>.”</p>
+</blockquote>
+<ul>
+<li><strong>Developers</strong>: Build entirely new paradigms of software with AI at the center. Move beyond LLM wrappers into agent-based systems, multi-agent systems, AI-native architectures, and emergent behavior. Actively experimenting with not just Foundation LLM APIs but real-time audio APIs (audio in and out).</li>
+<li><strong>Non-developers</strong>: Rethink roles, products, and business models from the ground up with AI as the foundation. Co-create with AI to scale impact in ways that were previously unimaginable.</li>
+</ul>
+<p>What level are you?</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawrencewu\.net");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="../../js/copy-markdown.js"></script>
+<script src="../../js/reading-progress.js"></script>
+<script src="../../js/toc-highlight.js"></script>
+
+
+
+
+</body></html>

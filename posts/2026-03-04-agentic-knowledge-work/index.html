@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2026-03-08">
+
+<title>Agentic Knowledge Work &amp; Agentic Machine Learning – Lawrence Wu’s Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fc144a232052f6959280d4dadb28b3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  BLB.Tagger.Translation = 'ESV';
+  BLB.Tagger.HyperLinks = 'all';
+  BLB.Tagger.HideTanslationAbbrev = false;
+  BLB.Tagger.TargetNewWindow = true;
+  BLB.Tagger.DarkTheme = false;
+  BLB.Tagger.Style = 'par';
+  BLB.Tagger.NoSearchTagNames = '';
+  BLB.Tagger.NoSearchClassNames = 'noTag doNotTag';
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Agentic Knowledge Work &amp; Agentic Machine Learning – Lawrence Wu’s Blog">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:image" content="https://lawrencewu.net/posts/2026-03-04-agentic-knowledge-work/images/simple_tool_calling.png">
+<meta property="og:site_name" content="Lawrence Wu's Blog">
+<meta property="og:image:height" content="1297">
+<meta property="og:image:width" content="2201">
+<meta name="twitter:title" content="Agentic Knowledge Work &amp; Agentic Machine Learning – Lawrence Wu’s Blog">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:image" content="https://lawrencewu.net/posts/2026-03-04-agentic-knowledge-work/images/simple_tool_calling.png">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image-height" content="1297">
+<meta name="twitter:image-width" content="2201">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html#subscribe"> 
+<span class="menu-text">Subscribe</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#v1.0-agent-frameworks" id="toc-v1.0-agent-frameworks" class="nav-link active" data-scroll-target="#v1.0-agent-frameworks">v1.0 Agent Frameworks</a></li>
+  <li><a href="#v2.0-agent-frameworks" id="toc-v2.0-agent-frameworks" class="nav-link" data-scroll-target="#v2.0-agent-frameworks">v2.0 Agent Frameworks</a></li>
+  <li><a href="#agentic-machine-learning" id="toc-agentic-machine-learning" class="nav-link" data-scroll-target="#agentic-machine-learning">Agentic Machine Learning</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Agentic Knowledge Work &amp; Agentic Machine Learning</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai</div>
+    <div class="quarto-category">claude code</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 8, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Johannes Gutenberg invented the printing press in Germany around 1440. This new machine that had movable type could print 3,600 pages per day compared to 40 by hand. This is a 90x speedup. It certainly made mass printing books possible because the cost plummeted. But the effect wasn’t merely that books got copied faster. The written word became important. Ideas could now spread rapidly. Skills like reading and writing became much more important in this era after the printing press. Society was fundamentally changed.</p>
+<p>AI is ushering in a new era like the printing press did. I believe we’re entering an era of Agentic Knowledge Work. I define “agentic knowledge work” simply as:</p>
+<blockquote class="blockquote">
+<p>Using AI Agents to do meaningful amounts of knowledge work.</p>
+</blockquote>
+<p>Just like the printing press had dramatic first and second order effects, AI agents are poised to do the same thing. The first order effect of coding agents is it has become much cheaper to write code. No one knows for certain what second order there will be. However one interesting thing has happened is the amazing generalizability of coding agents like Claude Code. I believe these agents will do more and more knowledge work. You already are seeing it with the development of agent skills and the packaging of skills and other capabilities together to do general software engineering tasks (see <a href="https://github.com/EveryInc/compound-engineering-plugin">Compound Engineering Plugin</a>) or language model training loops (see Karpathy’s <a href="https://github.com/karpathy/autoresearch">autoresearch</a>).</p>
+<p>People used to think software engineering jobs were most at risk because agents could write code so well. But an interesting thing has happened when we created AI agents that could write code. When an AI agent has the ability to write reliable code to do things (along with the ability to use tools), the AI agent can write code in order to accomplish tasks. This is massive. This means you can specify an intent (the what) and leave the implementation details to the agent and the agent will decide what to do (the how). The official <a href="https://code.claude.com/docs/en/how-claude-code-works#delegate-don%E2%80%99t-dictate">Claude Code docs say something similar</a>: “Delegate, don’t dictate - Think of delegating to a capable colleague. Give context and direction, then trust Claude to figure out the details.”</p>
+<p>What an “AI Agent” is has evolved over the last few years. They used to be simple tool-calling agents. Coding agents like Claude Code first emerged in early 2025. However these coding agents like Claude Code and Codex have become more general purpose agents.</p>
+<section id="v1.0-agent-frameworks" class="level2">
+<h2 class="anchored" data-anchor-id="v1.0-agent-frameworks">v1.0 Agent Frameworks</h2>
+<p>We’re no longer in the era of creating simple tool-calling agents in an agent framework LangGraph or CrewAI (call it v1.0 of agent frameworks). These were useful and innovative at the time. You could define a tool like <code>fetch_data_from_bq</code> and bind it to your LLM. Then when you queried your agent in a situation where the tool would be useful, the tool would be called, the tool response would be set back to your agent and the agent would try to answer your question. The first time I saw this I was amazed. They were called ReAct agents based on this <a href="https://arxiv.org/abs/2210.03629">paper</a>.</p>
+<p>You would:</p>
+<ul>
+<li>Step 1: Define your agent with a model like GPT-4 at the time and define a function as a Python fetch (<code>fetch_data</code>), bind that tool to the LLM and you had a simple tool calling agent.</li>
+<li>Step 2: Run it.
+<ul>
+<li>You would pass in a query to your agent “How are my sales?”</li>
+<li>The LLM would decide, do I have any tools available to answer the query?</li>
+<li>The fetch_data tool is useful so I will use it</li>
+<li>The LLM will generate the arguments to call this tool</li>
+<li>The tool will be called with those arguments</li>
+<li>The tool response will be sent back to the LLM</li>
+<li>The LLM will use the tool response to answer the question</li>
+<li>The final answer will be returned to the user “Sales are $50k this year”</li>
+</ul></li>
+</ul>
+<p><img src="./images/simple_tool_calling.png" class="img-fluid"></p>
+</section>
+<section id="v2.0-agent-frameworks" class="level2">
+<h2 class="anchored" data-anchor-id="v2.0-agent-frameworks">v2.0 Agent Frameworks</h2>
+<p>I’ve had the opportunity to observe this transition first hand. I was a heavy LangChain and LangGraph user since that project started in 2024 and continued a heavy user in 2025 (I <a href="https://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/">attended their first conference</a> in early 2025). But Claude Code is a different beast. It’s a complete different type of agentic harness. The reason it is different are a few:</p>
+<ul>
+<li>the underlying models have improved dramatically and now have reasoning capabilities</li>
+<li>the base tools that Claude Code has access to are very generic. For example with the Bash tool, the agent literally has access to thousands of battle-tested programs (CLIs).</li>
+<li>The biggest change though has been code generation and the ability to create tools on the fly that the agent needs to solve a task.</li>
+<li>You can run these agents in parallel</li>
+</ul>
+<p>An analogy I like to give people is imagine you hired a contractor to retile your bathrooms. He needs tools like a wet tile saw to cut the tiles in order to do the job effectively. If he doesn’t have this saw, he needs to go buy or rent one. An AI Agent that can write code and reason can create the tools it needs on the fly to accomplish it’s task! You no longer need to create tools for an agent (although you still can). You just need to specify what you want and the agent can decide how to get there (either using off the shelf libraries or writing code on the fly to do what it needs). These v2.0 Agent Frameworks are so much more generalizable.</p>
+<p><img src="./images/coding_agent.png" class="img-fluid"></p>
+<p>Since I <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">started using Claude Code regularly in July 2025</a>, I’ve noticed a few things in my day-to-day job as a data scientist and data science manager:</p>
+<ul>
+<li>Claude Code can do increasingly complicated tasks</li>
+<li>I no longer am concerned about prompting currently with tricks like “As an expert X” or “Think step step” that were necessary in 2024 but am more focused on specifying my overall goal and intent clearly</li>
+<li>The underlying agent harness changes quite a bit. There are usually <a href="https://github.com/anthropics/claude-code/commits/main/CHANGELOG.md">multiple releases every week</a>. It’s now valuable to spend time understanding what functionality the harness is providing. I see this kind of like a craftsman who knows his tools and can use them more effectively.</li>
+<li>“Meta-work” - thinking about my work and how I’m doing it. I’m regularly asking myself, this is how I am used to doing things, what is the agent-first way of doing things?</li>
+</ul>
+<p>One small example of this last bullet point was when writing my annual review in October 2025, I usually have a hard time remembering what I’ve accomplished. But this year I had Claude Code fetch context for me. I prompted it to go our company’s private Github and fetch all of my commits, a Jira MCP to see the tickets I’ve closed and a Confluence MCP to fetch all of the Confluence pages I’ve authored and summarize the work I’ve done and how it matches my goals (copy paste goal text here). Claude Code wrote the code to fetch my commits from the Github API using the <code>gh</code> CLI and it used our internally hosted Atlassian MCP servers to fetch Jira/Confluence content. This was incredibly valuable in helping me write a rich annual review. But this idea of doing things that were not possible before is something I’m experiencing almost every week now.</p>
+</section>
+<section id="agentic-machine-learning" class="level2">
+<h2 class="anchored" data-anchor-id="agentic-machine-learning">Agentic Machine Learning</h2>
+<p>I have worked as a data scientist for 10+ years. One of the core functions is to train machine learning models. Kaggle has changed what most people think about data science or machine learning. In a typical Kaggle competition, you are given a clear task, a clear dataset and a clear error metric you are building against. In the real world, none of these 3 things is guaranteed. The business may not give you a clear task. The task may not even be best solved by machine learning. The dataset is usually something you have to create by exploring data, understanding the source data, joining together multiple data sources and engineering features. The error metric is also not always clear either.</p>
+<p>I was inspired by Kieran Klaassen’s <a href="https://github.com/EveryInc/compound-engineering-plugin">Compound Engineering Plugin</a> that has 4 Claude Code commands:</p>
+<ul>
+<li>plan: Turn feature ideas into detailed implementation plans</li>
+<li>work: Execute plans with worktrees and task tracking</li>
+<li>review: Multi-agent code review before merging</li>
+<li>compound: Document learnings to make future work easier</li>
+</ul>
+<p>I wanted something similar for machine learning workflows in what is agentic machine learning. My first stab at this is the <a href="https://github.com/lawwu/agentic-ml-plugin">agentic-ml-plugin</a>. Currently there are 10 main skills:</p>
+<ul>
+<li>review-target</li>
+<li>plan-experiment</li>
+<li>build-baseline</li>
+<li>check-dataset-quality</li>
+<li>check-data-pipeline</li>
+<li>feature-engineering</li>
+<li>babysit-training</li>
+<li>check-failed-run</li>
+<li>check-eval</li>
+<li>explain-model</li>
+</ul>
+<p>I have another skill that runs all 10 of the previous skill in one called <code>orchestrate-e2e</code>. You can install it in Claude Code with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> plugin marketplace add lawwu/agentic-ml-plugin</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> plugin install agentic-ml@agentic-ml</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>These are all things that I generally do in an ML project. I find it amazing these can now be specified as skills so that an agent can run them now. You can also create skills that chain other skills together. So given a dataset, an agent like Claude Code can run all of the above steps autonomously.</p>
+<p>One issue when working with coding agents is developing trust in agent output. I was inspired by Simon Willison’s <a href="https://github.com/simonw/showboat">showboat</a> repo that creates executable documents to demo an agent’s work. I created <a href="https://github.com/lawwu/mlscribe">mlscribe</a> to create machine-learning specific demo documents. A couple sample skills:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/orchestrate-e2e</span> on the medium dataset in demo/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>or</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/orchestrate-e2e</span> on the medium dataset in demo/ but use the mlscribe cli to show me some artifacts. see https://github.com/lawwu/mlscribe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>But the point of this post isn’t necessarily to show all the functionality of these ML specific repos. The point is in a fairly technical job like training machine learning models, I’m seeing glimpses of being able to automate the process. I’m seeing the agent being able to do very valuable work like explore large datasets, create useful machine learning features and write and debug training pipelines. I expect this pattern to spread to other types of knowledge work. For each knowledge work domain, this looks like:</p>
+<ul>
+<li>creating skills</li>
+<li>creating plugins to package up those skills</li>
+<li>chaining together different skills</li>
+<li>creating systems to verify the agent’s work</li>
+</ul>
+<p>As I models capabilities improve, as agent harnesses improve, as better skills get written for each domain - agents like Claude Code will be able to do longer and longer horizon tasks across most knowledge work tasks.</p>
+<p>What will remain for humans to do if things continue to improve? It’s impossible to predict the types of jobs that will remain or the new ones that will be created. It’s also too difficult to fathom how society, the economy and world will change when “intelligence” is scaled up so massively. As a knowledge worker, it’s such an exciting time to be working. Whatever ideas I have, the agent can bring those ideas into existence. Things are changing so fast though. I’ve never seen my own work habits change so dramatically in my entire career. As a Christian, I’m at peace because I know God is ultimately sovereign and in control. God is the one who created people and he created us to work (Genesis 2:15) so I believe there is a God-imbued value in every person and in every person’s work. Therefore, I don’t forsee us living in a world where any sort of work or labor will be eliminated.</p>
+<p>As we enter into this era of agentic knowledge work, I encourage every knowledge worker to prepare themselves though through learning how to use AI in their specific jobs, especially using these v2.0 Agent Frameworks like Claude Code and Codex.</p>
+<p>Other resources:</p>
+<ul>
+<li>I started capturing examples of examples of agentic knowledge work in this <a href="https://github.com/lawwu/awesome-agentic-knowledge-work">repository</a>.</li>
+<li>Simon Willison has a new guide called <a href="https://simonwillison.net/guides/agentic-engineering-patterns/">agentic engineering patterns</a> for new ways of working in this agentic knowledge era.</li>
+<li>Anthropic published a piece on the <a href="https://www.anthropic.com/research/labor-market-impacts">labor market impacts of AI</a></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawrencewu\.net");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="../../js/copy-markdown.js"></script>
+<script src="../../js/reading-progress.js"></script>
+<script src="../../js/toc-highlight.js"></script>
+
+
+
+
+</body></html>

@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Lawrence Wu">
+<meta name="dcterms.date" content="2025-08-21">
+
+<title>Why Companies Should Open Source and Host Their Own MCP Servers – Lawrence Wu’s Blog</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-fc144a232052f6959280d4dadb28b3a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-LN4GM4FVCJ"></script>
+
+<script type="text/plain" cookie-consent="tracking">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-LN4GM4FVCJ', { 'anonymize_ip': true});
+</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"simple",
+  "consent_type":"implied",
+  "palette":"light",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary","functionality","tracking","targeting"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script>
+  // Log script loading attempt
+  console.log('Loading GitHub stars script');
+
+  // Simple script loading for main website
+  const scriptTag = document.createElement('script');
+  scriptTag.src = '/js/github-stars.js';
+  scriptTag.async = false;
+  scriptTag.defer = true;
+  scriptTag.onload = () => console.log('GitHub stars script loaded successfully');
+  scriptTag.onerror = (err) => console.error('Error loading GitHub stars script:', err);
+
+  // Append to document head
+  document.head.appendChild(scriptTag);
+</script>
+<script src="https://www.blueletterbible.org/assets/scripts/blbToolTip/BLB_ScriptTagger-min.js" type="text/javascript"></script>
+<script type="text/javascript">
+  BLB.Tagger.Translation = 'ESV';
+  BLB.Tagger.HyperLinks = 'all';
+  BLB.Tagger.HideTanslationAbbrev = false;
+  BLB.Tagger.TargetNewWindow = true;
+  BLB.Tagger.DarkTheme = false;
+  BLB.Tagger.Style = 'par';
+  BLB.Tagger.NoSearchTagNames = '';
+  BLB.Tagger.NoSearchClassNames = 'noTag doNotTag';
+</script>
+
+
+<link rel="stylesheet" href="../../styles.css">
+<meta property="og:title" content="Why Companies Should Open Source and Host Their Own MCP Servers – Lawrence Wu’s Blog">
+<meta property="og:description" content="This is Lawrence Wu’s personal website">
+<meta property="og:site_name" content="Lawrence Wu's Blog">
+<meta name="twitter:title" content="Why Companies Should Open Source and Host Their Own MCP Servers – Lawrence Wu’s Blog">
+<meta name="twitter:description" content="This is Lawrence Wu’s personal website">
+<meta name="twitter:creator" content="@law_wu">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Lawrence Wu’s Blog</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html#subscribe"> 
+<span class="menu-text">Subscribe</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://github.com/lawwu"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text">GitHub</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://twitter.com/law_wu"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text">Twitter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:lawrencewu1+blog@gmail.com"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../blog.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-this-matters-for-companies" id="toc-why-this-matters-for-companies" class="nav-link active" data-scroll-target="#why-this-matters-for-companies">Why This Matters for Companies</a></li>
+  <li><a href="#recommended-next-steps" id="toc-recommended-next-steps" class="nav-link" data-scroll-target="#recommended-next-steps">Recommended Next Steps</a>
+  <ul class="collapse">
+  <li><a href="#identify-endpoints-and-workflows-to-expose-as-mcp-tools" id="toc-identify-endpoints-and-workflows-to-expose-as-mcp-tools" class="nav-link" data-scroll-target="#identify-endpoints-and-workflows-to-expose-as-mcp-tools">1. Identify Endpoints and Workflows to Expose as MCP Tools</a></li>
+  <li><a href="#build-the-api-client-mcp-server-and-tools" id="toc-build-the-api-client-mcp-server-and-tools" class="nav-link" data-scroll-target="#build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</a></li>
+  <li><a href="#deploy-the-mcp-server-publicly" id="toc-deploy-the-mcp-server-publicly" class="nav-link" data-scroll-target="#deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</a></li>
+  <li><a href="#provide-example-clients-and-agents" id="toc-provide-example-clients-and-agents" class="nav-link" data-scroll-target="#provide-example-clients-and-agents">4. Provide Example Clients and Agents</a></li>
+  <li><a href="#open-source-the-mcp-server" id="toc-open-source-the-mcp-server" class="nav-link" data-scroll-target="#open-source-the-mcp-server">5. Open Source the MCP Server</a></li>
+  <li><a href="#lightcast-mcp-server" id="toc-lightcast-mcp-server" class="nav-link" data-scroll-target="#lightcast-mcp-server">6. Lightcast MCP Server</a></li>
+  </ul></li>
+  <li><a href="#popular-remote-mcp-servers" id="toc-popular-remote-mcp-servers" class="nav-link" data-scroll-target="#popular-remote-mcp-servers">Popular Remote MCP Servers</a>
+  <ul class="collapse">
+  <li><a href="#adding-remote-servers-to-claude-code" id="toc-adding-remote-servers-to-claude-code" class="nav-link" data-scroll-target="#adding-remote-servers-to-claude-code">Adding Remote Servers to Claude Code</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Why Companies Should Open Source and Host Their Own MCP Servers</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">ai</div>
+    <div class="quarto-category">claude code</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lawrence Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 21, 2025</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><a href="https://github.com/modelcontextprotocol/modelcontextprotocol"><strong>Model Context Protocol (MCP)</strong></a> has quickly become a standard interface for how agents and LLM-powered clients interact with tools and APIs. What’s exciting is that some companies are already hosting <strong>public-facing MCP servers</strong> with authorization. For example, Atlassian provides one here: <a href="https://support.atlassian.com/rovo/docs/getting-started-with-the-atlassian-remote-mcp-server/">Getting Started with the Atlassian Remote MCP Server</a>. Their MCP server lives at: <a href="https://mcp.atlassian.com/v1/sse">https://mcp.atlassian.com/v1/sse</a>.</p>
+<p>This means customers can simply plug in that URL, add their authentication credentials, and instantly connect <strong>any MCP client</strong>—whether that’s VS Code, Windsurf, ChatGPT (<a href="https://platform.openai.com/docs/guides/tools-remote-mcp">directly now in their Responses API</a>, <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code</a>), or agent frameworks like <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> and <a href="https://github.com/google/adk-python">ADK</a>. Users don’t have to worry about deploying or managing their own MCP instance. Users also do not need to rely on companies to build agents or AI applications for their services. Users can go ahead and use their LLM or AI tool of choice and plug in these remote MCP servers to build their own agents and AI applications.</p>
+<p>That’s a powerful model—and one that more companies should follow.</p>
+<hr>
+<section id="why-this-matters-for-companies" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-for-companies">Why This Matters for Companies</h2>
+<p>Each company has an opportunity to be forward-leaning and recognized as an <strong>AI-first company</strong> in how they adopt and expose MCP internally and externally. By exposing MCPs, they will allow their customers the flexibility to build custom agents and AI applications on top of the company’s APIs and their data in the vendor.</p>
+<p>For example, now that there is an Atlassian MCP Server that is compatible with JIRA and Confluence, anyone can build a:</p>
+<ul>
+<li>JIRA Agent that uses JIRA tools in the Atlassian MCP Server in any AI tool: ChatGPT, Claude, Claude Code, LangGraph, you name it.</li>
+<li>Confluence Deep Research Agent that uses Confluence tools in the Atlassian MCP Server in any AI tool with any reasoning model like <a href="https://platform.openai.com/docs/models/o3-deep-research">o3-deep-research</a> or <a href="https://cloud.google.com/vertex-ai/generative-ai/docs/models/gemini/2-5-pro">gemini-2.5-pro</a> or any open source model of your choice.</li>
+</ul>
+<p>Right now, very few companies are both:</p>
+<ul>
+<li><strong>Open sourcing their MCP Server code</strong>, and</li>
+<li><strong>Hosting public remote MCP servers</strong>.</li>
+</ul>
+<p>I think companies should do both. Here’s how.</p>
+<hr>
+</section>
+<section id="recommended-next-steps" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-next-steps">Recommended Next Steps</h2>
+<section id="identify-endpoints-and-workflows-to-expose-as-mcp-tools" class="level3">
+<h3 class="anchored" data-anchor-id="identify-endpoints-and-workflows-to-expose-as-mcp-tools">1. Identify Endpoints and Workflows to Expose as MCP Tools</h3>
+<p>Not every REST API makes a good MCP tool. Instead of exposing every single endpoint, you should focus on <strong>common workflows</strong> that agents will use.</p>
+<ul>
+<li><p>Example: When I built a Python SDK for the Lightcast API, a frequent operation was normalizing job titles and retrieving related skills. Doing this directly required <em>three</em> separate API calls (normalize_title, map normalized title to a Lightcast Specialized Occupation and get related skills to that Lightcast Specialized Occupation). Instead, I created a <strong>dedicated tool/API</strong> that bundled those calls together—much more natural for an agent.</p></li>
+<li><p>Jeremiah Lowin (creator of FastMCP) describes this well in <a href="https://www.jlowin.dev/blog/stop-converting-rest-apis-to-mcp">Stop Converting REST APIs to MCP</a>: &gt; <em>“An API that is ‘sophisticated’ for a human is one with rich, composable, atomic parts. An API that is sophisticated for an agent is one that is ruthlessly curated and minimalist.”</em></p></li>
+</ul>
+<p>You should design with the agent in mind. That might mean rethinking data formats (YAML is often better than JSON) or collapsing multi-step operations into a single MCP tool.</p>
+<hr>
+</section>
+<section id="build-the-api-client-mcp-server-and-tools" class="level3">
+<h3 class="anchored" data-anchor-id="build-the-api-client-mcp-server-and-tools">2. Build the API Client, MCP Server, and Tools</h3>
+<p>The typical stack looks like this:</p>
+<ul>
+<li><strong>API Client</strong>: Handles authentication and connectivity to your company’s APIs.</li>
+<li><strong>MCP Server</strong>: Implements the MCP protocol on top of that client.</li>
+</ul>
+<p>All of the MCP servers I’ve written so far are in Python, using <a href="https://github.com/jlowin/fastmcp">FastMCP</a> as the framework. The pattern is straightforward:</p>
+<ol type="1">
+<li>Write an API Client.</li>
+<li>Layer the MCP protocol logic on top.</li>
+</ol>
+<p>You can use agentic coding tools like Claude Code to quickly spin these up.</p>
+<hr>
+</section>
+<section id="deploy-the-mcp-server-publicly" class="level3">
+<h3 class="anchored" data-anchor-id="deploy-the-mcp-server-publicly">3. Deploy the MCP Server Publicly</h3>
+<p>There are more options than ever for running lightweight public services:</p>
+<ul>
+<li><a href="https://cloud.google.com/blog/topics/developers-practitioners/build-and-deploy-a-remote-mcp-server-to-google-cloud-run-in-under-10-minutes">Google Cloud Run</a></li>
+<li><a href="https://blog.cloudflare.com/remote-model-context-protocol-servers-mcp/">Cloudflare Workers</a></li>
+</ul>
+<p>Each of these can make your MCP server accessible with minimal operational overhead.</p>
+<hr>
+</section>
+<section id="provide-example-clients-and-agents" class="level3">
+<h3 class="anchored" data-anchor-id="provide-example-clients-and-agents">4. Provide Example Clients and Agents</h3>
+<p>To encourage adoption, publish sample implementations that connect to the server. These could be:</p>
+<ul>
+<li>VS Code extensions</li>
+<li>LangGraph or ADK agents</li>
+<li>Example workflows in ChatGPT or Claude</li>
+</ul>
+<p>This lowers the barrier for customers to experiment quickly.</p>
+<hr>
+</section>
+<section id="open-source-the-mcp-server" class="level3">
+<h3 class="anchored" data-anchor-id="open-source-the-mcp-server">5. Open Source the MCP Server</h3>
+<p>Some of the most popular MCP servers today aren’t even official. For example, the <strong><a href="https://github.com/sooperset/mcp-atlassian">mcp-atlassian</a></strong> project is developed by an open-source developer <a href="https://github.com/sooperset">Hyeonsoo Lee</a> and not by Atlassian. That’s a missed opportunity.</p>
+<p>If companies open source their MCP servers, the benefits are significant:</p>
+<ul>
+<li>Community contributions and bug fixes</li>
+<li>Customer self-hosting when desired</li>
+<li>Stronger trust and transparency</li>
+</ul>
+<hr>
+</section>
+<section id="lightcast-mcp-server" class="level3">
+<h3 class="anchored" data-anchor-id="lightcast-mcp-server">6. Lightcast MCP Server</h3>
+<p>I’ve interacted with the Lightcast API a fair amount and open-sourced an MCP Server for Lightcast called <a href="https://github.com/lawwu/mcp-lightcast">mcp-lightcast</a>.</p>
+</section>
+</section>
+<section id="popular-remote-mcp-servers" class="level2">
+<h2 class="anchored" data-anchor-id="popular-remote-mcp-servers">Popular Remote MCP Servers</h2>
+<p>Several companies are already providing remote MCP servers that you can connect to directly. Here are some notable examples from the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP docs</a> and from <a href="https://github.com/jaw9c/awesome-remote-mcp-servers">awesome-remote-mcp-servers</a>.</p>
+<section id="adding-remote-servers-to-claude-code" class="level3">
+<h3 class="anchored" data-anchor-id="adding-remote-servers-to-claude-code">Adding Remote Servers to Claude Code</h3>
+<p>You can easily add these servers to Claude Code using the CLI. Note some of these are not remote MCP servers. Here are the exact commands:</p>
+<section id="development-testing-tools" class="level4">
+<h4 class="anchored" data-anchor-id="development-testing-tools">Development &amp; Testing Tools</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http sentry https://mcp.sentry.dev/mcp</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http socket https://mcp.socket.dev/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http hugging-face https://huggingface.co/mcp</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http jam https://mcp.jam.dev/mcp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="project-management" class="level4">
+<h4 class="anchored" data-anchor-id="project-management">Project Management</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse asana https://mcp.asana.com/sse</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse atlassian https://mcp.atlassian.com/v1/sse</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add clickup <span class="at">--env</span> CLICKUP_API_KEY=YOUR_KEY <span class="at">--env</span> CLICKUP_TEAM_ID=YOUR_ID <span class="at">--</span> npx <span class="at">-y</span> @hauptsache.net/clickup-mcp</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http intercom https://mcp.intercom.com/mcp</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse linear https://mcp.linear.app/sse</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http notion https://mcp.notion.com/mcp</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http box https://mcp.box.com/</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http fireflies https://api.fireflies.ai/mcp</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse monday https://mcp.monday.com/sse</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="databases" class="level4">
+<h4 class="anchored" data-anchor-id="databases">Databases</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add airtable <span class="at">--env</span> AIRTABLE_API_KEY=YOUR_KEY <span class="at">--</span> npx <span class="at">-y</span> airtable-mcp-server</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http daloopa https://mcp.daloopa.com/server/mcp</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http hubspot https://mcp.hubspot.com/anthropic</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="payments-commerce" class="level4">
+<h4 class="anchored" data-anchor-id="payments-commerce">Payments &amp; Commerce</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http paypal https://mcp.paypal.com/mcp</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse plaid https://api.dashboard.plaid.com/mcp/sse</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse square https://mcp.squareup.com/sse</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http stripe https://mcp.stripe.com</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="design" class="level4">
+<h4 class="anchored" data-anchor-id="design">Design</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http figma-dev-mode-mcp-server http://127.0.0.1:3845/mcp</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> sse invideo https://mcp.invideo.io/sse</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http canva https://mcp.canva.com/mcp</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="infrastructure-devops" class="level4">
+<h4 class="anchored" data-anchor-id="infrastructure-devops">Infrastructure / DevOps</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http netlify https://netlify-mcp.netlify.app/mcp</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http stytch http://mcp.stytch.dev/mcp</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">claude</span> mcp add <span class="at">--transport</span> http vercel https://mcp.vercel.com/</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For more details, see the <a href="https://docs.anthropic.com/en/docs/claude-code/mcp">Claude Code MCP documentation</a>.</p>
+<hr>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lawrencewu\.net");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<script src="https://utteranc.es/client.js" repo="lawwu/blog_comments" issue-term="pathname" theme="github-light" crossorigin="anonymous" async="">
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+<script src="../../js/copy-markdown.js"></script>
+<script src="../../js/reading-progress.js"></script>
+<script src="../../js/toc-highlight.js"></script>
+
+
+
+
+</body></html>
