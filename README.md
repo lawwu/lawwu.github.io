@@ -1,3 +1,5 @@
+> **Note:** This blog has moved. Active development continues at [lawwu/lawrencewu-blog](https://github.com/lawwu/lawrencewu-blog) and is served at [lawrencewu.net](https://lawrencewu.net). This repo remains live to redirect traffic from lawwu.github.io.
+
 # Lawrence Wu's Quarto Blog
 
 - My blog built using [Quarto](https://quarto.org/) which I had heard about after following [nbdev](https://github.com/fastai/nbdev), [which now uses Quarto](https://www.fast.ai/posts/2022-07-28-nbdev2.html).
