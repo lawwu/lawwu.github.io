@@ -1,18 +1,18 @@
 project:
   type: website
-  output-dir: docs
   resources:
     - js/
   render:
     - "*"
     - "!CLAUDE.md"
+    - "!listing.ejs.md"
 
 execute:
   freeze: auto
 
 website:
   title: "Lawrence Wu's Blog"
-  site-url: https://lawwu.github.io/
+  site-url: https://lawrencewu.net
   description: "This is Lawrence Wu's personal website"
   open-graph: true
   google-analytics: "G-LN4GM4FVCJ"
