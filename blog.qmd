@@ -5,5 +5,5 @@ title: "Redirecting…"
 ```{=html}
 <meta http-equiv="refresh" content="0; url=/">
 <script>window.location.replace("/");</script>
-<p>Redirecting to <a href="/">lawwu.github.io</a>…</p>
+<p>Redirecting to <a href="/">lawrencewu.net</a>…</p>
 ```
