@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Lawrence Wu&#39;s Blog</title>
-<link>https://lawwu.github.io/conferences.html</link>
-<atom:link href="https://lawwu.github.io/conferences.xml" rel="self" type="application/rss+xml"/>
+<link>https://lawrencewu.net/conferences.html</link>
+<atom:link href="https://lawrencewu.net/conferences.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.8.27</generator>
 <lastBuildDate>Fri, 30 May 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>LangChain Interrupt Agent Conference 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2025-05-30-langchain-interrupt-2025/</link>
+  <link>https://lawrencewu.net/conferences/2025-05-30-langchain-interrupt-2025/</link>
   <description><![CDATA[ 
 
 
@@ -31,13 +31,13 @@
  ]]></description>
   <category>Conference</category>
   <category>LangChain</category>
-  <guid>https://lawwu.github.io/conferences/2025-05-30-langchain-interrupt-2025/</guid>
+  <guid>https://lawrencewu.net/conferences/2025-05-30-langchain-interrupt-2025/</guid>
   <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>John Street - God’s Design for Marriage</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-08-14-john-street-1-marriage/</link>
+  <link>https://lawrencewu.net/conferences/2024-08-14-john-street-1-marriage/</link>
   <description><![CDATA[ 
 
 
@@ -108,13 +108,13 @@
   <category>Marriage</category>
   <category>God</category>
   <category>John Street</category>
-  <guid>https://lawwu.github.io/conferences/2024-08-14-john-street-1-marriage/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-08-14-john-street-1-marriage/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>John Street - God’s Design for Husbands</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-08-14-john-street-2-husbands/</link>
+  <link>https://lawrencewu.net/conferences/2024-08-14-john-street-2-husbands/</link>
   <description><![CDATA[ 
 
 
@@ -232,13 +232,13 @@
   <category>God</category>
   <category>John Street</category>
   <category>Husbands</category>
-  <guid>https://lawwu.github.io/conferences/2024-08-14-john-street-2-husbands/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-08-14-john-street-2-husbands/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>John Street - God’s Design for Wives</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-08-14-john-street-3-wives/</link>
+  <link>https://lawrencewu.net/conferences/2024-08-14-john-street-3-wives/</link>
   <description><![CDATA[ 
 
 
@@ -312,13 +312,13 @@
   <category>God</category>
   <category>John Street</category>
   <category>Wives</category>
-  <guid>https://lawwu.github.io/conferences/2024-08-14-john-street-3-wives/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-08-14-john-street-3-wives/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>John Street - God’s Design for Communication</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-08-14-john-street-4-communication/</link>
+  <link>https://lawrencewu.net/conferences/2024-08-14-john-street-4-communication/</link>
   <description><![CDATA[ 
 
 
@@ -391,13 +391,13 @@
   <category>God</category>
   <category>John Street</category>
   <category>Communication</category>
-  <guid>https://lawwu.github.io/conferences/2024-08-14-john-street-4-communication/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-08-14-john-street-4-communication/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>John Street - God’s Design for Marital Union</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-08-14-john-street-5-marital-union/</link>
+  <link>https://lawrencewu.net/conferences/2024-08-14-john-street-5-marital-union/</link>
   <description><![CDATA[ 
 
 
@@ -472,13 +472,13 @@
   <category>Marriage</category>
   <category>God</category>
   <category>John Street</category>
-  <guid>https://lawwu.github.io/conferences/2024-08-14-john-street-5-marital-union/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-08-14-john-street-5-marital-union/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>John Street - God’s Design for Marriage Q&amp;A</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-08-14-john-street-6-qa/</link>
+  <link>https://lawrencewu.net/conferences/2024-08-14-john-street-6-qa/</link>
   <description><![CDATA[ 
 
 
@@ -634,13 +634,13 @@
   <category>Marriage</category>
   <category>God</category>
   <category>John Street</category>
-  <guid>https://lawwu.github.io/conferences/2024-08-14-john-street-6-qa/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-08-14-john-street-6-qa/</guid>
   <pubDate>Wed, 14 Aug 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Mastering LLMs - Fine-Tuning Workshop 3 - Instrumenting &amp; Evaluating LLMs (guest speakers Harrison Chase, Bryan Bischof, Shreya Shankar, Eugene Yan)</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2024-05-28-mllms-workshop3/</link>
+  <link>https://lawrencewu.net/conferences/2024-05-28-mllms-workshop3/</link>
   <description><![CDATA[ 
 
 
@@ -692,13 +692,13 @@
   <category>LLMs</category>
   <category>Mastering LLMs</category>
   <category>Evaluation</category>
-  <guid>https://lawwu.github.io/conferences/2024-05-28-mllms-workshop3/</guid>
+  <guid>https://lawrencewu.net/conferences/2024-05-28-mllms-workshop3/</guid>
   <pubDate>Tue, 28 May 2024 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>AI Engineer Summit 2023</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2023-10-10-ai-engineer-summit/</link>
+  <link>https://lawrencewu.net/conferences/2023-10-10-ai-engineer-summit/</link>
   <description><![CDATA[ 
 
 
@@ -2724,13 +2724,13 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
   <category>AI</category>
   <category>LLMs</category>
   <category>AI Engineering</category>
-  <guid>https://lawwu.github.io/conferences/2023-10-10-ai-engineer-summit/</guid>
+  <guid>https://lawrencewu.net/conferences/2023-10-10-ai-engineer-summit/</guid>
   <pubDate>Tue, 10 Oct 2023 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>KDD 2023 - Workshops: LLM and Causal Inference</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/conferences/2023-08-07-kdd2023-day1/</link>
+  <link>https://lawrencewu.net/conferences/2023-08-07-kdd2023-day1/</link>
   <description><![CDATA[ 
 
 
@@ -3337,7 +3337,7 @@ font-style: inherit;">"input"</span>:query})</span></code></pre></div></div>
   <category>KDD</category>
   <category>LLM</category>
   <category>Causal Inference</category>
-  <guid>https://lawwu.github.io/conferences/2023-08-07-kdd2023-day1/</guid>
+  <guid>https://lawrencewu.net/conferences/2023-08-07-kdd2023-day1/</guid>
   <pubDate>Mon, 07 Aug 2023 00:00:00 GMT</pubDate>
 </item>
 </channel>

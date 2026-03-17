@@ -97,6 +97,19 @@ cookieconsent.run({
 </script> 
   
 <script>
+  // Redirect legacy GitHub Pages domain to new canonical domain
+  (function() {
+    if (window.location.hostname === 'lawwu.github.io') {
+      window.location.replace(
+        'https://lawrencewu.net' +
+        window.location.pathname +
+        window.location.search +
+        window.location.hash
+      );
+    }
+  })();
+</script>
+<script>
   // Log script loading attempt
   console.log('Loading GitHub stars script');
 
@@ -126,10 +139,10 @@ cookieconsent.run({
 
 <link rel="stylesheet" href="styles.css">
 <meta property="og:title" content="Lawrence Wu – Lawrence Wu’s Blog">
-<meta property="og:image" content="https://lawwu.github.io/images/lawrence.jpg">
+<meta property="og:image" content="https://lawrencewu.net/images/lawrence.jpg">
 <meta property="og:site_name" content="Lawrence Wu's Blog">
 <meta name="twitter:title" content="Lawrence Wu – Lawrence Wu’s Blog">
-<meta name="twitter:image" content="https://lawwu.github.io/images/lawrence.jpg">
+<meta name="twitter:image" content="https://lawrencewu.net/images/lawrence.jpg">
 <meta name="twitter:creator" content="@law_wu">
 <meta name="twitter:card" content="summary_large_image">
 </head>
@@ -345,7 +358,7 @@ cookieconsent.run({
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/lawwu\.github\.io\/");
+        var filterRegex = new RegExp("https:\/\/lawrencewu\.net");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

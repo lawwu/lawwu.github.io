@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Lawrence Wu&#39;s Blog</title>
-<link>https://lawwu.github.io/</link>
-<atom:link href="https://lawwu.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://lawrencewu.net/</link>
+<atom:link href="https://lawrencewu.net/index.xml" rel="self" type="application/rss+xml"/>
 <description>This is Lawrence Wu&#39;s personal website</description>
 <generator>quarto-1.8.27</generator>
 <lastBuildDate>Fri, 13 Mar 2026 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Skills Marketplaces</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-03-13-skills-marketplace/</link>
+  <link>https://lawrencewu.net/posts/2026-03-13-skills-marketplace/</link>
   <description><![CDATA[ 
 
 
@@ -62,13 +62,13 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2026-03-13-skills-marketplace/</guid>
+  <guid>https://lawrencewu.net/posts/2026-03-13-skills-marketplace/</guid>
   <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>AI Tutorial - Claude Code &amp; Agent Frameworks</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-03-10-ai-tutorial/</link>
+  <link>https://lawrencewu.net/posts/2026-03-10-ai-tutorial/</link>
   <description><![CDATA[ 
 
 
@@ -92,14 +92,14 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
 <p><strong>Step 1: Pretraining</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/pretraining.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/pretraining.png" class="img-fluid figure-img"></p>
 <figcaption>Pretraining</figcaption>
 </figure>
 </div>
 <p><strong>Step 2: Tokenization</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/tokenization.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/tokenization.png" class="img-fluid figure-img"></p>
 <figcaption>Tokenization</figcaption>
 </figure>
 </div>
@@ -107,14 +107,14 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
 <p><strong>Step 3: Neural network I/O</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/neural-network-io.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/neural-network-io.png" class="img-fluid figure-img"></p>
 <figcaption>Neural network I/O</figcaption>
 </figure>
 </div>
 <p><strong>Neural network internals</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/neural-network-internals.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/neural-network-internals.png" class="img-fluid figure-img"></p>
 <figcaption>Neural network internals</figcaption>
 </figure>
 </div>
@@ -142,21 +142,21 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
 <p><strong>Inference</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/inference.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/inference.png" class="img-fluid figure-img"></p>
 <figcaption>Inference</figcaption>
 </figure>
 </div>
 <p><strong>“Psychology” of a base model</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/base-model-psychology.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/base-model-psychology.png" class="img-fluid figure-img"></p>
 <figcaption>“Psychology” of a base model</figcaption>
 </figure>
 </div>
 <p><strong>Post-training</strong></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/post-training.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/post-training.png" class="img-fluid figure-img"></p>
 <figcaption>Post-training</figcaption>
 </figure>
 </div>
@@ -176,7 +176,7 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
 <p><a href="https://x.com/mntruell/status/2026736314272591924">Third Era of Software Development</a></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/third-era-software.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/third-era-software.png" class="img-fluid figure-img"></p>
 <figcaption>Third Era of Software Development</figcaption>
 </figure>
 </div>
@@ -190,7 +190,7 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
 <p>LLM + a library like LangGraph</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/agent-frameworks-v1.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/agent-frameworks-v1.png" class="img-fluid figure-img"></p>
 <figcaption>V1.0 Agent Frameworks</figcaption>
 </figure>
 </div>
@@ -207,7 +207,7 @@ font-style: inherit;">/create-skills-marketplace</span></span></code></pre></div
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/agent-frameworks-v2.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/agent-frameworks-v2.png" class="img-fluid figure-img"></p>
 <figcaption>V2.0 Agent Frameworks</figcaption>
 </figure>
 </div>
@@ -340,14 +340,14 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2026-03-10-ai-tutorial/</guid>
+  <guid>https://lawrencewu.net/posts/2026-03-10-ai-tutorial/</guid>
   <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
-  <media:content url="https://lawwu.github.io/posts/2026-03-10-ai-tutorial/ai_tutorial_lwu.png" medium="image" type="image/png" height="82" width="144"/>
+  <media:content url="https://lawrencewu.net/posts/2026-03-10-ai-tutorial/ai_tutorial_lwu.png" medium="image" type="image/png" height="82" width="144"/>
 </item>
 <item>
   <title>Agentic Knowledge Work &amp; Agentic Machine Learning</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-03-04-agentic-knowledge-work/</link>
+  <link>https://lawrencewu.net/posts/2026-03-04-agentic-knowledge-work/</link>
   <description><![CDATA[ 
 
 
@@ -379,7 +379,7 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 <li>The final answer will be returned to the user “Sales are $50k this year”</li>
 </ul></li>
 </ul>
-<p><img src="https://lawwu.github.io/posts/2026-03-04-agentic-knowledge-work/images/simple_tool_calling.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-04-agentic-knowledge-work/images/simple_tool_calling.png" class="img-fluid"></p>
 </section>
 <section id="v2.0-agent-frameworks" class="level2">
 <h2 class="anchored" data-anchor-id="v2.0-agent-frameworks">v2.0 Agent Frameworks</h2>
@@ -391,7 +391,7 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 <li>You can run these agents in parallel</li>
 </ul>
 <p>An analogy I like to give people is imagine you hired a contractor to retile your bathrooms. He needs tools like a wet tile saw to cut the tiles in order to do the job effectively. If he doesn’t have this saw, he needs to go buy or rent one. An AI Agent that can write code and reason can create the tools it needs on the fly to accomplish it’s task! You no longer need to create tools for an agent (although you still can). You just need to specify what you want and the agent can decide how to get there (either using off the shelf libraries or writing code on the fly to do what it needs). These v2.0 Agent Frameworks are so much more generalizable.</p>
-<p><img src="https://lawwu.github.io/posts/2026-03-04-agentic-knowledge-work/images/coding_agent.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-04-agentic-knowledge-work/images/coding_agent.png" class="img-fluid"></p>
 <p>Since I <a href="https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/">started using Claude Code regularly in July 2025</a>, I’ve noticed a few things in my day-to-day job as a data scientist and data science manager:</p>
 <ul>
 <li>Claude Code can do increasingly complicated tasks</li>
@@ -463,13 +463,13 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2026-03-04-agentic-knowledge-work/</guid>
+  <guid>https://lawrencewu.net/posts/2026-03-04-agentic-knowledge-work/</guid>
   <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Claude Code Field Guide</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-03-02-claude-code-field-guide/</link>
+  <link>https://lawrencewu.net/posts/2026-03-02-claude-code-field-guide/</link>
   <description><![CDATA[ 
 
 
@@ -488,20 +488,20 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
 <li>Things I’d like to try</li>
 <li>Things I’ve stopped doing</li>
 </ul>
-<p><img src="https://lawwu.github.io/posts/2026-03-02-claude-code-field-guide/images/cc_field_guide.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-03-02-claude-code-field-guide/images/cc_field_guide.png" class="img-fluid"></p>
 
 
 
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2026-03-02-claude-code-field-guide/</guid>
+  <guid>https://lawrencewu.net/posts/2026-03-02-claude-code-field-guide/</guid>
   <pubDate>Mon, 02 Mar 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Reflections on AI from 2022 to 2026 - Prompt Engineering (LangChain) to Context Engineering (LangGraph) to Harness Engineering (Claude Code)</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-02-16-reflections-on-ai-2022-2026/</link>
+  <link>https://lawrencewu.net/posts/2026-02-16-reflections-on-ai-2022-2026/</link>
   <description><![CDATA[ 
 
 
@@ -532,7 +532,7 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
 <section id="langgraph-cursor" class="level2">
 <h2 class="anchored" data-anchor-id="langgraph-cursor">2024 - LangGraph, Cursor</h2>
 <p>2024 was the year of agent frameworks. It seemed like new agent frameworks were popping up every few weeks. <a href="https://github.com/langchain-ai/langgraph">LangGraph</a> was the one I became most familiar with. It was <a href="https://changelog.langchain.com/announcements/week-of-1-22-24-langchain-release-notes">released January 22, 2024</a>.</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-16-reflections-on-ai-2022-2026/images/langgraph_release.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-16-reflections-on-ai-2022-2026/images/langgraph_release.png" class="img-fluid"></p>
 <p>Language models gained the ability to call tools. These agent frameworks made it easy to create agents that would call tools in a loop (an extension of an idea first from the <a href="https://arxiv.org/abs/2210.03629">ReAct paper</a>). You would give an agent a query/task, it would attempt to answer your question or accomplish your task via tool calls. The series of tool calls would not be determnistic. Rather the agent would decide after the first tool call if it had enough info to finish the task OR it would make another tool call (could be a different tool). I remember I was blown away when I saw this in action. <a href="https://www.philschmid.de/langgraph-gemini-2-5-react-agent">Philipp Schmid has a good post</a> describing this agent architecture in more detail.</p>
 <p>LangChain continued to push the boundaries forward in agents in their LangGraph library:</p>
 <ul>
@@ -548,7 +548,7 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
 <section id="claude-code-context-engineering" class="level2">
 <h2 class="anchored" data-anchor-id="claude-code-context-engineering">2025 - Claude Code, Context Engineering</h2>
 <p>2025 was the year of Claude Code and coding agents.</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-16-reflections-on-ai-2022-2026/images/claude_code_release.webp" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-16-reflections-on-ai-2022-2026/images/claude_code_release.webp" class="img-fluid"></p>
 <p>It’s hard to believe Claude Code was:</p>
 <ul>
 <li>released as somewhat of an after thought during Anthropic’s announcement of Claude 3.7 Sonnet</li>
@@ -618,7 +618,7 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
 <p>Humans always remain in the loop, but work at a different layer of abstraction than we used to. We prioritize work, translate user feedback into acceptance criteria, and validate outcomes. When the agent struggles, we treat it as a signal: identify what is missing—tools, guardrails, documentation—and feed it back into the repository, always by having Codex itself write the fix.</p>
 </blockquote>
 <p>I’ve experienced similar things on a recent machine learning project. Claude Code was writing 95% of the code, tests, CI configuration, documentation, and ML training and pipeline code. I found myself more as an orchestrator of agents accomplishing meaningful work. I did spent time thinking about how to optimize the repository to be more useful to the agent. I landed on a similar structure that the above Codex article talks about in a “In-repository knowledge store.” I created a machine learning experiment log that started out as a single markdown file <code>RESEARCH_LOG.md</code> that quickly grew too unweidly. To a <code>RESEARCH_LOG.md</code> that points to sub-folders for each ML experiment.</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-16-reflections-on-ai-2022-2026/images/in_repository_knowledge_store.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-16-reflections-on-ai-2022-2026/images/in_repository_knowledge_store.png" class="img-fluid"></p>
 </section>
 <section id="reflections" class="level2">
 <h2 class="anchored" data-anchor-id="reflections">Reflections</h2>
@@ -662,13 +662,13 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2026-02-16-reflections-on-ai-2022-2026/</guid>
+  <guid>https://lawrencewu.net/posts/2026-02-16-reflections-on-ai-2022-2026/</guid>
   <pubDate>Mon, 16 Feb 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Claude Code Daily Tips Series</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/</link>
+  <link>https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/</link>
   <description><![CDATA[ 
 
 
@@ -695,7 +695,7 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_if-you-use-more-than-one-coding-agent-like-activity-7427504846313836544-Azs9?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-10</a></p>
 <p>I tried the new /insights command in Claude Code in one of my main projects. It analyzed the last 30 days of messages in my project, identified how I work, noted “impressive things” I did, where things went wrong, suggested existing Claude Code features to try which included recommendations to updates to my CLAUDE.md, and new Custom Skills and Hooks to try.</p>
 <p>Also neat to see all of the messages, tool calls and sessions labeled by type along with the distribution of my response time and how often I am “Multi-Clauding.” Finally, all those days of micro’ing while playing Starcraft and Warcraft III are paying off.</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day1_insights.jpeg" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day1_insights.jpeg" class="img-fluid"></p>
 </section>
 <section id="day-2---standardize-on-agents.md" class="level2">
 <h2 class="anchored" data-anchor-id="day-2---standardize-on-agents.md">Day 2 - Standardize on <code>AGENTS.md</code></h2>
@@ -706,7 +706,7 @@ font-style: inherit;">/orchestrate-e2e</span> on the medium dataset in demo/ but
 <p>Then just keep your AGENTS.md updated.</p>
 <p>Codex will use AGENTS.md as normal. Claude Code will load CLAUDE.md and then load AGENTS.md because it’s referred to.</p>
 <p>In Claude Code, if you type /memory, you should see under Project Memory your AGENTS.md referenced.</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day2_agents_md.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day2_agents_md.png" class="img-fluid"></p>
 </section>
 <section id="day-3---self-improving-agents.mdclaude.md" class="level2">
 <h2 class="anchored" data-anchor-id="day-3---self-improving-agents.mdclaude.md">Day 3 - Self-Improving <code>AGENTS.md</code>/<code>CLAUDE.md</code></h2>
@@ -723,7 +723,7 @@ font-style: inherit;">/plugin</span> install claude-md-management@claude-plugin-
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><span class="ex" style="color: null;
 background-color: null;
 font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code></pre></div></div>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day3_auto_claude_md.jpeg" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day3_auto_claude_md.jpeg" class="img-fluid"></p>
 </section>
 <section id="day-4---auto-memory" class="level2">
 <h2 class="anchored" data-anchor-id="day-4---auto-memory">Day 4 - Auto Memory</h2>
@@ -743,7 +743,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <li>Claude reads and writes memory files during your session, so you’ll see memory updates happen as you work.”</li>
 </ul>
 <p>If you type <code>/memory</code> you can see if auto memory is being used. See below for what writing this memory looks like:</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day4_auto_memory.jpeg" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day4_auto_memory.jpeg" class="img-fluid"></p>
 </section>
 <section id="day-5---save-your-data" class="level2">
 <h2 class="anchored" data-anchor-id="day-5---save-your-data">Day 5 - Save Your Data</h2>
@@ -758,7 +758,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <section id="day-6---use-plan-mode" class="level2">
 <h2 class="anchored" data-anchor-id="day-6---use-plan-mode">Day 6 - Use Plan Mode</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_claudecode-activity-7429551565948166147-ypB0?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-17</a></p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day6_plan_mode.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day6_plan_mode.png" class="img-fluid"></p>
 <p>I usually like to use plan mode for more complicated tasks. Shift+Tab to enter plan mode (you should see “plan mode on” in green at the bottom. In this mode you can have some back and forth with Claude Code to first collaborate on a plan, then you approve it and then Claude will go off to implement your plan.</p>
 <p>Some of the more complicated tasks I like to use plan mode for are:</p>
 <ul>
@@ -808,12 +808,12 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <li>You can swap models between different agentic harnesses. Claude Code with gpt-5.3-codex. Codex with Opus 4.6. Or you can use an open source harness like OpenCode with any model.</li>
 </ul>
 <p>One downside of these internal LLM Gateways is they become a central place of failure. And if it goes down, your internal users’ productivity will plummet.</p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day9_llm_gateway.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day9_llm_gateway.png" class="img-fluid"></p>
 </section>
 <section id="day-10-llm-vs-agentic-harness" class="level2">
 <h2 class="anchored" data-anchor-id="day-10-llm-vs-agentic-harness">Day 10 — LLM vs Agentic Harness</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_remember-there-is-a-difference-between-claude-activity-7431722215802535936-IzQ1?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-23</a></p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day10_agentic_harness.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day10_agentic_harness.png" class="img-fluid"></p>
 <p>Remember, there is a difference between Claude Code and Claude the underlying model. Claude Code itself is just a CLI, I like to think of it as an agentic harness. It wraps a language model (Opus, Sonnet, Haiku or if you use LiteLLM, you can point it at any model). There are so many different agentic harnesses for coding agents now: Codex, gemini-cli, Claude Code and OpenCode.</p>
 <p>The Claude Code CLI changes rapidly — see the <a href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md">CHANGELOG</a>. Each version bumps the harness, not the underlying model. The harness handles: tool orchestration, context management, permissions, memory, prompt caching. There are system prompts embedded in the harness too.</p>
 <p>Why does this matter? When Claude Code “gets better” it could be either the model OR the harness improving.</p>
@@ -822,7 +822,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <section id="day-11-terminal-vs-vs-code-extension" class="level2">
 <h2 class="anchored" data-anchor-id="day-11-terminal-vs-vs-code-extension">Day 11 — Terminal vs VS Code Extension</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_claude-code-started-with-a-tui-terminal-activity-7432084570629402624-bJBl?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-24</a></p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day11_agentic_harness.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day11_agentic_harness.png" class="img-fluid"></p>
 <p>Claude Code started with a TUI (terminal UI). Since that time they’ve added a VS Code Extension and even a full-fledged UI in Claude Cowork which just wraps Claude Code. Yesterday I talked about how Claude Code is a type of agentic harness around the model. You can also think of the VS Code Extension and Claude Cowork as different harness around the same model. As you can see in the picture, I think of the VS Code Extension as a “thicker” harness in that it adds behavior that the underlying framework doesn’t do.</p>
 <p>Different harnesses have different behaviors. The VS Code Extension automatically adds opened file / selected lines as part of your prompt. This silently increases token usage and may send unintended context to the LLM. I’ve never had the TUI add files I didn’t expect.</p>
 <p>The VS Code extension does add a nice UI to visualize tool outputs that I like.</p>
@@ -830,14 +830,14 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <section id="day-12-setup-peonping" class="level2">
 <h2 class="anchored" data-anchor-id="day-12-setup-peonping">Day 12 — Setup PeonPing</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_github-peonpingpeon-ping-warcraft-iii-activity-7432447018251374592-RH87?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-25</a></p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day12_peonping.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day12_peonping.png" class="img-fluid"></p>
 <p>I’ve really enjoyed using <a href="https://github.com/PeonPing/peon-ping">Peon Ping</a> for the last few weeks. It adds a Claude Code hook at the beginning and end of each session. It notifies you with a system notification and a custom sound. The default is a Warcraft III peon. There’s also sounds from Starcaft and Age of Empires and a bunch of other goodies. The sounds are fun but it’s genuinly useful knowing when the agent finishes it’s task.</p>
 <p>It initially was for Claude Code but they’ve recently added support for most coding agents now.</p>
 </section>
 <section id="day-13-claude-code-github-actions" class="level2">
 <h2 class="anchored" data-anchor-id="day-13-claude-code-github-actions">Day 13 — Claude Code GitHub Actions</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_you-can-run-claude-code-in-your-github-actions-activity-7432809363100061697-VpWz?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted on 2026-02-26</a></p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day13_claude_code_action.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day13_claude_code_action.png" class="img-fluid"></p>
 <p>You can run Claude Code in your Github Actions. Anthropic has an official action here: <a href="https://github.com/anthropics/claude-code-action" class="uri">https://github.com/anthropics/claude-code-action</a>.</p>
 <p>I’ve used this Github Action to mainly review PRs but also generate commits and PRs. I was inspired to set this up when I saw the Anthropic team close <a href="https://github.com/anthropics/claude-code-action/issues/756">an issue I opened</a> by just tagging “<span class="citation" data-cites="claude">@claude</span> can you fix it” and passing a link. Amazing.</p>
 <p>The Claude Code Github Action is another agentic harness. It actually uses the Claude Agent SDK under the hood with a custom prompt specifically for Github. For example it largely communicates through Github Issues. But it’s amazing just to see the checklist update in realtime and also a link to create a PR from the branch Claude made.</p>
@@ -860,7 +860,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <section id="day-15---prompt-caching" class="level2">
 <h2 class="anchored" data-anchor-id="day-15---prompt-caching">Day 15 - Prompt Caching</h2>
 <p><a href="https://www.linkedin.com/posts/lawrencewu920_we-build-our-entire-harness-around-prompt-activity-7434258928865157120-Ohmh?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAAAE5gYIBXATpK1K66bvyVE0Gc0prVDW-82g">Posted On 2026-03-02</a></p>
-<p><img src="https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/images/cc_day15_prompt_caching.png" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/images/cc_day15_prompt_caching.png" class="img-fluid"></p>
 <p>“We build our entire harness around prompt caching” - Thariq (Claude Code dev)</p>
 <p>I’ve really liked Chip Huyen’s sniffly project to visualize Claude Code stats. One of the graphs shows you the daily cost of your tokens by input tokens, output tokens and cache operations. I always thought this graph was wrong because it looked like 99% of the cost was cache operations. But I realized it wasn’t wrong.</p>
 <p>I underestimated the importance of prompt caching. Cached tokens are 10% the cost of regular tokens (!). This means Claude Code structures static content first and dynamic content later in the prompt:</p>
@@ -880,13 +880,13 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2026-02-11-claude-code-agentic-coding/</guid>
+  <guid>https://lawrencewu.net/posts/2026-02-11-claude-code-agentic-coding/</guid>
   <pubDate>Tue, 10 Feb 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Field Trips to Amazon and Costco</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2026-01-16-amazon-costco/</link>
+  <link>https://lawrencewu.net/posts/2026-01-16-amazon-costco/</link>
   <description><![CDATA[ 
 
 
@@ -937,7 +937,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <li>Amazon workers also get free Amazon prime as of 2025</li>
 <li>This one in Eastvale handles packages smaller than a microwave.</li>
 </ul>
-<p><img src="https://lawwu.github.io/posts/2026-01-16-amazon-costco/images/amazon-pod-2016.avif" class="img-fluid"></p>
+<p><img src="https://lawrencewu.net/posts/2026-01-16-amazon-costco/images/amazon-pod-2016.avif" class="img-fluid"></p>
 <ul>
 <li>Stow: Amazon’s inventory is kept in these shelves called pods like the one above. The <a href="https://www.theguardian.com/technology/2016/aug/18/amazon-to-open-packing-centre-in-essex">picture is from 2016</a>. It’s interesting the pod hasn’t changed all that much. They still are yellow and sit on top of these flat robots (Amazon bought a robotics company called Kiva and renamed it Amazon Robots). The process of stowing is a robot will bring a pod over to a worker. The worker then puts items into the cubbies in the pod. I was really surprised to learn Amazon randomly distributes items across shelves. They do this so there’s a higher chance a pod with an item someone orders is close to a person who’s job it is to pick the item.</li>
 <li>Pick: Pickers are workers who find the items that have been ordered from Amazon’s inventory. They used to walk 15+ miles with a shopping cart up and down aisles grabbing things. Now these pickers are largely stationary because robots bring these large shelving units with inventory, there’s a projector shining a light on the right cubicle with the item and the worker picks the item out and puts it into a yellow bin.</li>
@@ -955,13 +955,13 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 
  ]]></description>
   <category>personal</category>
-  <guid>https://lawwu.github.io/posts/2026-01-16-amazon-costco/</guid>
+  <guid>https://lawrencewu.net/posts/2026-01-16-amazon-costco/</guid>
   <pubDate>Fri, 16 Jan 2026 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Year in Review - 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-12-31-year-in-review/</link>
+  <link>https://lawrencewu.net/posts/2025-12-31-year-in-review/</link>
   <description><![CDATA[ 
 
 
@@ -993,12 +993,12 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 <p>Still really enjoy reading. I love reading because the author of the book you are holding has spent countless hours going deep on a topic and taken the time to write a book on this topic. You are literally getting a person’s best thoughts about a topic. Books are so information dense.</p>
 <section id="david-mathis---a-little-theology-of-exercise" class="level3">
 <h3 class="anchored" data-anchor-id="david-mathis---a-little-theology-of-exercise"><a href="https://amzn.to/4pc5Pc9" target="_blank">David Mathis - A Little Theology of Exercise</a></h3>
-<p><a href="https://amzn.to/4pc5Pc9" target="_blank"><img src="https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/little_theology_of_exercise.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/4pc5Pc9" target="_blank"><img src="https://lawrencewu.net/posts/2025-11-24-little-theology-of-exercise/little_theology_of_exercise.jpg" class="img-fluid" width="200"></a></p>
 <p>Short read that changed my perspective on exercise from a merely physical activity that was good for my body (which it is) to something that instead is for my mind. Research shows exercise helps the brain and in turn I can use my mind to love God and love others (Matthew 22:37-38). I wrote a review of this book <a href="https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/">here</a>.</p>
 </section>
 <section id="andy-david-naselli---how-to-understand-and-apply-the-new-testament" class="level3">
 <h3 class="anchored" data-anchor-id="andy-david-naselli---how-to-understand-and-apply-the-new-testament"><a href="https://amzn.to/3LfW5zF" target="_blank">Andy David Naselli - How to Understand and Apply the New Testament</a></h3>
-<p><a href="https://amzn.to/3LfW5zF" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/how-to-read-new-testament.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/3LfW5zF" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/how-to-read-new-testament.jpg" class="img-fluid" width="200"></a></p>
 <p>I read the companion book, <a href="https://amzn.to/3LfW5zF" target="_blank">How to Understand and Apply the Old Testament</a> last year with a friend. We decided to read the NT version. Andy Naselli has a sample of the book on his <a href="https://andynaselli.com/how-to-understand-and-apply-the-new-testament-twelve-steps-from-exegesis-to-theology" target="_blank">blog</a>. Reading these two books gave me a greater appreciation for the current Bible I hold. There are so many people who have dedicated their lives to studying the original languages (Hebrew and/or Greek), studying the original manuscripts and laboring to faithfully translate the Bible. Another idea that stood out is Biblical Theology aka tracing a theme or idea from the Old Testament to the New Testament. It’s neat doing this with things like:</p>
 <ul>
 <li>Law</li>
@@ -1011,7 +1011,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 </section>
 <section id="morgan-housel---the-art-of-spending-money" class="level3">
 <h3 class="anchored" data-anchor-id="morgan-housel---the-art-of-spending-money"><a href="https://amzn.to/3YldZ7f" target="_blank">Morgan Housel - The Art of Spending Money</a></h3>
-<p><a href="https://amzn.to/3YldZ7f" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/art-of-spending.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/3YldZ7f" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/art-of-spending.jpg" class="img-fluid" width="200"></a></p>
 <p>Morgan Housel is one of the best personal finance writers right now. He is such a clear and succinct writer with an ability to tell such great stories. He has such good pithy sayings too.</p>
 <p>I liked his list of money thoughts that guide his home:</p>
 <ul>
@@ -1027,7 +1027,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 </section>
 <section id="sahil-bloom---the-5-types-of-wealth" class="level3">
 <h3 class="anchored" data-anchor-id="sahil-bloom---the-5-types-of-wealth"><a href="https://amzn.to/44TcdxL" target="_blank">Sahil Bloom - The 5 Types of Wealth</a></h3>
-<p><a href="https://amzn.to/44TcdxL" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/5-types-of-wealth.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/44TcdxL" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/5-types-of-wealth.jpg" class="img-fluid" width="200"></a></p>
 <p>The author talks about 5 types of wealth:</p>
 <ul>
 <li>Time</li>
@@ -1040,7 +1040,7 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 </section>
 <section id="nick-maggiulli---the-wealth-ladder" class="level3">
 <h3 class="anchored" data-anchor-id="nick-maggiulli---the-wealth-ladder"><a href="https://amzn.to/4piSMG8" target="_blank">Nick Maggiulli - The Wealth Ladder</a></h3>
-<p><a href="https://amzn.to/4piSMG8" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/wealth-ladder.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/4piSMG8" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/wealth-ladder.jpg" class="img-fluid" width="200"></a></p>
 <p>I didn’t think this had to be a book, I thought Nick’s <a href="https://ofdollarsanddata.com/climbing-the-wealth-ladder/" target="_blank">blog post from 2019</a> already summarized this idea well. His framing for the mindset at each level was helpful (using a rule of thumb you can safely spend 0.1% of your net worth without it making a huge dent). He defines 6 levels of wealth with a different mindset and strategy to get to the next level:</p>
 <ul>
 <li>Level 1: &lt;$10K (lower class)
@@ -1076,32 +1076,32 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 </section>
 <section id="corlette-sande---the-young-peacemaker" class="level3">
 <h3 class="anchored" data-anchor-id="corlette-sande---the-young-peacemaker"><a href="https://amzn.to/4qyxw06" target="_blank">Corlette Sande - The Young Peacemaker</a></h3>
-<p><a href="https://amzn.to/4qyxw06" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/young-peacemaker.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/4qyxw06" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/young-peacemaker.jpg" class="img-fluid" width="200"></a></p>
 <p>Similar material from Ken Sande’s book the Peacemaker but designed to go through with your kids on how to respond to conflict in a Biblical manner.</p>
 </section>
 <section id="michael-and-melissa-kruger---5-things-to-pray-for-your-spouse" class="level3">
 <h3 class="anchored" data-anchor-id="michael-and-melissa-kruger---5-things-to-pray-for-your-spouse"><a href="https://amzn.to/4pi1qEM" target="_blank">Michael and Melissa Kruger - 5 Things to Pray for Your Spouse</a></h3>
-<p><a href="https://amzn.to/4pi1qEM" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/5-things-pray-spouse.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/4pi1qEM" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/5-things-pray-spouse.jpg" class="img-fluid" width="200"></a></p>
 <p>Found this helpful to diversify my prayers for my wife. Gives you 5 different things to pray for your wife each day based on a verse.</p>
 </section>
 <section id="melissa-kruger---5-things-to-pray-for-your-kids" class="level3">
 <h3 class="anchored" data-anchor-id="melissa-kruger---5-things-to-pray-for-your-kids"><a href="https://amzn.to/3N22AGY" target="_blank">Melissa Kruger - 5 Things to Pray for Your Kids</a></h3>
-<p><a href="(https://amzn.to/3N22AGY){target=&quot;_blank&quot;}"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/5-things-pray-kids.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="(https://amzn.to/3N22AGY){target=&quot;_blank&quot;}"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/5-things-pray-kids.jpg" class="img-fluid" width="200"></a></p>
 <p>Same book as above but for kids, still helpful. For example</p>
 </section>
 <section id="marty-machowski---promises-made-promises-kept" class="level3">
 <h3 class="anchored" data-anchor-id="marty-machowski---promises-made-promises-kept"><a href="https://amzn.to/4q4dxXg" target="_blank">Marty Machowski - Promises Made, Promises Kept</a></h3>
-<p><a href="https://amzn.to/4q4dxXg" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/promises-made-kept.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/4q4dxXg" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/promises-made-kept.jpg" class="img-fluid" width="200"></a></p>
 <p>I really like Marty Machowski’s books. He’s such a great writer, being able to explain theological concepts to children. For example The Ology was a great book. Promises Made, Promises Kept is an interesting book. There are two books in one. You start the Promises Made on December 18 which talk about all of the promises God made that were eventually fulfilled in Christ (through 7 stories). Then on Christmas, December 25, you start Promises Kept which unpacks how Christ’s life, death and resurrection fulfills these promises (again through 7 stories).</p>
 </section>
 <section id="paul-david-tripp---marriage-6-gospel-commitments-every-couple-needs-to-make" class="level3">
 <h3 class="anchored" data-anchor-id="paul-david-tripp---marriage-6-gospel-commitments-every-couple-needs-to-make"><a href="https://amzn.to/3YPwa51" target="_blank">Paul David Tripp - Marriage: 6 Gospel Commitments Every Couple Needs to Make</a></h3>
-<p><a href="https://amzn.to/3YPwa51" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/marriage-tripp.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/3YPwa51" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/marriage-tripp.jpg" class="img-fluid" width="200"></a></p>
 <p>I like how Tripp is faithful to the Bible in his books. I would describe most of his books I’ve read on a given topic are really books about the gospel. So you won’t get a lot of practical advice on how to approach marriage but you will get reoriented on the foundation of marriage.</p>
 </section>
 <section id="chip-huyen---ai-engineering" class="level3">
 <h3 class="anchored" data-anchor-id="chip-huyen---ai-engineering"><a href="https://amzn.to/48YFpWE" target="_blank">Chip Huyen - AI Engineering</a></h3>
-<p><a href="https://amzn.to/48YFpWE" target="_blank"><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/images/ai-engineering.jpg" class="img-fluid" width="200"></a></p>
+<p><a href="https://amzn.to/48YFpWE" target="_blank"><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/images/ai-engineering.jpg" class="img-fluid" width="200"></a></p>
 <p>This book came out December 2024. I like Chip Huyen’s writing on her <a href="https://huyenchip.com/blog/" target="_blank">blog</a>. I found this book to be a pretty good overview of this emerging new field of AI Engineering where as an engineer, you build applications on top of AI APIs. It’s a field where I’ve observed software engineering skills matter more than traditional AI/ML/DS skills. Bceause of the pace of AI development, some of the things in this book are likely dated now.</p>
 </section>
 </section>
@@ -1182,12 +1182,12 @@ font-style: inherit;">/claude-md-management:revise-claude-md</span></span></code
 </tbody>
 </table>
 <p>It’s been an amazing 10 year run. 8 years of 10+% gains, 7 of them have been 15% or more with only 2 down years. If you invested $10,000 at the beginning of 2016, you will have tripled your investment.</p>
-<div id="ae57a1c6" class="cell" data-execution_count="1">
+<div id="6a3d0c10" class="cell" data-execution_count="1">
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="95f1fd26-9eb1-48ad-a598-660e378a525f" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("95f1fd26-9eb1-48ad-a598-660e378a525f")) {                    Plotly.newPlot(                        "95f1fd26-9eb1-48ad-a598-660e378a525f",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.0.min.js" integrity="sha256-bO3dS6yCpk9aK4gUpNELtCiDeSYvGYnK7jFI58NQnHI=" crossorigin="anonymous"></script>                <div id="9236d8ef-ec4c-41d3-b4b6-9f530bfae55d" class="plotly-graph-div" style="height:450px; width:800px;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("9236d8ef-ec4c-41d3-b4b6-9f530bfae55d")) {                    Plotly.newPlot(                        "9236d8ef-ec4c-41d3-b4b6-9f530bfae55d",                        [{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eReturn: %{y}%\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2563eb"},"name":"Annual Return","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAAIUAAAAAAAIA4QJqZmZmZmSPAzczMzMzMOkCamZmZmZkwQM3MzMzMTDJAAAAAAAAAMsAAAAAAAAA2QAAAAAAAgDBAmpmZmZmZN0A="},"yaxis":"y","type":"bar"},{"hovertemplate":"\u003cb\u003e%{x}\u003c\u002fb\u003e\u003cbr\u003eValue: $%{y:,.0f}\u003cextra\u003e\u003c\u002fextra\u003e","line":{"color":"#10b981","width":3},"marker":{"size":8},"mode":"lines+markers","name":"Growth of $10,000","x":{"dtype":"i2","bdata":"4AfhB+IH4wfkB+UH5gfnB+gH6Qc="},"y":{"dtype":"f8","bdata":"AAAAAAAxxUABAAAAIGLKQJluEoM4zMdA+QDdl+8szkAWzB48o5fRQLg9nKbNz9RAfq1CecwQ0UBYG8c379HUQCPhGaZfQdhAoSV8Ksn63UA="},"yaxis":"y2","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"shapes":[{"line":{"color":"#666","dash":"dash","width":1},"type":"line","x0":0,"x1":1,"xref":"x domain","y0":0,"y1":0,"yref":"y"}],"yaxis":{"title":{"text":"Annual Return (%)"},"gridcolor":"lightgray","range":[-20,30]},"yaxis2":{"title":{"text":"Portfolio Value ($)"},"overlaying":"y","side":"right","gridcolor":"lightgray","showgrid":false,"range":[-4822.733585986192,32234.10037897929]},"legend":{"orientation":"h","yanchor":"bottom","y":1.02,"xanchor":"right","x":1},"title":{"text":"VT Returns (2016-2025)"},"xaxis":{"title":{"text":"Year"}},"plot_bgcolor":"white","width":800,"height":450,"hovermode":"x unified"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('95f1fd26-9eb1-48ad-a598-660e378a525f');
+var gd = document.getElementById('9236d8ef-ec4c-41d3-b4b6-9f530bfae55d');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1233,10 +1233,10 @@ if (outputEl) {{
 <p>Ran my <a href="https://lawwu.github.io/posts/2025-02-02-second-half-marathon/">second half-marathon</a> and <a href="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/">first full-marathon</a> this year. Running continues to be my favorite form of cardio. God willing, hopefully I have many more years of running ahead of me.</p>
 <section id="strava---year-in-sport" class="level3">
 <h3 class="anchored" data-anchor-id="strava---year-in-sport">Strava - Year in Sport</h3>
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/strava/stats.PNG" class="img-fluid" width="600"></p>
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/strava/trophy_case.PNG" class="img-fluid" width="600"></p>
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/strava/hours_active.PNG" class="img-fluid" width="600"></p>
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/strava/days_active.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/strava/stats.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/strava/trophy_case.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/strava/hours_active.PNG" class="img-fluid" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/strava/days_active.PNG" class="img-fluid" width="600"></p>
 </section>
 </section>
 <section id="ai" class="level2">
@@ -1292,25 +1292,25 @@ if (outputEl) {{
 <p>ChatGPT created a year in review for me based on my chat history. Here are some highlights:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/recap_chatgpt/year_in_poem.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/recap_chatgpt/year_in_poem.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Year in Poem</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/recap_chatgpt/chat_stats.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/recap_chatgpt/chat_stats.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Chat Stats</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/recap_chatgpt/3_themes.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/recap_chatgpt/3_themes.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>3 Themes</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-12-31-year-in-review/recap_chatgpt/image_summary.png" class="img-fluid figure-img" width="600"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-31-year-in-review/recap_chatgpt/image_summary.png" class="img-fluid figure-img" width="600"></p>
 <figcaption>Image Summary</figcaption>
 </figure>
 </div>
@@ -1322,14 +1322,14 @@ if (outputEl) {{
  ]]></description>
   <category>personal</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-12-31-year-in-review/</guid>
+  <guid>https://lawrencewu.net/posts/2025-12-31-year-in-review/</guid>
   <pubDate>Wed, 31 Dec 2025 00:00:00 GMT</pubDate>
-  <media:content url="https://lawwu.github.io/posts/2025-12-31-year-in-review/strava/stats.PNG" medium="image"/>
+  <media:content url="https://lawrencewu.net/posts/2025-12-31-year-in-review/strava/stats.PNG" medium="image"/>
 </item>
 <item>
   <title>Bunching Charitable Contributions in 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-12-19-bunching-strategy/</link>
+  <link>https://lawrencewu.net/posts/2025-12-19-bunching-strategy/</link>
   <description><![CDATA[ 
 
 
@@ -1388,13 +1388,13 @@ if (outputEl) {{
 <p>Here’s the visual breakdown:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-12-19-bunching-strategy/images/deductions_comparison.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-19-bunching-strategy/images/deductions_comparison.png" class="img-fluid figure-img"></p>
 <figcaption>Total deductions over 2 years</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-12-19-bunching-strategy/images/deductions_breakdown.png" class="img-fluid figure-img"></p>
+<p><img src="https://lawrencewu.net/posts/2025-12-19-bunching-strategy/images/deductions_breakdown.png" class="img-fluid figure-img"></p>
 <figcaption>Year-by-year breakdown</figcaption>
 </figure>
 </div>
@@ -2806,13 +2806,13 @@ font-style: inherit;">`</span></span></code></pre></div></div>
  ]]></description>
   <category>personal finance</category>
   <category>taxes</category>
-  <guid>https://lawwu.github.io/posts/2025-12-19-bunching-strategy/</guid>
+  <guid>https://lawrencewu.net/posts/2025-12-19-bunching-strategy/</guid>
   <pubDate>Fri, 19 Dec 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Little Theology of Exercise</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/</link>
+  <link>https://lawrencewu.net/posts/2025-11-24-little-theology-of-exercise/</link>
   <description><![CDATA[ 
 
 
@@ -2821,7 +2821,7 @@ font-style: inherit;">`</span></span></code></pre></div></div>
 <p>Starting a new type of post where I’ll review books. I recently read <a href="https://amzn.to/4rkSRv4">A Little Theology of Exercise: Enjoying Christ in Body and Soul</a> by <a href="https://www.desiringgod.org/authors/david-mathis/books">David Mathis</a>. The beginning part of the book is available for free <a href="https://document.desiringgod.org/a-little-theology-of-exercise-en.pdf">here</a>. The audio book (~2 hours) is also free on <a href="https://open.spotify.com/show/4DFqfFXiAhrjHzvBGL7ue1">Spotify</a> if you’re a premium subscriber.</p>
 <div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 20px;">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/little_theology_of_exercise.jpg" class="img-fluid figure-img" width="400"></p>
+<p><img src="https://lawrencewu.net/posts/2025-11-24-little-theology-of-exercise/little_theology_of_exercise.jpg" class="img-fluid figure-img" width="400"></p>
 <figcaption>A Little Theology of Exercise</figcaption>
 </figure>
 </div>
@@ -2893,13 +2893,13 @@ He also reminds us of the definition of Christian Hedonism: "as one persuaded th
 
  ]]></description>
   <category>book review</category>
-  <guid>https://lawwu.github.io/posts/2025-11-24-little-theology-of-exercise/</guid>
+  <guid>https://lawrencewu.net/posts/2025-11-24-little-theology-of-exercise/</guid>
   <pubDate>Mon, 24 Nov 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>First Marathon Reflections</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/</link>
+  <link>https://lawrencewu.net/posts/2025-10-30-first-marathon-reflections/</link>
   <description><![CDATA[ 
 
 
@@ -2908,7 +2908,7 @@ He also reminds us of the definition of Christian Hedonism: "as one persuaded th
 <p>I did it. I ran a marathon. Long Beach 2025 Marathon is finished. What an amazing race day and training block. I’ve heard that a race is a celebration of the training you have put in. That rings so much truer now that the race is over. All those easy runs, tempo/interval runs, long runs on Saturday or Sundays. It’s been a long journey with many ups and downs along the way.</p>
 <div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 20px;">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/long_beach_2025_marathon.jpg" class="img-fluid figure-img" width="400"></p>
+<p><img src="https://lawrencewu.net/posts/2025-10-30-first-marathon-reflections/long_beach_2025_marathon.jpg" class="img-fluid figure-img" width="400"></p>
 <figcaption>Post marathon joy</figcaption>
 </figure>
 </div>
@@ -2917,7 +2917,7 @@ He also reminds us of the definition of Christian Hedonism: "as one persuaded th
 <p>The race didn’t start out great. Parking was a pain. It felt way more crowded than last year.The spot I booked turned out to be not open. But the weather was good at the start. I started out in the 3:45-4:15 corral and I found myself with the 3:50 pacers and stuck with them for probably the first half of the race. The first half of the marathon was relatively easy since it was the same as <a href="https://lawwu.github.io/posts/2024-10-13-running-6-months/">last year’s HM course</a>. When the course split and then rounded CSULB, it got tough around mile 18 because of the hills, the unfamiliar course and some pain in my left foot. I tried my best to dig deep at that point and just push through. Thankfully the pain was tolerable and didn’t get much worse. I then had some more pain in my right leg at mile 22 but mentally the end felt pretty close. Seeing people cramp up left and right didn’t help my confidence. The course narrowed a lot at mile 23-25 so it was hard to maintain a sub 9 pace but I don’t think I could’ve physically managed that so it was God’s mercy on me. I imagine if I pushed hard the last 6 miles I could’ve tried for sub 3:50 but didn’t want to get greedy and also didn’t want to get hurt. I ended up finishing with a time of 3:52:12 which is about a 8:51 min per mile pace. I was and am so happy with this result.</p>
 <div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 20px;">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/long_beach_2025_marathon_splits.png" class="img-fluid figure-img" width="400"></p>
+<p><img src="https://lawrencewu.net/posts/2025-10-30-first-marathon-reflections/long_beach_2025_marathon_splits.png" class="img-fluid figure-img" width="400"></p>
 <figcaption>Mile splits</figcaption>
 </figure>
 </div>
@@ -2963,7 +2963,7 @@ He also reminds us of the definition of Christian Hedonism: "as one persuaded th
 <p>The race being around 4 hours was &lt;5% of the total time. So 95% of the time related to the marathon was spent training for it. This makes me think about all of the sports I watch, 95% of the time and effort has already been put in. I imagine this also applies to any sort of public performance (musical, comedy, etc). Simply going through the training my VO2 max has improved going from 43.7 in May 2024 to 57.7 in October 2025.</p>
 <div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 20px;">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/post_marathon_vo2_max.jpg" class="img-fluid figure-img" width="400"></p>
+<p><img src="https://lawrencewu.net/posts/2025-10-30-first-marathon-reflections/post_marathon_vo2_max.jpg" class="img-fluid figure-img" width="400"></p>
 <figcaption>VO2 Max</figcaption>
 </figure>
 </div>
@@ -3018,7 +3018,7 @@ He also reminds us of the definition of Christian Hedonism: "as one persuaded th
 <p>The graph below shows the number of half-marathon, marathon and total participants in the Long Beach races. You can see since the COVID 2020 year, the number of runners has gone up each year.</p>
 <div class="quarto-figure quarto-figure-center" style="border-radius: 50%; margin-bottom: 20px;">
 <figure class="figure">
-<p><img src="https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/long_beach_marathon_participants_by_year.png" class="img-fluid figure-img" width="800"></p>
+<p><img src="https://lawrencewu.net/posts/2025-10-30-first-marathon-reflections/long_beach_marathon_participants_by_year.png" class="img-fluid figure-img" width="800"></p>
 <figcaption>Long Beach Marathon Participation by year</figcaption>
 </figure>
 </div>
@@ -3040,13 +3040,13 @@ He also reminds us of the definition of Christian Hedonism: "as one persuaded th
 
  ]]></description>
   <category>running</category>
-  <guid>https://lawwu.github.io/posts/2025-10-30-first-marathon-reflections/</guid>
+  <guid>https://lawrencewu.net/posts/2025-10-30-first-marathon-reflections/</guid>
   <pubDate>Thu, 30 Oct 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>How to Learn AI</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-09-09-how-to-learn-ai/</link>
+  <link>https://lawrencewu.net/posts/2025-09-09-how-to-learn-ai/</link>
   <description><![CDATA[ 
 
 
@@ -3277,13 +3277,13 @@ font-style: inherit;">print</span>(response)</span></code></pre></div></div>
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-09-09-how-to-learn-ai/</guid>
+  <guid>https://lawrencewu.net/posts/2025-09-09-how-to-learn-ai/</guid>
   <pubDate>Tue, 09 Sep 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Why Companies Should Open Source and Host Their Own MCP Servers</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-08-21-open-source-mcp-servers/</link>
+  <link>https://lawrencewu.net/posts/2025-08-21-open-source-mcp-servers/</link>
   <description><![CDATA[ 
 
 
@@ -3547,13 +3547,13 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-08-21-open-source-mcp-servers/</guid>
+  <guid>https://lawrencewu.net/posts/2025-08-21-open-source-mcp-servers/</guid>
   <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Summaries of Talks from Code with Claude Conference 2025</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-08-14-claude-code-conference-summary/</link>
+  <link>https://lawrencewu.net/posts/2025-08-14-claude-code-conference-summary/</link>
   <description><![CDATA[ 
 
 
@@ -4079,13 +4079,13 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
   <category>events</category>
   <category>summary</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-08-14-claude-code-conference-summary/</guid>
+  <guid>https://lawrencewu.net/posts/2025-08-14-claude-code-conference-summary/</guid>
   <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Summary of Armin’s Talk - Agentic Coding Ecosystem 2025: Navigating the Tool Explosion</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/</link>
+  <link>https://lawrencewu.net/posts/2025-08-14-armin-agentic-coding-ecosystem/</link>
   <description><![CDATA[ 
 
 
@@ -4134,13 +4134,13 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
   <category>events</category>
   <category>summary</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-08-14-armin-agentic-coding-ecosystem/</guid>
+  <guid>https://lawrencewu.net/posts/2025-08-14-armin-agentic-coding-ecosystem/</guid>
   <pubDate>Thu, 14 Aug 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Claude Code Camp - hosted by Every</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-07-18-claude-code-camp/</link>
+  <link>https://lawrencewu.net/posts/2025-07-18-claude-code-camp/</link>
   <description><![CDATA[ 
 
 
@@ -4178,7 +4178,7 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 <li><code>wt</code> create a git worktree</li>
 <li><code>ccw</code> - run claude code with a git worktree
 <ul>
-<li><img src="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/ccw.png" class="img-fluid"></li>
+<li><img src="https://lawrencewu.net/posts/2025-07-18-claude-code-camp/ccw.png" class="img-fluid"></li>
 </ul></li>
 </ul></li>
 <li>He had a ton of slash commands saved in <code>.claude/commands</code>
@@ -4202,11 +4202,11 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 <ul>
 <li>Make a context file prompt
 <ul>
-<li><img src="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/context_file_prompt.png" class="img-fluid"></li>
+<li><img src="https://lawrencewu.net/posts/2025-07-18-claude-code-camp/context_file_prompt.png" class="img-fluid"></li>
 </ul></li>
 <li>Make an Experiment Log
 <ul>
-<li><img src="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/experiment_log.png" class="img-fluid"></li>
+<li><img src="https://lawrencewu.net/posts/2025-07-18-claude-code-camp/experiment_log.png" class="img-fluid"></li>
 </ul></li>
 </ul></li>
 <li>Delegate
@@ -4227,7 +4227,7 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
 <li>Dictating to Monologue</li>
 <li>Take learnings from comments and update CLAUDE.md
 <ul>
-<li><img src="https://lawwu.github.io/posts/2025-07-18-claude-code-camp/learnings.png" class="img-fluid"></li>
+<li><img src="https://lawrencewu.net/posts/2025-07-18-claude-code-camp/learnings.png" class="img-fluid"></li>
 </ul></li>
 <li>Subagents of Claude Code?!
 <ul>
@@ -4384,13 +4384,13 @@ font-style: inherit;">--transport</span> http vercel https://mcp.vercel.com/</sp
   <category>ai</category>
   <category>events</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-07-18-claude-code-camp/</guid>
+  <guid>https://lawrencewu.net/posts/2025-07-18-claude-code-camp/</guid>
   <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Starting to Use Claude Code</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/</link>
+  <link>https://lawrencewu.net/posts/2025-07-18-starting-to-use-claude-code/</link>
   <description><![CDATA[ 
 
 
@@ -4512,13 +4512,13 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
  ]]></description>
   <category>ai</category>
   <category>claude code</category>
-  <guid>https://lawwu.github.io/posts/2025-07-18-starting-to-use-claude-code/</guid>
+  <guid>https://lawrencewu.net/posts/2025-07-18-starting-to-use-claude-code/</guid>
   <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>LangChain Interrupt Conference 2025 - 1 Hour Recap</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/</link>
+  <link>https://lawrencewu.net/posts/2025-05-30-langchain-interrupt-lwu-recap/</link>
   <description><![CDATA[ 
 
 
@@ -4539,13 +4539,13 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
  ]]></description>
   <category>ai</category>
   <category>events</category>
-  <guid>https://lawwu.github.io/posts/2025-05-30-langchain-interrupt-lwu-recap/</guid>
+  <guid>https://lawrencewu.net/posts/2025-05-30-langchain-interrupt-lwu-recap/</guid>
   <pubDate>Fri, 30 May 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>Levels of AI Use</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-05-27-levels-of-ai-use/</link>
+  <link>https://lawrencewu.net/posts/2025-05-27-levels-of-ai-use/</link>
   <description><![CDATA[ 
 
 
@@ -4639,13 +4639,13 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
 
  ]]></description>
   <category>ai</category>
-  <guid>https://lawwu.github.io/posts/2025-05-27-levels-of-ai-use/</guid>
+  <guid>https://lawrencewu.net/posts/2025-05-27-levels-of-ai-use/</guid>
   <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
   <title>LangChain Interrupt Conference 2025 AI Recap</title>
   <dc:creator>Lawrence Wu</dc:creator>
-  <link>https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/</link>
+  <link>https://lawrencewu.net/posts/2025-05-23-langchain-interrupt-2025-recap/</link>
   <description><![CDATA[ 
 
 
@@ -5375,7 +5375,7 @@ font-style: inherit;">--dangerously-skip-permissions</span></span></code></pre><
  ]]></description>
   <category>ai</category>
   <category>events</category>
-  <guid>https://lawwu.github.io/posts/2025-05-23-langchain-interrupt-2025-recap/</guid>
+  <guid>https://lawrencewu.net/posts/2025-05-23-langchain-interrupt-2025-recap/</guid>
   <pubDate>Fri, 23 May 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>
