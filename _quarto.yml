@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
   resources:
     - js/
   render:
@@ -53,6 +54,20 @@ format:
           <script src="/js/reading-progress.js"></script>
           <script src="/js/toc-highlight.js"></script>
     include-in-header:
+      - text: |
+          <script>
+            // Redirect legacy GitHub Pages domain to new canonical domain
+            (function() {
+              if (window.location.hostname === 'lawwu.github.io') {
+                window.location.replace(
+                  'https://lawrencewu.net' +
+                  window.location.pathname +
+                  window.location.search +
+                  window.location.hash
+                );
+              }
+            })();
+          </script>
       - text: |
           <script>
             // Log script loading attempt
