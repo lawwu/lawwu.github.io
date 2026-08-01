@@ -1,3 +1,8 @@
+> [!IMPORTANT]
+> **This repository is deprecated (August 2026).** The site moved to <https://lawrencewu.net>,
+> built from the [`lawrencewu-net`](https://github.com/lawwu/lawrencewu-net) monorepo.
+> <https://lawwu.github.io> now redirects there. This repository is archived and read-only.
+
 > **Note:** This blog has moved. Active development continues at [lawwu/lawrencewu-blog](https://github.com/lawwu/lawrencewu-blog) and is served at [lawrencewu.net](https://lawrencewu.net). This repo remains live to redirect traffic from lawwu.github.io.
 
 # Lawrence Wu's Quarto Blog
